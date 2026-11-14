@@ -1,0 +1,36 @@
+[
+  {
+    "label": "main",
+    "method": "POST",
+    "path": "/api/v1/projects",
+    "status": 201,
+    "bodyBytes": 48187
+  },
+  {
+    "label": "main",
+    "method": "PUT",
+    "path": "/api/v1/projects/8f1b0147-76d7-45e7-8c24-59b54e066528/content",
+    "status": 200,
+    "bodyBytes": 47849,
+    "ifMatch": "\"1\""
+  },
+  {
+    "label": "fresh",
+    "method": "GET",
+    "path": "/api/v1/projects",
+    "status": 200
+  },
+  {
+    "label": "fresh",
+    "method": "GET",
+    "path": "/api/v1/projects/8f1b0147-76d7-45e7-8c24-59b54e066528",
+    "status": 200
+  },
+  {
+    "label": "fresh",
+    "method": "GET",
+    "path": "/api/v1/projects/8f1b0147-76d7-45e7-8c24-59b54e066528/content",
+    "status": 200,
+    "ifMatch": "\"2\""
+  }
+]

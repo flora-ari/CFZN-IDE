@@ -1,0 +1,8 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at targetLocale (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:94:1164)\n    at async normalChain (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:95:1062)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:133:247"
+  }
+]

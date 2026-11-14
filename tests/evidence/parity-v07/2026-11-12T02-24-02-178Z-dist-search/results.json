@@ -1,0 +1,39 @@
+[
+  {
+    "name": "native search Chinese and no result close restores category without state changes",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n102 !== 0\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n102 !== 0\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:57:364\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:57:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "dynamic variables lists and percent-n percent-s procedure are real draggable blocks",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: Error: Variable with id, v1 is without a type\n    at Blockly.Xml.domToVariables (http://127.0.0.1:62311/openblock-vendor/openblock-gui.js:315129:235)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:62311/openblock-vendor/openblock-gui.js:315124:85)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:62311/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: Error: Variable with id, v1 is without a type\n    at Blockly.Xml.domToVariables (http://127.0.0.1:62311/openblock-vendor/openblock-gui.js:315129:235)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:62311/openblock-vendor/openblock-gui.js:315124:85)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:62311/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at xml (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:36:37)\n    at F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:58:116\n    at check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:54)\n    at Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:58:8)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "search close clear repeated rebuild preserves graph and undo",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    project: {\n      device: {\n        deviceId: null,\n        pnpIdList: [],\n...\n    },\n+   undo: 15,\n-   undo: 6,\n    workspace: '<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>'\n  }\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    project: {\n      device: {\n        deviceId: null,\n        pnpIdList: [],\n...\n    },\n+   undo: 15,\n-   undo: 6,\n    workspace: '<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>'\n  }\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:59:336\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:59:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "English locale native search roundtrip is read-only",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:60:532\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:60:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok((await flyout()).some(b=>b.type.startsWith('moreComments_')))\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok((await flyout()).some(b=>b.type.startsWith('moreComments_')))\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:312\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "pageErrors": []
+    }
+  }
+]

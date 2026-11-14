@@ -1,0 +1,71 @@
+{
+  "frozen": "2026-11-12",
+  "productChangesStopped": true,
+  "unitTests": {
+    "pass": 91,
+    "fail": 0,
+    "scope": "prior complete v0.7 baseline; GUI-only undo fix verified by focused native browser regression"
+  },
+  "vmModulesByteIdentical": 178,
+  "blocklyModulesByteIdentical": 15,
+  "guiHooks": {
+    "totalFragments": 46,
+    "newFragments": 4,
+    "changedExistingFragments": 1
+  },
+  "files": [
+    {
+      "path": "apps/web/dist/assets/app-kk7fVTCm.css",
+      "sha256": "A0A8E427BE737D833CC27038BDBBE1ECA9CF1FEF326DEC0C0043E72EE7E82B07",
+      "bytes": 3446
+    },
+    {
+      "path": "apps/web/dist/assets/app-WvfxpJny.js",
+      "sha256": "2D989C3351A29A23F114565BBF432F21191F4703FB394B3E3D17D19B4368C176",
+      "bytes": 206215
+    },
+    {
+      "path": "apps/web/dist/assets/editor-BqeCIwvM.js",
+      "sha256": "9D1FC47EEBFA3242C64554044965DE6C6BC2D7FB168007B7693C3A33AE323B2B",
+      "bytes": 115964
+    },
+    {
+      "path": "apps/web/dist/assets/editor-BwFLiudp.css",
+      "sha256": "C3A8F4AEE438E128C6968B34538472D29AA3998A6A784574EEFF19F02347B091",
+      "bytes": 18618
+    },
+    {
+      "path": "apps/web/dist/assets/save-shortcut-DZCizx91.js",
+      "sha256": "E1176DDF804797080DD9B9CE9BA59A361294097DD82E3CF3D0163351D7F7058E",
+      "bytes": 2905
+    },
+    {
+      "path": "apps/web/dist/openblock-vendor/openblock-gui.js",
+      "sha256": "C0C8A51D40D0EEE40C84541601915CC83D1454BF2D35ADFDF320F016CF1699B3",
+      "bytes": 22662033
+    },
+    {
+      "path": "apps/web/dist/cfzn-extensions/module-loader.js",
+      "sha256": "A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207",
+      "bytes": 2459
+    }
+  ],
+  "undoFix": {
+    "frozen": "2026-11-12",
+    "guiFragmentsChanged": 1,
+    "productChangesStopped": true,
+    "buildAndTypecheck": true,
+    "distChecks": {
+      "searchPreservesUndoRedo": true,
+      "lifecycleStillDelivered": true,
+      "existingRedoStillWorks": true,
+      "newEditUndoRedoStillWorks": true
+    },
+    "beforeUndo": 0,
+    "afterUndo": 0,
+    "beforeRedo": 2,
+    "afterRedo": 2,
+    "lifecycleEvents": 13,
+    "evidence": "undo-fix/dist-result.json"
+  }
+}

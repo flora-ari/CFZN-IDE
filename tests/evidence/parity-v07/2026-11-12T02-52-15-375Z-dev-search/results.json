@@ -1,0 +1,10 @@
+[
+  {
+    "name": "native open field and dropdown survive real dynamic search reindex",
+    "status": "PASS",
+    "detail": {
+      "fieldRetained": true,
+      "dropdownRetained": true
+    }
+  }
+]

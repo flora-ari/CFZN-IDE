@@ -1,0 +1,82 @@
+{
+  "run": "2026-11-07T05-00-15-456Z",
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\hardware-v02-independent\\2026-11-07T05-00-15-456Z",
+  "results": [
+    {
+      "name": "VM byte boundary: GUI-only hooks and all sourcemapped VM webpack modules unchanged",
+      "status": "PASS",
+      "detail": {
+        "vmModuleCount": 178,
+        "guiHooks": 15,
+        "noFactoryInjection": true
+      }
+    },
+    {
+      "name": "five boards real connected module blocks, HTTP exact bytes and fresh-context editable restore",
+      "status": "FAIL",
+      "error": "Error: frame.evaluate: TypeError: Cannot read properties of undefined (reading 'call')\n    at Blockly.Generator.blockToCode (http://127.0.0.1:52303/openblock-vendor/openblock-gui.js:316138:285)\n    at Blockly.Generator.workspaceToCode (http://127.0.0.1:52303/openblock-vendor/openblock-gui.js:316136:246)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:17)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+      "stack": "frame.evaluate: TypeError: Cannot read properties of undefined (reading 'call')\n    at Blockly.Generator.blockToCode (http://127.0.0.1:52303/openblock-vendor/openblock-gui.js:316138:285)\n    at Blockly.Generator.workspaceToCode (http://127.0.0.1:52303/openblock-vendor/openblock-gui.js:316136:246)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:17)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at code (F:\\CFZN\\CFZN-IDE\\tests\\hardware-v02-independent.mjs:48:35)\n    at F:\\CFZN\\CFZN-IDE\\tests\\hardware-v02-independent.mjs:99:179\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\hardware-v02-independent.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/hardware-v02-independent.mjs:95:2"
+    },
+    {
+      "name": "IO3 and S3-specific opcode compatibility guards remain before mutation",
+      "status": "PASS",
+      "detail": {
+        "io3": true,
+        "opcode": true
+      }
+    },
+    {
+      "name": "native empty/cancel/open, shared single reader/writer, native console plus parent HEX/text, unplug",
+      "status": "FAIL",
+      "error": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[class*=\"hardware-console\"] input[type=\"text\"]')\u001b[22m\n",
+      "stack": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[class*=\"hardware-console\"] input[type=\"text\"]')\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\hardware-v02-independent.mjs:119:166\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\hardware-v02-independent.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/hardware-v02-independent.mjs:112:2"
+    },
+    {
+      "name": "explicit profile/OS selection and exact manually-edited native source; upload release/cancel/failures",
+      "status": "FAIL",
+      "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '选择串口', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button disabled>选择串口</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+      "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '选择串口', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button disabled>选择串口</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not enabled\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    57 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not enabled\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\hardware-v02-independent.mjs:126:124\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\hardware-v02-independent.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/hardware-v02-independent.mjs:124:2"
+    },
+    {
+      "name": "web current code to isolated real CLI compile, actual artifacts/hash, S3 unavailable",
+      "status": "PASS",
+      "detail": {
+        "job": {
+          "id": "8db75c5a-2e31-4926-a4df-62512831d783",
+          "kind": "build",
+          "state": "succeeded",
+          "stage": "complete",
+          "deviceId": "arduinoEsp32",
+          "profileId": "esp32-4mb-dio",
+          "sourceHash": "569288b1cfc3b7394b4fdfe3cd0e586a5051bc90ab5bbd2639e9245e3421eab2",
+          "createdAt": "2026-11-07T05:01:37.447Z",
+          "finishedAt": "2026-11-07T05:01:56.747Z"
+        },
+        "artifacts": [
+          "build.options.json",
+          "compile_commands.json",
+          "core",
+          "includes.cache",
+          "libraries",
+          "libraries.cache",
+          "partitions.csv",
+          "sketch",
+          "sketch.ino.bin",
+          "sketch.ino.elf",
+          "sketch.ino.partitions.bin"
+        ],
+        "runtimeDir": "F:\\CFZN\\CFZN-IDE\\tests\\.hw-mw5xrml7",
+        "s3Unavailable": true
+      }
+    },
+    {
+      "name": "MenuBar and project dirty plus ordinary default RUN regression; no Link requests",
+      "status": "PASS",
+      "detail": {
+        "x": 19,
+        "sockets": [],
+        "errors": []
+      }
+    }
+  ]
+}

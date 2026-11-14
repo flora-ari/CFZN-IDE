@@ -1,0 +1,130 @@
+[
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/atomizer/toolbox.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/atomizer/translations.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/atomizer/generator.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/atomizer/blocks.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/pirSensor/toolbox.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/pirSensor/translations.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/pirSensor/generator.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/pirSensor/blocks.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/flameSensor/toolbox.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/flameSensor/translations.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/flameSensor/generator.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/flameSensor/blocks.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/raindropSensor/toolbox.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/raindropSensor/translations.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/raindropSensor/generator.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/raindropSensor/blocks.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/moreComments/toolbox.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/moreComments/translations.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/moreComments/generator.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:53466/cfzn-extensions/extensions/moreComments/blocks.mjs?v=36b3410ae1d49ac2ab29c9da0466319111301f990ee737bf8992177db4b1ea92&retry=0"
+  }
+]

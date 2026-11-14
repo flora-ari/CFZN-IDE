@@ -1,0 +1,1136 @@
+[
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/",
+    "resourceType": "document"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/app-BUnPNExM.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/editor-protocol-gpqBllT3.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/app-Dj2rnt9B.css",
+    "resourceType": "stylesheet"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock.html",
+    "resourceType": "document"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/editor-DmlIsIFJ.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/editor-protocol-gpqBllT3.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/editor-BfRtyYP7.css",
+    "resourceType": "stylesheet"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock-vendor/react-16.min.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock-vendor/react-dom-16.min.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock-vendor/openblock-gui.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock-vendor/manifest.json",
+    "resourceType": "fetch"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/bbbd98ae6a34eac772e34a57aaa5f977.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/f9dce53613d5f85b311ce9f84423c08b.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/ce5820b006d753e4133f46ae776f4d96.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/82bfb019b31f069af40d1a18b7cbfb24.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1319094a51748798730f01d1dc0972ac.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/664d94e5cb8676c780c74c695f2e972c.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/ff3c49d02045a3d05a72f4c004cdb80c.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/49ba9617d58a3e29df87ade0f5a9ff6e.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/40b307fe8a0e2f3c6fbee5caacb3dbca.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/d6b0a87b93bac86032448b70ffc7b6e1.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/44ef836f327ccbeff19f7aa0ba7157ed.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/c102ba4a6efab67e215e7d102fe2b893.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/257e3788c5fbfe56c151a97e97dc20d8.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1dfe5425b42628b6f1df1f39e97a319f.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/2258ea6dfe9ad15440ca55aca291698d.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/5f4208a6b7257c456c018d57efc8a7e9.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/2e0c4790f8f9cf28e3c346b9cef0fcb6.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/36fcc7dbca20720abcab01e49d4955f9.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1915c266b9444348e709aa415ceb7162.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a246880e69bc7a2a793c90a2fb013ae1.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/51d228f5f5d5e42a252cc88210fd0cd2.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/422b48c2206d5240a6717c92496ba21a.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/38a70367a21e2f1fb15aa59b7d367450.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/9ddae4f6c1aeaf0784007203d9d4ac9c.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/acc6c29b5eee67bc6b2aa85854d9bb3a.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/68d9ddbb2aa63310b88c7697e5b0c6c9.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/497f797eeffe5fa7e6a626abc0db08a1.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/e587d9d7e9a2f1f28041ba5c15db7a40.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/301439e2e5ab88b658368ee525e6752b.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/94b06fb716871f81bec601724e29a457.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/551aae506dfa65ce3b45713b5300a678.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/zoom-out.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/zoom-in.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/zoom-reset.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/dropdown-arrow.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/green-flag.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/repeat.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a5787bb7364d8131ed49a8f53037d7f4.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/385aa4b73a425883b4f9e91501a52299.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/rotate-right.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/rotate-left.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/aaa4a3575852fe11d04f44c4a972ae73.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a4451ef35d29c4997f7c8e837da8af44.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/9c49ade683c0f0d75796136ff5d1030f.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/7eea42371f5ccb84b4fc7d0ba7331ea3.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/504d73be1b361b4b9ca7f655ce085dc6.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/7679e8aa3b5a6b745823e00a7b950065.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/800f6f1573677d59954e8d3164602287.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a03436c2c26c934fc0a7997065971874.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/5e8eccd5a576638f029a1ed2deb4784b.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/d6f130fb79e78e4dd351fd930e742bcc.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/c7ffd288176b935f835311512a224d4b.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1bb0adb555e07593962e9fc28ec7566d.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/b6162ffbfe48d4b6c67f0b469f1615ae.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/f40501ed87782097b1a4eec8747eb84a.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/c30d6a0e73cf38ad6ea7f5e4fe0428a3.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/d61429ad96a25ec2917ebc77d900aae0.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/",
+    "resourceType": "document"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/app-BUnPNExM.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/editor-protocol-gpqBllT3.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/app-Dj2rnt9B.css",
+    "resourceType": "stylesheet"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock.html",
+    "resourceType": "document"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/editor-DmlIsIFJ.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/editor-protocol-gpqBllT3.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/assets/editor-BfRtyYP7.css",
+    "resourceType": "stylesheet"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock-vendor/react-16.min.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock-vendor/react-dom-16.min.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock-vendor/openblock-gui.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/openblock-vendor/manifest.json",
+    "resourceType": "fetch"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/bbbd98ae6a34eac772e34a57aaa5f977.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/f9dce53613d5f85b311ce9f84423c08b.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/ce5820b006d753e4133f46ae776f4d96.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/82bfb019b31f069af40d1a18b7cbfb24.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1319094a51748798730f01d1dc0972ac.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/664d94e5cb8676c780c74c695f2e972c.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/ff3c49d02045a3d05a72f4c004cdb80c.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/49ba9617d58a3e29df87ade0f5a9ff6e.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/40b307fe8a0e2f3c6fbee5caacb3dbca.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/d6b0a87b93bac86032448b70ffc7b6e1.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/44ef836f327ccbeff19f7aa0ba7157ed.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/c102ba4a6efab67e215e7d102fe2b893.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/257e3788c5fbfe56c151a97e97dc20d8.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1dfe5425b42628b6f1df1f39e97a319f.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/2258ea6dfe9ad15440ca55aca291698d.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/5f4208a6b7257c456c018d57efc8a7e9.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/2e0c4790f8f9cf28e3c346b9cef0fcb6.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/36fcc7dbca20720abcab01e49d4955f9.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1915c266b9444348e709aa415ceb7162.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a246880e69bc7a2a793c90a2fb013ae1.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/51d228f5f5d5e42a252cc88210fd0cd2.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/422b48c2206d5240a6717c92496ba21a.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/38a70367a21e2f1fb15aa59b7d367450.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/9ddae4f6c1aeaf0784007203d9d4ac9c.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/acc6c29b5eee67bc6b2aa85854d9bb3a.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/68d9ddbb2aa63310b88c7697e5b0c6c9.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/497f797eeffe5fa7e6a626abc0db08a1.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/e587d9d7e9a2f1f28041ba5c15db7a40.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/301439e2e5ab88b658368ee525e6752b.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/94b06fb716871f81bec601724e29a457.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/551aae506dfa65ce3b45713b5300a678.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/zoom-out.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/zoom-in.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/zoom-reset.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/dropdown-arrow.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/green-flag.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/repeat.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a5787bb7364d8131ed49a8f53037d7f4.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/385aa4b73a425883b4f9e91501a52299.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/rotate-right.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/blocks-media/rotate-left.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/aaa4a3575852fe11d04f44c4a972ae73.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a4451ef35d29c4997f7c8e837da8af44.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/9c49ade683c0f0d75796136ff5d1030f.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/7eea42371f5ccb84b4fc7d0ba7331ea3.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/504d73be1b361b4b9ca7f655ce085dc6.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/7679e8aa3b5a6b745823e00a7b950065.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/800f6f1573677d59954e8d3164602287.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a03436c2c26c934fc0a7997065971874.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/5e8eccd5a576638f029a1ed2deb4784b.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/d6f130fb79e78e4dd351fd930e742bcc.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/c7ffd288176b935f835311512a224d4b.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1bb0adb555e07593962e9fc28ec7566d.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/b6162ffbfe48d4b6c67f0b469f1615ae.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/f40501ed87782097b1a4eec8747eb84a.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/c30d6a0e73cf38ad6ea7f5e4fe0428a3.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/d61429ad96a25ec2917ebc77d900aae0.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a7e482656c8708b4fbda3a76cbe2772b.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/ef27c3f88d070cc1ce667f6b9ffb15bc.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1487a79255d36e22aebab81dc4dab2ea.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/0b8b19ce97a69a7bf2fca5fc35fb33af.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/1cd8bd83990ffb15273e8df1a36757e5.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/4f17daa7793850e9da90555308c27e44.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/48ab3eb8d0a3db9e1ddcb8e23c28b00f.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/bd58c18e2c4af10dfc628dbc980864e5.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/aijite/aijiteEsp32S3.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/editor.worker.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/chunks/0.js",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/b0e76d4308c519856f176b614b1a7880.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/3083b04e2b7ff42d5cb2d801e37d99b9.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/f3ecdd3dd85577dcae7b23c83ecbda1d.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/54ae4ff5cb9eee86b2544af94992b91e.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/fd99f9cc8908fdfd24a6cf104952217c.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/c31c20a96bdc6ffe5916c9fb25d1e505.svg",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/atomizer/assets/atomizer.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/moreComments/assets/moreComments.png",
+    "resourceType": "image"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/atomizer/toolbox.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/atomizer/translations.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/atomizer/generator.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/atomizer/blocks.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/pirSensor/toolbox.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/pirSensor/translations.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/pirSensor/generator.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/pirSensor/blocks.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/flameSensor/toolbox.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/flameSensor/translations.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/flameSensor/generator.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/flameSensor/blocks.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/raindropSensor/toolbox.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/raindropSensor/translations.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/raindropSensor/generator.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/raindropSensor/blocks.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/moreComments/toolbox.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/moreComments/translations.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/moreComments/generator.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/cfzn-extensions/extensions/moreComments/blocks.mjs?v=d33c1cbef18ce9bd8fafbc60895d5ccf85f3578cd4dc7980580a2ddf6a4a1619&retry=0",
+    "resourceType": "script"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/a609dc0f334a7d4e64205247c4e8b97c.ttf",
+    "resourceType": "font"
+  },
+  {
+    "label": "switch",
+    "method": "GET",
+    "url": "http://127.0.0.1:5174/static/assets/ee54d776d2cda9a3c537ac7e8f144037.svg",
+    "resourceType": "image"
+  }
+]

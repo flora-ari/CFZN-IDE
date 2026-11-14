@@ -1,0 +1,84 @@
+{
+  "snapshot": {
+    "title": "v05-archive-minimal-repro",
+    "dirty": true,
+    "running": false,
+    "documentId": 1,
+    "editVersion": 1
+  },
+  "target": {
+    "id": "]e+v[NUH-u~:Z8/lbDcj",
+    "name": "角色1",
+    "isStage": false
+  },
+  "workspace": [
+    {
+      "id": "qa-flag",
+      "type": "event_whenflagclicked"
+    },
+    {
+      "id": "qa-hat",
+      "type": "event_whenarduinobegin"
+    },
+    {
+      "id": "qa-move",
+      "type": "motion_changexby"
+    },
+    {
+      "id": "qa-init",
+      "type": "activeBuzzer_init"
+    },
+    {
+      "id": "]+Pa*z1:QoM8;+T^JL5|",
+      "type": "math_number"
+    },
+    {
+      "id": "qa-atom",
+      "type": "atomizer_init"
+    },
+    {
+      "id": "qa-pir",
+      "type": "pirSensor_init"
+    },
+    {
+      "id": "qa-comment",
+      "type": "moreComments_branchBlock"
+    },
+    {
+      "id": "N{FtnU]q.%+D?wxS2*:H",
+      "type": "text"
+    },
+    {
+      "id": ";TQ`sY6w_JL%`ttvqzMQ",
+      "type": "control_if"
+    },
+    {
+      "id": "_z0tImoXz]weTOet7po6",
+      "type": "pirSensor_detected"
+    },
+    {
+      "id": "i_N(jb8LYve2~2N0s%pv",
+      "type": "activeBuzzer_on"
+    },
+    {
+      "id": "is(i[^BN.c%~s4Q!TGMy",
+      "type": "control_if"
+    },
+    {
+      "id": "qFlfGRaKug2KIf$[qnv|",
+      "type": "flameSensor_readDigital"
+    },
+    {
+      "id": "Uzv0Y}RSKlhsiC!5x0|h",
+      "type": "atomizer_toggle"
+    },
+    {
+      "id": ")dIHZfdE!{`+o?3.2$U3",
+      "type": "arduino_serial_multiSerialPrint"
+    },
+    {
+      "id": "^((s;ri1ech9K)F;e+vx",
+      "type": "raindropSensor_readAnalog"
+    }
+  ]
+}

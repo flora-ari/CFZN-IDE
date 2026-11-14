@@ -1,0 +1,38 @@
+{
+  "surface": "dev",
+  "checks": {
+    "search": {
+      "status": "1 个匹配积木",
+      "selected": "cfzn-search-results",
+      "blocks": [
+        {
+          "type": "motion_movesteps",
+          "text": "移动 10 步",
+          "disabled": false
+        },
+        {
+          "type": "motion_movesteps",
+          "text": "移动 10 步",
+          "disabled": false
+        }
+      ]
+    },
+    "searchNoDirty": true,
+    "saveDomains": true,
+    "procedure": [
+      {
+        "text": "v07函数 ??? ?",
+        "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"procedures_call\"><mutation proccode=\"v07函数 %s %b\" argumentids=\"[&quot;v07-text&quot;,&quot;v07-bool&quot;]\" warp=\"false\"></mutation><value name=\"v07-text\"><shadow type=\"text\" id=\"wil%HS#;Oaa#q%8U]3V7\"><field name=\"TEXT\"></field></shadow></value></block>"
+      },
+      {
+        "text": "v07函数 ??? ?",
+        "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"OzZ3g31PS67nfJBDq~eH\"><mutation proccode=\"v07函数 %s %b\" argumentids=\"[&quot;v07-text&quot;,&quot;v07-bool&quot;]\" warp=\"false\"></mutation><value name=\"v07-text\"><shadow type=\"text\" id=\"`E$NkDvknF$CCR$lAyMI\"><field name=\"TEXT\"></field></shadow></value></block>"
+      }
+    ],
+    "dynamicAndNoDirty": true,
+    "realSearchDrag": true
+  },
+  "errors": [],
+  "physicalHardware": false,
+  "persistence": "isolated mock API, actual original archive bytes"
+}

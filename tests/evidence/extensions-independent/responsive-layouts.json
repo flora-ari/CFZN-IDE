@@ -1,0 +1,77 @@
+[
+  {
+    "width": 1440,
+    "library": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 848,
+      "top": 0,
+      "right": 1440,
+      "bottom": 848,
+      "left": 0
+    },
+    "barWidth": 1440,
+    "barScrollWidth": 1440,
+    "lastCard": {
+      "x": 332,
+      "y": 490.390625,
+      "width": 300,
+      "height": 336.390625,
+      "top": 490.390625,
+      "right": 632,
+      "bottom": 826.78125,
+      "left": 332
+    }
+  },
+  {
+    "width": 768,
+    "library": {
+      "x": 0,
+      "y": 0,
+      "width": 768,
+      "height": 917,
+      "top": 0,
+      "right": 768,
+      "bottom": 917,
+      "left": 0
+    },
+    "barWidth": 768,
+    "barScrollWidth": 1061,
+    "lastCard": {
+      "x": 332,
+      "y": 582.78125,
+      "width": 300,
+      "height": 336.390625,
+      "top": 582.78125,
+      "right": 632,
+      "bottom": 919.171875,
+      "left": 332
+    }
+  },
+  {
+    "width": 390,
+    "library": {
+      "x": 0,
+      "y": 0,
+      "width": 390,
+      "height": 879,
+      "top": 0,
+      "right": 390,
+      "bottom": 879,
+      "left": 0
+    },
+    "barWidth": 390,
+    "barScrollWidth": 739,
+    "lastCard": {
+      "x": 45,
+      "y": 526.953125,
+      "width": 300,
+      "height": 336.390625,
+      "top": 526.953125,
+      "right": 345,
+      "bottom": 863.34375,
+      "left": 45
+    }
+  }
+]

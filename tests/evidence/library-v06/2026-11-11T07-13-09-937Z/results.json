@@ -1,0 +1,22 @@
+[
+  {
+    "name": "dev another original sprite and unknown removal",
+    "status": "PASS",
+    "detail": {
+      "originalSprite": "niIfmHgURN@l|sz3Ep,H",
+      "otherOriginalSprite": "4~uml9x+lJtYm|,d)-#U",
+      "error": "有源蜂鸣器仍被引用：角色2 1处。请先移除相关积木或监视器。",
+      "unknownRefused": "此条目暂不支持移除。"
+    }
+  },
+  {
+    "name": "dist another original sprite and unknown removal",
+    "status": "PASS",
+    "detail": {
+      "originalSprite": "v+DT,f*/96smR28i-R(!",
+      "otherOriginalSprite": "AgguM6jrdv4l=*/=,d(Q",
+      "error": "有源蜂鸣器仍被引用：角色2 1处。请先移除相关积木或监视器。",
+      "unknownRefused": "此条目暂不支持移除。"
+    }
+  }
+]

@@ -1,0 +1,310 @@
+{
+  "checks": {
+    "fiveBoardsArchiveRestore": [
+      {
+        "id": "arduinoUno",
+        "bytes": 47879,
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      },
+      {
+        "id": "arduinoEsp32S3",
+        "bytes": 47881,
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      },
+      {
+        "id": "aijiteESP32S3",
+        "bytes": 47886,
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      },
+      {
+        "id": "arduinoEsp32",
+        "bytes": 47880,
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      },
+      {
+        "id": "firebeetleEsp32E",
+        "bytes": 47887,
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      }
+    ],
+    "firebeetlePins": {
+      "arduino_pin_setDigitalOutput": [
+        [
+          "D5 / IO0",
+          "0"
+        ],
+        [
+          "D9 / IO2",
+          "2"
+        ],
+        [
+          "D12 / IO4",
+          "4"
+        ],
+        [
+          "D8 / IO5",
+          "5"
+        ],
+        [
+          "D13 / IO12",
+          "12"
+        ],
+        [
+          "D7 / IO13",
+          "13"
+        ],
+        [
+          "D6 / IO14",
+          "14"
+        ],
+        [
+          "A4 / IO15",
+          "15"
+        ],
+        [
+          "D11 / IO16",
+          "16"
+        ],
+        [
+          "D10 / IO17",
+          "17"
+        ],
+        [
+          "D2 / IO25",
+          "25"
+        ],
+        [
+          "D3 / IO26",
+          "26"
+        ],
+        [
+          "D4 / IO27",
+          "27"
+        ]
+      ],
+      "arduino_pin_readAnalogPin": [
+        [
+          "A4 / IO15",
+          "15"
+        ],
+        [
+          "A2 / IO34",
+          "34"
+        ],
+        [
+          "A3 / IO35",
+          "35"
+        ],
+        [
+          "A0 / IO36",
+          "36"
+        ],
+        [
+          "A1 / IO39",
+          "39"
+        ]
+      ]
+    },
+    "sharedSerial": true,
+    "uploadReleaseAndRestore": true,
+    "cancel": true,
+    "failedReleaseBlocksUpload": true,
+    "noVmInjectionOrLink": true
+  },
+  "errors": [],
+  "sockets": [],
+  "calls": [
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/builds",
+      "method": "POST",
+      "body": {
+        "deviceId": "firebeetleEsp32E",
+        "profileId": "mock-firebeetleEsp32E",
+        "code": "// manually edited C++\nvoid setup(){Serial.begin(115200);}\nvoid loop(){Serial.println(42);delay(1000);}\n",
+        "moduleIds": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      }
+    },
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-1",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/uploads",
+      "method": "POST",
+      "body": {
+        "buildId": "job-1",
+        "portId": "COM-MOCK"
+      }
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/builds",
+      "method": "POST",
+      "body": {
+        "deviceId": "firebeetleEsp32E",
+        "profileId": "mock-firebeetleEsp32E",
+        "code": "// manually edited C++\nvoid setup(){Serial.begin(115200);}\nvoid loop(){Serial.println(42);delay(1000);}\n",
+        "moduleIds": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      }
+    },
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-3",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/uploads",
+      "method": "POST",
+      "body": {
+        "buildId": "job-3",
+        "portId": "COM-MOCK"
+      }
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-4",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-4/cancel",
+      "method": "POST",
+      "body": {}
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-4",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/builds",
+      "method": "POST",
+      "body": {
+        "deviceId": "firebeetleEsp32E",
+        "profileId": "mock-firebeetleEsp32E",
+        "code": "// manually edited C++\nvoid setup(){Serial.begin(115200);}\nvoid loop(){Serial.println(42);delay(1000);}\n",
+        "moduleIds": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      }
+    },
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-5",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    }
+  ]
+}

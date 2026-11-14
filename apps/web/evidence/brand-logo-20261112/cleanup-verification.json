@@ -1,0 +1,56 @@
+{
+  "checkedAt": "2026-11-12T11:39:59.6539414+08:00",
+  "cleanedOwnedTree": [
+    {
+      "Name": "node.exe",
+      "ProcessId": 9608,
+      "ParentProcessId": 29880,
+      "Depth": 0
+    },
+    {
+      "Name": "node.exe",
+      "ProcessId": 11388,
+      "ParentProcessId": 17088,
+      "Depth": 0
+    },
+    {
+      "Name": "esbuild.exe",
+      "ProcessId": 36376,
+      "ParentProcessId": 9608,
+      "Depth": 1
+    },
+    {
+      "Name": "msedge.exe",
+      "ProcessId": 10992,
+      "ParentProcessId": 11388,
+      "Depth": 1
+    },
+    {
+      "Name": "msedge.exe",
+      "ProcessId": 47804,
+      "ParentProcessId": 10992,
+      "Depth": 2
+    },
+    {
+      "Name": "msedge.exe",
+      "ProcessId": 23268,
+      "ParentProcessId": 10992,
+      "Depth": 2
+    },
+    {
+      "Name": "msedge.exe",
+      "ProcessId": 45608,
+      "ParentProcessId": 10992,
+      "Depth": 2
+    },
+    {
+      "Name": "msedge.exe",
+      "ProcessId": 44976,
+      "ParentProcessId": 10992,
+      "Depth": 2
+    }
+  ],
+  "remainingOwnedScripts": [],
+  "userServicesTouched": false,
+  "physicalSerialUsed": false
+}

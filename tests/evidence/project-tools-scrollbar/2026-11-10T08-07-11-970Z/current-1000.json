@@ -1,0 +1,56 @@
+{
+  "before": {
+    "x": 337.9375,
+    "width": 292.8125,
+    "clientWidth": 293,
+    "scrollWidth": 302,
+    "clientHeight": 48,
+    "scrollHeight": 48,
+    "overflowX": "auto",
+    "overflowY": "hidden",
+    "menuHeight": 48,
+    "gap": 6,
+    "barHeight": "6px",
+    "thumbRadius": "6px",
+    "thumbColor": "rgba(144, 147, 153, 0.5)",
+    "track": "rgba(0, 0, 0, 0)"
+  },
+  "wheel": 9,
+  "focus": [
+    {
+      "label": "项目",
+      "left": 0,
+      "visible": true,
+      "focused": true,
+      "outline": "none"
+    },
+    {
+      "label": "新建",
+      "left": 0,
+      "visible": true,
+      "focused": true,
+      "outline": "none"
+    },
+    {
+      "label": "导入",
+      "left": 0,
+      "visible": true,
+      "focused": true,
+      "outline": "none"
+    },
+    {
+      "label": "导出",
+      "left": 0,
+      "visible": true,
+      "focused": true,
+      "outline": "none"
+    },
+    {
+      "label": "保存",
+      "left": 0,
+      "visible": true,
+      "focused": true,
+      "outline": "none"
+    }
+  ]
+}

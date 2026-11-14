@@ -1,0 +1,59 @@
+{
+  "chinese": {
+    "locale": "zh-cn",
+    "vmLocale": "zh-cn",
+    "motion": "运动",
+    "sameVm": true,
+    "sameLoadProject": true,
+    "sameLoadDeviceURL": true,
+    "controllers": [
+      {
+        "id": "cfzn-controller-firebeetleEsp32E",
+        "labels": [
+          "灰色积木仅上传模式可用",
+          "引脚",
+          "串口",
+          "数据"
+        ]
+      }
+    ]
+  },
+  "english": {
+    "locale": "en",
+    "vmLocale": "en",
+    "motion": "Motion",
+    "sameVm": true,
+    "sameLoadProject": true,
+    "sameLoadDeviceURL": true,
+    "controllers": [
+      {
+        "id": "cfzn-controller-firebeetleEsp32E",
+        "labels": [
+          "灰色积木仅上传模式可用",
+          "Pins",
+          "Serial",
+          "Data"
+        ]
+      }
+    ]
+  },
+  "returned": {
+    "locale": "zh-cn",
+    "vmLocale": "zh-cn",
+    "motion": "运动",
+    "sameVm": true,
+    "sameLoadProject": true,
+    "sameLoadDeviceURL": true,
+    "controllers": [
+      {
+        "id": "cfzn-controller-firebeetleEsp32E",
+        "labels": [
+          "灰色积木仅上传模式可用",
+          "引脚",
+          "串口",
+          "数据"
+        ]
+      }
+    ]
+  }
+}

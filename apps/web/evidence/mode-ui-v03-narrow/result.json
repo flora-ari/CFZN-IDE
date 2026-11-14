@@ -1,0 +1,117 @@
+{
+  "rows": [
+    {
+      "width": 1440,
+      "buttons": [
+        {
+          "text": "编程模式",
+          "left": 1295,
+          "right": 1361,
+          "top": 8,
+          "bottom": 40,
+          "width": 66
+        },
+        {
+          "text": "上传模式",
+          "left": 1363,
+          "right": 1429,
+          "top": 8,
+          "bottom": 40,
+          "width": 66
+        }
+      ],
+      "menu": {
+        "left": 0,
+        "right": 1440,
+        "top": 0,
+        "bottom": 48,
+        "width": 1440
+      },
+      "tools": {
+        "left": 600.75,
+        "right": 974.75,
+        "top": 0,
+        "bottom": 48,
+        "width": 374
+      },
+      "toolbarButtons": 6,
+      "rootOverflow": "visible"
+    },
+    {
+      "width": 1100,
+      "buttons": [
+        {
+          "text": "编程模式",
+          "left": 955,
+          "right": 1021,
+          "top": 8,
+          "bottom": 40,
+          "width": 66
+        },
+        {
+          "text": "上传模式",
+          "left": 1023,
+          "right": 1089,
+          "top": 8,
+          "bottom": 40,
+          "width": 66
+        }
+      ],
+      "menu": {
+        "left": 0,
+        "right": 1100,
+        "top": 0,
+        "bottom": 48,
+        "width": 1100
+      },
+      "tools": {
+        "left": 506.953125,
+        "right": 730.75,
+        "top": 0,
+        "bottom": 48,
+        "width": 223.796875
+      },
+      "toolbarButtons": 6,
+      "rootOverflow": "visible"
+    },
+    {
+      "width": 1000,
+      "buttons": [
+        {
+          "text": "编程模式",
+          "left": 855,
+          "right": 921,
+          "top": 8,
+          "bottom": 40,
+          "width": 66
+        },
+        {
+          "text": "上传模式",
+          "left": 923,
+          "right": 989,
+          "top": 8,
+          "bottom": 40,
+          "width": 66
+        }
+      ],
+      "menu": {
+        "left": 0,
+        "right": 1000,
+        "top": 0,
+        "bottom": 48,
+        "width": 1000
+      },
+      "tools": {
+        "left": 439.984375,
+        "right": 630.75,
+        "top": 0,
+        "bottom": 48,
+        "width": 190.765625
+      },
+      "toolbarButtons": 6,
+      "rootOverflow": "visible"
+    }
+  ],
+  "errors": [],
+  "physicalSerial": false
+}

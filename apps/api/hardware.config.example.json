@@ -1,0 +1,22 @@
+{
+  "runtimeDir": "F:/CFZN/CFZN-IDE/.runtime/hardware",
+  "allowedOrigins": ["http://127.0.0.1:5173", "http://localhost:5173"],
+  "toolchains": {
+    "openblock-cores": {
+      "cliPath": "D:/mindplus/Mind+ Link/tool/arduino-cli.exe",
+      "sourceDataDir": "D:/openblocklink/OpenBlock Link/resources/tools/Arduino",
+      "builtinToolsDir": "C:/Users/YUUMEI/AppData/Local/mind+/Arduino/packages/builtin",
+      "packages": ["arduino", "esp32"]
+    },
+    "mindplus-core": {
+      "cliPath": "D:/mindplus/Mind+ Link/tool/arduino-cli.exe",
+      "sourceDataDir": "C:/Users/YUUMEI/AppData/Local/mind+/Arduino",
+      "packages": ["mindplus"]
+    }
+  },
+  "profiles": {
+    "uno-avr": { "toolchain": "openblock-cores", "coreVersion": "1.8.3" },
+    "esp32-4mb-dio": { "toolchain": "openblock-cores", "coreVersion": "1.0.6" },
+    "firebeetle-esp32e-4mb": { "toolchain": "mindplus-core", "coreVersion": "0.0.2" }
+  }
+}

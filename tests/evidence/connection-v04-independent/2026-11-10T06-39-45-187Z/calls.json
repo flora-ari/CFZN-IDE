@@ -1,0 +1,86 @@
+[
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/capabilities",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/capabilities",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/capabilities",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/capabilities",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/capabilities",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/capabilities",
+    "body": null
+  },
+  {
+    "label": "connection-v04",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  }
+]

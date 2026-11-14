@@ -1,0 +1,5 @@
+{
+    "RAINDROPSENSOR_CATEGORY": "Raindrop Sensor",
+    "RAINDROPSENSOR_READDIGITAL": "raindrop sensor digital pin %1 wet?",
+    "RAINDROPSENSOR_READANALOG": "read raindrop sensor analog pin %1"
+}

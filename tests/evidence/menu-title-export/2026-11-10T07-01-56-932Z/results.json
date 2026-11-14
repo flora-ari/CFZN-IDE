@@ -1,0 +1,102 @@
+[
+  {
+    "name": "title bounded across 1440/1776/2560 and short/long Chinese/Latin; five actions/modes accessible",
+    "status": "PASS",
+    "detail": [
+      {
+        "width": 180,
+        "nameLength": 2,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 84,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 5,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 78,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 2,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 84,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 5,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 78,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 2,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 84,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 5,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      },
+      {
+        "width": 180,
+        "nameLength": 78,
+        "min": "100px",
+        "max": "220px",
+        "container": 188
+      }
+    ]
+  },
+  {
+    "name": "single real Export keeps full assets/editor metadata and dirty status",
+    "status": "PASS",
+    "detail": {
+      "bytes": 48357,
+      "assets": 5,
+      "metadata": true,
+      "dirty": true
+    }
+  }
+]

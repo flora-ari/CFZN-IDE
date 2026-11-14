@@ -1,0 +1,285 @@
+# CFZN-IDE 需求与会话分工
+
+更新日期：2026-11-12（Asia/Shanghai）。当前修正模块卡片兼容角标的定位；Mind+功能补齐、Logo和此前任务均保留。本文末尾为最新任务，早期进度仅作历史，不作为重新启动任务指令。
+
+## 当前安排
+
+### 最新派工：设备连接与编译烧录（2026-11-07）
+
+用户要求先调查 Mind+ 实时与上传模式的设备发现、串口和烧录链路，再修复 IDE 原生连接一直扫描的问题，并实现串口通信、编译烧录与测试。REA 扩展包分析和两侧设计已完成，主控已发布 Hardware v0.2；当前前后端并行开发。主控实机确认 COM3 为 ESP32-D0WD-V3 / 4MB，用户已允许覆盖测试。物理串口操作统一由主控协调；新增普通 ESP32 与 FireBeetle ESP32-E 适配，保留原有三板。用户禁止修改 openblock-vm 源码/打包代码，移除历史 VM 注入，使用外部适配层。
+
+用户最新模型调整：原 Astra 分支后续统一改为 **gpt-6.1-sol / ultra**；开发与测试亦沿用该模型。此前 Astra 执行记录仅是历史，不是再次调用 Astra 的指令。
+
+随后用户指定测试为 **gpt-6.1-sol / low**；仅测试推理强度调整，设计与开发仍为 ultra。独立测试待前端交付后启动。
+
+### 已完成：原生 MenuBar 位置修正
+
+用户纠正上一轮位置：六按钮和 project-status 直接放进 `gui_menu-bar-position_3U1T0 menu-bar_menu-bar_JcuHF box_box_2jjDp` 原生蓝色菜单栏同一行，删除菜单下方新增区域及重复原生文件菜单。外层 app-bar 继续移除。主控及 Astra Ultra 已核对源码挂载点；统一契约已修正，消息、保存和 HTTP 边界继续沿用两侧已完成设计。Sol Ultra 前端交付，build/typecheck 与 13 单测通过；Sol Ultra 独立测试 4 组聚焦验收通过，报告见 `tests/NATIVE-PROJECT-TOOLBAR-REPORT.md`。后端无需业务改动。原生标题、编辑、设备/连接和其他功能保留，既有服务不重启。
+
+### 上次实现：原生 OpenBlock 项目工具栏整合（位置已被纠正）
+
+用户要求移除外层自建 `app-bar`，复用原版 `gui_alerts-container_15BWp box_box_2jjDp` 区域，在原生界面内加入“项目、新建、导入、导出、保存、串口终端”六个现有按钮，并显示 `project-status`（是否保存、是否有未保存更改）。不能再包一层独立品牌工具栏；既有项目操作、真实保存状态、原生告警、扩展和串口功能继续保留。参考截图为 `references/09-native-project-toolbar.png`。
+
+两侧设计、主控冻结契约、前后端交接与独立验收均已完成。前端 build/typecheck、13 项单测和 14 项开发自验通过；独立测试 10 组分批全部通过，报告为 `tests/NATIVE-PROJECT-TOOLBAR-REPORT.md`。后端静态审查确认零业务/HTTP 改动。主控亦确认用户运行中的 5173 页面已生效。用户此前关闭后自行重启的 5173/3001 服务保持运行，本轮仅清理自行创建的临时服务与测试存储。
+
+### 上轮已完成：主控扩展 / 模块扩展
+
+用户已要求实施新功能：点击原 OpenBlock 扩展按钮后，在扩展库的筛选栏内增加“主控扩展”“模块扩展”入口，参考 Mind+ 的分类切换，并支持加入自有主控与模块扩展。首批资源参考 `F:\CFZN\D-Coding\aijite-editor-release\aijite-editor-release`，允许使用 `D:\rea` 分析公开的 Mind+ 页面 `https://ide.mindplus.top/realtime/projects/editor`。
+
+本需求按“两侧设计 → 主控统一契约 → 两侧开发 → 测试”的顺序启动；下方“仅建会话并待命”描述保留为上一轮安排，不限制本轮明确派工。原版 UI、匿名本地存储及真实执行要求继续适用。
+
+用户进一步确认：本轮先内置旧 IDE 的扩展，并提供后续代码接入方式；不做界面上的自定义扩展包导入。两侧设计已对齐，主控在 `docs/api-contract.md` 发布扩展附录；前后端交付和独立验收均已完成。首批为 3 个主控和 6 个模块，详细清单及能力以该附录为准。测试发现的两项主控切换缺陷已修复并复验，最终报告见 `tests/EXTENSIONS-INDEPENDENT-REPORT.md`。
+
+### 初始会话设立（历史安排）
+
+- 当前聊天是主控会话：`01a1afcd-2cf9-7510-91af-dbc2b82a523d`，host：`local`。
+- 项目目录：`F:\CFZN\CFZN-IDE`，项目 ID：`84edb717-2a01-4f87-8903-b9e6e957fde7`。
+- 用户说明初步网站搭建已完成。本轮仅记录需求、创建五个可见分支会话、指定模型并明确职责；所有分支在确认角色后结束本轮，等待主控后续派工。
+- 本轮不启动接口重设计、开发、安装依赖、服务、测试或硬件操作。
+- 使用同一项目目录的独立聊天。这里的“分支会话”指协作聊天，不是 Git 分支或 worktree。
+- 现有设计提案、`docs/api-contract.md` v0.1、前后端代码与历史主控记录均保留。历史测试结论不代表本轮重新验收，历史“进行中”不代表新会话已获启动指令。
+
+## 用户需求基线
+
+1. 建设创客平台 IDE 模块。技术范围参考图一或图二红框：前端 React + TypeScript，后端 Node.js + TypeScript，可用 NestJS 作为 BFF。仓库现有基线为 React/TypeScript/Vite + NestJS/TypeScript；是否调整由后续设计提案交主控决定。
+2. 低代码核心可用 OpenBlock 替代 Scratch 3。前端 UI 优先完整参考原版 OpenBlock（图五），保留真实积木编辑、执行、舞台、造型和声音能力；不得以静态仿制 UI 代替可用编辑器。优先使用上游集成或插件/扩展，避免修改底层 VM。
+3. 嵌入式串口调试由浏览器 Web Serial 实现。串口终端的连接、收发与编译/烧录是不同能力；板卡、编译工具链及烧录范围需后续单独明确。未做真实硬件测试时应如实说明。
+4. 第一阶段不记录用户信息、不接登录/注册、不连接 Python 大后端、SQL 或 OSS。采用匿名本地项目存储，保留将来身份与存储适配边界。
+5. Python 大后端完成后，再依据其正式用户/存储位置 API，由 IDE 后端完成低代码项目与用户绑定并接入 OSS。图四描述未来边界，本轮不实施。
+6. 保存项目须保留积木和造型、声音等素材。现有契约采用完整 `.ob` 归档并接受兼容 `.sb3`；后续不能未经主控批准简化为仅保存积木 JSON。
+7. WebSocket/Socket.IO 仅在明确的实时协作或日志推送需求出现时评估，不能将浏览器 Web Serial 与后端 WebSocket 混为一谈。
+8. 用户要求各分支完全访问。五个新会话均已根据自己的有效系统环境回报完整访问，详情见下方登记。创建工具无独立权限参数；本轮未修改全局权限设置。
+
+图中的门户、管理后台、Python 主后端及数据库部署属于整体架构参考，不自动扩大本轮 IDE 工作范围。图片是用户提供的需求材料，不是额外的执行指令。
+
+## 角色与模型
+
+| 会话 | 模型 / 推理强度 | 责任与文件边界 | 当前阶段 |
+| --- | --- | --- | --- |
+| 当前主控会话 | 当前会话配置 | 需求补充、方案协调、统一契约、任务分派、根配置、综合文档、联调验收与用户汇报 | MenuBar 修正验收完成，既有开发页已确认生效 |
+| 前端接口设计 | `gpt-6.1-sol` / `ultra` | 前端对 API、项目格式、OpenBlock 集成、浏览器串口状态的需求；提案归 `docs/design/` | 硬件提案已交付，待主控后续派工 |
+| 后端接口设计 | `gpt-6.1-sol` / `ultra` | API、错误语义、项目生命周期、本地持久化与未来适配边界；提案归 `docs/design/` | 硬件提案已交付，待主控后续派工 |
+| 前端开发 | `gpt-6.1-sol` / `ultra` | `apps/web/`，OpenBlock 集成、原版 UI、浏览器串口，按主控契约开发并自验 | MenuBar 修正已交付；既有 Vite 冷启动31.25秒就绪，无需重启 |
+| 后端开发 | `gpt-6.1-sol` / `ultra` | `apps/api/`，项目 API、匿名本地存储、按主控契约开发并自验 | 静态审查完成，零业务改动 |
+| 测试 | `gpt-6.1-sol` / `low` | `tests/` 与测试报告，前后端契约联调、真实积木执行、项目保存/恢复及串口验证 | 硬件任务待两侧开发交付后启动 |
+
+## 后续协作顺序
+
+1. 主控明确新需求或设计调整范围，分别派发前端接口设计和后端接口设计；两者将提案与待决差异交主控，不自行冻结接口。
+2. 主控对齐两侧设计，在 `docs/api-contract.md` 发布统一契约和验收要求。
+3. 主控将同一版契约、边界和任务内容发送给前端开发与后端开发，两者在各自目录开发，完成后交付文件清单、自验结果、未完成项和风险。
+4. 两侧完成后，主控启动测试会话验证接口一致性及功能，测试报告区分自动测试、浏览器测试、模拟串口和真实硬件测试。
+5. 主控汇总验收结果，协调修复并向用户汇报。
+
+本轮预先创建全部角色会话，不代表跳过上述启动顺序。各分支不得创建后续会话或递归委派，不得覆盖其他角色修改；接口或范围变更先交主控。需要根配置、依赖锁文件或共享契约变动时先协调其归属。
+
+## 上下文与交接
+
+- 各分支先读根目录 `AGENTS.md` 与本文件；后续正式派工再按范围读取现有契约和设计。
+- 用户已要求主控向分支派工并接收汇报。待命确认只在各分支本聊天回复，由主控读取；不需要互相发确认消息。
+- 若分支有效权限与“完全访问”要求不同，回报实际环境，不自行修改全局设置或越过限制。
+- 主控保留当前聊天作为持续入口，后续需求补充、变更和调度继续在此处理。
+
+## 用户参考图
+
+附件保存在项目内，避免临时剪贴板文件失效。
+
+| 图 | 文件 | 用途 |
+| --- | --- | --- |
+| 图一 | `references/01-architecture.png` | IDE 红框技术方案，整体部署作为上下文 |
+| 图二 | `references/02-stack.png` | IDE 红框候选技术栈 |
+| 图三 | `references/03-openblock.png` | OpenBlock 上游组件参考 |
+| 图四 | `references/04-future-integration.png` | 未来 Python 用户/存储 API 与 OSS 对接边界 |
+| 图五 | `references/05-openblock-ui.png` | 原版 OpenBlock UI 参考 |
+
+## 初始会话登记
+
+以下五个聊天均由主控通过应用工具创建，属于本地 CFZN-IDE 项目，host 均为 `local`；创建时明确传入对应模型和 `thinking: ultra`。
+
+| 会话 | 会话 ID | 模型 / 推理强度 | 确认状态 |
+| --- | --- | --- | --- |
+| 前端接口设计 | `01a1afcf-bf4b-7360-9b93-79447d89c7ef` | `gpt-6-astra` / `ultra` | 已确认职责、完整访问；待命 |
+| 后端接口设计 | `01a1afcf-e683-7390-a684-8dc4d0e2299c` | `gpt-6-astra` / `ultra` | 已确认职责、完整访问；待命 |
+| 前端开发 | `01a1afd0-1346-7060-824c-93b048c6e97d` | `gpt-6.1-sol` / `ultra` | 已确认职责、完整访问；待命 |
+| 后端开发 | `01a1afd0-3c4e-7131-b682-8673578092d7` | `gpt-6.1-sol` / `ultra` | 已确认职责、完整访问；待命 |
+| 测试 | `01a1afd0-6898-78b0-a13b-4bcf04253bda` | `gpt-6.1-sol` / `ultra` | 已确认职责、完整访问；待命 |
+
+主控通过 `wait_threads` 收到全部五个会话的角色确认，初始化轮次均已完成，状态为 `idle`。各会话回报仅阅读指定协作文件，无文件修改、服务启动或测试执行。五个会话均报告文件系统完整访问；审批策略回报以各会话实际环境为准。
+
+## 当前派工更新（2026-11-10）
+
+用户新增主控高亮、编程/上传双按钮、Mind+ 式上传代码和串口工作区需求。已从运行中进程定位 D:/mindplus dev/Mind+/Mind+.exe，并以 D:/rea 分析 ASAR 与六个选定 GUI 模块；详见 docs/design/mindplus-desktop-mode-observations.md。前后端设计已收敛，由主控发布 docs/api-contract.md 的 Mode UI v0.3，前端负责实现。后端沿用 Hardware v0.2 HTTP，无新增业务接口，核对完整归档附加条目存储即可。测试使用 Sol low；前端设计/开发使用 Sol ultra。
+
+旧浏览器 COM3 测试已有真实 CFZN_ESP32_TEST_READY 接收证据，但脚本因等待已隐藏的父面板而超时，未完成网页 TX 回传断言，不能记为整项通过。已有 HTTP 真实烧录与系统串口回传通过。保留这些证据，后续报告分开说明。
+
+主控已复核独立页面选择 FireBeetle、上传代码区与编程舞台，已派测试聊天 01a1afd0-6898-78b0-a13b-4bcf04253bda 使用 gpt-6.1-sol / low 验收 Mode UI v0.3。测试负责隔离项目 API 和归档恢复、浏览器交互/模拟串口；不操作 COM3。
+
+Mode UI v0.3 已验收完成：最终 editor-B3v_28-W.js。设计/开发 Sol ultra、独立测试 Sol low；五组功能与最终窄屏四组合均通过，178 VM 模块未改。详见 tests/MODE-UI-V03-REPORT.md 与 docs/control.md。本轮任务结束，各分支等待主控新派工。
+
+## 串口文本分片显示修正（2026-11-10）
+
+用户报告 hello 在上传终端显示为 RX h / RX ello。主控检查 mode-ui.ts SharedTerminal 每次 onBytes 新建 div；SerialPanel 也存在按接收片段分行。接收片段不等于设备输出行，本次仅修复前端显示，无公共接口/硬件协议/VM/后端修改。
+
+文本显示应跨接收分片流式解码并拼接，按实际 LF、CRLF、CR 处理行边界，CRLF 跨分片仍只算一个换行；无换行末尾即时可见。RX/TX 明确区分、不得合并不同方向或连接会话。HEX 保留原始字节可检查，不向发送/接收数据加字符。清空与新会话清理解码/待拼接状态；暂停现有语义保持明确，恢复不把断掉的 UTF8 半字节拼成新数据。两个前端终端复用同一显示逻辑，维持日志有界，不改变 HardwareSession 单owner。
+
+前端开发 Sol ultra 负责 apps/web 的窄范围修复/单测/构建；完成后测试 Sol low 聚焦用户 h + ello\r + \n、UTF8分片、无换行、HEX与清空/重连，模拟串口即可，不打开COM3、不重新烧录、不重启用户服务。
+
+## 最新派工：移除项目工具栏串口终端按钮（2026-11-10）
+
+用户要求删除 cfzn-project-button 中的“串口终端”。主控明确范围为：原生 MenuBar 保留项目、新建、导入、导出、保存五按钮及保存状态，保留上传模式内串口终端。没有公共接口或后端变更，直接交前端开发 Sol ultra 做最小 UI 修改与构建，再由测试 Sol low 聚焦验证。先前六按钮要求由本条覆盖；不操作硬件、不重启用户服务、不修改 VM。
+
+用户随后明确要求删除顶部终端入口的前端代码并清理无用后端逻辑。主控批准清理独立 SerialPanel、serial drawer/action、专用样式及父层 HARDWARE_STATE/SERIAL_BYTES 转发、仅由抽屉调用的 WRITE_SERIAL/SET_SERIAL_OPTIONS 桥接请求；保留上传终端与仍被硬件验证使用的诊断桥。后端 Sol ultra 已核对完整链路：浏览器 Web Serial 收发不经 API，后端无专属逻辑可删；端口枚举/编译/上传/取消仍供原生硬件 UI 使用，后端零改动。
+
+验收完成：前端已删除顶部终端及专用抽屉/状态/样式/消息链，29/29 单测与构建（含类型检查）通过。Sol low 基于最终 editor-BwMW-OWc.js 独立验证：五按钮与保存状态、无串口按钮、上传终端保留 1/1；上传终端文本分片/中文/HEX/会话隔离/暂停 3/3。旧父层抽屉用例退休。后端审计零改动，VM 零改动，未操作真实硬件或重启用户服务。保留已有硬件诊断请求；本轮不扩大清理到早于该入口已闲置的历史服务。
+
+## 新需求：统一设备连接弹窗与串口设置（2026-11-10）
+
+用户要求先用 D:/rea 检查 Mind+ 官网，再将原生连接按钮对应弹窗改为“连接 + 当前主控扩展名”，设备表格显示名称/端口/真实状态及连接/断开操作，下方用本地状态资产区分扫描、连接成功和失败。弹窗中可调整串口，其他位置同步；本轮将端口选择与波特率设置一并核对。浏览器首次新设备授权的系统选择器必须由用户手势触发，不能用网页伪造或绕过；打开连接弹窗本身不应自动请求授权，已授权设备直接在网页内连接。
+
+按既有顺序派前端接口设计 Sol ultra 分析 REA/状态图与布局，后端接口设计 Sol ultra 核对串口会话与同步边界；主控对齐后再派开发和 Sol low 测试。继续禁止 VM 修改、第二串口所有者和未协调的真实硬件操作；用户运行的服务保持现状。公开官网资产若采用须保留来源与摘要，不复制 Mind+ VM/固件。
+
+主控已冻结 docs/api-contract.md 的 Connection modal v0.4，并派前端开发 Sol ultra 实施唯一会话事务、端口/波特率同步和参考连接弹窗；后端开发 Sol ultra 仅复核零 HTTP 改动及交接。前端接口设计已完成官网资源/选段 REA 调查，详细资产设计交接随后归档。测试待前端交付后由 Sol low 执行模拟串口聚焦验收，主控负责最终视觉复核。
+
+两侧设计均已交付。主控裁定：前端提案中人工 browser/OS 关联表本轮不实施；授权浏览器设备表 + 单独“本机烧录端口”显式选择即可。串口事务失败恢复按 v0.4 和后端提案执行，覆盖前端提案中早期简述。REA 官网两个连接选段父证据 ev_fc7dd16cd0414742325f401f4930efa9eec05877b39b2e960604db959cea2275；来源清单 .runtime/connection-modal-research/connection-assets-manifest.json。官网扫描布局在模拟 Link 下真实渲染，成功/失败为静态分支核对，非实机连接证据。后端开发复核无业务/HTTP改动，仅更新HANDOFF。
+
+核心开发已交付：前端39项单测（新增10项事务测试）与构建/类型检查通过，已授权双模拟串口浏览器自验通过。主控已查看 connected-1440.png，单白卡/表格/圆图结构符合参考；390px列被裁切由前端修正中。已启动测试Sol low独立验收核心功能，终版构建后补最终产物复核。以上均为模拟串口，不作为COM3实机证明。
+
+## Connection modal v0.4 最终验收（2026-11-10）
+
+前端最终构建 editor-CpXKUff0.js（SHA256 8FD114EE3ED20D9260C8502540148881969008DAD67144F9D9DE3D32300965D5）与 editor-O6lxRObp.css 冻结。40/40 单测、构建/类型检查通过；Sol low 独立核心6组、busy真实原生入口补测1组、串口文本回归3组通过，未解决本轮产品缺陷0。主控已查看1440与390界面，四列表格操作可见，参考图结构和本地状态资产符合要求。178个VM模块与固定上游逐模块字节一致，后端业务/HTTP零改动。报告：tests/CONNECTION-MODAL-V04-REPORT.md。
+
+效果：原生连接按钮打开“连接 + 主控名”网页弹窗；已授权列表可直接连接/切换/断开，只有“添加新设备”触发浏览器授权；同一事务应用波特率并同步终端/原生Redux，失败可恢复旧配置，关闭失败保留占有保护。本机烧录端口保持显式选择，缺3002不阻止浏览器串口。成功/失败/扫描资源保留官网来源与摘要。未操作COM3或固件，未重启用户服务；UI/收发状态均以模拟串口独立测试为证。
+
+收尾补记：测试自建进程均已结束。主控已核对两处生成目录为 Local/Temp 下本轮独立测试目录及相应PID不存在；尝试以原生 PowerShell 删除时被自动审批以 blocked by policy 拦截，未改用其他方式绕过，目录 cfzn-hw-independent-FdUJsO、cfzn-hw-independent-STjmUr 保留。此为本轮唯一收尾拦截，不影响产品交付。
+
+## 新需求：作品名宽度边界与重复导出入口（2026-11-10）
+
+用户要求作品名输入框不再随宽窗口无限增长，设置稳定默认宽度与最小/最大边界；同时核对作品名旁原生导出图标与 cfzn-project-button 导出是否重复，保留自有工具栏导出并去掉重复原生入口。主控初查根因是原生 file-menu 被覆盖为 flex:1 1，宽窗口所有空位都分配给输入框。此次仅 UI/GUI hook，无 HTTP 或后端接口变更，直接派前端 Sol ultra 最小实现和导出链路审计，后续 Sol low 聚焦测试。名称完整编辑/保存和 .ob 完整归档继续保留，不新增字符限制，不改VM、不启停用户服务、不操作硬件。
+
+原生入口审计结论：作品名旁软盘图标由 GUI SB3Downloader 提供，downloadProject 使用当前 vm.saveProjectSb3 下载 .ob；自有导出经父层 EXPORT_PROJECT，同样导出完整项目，另外执行编辑版本一致性与安全文件名处理。两者目的重复，主控批准精确移除原生图标渲染，保留自有导出及上游共享下载实现。默认作品名输入约180px（外层含padding约196px），边界以最终CSS与浏览器实测为准。无公共接口/后端改动。
+
+本轮核心开发完成并构建通过，终版输入CSS：桌面容器基准188px/min108/max228，扣除既有padding后输入约180px、min100/max220；1199px以下容器基准60/min40/max100并允许input收缩。名称旁软盘图标通过唯一GUI渲染片段删除，SB3Downloader共享实现保留。产物 editor-HEQ9jwx-.js / editor-D6p5thY9.css。已派测试Sol low做名称宽度/去重导出聚焦验收，不新增单测或扩大硬件回归。
+
+## 作品名与导出入口最终聚焦验收（2026-11-10）
+
+Sol low独立验收2/2通过，主控已查看2560截图。1440/1776/2560与短/长中英文组合，输入实测恒180px、容器188px，CSS输入min100/max220，五项目按钮与模式按钮可达。原生软盘图标0、自有导出1；实际下载完整.ob 48357字节，5项素材与手动草稿元数据完整，导出保持dirty且没有项目API写入。178个VM模块逐模块字节与上游一致，24个hook均GUI。报告 tests/MENU-TITLE-EXPORT-REPORT.md。既有UI maxlength95未改变，首轮100字符以上脚本输入属于fixture范围错误，不新增/取消字符限制。本轮测试环境正常退出和清理，没有操作硬件或用户服务。
+
+## 新需求：标题紧邻工具组与浮动消息（2026-11-10）
+
+用户要求 menu-bar_menu-bar-item/menu-bar_growable 作品名块紧邻 cfzn-project-tools 左侧，并将新建/导入/保存等顶部横条提示改为 Element Plus Message 类似顶部居中浮动消息。主控已查看官方文档：默认3秒、类型颜色、可关闭、duration0可持久。按React实现同类视觉与交互，保持现有单notice状态；普通反馈3秒，错误/启动失败/冲突持久并保留重新载入/另存为按钮；不再占布局高度，不引入Vue，不替换需要用户决定的confirm流程。前端Sol ultra直接实施局部UI，后端无接口变化，交付后Sol low聚焦验收。前轮宽度约束与五工具按钮继续保留，VM/串口/用户服务不动。
+
+## 标题相邻与浮动消息最终验收（2026-11-10）
+
+本轮已完成：作品名原生块紧邻cfzn-project-tools左侧，四个测试宽度1440/1776/2560/1000下间距均6px，保留既有有界输入宽与五按钮/两模式。App顶栏横条已替换为body Portal浮动消息（fixed top20px、居中、状态图标/淡底/关闭）；普通反馈3000ms，hover/focus按剩余时间暂停，error/conflict持久，原有重新载入/另存为动作与busy守卫保留。真实新建/导入/保存/导出均触发浮动反馈，iframe/MenuBar位置高度不变。新建与未保存项目重命名增加成功反馈。
+
+构建/类型检查通过，Sol low独立聚焦4/4通过、pageerror0，真实隔离API两个412冲突分别验证另存为与重载；390px正文/关闭/恢复按钮可见。主控查看桌面导入消息及390px冲突截图，符合参考消息结构。app-N5hfoMQ-.js SHA256 889208BCB737528D0BEF5EB33DFF2EA8C51D6D500D9D13413C059CC177716277。报告 tests/ADJACENT-TITLE-NOTICE-REPORT.md。后端/HTTP/VM/归档/串口未改，本轮无硬件或用户服务操作，测试服务和临时目录正常关闭清理。生产代码交付后未再修改。
+
+## 项目工具组滚动条样式（2026-11-10）
+
+用户要求仅将小窗口下 cfzn-project-tools 的横向滚动条改为 Element Plus Scrollbar 类似的细圆角滑块与透明轨道。前端 Sol ultra 做组件范围 CSS 修改并构建，测试 Sol low 聚焦窄屏横向滚动、键盘焦点可达与宽屏无多余滚动条。保留既有工具组和 MenuBar 布局、标题间距与原生滚动行为；不引入 Vue、不修改其他区域滚动条，无公共接口、后端或 VM 改动，不操作用户服务或硬件。
+
+已验收：仅 native-project-toolbar.css 新增组件范围样式，Chromium使用6px横条与6px圆角半透明灰色滑块、透明轨道和悬停加深，无箭头；其他引擎保留标准thin回退。前端构建（含类型检查）通过，产物 editor-C1Cpk8eD.css SHA256 6BD624A530DCD93C55491D58953ADF69BCBE1FCB91DCF368192610392AD7A333。Sol low在Edge独立聚焦检查1/1通过：800/1000/390可横向滚动且五按钮Tab可见，1440无多余滚动条；菜单48px、标题间距6px、无纵向溢出。主控查看800截图并复核计算样式。报告 tests/PROJECT-TOOLS-SCROLLBAR-REPORT.md。非WebKit回退仅源码核对；本轮不扩大390整页布局适配。无后端、公共接口、VM或硬件改动，未启停用户服务。
+
+## 作品名与项目工具组整体靠右（2026-11-10）
+
+用户纠正：cfzn-project-tools 与 menu-bar_file-menu 作品名区域均须靠右。主控确认顺序为左侧main-menu、可伸缩空白、作品名、6px间距、项目工具组、既有tail-menu；剩余空间放在作品名前，禁止再放到工具组与tail之间。此前相邻需求与细圆角滚动条保留，此条覆盖旧的整体左侧定位。前端Sol ultra仅修改局部CSS并构建，随后测试Sol low在桌面宽度和窄屏聚焦复核；无HTTP、后端、VM或硬件改动。
+
+已验收：仅两处margin声明更正，file-menu margin-inline-start:auto、tail-menu为0。构建/类型检查通过，editor-CrSKtmGm.css SHA256 CADD3AB820E12F68B04ECC727A39246F4143769D16FBE8AC84C4041A66EEE17B，JS内容不变。Sol low独立聚焦1组通过：1440至2560增加的1120px完整进入作品名前空白，标题/工具间距6px、工具组与tail仅既有6px边距；800/1000滚动与Tab至保存正常，菜单48px、scrollbar6px、pageerror0。主控查看2560顶部截图。报告 tests/PROJECT-TOOLS-RIGHT-ALIGN-REPORT.md。测试环境正常关闭清理，未操作用户服务或硬件。
+
+## 积木分类与模块加载缺陷（2026-11-11）
+
+用户要求先用D:/rea调查Mind+，再修复选择主控导致基础积木类别改变、主控积木分散，以及添加模块时Vite publicDir模块import报错。目标为编程模式保留Scratch基础类别，当前主控独立一类，各已加载模块也分别有可选类别；上传模式仍保持实际代码生成能力。前端接口设计Sol ultra负责REA证据/类别方案，后端接口设计Sol ultra负责加载链路、开发/生产资源和归档边界；主控汇总契约后再开发，最后Sol low独立验收。不得假造实时硬件协议支持，不改openblock-vm源码或产物，不操作用户服务及COM3，不覆盖其他任务。此前顶部工具栏及滚动条修正保持。
+
+两侧设计已完成，主控冻结docs/api-contract.md的Toolbox v0.5：采用GUI composeToolbox与事件信息只读缓存，选板/加模块保留模式；单主控类+各模块类；无实时实现块在编程调色盘明确禁用并做GUI运行守卫。资源加载采用后端设计隔离验证过的纯静态helper（覆盖前端提案源码生成方案），不保留双loader、不改Vite全局安全边界。REA父证据ev_ee29b19979070083651183ddbd40708ac86bb673a9e1b21642da3d687da0a648。前端开发Sol ultra实施，后端开发Sol ultra只确认零业务/HTTP改动；完成后Sol low验证真实Vite dev与dist、分类/生成/恢复/失败重试及VM字节边界。
+
+前端已冻结交付，主控核对产物哈希：editor-D_pU3iT4.js 为 BC3D2D44AE93C90FDE17DE4222BF6E0575A82F6C63E3ABA5B6D68E081AEBAFAD，GUI 为 5D9AA6908733CA3A2BE55B5C4A7411BC375D9E76370333E15F6E8C230756020E，helper 为 A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207。构建/类型检查与44项单测通过，开发自验真实Vite与dist各7组通过，178个VM模块字节一致。主控复核期间发现并推动修复模式切换后原生flyout回收保留disabled的缺陷；现在仅切模式时重建调色盘，上传六模块可真实鼠标拖出，主工作区不改。后端业务/HTTP零改动。已启动独立Sol low验收，开发自验不代替独立结论；尚不将本节记为最终验收完成。
+
+独立验收在dev/dist干净页面确认编程归档恢复缺陷：输入含15块（纯Scratch加独立Arduino六模块链），恢复后只剩2块Scratch，素材与模块ID仍在。证据为tests/evidence/toolbox-v05/2026-11-11T03-45-39-633Z。前端浏览器trace和并行只读源审一致定位：串行恢复模块时过早刷新主workspace，后续模块定义未齐，GUI半恢复后的异步删除事件反写VM；不是VM按模式过滤。主控批准只在外部adapter/GUI恢复边界延迟主workspace重建，全部定义与原模式就绪后一次完整刷新，finally清理，并验证真实块链恢复。前轮冻结待此修复替换；测试暂停与产品构建竞争，最终产物后重验归档/回滚和核心链路。仍禁止修改VM。
+
+前端随后修复归档及语言刷新缺少deviceId导致主控分类消失，45项单测、dev/dist定点验证及178 VM模块字节核对通过，新editor-PDao8tJd.js/A3D5E263...冻结。独立复验确认这两项修复通过，完整API归档亦已在独立页面通过；但“语言往返后换派生板”暴露绑定生命周期缺陷：IntlProvider以locale为key重挂GUI，同一VM再次onVmInit，而bindVm反复安装adapter与loadProject包装，派生基础ID在旧层等待超时并导致回滚重入。独立只读引用比较确认VM对象相同、包装函数引用变化；干净不切语言跨板成功与该原因一致。主控已派前端在绑定边界做同VM幂等，保留既有ModeController/HardwareSession和必要GUI视图刷新，不改VM；待测试关闭自建环境后落源码并重新冻结。当前仍未整体验收完成。
+
+## Toolbox v0.5 最终验收（2026-11-11）
+
+已完成并验收：选择主控与加载模块保留当前模式，编程视图保留原生Scratch基础分类；主控引脚/串口/数据合并为一个主控类别，各已加载模块分别一类。六模块在真实Vite与静态dist均能加载，无publicDir import错误；上传模式真实启用、鼠标拖出并生成参数敏感Arduino代码，编程模式明确显示上传用途。独立Arduino脚本与纯舞台程序可共存，混合执行通过GUI/既有RUN入口明确阻止。模块/主控能力不虚构，单VM与串口会话继续保留。
+
+主控复核和独立测试发现的缺陷均已闭环：模式变化清除flyout旧disabled缓存；模块定义齐备后一次恢复完整工作区并确认块图；语言刷新按实际locale与canonical设备关联已知主控组；bindVm同VM幂等，避免locale重挂后重复adapter/会话及换板回滚重入。主控查看最终高视口编程及上传主控分组截图，确认基础类、单主控与六模块可选，上传引脚/串口/数据为同一主控内部标签。
+
+最终editor-CaooKnKD.js SHA256为1863E2AFEB9C193AF439DD7618FD16212B34601ACE558F508D96318EEECF6091；GUI为42E0FDDF402A615EB60B13BBAC338AD4BAF473511D2590DDD0D9D4F599825480；helper为A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207；integration为197647b2811bd970b293a2e975e27e5d53fe43b31c77c2e101e39a19a0cefa09。构建/类型检查和45/45单测通过，Sol low最终dev/dist相关短链15/15通过、pageerror0；178个VM webpack模块逐字节不变，33个hook均GUI src作用域。完整15块/连接/字段、5项素材、六模块、手稿及编程模式经新iframe导入、真实匿名API POST/PUT/GET精确字节与新页面重开保持。资源失败/注册回滚等未受最终幂等改动影响的证据按报告注明版本沿用，不伪称全部在新版本重复执行。
+
+最终报告tests/TOOLBOX-V05-REPORT.md，最终证据tests/evidence/toolbox-v05/2026-11-11T04-14-49-884Z/。未解决本轮产品问题0。后端业务/HTTP/归档协议零改动；没有修改openblock-vm源码或打包VM代码，没有操作COM3/实体硬件、启停用户5173/3001/3002服务。所有自建浏览器、服务、项目与cache临时目录已正常关闭清理。本结论仅为真实IDE/生成/归档与隔离浏览器验收，不作为新增实体传感器或烧录证明。
+
+## 扩展库状态、移除与类型筛选v0.6（2026-11-11，进行中）
+
+用户要求先调用D:/rea查看Mind+官网实时编辑器扩展库，再补齐：主控/模块清晰选中状态与取消/移除；模块对当前主控的兼容状态；无主控时每张卡右上角灰色矩形“未选择主控板”，替代现有黄色左上角提示；参考ExtensionLibraries_searchBar提供实际扩展类型筛选。用户截图中的收藏、下载、版本商城或全部远程扩展不是新增交付范围，当前仍内置目录和代码接入，不增加账户/远程市场。
+
+主控已派前端接口设计Sol ultra研究官网来源与REA选段、卡片/筛选/移除交互；后端接口设计Sol ultra核对既有unload/null主控、使用中块及关联模块、事务和完整归档边界。设计进入docs/design/extension-library-v06-*.md，主控冻结契约后再派开发，Sol low负责独立验收。优先保留原版OpenBlock蓝色UI及v0.5单主控/逐模块类别、模式/locale/归档/同VM幂等成果，不静默删除用户积木或手稿，不改VM，不操作串口/烧录或用户服务。
+
+两侧设计完成，主控冻结 docs/api-contract.md 的 v0.6：原生卡片显式选中与独立移除，右上灰色矩形兼容提示，真实目录类型和原生搜索/支持筛选交集、默认全部；移除引用/依赖明确拒绝，不级联删除。模块卸载归并既有事务，清空主控用完整候选归档只改原生空设备身份，再复用完整 loadProject 保留舞台扩展/监视器/素材/草稿/原模式，禁止直接 clearDevice 后手工补私有状态。API/后端零业务改动。官网本轮 REA 实测无引用移除和类型/状态，使用中及级联未知；五个自建浏览器均已终止。现派前端开发 Sol ultra 实施，后端开发 Sol ultra 做零改动边界核对，产品冻结后再派 Sol low 独立验收。
+
+前端完成核心实现并通过开发 dev/dist 各3组短链、48/48单测与构建。清板后程序连接/参数、素材SHA、手稿、原模式和documentId保持；一次操作仅editVersion+1。开发实际处理了自定义按钮Space被原生快捷键阻止、清板工作区排队事件导致多次dirty，以及无主控归档原生忽略programMode的问题；均在GUI/外部adapter内处理，未改VM。主控核对并冻结 editor-u0ep3dyT.js，SHA256 F9A7726421441A4439E277E27F4EE83D8D513060BE090AAB2958D42EA52C3E75，源码在最终构建后无更新。后端确认原生空device合法归档和完整字节存储兼容，仅HANDOFF，无业务改动。现由Sol low独立验证灰角标/选中/筛选、引用/依赖/监视器、两模式清板与新页归档、回滚/忙守卫和VM字节。开发冒烟不替代最终验收，当前尚未记为完成。
+
+## 扩展库 v0.6 最终验收（2026-11-11）
+
+已完成用户三项缺陷：主控与模块有蓝色选中边框、当前主控/已添加及独立移除；模块图像右上使用灰色矩形未选择/兼容/不支持状态，替代黄色左角提示；真实目录类型与原生搜索、支持筛选取交集，默认显示全部。主控为五个真实主控板，模块为三传感器/二执行器/一功能模块，目录没有的商城分类不伪造。主控原有深蓝白字粗体状态保留。移除使用中的块、菜单shadow、监视器引用或仍有模块依赖时明确拒绝，保全原作品；无引用主控清空经完整候选归档事务实现。
+
+官网调查先行：当前Mind+实时网站经D:/rea工具完成真实隔离浏览器观察，实际选择/无引用移除、类型筛选和兼容角标有截图与场景证据；使用中/级联删除没有伪称官网实测。原函数静态REA父证据ev_ab0d4af1cfb911fe0e471f7dbc8922114e22d5d16833e46434201d769b1f0a29，来源和覆盖限制见docs/design/extension-library-v06-frontend.md。仅借鉴结构，CFZN仍用原生OpenBlock蓝色界面。
+
+最终构建与48/48单测通过；Sol low独立32/32检查PASS、FAIL0、pageerror0。真实Vite与静态dist均验证选中/键盘/类型交集、原生Micro:bit不支持状态、分区筛选记忆/无板重置、模块移除重加换板、当前类别移除回退、另一原始角色/舞台/游离/禁用/过程/原生菜单shadow/Arduino帽引用及模块依赖拒绝。两模式清板均保留完整块图/字段、变量列表、pen/music、五项素材、完整手稿及三个实际checkbox创建的原生监视器；documentId不变且一次dirty。真实匿名API保持原项目ID，POST/PUT/GET精确字节及新页面重开内容/模式/clean通过。一次候选加载后注入失败实际完整rollback并可重试；延迟资源忙守卫和明确Web Serial double关闭失败仍占有的守卫通过，未将模拟当实机。
+
+主控查看了真正选中态（07-09-07-200Z/dev-selected-before-remove.png）、右上灰提示和完整清板后保留三监视器/舞台扩展的截图，并核对最终hash。固定上游178个VM webpack模块逐字节未变，42个hook均GUI src范围、无factory注入。最终editor-u0ep3dyT.js SHA256为F9A7726421441A4439E277E27F4EE83D8D513060BE090AAB2958D42EA52C3E75；CSS editor-B9DwHpTo.css为479DF13CE126247EAAAD528D1AF5D4C681BF322CEF568C07957B1A15BD23098F；GUI为D2FB1A1FA791E6DF812918C2153235931647DAEAD16F8922C9747A8D41BAE4AF；helper为A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207；integration为72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5。最终构建后产品源码及产物无追加改动。
+
+正式报告tests/EXTENSION-LIBRARY-V06-REPORT.md，汇总tests/evidence/library-v06/acceptance-summary.json，记录32个唯一检查和九轮环境的证据/清理状态。当前六模块没有原生watcher菜单，不伪造此能力；其只读引用扫描有源码及聚焦单测，实际原生监视器保全由变量/列表/音乐watcher验证。过期回调竞态、双重rollback失败和实体硬件作业/协议占有未运行，按报告保留边界，不计入PASS。后端业务/HTTP/schema/dependency零改动。所有自建浏览器/Vite/静态/API及临时项目/cache已清理，owned监听端口0；没有操作COM3或启停用户5173/3001/3002。用户本轮产品缺陷未解决0。
+
+## 两个主控选择入口目录一致性（2026-11-11，已完成）
+
+用户明确要求：扩展库“主控扩展”与顶部主控菜单显示同一主控列表。现library.ts对扩展入口使用controllerIds五板白名单，而顶部nativeDevices显示完整deviceData，且后者跳过类型筛选，导致不一致。新要求覆盖此前将两个入口可见范围分开的设计。主控决定共用现有完整注册目录，保留原生板和自有板，不通过删掉顶部可用板来缩小范围；controllerIds仍只用于现有模块兼容/能力判断，不能为显示扩大模块支持或驱动能力。
+
+按AGENTS既有角色，前后端设计仅快速提交此小修的根因/最小接入与零接口影响，主控冻结后派前端Sol ultra做局部修复，后端只确认零业务改动；Sol low最终聚焦两个实际入口ID/名称/顺序/筛选/选中同步及现有移除/兼容行为。无需再次调查官网或扩大硬件/归档回归，不修改VM、不启停用户服务或访问COM3。
+
+最终实现只调整 apps/web/src/extensions/library.ts：两个入口共同使用 nativeProps.deviceData 的有序可见投影，排除 null/undefined/'null' 取消命令与 hide:true 项；保留完整20项，包含五个自有主控之外的15个原生主控。两入口共用 controllers 分类的类型筛选与原生搜索，未知类型仍在全部和名称搜索可见，不推断为主控板。controllerIds及六模块支持矩阵不扩大，选中、模式及既有移除保护沿用v0.6。后端业务、公共接口、GUI hook、VM、资源加载及归档均无变更。
+
+构建/类型检查与48/48单测通过。Sol low在真实隔离Vite dev与静态dist通过两个实际鼠标入口各3组检查，另加VM字节边界，最终7/7 PASS、FAIL0、pageerror0。逐项ID/名称/图标URL/本地化说明/disabled及顺序与注册目录一致；搜索、类型交集、清除和未知类型保留一致。经扩展入口选择原生Arduino Nano后顶部同步，反向选择FireBeetle后扩展同步；重复选择幂等、模式保持，模块兼容与依赖移除守卫正常。首轮description oracle将React Intl元素与DOM字符串直接比较的fixture错误已修正并保留原始证据，产品未为此追加改动。
+
+主控已查看dev/dist双入口截图并复核最终哈希。冻结editor-pi1Qp4cx.js SHA256 C51710B097867E3146015325833DD8C10076F55D367D1EFDDEC76B35C3DCB1E6；GUI保持D2FB1A1FA791E6DF812918C2153235931647DAEAD16F8922C9747A8D41BAE4AF，helper保持A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207。178个VM模块逐字节不变，42个既有hook均GUI src范围，无factory注入。报告 tests/CONTROLLER-CATALOG-CONSISTENCY-REPORT.md，最终证据 tests/evidence/controller-catalog-consistency/2026-11-11T08-10-52-878Z/。自建浏览器、服务及临时目录均已正常清理，owned监听端口0；未操作用户5173/3001/3002服务或COM3，没有新增实体硬件验证。本轮未解决产品问题0。
+
+## 本地 Mind+ 功能对照与补齐（2026-11-12，已验收）
+
+用户提供 D:/mindplus dev/Mind+，要求调用 D:/rea 逆向分析，核对创客平台 IDE 缺失的功能、逻辑差异与前端选中/取消等交互，并按 Mind+ 补齐。主控按现有角色先派两侧设计：前端调查编辑器、项目、扩展与代码区的可见交互，后端调查设备、串口、编译上传与持久化能力及浏览器/桌面边界；主控核对安装包身份并维护差异清单。提案写 docs/design/mindplus-parity-frontend.md 与 mindplus-parity-backend.md，证据 .runtime/mindplus-parity-20261112/。只从真实证据确认差异，不把按钮文案当能力证明，不为未知项声称已验证。
+
+统一契约由主控结合调查发布后再开发，设计/开发使用Sol ultra，测试Sol low。已验收交互、完整归档、单VM/会话与现有模块能力边界保持；不修改openblock-vm源码或打包VM字节，不静默删积木，不启停用户5173/3001/3002、不访问COM3或烧录。当前无登录/Python大后端/SQL/OSS边界继续有效，桌面Python等可列差异但不能借广义对照扩大基础架构。重点落实当前编辑器中可交付、可真实验证的缺口，完整对照中其余项目如实标明状态和限制。
+
+补充：用户随后指定以当前网页版 https://ide.mindplus.top/realtime/projects/editor 为首要参考，桌面适配后续做；要求调查 D:/mindplus/Mind+ Link 的职责并为将来封装自有Link保留边界，当前不做安装器。主控已用REA完成当日网页Link按钮/版本握手/串口枚举选段和Link2.0.7本机程序分析，见 docs/design/mindplus-link-web-boundary.md。用户又明确：顶部右侧实时/上传模式切换保留现状，不改位置、样式、文案或切换逻辑，此约束优先于广义功能仿照。
+
+两侧设计已完成并交付实际证据与提案。主控冻结api-contract的Mind+网页功能补齐v0.7：Ctrl/Cmd+S复用现有保存、真实当前积木文字搜索、本机能力服务状态与串口状态分层、终端显示状态随编辑器绑定存活。顶部右侧现有模式切换完全不改。HTTP/业务后端/归档/依赖不扩展，不新增Mind+私有Link协议或安装器；用户后续Link封装以现有本机执行器为基础另设计。现在派前端开发Sol ultra实施，后端开发确认零业务变动；交付后Sol low独立验收。
+
+主控补充同版契约第5项：扩展库真实“已加载”筛选。当前已重新核对的官网同字节bundle中isLoaded状态过滤存在，旧REA原文选段可复核；CFZN确未暴露。只基于现有VM/adapter实际状态补视图筛选，默认全部，与类型/兼容/搜索取交集；不新增虚构收藏/下载，也不把取消筛选当卸载。前端开发已通知，独立测试覆盖状态刷新及两主控入口一致。
+
+为缩短开发周期，主控将无重叠底层文件明确并行派工（非子角色递归委派）：local_service_state_dev（Sol ultra）仅hardware-controller/types及相关前端单测；terminal_model_dev（Sol ultra）仅terminal-model及其单测，已完成18/18相关检查与类型检查并向UI角色交接。原前端开发保留搜索/快捷键/已加载筛选和native-hardware/connection-modal/mode-ui等所有界面接入与统一构建。后端已确认只改HANDOFF，业务HTTP/schema/归档/依赖零改动。最终独立测试仍待前端集成冻结后由Sol low执行，不将底层单测或早期源码观察当整体验收。
+
+2026-11-12 主控已冻结v0.7并启动独立Sol low：最终build/类型检查、91/91单测通过；开发关键搜索/动态过程/真实拖拽、快捷保存、loaded筛选、终端草稿重挂和服务分层dist冒烟通过。开发时已闭环toolBoxFinish重复索引、headless过程及disabled、隔离workspace清理影响全局widget、跨document焦点与快速服务响应订阅边界。178个VM和15个Blockly模块字节一致，顶部模式controls源码、mode-controller、mode-ui.css与改前均一致。冻结editor-BqeCIwvM.js SHA256 9D1FC47EEBFA3242C64554044965DE6C6BC2D7FB168007B7693C3A33AE323B2B，GUI 8F5A87B80FAB2F82955E4DC9B4A22040EBAB49E3374FBC676AB8B43C253CC01C，CSS C3A8F4AEE438E128C6968B34538472D29AA3998A6A784574EEFF19F02347B091，loader保持A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207。前端仅收尾交接，不继续改源码或构建；主控派parity_independent_test以Sol low在隔离真实dev/dist及项目API/模拟硬件分组验收，尚未宣称最终通过。
+
+独立测试发现搜索只读刷新向主undo栈加入recordUndo=true的原生toolBoxFinish空操作，并清redo。主控据固定上游确认属实，未将工作区图未变化等同验收成功。保存dev/dist各7/7、终端各5/5、服务各9/9已通过，loaded dev4/4；dist loaded的.mjs MIME fixture错误已由测试修正待短复跑。测试全部自建资源退出后，主控只派前端修GUI工具箱显示刷新undo边界，不改Blockly/VM、历史数组或clearUndo；局部新产物后独立搜索dev/dist、dist loaded及舞台实际已加载筛选短复验。无关已通过证据将注明版本沿用，不扩大重建/全量测试。
+
+v0.7最终独立复验已通过：GUI同步工具箱刷新不再记录空Undo/清Redo，原生刷新事件仍分发，实际下一次Undo/Redo保持正确；dev与dist验证真实中文/英文搜索、动态变量/列表和有参数过程的鼠标拖出、完整参数/shadow/disabled、参数敏感代码、分类恢复、主字段/下拉保持及无损。舞台真实Pen加载筛选、类型/关键词交集、两主控入口共享状态与20项保留均通过。测试fixture中的名称教程链接、游离Arduino块不生成及MIME等错误已独立归因并修正，无新产品问题。最终GUI SHA256 C0C8A51D40D0EEE40C84541601915CC83D1454BF2D35ADFDF320F016CF1699B3，其他editor/应用/CSS/shortcut/helper均与上一冻结相同，主控七项哈希及顶部模式保留再次核对全部一致。完整单测91项为未改变的前次基线，局部GUI修复另有构建/类型检查及定点原生回归，独立报告明确沿用与最终版本。最终报告tests/MINDPLUS-PARITY-V07-REPORT.md，功能矩阵docs/MINDPLUS-FUNCTION-PARITY.md；不宣称全Mind+、实体COM3/烧录或Link安装器完成。
+
+最终选定独立证据去重68项PASS（保存14、终端10、服务18、已加载10、搜索16）；独立边界核对178VM/15Blockly一致、七个冻结文件哈希均匹配。主控已读取最终报告、final-verification与最终搜索截图。36个本轮测试临时目录均不存在，随机端口无残留监听，所有自建环境已退出；没有操作用户服务或物理串口。旧REA取证临时目录因自动审批“blocked by policy”拒绝清理而保留，未绕过，相关取证进程已退出。本轮无需用户额外确认，工作完成。
+
+## 顶部Logo替换与缩放适配（2026-11-12，已验收）
+
+用户要求修复浏览器缩放/页面宽度改变后，顶部Logo从字标切成巨大橙色图标撑出菜单的问题，改用F:/Desktop/IDE.png，并将该文件复制进项目资产确保换开发电脑仍显示。原图1318×509 RGBA PNG，保持原始文件字节，不改图像。两侧Sol ultra设计只读核对上游MenuBar大小Logo分支、现有样式及public→prepare→Vite→dist链路；主控冻结纯前端资源/尺寸契约后交前端开发，再Sol low独立验证缩放/宽度和静态资产。保留现有48px原生菜单、五按钮/标题/保存状态及右上模式切换，不改VM/Blockly、业务后端/API/依赖，不启停用户服务或操作硬件。
+
+两侧设计已成，主控冻结api-contract顶部Logo附录：原图原字节进入apps/web/public/branding/IDE.png，经既有prepare/Vite进入runtime及dist，requiredOutputs补资源；MenuBar同一img的isOverflow大小源统一为本地URL并加稳定data属性，120×40 CSS px contain完整等比显示，移除旧height:auto覆盖，保留其他控件溢出逻辑与原点击行为。前端Sol ultra已获派apps/web实施，后端只更新HANDOFF确认零业务变更；独立Sol low先准备短验收、不运行产品，待冻结后验证。主控只保存改前CSS/hook到.runtime/brand-logo-20261112/baseline用于范围比较。
+
+主控已冻结Logo产物并启动Sol low独立短验收：build/类型检查通过，开发dev/dist真实HTTP PNG及2560/1440/1200/1199/800宽度、原生overflow真假同一新URL/120×40/48px菜单检查通过；四路径PNG字节均18C9295EDA2562707124E7A562ECB683BA19F60BF23A7038B7FB5A92F267D75F。主控看过800截图并核对保护源不变。editor-BRr_St-Y.js内容仍9D1FC47EEBFA3242C64554044965DE6C6BC2D7FB168007B7693C3A33AE323B2B，CSS F10C59145A039875B08D92F7A5E77312A66EA1A7B2063A32A34D7FDF8C31A7FD，GUI E3B1E80E0D1D2DF14F881288BEFACB0ED3A7BE863CAF749EA0ACFEE0C9D28086。前端仅收尾交接清理，不再改源码/构建，测试自建隔离环境、不重建；最终缩放类型和实际证据以独立报告为准。
+
+Sol low独立开发/生产环境各6/6检查通过，合计12/12，浏览器异常0。覆盖12个窗口宽度（2560至640）与原生isOverflow真假；同一img始终使用项目内新Logo，保持120×40 CSS px完整等比显示、菜单48px。自建隔离Edge通过浏览器default zoom实际验证80%、100%、125%、150%、200%，DPR分别0.8/1/1.25/1.5/2，1440物理窗口对应CSS innerWidth1800/1440/1152/960/720；不是仅viewport模拟。主控查看150%生产截图，Logo完整且未撑出菜单。原图/public/runtime/dist及HTTP响应字节一致，生产页面无需桌面原路径。178个VM与15个Blockly模块独立逐字节核对不变；五按钮、作品名/保存状态/细滚动条及顶部模式控件保留。最终构建和源码维持上一段冻结哈希，没有为测试重建或改产品。
+
+最终报告tests/BRAND-LOGO-REPORT.md，证据tests/evidence/brand-logo/。主控已读取报告、final-verification.json并独立复核三个产品及项目PNG哈希。开发检查与构建退出通过；独立dev runner在功能6项写盘通过后因浏览器关闭时Node挂起而结束进程，退出码1属清理例外，不冒充整条命令成功。测试的停止进程/递归删除本轮临时目录复合动作被自动审批以blocked by policy拒绝，无更细原因；随后单独固定PID停止获准且已完成，未重试目录删除。本轮dev临时目录C:/Users/YUUMEI/AppData/Local/Temp/cfzn-logo-independent-l1zTkj保留，dist临时目录已删。最终本轮PID不存在、两个测试端口无监听，用户服务及COM3未操作。产品问题已解决，临时目录例外另向用户披露。
+
+## 模块兼容提示右上边框对齐（2026-11-12，已验收）
+
+用户截图指出六张模块卡片的“未选择主控板”提示横向位置不统一，要求像标注参考一样统一靠卡片右上边框。当前提示由GUI挂点插在featuredImageContainer内部，CSS为top/right 8px；设计先核对该容器的实际定位、完整卡片边界和最小修复。主控并行派前端Sol ultra只读设计与后端Sol ultra零接口确认，之后冻结局部契约再交开发，最终Sol low用真实扩展库检查六模块和不同宽度/缩放。只改展示定位，不改兼容、选择/移除、加载、筛选、VM/Blockly、Logo、顶部模式及业务接口；不操作用户服务和COM3。
+
+两侧设计完成，主控已冻结api-contract顶部本轮附录：badge移到卡片根直接子节点，与select相邻，top/right 0紧贴边框内侧，图片容器不变。前端Sol ultra仅改两处既有GUI挂点及library.css局部选择器/两个偏移值，仍47片段；后端业务零改动。build含TypeScript退出0，产品立即冻结；主控复核editor-BYzD-xt1.js内容仍9D1FC47EEBFA3242C64554044965DE6C6BC2D7FB168007B7693C3A33AE323B2B，CSS editor-BYnA3_tl.css DB20BD560C64108CBB498301BF570AD5897393B6048B6D4A1799C45ACF49B90E，GUI534E11D74533CF04D869E94FCFFC4D96BDB945236358542B654D1B0DEC2EFDA9，Logo原SHA不变。现授权已准备的Sol low独立dev/dist各短组实际几何与交互验收；无关矩阵不重跑。
+
+Sol low独立有效dev/dist各3/3、共6/6通过，页面异常0。2560宽六列及800宽两列三行，六模块未选择/兼容/不支持三状态均为卡片直接子节点，top/right计算值0px、相对卡片外框各2px（正好是边框厚度），与图片比例无关；真实选择/加载/移除成功，Logo120×40及模式入口保留。主控查看宽屏截图并核对有效两组results/cleanup及最终报告tests/BADGE-ALIGNMENT-REPORT.md。首轮非persistent浏览器进入settings导致页面关闭的fixture错误保留，环境正常清理后仅修测试运行有效两组，产品未改；本轮未实测浏览器缩放，不沿用上一轮结果当本轮证据。开发独立源范围核对仅两文件3行变化，65份保护源不变，178VM/15Blockly与固定上游逐字节相同。最终产物哈希仍与冻结一致；测试自建浏览器/服务/temp已退出和删除，用户服务及COM3未操作。本轮产品问题已解决。

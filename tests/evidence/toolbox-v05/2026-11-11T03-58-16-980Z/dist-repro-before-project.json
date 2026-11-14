@@ -1,0 +1,328 @@
+{
+  "targets": [
+    {
+      "isStage": true,
+      "name": "Stage",
+      "variables": {},
+      "lists": {},
+      "broadcasts": {},
+      "blocks": {},
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+          "name": "背景1",
+          "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 240,
+          "rotationCenterY": 180
+        }
+      ],
+      "sounds": [
+        {
+          "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+          "name": "啵",
+          "dataFormat": "wav",
+          "format": "",
+          "rate": 48000,
+          "sampleCount": 1123,
+          "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+        }
+      ],
+      "volume": 100,
+      "layerOrder": 0,
+      "tempo": 60,
+      "videoTransparency": 50,
+      "videoState": "on",
+      "textToSpeechLanguage": null
+    },
+    {
+      "isStage": false,
+      "name": "角色1",
+      "variables": {},
+      "lists": {},
+      "broadcasts": {},
+      "blocks": {
+        "qa-flag": {
+          "opcode": "event_whenflagclicked",
+          "next": "qa-move",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 30,
+          "y": 50
+        },
+        "qa-move": {
+          "opcode": "motion_changexby",
+          "next": null,
+          "parent": "qa-flag",
+          "inputs": {
+            "DX": [
+              1,
+              [
+                4,
+                "19"
+              ]
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "qa-hat": {
+          "opcode": "event_whenarduinobegin",
+          "next": "qa-init",
+          "parent": null,
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": true,
+          "x": 360,
+          "y": 70
+        },
+        "qa-init": {
+          "opcode": "activeBuzzer_init",
+          "next": "qa-atom",
+          "parent": "qa-hat",
+          "inputs": {},
+          "fields": {
+            "PIN": [
+              "25",
+              null
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "qa-atom": {
+          "opcode": "atomizer_init",
+          "next": "qa-pir",
+          "parent": "qa-init",
+          "inputs": {},
+          "fields": {
+            "PIN": [
+              "26",
+              null
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "qa-pir": {
+          "opcode": "pirSensor_init",
+          "next": "qa-comment",
+          "parent": "qa-atom",
+          "inputs": {},
+          "fields": {
+            "PIN": [
+              "27",
+              null
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "qa-comment": {
+          "opcode": "moreComments_branchBlock",
+          "next": null,
+          "parent": "qa-pir",
+          "inputs": {
+            "COMMENTS": [
+              1,
+              [
+                10,
+                "independent six modules"
+              ]
+            ],
+            "SUBSTACK": [
+              2,
+              "6Me*d,5$8hEM8otxF:vR"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "6Me*d,5$8hEM8otxF:vR": {
+          "opcode": "control_if",
+          "next": "6iHf^EkDz!l|.d57kD|6",
+          "parent": "qa-comment",
+          "inputs": {
+            "CONDITION": [
+              2,
+              "J*Z~mbf2h@t(;[Cs%ie,"
+            ],
+            "SUBSTACK": [
+              2,
+              "Kz9s5$rAT(~ionux:*f{"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "J*Z~mbf2h@t(;[Cs%ie,": {
+          "opcode": "pirSensor_detected",
+          "next": null,
+          "parent": "6Me*d,5$8hEM8otxF:vR",
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "Kz9s5$rAT(~ionux:*f{": {
+          "opcode": "activeBuzzer_on",
+          "next": null,
+          "parent": "6Me*d,5$8hEM8otxF:vR",
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "6iHf^EkDz!l|.d57kD|6": {
+          "opcode": "control_if",
+          "next": "kf$EL|4W~1]Z6Co_HcAi",
+          "parent": "6Me*d,5$8hEM8otxF:vR",
+          "inputs": {
+            "CONDITION": [
+              2,
+              "rodpgZSe-z7~|e5H*Q#L"
+            ],
+            "SUBSTACK": [
+              2,
+              "7},y;uk2jp?BSl)YEA|v"
+            ]
+          },
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "rodpgZSe-z7~|e5H*Q#L": {
+          "opcode": "flameSensor_readDigital",
+          "next": null,
+          "parent": "6iHf^EkDz!l|.d57kD|6",
+          "inputs": {},
+          "fields": {
+            "PIN": [
+              "14",
+              null
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "7},y;uk2jp?BSl)YEA|v": {
+          "opcode": "atomizer_toggle",
+          "next": null,
+          "parent": "6iHf^EkDz!l|.d57kD|6",
+          "inputs": {},
+          "fields": {},
+          "shadow": false,
+          "topLevel": false
+        },
+        "kf$EL|4W~1]Z6Co_HcAi": {
+          "opcode": "arduino_serial_multiSerialPrint",
+          "next": null,
+          "parent": "6iHf^EkDz!l|.d57kD|6",
+          "inputs": {
+            "VALUE": [
+              2,
+              "1M[=Lh|f(zk+b@y`kI@3"
+            ]
+          },
+          "fields": {
+            "NO": [
+              "0",
+              null
+            ],
+            "EOL": [
+              "warp",
+              null
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        },
+        "1M[=Lh|f(zk+b@y`kI@3": {
+          "opcode": "raindropSensor_readAnalog",
+          "next": null,
+          "parent": "kf$EL|4W~1]Z6Co_HcAi",
+          "inputs": {},
+          "fields": {
+            "PIN": [
+              "34",
+              null
+            ]
+          },
+          "shadow": false,
+          "topLevel": false
+        }
+      },
+      "comments": {},
+      "currentCostume": 0,
+      "costumes": [
+        {
+          "assetId": "5de48e72637db4d7fc7f6bb526354114",
+          "name": "造型1",
+          "bitmapResolution": 1,
+          "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 93,
+          "rotationCenterY": 80
+        },
+        {
+          "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+          "name": "造型2",
+          "bitmapResolution": 1,
+          "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+          "dataFormat": "svg",
+          "rotationCenterX": 93,
+          "rotationCenterY": 80
+        }
+      ],
+      "sounds": [
+        {
+          "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+          "name": "啁啾",
+          "dataFormat": "wav",
+          "format": "",
+          "rate": 48000,
+          "sampleCount": 23683,
+          "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+        }
+      ],
+      "volume": 100,
+      "layerOrder": 1,
+      "visible": true,
+      "x": 0,
+      "y": 0,
+      "size": 100,
+      "direction": 90,
+      "draggable": false,
+      "rotationStyle": "all around"
+    }
+  ],
+  "monitors": [],
+  "device": {
+    "deviceId": "firebeetleEsp32E",
+    "type": "arduino"
+  },
+  "programMode": "realtime",
+  "extensions": [],
+  "deviceExtensions": [
+    "activateBuzzer",
+    "atomizer",
+    "pirSensor",
+    "flameSensor",
+    "raindropSensor",
+    "moreComments"
+  ],
+  "meta": {
+    "semver": "3.0.0",
+    "vm": "0.2.0-prerelease.20250609145235",
+    "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+  }
+}

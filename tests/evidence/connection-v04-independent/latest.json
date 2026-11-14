@@ -1,0 +1,14 @@
+{
+  "run": "2026-11-10T06-41-31-265Z",
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\connection-v04-independent\\2026-11-10T06-41-31-265Z",
+  "results": [
+    {
+      "name": "busy hardware real native connection entry cannot throw or mutate serial",
+      "status": "PASS",
+      "detail": {
+        "disabled": false,
+        "pageErrors": []
+      }
+    }
+  ]
+}

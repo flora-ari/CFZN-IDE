@@ -1,0 +1,8 @@
+[
+  {
+    "name": "dist locale binding diagnostic",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: same VM methods rewrapped across locale: [{\"locale\":\"en\",\"sameVm\":true,\"sameLoadProject\":false,\"sameLoadDeviceURL\":false,\"device\":\"firebeetleEsp32E\",\"modules\":[\"activateBuzzer\",\"atomizer\",\"pirSensor\",\"flameSensor\",\"raindropSensor\",\"moreComments\"]},{\"locale\":\"zh-cn\",\"sameVm\":true,\"sameLoadProject\":false,\"sameLoadDeviceURL\":false,\"device\":\"firebeetleEsp32E\",\"modules\":[\"activateBuzzer\",\"atomizer\",\"pirSensor\",\"flameSensor\",\"raindropSensor\",\"moreComments\"]}]",
+    "stack": "AssertionError [ERR_ASSERTION]: same VM methods rewrapped across locale: [{\"locale\":\"en\",\"sameVm\":true,\"sameLoadProject\":false,\"sameLoadDeviceURL\":false,\"device\":\"firebeetleEsp32E\",\"modules\":[\"activateBuzzer\",\"atomizer\",\"pirSensor\",\"flameSensor\",\"raindropSensor\",\"moreComments\"]},{\"locale\":\"zh-cn\",\"sameVm\":true,\"sameLoadProject\":false,\"sameLoadDeviceURL\":false,\"device\":\"firebeetleEsp32E\",\"modules\":[\"activateBuzzer\",\"atomizer\",\"pirSensor\",\"flameSensor\",\"raindropSensor\",\"moreComments\"]}]\n    at localeBindingDiagnostic (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:132:1027)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:140:155"
+  }
+]

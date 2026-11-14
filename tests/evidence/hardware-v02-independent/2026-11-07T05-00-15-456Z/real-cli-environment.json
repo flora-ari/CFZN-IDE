@@ -1,0 +1,58 @@
+{
+  "runtimeDir": "F:\\CFZN\\CFZN-IDE\\tests\\.hw-mw5xrml7",
+  "base": "http://127.0.0.1:51488",
+  "profiles": [
+    {
+      "id": "uno-avr",
+      "deviceId": "arduinoUno",
+      "label": "Arduino Uno",
+      "chip": "avr",
+      "fqbn": "arduino:avr:uno",
+      "compileAvailable": true,
+      "uploadAvailable": true,
+      "realtimeAvailable": false
+    },
+    {
+      "id": "esp32s3-default",
+      "deviceId": "arduinoEsp32S3",
+      "label": "ESP32-S3",
+      "chip": "esp32s3",
+      "fqbn": "esp32:esp32:esp32s3",
+      "compileAvailable": false,
+      "uploadAvailable": false,
+      "realtimeAvailable": false,
+      "reason": "No toolchain configured for this profile."
+    },
+    {
+      "id": "aijite-esp32s3-default",
+      "deviceId": "aijiteESP32S3",
+      "label": "Aijite ESP32-S3",
+      "chip": "esp32s3",
+      "fqbn": "esp32:esp32:esp32s3",
+      "compileAvailable": false,
+      "uploadAvailable": false,
+      "realtimeAvailable": false,
+      "reason": "No toolchain configured for this profile."
+    },
+    {
+      "id": "esp32-4mb-dio",
+      "deviceId": "arduinoEsp32",
+      "label": "ESP32 · 4 MB DIO",
+      "chip": "esp32",
+      "fqbn": "esp32:esp32:esp32:FlashMode=dio,FlashFreq=40,FlashSize=4M,PartitionScheme=default,UploadSpeed=115200",
+      "compileAvailable": true,
+      "uploadAvailable": true,
+      "realtimeAvailable": false
+    },
+    {
+      "id": "firebeetle-esp32e-4mb",
+      "deviceId": "firebeetleEsp32E",
+      "label": "FireBeetle ESP32-E · 4 MB",
+      "chip": "esp32",
+      "fqbn": "mindplus:esp32:fireBeetleEsp32E",
+      "compileAvailable": true,
+      "uploadAvailable": true,
+      "realtimeAvailable": false
+    }
+  ]
+}

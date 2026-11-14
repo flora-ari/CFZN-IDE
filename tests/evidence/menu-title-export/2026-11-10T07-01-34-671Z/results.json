@@ -1,0 +1,18 @@
+[
+  {
+    "name": "title bounded across 1440/1776/2560 and short/long Chinese/Latin; five actions/modes accessible",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'A-long-Latin-project-name-A-long-Latin-project-name-A-long-Latin-project-name-A-long-Latin-project-n'\n- 'A-long-Latin-project-name-A-long-Latin-project-name-A-long-Latin-project-name-A-long-Latin-project-name-'\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'A-long-Latin-project-name-A-long-Latin-project-name-A-long-Latin-project-name-A-long-Latin-project-n'\n- 'A-long-Latin-project-name-A-long-Latin-project-name-A-long-Latin-project-name-A-long-Latin-project-name-'\n\n    at file:///F:/CFZN/CFZN-IDE/tests/menu-title-export.mjs:80:423\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/menu-title-export.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/menu-title-export.mjs:80:2"
+  },
+  {
+    "name": "single real Export keeps full assets/editor metadata and dirty status",
+    "status": "PASS",
+    "detail": {
+      "bytes": 48357,
+      "assets": 5,
+      "metadata": true,
+      "dirty": true
+    }
+  }
+]

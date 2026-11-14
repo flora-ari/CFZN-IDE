@@ -1,0 +1,79 @@
+// Independent Mode UI v0.3; shared test infrastructure retained from hardware harness.
+// Never opens a physical port. Real /uploads is blocked at the browser route.
+import assert from 'node:assert/strict';
+import { chromium } from '@playwright/test';
+import { createRequire } from 'node:module';
+import { createServer } from 'node:http';
+import { createReadStream } from 'node:fs';
+import { mkdir, mkdtemp, readFile, writeFile, readdir, rm } from 'node:fs/promises';
+import { resolve, join, extname, sep } from 'node:path';
+import { tmpdir } from 'node:os';
+import { createHash } from 'node:crypto';
+import { execFileSync } from 'node:child_process';
+import { inflateRawSync } from 'node:zlib';
+const require = createRequire(import.meta.url), root = resolve(import.meta.dirname, '..');
+const run = new Date().toISOString().replace(/[:.]/g, '-'), out = resolve(root, 'tests/evidence/menu-five-buttons', run);
+await mkdir(out, { recursive: true });
+const temp = await mkdtemp(join(tmpdir(), 'cfzn-hw-independent-'));
+const results = [], calls = [], errors = [], sockets = [], contexts = [];
+const sha = b => createHash('sha256').update(b).digest('hex');
+const dump = (name, v) => writeFile(join(out, name), JSON.stringify(v, null, 2));
+const boards = [['Arduino Uno','arduinoUno'],['ESP32-S3','arduinoEsp32S3'],['Aijite ESP32-S3','aijiteESP32S3'],['ESP32','arduinoEsp32'],['FireBeetle ESP32-E','firebeetleEsp32E']];
+const modules = ['activateBuzzer','atomizer','pirSensor','flameSensor','raindropSensor','moreComments'];
+const moduleNames = ['有源蜂鸣器','雾化模块','人体红外','火焰传感器','水滴传感器','积木注释'];
+let browser, api, hardwareApi, server, current, realMode = false, mockMode = 'success', nextJob = 0;
+const jobs = new Map();
+async function check(name, fn) {
+  if (process.env.CFZN_HW_CASE && !new RegExp(process.env.CFZN_HW_CASE, 'i').test(name)) return;
+  try { const detail = await fn(); results.push({ name, status:'PASS', detail }); console.log('PASS',name); }
+  catch(e) { results.push({name,status:'FAIL',error:String(e),stack:e.stack}); console.log('FAIL',name,String(e)); await current?.p.screenshot({path:join(out,`failure-${results.length}.png`)}).catch(()=>{}); }
+  await dump('results.json',results);
+}
+function unzip(b) {
+  const end=b.lastIndexOf(Buffer.from([80,75,5,6]));let c=b.readUInt32LE(end+16);const files={};
+  while(b.readUInt32LE(c)===0x02014b50){const n=b.readUInt16LE(c+28),size=b.readUInt32LE(c+20),off=b.readUInt32LE(c+42);const name=b.subarray(c+46,c+46+n).toString();const start=off+30+b.readUInt16LE(off+26)+b.readUInt16LE(off+28),data=b.subarray(start,start+size);files[name]=b.readUInt16LE(c+10)===8?inflateRawSync(data):data;c+=46+n+b.readUInt16LE(c+30)+b.readUInt16LE(c+32);}return files;
+}
+function semantic(b){const f=unzip(b),p=JSON.parse(f['project.json']),assets={};for(const [i,t]of p.targets.entries())for(const kind of ['costumes','sounds'])for(const[j,a]of(t[kind]||[]).entries()){const key=a.md5ext||`${a.assetId}.${a.dataFormat}`;assert.ok(f[key]);assets[`${i}:${t.name}/${kind}/${j}:${a.name}`]=sha(f[key]);}return {id:p.device.deviceId,mode:p.programMode,modules:[...(p.deviceExtensions||[])].sort(),targets:p.targets.map(t=>({name:t.name,blocks:t.blocks})),assets};}
+async function bridge(s,type,payload){return s.p.evaluate(({type,payload})=>new Promise((ok,fail)=>{const w=document.querySelector('iframe').contentWindow,id=crypto.randomUUID(),timer=setTimeout(()=>fail(new Error('bridge timeout '+type)),45000);function listen(e){if(e.source!==w||e.data?.requestId!==id)return;clearTimeout(timer);removeEventListener('message',listen);e.data.payload.ok?ok(e.data.payload.result):fail(new Error(e.data.payload.error.message));}addEventListener('message',listen);w.postMessage({protocol:'cfzn.openblock',version:1,type,requestId:id,payload},location.origin);}),{type,payload});}
+const hw=s=>bridge(s,'GET_HARDWARE_STATE');
+const project=s=>s.f.evaluate(()=>JSON.parse(__vm.toJSON()));
+const archive=async s=>Buffer.from(await s.f.evaluate(async()=>Array.from(new Uint8Array(await(await __vm.saveProjectSb3()).arrayBuffer()))));
+async function lib(s){if(!await s.f.locator('.cfzn-extension-controls').count())await s.f.locator('[class*="extension-button"]').first().click();}
+async function back(s){if(await s.f.locator('.cfzn-extension-controls').count())await s.f.getByText('返回',{exact:true}).click();}
+async function choose(s,name){await lib(s);await s.f.getByRole('button',{name:'主控扩展',exact:true}).click();await s.f.getByRole('button',{name,exact:true}).click();await s.f.waitForFunction(()=>!document.querySelector('.cfzn-extension-status')?.textContent.startsWith('正在'),null,{timeout:25000});}
+async function capture(s){await s.f.evaluate(()=>__vm.runtime.emit('DEVICE_EXTENSION_ADDED',{defineMessages:B=>{window.__B=B;return B;}}));}
+async function loadAll(s){await lib(s);await s.f.getByRole('button',{name:'模块扩展',exact:true}).click();for(let i=0;i<modules.length;i++){await s.f.getByRole('button',{name:moduleNames[i],exact:true}).click();await s.f.waitForFunction(id=>__vm.runtime.getLoadedDeviceExtension().includes(id)&&!document.querySelector('.cfzn-extension-status')?.textContent.startsWith('正在'),modules[i]);}await back(s);await capture(s);}
+async function xml(s,value){await s.f.evaluate(v=>__B.Xml.clearWorkspaceAndLoadFromXml(__B.Xml.textToDom(v),__B.getMainWorkspace()),value);await s.f.waitForFunction(()=>!!__vm.editingTarget.blocks._blocks['ih-hat']);}
+const sample=(digital,analog)=>`<xml><block type="event_whenarduinobegin" id="ih-hat" x="40" y="40"><next><block type="activeBuzzer_init" id="ih-buzzer"><field name="PIN">${digital}</field><next><block type="atomizer_init" id="ih-atom"><field name="PIN">${digital}</field><next><block type="pirSensor_init" id="ih-pir"><field name="PIN">${digital}</field><next><block type="moreComments_branchBlock" id="ih-comment"><value name="COMMENTS"><shadow type="text"><field name="TEXT">independent connected modules</field></shadow></value><statement name="SUBSTACK"><block type="control_if" id="ih-if"><value name="CONDITION"><block type="pirSensor_detected" id="ih-detect"/></value><statement name="SUBSTACK"><block type="activeBuzzer_on" id="ih-on"/></statement><next><block type="control_if" id="ih-flame-if"><value name="CONDITION"><block type="flameSensor_readDigital" id="ih-flame"><field name="PIN">${digital}</field></block></value><statement name="SUBSTACK"><block type="atomizer_toggle" id="ih-toggle"/></statement></block></next></block></statement><next><block type="arduino_serial_print" id="ih-print"><value name="VALUE"><block type="raindropSensor_readAnalog" id="ih-rain"><field name="PIN">${analog}</field></block></value></block></next></block></next></block></next></block></next></block></next></block></xml>`;
+async function code(s){return s.f.evaluate(()=>__B.Arduino.workspaceToCode(__B.getMainWorkspace()));}
+async function closeModal(s,id){await s.f.evaluate(id=>__store.dispatch({type:'scratch-gui/modals/CLOSE_MODAL',modal:id}),id);}
+async function settled(s){const deadline=Date.now()+180000;for(;;){const state=await hw(s);if(!state.busy)return state;if(Date.now()>deadline)throw Error('hardware still busy');await new Promise(ok=>setTimeout(ok,100));}}
+async function openSettings(s){await back(s);if(!await s.f.getByTestId('hardware-progress').count())await s.f.getByRole('button',{name:'编译 / 烧录设置',exact:true}).click();await s.f.getByTestId('hardware-progress').waitFor();await s.f.getByRole('button',{name:'刷新能力及端口',exact:true}).click();await s.f.waitForFunction(()=>document.querySelectorAll('[data-testid="hardware-progress"] select')[0]?.options.length>1);}
+async function manualCode(s,text){await s.f.evaluate(text=>__store.dispatch({type:'scratch-gui/code/UPDATE_CODE',value:text}),text);assert.equal(await s.f.evaluate(()=>__store.getState().scratchGui.code.codeEditorValue),text);}
+async function make(label,origin,apiOrigin){
+ const c=await browser.newContext({viewport:{width:1440,height:900},acceptDownloads:true});contexts.push(c);
+ await c.addInitScript(()=>{
+   let dom;Object.defineProperty(window,'ReactDOM',{configurable:true,get:()=>dom,set:v=>{dom=v;let render;Object.defineProperty(v,'render',{configurable:true,get:()=>function(...args){const value=render.apply(this,args);if(value?.store)window.__store=value.store;return value;},set:f=>{render=f;}});}});
+   window.__serial={requests:[],authorized:false,cancel:false,opens:0,closes:0,readers:0,writers:0,writes:[],events:[],failClose:false,failOpen:false};
+   class Port extends EventTarget{opened=false;getInfo(){return{usbVendorId:0x10c4,usbProductId:0xea60};}async open(options){if(__serial.failOpen)throw Error('INDEPENDENT_RESTORE_FAILED');if(this.opened)throw Error('SECOND_SERIAL_OWNER');this.opened=true;__serial.opens++;__serial.events.push('open');this.readable=new ReadableStream({start:c=>{this.input=c;}});this.writable=new WritableStream({write:bytes=>{__serial.writes.push([...bytes]);}});const gr=this.readable.getReader.bind(this.readable);this.readable.getReader=(...a)=>{__serial.readers++;return gr(...a);};const gw=this.writable.getWriter.bind(this.writable);this.writable.getWriter=(...a)=>{__serial.writers++;return gw(...a);};}async close(){if(this.readable.locked||this.writable.locked)throw Error('LOCKS_NOT_RELEASED');if(__serial.failClose)throw Error('INDEPENDENT_CLOSE_FAILED');this.opened=false;__serial.closes++;__serial.events.push('closed');}}
+   window.__port=new Port();Object.defineProperty(navigator,'serial',{configurable:true,value:{getPorts:async()=>__serial.authorized?[__port]:[],requestPort(){__serial.requests.push({active:navigator.userActivation.isActive});if(__serial.cancel)return Promise.reject(new DOMException('cancel','NotFoundError'));__serial.authorized=true;return Promise.resolve(__port);}}});
+ });
+ const p=await c.newPage();current={c,p,label};p.on('pageerror',e=>errors.push({label,error:String(e)}));p.on('websocket',w=>sockets.push(w.url()));p.on('dialog',d=>d.accept());
+ await c.route('**/api/v1/projects**',async route=>{const req=route.request(),u=new URL(req.url());const response=await route.fetch({url:apiOrigin+u.pathname+u.search});calls.push({label,kind:'project',method:req.method(),path:u.pathname,status:response.status(),bodyBase64:req.postDataBuffer()?.toString('base64')});await route.fulfill({response});});
+ await c.route('http://127.0.0.1:3002/api/v1/hardware/**',async route=>{
+   const r=route.request(),u=new URL(r.url()),path=u.pathname,body=r.postData()?r.postDataJSON():null;calls.push({label,kind:realMode?'real':'mock',method:r.method(),path,body});
+   if(realMode){if(path.endsWith('/uploads'))throw Error('REAL_UPLOAD_PROHIBITED');const response=await route.fetch({url:(await hardwareApi.getUrl())+path+u.search,headers:{...r.headers(),origin}});await route.fulfill({response});return;}
+   let data,status=200;
+   if(r.method()==='OPTIONS'){await route.fulfill({status:204});return;}
+   if(path.endsWith('/capabilities'))data={protocolVersion:1,executionHost:'local',toolchain:{cliVersion:'independent MOCK',description:'no physical uploader'},profiles:boards.map(([,id])=>({id:'ind-'+id,deviceId:id,label:'Independent '+id,chip:'esp32',fqbn:'mock:'+id,compileAvailable:true,uploadAvailable:true,realtimeAvailable:false}))};
+   else if(path.endsWith('/ports'))data={items:[{portId:'OS-INDEPENDENT-PORT',displayName:'Explicit simulated OS target',usbVendorId:'10c4',usbProductId:'ea60'}]};
+   else if(path.endsWith('/builds')||path.endsWith('/uploads')){const build=path.endsWith('/builds');if(!build){const ownership=await current.f.evaluate(()=>({open:__port.opened,readLocked:__port.readable.locked,writeLocked:__port.writable.locked,events:__serial.events}));assert.equal(ownership.open,false);assert.equal(ownership.readLocked,false);assert.equal(ownership.writeLocked,false);calls.at(-1).ownership=ownership;}const previous=jobs.get(body?.buildId);const job={id:'ind-job-'+(++nextJob),kind:build?'build':'upload',state:'running',stage:build?'compiling':'uploading',deviceId:build?body.deviceId:previous.deviceId,profileId:build?body.profileId:previous.profileId,sourceHash:build?sha(body.code):previous.sourceHash,createdAt:new Date().toISOString(),...(build?{}:{buildId:body.buildId,portId:body.portId})};jobs.set(job.id,job);data={job};status=202;}
+   else{const id=path.split('/').at(path.endsWith('/cancel')?-2:-1),job=jobs.get(id);assert.ok(job);if(path.endsWith('/cancel')){job.state='cancelling';data={job};}else{if(job.state==='cancelling'){job.cancelPolls=(job.cancelPolls||0)+1;if(job.cancelPolls>2){job.state='cancelled';job.stage='complete';}}else if(!(job.kind==='upload'&&mockMode==='hold')){job.state='succeeded';job.stage='complete';}data={job,logs:[{index:0,stream:'system',text:'Independent '+job.kind+' '+job.state+'\n'}],nextLog:1};}}
+   await route.fulfill({status,contentType:'application/json',body:JSON.stringify(data)});
+ });
+ await p.goto(origin);const f=await(await p.locator('iframe').elementHandle()).contentFrame();current={c,p,f,label};await f.locator('#boot-message').waitFor({state:'hidden',timeout:60000});await f.waitForFunction(()=>!document.querySelector('[data-testid="save-project"]').disabled);
+
+ await f.evaluate(()=>{const render=CFZNOpenBlock.renderLibrary;CFZNOpenBlock.renderLibrary=(...args)=>{window.__vm=args[2].vm;return render(...args);};});await f.evaluate(()=>{const original=CFZNOpenBlock.renderUploadWorkspace;CFZNOpenBlock.renderUploadWorkspace=(R,C,props)=>original(R,C,{...props,onCodeEditorDidMount:editor=>{window.__editor=editor;props.onCodeEditorDidMount(editor);}});});await lib(current);await back(current);await capture(current);return current;
+}
+let origin,apiOrigin;
+try{api=await require('../apps/api/dist/app.js').createApp(join(temp,'projects'));await api.listen(0,'127.0.0.1');apiOrigin=await api.getUrl();const dist=join(root,'apps/web/dist');server=createServer((req,res)=>{const p=new URL(req.url,'http://local').pathname,f=resolve(dist,'.'+(p==='/'?'/index.html':p));res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png'})[extname(f)]||'application/octet-stream');const st=createReadStream(f);st.on('error',()=>{res.writeHead(404);res.end();});st.pipe(res);});await new Promise(ok=>server.listen(0,'127.0.0.1',ok));origin='http://127.0.0.1:'+server.address().port;browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});const s=await make('five-buttons',origin,apiOrigin);await check('five native actions/status, no serial-button, upload terminal retained',async()=>{const host=s.f.locator('[data-cfzn-menu-host] > .cfzn-project-tools');assert.deepEqual(await host.locator('button').allTextContents(),['项目','新建','导入','导出','保存']);assert.equal(await host.getByTestId('project-status').count(),1);assert.equal(await s.f.getByTestId('serial-button').count(),0);await s.f.getByRole('button',{name:'上传模式',exact:true}).click();await s.f.getByTestId('upload-terminal').waitFor();assert.equal(await s.f.getByTestId('upload-terminal').getByRole('button',{name:'连接串口',exact:true}).count(),1);assert.deepEqual(errors,[]);await s.p.screenshot({path:join(out,'five-buttons-upload-terminal.png')});return{bundle:(await readFile(join(dist,'openblock.html'),'utf8')).match(/assets\/editor-[^" ]+\.js/)[0],actions:5,status:true,uploadTerminal:true};});}finally{await dump('results.json',results);await browser?.close();if(server){server.closeAllConnections();await new Promise(ok=>server.close(ok));}api?.getHttpServer().closeAllConnections();await api?.close();await rm(temp,{recursive:true,force:true});}if(results.some(v=>v.status==='FAIL'))process.exitCode=1;

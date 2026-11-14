@@ -1,0 +1,8 @@
+[
+  {
+    "name": "native stage pen loaded filter uses real extension state and search intersection",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n3 !== 1\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n3 !== 1\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:77:1135\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:141)\n    at async Object.loaded (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:77:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:93:2"
+  }
+]

@@ -1,0 +1,590 @@
+{
+  "freeze": "editor-u0ep3dyT.js",
+  "uniqueChecks": 32,
+  "pass": 32,
+  "fail": 0,
+  "pageErrors": [],
+  "runs": [
+    {
+      "run": "2026-11-11T07-00-23-579Z",
+      "count": 6,
+      "passed": 6,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:54356",
+      "dist": "http://127.0.0.1:54357",
+      "api": "http://127.0.0.1:54355"
+    },
+    {
+      "run": "2026-11-11T07-03-28-378Z",
+      "count": 2,
+      "passed": 2,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:65073",
+      "dist": "http://127.0.0.1:65074",
+      "api": "http://127.0.0.1:65072"
+    },
+    {
+      "run": "2026-11-11T07-05-31-956Z",
+      "count": 4,
+      "passed": 4,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:61193",
+      "dist": "http://127.0.0.1:61194",
+      "api": "http://127.0.0.1:61191"
+    },
+    {
+      "run": "2026-11-11T07-07-36-708Z",
+      "count": 6,
+      "passed": 6,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:50567",
+      "dist": "http://127.0.0.1:50568",
+      "api": "http://127.0.0.1:62879"
+    },
+    {
+      "run": "2026-11-11T07-09-07-200Z",
+      "count": 6,
+      "passed": 6,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:49990",
+      "dist": "http://127.0.0.1:49991",
+      "api": "http://127.0.0.1:49989"
+    },
+    {
+      "run": "2026-11-11T07-10-51-270Z",
+      "count": 2,
+      "passed": 2,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:59211",
+      "dist": "http://127.0.0.1:59212",
+      "api": "http://127.0.0.1:59209"
+    },
+    {
+      "run": "2026-11-11T07-11-20-903Z",
+      "count": 2,
+      "passed": 2,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:62138",
+      "dist": "http://127.0.0.1:62139",
+      "api": "http://127.0.0.1:62137"
+    },
+    {
+      "run": "2026-11-11T07-13-09-937Z",
+      "count": 2,
+      "passed": 2,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:56030",
+      "dist": "http://127.0.0.1:56031",
+      "api": "http://127.0.0.1:51201"
+    },
+    {
+      "run": "2026-11-11T07-14-51-424Z",
+      "count": 2,
+      "passed": 2,
+      "pageErrors": [],
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:54006",
+      "dist": "http://127.0.0.1:54007",
+      "api": "http://127.0.0.1:54005"
+    }
+  ],
+  "results": [
+    {
+      "name": "dev catalog badges types search",
+      "status": "PASS",
+      "detail": {
+        "grayBadge": {
+          "right": 8,
+          "top": 8,
+          "color": "rgb(96, 101, 111)",
+          "background": "rgb(242, 243, 245)",
+          "border": "rgb(199, 203, 210)",
+          "font": "12px",
+          "radius": "2px"
+        },
+        "realTypes": true,
+        "searchIntersection": true,
+        "noDirty": true
+      },
+      "run": "2026-11-11T07-00-23-579Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-00-23-579Z"
+    },
+    {
+      "name": "dev keyboard removal readd board lifecycle",
+      "status": "PASS",
+      "detail": {
+        "dependencies": "请先移除模块：有源蜂鸣器。",
+        "independentKeyboardRemove": true,
+        "onceDirty": true,
+        "noOp": true,
+        "readdFreshMenus": true
+      },
+      "run": "2026-11-11T07-00-23-579Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-00-23-579Z"
+    },
+    {
+      "name": "dev all-target references and dependencies",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "other-target",
+          "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+        },
+        {
+          "name": "disabled-loose",
+          "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+        },
+        {
+          "name": "procedure",
+          "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+        },
+        {
+          "name": "controller-hat",
+          "error": "当前主控仍被引用：角色1 1处。请先移除相关积木或监视器。"
+        }
+      ],
+      "run": "2026-11-11T07-00-23-579Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-00-23-579Z"
+    },
+    {
+      "name": "dist catalog badges types search",
+      "status": "PASS",
+      "detail": {
+        "grayBadge": {
+          "right": 8,
+          "top": 8,
+          "color": "rgb(96, 101, 111)",
+          "background": "rgb(242, 243, 245)",
+          "border": "rgb(199, 203, 210)",
+          "font": "12px",
+          "radius": "2px"
+        },
+        "realTypes": true,
+        "searchIntersection": true,
+        "noDirty": true
+      },
+      "run": "2026-11-11T07-00-23-579Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-00-23-579Z"
+    },
+    {
+      "name": "dist keyboard removal readd board lifecycle",
+      "status": "PASS",
+      "detail": {
+        "dependencies": "请先移除模块：有源蜂鸣器。",
+        "independentKeyboardRemove": true,
+        "onceDirty": true,
+        "noOp": true,
+        "readdFreshMenus": true
+      },
+      "run": "2026-11-11T07-00-23-579Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-00-23-579Z"
+    },
+    {
+      "name": "dist all-target references and dependencies",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "other-target",
+          "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+        },
+        {
+          "name": "disabled-loose",
+          "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+        },
+        {
+          "name": "procedure",
+          "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+        },
+        {
+          "name": "controller-hat",
+          "error": "当前主控仍被引用：角色1 1处。请先移除相关积木或监视器。"
+        }
+      ],
+      "run": "2026-11-11T07-00-23-579Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-00-23-579Z"
+    },
+    {
+      "name": "dist native monitor probe",
+      "status": "PASS",
+      "detail": [
+        {
+          "type": "data_variable",
+          "id": "v06-var",
+          "checked": false
+        },
+        {
+          "type": "data_listcontents",
+          "id": "v06-list",
+          "checked": false
+        },
+        {
+          "type": "music_getTempo",
+          "id": "music_getTempo"
+        }
+      ],
+      "run": "2026-11-11T07-03-28-378Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-03-28-378Z"
+    },
+    {
+      "name": "dist actual unsupported native board",
+      "status": "PASS",
+      "detail": {
+        "nativeBoard": "microbit",
+        "unsupported": 6,
+        "defaultAll": true,
+        "intersection": true
+      },
+      "run": "2026-11-11T07-03-28-378Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-03-28-378Z"
+    },
+    {
+      "name": "dev clear preserves archive true",
+      "status": "PASS",
+      "detail": {
+        "targets": 2,
+        "monitors": 3,
+        "extensions": [
+          "pen",
+          "music"
+        ],
+        "mode": "programming",
+        "nativeMonitors": 3,
+        "documentIdPreserved": true,
+        "onceDirty": true,
+        "manualPreserved": true,
+        "sameActiveId": true,
+        "postPutGetExact": true,
+        "newPageReopen": true
+      },
+      "run": "2026-11-11T07-05-31-956Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-05-31-956Z"
+    },
+    {
+      "name": "dev clear preserves archive false",
+      "status": "PASS",
+      "detail": {
+        "targets": 2,
+        "monitors": 3,
+        "extensions": [
+          "pen",
+          "music"
+        ],
+        "mode": "upload",
+        "nativeMonitors": 3,
+        "documentIdPreserved": true,
+        "onceDirty": true,
+        "manualPreserved": true,
+        "sameActiveId": true,
+        "postPutGetExact": true,
+        "newPageReopen": true
+      },
+      "run": "2026-11-11T07-05-31-956Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-05-31-956Z"
+    },
+    {
+      "name": "dist clear preserves archive true",
+      "status": "PASS",
+      "detail": {
+        "targets": 2,
+        "monitors": 3,
+        "extensions": [
+          "pen",
+          "music"
+        ],
+        "mode": "programming",
+        "nativeMonitors": 3,
+        "documentIdPreserved": true,
+        "onceDirty": true,
+        "manualPreserved": true,
+        "sameActiveId": true,
+        "postPutGetExact": true,
+        "newPageReopen": true
+      },
+      "run": "2026-11-11T07-05-31-956Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-05-31-956Z"
+    },
+    {
+      "name": "dist clear preserves archive false",
+      "status": "PASS",
+      "detail": {
+        "targets": 2,
+        "monitors": 3,
+        "extensions": [
+          "pen",
+          "music"
+        ],
+        "mode": "upload",
+        "nativeMonitors": 3,
+        "documentIdPreserved": true,
+        "onceDirty": true,
+        "manualPreserved": true,
+        "sameActiveId": true,
+        "postPutGetExact": true,
+        "newPageReopen": true
+      },
+      "run": "2026-11-11T07-05-31-956Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-05-31-956Z"
+    },
+    {
+      "name": "dist serial close failure guard mock",
+      "status": "PASS",
+      "detail": {
+        "simulated": true,
+        "moduleRemovalNoPortChange": true,
+        "failedCloseRetainsOwner": true,
+        "clearRefused": true,
+        "noSecondOpen": true,
+        "noAuthorization": true
+      },
+      "run": "2026-11-11T07-07-36-708Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-07-36-708Z"
+    },
+    {
+      "name": "dist busy operation guard",
+      "status": "PASS",
+      "detail": {
+        "heldResource": true,
+        "removeBlocked": "当前操作尚未完成，请稍后移除。",
+        "clearBlocked": "当前操作尚未完成，请稍后移除。",
+        "localeBlocked": true,
+        "noDocumentMutation": true
+      },
+      "run": "2026-11-11T07-07-36-708Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-07-36-708Z"
+    },
+    {
+      "name": "dist injected candidate failure full rollback",
+      "status": "PASS",
+      "detail": {
+        "injectedPublicEntryOnly": true,
+        "candidateActuallyCleared": true,
+        "fullNativeRollback": true,
+        "monitors": 3,
+        "manual": true,
+        "noEditOnFailure": true,
+        "explicitRetry": true
+      },
+      "run": "2026-11-11T07-07-36-708Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-07-36-708Z"
+    },
+    {
+      "name": "dist native menu shadow reference",
+      "status": "PASS",
+      "detail": {
+        "nativeMenuOpcode": "arduino_pin_menu_pins",
+        "coreParent": true,
+        "shadowGuard": "当前主控仍被引用：角色1 1处。请先移除相关积木或监视器。"
+      },
+      "run": "2026-11-11T07-07-36-708Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-07-36-708Z"
+    },
+    {
+      "name": "dist focused v05 regression",
+      "status": "PASS",
+      "detail": {
+        "localeSameBindings": true,
+        "singleCategories": true,
+        "pureScratchAndArduinoCoexist": true,
+        "mixedRejected": true
+      },
+      "run": "2026-11-11T07-07-36-708Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-07-36-708Z"
+    },
+    {
+      "name": "VM byte boundary",
+      "status": "PASS",
+      "detail": {
+        "output": "{ vmModuleCount: 178, guiHooks: 42, noFactoryInjection: true }\n"
+      },
+      "run": "2026-11-11T07-07-36-708Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-07-36-708Z"
+    },
+    {
+      "name": "dev selected blue card and narrow reachability",
+      "status": "PASS",
+      "detail": {
+        "border": "2px",
+        "color": "rgb(76, 151, 255)",
+        "selected": "true",
+        "selectedText": true,
+        "removeVisible": true,
+        "narrowReachable": true,
+        "noDirty": true
+      },
+      "run": "2026-11-11T07-09-07-200Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-09-07-200Z"
+    },
+    {
+      "name": "dev serial close failure guard mock",
+      "status": "PASS",
+      "detail": {
+        "simulated": true,
+        "moduleRemovalNoPortChange": true,
+        "failedCloseRetainsOwner": true,
+        "clearRefused": true,
+        "noSecondOpen": true,
+        "noAuthorization": true
+      },
+      "run": "2026-11-11T07-09-07-200Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-09-07-200Z"
+    },
+    {
+      "name": "dev busy operation guard",
+      "status": "PASS",
+      "detail": {
+        "heldResource": true,
+        "removeBlocked": "当前操作尚未完成，请稍后移除。",
+        "clearBlocked": "当前操作尚未完成，请稍后移除。",
+        "localeBlocked": true,
+        "noDocumentMutation": true
+      },
+      "run": "2026-11-11T07-09-07-200Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-09-07-200Z"
+    },
+    {
+      "name": "dev injected candidate failure full rollback",
+      "status": "PASS",
+      "detail": {
+        "injectedPublicEntryOnly": true,
+        "candidateActuallyCleared": true,
+        "fullNativeRollback": true,
+        "monitors": 3,
+        "manual": true,
+        "noEditOnFailure": true,
+        "explicitRetry": true
+      },
+      "run": "2026-11-11T07-09-07-200Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-09-07-200Z"
+    },
+    {
+      "name": "dev native menu shadow reference",
+      "status": "PASS",
+      "detail": {
+        "nativeMenuOpcode": "arduino_pin_menu_pins",
+        "coreParent": true,
+        "shadowGuard": "当前主控仍被引用：角色1 1处。请先移除相关积木或监视器。"
+      },
+      "run": "2026-11-11T07-09-07-200Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-09-07-200Z"
+    },
+    {
+      "name": "dev focused v05 regression",
+      "status": "PASS",
+      "detail": {
+        "localeSameBindings": true,
+        "singleCategories": true,
+        "pureScratchAndArduinoCoexist": true,
+        "mixedRejected": true
+      },
+      "run": "2026-11-11T07-09-07-200Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-09-07-200Z"
+    },
+    {
+      "name": "dist filter memory and support reset",
+      "status": "PASS",
+      "detail": {
+        "partitionMemory": true,
+        "nativePartitionClearsSearch": true,
+        "filtersNoDirty": true,
+        "supportedDefaultFalse": true,
+        "clearResetsSupport": true
+      },
+      "run": "2026-11-11T07-10-51-270Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-10-51-270Z"
+    },
+    {
+      "name": "dist selected blue card and narrow reachability",
+      "status": "PASS",
+      "detail": {
+        "border": "2px",
+        "color": "rgb(76, 151, 255)",
+        "selected": "true",
+        "selectedText": true,
+        "removeVisible": true,
+        "narrowReachable": true,
+        "noDirty": true
+      },
+      "run": "2026-11-11T07-10-51-270Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-10-51-270Z"
+    },
+    {
+      "name": "dev filter memory and support reset",
+      "status": "PASS",
+      "detail": {
+        "partitionMemory": true,
+        "nativePartitionClearsSearch": true,
+        "filtersNoDirty": true,
+        "supportedDefaultFalse": true,
+        "clearResetsSupport": true
+      },
+      "run": "2026-11-11T07-11-20-903Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-11-20-903Z"
+    },
+    {
+      "name": "dev actual unsupported native board",
+      "status": "PASS",
+      "detail": {
+        "nativeBoard": "microbit",
+        "unsupported": 6,
+        "defaultAll": true,
+        "intersection": true
+      },
+      "run": "2026-11-11T07-11-20-903Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-11-20-903Z"
+    },
+    {
+      "name": "dev another original sprite and unknown removal",
+      "status": "PASS",
+      "detail": {
+        "originalSprite": "niIfmHgURN@l|sz3Ep,H",
+        "otherOriginalSprite": "4~uml9x+lJtYm|,d)-#U",
+        "error": "有源蜂鸣器仍被引用：角色2 1处。请先移除相关积木或监视器。",
+        "unknownRefused": "此条目暂不支持移除。"
+      },
+      "run": "2026-11-11T07-13-09-937Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-13-09-937Z"
+    },
+    {
+      "name": "dist another original sprite and unknown removal",
+      "status": "PASS",
+      "detail": {
+        "originalSprite": "v+DT,f*/96smR28i-R(!",
+        "otherOriginalSprite": "AgguM6jrdv4l=*/=,d(Q",
+        "error": "有源蜂鸣器仍被引用：角色2 1处。请先移除相关积木或监视器。",
+        "unknownRefused": "此条目暂不支持移除。"
+      },
+      "run": "2026-11-11T07-13-09-937Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-13-09-937Z"
+    },
+    {
+      "name": "dev removed selected category fallback",
+      "status": "PASS",
+      "detail": {
+        "removedSelectedCategory": true,
+        "fallback": "motion",
+        "noGhost": true
+      },
+      "run": "2026-11-11T07-14-51-424Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-14-51-424Z"
+    },
+    {
+      "name": "dist removed selected category fallback",
+      "status": "PASS",
+      "detail": {
+        "removedSelectedCategory": true,
+        "fallback": "motion",
+        "noGhost": true
+      },
+      "run": "2026-11-11T07-14-51-424Z",
+      "evidence": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-14-51-424Z"
+    }
+  ]
+}

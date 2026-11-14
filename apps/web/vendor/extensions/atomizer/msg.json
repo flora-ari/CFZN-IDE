@@ -1,0 +1,8 @@
+{
+    "ATOMIZER_CATEGORY": "Atomizer",
+    "ATOMIZER_INIT": "init atomizer pin %1",
+    "ATOMIZER_SETSTATE": "set atomizer %1",
+    "ATOMIZER_TOGGLE": "toggle atomizer",
+    "ATOMIZER_ON": "on",
+    "ATOMIZER_OFF": "off"
+}

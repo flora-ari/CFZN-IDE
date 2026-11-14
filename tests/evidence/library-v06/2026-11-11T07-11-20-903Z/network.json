@@ -1,0 +1,66 @@
+[
+  {
+    "label": "dev-filters",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-filters",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dev-filters",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dev-filters",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dev-filters",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dev-filters",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dev-filters",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dev-filters",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-unsupported",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-unsupported",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-unsupported",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dev-unsupported",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dev-unsupported",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dev-unsupported",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dev-unsupported",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dev-unsupported",
+    "url": "http://127.0.0.1:62138/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  }
+]

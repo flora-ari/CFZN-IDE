@@ -1,0 +1,28 @@
+{
+  "snapshot": {
+    "title": "v05-archive-minimal-repro",
+    "dirty": true,
+    "running": false,
+    "documentId": 1,
+    "editVersion": 1
+  },
+  "target": {
+    "id": "iD/_3a}a}ITw,Tf:L,S`",
+    "name": "角色1",
+    "isStage": false
+  },
+  "workspace": [
+    {
+      "id": "qa-flag",
+      "type": "event_whenflagclicked"
+    },
+    {
+      "id": "qa-move",
+      "type": "motion_changexby"
+    },
+    {
+      "id": "KAObx|Ktx+YVEhMDhlCV",
+      "type": "math_number"
+    }
+  ]
+}

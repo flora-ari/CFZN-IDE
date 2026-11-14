@@ -1,0 +1,75 @@
+[
+  {
+    "name": "search preserves effective undo redo stacks and next actions",
+    "status": "PASS",
+    "detail": {
+      "stacksPreserved": true,
+      "nextRedo": true,
+      "nextUndo": true
+    }
+  },
+  {
+    "name": "native search Chinese and no result close restores category without state changes",
+    "status": "PASS",
+    "detail": {
+      "category": "motion"
+    }
+  },
+  {
+    "name": "dynamic variables lists and percent-n percent-s procedure are real draggable blocks",
+    "status": "PASS",
+    "detail": {
+      "rows": [
+        {
+          "id": "3UCY:~Ra!uK0ki]p$OC-",
+          "type": "procedures_call",
+          "text": "独立过程 1 ???",
+          "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"3UCY:~Ra!uK0ki]p$OC-\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"IlNGuzbQ!Q,qY]|BdV`_\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"wqMD7(Ry^sgmZPPE?pmw\"><field name=\"TEXT\"></field></shadow></value></block>"
+        }
+      ],
+      "dragged": [
+        {
+          "id": "EBk:ybft@gnrO1Bmq{S{",
+          "type": "procedures_call",
+          "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"EBk:ybft@gnrO1Bmq{S{\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"zwYW0K+!)yY:T5AwA(CK\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"i7^r}u5gfvtfs`Y9dcD_\"><field name=\"TEXT\"></field></shadow></value></block>"
+        },
+        {
+          "id": "zwYW0K+!)yY:T5AwA(CK",
+          "type": "math_number",
+          "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"math_number\" id=\"zwYW0K+!)yY:T5AwA(CK\"><field name=\"NUM\">1</field></shadow>"
+        },
+        {
+          "id": "i7^r}u5gfvtfs`Y9dcD_",
+          "type": "text",
+          "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"text\" id=\"i7^r}u5gfvtfs`Y9dcD_\"><field name=\"TEXT\"></field></shadow>"
+        }
+      ]
+    }
+  },
+  {
+    "name": "search close clear repeated rebuild preserves graph and undo",
+    "status": "PASS",
+    "detail": {
+      "rebuilds": 3
+    }
+  },
+  {
+    "name": "English locale native search compared with identical fractional-coordinate no-search control",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:1231\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:141)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:92:2"
+  },
+  {
+    "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: TypeError: Cannot read properties of null (reading 'setFieldValue')\n    at eval (eval at evaluate (:370:30), <anonymous>:1:100)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: TypeError: Cannot read properties of null (reading 'setFieldValue')\n    at eval (eval at evaluate (:370:30), <anonymous>:1:100)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:62:904\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:141)\n    at async Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:62:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:92:2"
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "pageErrors": []
+    }
+  }
+]

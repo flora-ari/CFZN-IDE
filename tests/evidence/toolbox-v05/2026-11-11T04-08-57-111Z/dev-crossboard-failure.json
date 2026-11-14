@@ -1,0 +1,39 @@
+{
+  "project": {
+    "targets": [],
+    "monitors": [],
+    "device": {
+      "deviceId": "firebeetleEsp32E",
+      "type": "arduino"
+    },
+    "programMode": "upload",
+    "extensions": [],
+    "deviceExtensions": [],
+    "meta": {
+      "semver": "3.0.0",
+      "vm": "0.2.0-prerelease.20250609145235",
+      "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+    }
+  },
+  "state": {
+    "title": "未命名项目",
+    "dirty": true,
+    "running": false,
+    "documentId": 0,
+    "editVersion": 98
+  },
+  "error": "选择主控 Aijite ESP32-S3失败：选择主控 Aijite ESP32-S3失败：选择主控 Aijite ESP32-S3失败：主控 arduinoEsp32S3 未能同步到编辑器。；恢复原项目失败：Error: 主控注册正在进行。。请下载恢复备份。；恢复原项目失败：Error: 主控注册正在进行。。请下载恢复备份。；恢复原项目失败：Error: 主控 arduinoEsp32 未能同步到编辑器。。请下载恢复备份。",
+  "device": {
+    "runtime": {
+      "deviceId": "firebeetleEsp32E",
+      "type": "arduino"
+    },
+    "blockly": "firebeetleEsp32E",
+    "gui": {
+      "deviceId": "firebeetleEsp32E",
+      "deviceName": "FireBeetle ESP32-E",
+      "deviceType": "arduino"
+    },
+    "targets": []
+  }
+}

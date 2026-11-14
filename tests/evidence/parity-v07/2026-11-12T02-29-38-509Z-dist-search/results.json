@@ -1,0 +1,8 @@
+[
+  {
+    "name": "search close clear repeated rebuild preserves graph and undo",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '关闭积木搜索' })\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '关闭积木搜索' })\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:59:133\n    at check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:147)\n    at Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:59:8)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  }
+]

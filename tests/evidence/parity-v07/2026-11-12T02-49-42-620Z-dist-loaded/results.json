@@ -1,0 +1,12 @@
+[
+  {
+    "name": "native stage pen loaded filter uses real extension state and search intersection",
+    "status": "PASS",
+    "detail": {
+      "realPenLoaded": true,
+      "keywordIntersection": true,
+      "clearAllFilters": true,
+      "noUnloading": true
+    }
+  }
+]

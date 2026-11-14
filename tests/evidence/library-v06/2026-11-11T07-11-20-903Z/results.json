@@ -1,0 +1,23 @@
+[
+  {
+    "name": "dev filter memory and support reset",
+    "status": "PASS",
+    "detail": {
+      "partitionMemory": true,
+      "nativePartitionClearsSearch": true,
+      "filtersNoDirty": true,
+      "supportedDefaultFalse": true,
+      "clearResetsSupport": true
+    }
+  },
+  {
+    "name": "dev actual unsupported native board",
+    "status": "PASS",
+    "detail": {
+      "nativeBoard": "microbit",
+      "unsupported": 6,
+      "defaultAll": true,
+      "intersection": true
+    }
+  }
+]

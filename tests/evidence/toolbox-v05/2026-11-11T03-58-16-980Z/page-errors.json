@@ -1,0 +1,10 @@
+[
+  {
+    "label": "dev",
+    "error": "TypeError: Cannot read properties of null (reading 'blocks')"
+  },
+  {
+    "label": "dist",
+    "error": "TypeError: Cannot read properties of null (reading 'blocks')"
+  }
+]

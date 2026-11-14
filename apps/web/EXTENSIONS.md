@@ -1,0 +1,54 @@
+# 内置主控与模块接入
+
+本版本在原版 OpenBlock 扩展库中提供“舞台扩展 / 主控扩展 / 模块扩展”。点击原扩展按钮进入。主控单选、模块多选，选中显示蓝色边框与状态，主体重复点击不重复添加；移除使用独立按钮。主控类型为主控板，模块类型为传感器、执行器和功能模块；类型、原生搜索和兼容筛选取交集，兼容筛选默认显示全部。无主控时模块保持可见，右上灰色矩形说明原因。
+
+“已加载”筛选读取实际加载状态，默认不勾选，各大分类独立记忆；顶部与扩展库两个主控入口共享同一controllers开关。它与类型、兼容及原生搜索取交集，清除筛选会一并复位；取消勾选只恢复展示，不卸载扩展。
+
+模块仍被任何原始角色、舞台或活动/持久监视器引用时不能移除；清主控前必须先移除全部模块，并处理主控块/菜单/开始帽等引用和实际串口占有。拒绝不停止或清空程序，成功移除记一次编辑，原生取消/卸载入口也使用同一守卫。清主控由完整归档候选恢复整个文档，只改空设备身份；块、舞台扩展、监视器、素材、模式和手稿沿原归档生命周期保留。静态代码缓存可留存，重加仍调用注册函数以重绑当前板菜单。筛选不写入归档、不产生编辑。
+
+主控目录包含 Arduino Uno、ESP32、ESP32-S3、独立的 Aijite ESP32-S3 和 FireBeetle ESP32-E。原设备菜单仍保留官方主控。Aijite 的数字、模拟、触摸及模块引脚菜单排除 IO3；旧 `aijiteEsp32S3` 导入时规范为 `aijiteESP32S3`，`arduinoEsp32S3` 保持通用身份。
+
+顶部主控入口与扩展库“主控扩展”共用完整已注册原生目录及筛选规则，排除取消命令和隐藏条目。上述五板只是模块支持与明确board类型的范围，不限制整个目录；其他原生条目类型未知时在“全部”和名称搜索中保留，展示不会扩充六模块支持矩阵或硬件profile。
+
+首批 Arduino 上传模式模块：
+
+| ID | 稳定 opcode | 能力 |
+| --- | --- | --- |
+| `activateBuzzer` | `activeBuzzer_init/on/off` | 初始化、数字开关 |
+| `atomizer` | `atomizer_init/setState/toggle` | 初始化、状态、切换 |
+| `pirSensor` | `pirSensor_init/detected` | 初始化、数字布尔检测 |
+| `flameSensor` | `flameSensor_readDigital/readAnalog` | 数字和模拟读取 |
+| `raindropSensor` | `raindropSensor_readDigital/readAnalog` | 数字和模拟读取 |
+| `moreComments` | `moreComments_commandBlock/branchBlock` | 语句和包含内部代码的分支注释 |
+
+添加模块前选择上述主控。选择主控或加载兼容模块保留当前编程/上传模式；模式通过菜单栏两个按钮显式切换。编程模式保留适用于当前目标的原生 Scratch 分类，主控按名称合并为一个分类，内部用标签分组，每个已加载模块独立分类。上传模式使用原生 Arduino 基础分类。六个模块在编程模式可加载并查看，但积木为灰色并提示“仅上传模式”；切换上传后可拖出、编辑和生成代码。Uno 等原生主控按各积木原生模式能力保留实时操作，四款 ESP32 主控在本期作为上传能力呈现。
+
+纯 Scratch 舞台程序可与独立 Arduino 启动脚本共存；从舞台调用硬件模块或上传专用主控积木时，绿旗、堆栈点击、舞台键鼠事件和父层运行入口会阻止该执行并提示使用上传模式。检查会沿自制积木调用追踪，编辑中的运行程序变为不支持的组合时会停止。以上不提供模拟硬件效果。选择主控和模块不会申请串口权限或连接设备。Web Serial 终端、代码生成与编译烧录分别使用现有能力，本轮未做实物验证。
+
+## 内置模块资源加载 v0.5
+
+`openblock.html` 在编辑器模块前加载单个 classic 静态入口 `/cfzn-extensions/module-loader.js`。只有该入口通过原生动态 import 加载四类 `.mjs`；Vite 源码不 import publicDir 资源，也不使用 eval、回退源代码或放宽 Vite 检查。入口只接受六个固定 ID、64 位十六进制版本和非负安全整数重试号，返回 `{toolbox, translations, generator, blocks}` 四个函数。
+
+资源版本取同源 manifest 的 `integrationSha256` 并在当前页面固定，成功代码按版本/ID缓存，失败请求释放；重试携带增加的 `retry` 参数。清单请求失败可重试，检测到发布版本变化时要求保存并刷新，防止混用新旧资源。加载资源完成后才备份/停止/修改文档；准备失败不重新反序列化原文档，注册失败仍走完整归档恢复。模块就绪依据真实定义、Arduino 生成器和已组合分类中的全部预期 opcode，不依赖当前选中的积木栏。
+
+分类缓存、下载缓存和灰色提示是可重算的界面状态，不写入项目元数据。模式切换仅重建积木栏并临时关闭其回收复用，避免旧灰块状态残留；主工作区积木不被写入禁用标记。完整 `.ob` 与 `cfzn/editor.json` 草稿保留原有归档边界。
+
+恢复带模块的归档时，模块注册期间可先更新分类，主工作区等全部定义和原模式就绪后统一重建；确认原块完整保留后才报告成功，失败使用既有完整归档恢复。语言刷新事件虽没有 deviceId，也只有与当前真实主控及已关联完整分组匹配时才能更新语言缓存，额外舞台类别不并入主控，旧语言缓存不能冒充新语言。
+
+## 源码登记
+
+1. 在 `vendor/extensions/<stable ID>/` 放置模块源码与图标，保留来源及许可证，在 `vendor/SOURCES.md` 记录。参考真实 `atomizer` 模块：`blocks.js` 定义积木，`generator.js` 定义 Arduino 生成器，`toolbox.js` 返回分类 XML，`translations.js` 定义消息；`assets/<ID>.png` 是卡片图片。
+2. 当前准备器识别的四个函数分别是 `registerBlocks`、`registerGenerators`、`registerToolboxs`、`registerBlocksMessages`，将它们转为独立 `.mjs` 默认导出。不要在浏览器中写共享全局 `register*` 槽。需要其他格式时先明确导出，再更新准备器和检查。
+3. 在 `src/extensions/catalog.ts` 登记固定 ID、名称、图标、兼容主控、分类 ID 以及全部真实 opcode；同步更新 `scripts/prepare-openblock.mjs` 的固定模块清单和 `public/cfzn-extensions/module-loader.js` 的固定允许列表。资源只能从此静态目录加载，不接受项目内容指定脚本路径或界面上传插件。
+4. 新主控在 `src/extensions/aijite.ts` 同一适配边界登记元数据与工厂。行为相同的设备可复用官方类；引脚或功能不同应使用独立 ID 和派生实现，不能只复制卡片。需要新的公共语义或更广的引擎改动时，先交主控对齐契约。
+5. 执行 `npm run prepare:openblock`、`npm run typecheck`、`npm test`、`npm run build`，再运行 `node scripts/verify-extensions.mjs` 做真实浏览器检查（使用仓库根安装的 Playwright 和本机 Edge，默认访问既有 5173；可用 `CFZN_VERIFY_URL` 指向生产预览）。实际连接积木、编辑参数、观察代码；完整导出、全新 iframe 导入并通过 API 保存重开。不能只检查卡片或导出函数存在。
+
+`scripts/openblock-hooks.mjs` 是固定官方 GUI 版本的窄补丁，标注源码位置和准确变换片段，校验完整上游 SHA-256 和唯一命中。它提供原 Library 筛选栏插槽、两个库容器边界、原卡片键盘语义、设备元数据及设备工厂注册入口；VM 引擎、调度器和序列化器仍来自官方包。升级不匹配时准备失败。模块/图片/补丁/准备脚本的指纹进入 manifest，变化会重新准备资源；不手改 `node_modules` 或 `.runtime`。
+
+## 保存与失败处理
+
+权威状态来自 VM，完整 `.ob` 原生保存 `device`、`programMode`、`extensions`、`deviceExtensions`、`targets` 和造型/声音。模块即使没有放积木也在 `deviceExtensions` 中。模块实现与图片随网站发布，不作为插件嵌入项目；稳定 ID/opcode 不能静默改义。
+
+设备和模块操作期间显示加载状态，保存/导出报告忙碌，完成注册和工具箱验证后才标记 dirty。主控切换保留兼容模块；不兼容模块或失去实现的设备积木阻止切换，先另存或新建。导入在原 VM 清理前检查本地设备/模块可用性，失败走完整归档备份恢复；常规项目/新项目清除上一项目的主控和模块。成功恢复不算用户编辑。操作失败显示具体名称和原因；若恢复本身失败，保留可下载的完整恢复备份并阻止后续保存。
+
+资源来自同源 `/cfzn-extensions/`，无需旧 IDE 源码或 20112 资源服务。上游 OpenBlock Link 的可选连接探测与这些资源没有关系。随附许可与资产来源见 `vendor/SOURCES.md`。

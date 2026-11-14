@@ -1,0 +1,8 @@
+[
+  {
+    "name": "right aligned title and tools plus narrow scroll keyboard",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(g.blank>100)\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(g.blank>100)\n\n    at file:///F:/CFZN/CFZN-IDE/tests/.right-align-check.mjs:81:1538\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/.right-align-check.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/.right-align-check.mjs:81:2"
+  }
+]

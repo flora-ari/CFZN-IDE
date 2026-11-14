@@ -1,0 +1,27 @@
+[
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects",
+    "status": 200
+  },
+  {
+    "label": "main",
+    "method": "POST",
+    "path": "/api/v1/projects",
+    "status": 201,
+    "bodyBytes": 48173
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects",
+    "status": 200
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects",
+    "status": 200
+  }
+]

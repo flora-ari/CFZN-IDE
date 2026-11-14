@@ -1,0 +1,112 @@
+[
+  {
+    "label": "main",
+    "method": "POST",
+    "path": "/api/v1/projects",
+    "status": 201,
+    "bodyBytes": 48187
+  },
+  {
+    "label": "main",
+    "method": "PUT",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a/content",
+    "status": 200,
+    "bodyBytes": 47849,
+    "ifMatch": "\"1\""
+  },
+  {
+    "label": "fresh",
+    "method": "GET",
+    "path": "/api/v1/projects",
+    "status": 200
+  },
+  {
+    "label": "fresh",
+    "method": "GET",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a",
+    "status": 200
+  },
+  {
+    "label": "fresh",
+    "method": "GET",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a/content",
+    "status": 200,
+    "ifMatch": "\"2\""
+  },
+  {
+    "label": "main",
+    "method": "PUT",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a/content",
+    "status": 200,
+    "bodyBytes": 47849,
+    "ifMatch": "\"2\""
+  },
+  {
+    "label": "main",
+    "method": "PUT",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a/content",
+    "status": 200,
+    "bodyBytes": 47849,
+    "ifMatch": "\"3\""
+  },
+  {
+    "label": "main",
+    "method": "PATCH",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a",
+    "status": 200,
+    "bodyBytes": 29,
+    "ifMatch": "\"4\""
+  },
+  {
+    "label": "main",
+    "method": "PUT",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a/content",
+    "status": 500,
+    "bodyBytes": 47849,
+    "ifMatch": "\"5\""
+  },
+  {
+    "label": "main",
+    "method": "PUT",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a/content",
+    "status": 200,
+    "bodyBytes": 47849,
+    "ifMatch": "\"5\""
+  },
+  {
+    "label": "main",
+    "method": "PUT",
+    "path": "/api/v1/projects/93b4992b-2734-4e67-a29b-5cabb155ca0a/content",
+    "status": 412,
+    "bodyBytes": 47849,
+    "ifMatch": "\"6\""
+  },
+  {
+    "label": "main",
+    "method": "POST",
+    "path": "/api/v1/projects",
+    "status": 201,
+    "bodyBytes": 48169
+  },
+  {
+    "label": "main",
+    "method": "PUT",
+    "path": "/api/v1/projects/717a8b3a-b4c5-4313-add7-a204264f463a/content",
+    "status": 412,
+    "bodyBytes": 47849,
+    "ifMatch": "\"1\""
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects/717a8b3a-b4c5-4313-add7-a204264f463a",
+    "status": 200
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects/717a8b3a-b4c5-4313-add7-a204264f463a/content",
+    "status": 200,
+    "ifMatch": "\"2\""
+  }
+]

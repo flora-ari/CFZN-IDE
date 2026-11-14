@@ -1,0 +1,17 @@
+{
+  "injection": "public loadProject one-shot error after real candidate load; original function restored finally",
+  "loads": [
+    null,
+    "firebeetleEsp32E"
+  ],
+  "result": {
+    "error": "移除主控失败：INDEPENDENT_AFTER_CANDIDATE_LOAD_FAILURE"
+  },
+  "snapshot": {
+    "title": "OpenBlock作品",
+    "dirty": true,
+    "running": false,
+    "documentId": 0,
+    "editVersion": 18
+  }
+}

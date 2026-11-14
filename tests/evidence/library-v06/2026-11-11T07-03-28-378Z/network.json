@@ -1,0 +1,42 @@
+[
+  {
+    "label": "dist-native-monitors",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-native-monitors",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-unsupported",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-unsupported",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-unsupported",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist-unsupported",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist-unsupported",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist-unsupported",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist-unsupported",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist-unsupported",
+    "url": "http://127.0.0.1:65074/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  }
+]

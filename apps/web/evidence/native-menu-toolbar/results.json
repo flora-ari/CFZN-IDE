@@ -1,0 +1,544 @@
+{
+  "checks": {
+    "nativePlacement": true,
+    "importUserGesture": true,
+    "saveExport": true,
+    "serialGesture": true,
+    "extensionLibrary": true,
+    "fullscreen": true,
+    "nativeAlert": true,
+    "nativeEditDropdown": true,
+    "noPageErrors": true
+  },
+  "layouts": [
+    {
+      "width": 1440,
+      "tools": {
+        "x": 641.21875,
+        "y": 0,
+        "width": 373.34375,
+        "height": 48,
+        "top": 0,
+        "right": 1014.5625,
+        "bottom": 48,
+        "left": 641.21875
+      },
+      "tabs": {
+        "x": 0,
+        "y": 48,
+        "width": 250,
+        "height": 44,
+        "top": 48,
+        "right": 250,
+        "bottom": 92,
+        "left": 0
+      },
+      "menu": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 48,
+        "top": 0,
+        "right": 1440,
+        "bottom": 48,
+        "left": 0
+      },
+      "status": {
+        "x": 943.21875,
+        "y": 15,
+        "width": 71.34375,
+        "height": 18,
+        "top": 15,
+        "right": 1014.5625,
+        "bottom": 33,
+        "left": 943.21875
+      },
+      "buttons": [
+        {
+          "text": "项目",
+          "rect": {
+            "x": 641.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 683.21875,
+            "bottom": 40,
+            "left": 641.21875
+          }
+        },
+        {
+          "text": "新建",
+          "rect": {
+            "x": 687.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 729.21875,
+            "bottom": 40,
+            "left": 687.21875
+          }
+        },
+        {
+          "text": "导入",
+          "rect": {
+            "x": 733.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 775.21875,
+            "bottom": 40,
+            "left": 733.21875
+          }
+        },
+        {
+          "text": "导出",
+          "rect": {
+            "x": 779.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 821.21875,
+            "bottom": 40,
+            "left": 779.21875
+          }
+        },
+        {
+          "text": "保存",
+          "rect": {
+            "x": 825.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 867.21875,
+            "bottom": 40,
+            "left": 825.21875
+          }
+        },
+        {
+          "text": "串口终端",
+          "rect": {
+            "x": 871.21875,
+            "y": 8,
+            "width": 68,
+            "height": 32,
+            "top": 8,
+            "right": 939.21875,
+            "bottom": 40,
+            "left": 871.21875
+          }
+        }
+      ],
+      "menuChildren": [
+        {
+          "className": "menu-bar_main-menu_3wjWH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 482.984375,
+            "height": 48,
+            "top": 0,
+            "right": 482.984375,
+            "bottom": 48,
+            "left": 0
+          }
+        },
+        {
+          "className": "menu-bar_file-menu_g7ufm",
+          "rect": {
+            "x": 482.984375,
+            "y": 0,
+            "width": 152.234375,
+            "height": 48,
+            "top": 0,
+            "right": 635.21875,
+            "bottom": 48,
+            "left": 482.984375
+          }
+        },
+        {
+          "className": "cfzn-project-tools",
+          "rect": {
+            "x": 641.21875,
+            "y": 0,
+            "width": 373.34375,
+            "height": 48,
+            "top": 0,
+            "right": 1014.5625,
+            "bottom": 48,
+            "left": 641.21875
+          }
+        },
+        {
+          "className": "menu-bar_tail-menu_2dRXU",
+          "rect": {
+            "x": 1020.5625,
+            "y": 0,
+            "width": 419.4375,
+            "height": 48,
+            "top": 0,
+            "right": 1440,
+            "bottom": 48,
+            "left": 1020.5625
+          }
+        }
+      ]
+    },
+    {
+      "width": 1894,
+      "tools": {
+        "x": 1095.21875,
+        "y": 0,
+        "width": 373.34375,
+        "height": 48,
+        "top": 0,
+        "right": 1468.5625,
+        "bottom": 48,
+        "left": 1095.21875
+      },
+      "tabs": {
+        "x": 0,
+        "y": 48,
+        "width": 250,
+        "height": 44,
+        "top": 48,
+        "right": 250,
+        "bottom": 92,
+        "left": 0
+      },
+      "menu": {
+        "x": 0,
+        "y": 0,
+        "width": 1894,
+        "height": 48,
+        "top": 0,
+        "right": 1894,
+        "bottom": 48,
+        "left": 0
+      },
+      "status": {
+        "x": 1397.21875,
+        "y": 15,
+        "width": 71.34375,
+        "height": 18,
+        "top": 15,
+        "right": 1468.5625,
+        "bottom": 33,
+        "left": 1397.21875
+      },
+      "buttons": [
+        {
+          "text": "项目",
+          "rect": {
+            "x": 1095.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 1137.21875,
+            "bottom": 40,
+            "left": 1095.21875
+          }
+        },
+        {
+          "text": "新建",
+          "rect": {
+            "x": 1141.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 1183.21875,
+            "bottom": 40,
+            "left": 1141.21875
+          }
+        },
+        {
+          "text": "导入",
+          "rect": {
+            "x": 1187.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 1229.21875,
+            "bottom": 40,
+            "left": 1187.21875
+          }
+        },
+        {
+          "text": "导出",
+          "rect": {
+            "x": 1233.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 1275.21875,
+            "bottom": 40,
+            "left": 1233.21875
+          }
+        },
+        {
+          "text": "保存",
+          "rect": {
+            "x": 1279.21875,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 1321.21875,
+            "bottom": 40,
+            "left": 1279.21875
+          }
+        },
+        {
+          "text": "串口终端",
+          "rect": {
+            "x": 1325.21875,
+            "y": 8,
+            "width": 68,
+            "height": 32,
+            "top": 8,
+            "right": 1393.21875,
+            "bottom": 40,
+            "left": 1325.21875
+          }
+        }
+      ],
+      "menuChildren": [
+        {
+          "className": "menu-bar_main-menu_3wjWH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 482.984375,
+            "height": 48,
+            "top": 0,
+            "right": 482.984375,
+            "bottom": 48,
+            "left": 0
+          }
+        },
+        {
+          "className": "menu-bar_file-menu_g7ufm",
+          "rect": {
+            "x": 482.984375,
+            "y": 0,
+            "width": 606.234375,
+            "height": 48,
+            "top": 0,
+            "right": 1089.21875,
+            "bottom": 48,
+            "left": 482.984375
+          }
+        },
+        {
+          "className": "cfzn-project-tools",
+          "rect": {
+            "x": 1095.21875,
+            "y": 0,
+            "width": 373.34375,
+            "height": 48,
+            "top": 0,
+            "right": 1468.5625,
+            "bottom": 48,
+            "left": 1095.21875
+          }
+        },
+        {
+          "className": "menu-bar_tail-menu_2dRXU",
+          "rect": {
+            "x": 1474.5625,
+            "y": 0,
+            "width": 419.4375,
+            "height": 48,
+            "top": 0,
+            "right": 1894,
+            "bottom": 48,
+            "left": 1474.5625
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "tools": {
+        "x": 293.25,
+        "y": 0,
+        "width": 72,
+        "height": 48,
+        "top": 0,
+        "right": 365.25,
+        "bottom": 48,
+        "left": 293.25
+      },
+      "tabs": {
+        "x": 0,
+        "y": 48,
+        "width": 250,
+        "height": 44,
+        "top": 48,
+        "right": 250,
+        "bottom": 92,
+        "left": 0
+      },
+      "menu": {
+        "x": 0,
+        "y": 0,
+        "width": 390,
+        "height": 48,
+        "top": 0,
+        "right": 390,
+        "bottom": 48,
+        "left": 0
+      },
+      "status": {
+        "x": 595.25,
+        "y": 15,
+        "width": 71.34375,
+        "height": 18,
+        "top": 15,
+        "right": 666.59375,
+        "bottom": 33,
+        "left": 595.25
+      },
+      "buttons": [
+        {
+          "text": "项目",
+          "rect": {
+            "x": 293.25,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 335.25,
+            "bottom": 40,
+            "left": 293.25
+          }
+        },
+        {
+          "text": "新建",
+          "rect": {
+            "x": 339.25,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 381.25,
+            "bottom": 40,
+            "left": 339.25
+          }
+        },
+        {
+          "text": "导入",
+          "rect": {
+            "x": 385.25,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 427.25,
+            "bottom": 40,
+            "left": 385.25
+          }
+        },
+        {
+          "text": "导出",
+          "rect": {
+            "x": 431.25,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 473.25,
+            "bottom": 40,
+            "left": 431.25
+          }
+        },
+        {
+          "text": "保存",
+          "rect": {
+            "x": 477.25,
+            "y": 8,
+            "width": 42,
+            "height": 32,
+            "top": 8,
+            "right": 519.25,
+            "bottom": 40,
+            "left": 477.25
+          }
+        },
+        {
+          "text": "串口终端",
+          "rect": {
+            "x": 523.25,
+            "y": 8,
+            "width": 68,
+            "height": 32,
+            "top": 8,
+            "right": 591.25,
+            "bottom": 40,
+            "left": 523.25
+          }
+        }
+      ],
+      "menuChildren": [
+        {
+          "className": "menu-bar_main-menu_3wjWH",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "width": 287.25,
+            "height": 48,
+            "top": 0,
+            "right": 287.25,
+            "bottom": 48,
+            "left": 0
+          }
+        },
+        {
+          "className": "cfzn-project-tools",
+          "rect": {
+            "x": 293.25,
+            "y": 0,
+            "width": 72,
+            "height": 48,
+            "top": 0,
+            "right": 365.25,
+            "bottom": 48,
+            "left": 293.25
+          }
+        },
+        {
+          "className": "menu-bar_tail-menu_2dRXU",
+          "rect": {
+            "x": 371.25,
+            "y": 0,
+            "width": 306.65625,
+            "height": 48,
+            "top": 0,
+            "right": 677.90625,
+            "bottom": 48,
+            "left": 371.25
+          }
+        }
+      ]
+    }
+  ],
+  "calls": [
+    {
+      "method": "POST",
+      "path": "/api/v1/projects"
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/projects"
+    }
+  ],
+  "errors": []
+}

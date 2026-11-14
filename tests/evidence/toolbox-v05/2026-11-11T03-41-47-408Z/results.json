@@ -1,0 +1,217 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "PASS",
+    "detail": {
+      "initialMode": "realtime",
+      "programmingCategories": [
+        "motion",
+        "looks",
+        "sound",
+        "events",
+        "control",
+        "sensing",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "uploadCategories": [
+        "events",
+        "control",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "loaded": [
+        "activateBuzzer",
+        "atomizer",
+        "pirSensor",
+        "flameSensor",
+        "raindropSensor",
+        "moreComments"
+      ]
+    }
+  },
+  {
+    "name": "dev fixed helper invalid/default/network/retry/cache",
+    "status": "PASS",
+    "detail": {
+      "invalidDefault": "扩展「activateBuzzer」的 blocks.mjs 未提供有效的默认注册函数。",
+      "networkFailure": "扩展「activateBuzzer」的 generator.mjs 加载失败：Failed to fetch dynamically imported module: http://127.0.0.1:57379/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&retry=1",
+      "retry": true,
+      "cacheNoRefetch": true,
+      "inputVersionGuards": [
+        "无法加载扩展：模块不在内置目录中。",
+        "无法加载扩展：资源版本无效，请刷新编辑器。",
+        "无法加载扩展：重试次数必须是非负安全整数。",
+        "扩展资源版本已变化，请先保存当前项目并刷新编辑器。"
+      ]
+    }
+  },
+  {
+    "name": "dev stage execution guards",
+    "status": "PASS",
+    "detail": {
+      "scratchMoved": 19,
+      "standaloneArduino": true,
+      "parentRunRejected": true,
+      "greenFlagRejected": true,
+      "stackClickRejected": true,
+      "keyboardNoExecution": true,
+      "uploadEditingQuiet": true
+    }
+  },
+  {
+    "name": "dev parameter code and board compatibility",
+    "status": "PASS",
+    "detail": {
+      "sixModuleStatements": true,
+      "parameterSensitive": true,
+      "incompatibleUnoRefused": true,
+      "aijiteExcludes3": true,
+      "mode": "upload"
+    }
+  },
+  {
+    "name": "dev complete realtime archive API restore",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    assets: {\n      'sprite:角色1#1/costumes:造型1#0': {\n        bytes: 5289,\n        metadata: {\n...\n        blocks: {\n+         '?lP}:z[PU3m3jwOkoTGm': {\n+           fields: {},\n+           inputs: {\n+             CONDITION: [\n+               2,\n+               'E4s(m|L~W{BPr.aT;cvY'\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'kv`A5CFFfC!pIA=4~phM'\n+             ]\n+           },\n+           next: 'PW}Qc|JB-!(1FP!.s3t3',\n+           opcode: 'control_if',\n+           parent: 'w{/zo|d;foqekPNgsI%D',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         '@|rU3f5%@xB6wkX:mQuk': {\n+           fields: {\n+             PIN: [\n+               '34',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: null,\n+           opcode: 'raindropSensor_readAnalog',\n+           parent: 'PW}Qc|JB-!(1FP!.s3t3',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'E4s(m|L~W{BPr.aT;cvY': {\n+           fields: {\n+             PIN: [\n+               '14',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: null,\n+           opcode: 'flameSensor_readDigital',\n+           parent: '?lP}:z[PU3m3jwOkoTGm',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'PW}Qc|JB-!(1FP!.s3t3': {\n+           fields: {\n+             EOL: [\n+               'warp',\n+               null\n+             ],\n+             NO: [\n+               '0',\n+               null\n+             ]\n+           },\n+           inputs: {\n+             VALUE: [\n+               2,\n+               '@|rU3f5%@xB6wkX:mQuk'\n+             ]\n+           },\n+           next: null,\n+           opcode: 'arduino_serial_multiSerialPrint',\n+           parent: '?lP}:z[PU3m3jwOkoTGm',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'kv`A5CFFfC!pIA=4~phM': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'atomizer_toggle',\n+           parent: '?lP}:z[PU3m3jwOkoTGm',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'poVOi6_t:++Us%#IoFba': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'pirSensor_detected',\n+           parent: 'w{/zo|d;foqekPNgsI%D',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'qa-atom': {\n+           fields: {\n+             PIN: [\n+               '26',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-pir',\n+           opcode: 'atomizer_init',\n+           parent: 'qa-init',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'qa-comment': {\n+           fields: {},\n+           inputs: {\n+             COMMENTS: [\n+               1,\n+               [\n+                 10,\n+                 'independent six modules'\n+               ]\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'w{/zo|d;foqekPNgsI%D'\n+             ]\n+           },\n+           next: null,\n+           opcode: 'moreComments_branchBlock',\n+           parent: 'qa-pir',\n+           shadow: false,\n+           topLevel: false\n+         },\n          'qa-flag': {\n            fields: {},\n            inputs: {},\n            next: 'qa-move',\n            opcode: 'event_whenflagclicked',\n...\n          },\n+         'qa-hat': {\n+           fields: {},\n+           inputs: {},\n+           next: 'qa-init',\n+           opcode: 'event_whenarduinobegin',\n+           parent: null,\n+           shadow: false,\n+           topLevel: true,\n+           x: 360,\n+           y: 70\n+         },\n+         'qa-init': {\n+           fields: {\n+             PIN: [\n+               '25',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-atom',\n+           opcode: 'activeBuzzer_init',\n+           parent: 'qa-hat',\n+           shadow: false,\n+           topLevel: false\n+         },\n          'qa-move': {\n            fields: {},\n            inputs: {\n              DX: [\n                1,\n...\n          },\n+         'qa-pir': {\n+           fields: {\n+             PIN: [\n+               '27',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-comment',\n+           opcode: 'pirSensor_init',\n+           parent: 'qa-atom',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'w{/zo|d;foqekPNgsI%D': {\n+           fields: {},\n+           inputs: {\n+             CONDITION: [\n+               2,\n+               'poVOi6_t:++Us%#IoFba'\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'x{HwAA{*HkS,)5q1z-~['\n+             ]\n+           },\n+           next: '?lP}:z[PU3m3jwOkoTGm',\n+           opcode: 'control_if',\n+           parent: 'qa-comment',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'x{HwAA{*HkS,)5q1z-~[': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'activeBuzzer_on',\n+           parent: 'w{/zo|d;foqekPNgsI%D',\n+           shadow: false,\n+           topLevel: false\n+         }\n        },\n        currentCostume: 0,\n        isStage: false,\n        name: '角色1'\n      }\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    assets: {\n      'sprite:角色1#1/costumes:造型1#0': {\n        bytes: 5289,\n        metadata: {\n...\n        blocks: {\n+         '?lP}:z[PU3m3jwOkoTGm': {\n+           fields: {},\n+           inputs: {\n+             CONDITION: [\n+               2,\n+               'E4s(m|L~W{BPr.aT;cvY'\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'kv`A5CFFfC!pIA=4~phM'\n+             ]\n+           },\n+           next: 'PW}Qc|JB-!(1FP!.s3t3',\n+           opcode: 'control_if',\n+           parent: 'w{/zo|d;foqekPNgsI%D',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         '@|rU3f5%@xB6wkX:mQuk': {\n+           fields: {\n+             PIN: [\n+               '34',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: null,\n+           opcode: 'raindropSensor_readAnalog',\n+           parent: 'PW}Qc|JB-!(1FP!.s3t3',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'E4s(m|L~W{BPr.aT;cvY': {\n+           fields: {\n+             PIN: [\n+               '14',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: null,\n+           opcode: 'flameSensor_readDigital',\n+           parent: '?lP}:z[PU3m3jwOkoTGm',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'PW}Qc|JB-!(1FP!.s3t3': {\n+           fields: {\n+             EOL: [\n+               'warp',\n+               null\n+             ],\n+             NO: [\n+               '0',\n+               null\n+             ]\n+           },\n+           inputs: {\n+             VALUE: [\n+               2,\n+               '@|rU3f5%@xB6wkX:mQuk'\n+             ]\n+           },\n+           next: null,\n+           opcode: 'arduino_serial_multiSerialPrint',\n+           parent: '?lP}:z[PU3m3jwOkoTGm',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'kv`A5CFFfC!pIA=4~phM': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'atomizer_toggle',\n+           parent: '?lP}:z[PU3m3jwOkoTGm',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'poVOi6_t:++Us%#IoFba': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'pirSensor_detected',\n+           parent: 'w{/zo|d;foqekPNgsI%D',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'qa-atom': {\n+           fields: {\n+             PIN: [\n+               '26',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-pir',\n+           opcode: 'atomizer_init',\n+           parent: 'qa-init',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'qa-comment': {\n+           fields: {},\n+           inputs: {\n+             COMMENTS: [\n+               1,\n+               [\n+                 10,\n+                 'independent six modules'\n+               ]\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'w{/zo|d;foqekPNgsI%D'\n+             ]\n+           },\n+           next: null,\n+           opcode: 'moreComments_branchBlock',\n+           parent: 'qa-pir',\n+           shadow: false,\n+           topLevel: false\n+         },\n          'qa-flag': {\n            fields: {},\n            inputs: {},\n            next: 'qa-move',\n            opcode: 'event_whenflagclicked',\n...\n          },\n+         'qa-hat': {\n+           fields: {},\n+           inputs: {},\n+           next: 'qa-init',\n+           opcode: 'event_whenarduinobegin',\n+           parent: null,\n+           shadow: false,\n+           topLevel: true,\n+           x: 360,\n+           y: 70\n+         },\n+         'qa-init': {\n+           fields: {\n+             PIN: [\n+               '25',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-atom',\n+           opcode: 'activeBuzzer_init',\n+           parent: 'qa-hat',\n+           shadow: false,\n+           topLevel: false\n+         },\n          'qa-move': {\n            fields: {},\n            inputs: {\n              DX: [\n                1,\n...\n          },\n+         'qa-pir': {\n+           fields: {\n+             PIN: [\n+               '27',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-comment',\n+           opcode: 'pirSensor_init',\n+           parent: 'qa-atom',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'w{/zo|d;foqekPNgsI%D': {\n+           fields: {},\n+           inputs: {\n+             CONDITION: [\n+               2,\n+               'poVOi6_t:++Us%#IoFba'\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'x{HwAA{*HkS,)5q1z-~['\n+             ]\n+           },\n+           next: '?lP}:z[PU3m3jwOkoTGm',\n+           opcode: 'control_if',\n+           parent: 'qa-comment',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'x{HwAA{*HkS,)5q1z-~[': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'activeBuzzer_on',\n+           parent: 'w{/zo|d;foqekPNgsI%D',\n+           shadow: false,\n+           topLevel: false\n+         }\n        },\n        currentCostume: 0,\n        isStage: false,\n        name: '角色1'\n      }\n\n    at sameArchiveState (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:91:42)\n    at archiveCases (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:116:136)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:417"
+  },
+  {
+    "name": "dev UI resource registration rollback retries",
+    "status": "PASS",
+    "detail": {
+      "manifestRetry": true,
+      "preparationDocumentUnchanged": true,
+      "resourceRetry": true,
+      "registrationFullArchiveRollback": true,
+      "registrationExplicitRetry": true
+    }
+  },
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "PASS",
+    "detail": {
+      "initialMode": "realtime",
+      "programmingCategories": [
+        "motion",
+        "looks",
+        "sound",
+        "events",
+        "control",
+        "sensing",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "uploadCategories": [
+        "events",
+        "control",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "loaded": [
+        "activateBuzzer",
+        "atomizer",
+        "pirSensor",
+        "flameSensor",
+        "raindropSensor",
+        "moreComments"
+      ]
+    }
+  },
+  {
+    "name": "dist fixed helper invalid/default/network/retry/cache",
+    "status": "PASS",
+    "detail": {
+      "invalidDefault": "扩展「activateBuzzer」的 blocks.mjs 未提供有效的默认注册函数。",
+      "networkFailure": "扩展「activateBuzzer」的 generator.mjs 加载失败：Failed to fetch dynamically imported module: http://127.0.0.1:57380/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&retry=1",
+      "retry": true,
+      "cacheNoRefetch": true,
+      "inputVersionGuards": [
+        "无法加载扩展：模块不在内置目录中。",
+        "无法加载扩展：资源版本无效，请刷新编辑器。",
+        "无法加载扩展：重试次数必须是非负安全整数。",
+        "扩展资源版本已变化，请先保存当前项目并刷新编辑器。"
+      ]
+    }
+  },
+  {
+    "name": "dist stage execution guards",
+    "status": "PASS",
+    "detail": {
+      "scratchMoved": 19,
+      "standaloneArduino": true,
+      "parentRunRejected": true,
+      "greenFlagRejected": true,
+      "stackClickRejected": true,
+      "keyboardNoExecution": true,
+      "uploadEditingQuiet": true
+    }
+  },
+  {
+    "name": "dist parameter code and board compatibility",
+    "status": "PASS",
+    "detail": {
+      "sixModuleStatements": true,
+      "parameterSensitive": true,
+      "incompatibleUnoRefused": true,
+      "aijiteExcludes3": true,
+      "mode": "upload"
+    }
+  },
+  {
+    "name": "dist complete realtime archive API restore",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    assets: {\n      'sprite:角色1#1/costumes:造型1#0': {\n        bytes: 5289,\n        metadata: {\n...\n        blocks: {\n+         ':6n|VKA!mFdMj`VVSF9f': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'atomizer_toggle',\n+           parent: 'YyV`K5]hA4CzvopHH0~E',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'GL#Ysb;H@.ypYpt8_iU:': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'activeBuzzer_on',\n+           parent: 'u]4OANj(RRi.Ww50-oLu',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'Iaeqor5Fsb~)+x2GlKgJ': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'pirSensor_detected',\n+           parent: 'u]4OANj(RRi.Ww50-oLu',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'R7DnGC_L+]B]|LxIz3N`': {\n+           fields: {\n+             EOL: [\n+               'warp',\n+               null\n+             ],\n+             NO: [\n+               '0',\n+               null\n+             ]\n+           },\n+           inputs: {\n+             VALUE: [\n+               2,\n+               'zfU(:[qbonAKmfsdfcN['\n+             ]\n+           },\n+           next: null,\n+           opcode: 'arduino_serial_multiSerialPrint',\n+           parent: 'YyV`K5]hA4CzvopHH0~E',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'YyV`K5]hA4CzvopHH0~E': {\n+           fields: {},\n+           inputs: {\n+             CONDITION: [\n+               2,\n+               's71U}5n%cz0;!]E|j;yj'\n+             ],\n+             SUBSTACK: [\n+               2,\n+               ':6n|VKA!mFdMj`VVSF9f'\n+             ]\n+           },\n+           next: 'R7DnGC_L+]B]|LxIz3N`',\n+           opcode: 'control_if',\n+           parent: 'u]4OANj(RRi.Ww50-oLu',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'qa-atom': {\n+           fields: {\n+             PIN: [\n+               '26',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-pir',\n+           opcode: 'atomizer_init',\n+           parent: 'qa-init',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'qa-comment': {\n+           fields: {},\n+           inputs: {\n+             COMMENTS: [\n+               1,\n+               [\n+                 10,\n+                 'independent six modules'\n+               ]\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'u]4OANj(RRi.Ww50-oLu'\n+             ]\n+           },\n+           next: null,\n+           opcode: 'moreComments_branchBlock',\n+           parent: 'qa-pir',\n+           shadow: false,\n+           topLevel: false\n+         },\n          'qa-flag': {\n            fields: {},\n            inputs: {},\n            next: 'qa-move',\n            opcode: 'event_whenflagclicked',\n...\n          },\n+         'qa-hat': {\n+           fields: {},\n+           inputs: {},\n+           next: 'qa-init',\n+           opcode: 'event_whenarduinobegin',\n+           parent: null,\n+           shadow: false,\n+           topLevel: true,\n+           x: 360,\n+           y: 70\n+         },\n+         'qa-init': {\n+           fields: {\n+             PIN: [\n+               '25',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-atom',\n+           opcode: 'activeBuzzer_init',\n+           parent: 'qa-hat',\n+           shadow: false,\n+           topLevel: false\n+         },\n          'qa-move': {\n            fields: {},\n            inputs: {\n              DX: [\n                1,\n...\n          },\n+         'qa-pir': {\n+           fields: {\n+             PIN: [\n+               '27',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-comment',\n+           opcode: 'pirSensor_init',\n+           parent: 'qa-atom',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         's71U}5n%cz0;!]E|j;yj': {\n+           fields: {\n+             PIN: [\n+               '14',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: null,\n+           opcode: 'flameSensor_readDigital',\n+           parent: 'YyV`K5]hA4CzvopHH0~E',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'u]4OANj(RRi.Ww50-oLu': {\n+           fields: {},\n+           inputs: {\n+             CONDITION: [\n+               2,\n+               'Iaeqor5Fsb~)+x2GlKgJ'\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'GL#Ysb;H@.ypYpt8_iU:'\n+             ]\n+           },\n+           next: 'YyV`K5]hA4CzvopHH0~E',\n+           opcode: 'control_if',\n+           parent: 'qa-comment',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'zfU(:[qbonAKmfsdfcN[': {\n+           fields: {\n+             PIN: [\n+               '34',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: null,\n+           opcode: 'raindropSensor_readAnalog',\n+           parent: 'R7DnGC_L+]B]|LxIz3N`',\n+           shadow: false,\n+           topLevel: false\n+         }\n        },\n        currentCostume: 0,\n        isStage: false,\n        name: '角色1'\n      }\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    assets: {\n      'sprite:角色1#1/costumes:造型1#0': {\n        bytes: 5289,\n        metadata: {\n...\n        blocks: {\n+         ':6n|VKA!mFdMj`VVSF9f': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'atomizer_toggle',\n+           parent: 'YyV`K5]hA4CzvopHH0~E',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'GL#Ysb;H@.ypYpt8_iU:': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'activeBuzzer_on',\n+           parent: 'u]4OANj(RRi.Ww50-oLu',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'Iaeqor5Fsb~)+x2GlKgJ': {\n+           fields: {},\n+           inputs: {},\n+           next: null,\n+           opcode: 'pirSensor_detected',\n+           parent: 'u]4OANj(RRi.Ww50-oLu',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'R7DnGC_L+]B]|LxIz3N`': {\n+           fields: {\n+             EOL: [\n+               'warp',\n+               null\n+             ],\n+             NO: [\n+               '0',\n+               null\n+             ]\n+           },\n+           inputs: {\n+             VALUE: [\n+               2,\n+               'zfU(:[qbonAKmfsdfcN['\n+             ]\n+           },\n+           next: null,\n+           opcode: 'arduino_serial_multiSerialPrint',\n+           parent: 'YyV`K5]hA4CzvopHH0~E',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'YyV`K5]hA4CzvopHH0~E': {\n+           fields: {},\n+           inputs: {\n+             CONDITION: [\n+               2,\n+               's71U}5n%cz0;!]E|j;yj'\n+             ],\n+             SUBSTACK: [\n+               2,\n+               ':6n|VKA!mFdMj`VVSF9f'\n+             ]\n+           },\n+           next: 'R7DnGC_L+]B]|LxIz3N`',\n+           opcode: 'control_if',\n+           parent: 'u]4OANj(RRi.Ww50-oLu',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'qa-atom': {\n+           fields: {\n+             PIN: [\n+               '26',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-pir',\n+           opcode: 'atomizer_init',\n+           parent: 'qa-init',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'qa-comment': {\n+           fields: {},\n+           inputs: {\n+             COMMENTS: [\n+               1,\n+               [\n+                 10,\n+                 'independent six modules'\n+               ]\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'u]4OANj(RRi.Ww50-oLu'\n+             ]\n+           },\n+           next: null,\n+           opcode: 'moreComments_branchBlock',\n+           parent: 'qa-pir',\n+           shadow: false,\n+           topLevel: false\n+         },\n          'qa-flag': {\n            fields: {},\n            inputs: {},\n            next: 'qa-move',\n            opcode: 'event_whenflagclicked',\n...\n          },\n+         'qa-hat': {\n+           fields: {},\n+           inputs: {},\n+           next: 'qa-init',\n+           opcode: 'event_whenarduinobegin',\n+           parent: null,\n+           shadow: false,\n+           topLevel: true,\n+           x: 360,\n+           y: 70\n+         },\n+         'qa-init': {\n+           fields: {\n+             PIN: [\n+               '25',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-atom',\n+           opcode: 'activeBuzzer_init',\n+           parent: 'qa-hat',\n+           shadow: false,\n+           topLevel: false\n+         },\n          'qa-move': {\n            fields: {},\n            inputs: {\n              DX: [\n                1,\n...\n          },\n+         'qa-pir': {\n+           fields: {\n+             PIN: [\n+               '27',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: 'qa-comment',\n+           opcode: 'pirSensor_init',\n+           parent: 'qa-atom',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         's71U}5n%cz0;!]E|j;yj': {\n+           fields: {\n+             PIN: [\n+               '14',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: null,\n+           opcode: 'flameSensor_readDigital',\n+           parent: 'YyV`K5]hA4CzvopHH0~E',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'u]4OANj(RRi.Ww50-oLu': {\n+           fields: {},\n+           inputs: {\n+             CONDITION: [\n+               2,\n+               'Iaeqor5Fsb~)+x2GlKgJ'\n+             ],\n+             SUBSTACK: [\n+               2,\n+               'GL#Ysb;H@.ypYpt8_iU:'\n+             ]\n+           },\n+           next: 'YyV`K5]hA4CzvopHH0~E',\n+           opcode: 'control_if',\n+           parent: 'qa-comment',\n+           shadow: false,\n+           topLevel: false\n+         },\n+         'zfU(:[qbonAKmfsdfcN[': {\n+           fields: {\n+             PIN: [\n+               '34',\n+               null\n+             ]\n+           },\n+           inputs: {},\n+           next: null,\n+           opcode: 'raindropSensor_readAnalog',\n+           parent: 'R7DnGC_L+]B]|LxIz3N`',\n+           shadow: false,\n+           topLevel: false\n+         }\n        },\n        currentCostume: 0,\n        isStage: false,\n        name: '角色1'\n      }\n\n    at sameArchiveState (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:91:42)\n    at archiveCases (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:116:136)\n    at runNextTicks (node:internal/process/task_queues:65:5)\n    at process.processImmediate (node:internal/timers:472:9)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:417"
+  },
+  {
+    "name": "dist UI resource registration rollback retries",
+    "status": "PASS",
+    "detail": {
+      "manifestRetry": true,
+      "preparationDocumentUnchanged": true,
+      "resourceRetry": true,
+      "registrationFullArchiveRollback": true,
+      "registrationExplicitRetry": true
+    }
+  },
+  {
+    "name": "VM frozen upstream byte boundary",
+    "status": "PASS",
+    "detail": {
+      "output": "{ vmModuleCount: 178, guiHooks: 32, noFactoryInjection: true }\n"
+    }
+  }
+]

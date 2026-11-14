@@ -1,0 +1,19 @@
+node_modules/
+dist/
+build/
+coverage/
+.env
+.env.*
+!.env.example
+data/
+.runtime/
+test-results/
+playwright-report/
+*.log
+*.tgz
+*.zip
+
+# Local inspection artifacts and temporary hardware test workspaces.
+/apps/web/.inspect/
+/apps/web/.hardware-inspect/
+/tests/.hw-*/

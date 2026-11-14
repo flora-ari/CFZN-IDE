@@ -1,0 +1,234 @@
+[
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-selected",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-serial-guard",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-serial-guard",
+    "blockedHardware": "http://127.0.0.1:3002/api/v1/hardware/capabilities"
+  },
+  {
+    "label": "dev-serial-guard",
+    "blockedHardware": "http://127.0.0.1:3002/api/v1/hardware/ports"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/atomizer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/atomizer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/atomizer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-busy",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/atomizer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-rollback",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-rollback",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-menu-reference",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-menu-reference",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dev-v05",
+    "url": "http://127.0.0.1:49990/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  }
+]

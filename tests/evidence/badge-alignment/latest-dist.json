@@ -1,0 +1,366 @@
+{
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\badge-alignment\\2026-11-12T05-55-34-736Z-dist",
+  "results": [
+    {
+      "name": "gray badges wide narrow actual zoom and retained branding",
+      "status": "PASS",
+      "detail": {
+        "rows": [
+          {
+            "width": 2560,
+            "badges": [
+              {
+                "id": "module-activateBuzzer",
+                "text": "未选择主控板",
+                "cardY": 220.359375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-atomizer",
+                "text": "未选择主控板",
+                "cardY": 220.359375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-pirSensor",
+                "text": "未选择主控板",
+                "cardY": 220.359375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-flameSensor",
+                "text": "未选择主控板",
+                "cardY": 220.359375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-raindropSensor",
+                "text": "未选择主控板",
+                "cardY": 220.359375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-moreComments",
+                "text": "未选择主控板",
+                "cardY": 220.359375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              }
+            ]
+          },
+          {
+            "width": 800,
+            "badges": [
+              {
+                "id": "module-activateBuzzer",
+                "text": "未选择主控板",
+                "cardY": 220.359375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-atomizer",
+                "text": "未选择主控板",
+                "cardY": 220.359375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-pirSensor",
+                "text": "未选择主控板",
+                "cardY": 657.9375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-flameSensor",
+                "text": "未选择主控板",
+                "cardY": 657.9375,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-raindropSensor",
+                "text": "未选择主控板",
+                "cardY": 1095.515625,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              },
+              {
+                "id": "module-moreComments",
+                "text": "未选择主控板",
+                "cardY": 1095.515625,
+                "top": 2,
+                "right": 2,
+                "cssTop": "0px",
+                "cssRight": "0px",
+                "border": 2,
+                "parentIsCard": true,
+                "pointer": "none",
+                "z": "3"
+              }
+            ]
+          }
+        ],
+        "brand": {
+          "src": "/branding/IDE.png",
+          "alt": "CFZN IDE",
+          "width": 120,
+          "height": 40
+        },
+        "actualZoom": false,
+        "zoomLimit": "Nonpersistent Edge settings API unavailable; only viewport layout verified this run."
+      }
+    },
+    {
+      "name": "supported badges select remove and unsupported native board",
+      "status": "PASS",
+      "detail": {
+        "supported": [
+          {
+            "id": "module-activateBuzzer",
+            "text": "兼容当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-atomizer",
+            "text": "兼容当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-pirSensor",
+            "text": "兼容当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-flameSensor",
+            "text": "兼容当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-raindropSensor",
+            "text": "兼容当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-moreComments",
+            "text": "兼容当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          }
+        ],
+        "unsupported": [
+          {
+            "id": "module-activateBuzzer",
+            "text": "不支持当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-atomizer",
+            "text": "不支持当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-pirSensor",
+            "text": "不支持当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-flameSensor",
+            "text": "不支持当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-raindropSensor",
+            "text": "不支持当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          },
+          {
+            "id": "module-moreComments",
+            "text": "不支持当前主控",
+            "cardY": 220.359375,
+            "top": 2,
+            "right": 2,
+            "cssTop": "0px",
+            "cssRight": "0px",
+            "border": 2,
+            "parentIsCard": true,
+            "pointer": "none",
+            "z": "3"
+          }
+        ],
+        "selectRemove": true
+      }
+    },
+    {
+      "name": "no uncaught browser errors",
+      "status": "PASS",
+      "detail": {
+        "errors": []
+      }
+    }
+  ],
+  "cleanup": {
+    "contextClosed": true,
+    "serversClosed": true,
+    "tempRemoved": true
+  }
+}

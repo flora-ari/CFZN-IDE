@@ -1,0 +1,8 @@
+[
+  {
+    "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: Error: NATIVE_INPUTS []\n    at eval (eval at evaluate (:370:30), <anonymous>:1:120)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: Error: NATIVE_INPUTS []\n    at eval (eval at evaluate (:370:30), <anonymous>:1:120)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:62:904\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:141)\n    at async Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:62:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:92:2"
+  }
+]

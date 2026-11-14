@@ -1,0 +1,77 @@
+[
+  {
+    "name": "compatible controller switches preserve modules; incompatible pin switch rolls back",
+    "status": "FAIL",
+    "ms": 35135,
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Micro:bit', exact: true })\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Micro:bit', exact: true })\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\extensions-independent.mjs:252:32\n    at async test (F:\\CFZN\\CFZN-IDE\\tests\\extensions-independent.mjs:78:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/extensions-independent.mjs:238:3"
+  },
+  {
+    "name": "top toolbar POST and PUT, fresh iframe reopen, identity-mapped asset bytes, export/import",
+    "status": "PASS",
+    "ms": 6300,
+    "detail": {
+      "id": "58c65fa4-77ac-4070-98ee-037d61c6deaa",
+      "revision": 2,
+      "bytes": 48347,
+      "assets": {
+        "stage:Stage#0/costumes:背景1#0": {
+          "bytes": 202,
+          "sha256": "c3b723d028900d9768878653c3a65c377871fe3ecfce5c7b66ef795505e85e1a",
+          "metadata": {
+            "name": "背景1",
+            "dataFormat": "svg",
+            "rotationCenterX": 240,
+            "rotationCenterY": 180
+          }
+        },
+        "stage:Stage#0/sounds:啵#0": {
+          "bytes": 560,
+          "sha256": "fb8c18242813d8763cccf5f6077daf44b672d0088f5d3688cca29d621b4959cc",
+          "metadata": {
+            "name": "啵",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 1123
+          }
+        },
+        "sprite:角色1#1/costumes:造型1#0": {
+          "bytes": 5289,
+          "sha256": "efdb9db805b7f7c52c35460c7ab9368317faeb221a6301a75c3ad94e2d32f640",
+          "metadata": {
+            "name": "造型1",
+            "bitmapResolution": 1,
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          }
+        },
+        "sprite:角色1#1/costumes:造型2#1": {
+          "bytes": 4913,
+          "sha256": "f9620cc3fc524dd4abe631f36d4735fba057569a519cc300744f21016ef8442c",
+          "metadata": {
+            "name": "造型2",
+            "bitmapResolution": 1,
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          }
+        },
+        "sprite:角色1#1/sounds:啁啾#0": {
+          "bytes": 47410,
+          "sha256": "03ca0366cc93de09372d3f9accde285474debb719e3a69d169b3d3f655eac021",
+          "metadata": {
+            "name": "啁啾",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 23683
+          }
+        }
+      },
+      "loadedUnusedModule": "raindropSensor",
+      "freshDirty": false
+    }
+  }
+]

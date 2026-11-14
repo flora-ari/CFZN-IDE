@@ -1,0 +1,12 @@
+{
+  "source": "Exact PASS/FAIL names copied from captured stdout of exec session 40925; no rerun and no invented timings",
+  "build": "assets/editor-DmlIsIFJ.js",
+  "results": [
+    {"name":"real mouse drag and edited parameter","status":"PASS"},
+    {"name":"all-module combinations and nested comments generate actual Arduino","status":"PASS"},
+    {"name":"compatible controller switches preserve modules; incompatible pin switch rolls back","status":"FAIL","error":"Timeout waiting for Micro:bit card; native upstream workspace-not-empty guard, subsequently corrected and passed in compatible-final-results.json"},
+    {"name":"top toolbar POST and PUT, fresh iframe reopen, identity-mapped asset bytes, export/import","status":"FAIL","error":"Timeout waiting for project-notice after import; new action not complete, subsequently corrected and passed in ui-export-final-results.json"},
+    {"name":"unknown controller/module/stage IDs preserve project; legacy alias; ordinary/new clear selections","status":"PASS"},
+    {"name":"actual module resource failure rollback, retry, busy-save and rapid duplicate selection","status":"PASS","includes":"actual raindropSensor/generator.mjs abort while importing full module archive, with original project restored"}
+  ]
+}

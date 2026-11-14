@@ -1,0 +1,824 @@
+{
+  "started": "2026-11-10T03:41:17.250Z",
+  "checks": {
+    "deviceModeAndAutomatic": true,
+    "connectedFiveBlocks": true,
+    "generatedSemantics": true,
+    "sevenAssetsPreserved": true,
+    "noPageErrorsOrProjectWrites": true
+  },
+  "origin": "http://127.0.0.1:53696",
+  "actual": {
+    "project": {
+      "targets": [
+        {
+          "isStage": true,
+          "name": "Stage",
+          "variables": {
+            "`jEk@4|i[#Fk?(8x)AV.-my float variable": [
+              "my float variable",
+              0
+            ]
+          },
+          "lists": {},
+          "broadcasts": {},
+          "blocks": {},
+          "comments": {},
+          "currentCostume": 0,
+          "costumes": [
+            {
+              "assetId": "f82f50d42833251e922d2fe26fbf1772",
+              "name": "backdrop1",
+              "bitmapResolution": 1,
+              "md5ext": "f82f50d42833251e922d2fe26fbf1772.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 240,
+              "rotationCenterY": 180
+            }
+          ],
+          "sounds": [
+            {
+              "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+              "name": "pop",
+              "dataFormat": "wav",
+              "format": "",
+              "rate": 192000,
+              "sampleCount": 4493,
+              "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+            }
+          ],
+          "volume": 100,
+          "layerOrder": 0,
+          "tempo": 60,
+          "videoTransparency": 0,
+          "videoState": "off",
+          "textToSpeechLanguage": null
+        },
+        {
+          "isStage": false,
+          "name": "Mind+",
+          "variables": {},
+          "lists": {},
+          "broadcasts": {},
+          "blocks": {
+            "j.XsGy7IoyEaUR;D@aJ|": {
+              "opcode": "event_whenarduinobegin",
+              "next": "S75ZJ*dzEtmblzzB2yGM",
+              "parent": null,
+              "inputs": {},
+              "fields": {},
+              "shadow": false,
+              "topLevel": true,
+              "x": 261,
+              "y": 132
+            },
+            "S75ZJ*dzEtmblzzB2yGM": {
+              "opcode": "arduino_serial_multiSerialBegin",
+              "next": "KTv,mR|mS*/5_,jvD_70",
+              "parent": "j.XsGy7IoyEaUR;D@aJ|",
+              "inputs": {},
+              "fields": {
+                "NO": [
+                  "0",
+                  null
+                ],
+                "VALUE": [
+                  "9600",
+                  null
+                ]
+              },
+              "shadow": false,
+              "topLevel": false
+            },
+            "KTv,mR|mS*/5_,jvD_70": {
+              "opcode": "control_forever",
+              "next": null,
+              "parent": "S75ZJ*dzEtmblzzB2yGM",
+              "inputs": {
+                "SUBSTACK": [
+                  2,
+                  "p#c@S#:{mF{u%KVsAM?k"
+                ]
+              },
+              "fields": {},
+              "shadow": false,
+              "topLevel": false
+            },
+            "p#c@S#:{mF{u%KVsAM?k": {
+              "opcode": "arduino_serial_multiSerialPrint",
+              "next": "B^`**f;5~.R3jk1iz[D{",
+              "parent": "KTv,mR|mS*/5_,jvD_70",
+              "inputs": {
+                "VALUE": [
+                  1,
+                  [
+                    10,
+                    "hello"
+                  ]
+                ]
+              },
+              "fields": {
+                "NO": [
+                  "0",
+                  null
+                ],
+                "EOL": [
+                  "warp",
+                  null
+                ]
+              },
+              "shadow": false,
+              "topLevel": false
+            },
+            "B^`**f;5~.R3jk1iz[D{": {
+              "opcode": "control_wait",
+              "next": null,
+              "parent": "p#c@S#:{mF{u%KVsAM?k",
+              "inputs": {
+                "DURATION": [
+                  1,
+                  [
+                    5,
+                    "5"
+                  ]
+                ]
+              },
+              "fields": {},
+              "shadow": false,
+              "topLevel": false
+            }
+          },
+          "comments": {},
+          "currentCostume": 0,
+          "costumes": [
+            {
+              "assetId": "883726cafbc2997008ba711c3d348c19",
+              "name": "Mind+1",
+              "bitmapResolution": 1,
+              "md5ext": "883726cafbc2997008ba711c3d348c19.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 47,
+              "rotationCenterY": 55
+            },
+            {
+              "assetId": "35b56db213a27ab0e0fd69390e857c04",
+              "name": "Mind+2",
+              "bitmapResolution": 1,
+              "md5ext": "35b56db213a27ab0e0fd69390e857c04.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 47,
+              "rotationCenterY": 55
+            },
+            {
+              "assetId": "f6169fc1ab935eed85bd0d42bd06861a",
+              "name": "Mind+3",
+              "bitmapResolution": 1,
+              "md5ext": "f6169fc1ab935eed85bd0d42bd06861a.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 47,
+              "rotationCenterY": 55
+            },
+            {
+              "assetId": "58bc6fffb0f51613b7e3a6a32bc3ea0d",
+              "name": "Mind+4",
+              "bitmapResolution": 1,
+              "md5ext": "58bc6fffb0f51613b7e3a6a32bc3ea0d.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 47,
+              "rotationCenterY": 55
+            }
+          ],
+          "sounds": [
+            {
+              "assetId": "83c36d806dc92327b9e7049a565c6bff",
+              "name": "Meow",
+              "dataFormat": "wav",
+              "format": "",
+              "rate": 192000,
+              "sampleCount": 162725,
+              "md5ext": "83c36d806dc92327b9e7049a565c6bff.wav"
+            }
+          ],
+          "volume": 100,
+          "layerOrder": 1,
+          "visible": true,
+          "x": 0,
+          "y": 0,
+          "size": 100,
+          "direction": 90,
+          "draggable": false,
+          "rotationStyle": "all around"
+        }
+      ],
+      "monitors": [],
+      "device": {
+        "deviceId": "firebeetleEsp32E",
+        "type": "arduino"
+      },
+      "programMode": "upload",
+      "extensions": [],
+      "deviceExtensions": [],
+      "meta": {
+        "semver": "3.0.0",
+        "vm": "0.2.0-prerelease.20250609145235",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+      }
+    },
+    "code": "// generated by OpenBlock\r\n#include <Arduino.h>\r\n\r\nfloat my_float_variable;\r\n\r\nvoid setup() {\r\n  Serial.begin(9600);\r\n}\r\n\r\nvoid loop() {\r\n  Serial.println(\"hello\");\r\n  delay(5 * 1000);\r\n}\r\n",
+    "readonly": true,
+    "mode": [
+      "上传模式"
+    ],
+    "tabs": [
+      "自动生成"
+    ]
+  },
+  "blocks": [
+    {
+      "opcode": "event_whenarduinobegin",
+      "next": "S75ZJ*dzEtmblzzB2yGM",
+      "parent": null,
+      "inputs": {},
+      "fields": {},
+      "shadow": false,
+      "topLevel": true,
+      "x": 261,
+      "y": 132
+    },
+    {
+      "opcode": "arduino_serial_multiSerialBegin",
+      "next": "KTv,mR|mS*/5_,jvD_70",
+      "parent": "j.XsGy7IoyEaUR;D@aJ|",
+      "inputs": {},
+      "fields": {
+        "NO": [
+          "0",
+          null
+        ],
+        "VALUE": [
+          "9600",
+          null
+        ]
+      },
+      "shadow": false,
+      "topLevel": false
+    },
+    {
+      "opcode": "control_forever",
+      "next": null,
+      "parent": "S75ZJ*dzEtmblzzB2yGM",
+      "inputs": {
+        "SUBSTACK": [
+          2,
+          "p#c@S#:{mF{u%KVsAM?k"
+        ]
+      },
+      "fields": {},
+      "shadow": false,
+      "topLevel": false
+    },
+    {
+      "opcode": "arduino_serial_multiSerialPrint",
+      "next": "B^`**f;5~.R3jk1iz[D{",
+      "parent": "KTv,mR|mS*/5_,jvD_70",
+      "inputs": {
+        "VALUE": [
+          1,
+          [
+            10,
+            "hello"
+          ]
+        ]
+      },
+      "fields": {
+        "NO": [
+          "0",
+          null
+        ],
+        "EOL": [
+          "warp",
+          null
+        ]
+      },
+      "shadow": false,
+      "topLevel": false
+    },
+    {
+      "opcode": "control_wait",
+      "next": null,
+      "parent": "p#c@S#:{mF{u%KVsAM?k",
+      "inputs": {
+        "DURATION": [
+          1,
+          [
+            5,
+            "5"
+          ]
+        ]
+      },
+      "fields": {},
+      "shadow": false,
+      "topLevel": false
+    }
+  ],
+  "assets": [
+    {
+      "target": "Stage",
+      "kind": "costumes",
+      "name": "backdrop1",
+      "key": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+      "sha256": "f324f56a520764d11b172e216356b1fc6fd06ef862f2da45de2afdad8d89eb1e"
+    },
+    {
+      "target": "Stage",
+      "kind": "sounds",
+      "name": "pop",
+      "key": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+      "sha256": "fb8c18242813d8763cccf5f6077daf44b672d0088f5d3688cca29d621b4959cc"
+    },
+    {
+      "target": "Mind+",
+      "kind": "costumes",
+      "name": "Mind+1",
+      "key": "09dc888b0b7df19f70d81588ae73420f.svg",
+      "sha256": "f6deeaaa44f5718606a0143a268cca63257bfd2814c5533cd64e21ef44ac1634"
+    },
+    {
+      "target": "Mind+",
+      "kind": "costumes",
+      "name": "Mind+2",
+      "key": "09dc888b0b7df19f70d81588ae73420a.svg",
+      "sha256": "825d34f9e0512a76c5c898a3189b4e017d82db59a9f611cc7a301204db0fc48d"
+    },
+    {
+      "target": "Mind+",
+      "kind": "costumes",
+      "name": "Mind+3",
+      "key": "09dc888b0b7df19f70d81588ae73420b.svg",
+      "sha256": "b7fddbaf99d68a8e717e50c7b1321f6d3a4960d3ed6462ee5c0582ee79f29c8f"
+    },
+    {
+      "target": "Mind+",
+      "kind": "costumes",
+      "name": "Mind+4",
+      "key": "09dc888b0b7df19f70d81588ae73420d.svg",
+      "sha256": "75e3c1bf7d5301080ce9ff8475bedf489d100f57c07b5ed1b4e68451700d8763"
+    },
+    {
+      "target": "Mind+",
+      "kind": "sounds",
+      "name": "Meow",
+      "key": "83c36d806dc92327b9e7049a565c6bff.wav",
+      "sha256": "427afe9d62874d41401d01558d48bec98f26d675e4480b073835576ed1ff499d"
+    }
+  ],
+  "build": {
+    "jobId": "8e78a365-2749-4faf-bbd6-ff650281bf03",
+    "state": "succeeded"
+  },
+  "status": "PASS",
+  "errors": [],
+  "requests": [
+    {
+      "console": "warning",
+      "text": "Canvas2D: Multiple readback operations using getImageData are faster with the willReadFrequently attribute set to true. See: https://html.spec.whatwg.org/multipage/canvas.html#concept-canvas-will-read-frequently"
+    },
+    {
+      "console": "warning",
+      "text": "%cgui  color: #fff; background: #bbbb00; TypeError: Cannot read properties of undefined (reading 'getCostumes')\n    at Blocks.getToolboxXML (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:346759:35)\n    at Blocks.wrapper [as getToolboxXML] (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:25957:15)\n    at Blocks.onProgramModeUpdate (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:346577:29)\n    at Blocks.wrapper [as onProgramModeUpdate] (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:25957:15)\n    at Blocks.componentDidUpdate (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:346485:14)\n    at oj (http://127.0.0.1:53696/openblock-vendor/react-dom-16.min.js:127:150)\n    at Aj (http://127.0.0.1:53696/openblock-vendor/react-dom-16.min.js:160:448)\n    at unstable_runWithPriority (http://127.0.0.1:53696/openblock-vendor/react-16.min.js:25:260)\n    at Da (http://127.0.0.1:53696/openblock-vendor/react-dom-16.min.js:60:280)\n    at ab (http://127.0.0.1:53696/openblock-vendor/react-dom-16.min.js:154:190)"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetPwmOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetDACOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32ReadTouchPin color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetServoOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32AttachInterrupt color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32DetachInterrupt color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialBegin color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialPrint color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialAvailable color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialReadAByte color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataMap color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConstrain color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvert color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvertASCIICharacter color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvertASCIINumber color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cgui  color: #fff; background: #bbbb00; TypeError: Cannot read properties of undefined (reading 'getCostumes')\n    at Blocks.getToolboxXML (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:346759:35)\n    at Blocks.wrapper [as getToolboxXML] (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:25957:15)\n    at Blocks.handleScratchExtensionRemoved (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:346930:29)\n    at VirtualMachine.wrapper (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:25957:15)\n    at VirtualMachine.emit (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:80038:5)\n    at Runtime.<anonymous> (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:239903:18)\n    at Runtime.emit (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:80038:5)\n    at Runtime.clearScratchExtension (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:205113:14)\n    at ExtensionManager.clearExtensions (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:255190:22)\n    at ExtensionManager.loadDeviceURL (http://127.0.0.1:53696/openblock-vendor/openblock-gui.js:255289:18)"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetPwmOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetDACOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32ReadTouchPin color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetServoOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32AttachInterrupt color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32DetachInterrupt color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialBegin color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialPrint color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialAvailable color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialReadAByte color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataMap color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConstrain color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvert color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvertASCIICharacter color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvertASCIINumber color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_pin_menu_pins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_pin_menu_outPins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_pin_menu_mode\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #3 in JSON array overwrites prior definition of \"arduino_pin_menu_analogPins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #4 in JSON array overwrites prior definition of \"arduino_pin_menu_level\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #5 in JSON array overwrites prior definition of \"arduino_pin_menu_dacPins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #6 in JSON array overwrites prior definition of \"arduino_pin_menu_touchPins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #7 in JSON array overwrites prior definition of \"arduino_pin_menu_interruptMode\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_pin_setPinMode\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_pin_setDigitalOutput\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_pin_esp32SetPwmOutput\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #3 in JSON array overwrites prior definition of \"arduino_pin_esp32SetDACOutput\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #4 in JSON array overwrites prior definition of \"arduino_pin_readDigitalPin\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #5 in JSON array overwrites prior definition of \"arduino_pin_readAnalogPin\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #6 in JSON array overwrites prior definition of \"arduino_pin_esp32ReadTouchPin\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #7 in JSON array overwrites prior definition of \"arduino_pin_esp32SetServoOutput\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #8 in JSON array overwrites prior definition of \"arduino_pin_esp32AttachInterrupt\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #9 in JSON array overwrites prior definition of \"arduino_pin_esp32DetachInterrupt\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_serial_menu_baudrate\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_serial_menu_serialNo\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_serial_menu_eol\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_serial_multiSerialBegin\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_serial_multiSerialPrint\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_serial_multiSerialAvailable\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #3 in JSON array overwrites prior definition of \"arduino_serial_multiSerialReadAByte\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_data_menu_dataType\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_data_dataMap\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_data_dataConstrain\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_data_dataConvert\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #3 in JSON array overwrites prior definition of \"arduino_data_dataConvertASCIICharacter\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #4 in JSON array overwrites prior definition of \"arduino_data_dataConvertASCIINumber\"."
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetPwmOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetDACOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32ReadTouchPin color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32SetServoOutput color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32AttachInterrupt color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called esp32DetachInterrupt color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialBegin color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialPrint color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialAvailable color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called multiSerialReadAByte color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataMap color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConstrain color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvert color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvertASCIICharacter color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "%cvm Could not find extension block function called dataConvertASCIINumber color: #fff; background: #bbbb00;"
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_pin_menu_pins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_pin_menu_outPins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_pin_menu_mode\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #3 in JSON array overwrites prior definition of \"arduino_pin_menu_analogPins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #4 in JSON array overwrites prior definition of \"arduino_pin_menu_level\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #5 in JSON array overwrites prior definition of \"arduino_pin_menu_dacPins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #6 in JSON array overwrites prior definition of \"arduino_pin_menu_touchPins\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #7 in JSON array overwrites prior definition of \"arduino_pin_menu_interruptMode\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_pin_setPinMode\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_pin_setDigitalOutput\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_pin_esp32SetPwmOutput\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #3 in JSON array overwrites prior definition of \"arduino_pin_esp32SetDACOutput\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #4 in JSON array overwrites prior definition of \"arduino_pin_readDigitalPin\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #5 in JSON array overwrites prior definition of \"arduino_pin_readAnalogPin\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #6 in JSON array overwrites prior definition of \"arduino_pin_esp32ReadTouchPin\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #7 in JSON array overwrites prior definition of \"arduino_pin_esp32SetServoOutput\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #8 in JSON array overwrites prior definition of \"arduino_pin_esp32AttachInterrupt\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #9 in JSON array overwrites prior definition of \"arduino_pin_esp32DetachInterrupt\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_serial_menu_baudrate\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_serial_menu_serialNo\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_serial_menu_eol\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_serial_multiSerialBegin\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_serial_multiSerialPrint\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_serial_multiSerialAvailable\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #3 in JSON array overwrites prior definition of \"arduino_serial_multiSerialReadAByte\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_data_menu_dataType\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #0 in JSON array overwrites prior definition of \"arduino_data_dataMap\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #1 in JSON array overwrites prior definition of \"arduino_data_dataConstrain\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #2 in JSON array overwrites prior definition of \"arduino_data_dataConvert\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #3 in JSON array overwrites prior definition of \"arduino_data_dataConvertASCIICharacter\"."
+    },
+    {
+      "console": "warning",
+      "text": "Block definition #4 in JSON array overwrites prior definition of \"arduino_data_dataConvertASCIINumber\"."
+    }
+  ],
+  "finished": "2026-11-10T03:41:24.808Z"
+}

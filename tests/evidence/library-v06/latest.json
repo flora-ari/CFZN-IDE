@@ -1,0 +1,24 @@
+{
+  "run": "2026-11-11T07-14-51-424Z",
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\library-v06\\2026-11-11T07-14-51-424Z",
+  "results": [
+    {
+      "name": "dev removed selected category fallback",
+      "status": "PASS",
+      "detail": {
+        "removedSelectedCategory": true,
+        "fallback": "motion",
+        "noGhost": true
+      }
+    },
+    {
+      "name": "dist removed selected category fallback",
+      "status": "PASS",
+      "detail": {
+        "removedSelectedCategory": true,
+        "fallback": "motion",
+        "noGhost": true
+      }
+    }
+  ]
+}

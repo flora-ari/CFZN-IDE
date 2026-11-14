@@ -1,0 +1,8 @@
+[
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 10000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 10000ms exceeded.\n    at targetLocale (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:94:874)\n    at async normalChain (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:95:1336)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:133:247"
+  }
+]

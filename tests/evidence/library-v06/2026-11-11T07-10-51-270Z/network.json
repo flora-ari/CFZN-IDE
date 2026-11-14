@@ -1,0 +1,82 @@
+[
+  {
+    "label": "dist-filters",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-filters",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist-filters",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist-filters",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist-filters",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist-filters",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist-filters",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dist-filters",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-selected",
+    "url": "http://127.0.0.1:59212/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  }
+]

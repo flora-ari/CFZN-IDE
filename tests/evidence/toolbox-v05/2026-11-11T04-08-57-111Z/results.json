@@ -1,0 +1,14 @@
+[
+  {
+    "name": "dev crossboard diagnostic",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 45000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 45000ms exceeded.\n    at choose (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:29:519)\n    at async crossboardRepro (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:130:574)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:138:240"
+  },
+  {
+    "name": "dist crossboard diagnostic",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 45000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 45000ms exceeded.\n    at choose (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:29:519)\n    at async crossboardRepro (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:130:574)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:138:240"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\parity-v07\\2026-11-12T02-52-32-823Z-dev-loaded",
+  "results": [
+    {
+      "name": "native stage pen loaded filter uses real extension state and search intersection",
+      "status": "PASS",
+      "detail": {
+        "realPenLoaded": true,
+        "keywordIntersection": true,
+        "clearAllFilters": true,
+        "noUnloading": true
+      }
+    }
+  ]
+}

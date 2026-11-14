@@ -1,0 +1,190 @@
+{
+  "project": {
+    "targets": [
+      {
+        "isStage": true,
+        "name": "Stage",
+        "variables": {},
+        "lists": {},
+        "broadcasts": {},
+        "blocks": {},
+        "comments": {},
+        "currentCostume": 0,
+        "costumes": [
+          {
+            "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+            "name": "背景1",
+            "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 240,
+            "rotationCenterY": 180
+          }
+        ],
+        "sounds": [
+          {
+            "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+            "name": "啵",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 1123,
+            "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+          }
+        ],
+        "volume": 100,
+        "layerOrder": 0,
+        "tempo": 60,
+        "videoTransparency": 50,
+        "videoState": "on",
+        "textToSpeechLanguage": null
+      },
+      {
+        "isStage": false,
+        "name": "角色1",
+        "variables": {},
+        "lists": {},
+        "broadcasts": {},
+        "blocks": {},
+        "comments": {},
+        "currentCostume": 0,
+        "costumes": [
+          {
+            "assetId": "5de48e72637db4d7fc7f6bb526354114",
+            "name": "造型1",
+            "bitmapResolution": 1,
+            "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          },
+          {
+            "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+            "name": "造型2",
+            "bitmapResolution": 1,
+            "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          }
+        ],
+        "sounds": [
+          {
+            "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+            "name": "啁啾",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 23683,
+            "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+          }
+        ],
+        "volume": 100,
+        "layerOrder": 1,
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "size": 100,
+        "direction": 90,
+        "draggable": false,
+        "rotationStyle": "all around"
+      }
+    ],
+    "monitors": [],
+    "device": {
+      "deviceId": "firebeetleEsp32E",
+      "type": "arduino"
+    },
+    "programMode": "realtime",
+    "extensions": [],
+    "deviceExtensions": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "meta": {
+      "semver": "3.0.0",
+      "vm": "0.2.0-prerelease.20250609145235",
+      "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+    }
+  },
+  "categories": [
+    {
+      "id": "motion",
+      "name": "%{BKY_CATEGORY_MOTION}",
+      "xml": "<category name=\"%{BKY_CATEGORY_MOTION}\" id=\"motion\" colour=\"#4C97FF\" secondaryColour=\"#3373CC\">\n        \n        <block type=\"motion_movesteps\">\n            <value name=\"STEPS\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_turnright\">\n            <value name=\"DEGREES\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">15</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_turnleft\">\n            <value name=\"DEGREES\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">15</field>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"motion_goto\">\n            <value name=\"TO\">\n                <shadow type=\"motion_goto_menu\">\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_gotoxy\">\n            <value name=\"X\">\n                <shadow id=\"movex\" type=\"math_number\">\n                    <field name=\"NUM\">0</field>\n                </shadow>\n            </value>\n            <value name=\"Y\">\n                <shadow id=\"movey\" type=\"math_number\">\n                    <field name=\"NUM\">0</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_glideto\" id=\"motion_glideto\">\n            <value name=\"SECS\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">1</field>\n                </shadow>\n            </value>\n            <value name=\"TO\">\n                <shadow type=\"motion_glideto_menu\">\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_glidesecstoxy\">\n            <value name=\"SECS\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">1</field>\n                </shadow>\n            </value>\n            <value name=\"X\">\n                <shadow id=\"glidex\" type=\"math_number\">\n                    <field name=\"NUM\">0</field>\n                </shadow>\n            </value>\n            <value name=\"Y\">\n                <shadow id=\"glidey\" type=\"math_number\">\n                    <field name=\"NUM\">0</field>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"motion_pointindirection\">\n            <value name=\"DIRECTION\">\n                <shadow type=\"math_angle\">\n                    <field name=\"NUM\">90</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_pointtowards\">\n            <value name=\"TOWARDS\">\n                <shadow type=\"motion_pointtowards_menu\">\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"motion_changexby\">\n            <value name=\"DX\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_setx\">\n            <value name=\"X\">\n                <shadow id=\"setx\" type=\"math_number\">\n                    <field name=\"NUM\">0</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_changeyby\">\n            <value name=\"DY\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"motion_sety\">\n            <value name=\"Y\">\n                <shadow id=\"sety\" type=\"math_number\">\n                    <field name=\"NUM\">0</field>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"motion_ifonedgebounce\"/>\n        <sep gap=\"36\"/>\n        <block type=\"motion_setrotationstyle\"/>\n        <sep gap=\"36\"/>\n        <block id=\";XG%ZqVdmSFqGCU/D|CB_xposition\" type=\"motion_xposition\"/>\n        <block id=\";XG%ZqVdmSFqGCU/D|CB_yposition\" type=\"motion_yposition\"/>\n        <block id=\";XG%ZqVdmSFqGCU/D|CB_direction\" type=\"motion_direction\"/>\n        <sep gap=\"36\"/>\n    </category>"
+    },
+    {
+      "id": "looks",
+      "name": "%{BKY_CATEGORY_LOOKS}",
+      "xml": "<category name=\"%{BKY_CATEGORY_LOOKS}\" id=\"looks\" colour=\"#9966FF\" secondaryColour=\"#774DCB\">\n        \n        <block type=\"looks_sayforsecs\">\n            <value name=\"MESSAGE\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\">Hello!</field>\n                </shadow>\n            </value>\n            <value name=\"SECS\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">2</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"looks_say\">\n            <value name=\"MESSAGE\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\">Hello!</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"looks_thinkforsecs\">\n            <value name=\"MESSAGE\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\">Hmm...</field>\n                </shadow>\n            </value>\n            <value name=\"SECS\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">2</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"looks_think\">\n            <value name=\"MESSAGE\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\">Hmm...</field>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        \n        \n            <block id=\";XG%ZqVdmSFqGCU/D|CB_switchcostumeto\" type=\"looks_switchcostumeto\">\n                <value name=\"COSTUME\">\n                    <shadow type=\"looks_costume\">\n                        <field name=\"COSTUME\">造型2</field>\n                    </shadow>\n                </value>\n            </block>\n            <block type=\"looks_nextcostume\"/>\n            <block type=\"looks_switchbackdropto\">\n                <value name=\"BACKDROP\">\n                    <shadow type=\"looks_backdrops\">\n                        <field name=\"BACKDROP\">背景1</field>\n                    </shadow>\n                </value>\n            </block>\n            <block type=\"looks_nextbackdrop\"/>\n            <sep gap=\"36\"/>\n            <block type=\"looks_changesizeby\">\n                <value name=\"CHANGE\">\n                    <shadow type=\"math_number\">\n                        <field name=\"NUM\">10</field>\n                    </shadow>\n                </value>\n            </block>\n            <block type=\"looks_setsizeto\">\n                <value name=\"SIZE\">\n                    <shadow type=\"math_number\">\n                        <field name=\"NUM\">100</field>\n                    </shadow>\n                </value>\n            </block>\n        \n        <sep gap=\"36\"/>\n        <block type=\"looks_changeeffectby\">\n            <value name=\"CHANGE\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">25</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"looks_seteffectto\">\n            <value name=\"VALUE\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">0</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"looks_cleargraphiceffects\"/>\n        <sep gap=\"36\"/>\n        \n            <block type=\"looks_show\"/>\n            <block type=\"looks_hide\"/>\n        <sep gap=\"36\"/>\n            <block type=\"looks_gotofrontback\"/>\n            <block type=\"looks_goforwardbackwardlayers\">\n                <value name=\"NUM\">\n                    <shadow type=\"math_integer\">\n                        <field name=\"NUM\">1</field>\n                    </shadow>\n                </value>\n            </block>\n        \n        \n            <block id=\";XG%ZqVdmSFqGCU/D|CB_costumenumbername\" type=\"looks_costumenumbername\"/>\n            <block id=\"backdropnumbername\" type=\"looks_backdropnumbername\"/>\n            <block id=\";XG%ZqVdmSFqGCU/D|CB_size\" type=\"looks_size\"/>\n        \n        <sep gap=\"36\"/>\n    </category>"
+    },
+    {
+      "id": "sound",
+      "name": "%{BKY_CATEGORY_SOUND}",
+      "xml": "<category name=\"%{BKY_CATEGORY_SOUND}\" id=\"sound\" colour=\"#D65CD6\" secondaryColour=\"#BD42BD\">\n        <block id=\";XG%ZqVdmSFqGCU/D|CB_sound_playuntildone\" type=\"sound_playuntildone\">\n            <value name=\"SOUND_MENU\">\n                <shadow type=\"sound_sounds_menu\">\n                    <field name=\"SOUND_MENU\">啁啾</field>\n                </shadow>\n            </value>\n        </block>\n        <block id=\";XG%ZqVdmSFqGCU/D|CB_sound_play\" type=\"sound_play\">\n            <value name=\"SOUND_MENU\">\n                <shadow type=\"sound_sounds_menu\">\n                    <field name=\"SOUND_MENU\">啁啾</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"sound_stopallsounds\"/>\n        <sep gap=\"36\"/>\n        <block type=\"sound_changeeffectby\">\n            <value name=\"VALUE\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"sound_seteffectto\">\n            <value name=\"VALUE\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">100</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"sound_cleareffects\"/>\n        <sep gap=\"36\"/>\n        <block type=\"sound_changevolumeby\">\n            <value name=\"VOLUME\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">-10</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"sound_setvolumeto\">\n            <value name=\"VOLUME\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">100</field>\n                </shadow>\n            </value>\n        </block>\n        <block id=\";XG%ZqVdmSFqGCU/D|CB_volume\" type=\"sound_volume\"/>\n        <sep gap=\"36\"/>\n    </category>"
+    },
+    {
+      "id": "events",
+      "name": "%{BKY_CATEGORY_EVENTS}",
+      "xml": "<category name=\"%{BKY_CATEGORY_EVENTS}\" id=\"events\" colour=\"#FFD500\" secondaryColour=\"#CC9900\">\n        <block type=\"event_whenflagclicked\"/>\n        <block type=\"event_whenkeypressed\">\n        </block>\n        \n            <block type=\"event_whenthisspriteclicked\"/>\n        \n        <block type=\"event_whenbackdropswitchesto\">\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"event_whengreaterthan\">\n            <value name=\"VALUE\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"event_whenbroadcastreceived\">\n        </block>\n        <block type=\"event_broadcast\">\n            <value name=\"BROADCAST_INPUT\">\n                <shadow type=\"event_broadcast_menu\"/>\n            </value>\n        </block>\n        <block type=\"event_broadcastandwait\">\n            <value name=\"BROADCAST_INPUT\">\n              <shadow type=\"event_broadcast_menu\"/>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n    </category>"
+    },
+    {
+      "id": "control",
+      "name": "%{BKY_CATEGORY_CONTROL}",
+      "xml": "<category name=\"%{BKY_CATEGORY_CONTROL}\" id=\"control\" colour=\"#FFAB19\" secondaryColour=\"#CF8B17\">\n        <block type=\"control_wait\">\n            <value name=\"DURATION\">\n                <shadow type=\"math_positive_number\">\n                    <field name=\"NUM\">1</field>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"control_repeat\">\n            <value name=\"TIMES\">\n                <shadow type=\"math_whole_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <block id=\"forever\" type=\"control_forever\"/>\n        <sep gap=\"36\"/>\n        <block type=\"control_if\"/>\n        <block type=\"control_if_else\"/>\n        <block id=\"wait_until\" type=\"control_wait_until\"/>\n        <block id=\"repeat_until\" type=\"control_repeat_until\"/>\n        <sep gap=\"36\"/>\n        \n            <block type=\"control_stop\"/>\n            <sep gap=\"36\"/>\n            \n                <block type=\"control_start_as_clone\"/>\n                <block type=\"control_create_clone_of\">\n                    <value name=\"CLONE_OPTION\">\n                        <shadow type=\"control_create_clone_of_menu\"/>\n                    </value>\n                </block>\n                <block type=\"control_delete_this_clone\"/>\n            \n            <sep gap=\"36\"/>\n        \n    </category>"
+    },
+    {
+      "id": "sensing",
+      "name": "%{BKY_CATEGORY_SENSING}",
+      "xml": "<category name=\"%{BKY_CATEGORY_SENSING}\" id=\"sensing\" colour=\"#4CBFE6\" secondaryColour=\"#2E8EB8\">\n        \n            <block type=\"sensing_touchingobject\">\n                <value name=\"TOUCHINGOBJECTMENU\">\n                    <shadow type=\"sensing_touchingobjectmenu\"/>\n                </value>\n            </block>\n            <block type=\"sensing_touchingcolor\">\n                <value name=\"COLOR\">\n                    <shadow type=\"colour_picker\"/>\n                </value>\n            </block>\n            <block type=\"sensing_coloristouchingcolor\">\n                <value name=\"COLOR\">\n                    <shadow type=\"colour_picker\"/>\n                </value>\n                <value name=\"COLOR2\">\n                    <shadow type=\"colour_picker\"/>\n                </value>\n            </block>\n            <block type=\"sensing_distanceto\">\n                <value name=\"DISTANCETOMENU\">\n                    <shadow type=\"sensing_distancetomenu\"/>\n                </value>\n            </block>\n            <sep gap=\"36\"/>\n        \n        \n            <block id=\"askandwait\" type=\"sensing_askandwait\">\n                <value name=\"QUESTION\">\n                    <shadow type=\"text\">\n                        <field name=\"TEXT\">What's your name?</field>\n                    </shadow>\n                </value>\n            </block>\n        \n        <block id=\"answer\" type=\"sensing_answer\"/>\n        <sep gap=\"36\"/>\n        <block type=\"sensing_keypressed\">\n            <value name=\"KEY_OPTION\">\n                <shadow type=\"sensing_keyoptions\"/>\n            </value>\n        </block>\n        <block type=\"sensing_mousedown\"/>\n        <block type=\"sensing_mousex\"/>\n        <block type=\"sensing_mousey\"/>\n        \n            <sep gap=\"36\"/>\n            '<block type=\"sensing_setdragmode\" id=\"sensing_setdragmode\"/>'+\n            <sep gap=\"36\"/>\n        \n        <sep gap=\"36\"/>\n        <block id=\"loudness\" type=\"sensing_loudness\"/>\n        <sep gap=\"36\"/>\n        <block id=\"timer\" type=\"sensing_timer\"/>\n        <block type=\"sensing_resettimer\"/>\n        <sep gap=\"36\"/>\n        <block id=\"of\" type=\"sensing_of\">\n            <value name=\"OBJECT\">\n                <shadow id=\"sensing_of_object_menu\" type=\"sensing_of_object_menu\"/>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block id=\"current\" type=\"sensing_current\"/>\n        <block type=\"sensing_dayssince2000\"/>\n        <sep gap=\"36\"/>\n        <block type=\"sensing_username\"/>\n        <sep gap=\"36\"/>\n    </category>"
+    },
+    {
+      "id": "operators",
+      "name": "%{BKY_CATEGORY_OPERATORS}",
+      "xml": "<category name=\"%{BKY_CATEGORY_OPERATORS}\" id=\"operators\" colour=\"#40BF4A\" secondaryColour=\"#389438\">\n        <block type=\"operator_add\">\n            <value name=\"NUM1\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n            <value name=\"NUM2\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"operator_subtract\">\n            <value name=\"NUM1\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n            <value name=\"NUM2\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"operator_multiply\">\n            <value name=\"NUM1\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n            <value name=\"NUM2\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"operator_divide\">\n            <value name=\"NUM1\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n            <value name=\"NUM2\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"operator_random\">\n            <value name=\"FROM\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">1</field>\n                </shadow>\n            </value>\n            <value name=\"TO\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\">10</field>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"operator_gt\">\n            <value name=\"OPERAND1\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\"/>\n                </shadow>\n            </value>\n            <value name=\"OPERAND2\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\">50</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"operator_lt\">\n            <value name=\"OPERAND1\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\"/>\n                </shadow>\n            </value>\n            <value name=\"OPERAND2\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\">50</field>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"operator_equals\">\n            <value name=\"OPERAND1\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\"/>\n                </shadow>\n            </value>\n            <value name=\"OPERAND2\">\n                <shadow type=\"text\">\n                    <field name=\"TEXT\">50</field>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"operator_and\"/>\n        <block type=\"operator_or\"/>\n        <block type=\"operator_not\"/>\n        <sep gap=\"36\"/>\n        \n            <block type=\"operator_join\">\n                <value name=\"STRING1\">\n                    <shadow type=\"text\">\n                        <field name=\"TEXT\">apple</field>\n                    </shadow>\n                </value>\n                <value name=\"STRING2\">\n                    <shadow type=\"text\">\n                        <field name=\"TEXT\">banana</field>\n                    </shadow>\n                </value>\n            </block>\n            <block type=\"operator_letter_of\">\n                <value name=\"LETTER\">\n                    <shadow type=\"math_whole_number\">\n                        <field name=\"NUM\">1</field>\n                    </shadow>\n                </value>\n                <value name=\"STRING\">\n                    <shadow type=\"text\">\n                        <field name=\"TEXT\">apple</field>\n                    </shadow>\n                </value>\n            </block>\n            <block type=\"operator_length\">\n                <value name=\"STRING\">\n                    <shadow type=\"text\">\n                        <field name=\"TEXT\">apple</field>\n                    </shadow>\n                </value>\n            </block>\n            <block type=\"operator_contains\" id=\"operator_contains\">\n              <value name=\"STRING1\">\n                <shadow type=\"text\">\n                  <field name=\"TEXT\">apple</field>\n                </shadow>\n              </value>\n              <value name=\"STRING2\">\n                <shadow type=\"text\">\n                  <field name=\"TEXT\">a</field>\n                </shadow>\n              </value>\n            </block>\n        \n        <sep gap=\"36\"/>\n        <block type=\"operator_mod\">\n            <value name=\"NUM1\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n            <value name=\"NUM2\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n        </block>\n        <block type=\"operator_round\">\n            <value name=\"NUM\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n        <block type=\"operator_mathop\">\n            <value name=\"NUM\">\n                <shadow type=\"math_number\">\n                    <field name=\"NUM\"/>\n                </shadow>\n            </value>\n        </block>\n        <sep gap=\"36\"/>\n    </category>"
+    },
+    {
+      "id": "variables",
+      "name": "%{BKY_CATEGORY_VARIABLES}",
+      "xml": "<category name=\"%{BKY_CATEGORY_VARIABLES}\" id=\"variables\" colour=\"#FF8C1A\" secondaryColour=\"#DB6E00\" custom=\"VARIABLE\">\n    </category>"
+    },
+    {
+      "id": "myBlocks",
+      "name": "%{BKY_CATEGORY_MYBLOCKS}",
+      "xml": "<category name=\"%{BKY_CATEGORY_MYBLOCKS}\" id=\"myBlocks\" colour=\"#FF6680\" secondaryColour=\"#FF4D6A\" custom=\"PROCEDURE\">\n    </category>"
+    },
+    {
+      "id": "ACTIVATEBUZZER_CATEGORY",
+      "name": "%{BKY_ACTIVATEBUZZER_CATEGORY}",
+      "xml": "<category name=\"%{BKY_ACTIVATEBUZZER_CATEGORY}\" id=\"ACTIVATEBUZZER_CATEGORY\" colour=\"#B943FF\" secondaryColour=\"#FFFFFF\"><label text=\"仅上传模式：切换上传模式后编辑、生成并烧录\"/>\n    <block type=\"activeBuzzer_on\" id=\"activeBuzzer_on\" disabled=\"true\"/>\n    <block type=\"activeBuzzer_off\" id=\"activeBuzzer_off\" disabled=\"true\"/>\n    <block type=\"activeBuzzer_init\" id=\"activeBuzzer_init\" disabled=\"true\">\n    <field name=\"PIN\">0</field>\n    </block>\n</category>"
+    },
+    {
+      "id": "ATOMIZER_CATEGORY",
+      "name": "%{BKY_ATOMIZER_CATEGORY}",
+      "xml": "<category name=\"%{BKY_ATOMIZER_CATEGORY}\" id=\"ATOMIZER_CATEGORY\" colour=\"#00C2A8\" secondaryColour=\"#00A38D\"><label text=\"仅上传模式：切换上传模式后编辑、生成并烧录\"/>\n    <block type=\"atomizer_init\" id=\"atomizer_init\" disabled=\"true\"><field name=\"PIN\">0</field></block>\n    <block type=\"atomizer_setState\" id=\"atomizer_setState\" disabled=\"true\"><field name=\"STATE\">HIGH</field></block>\n    <block type=\"atomizer_toggle\" id=\"atomizer_toggle\" disabled=\"true\"/>\n</category>"
+    },
+    {
+      "id": "PIRSENSOR_CATEGORY",
+      "name": "%{BKY_PIRSENSOR_CATEGORY}",
+      "xml": "<category name=\"%{BKY_PIRSENSOR_CATEGORY}\" id=\"PIRSENSOR_CATEGORY\" colour=\"#9F0050\" secondaryColour=\"#820041\"><label text=\"仅上传模式：切换上传模式后编辑、生成并烧录\"/>\n    <block type=\"pirSensor_init\" id=\"pirSensor_init\" disabled=\"true\"><field name=\"PIN\">2</field></block>\n    <block type=\"pirSensor_detected\" id=\"pirSensor_detected\" disabled=\"true\"/>\n</category>"
+    },
+    {
+      "id": "FLAMESENSOR_CATEGORY",
+      "name": "%{BKY_FLAMESENSOR_CATEGORY}",
+      "xml": "<category name=\"%{BKY_FLAMESENSOR_CATEGORY}\" id=\"FLAMESENSOR_CATEGORY\" colour=\"#9F0050\" secondaryColour=\"#820041\"><label text=\"仅上传模式：切换上传模式后编辑、生成并烧录\"/>\n    <block type=\"flameSensor_readDigital\" id=\"flameSensor_readDigital\" disabled=\"true\"><field name=\"PIN\">2</field></block>\n    <block type=\"flameSensor_readAnalog\" id=\"flameSensor_readAnalog\" disabled=\"true\"><field name=\"PIN\">15</field></block>\n</category>"
+    },
+    {
+      "id": "RAINDROPSENSOR_CATEGORY",
+      "name": "%{BKY_RAINDROPSENSOR_CATEGORY}",
+      "xml": "<category name=\"%{BKY_RAINDROPSENSOR_CATEGORY}\" id=\"RAINDROPSENSOR_CATEGORY\" colour=\"#9F0050\" secondaryColour=\"#820041\"><label text=\"仅上传模式：切换上传模式后编辑、生成并烧录\"/>\n    <block type=\"raindropSensor_readDigital\" id=\"raindropSensor_readDigital\" disabled=\"true\"><field name=\"PIN\">2</field></block>\n    <block type=\"raindropSensor_readAnalog\" id=\"raindropSensor_readAnalog\" disabled=\"true\"><field name=\"PIN\">15</field></block>\n</category>"
+    },
+    {
+      "id": "MORECOMMENTS_CATEGORY",
+      "name": "%{BKY_MORECOMMENTS_CATEGORY}",
+      "xml": "<category name=\"%{BKY_MORECOMMENTS_CATEGORY}\" id=\"MORECOMMENTS_CATEGORY\" colour=\"#529955\" secondaryColour=\"#457F48\"><label text=\"仅上传模式：切换上传模式后编辑、生成并烧录\"/>\n    <block type=\"moreComments_commandBlock\" id=\"moreComments_commandBlock\" disabled=\"true\">\n        <value name=\"COMMENTS\">\n            <shadow type=\"text\">\n                <field name=\"TEXT\">add your comments in here</field>\n            </shadow>\n        </value>\n    </block>\n    <block type=\"moreComments_branchBlock\" id=\"moreComments_branchBlock\" disabled=\"true\">\n        <value name=\"COMMENTS\">\n            <shadow type=\"text\">\n                <field name=\"TEXT\">add your comments in here</field>\n            </shadow>\n        </value>\n    </block>\n</category>"
+    }
+  ]
+}

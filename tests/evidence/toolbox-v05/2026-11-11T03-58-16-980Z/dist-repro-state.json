@@ -1,0 +1,84 @@
+{
+  "snapshot": {
+    "title": "v05-archive-minimal-repro",
+    "dirty": true,
+    "running": false,
+    "documentId": 1,
+    "editVersion": 1
+  },
+  "target": {
+    "id": "KER7Tnr5R#Lt7A!3Lz{S",
+    "name": "角色1",
+    "isStage": false
+  },
+  "workspace": [
+    {
+      "id": "qa-flag",
+      "type": "event_whenflagclicked"
+    },
+    {
+      "id": "qa-hat",
+      "type": "event_whenarduinobegin"
+    },
+    {
+      "id": "qa-move",
+      "type": "motion_changexby"
+    },
+    {
+      "id": "qa-init",
+      "type": "activeBuzzer_init"
+    },
+    {
+      "id": "p~3gfi)=I)r{.r(0(i]v",
+      "type": "math_number"
+    },
+    {
+      "id": "qa-atom",
+      "type": "atomizer_init"
+    },
+    {
+      "id": "qa-pir",
+      "type": "pirSensor_init"
+    },
+    {
+      "id": "qa-comment",
+      "type": "moreComments_branchBlock"
+    },
+    {
+      "id": "@W!+TjVU_bd%A=.rqZa`",
+      "type": "text"
+    },
+    {
+      "id": "6Me*d,5$8hEM8otxF:vR",
+      "type": "control_if"
+    },
+    {
+      "id": "J*Z~mbf2h@t(;[Cs%ie,",
+      "type": "pirSensor_detected"
+    },
+    {
+      "id": "Kz9s5$rAT(~ionux:*f{",
+      "type": "activeBuzzer_on"
+    },
+    {
+      "id": "6iHf^EkDz!l|.d57kD|6",
+      "type": "control_if"
+    },
+    {
+      "id": "rodpgZSe-z7~|e5H*Q#L",
+      "type": "flameSensor_readDigital"
+    },
+    {
+      "id": "7},y;uk2jp?BSl)YEA|v",
+      "type": "atomizer_toggle"
+    },
+    {
+      "id": "kf$EL|4W~1]Z6Co_HcAi",
+      "type": "arduino_serial_multiSerialPrint"
+    },
+    {
+      "id": "1M[=Lh|f(zk+b@y`kI@3",
+      "type": "raindropSensor_readAnalog"
+    }
+  ]
+}

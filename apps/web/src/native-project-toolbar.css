@@ -1,0 +1,78 @@
+[data-cfzn-menu-host][class*="menu-bar_menu-bar"] { align-items: center; justify-content: flex-start; }
+[data-cfzn-menu-host] img[data-cfzn-brand-logo] { width: 120px; height: 40px; max-width: 120px; max-height: 40px; object-fit: contain; object-position: center; flex: 0 0 auto; align-self: center; }
+[data-cfzn-menu-host] > [class*="menu-bar_main-menu"] { flex: 0 0 auto; }
+[data-cfzn-menu-host] > [class*="menu-bar_file-menu"] { flex: 0 1 188px; min-width: 108px; max-width: 228px; margin-inline-start: auto; overflow: hidden; }
+[data-cfzn-menu-host] > [class*="menu-bar_file-menu"] > div { min-width: 0; max-width: 100%; }
+[data-cfzn-menu-host] > [class*="menu-bar_file-menu"] input { width: 100%; min-width: 100px; max-width: 220px; box-sizing: border-box; }
+[data-cfzn-menu-host] [class*="menu-bar_main-menu"] > div:has([class*="connected-icon"]) { max-width: 150px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+[data-cfzn-menu-host] > [class*="menu-bar_tail-menu"] { flex: 0 0 auto; margin-inline-start: 0; }
+[data-cfzn-menu-host] > [class*="menu-bar_main-menu"] > [class*="menu-bar_menu-bar-item"],
+[data-cfzn-menu-host] > [class*="menu-bar_tail-menu"] > [class*="menu-bar_menu-bar-item"] { padding-inline: 6px; }
+.cfzn-project-tools {
+  display: flex;
+  flex: 0 1 auto;
+  min-width: 160px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4px;
+  height: 100%;
+  margin-inline: 6px;
+  font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #fff;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(144, 147, 153, .3) transparent;
+}
+@supports selector(::-webkit-scrollbar) {
+  /* Non-auto standard values override Chromium's scrollbar pseudo-elements. */
+  .cfzn-project-tools { scrollbar-width: auto; scrollbar-color: auto; }
+  .cfzn-project-tools::-webkit-scrollbar { width: 6px; height: 6px; background: transparent; }
+  .cfzn-project-tools::-webkit-scrollbar-track { background: transparent; }
+  .cfzn-project-tools::-webkit-scrollbar-thumb { border-radius: 6px; background: rgba(144, 147, 153, .3); }
+  .cfzn-project-tools::-webkit-scrollbar-thumb:hover { background: rgba(144, 147, 153, .5); }
+  .cfzn-project-tools::-webkit-scrollbar-button { display: none; width: 0; height: 0; }
+  .cfzn-project-tools::-webkit-scrollbar-corner { background: transparent; }
+}
+@supports not selector(::-webkit-scrollbar) {
+  .cfzn-project-tools:hover { scrollbar-color: rgba(144, 147, 153, .5) transparent; }
+}
+.cfzn-project-tools[hidden] { display: none; }
+.cfzn-project-button {
+  height: 32px;
+  flex: 0 0 auto;
+  padding: 0 7px;
+  border: 1px solid #c5d3e5;
+  border-radius: 4px;
+  background: #fff;
+  color: #575e75;
+  font: inherit;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.cfzn-project-button:hover:not(:disabled), .cfzn-project-button[aria-expanded="true"] { background: #e5f0ff; border-color: #4c97ff; }
+.cfzn-project-button:active:not(:disabled) { transform: translateY(1px); }
+.cfzn-project-button:focus-visible { outline: 3px solid #24579c; outline-offset: 2px; }
+.cfzn-project-button:disabled { opacity: .5; cursor: default; }
+.cfzn-project-save { background: #4c97ff; color: #fff; border-color: #4c97ff; }
+.cfzn-project-save:hover:not(:disabled) { background: #3373cc; color: #fff; }
+.cfzn-project-status { flex: 0 0 auto; padding: 0 6px; font-size: 12px; line-height: 1.5; white-space: nowrap; }
+@media (min-width: 1200px) {
+  .cfzn-project-tools { flex: 0 0 auto; overflow: visible; }
+}
+@media (max-width: 1199px) {
+  [data-cfzn-menu-host] > [class*="menu-bar_file-menu"] { min-width: 40px; max-width: 100px; flex-basis: 60px; }
+  [data-cfzn-menu-host] > [class*="menu-bar_file-menu"] input { min-width: 0; }
+  /* Keep native actions and their accessible labels; use their icons to reserve both mode buttons. */
+  [data-cfzn-menu-host] [class*="menu-bar_tail-menu"] > div:has(> img[class*="wiki-icon"]),
+  [data-cfzn-menu-host] [class*="menu-bar_tail-menu"] > div:has(> img[class*="help-icon"]),
+  [data-cfzn-menu-host] [class*="menu-bar_tail-menu"] > div:has(> img[class*="upload-firmware-logo"]) { font-size: 0; }
+}
+@media (max-width: 1050px) {
+  [data-cfzn-menu-host] [class*="menu-bar_main-menu"] > div:has([class*="connected-icon"]) { font-size: 0; max-width: 28px; }
+}
+@media (max-width: 1100px) {
+  .cfzn-project-tools { flex: 1 1 auto; min-width: 72px; max-width: calc(100vw - 300px); overflow-x: auto; overflow-y: hidden; }
+}
+@media (prefers-reduced-motion: reduce) { .cfzn-project-button:active:not(:disabled) { transform: none; } }

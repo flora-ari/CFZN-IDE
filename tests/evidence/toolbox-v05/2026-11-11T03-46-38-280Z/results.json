@@ -1,0 +1,21 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 30000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 30000ms exceeded.\n    at targetLocale (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:93:719)\n    at async normalChain (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:94:798)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:132:152"
+  },
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 30000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 30000ms exceeded.\n    at targetLocale (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:93:719)\n    at async normalChain (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:94:798)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:132:152"
+  },
+  {
+    "name": "VM frozen upstream byte boundary",
+    "status": "PASS",
+    "detail": {
+      "output": "{ vmModuleCount: 178, guiHooks: 32, noFactoryInjection: true }\n"
+    }
+  }
+]

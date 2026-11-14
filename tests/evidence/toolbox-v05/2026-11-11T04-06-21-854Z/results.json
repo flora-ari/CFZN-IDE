@@ -1,0 +1,8 @@
+[
+  {
+    "name": "dist crossboard diagnostic",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 45000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 45000ms exceeded.\n    at choose (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:29:442)\n    at async crossboardRepro (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:129:553)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:137:240"
+  }
+]

@@ -1,0 +1,41 @@
+{
+  "surface": "dist",
+  "checks": {
+    "search": {
+      "status": "1 个匹配积木",
+      "selected": "cfzn-search-results",
+      "blocks": [
+        {
+          "type": "motion_movesteps",
+          "text": "移动 10 步",
+          "disabled": false
+        },
+        {
+          "type": "motion_movesteps",
+          "text": "移动 10 步",
+          "disabled": false
+        }
+      ]
+    },
+    "searchNoDirty": true,
+    "saveDomains": true,
+    "procedure": [
+      {
+        "text": "v07函数 1 ??? ?",
+        "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"procedures_call\"><mutation proccode=\"v07函数 %n %s %b\" argumentids=\"[&quot;v07-number&quot;,&quot;v07-text&quot;,&quot;v07-bool&quot;]\" warp=\"false\"></mutation><value name=\"v07-number\"><shadow type=\"math_number\" id=\"jhBH$)$PCj~kB0)NY%V}\"><field name=\"NUM\">1</field></shadow></value><value name=\"v07-text\"><shadow type=\"text\" id=\":Y6J~M@[]$jNcLa^,w/R\"><field name=\"TEXT\"></field></shadow></value></block>"
+      },
+      {
+        "text": "v07函数 1 ??? ?",
+        "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"p$hyxLaZ}.6XlOqkO@`a\"><mutation proccode=\"v07函数 %n %s %b\" argumentids=\"[&quot;v07-number&quot;,&quot;v07-text&quot;,&quot;v07-bool&quot;]\" warp=\"false\"></mutation><value name=\"v07-number\"><shadow type=\"math_number\" id=\"tcAM$!|{[k*yRuoV@|/1\"><field name=\"NUM\">1</field></shadow></value><value name=\"v07-text\"><shadow type=\"text\" id=\",q(VuKs1i{=A3y+C=iSb\"><field name=\"TEXT\"></field></shadow></value></block>"
+      }
+    ],
+    "dynamicAndNoDirty": true,
+    "realSearchDrag": true,
+    "loadedFilter": true,
+    "terminalRemount": true,
+    "serviceSeparate": true
+  },
+  "errors": [],
+  "physicalHardware": false,
+  "persistence": "isolated mock API, actual original archive bytes"
+}

@@ -1,0 +1,553 @@
+{
+  "conclusion": "PASS",
+  "build": "assets/editor-Newf58X1.js",
+  "productDefects": 0,
+  "cases": [
+    {
+      "name": "MenuBar direct ownership, File removal, no spacer, 1440/1894 one-row geometry",
+      "status": "PASS",
+      "sourceRun": "2026-11-06T12-16-07-739Z",
+      "detail": {
+        "layouts": [
+          {
+            "width": 1440,
+            "hostClass": "gui_menu-bar-position_3U1T0 menu-bar_menu-bar_JcuHF box_box_2jjDp",
+            "group": {
+              "x": 640.5625,
+              "y": 0,
+              "width": 374,
+              "height": 48,
+              "top": 0,
+              "right": 1014.5625,
+              "bottom": 48,
+              "left": 640.5625
+            },
+            "tabs": {
+              "x": 0,
+              "y": 48,
+              "width": 250,
+              "height": 44,
+              "top": 48,
+              "right": 250,
+              "bottom": 92,
+              "left": 0
+            },
+            "menu": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 48,
+              "top": 0,
+              "right": 1440,
+              "bottom": 48,
+              "left": 0
+            },
+            "status": {
+              "x": 942.5625,
+              "y": 15,
+              "width": 72,
+              "height": 18,
+              "top": 15,
+              "right": 1014.5625,
+              "bottom": 33,
+              "left": 942.5625
+            },
+            "directChild": true,
+            "overflowY": "visible",
+            "oldAttributes": 0,
+            "oldSpace": "",
+            "groupClientWidth": 374,
+            "groupScrollWidth": 374,
+            "buttons": [
+              {
+                "text": "项目",
+                "rect": {
+                  "x": 640.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 682.5625,
+                  "bottom": 40,
+                  "left": 640.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "新建",
+                "rect": {
+                  "x": 686.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 728.5625,
+                  "bottom": 40,
+                  "left": 686.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "导入",
+                "rect": {
+                  "x": 732.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 774.5625,
+                  "bottom": 40,
+                  "left": 732.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "导出",
+                "rect": {
+                  "x": 778.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 820.5625,
+                  "bottom": 40,
+                  "left": 778.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "保存",
+                "rect": {
+                  "x": 824.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 866.5625,
+                  "bottom": 40,
+                  "left": 824.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "串口终端",
+                "rect": {
+                  "x": 870.5625,
+                  "y": 8,
+                  "width": 68,
+                  "height": 32,
+                  "top": 8,
+                  "right": 938.5625,
+                  "bottom": 40,
+                  "left": 870.5625
+                },
+                "hit": true
+              }
+            ]
+          },
+          {
+            "width": 1894,
+            "hostClass": "gui_menu-bar-position_3U1T0 menu-bar_menu-bar_JcuHF box_box_2jjDp",
+            "group": {
+              "x": 1094.5625,
+              "y": 0,
+              "width": 374,
+              "height": 48,
+              "top": 0,
+              "right": 1468.5625,
+              "bottom": 48,
+              "left": 1094.5625
+            },
+            "tabs": {
+              "x": 0,
+              "y": 48,
+              "width": 250,
+              "height": 44,
+              "top": 48,
+              "right": 250,
+              "bottom": 92,
+              "left": 0
+            },
+            "menu": {
+              "x": 0,
+              "y": 0,
+              "width": 1894,
+              "height": 48,
+              "top": 0,
+              "right": 1894,
+              "bottom": 48,
+              "left": 0
+            },
+            "status": {
+              "x": 1396.5625,
+              "y": 15,
+              "width": 72,
+              "height": 18,
+              "top": 15,
+              "right": 1468.5625,
+              "bottom": 33,
+              "left": 1396.5625
+            },
+            "directChild": true,
+            "overflowY": "visible",
+            "oldAttributes": 0,
+            "oldSpace": "",
+            "groupClientWidth": 374,
+            "groupScrollWidth": 374,
+            "buttons": [
+              {
+                "text": "项目",
+                "rect": {
+                  "x": 1094.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 1136.5625,
+                  "bottom": 40,
+                  "left": 1094.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "新建",
+                "rect": {
+                  "x": 1140.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 1182.5625,
+                  "bottom": 40,
+                  "left": 1140.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "导入",
+                "rect": {
+                  "x": 1186.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 1228.5625,
+                  "bottom": 40,
+                  "left": 1186.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "导出",
+                "rect": {
+                  "x": 1232.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 1274.5625,
+                  "bottom": 40,
+                  "left": 1232.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "保存",
+                "rect": {
+                  "x": 1278.5625,
+                  "y": 8,
+                  "width": 42,
+                  "height": 32,
+                  "top": 8,
+                  "right": 1320.5625,
+                  "bottom": 40,
+                  "left": 1278.5625
+                },
+                "hit": true
+              },
+              {
+                "text": "串口终端",
+                "rect": {
+                  "x": 1324.5625,
+                  "y": 8,
+                  "width": 68,
+                  "height": 32,
+                  "top": 8,
+                  "right": 1392.5625,
+                  "bottom": 40,
+                  "left": 1324.5625
+                },
+                "hit": true
+              }
+            ]
+          }
+        ],
+        "clean": true
+      }
+    },
+    {
+      "name": "MenuBar 390 internal horizontal scroll reaches all six controls and status",
+      "status": "PASS",
+      "sourceRun": "2026-11-06T12-17-48-038Z",
+      "detail": {
+        "layout": {
+          "width": 390,
+          "hostClass": "gui_menu-bar-position_3U1T0 menu-bar_menu-bar_JcuHF box_box_2jjDp",
+          "group": {
+            "x": 293.25,
+            "y": 0,
+            "width": 72,
+            "height": 48,
+            "top": 0,
+            "right": 365.25,
+            "bottom": 48,
+            "left": 293.25
+          },
+          "tabs": {
+            "x": 0,
+            "y": 48,
+            "width": 250,
+            "height": 44,
+            "top": 48,
+            "right": 250,
+            "bottom": 92,
+            "left": 0
+          },
+          "menu": {
+            "x": 0,
+            "y": 0,
+            "width": 390,
+            "height": 48,
+            "top": 0,
+            "right": 390,
+            "bottom": 48,
+            "left": 0
+          },
+          "status": {
+            "x": 595.25,
+            "y": 15,
+            "width": 72,
+            "height": 18,
+            "top": 15,
+            "right": 667.25,
+            "bottom": 33,
+            "left": 595.25
+          },
+          "directChild": true,
+          "overflowY": "visible",
+          "oldAttributes": 0,
+          "oldSpace": "",
+          "groupClientWidth": 72,
+          "groupScrollWidth": 374,
+          "buttons": [
+            {
+              "text": "项目",
+              "rect": {
+                "x": 293.25,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 335.25,
+                "bottom": 40,
+                "left": 293.25
+              },
+              "hit": true
+            },
+            {
+              "text": "新建",
+              "rect": {
+                "x": 339.25,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 381.25,
+                "bottom": 40,
+                "left": 339.25
+              },
+              "hit": true
+            },
+            {
+              "text": "导入",
+              "rect": {
+                "x": 385.25,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 427.25,
+                "bottom": 40,
+                "left": 385.25
+              },
+              "hit": false
+            },
+            {
+              "text": "导出",
+              "rect": {
+                "x": 431.25,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 473.25,
+                "bottom": 40,
+                "left": 431.25
+              },
+              "hit": false
+            },
+            {
+              "text": "保存",
+              "rect": {
+                "x": 477.25,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 519.25,
+                "bottom": 40,
+                "left": 477.25
+              },
+              "hit": false
+            },
+            {
+              "text": "串口终端",
+              "rect": {
+                "x": 523.25,
+                "y": 8,
+                "width": 68,
+                "height": 32,
+                "top": 8,
+                "right": 591.25,
+                "bottom": 40,
+                "left": 523.25
+              },
+              "hit": false
+            }
+          ]
+        },
+        "wheelScrolled": true,
+        "reached": [
+          {
+            "id": "project-list-button",
+            "x": 293.25,
+            "right": 335.25,
+            "top": 8,
+            "bottom": 40,
+            "groupX": 293.25,
+            "groupRight": 365.25,
+            "scrollLeft": 0,
+            "hit": true
+          },
+          {
+            "id": "new-project",
+            "x": 323.25,
+            "right": 365.25,
+            "top": 8,
+            "bottom": 40,
+            "groupX": 293.25,
+            "groupRight": 365.25,
+            "scrollLeft": 16,
+            "hit": true
+          },
+          {
+            "id": "import-project",
+            "x": 308.25,
+            "right": 350.25,
+            "top": 8,
+            "bottom": 40,
+            "groupX": 293.25,
+            "groupRight": 365.25,
+            "scrollLeft": 77,
+            "hit": true
+          },
+          {
+            "id": "export-project",
+            "x": 323.25,
+            "right": 365.25,
+            "top": 8,
+            "bottom": 40,
+            "groupX": 293.25,
+            "groupRight": 365.25,
+            "scrollLeft": 108,
+            "hit": true
+          },
+          {
+            "id": "save-project",
+            "x": 308.25,
+            "right": 350.25,
+            "top": 8,
+            "bottom": 40,
+            "groupX": 293.25,
+            "groupRight": 365.25,
+            "scrollLeft": 169,
+            "hit": true
+          },
+          {
+            "id": "serial-button",
+            "x": 297.25,
+            "right": 365.25,
+            "top": 8,
+            "bottom": 40,
+            "groupX": 293.25,
+            "groupRight": 365.25,
+            "scrollLeft": 226,
+            "hit": true
+          }
+        ],
+        "statusRect": {
+          "x": 293.25,
+          "y": 15,
+          "width": 72,
+          "height": 18
+        }
+      }
+    },
+    {
+      "name": "MenuBar original Edit dropdown, device selector, alert and extension library retain priority",
+      "status": "PASS",
+      "sourceRun": "2026-11-06T12-19-27-922Z",
+      "detail": {
+        "editDropdown": {
+          "x": 221.21875,
+          "y": 48,
+          "width": 188,
+          "height": 70
+        },
+        "nativeDeviceLibrary": true,
+        "nativeAlert": true,
+        "extensionCategories": true
+      }
+    },
+    {
+      "name": "MenuBar real import/save/export, New, project and serial drawer clicks",
+      "status": "PASS",
+      "sourceRun": "2026-11-06T12-17-48-038Z",
+      "detail": {
+        "createdId": "fca3e7bc-27ce-419a-b5e0-6370afaa5d99",
+        "revision": 1,
+        "exportPreservedDirty": true,
+        "realFileChooser": true,
+        "serialPermissionRequests": 0,
+        "errors": []
+      }
+    }
+  ],
+  "cleanup": [
+    {
+      "run": "2026-11-06T12-16-07-739Z",
+      "temporary": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-native-toolbar-test-fKw1go",
+      "exists": false
+    },
+    {
+      "run": "2026-11-06T12-17-48-038Z",
+      "temporary": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-native-toolbar-test-rOVPSp",
+      "exists": false
+    },
+    {
+      "run": "2026-11-06T12-19-27-922Z",
+      "temporary": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-native-toolbar-test-yxxMA2",
+      "exists": false
+    }
+  ]
+}

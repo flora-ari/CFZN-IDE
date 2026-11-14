@@ -1,0 +1,12 @@
+[
+  {
+    "name": "five native actions/status, no serial-button, upload terminal retained",
+    "status": "PASS",
+    "detail": {
+      "bundle": "assets/editor-pxCqZ_jI.js",
+      "actions": 5,
+      "status": true,
+      "uploadTerminal": true
+    }
+  }
+]

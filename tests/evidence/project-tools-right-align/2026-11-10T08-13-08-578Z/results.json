@@ -1,0 +1,162 @@
+[
+  {
+    "name": "right aligned title and tools plus narrow scroll keyboard",
+    "status": "PASS",
+    "detail": [
+      {
+        "viewport": 1440,
+        "mainRight": 441.765625,
+        "titleLeft": 478.75,
+        "blank": 36.984375,
+        "titleWidth": 188,
+        "input": 180,
+        "titleGap": 6,
+        "tailGap": 6,
+        "tailRight": 1440,
+        "menuRight": 1440,
+        "menuHeight": 48,
+        "clientWidth": 302,
+        "scrollWidth": 302,
+        "scrollHeight": 48,
+        "clientHeight": 48,
+        "thumbRadius": "6px",
+        "barHeight": "6px",
+        "titleMargin": "36.9844px",
+        "tailMargin": "0px",
+        "wheel": null,
+        "focus": []
+      },
+      {
+        "viewport": 2560,
+        "mainRight": 441.765625,
+        "titleLeft": 1598.75,
+        "blank": 1156.984375,
+        "titleWidth": 188,
+        "input": 180,
+        "titleGap": 6,
+        "tailGap": 6,
+        "tailRight": 2560,
+        "menuRight": 2560,
+        "menuHeight": 48,
+        "clientWidth": 302,
+        "scrollWidth": 302,
+        "scrollHeight": 48,
+        "clientHeight": 48,
+        "thumbRadius": "6px",
+        "barHeight": "6px",
+        "titleMargin": "1156.98px",
+        "tailMargin": "0px",
+        "wheel": null,
+        "focus": []
+      },
+      {
+        "viewport": 800,
+        "mainRight": 273.765625,
+        "titleLeft": 273.765625,
+        "blank": 0,
+        "titleWidth": 40,
+        "input": 78.859375,
+        "titleGap": 6,
+        "tailGap": 6,
+        "tailRight": 800,
+        "menuRight": 800,
+        "menuHeight": 48,
+        "clientWidth": 111,
+        "scrollWidth": 302,
+        "scrollHeight": 48,
+        "clientHeight": 48,
+        "thumbRadius": "6px",
+        "barHeight": "6px",
+        "titleMargin": "0px",
+        "tailMargin": "0px",
+        "wheel": 191,
+        "focus": [
+          {
+            "text": "项目",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 0
+          },
+          {
+            "text": "新建",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 0
+          },
+          {
+            "text": "导入",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 23
+          },
+          {
+            "text": "导出",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 104
+          },
+          {
+            "text": "保存",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 115
+          }
+        ]
+      },
+      {
+        "viewport": 1000,
+        "mainRight": 273.765625,
+        "titleLeft": 273.765625,
+        "blank": 0,
+        "titleWidth": 58.171875,
+        "input": 50.171875,
+        "titleGap": 6,
+        "tailGap": 6,
+        "tailRight": 1000,
+        "menuRight": 1000,
+        "menuHeight": 48,
+        "clientWidth": 293,
+        "scrollWidth": 302,
+        "scrollHeight": 48,
+        "clientHeight": 48,
+        "thumbRadius": "6px",
+        "barHeight": "6px",
+        "titleMargin": "0px",
+        "tailMargin": "0px",
+        "wheel": 9,
+        "focus": [
+          {
+            "text": "项目",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 0
+          },
+          {
+            "text": "新建",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 0
+          },
+          {
+            "text": "导入",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 0
+          },
+          {
+            "text": "导出",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 0
+          },
+          {
+            "text": "保存",
+            "focused": true,
+            "visible": true,
+            "scrollLeft": 0
+          }
+        ]
+      }
+    ]
+  }
+]

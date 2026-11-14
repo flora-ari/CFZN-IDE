@@ -1,0 +1,92 @@
+{
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\parity-v07\\2026-11-12T02-52-04-723Z-dist-search",
+  "results": [
+    {
+      "name": "native open field and dropdown survive real dynamic search reindex",
+      "status": "PASS",
+      "detail": {
+        "fieldRetained": true,
+        "dropdownRetained": true
+      }
+    },
+    {
+      "name": "search preserves effective undo redo stacks and next actions",
+      "status": "PASS",
+      "detail": {
+        "stacksPreserved": true,
+        "nextRedo": true,
+        "nextUndo": true
+      }
+    },
+    {
+      "name": "native search Chinese and no result close restores category without state changes",
+      "status": "PASS",
+      "detail": {
+        "category": "motion"
+      }
+    },
+    {
+      "name": "dynamic variables lists and percent-n percent-s procedure are real draggable blocks",
+      "status": "PASS",
+      "detail": {
+        "rows": [
+          {
+            "id": "{/MH^cl`fP]S)WHXP?|Z",
+            "type": "procedures_call",
+            "text": "独立过程 1 ???",
+            "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"{/MH^cl`fP]S)WHXP?|Z\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\":Q`Ah2A4A@25yK{jbdmG\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"#6m6!xbtB~A.@nl|[L`-\"><field name=\"TEXT\"></field></shadow></value></block>"
+          }
+        ],
+        "dragged": [
+          {
+            "id": "%wgN${5cHd@5*!w*l/!%",
+            "type": "procedures_call",
+            "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"%wgN${5cHd@5*!w*l/!%\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"6]@LK~kdc$RTmuYrC,H|\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"a}sG@-E6Du$!{%z@{uh|\"><field name=\"TEXT\"></field></shadow></value></block>"
+          },
+          {
+            "id": "6]@LK~kdc$RTmuYrC,H|",
+            "type": "math_number",
+            "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"math_number\" id=\"6]@LK~kdc$RTmuYrC,H|\"><field name=\"NUM\">1</field></shadow>"
+          },
+          {
+            "id": "a}sG@-E6Du$!{%z@{uh|",
+            "type": "text",
+            "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"text\" id=\"a}sG@-E6Du$!{%z@{uh|\"><field name=\"TEXT\"></field></shadow>"
+          }
+        ]
+      }
+    },
+    {
+      "name": "search close clear repeated rebuild preserves graph and undo",
+      "status": "PASS",
+      "detail": {
+        "rebuilds": 3
+      }
+    },
+    {
+      "name": "English locale native search compared with identical fractional-coordinate no-search control",
+      "status": "PASS",
+      "detail": {
+        "englishAndChinese": true,
+        "controlDelta": 1,
+        "treatmentDelta": 0,
+        "searchSnapshotsStrictlyUnchanged": true
+      }
+    },
+    {
+      "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+      "status": "PASS",
+      "detail": {
+        "disabled": 4,
+        "parameterSensitive": true
+      }
+    },
+    {
+      "name": "no uncaught browser errors",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "FAIL",
+    "error": "Error: locator.boundingBox: Error: strict mode violation: locator('[data-qa-drag-source=\"true\"]') resolved to 2 elements:\n    1) <g data-shapes=\"stack\" class=\"blocklyDraggable\" data-id=\"activeBuzzer_on\" data-qa-drag-source=\"true\" transform=\"translate(12,4060)\">…</g> aka locator('g').filter({ hasText: '打开有源蜂鸣器' }).nth(5)\n    2) <g data-shapes=\"stack\" data-id=\"atomizer_init\" class=\"blocklyDraggable\" data-qa-drag-source=\"true\" transform=\"translate(12,4316)\">…</g> aka getByText('初始化雾化器 引脚D5 / IO0')\n\nCall log:\n\u001b[2m  - waiting for locator('[data-qa-drag-source=\"true\"]')\u001b[22m\n",
+    "stack": "locator.boundingBox: Error: strict mode violation: locator('[data-qa-drag-source=\"true\"]') resolved to 2 elements:\n    1) <g data-shapes=\"stack\" class=\"blocklyDraggable\" data-id=\"activeBuzzer_on\" data-qa-drag-source=\"true\" transform=\"translate(12,4060)\">…</g> aka locator('g').filter({ hasText: '打开有源蜂鸣器' }).nth(5)\n    2) <g data-shapes=\"stack\" data-id=\"atomizer_init\" class=\"blocklyDraggable\" data-qa-drag-source=\"true\" transform=\"translate(12,4316)\">…</g> aka getByText('初始化雾化器 引脚D5 / IO0')\n\nCall log:\n\u001b[2m  - waiting for locator('[data-qa-drag-source=\"true\"]')\u001b[22m\n\n    at flyoutModeCheck (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:56:137)\n    at async normalChain (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:93:1241)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:72"
+  },
+  {
+    "name": "dev fixed helper invalid/default/network/retry/cache",
+    "status": "PASS",
+    "detail": {
+      "invalidDefault": "扩展「activateBuzzer」的 blocks.mjs 未提供有效的默认注册函数。",
+      "networkFailure": "扩展「activateBuzzer」的 generator.mjs 加载失败：Failed to fetch dynamically imported module: http://127.0.0.1:50168/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&retry=1",
+      "retry": true,
+      "cacheNoRefetch": true,
+      "inputVersionGuards": [
+        "无法加载扩展：模块不在内置目录中。",
+        "无法加载扩展：资源版本无效，请刷新编辑器。",
+        "无法加载扩展：重试次数必须是非负安全整数。",
+        "扩展资源版本已变化，请先保存当前项目并刷新编辑器。"
+      ]
+    }
+  },
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "FAIL",
+    "error": "Error: locator.boundingBox: Error: strict mode violation: locator('[data-qa-drag-source=\"true\"]') resolved to 2 elements:\n    1) <g data-shapes=\"stack\" class=\"blocklyDraggable\" data-id=\"activeBuzzer_on\" data-qa-drag-source=\"true\" transform=\"translate(12,4060)\">…</g> aka locator('g').filter({ hasText: '打开有源蜂鸣器' }).nth(5)\n    2) <g data-shapes=\"stack\" data-id=\"atomizer_init\" class=\"blocklyDraggable\" data-qa-drag-source=\"true\" transform=\"translate(12,4316)\">…</g> aka getByText('初始化雾化器 引脚D5 / IO0')\n\nCall log:\n\u001b[2m  - waiting for locator('[data-qa-drag-source=\"true\"]')\u001b[22m\n",
+    "stack": "locator.boundingBox: Error: strict mode violation: locator('[data-qa-drag-source=\"true\"]') resolved to 2 elements:\n    1) <g data-shapes=\"stack\" class=\"blocklyDraggable\" data-id=\"activeBuzzer_on\" data-qa-drag-source=\"true\" transform=\"translate(12,4060)\">…</g> aka locator('g').filter({ hasText: '打开有源蜂鸣器' }).nth(5)\n    2) <g data-shapes=\"stack\" data-id=\"atomizer_init\" class=\"blocklyDraggable\" data-qa-drag-source=\"true\" transform=\"translate(12,4316)\">…</g> aka getByText('初始化雾化器 引脚D5 / IO0')\n\nCall log:\n\u001b[2m  - waiting for locator('[data-qa-drag-source=\"true\"]')\u001b[22m\n\n    at flyoutModeCheck (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:56:137)\n    at async normalChain (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:93:1241)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:72"
+  },
+  {
+    "name": "dist fixed helper invalid/default/network/retry/cache",
+    "status": "PASS",
+    "detail": {
+      "invalidDefault": "扩展「activateBuzzer」的 blocks.mjs 未提供有效的默认注册函数。",
+      "networkFailure": "扩展「activateBuzzer」的 generator.mjs 加载失败：Failed to fetch dynamically imported module: http://127.0.0.1:50169/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&retry=1",
+      "retry": true,
+      "cacheNoRefetch": true,
+      "inputVersionGuards": [
+        "无法加载扩展：模块不在内置目录中。",
+        "无法加载扩展：资源版本无效，请刷新编辑器。",
+        "无法加载扩展：重试次数必须是非负安全整数。",
+        "扩展资源版本已变化，请先保存当前项目并刷新编辑器。"
+      ]
+    }
+  },
+  {
+    "name": "VM frozen upstream byte boundary",
+    "status": "PASS",
+    "detail": {
+      "output": "{ vmModuleCount: 178, guiHooks: 32, noFactoryInjection: true }\n"
+    }
+  }
+]

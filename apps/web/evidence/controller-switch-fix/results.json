@@ -1,0 +1,1333 @@
+[
+  {
+    "scenario": "pin3",
+    "beforeState": {
+      "title": "OpenBlock作品",
+      "dirty": false,
+      "running": false,
+      "documentId": 0,
+      "editVersion": 5
+    },
+    "before": {
+      "targets": [
+        {
+          "isStage": true,
+          "name": "Stage",
+          "variables": {},
+          "lists": {},
+          "broadcasts": {},
+          "blocks": {},
+          "comments": {},
+          "currentCostume": 0,
+          "costumes": [
+            {
+              "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+              "name": "背景1",
+              "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 240,
+              "rotationCenterY": 180
+            }
+          ],
+          "sounds": [
+            {
+              "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+              "name": "啵",
+              "dataFormat": "wav",
+              "format": "",
+              "rate": 48000,
+              "sampleCount": 1123,
+              "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+            }
+          ],
+          "volume": 100,
+          "layerOrder": 0,
+          "tempo": 60,
+          "videoTransparency": 50,
+          "videoState": "on",
+          "textToSpeechLanguage": null
+        },
+        {
+          "isStage": false,
+          "name": "角色1",
+          "variables": {},
+          "lists": {},
+          "broadcasts": {},
+          "blocks": {
+            "hat": {
+              "opcode": "event_whenarduinobegin",
+              "next": "init",
+              "parent": null,
+              "inputs": {},
+              "fields": {},
+              "shadow": false,
+              "topLevel": true,
+              "x": 40,
+              "y": 40
+            },
+            "init": {
+              "opcode": "activeBuzzer_init",
+              "next": null,
+              "parent": "hat",
+              "inputs": {},
+              "fields": {
+                "PIN": [
+                  "3",
+                  null
+                ]
+              },
+              "shadow": false,
+              "topLevel": false
+            }
+          },
+          "comments": {},
+          "currentCostume": 0,
+          "costumes": [
+            {
+              "assetId": "5de48e72637db4d7fc7f6bb526354114",
+              "name": "造型1",
+              "bitmapResolution": 1,
+              "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 93,
+              "rotationCenterY": 80
+            },
+            {
+              "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+              "name": "造型2",
+              "bitmapResolution": 1,
+              "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 93,
+              "rotationCenterY": 80
+            }
+          ],
+          "sounds": [
+            {
+              "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+              "name": "啁啾",
+              "dataFormat": "wav",
+              "format": "",
+              "rate": 48000,
+              "sampleCount": 23683,
+              "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+            }
+          ],
+          "volume": 100,
+          "layerOrder": 1,
+          "visible": true,
+          "x": 0,
+          "y": 0,
+          "size": 100,
+          "direction": 90,
+          "draggable": false,
+          "rotationStyle": "all around"
+        }
+      ],
+      "monitors": [],
+      "device": {
+        "deviceId": "arduinoEsp32S3",
+        "type": "arduino"
+      },
+      "programMode": "upload",
+      "extensions": [],
+      "deviceExtensions": [
+        "activateBuzzer"
+      ],
+      "meta": {
+        "semver": "3.0.0",
+        "vm": "0.2.0-prerelease.20250609145235",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0"
+      }
+    },
+    "switches": [
+      {
+        "name": "Aijite ESP32-S3",
+        "message": "无法切换到 Aijite ESP32-S3：现有积木 activeBuzzer_init 的引脚 3 不受目标主控支持。原设备、积木和参数保持不变。",
+        "afterState": {
+          "title": "OpenBlock作品",
+          "dirty": false,
+          "running": false,
+          "documentId": 0,
+          "editVersion": 5
+        },
+        "project": {
+          "targets": [
+            {
+              "isStage": true,
+              "name": "Stage",
+              "variables": {},
+              "lists": {},
+              "broadcasts": {},
+              "blocks": {},
+              "comments": {},
+              "currentCostume": 0,
+              "costumes": [
+                {
+                  "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                  "name": "背景1",
+                  "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 240,
+                  "rotationCenterY": 180
+                }
+              ],
+              "sounds": [
+                {
+                  "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                  "name": "啵",
+                  "dataFormat": "wav",
+                  "format": "",
+                  "rate": 48000,
+                  "sampleCount": 1123,
+                  "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+              ],
+              "volume": 100,
+              "layerOrder": 0,
+              "tempo": 60,
+              "videoTransparency": 50,
+              "videoState": "on",
+              "textToSpeechLanguage": null
+            },
+            {
+              "isStage": false,
+              "name": "角色1",
+              "variables": {},
+              "lists": {},
+              "broadcasts": {},
+              "blocks": {
+                "hat": {
+                  "opcode": "event_whenarduinobegin",
+                  "next": "init",
+                  "parent": null,
+                  "inputs": {},
+                  "fields": {},
+                  "shadow": false,
+                  "topLevel": true,
+                  "x": 40,
+                  "y": 40
+                },
+                "init": {
+                  "opcode": "activeBuzzer_init",
+                  "next": null,
+                  "parent": "hat",
+                  "inputs": {},
+                  "fields": {
+                    "PIN": [
+                      "3",
+                      null
+                    ]
+                  },
+                  "shadow": false,
+                  "topLevel": false
+                }
+              },
+              "comments": {},
+              "currentCostume": 0,
+              "costumes": [
+                {
+                  "assetId": "5de48e72637db4d7fc7f6bb526354114",
+                  "name": "造型1",
+                  "bitmapResolution": 1,
+                  "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 93,
+                  "rotationCenterY": 80
+                },
+                {
+                  "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+                  "name": "造型2",
+                  "bitmapResolution": 1,
+                  "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 93,
+                  "rotationCenterY": 80
+                }
+              ],
+              "sounds": [
+                {
+                  "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+                  "name": "啁啾",
+                  "dataFormat": "wav",
+                  "format": "",
+                  "rate": 48000,
+                  "sampleCount": 23683,
+                  "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+                }
+              ],
+              "volume": 100,
+              "layerOrder": 1,
+              "visible": true,
+              "x": 0,
+              "y": 0,
+              "size": 100,
+              "direction": 90,
+              "draggable": false,
+              "rotationStyle": "all around"
+            }
+          ],
+          "monitors": [],
+          "device": {
+            "deviceId": "arduinoEsp32S3",
+            "type": "arduino"
+          },
+          "programMode": "upload",
+          "extensions": [],
+          "deviceExtensions": [
+            "activateBuzzer"
+          ],
+          "meta": {
+            "semver": "3.0.0",
+            "vm": "0.2.0-prerelease.20250609145235",
+            "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0"
+          }
+        },
+        "code": "// generated by OpenBlock\n#include <Arduino.h>\n\nint activeBuzzerPin = 3;\n\nvoid setup() {\n  pinMode(activeBuzzerPin, OUTPUT);\n\n}\n\nvoid loop() {\n}\n",
+        "pins": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ],
+        "modulePins": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "scenario": "serial",
+    "beforeState": {
+      "title": "OpenBlock作品",
+      "dirty": true,
+      "running": false,
+      "documentId": 0,
+      "editVersion": 6
+    },
+    "before": {
+      "targets": [
+        {
+          "isStage": true,
+          "name": "Stage",
+          "variables": {},
+          "lists": {},
+          "broadcasts": {},
+          "blocks": {},
+          "comments": {},
+          "currentCostume": 0,
+          "costumes": [
+            {
+              "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+              "name": "背景1",
+              "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 240,
+              "rotationCenterY": 180
+            }
+          ],
+          "sounds": [
+            {
+              "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+              "name": "啵",
+              "dataFormat": "wav",
+              "format": "",
+              "rate": 48000,
+              "sampleCount": 1123,
+              "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+            }
+          ],
+          "volume": 100,
+          "layerOrder": 0,
+          "tempo": 60,
+          "videoTransparency": 50,
+          "videoState": "on",
+          "textToSpeechLanguage": null
+        },
+        {
+          "isStage": false,
+          "name": "角色1",
+          "variables": {},
+          "lists": {},
+          "broadcasts": {},
+          "blocks": {
+            "hat": {
+              "opcode": "event_whenarduinobegin",
+              "next": "serial",
+              "parent": null,
+              "inputs": {},
+              "fields": {},
+              "shadow": false,
+              "topLevel": true,
+              "x": 40,
+              "y": 40
+            },
+            "serial": {
+              "opcode": "arduino_serial_multiSerialPrint",
+              "next": null,
+              "parent": "hat",
+              "inputs": {
+                "VALUE": [
+                  1,
+                  [
+                    4,
+                    "42"
+                  ]
+                ]
+              },
+              "fields": {
+                "NO": [
+                  "0",
+                  null
+                ],
+                "EOL": [
+                  "warp",
+                  null
+                ]
+              },
+              "shadow": false,
+              "topLevel": false
+            }
+          },
+          "comments": {},
+          "currentCostume": 0,
+          "costumes": [
+            {
+              "assetId": "5de48e72637db4d7fc7f6bb526354114",
+              "name": "造型1",
+              "bitmapResolution": 1,
+              "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 93,
+              "rotationCenterY": 80
+            },
+            {
+              "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+              "name": "造型2",
+              "bitmapResolution": 1,
+              "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 93,
+              "rotationCenterY": 80
+            }
+          ],
+          "sounds": [
+            {
+              "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+              "name": "啁啾",
+              "dataFormat": "wav",
+              "format": "",
+              "rate": 48000,
+              "sampleCount": 23683,
+              "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+            }
+          ],
+          "volume": 100,
+          "layerOrder": 1,
+          "visible": true,
+          "x": 0,
+          "y": 0,
+          "size": 100,
+          "direction": 90,
+          "draggable": false,
+          "rotationStyle": "all around"
+        }
+      ],
+      "monitors": [],
+      "device": {
+        "deviceId": "arduinoEsp32S3",
+        "type": "arduino"
+      },
+      "programMode": "upload",
+      "extensions": [],
+      "deviceExtensions": [
+        "activateBuzzer"
+      ],
+      "meta": {
+        "semver": "3.0.0",
+        "vm": "0.2.0-prerelease.20250609145235",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0"
+      }
+    },
+    "switches": [
+      {
+        "name": "Arduino Uno",
+        "message": "无法切换到 Arduino Uno：现有积木 arduino_serial_multiSerialPrint 不受目标主控支持。原项目保持不变。",
+        "afterState": {
+          "title": "OpenBlock作品",
+          "dirty": true,
+          "running": false,
+          "documentId": 0,
+          "editVersion": 6
+        },
+        "project": {
+          "targets": [
+            {
+              "isStage": true,
+              "name": "Stage",
+              "variables": {},
+              "lists": {},
+              "broadcasts": {},
+              "blocks": {},
+              "comments": {},
+              "currentCostume": 0,
+              "costumes": [
+                {
+                  "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                  "name": "背景1",
+                  "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 240,
+                  "rotationCenterY": 180
+                }
+              ],
+              "sounds": [
+                {
+                  "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                  "name": "啵",
+                  "dataFormat": "wav",
+                  "format": "",
+                  "rate": 48000,
+                  "sampleCount": 1123,
+                  "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+              ],
+              "volume": 100,
+              "layerOrder": 0,
+              "tempo": 60,
+              "videoTransparency": 50,
+              "videoState": "on",
+              "textToSpeechLanguage": null
+            },
+            {
+              "isStage": false,
+              "name": "角色1",
+              "variables": {},
+              "lists": {},
+              "broadcasts": {},
+              "blocks": {
+                "hat": {
+                  "opcode": "event_whenarduinobegin",
+                  "next": "serial",
+                  "parent": null,
+                  "inputs": {},
+                  "fields": {},
+                  "shadow": false,
+                  "topLevel": true,
+                  "x": 40,
+                  "y": 40
+                },
+                "serial": {
+                  "opcode": "arduino_serial_multiSerialPrint",
+                  "next": null,
+                  "parent": "hat",
+                  "inputs": {
+                    "VALUE": [
+                      1,
+                      [
+                        4,
+                        "42"
+                      ]
+                    ]
+                  },
+                  "fields": {
+                    "NO": [
+                      "0",
+                      null
+                    ],
+                    "EOL": [
+                      "warp",
+                      null
+                    ]
+                  },
+                  "shadow": false,
+                  "topLevel": false
+                }
+              },
+              "comments": {},
+              "currentCostume": 0,
+              "costumes": [
+                {
+                  "assetId": "5de48e72637db4d7fc7f6bb526354114",
+                  "name": "造型1",
+                  "bitmapResolution": 1,
+                  "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 93,
+                  "rotationCenterY": 80
+                },
+                {
+                  "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+                  "name": "造型2",
+                  "bitmapResolution": 1,
+                  "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 93,
+                  "rotationCenterY": 80
+                }
+              ],
+              "sounds": [
+                {
+                  "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+                  "name": "啁啾",
+                  "dataFormat": "wav",
+                  "format": "",
+                  "rate": 48000,
+                  "sampleCount": 23683,
+                  "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+                }
+              ],
+              "volume": 100,
+              "layerOrder": 1,
+              "visible": true,
+              "x": 0,
+              "y": 0,
+              "size": 100,
+              "direction": 90,
+              "draggable": false,
+              "rotationStyle": "all around"
+            }
+          ],
+          "monitors": [],
+          "device": {
+            "deviceId": "arduinoEsp32S3",
+            "type": "arduino"
+          },
+          "programMode": "upload",
+          "extensions": [],
+          "deviceExtensions": [
+            "activateBuzzer"
+          ],
+          "meta": {
+            "semver": "3.0.0",
+            "vm": "0.2.0-prerelease.20250609145235",
+            "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0"
+          }
+        },
+        "code": "// generated by OpenBlock\n#include <Arduino.h>\n\nvoid setup() {\n  Serial.println(42);\n}\n\nvoid loop() {\n}\n",
+        "pins": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
+    ],
+    "errors": []
+  },
+  {
+    "scenario": "common-digital",
+    "beforeState": {
+      "title": "OpenBlock作品",
+      "dirty": true,
+      "running": false,
+      "documentId": 0,
+      "editVersion": 7
+    },
+    "before": {
+      "targets": [
+        {
+          "isStage": true,
+          "name": "Stage",
+          "variables": {},
+          "lists": {},
+          "broadcasts": {},
+          "blocks": {},
+          "comments": {},
+          "currentCostume": 0,
+          "costumes": [
+            {
+              "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+              "name": "背景1",
+              "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 240,
+              "rotationCenterY": 180
+            }
+          ],
+          "sounds": [
+            {
+              "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+              "name": "啵",
+              "dataFormat": "wav",
+              "format": "",
+              "rate": 48000,
+              "sampleCount": 1123,
+              "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+            }
+          ],
+          "volume": 100,
+          "layerOrder": 0,
+          "tempo": 60,
+          "videoTransparency": 50,
+          "videoState": "on",
+          "textToSpeechLanguage": null
+        },
+        {
+          "isStage": false,
+          "name": "角色1",
+          "variables": {},
+          "lists": {},
+          "broadcasts": {},
+          "blocks": {
+            "hat": {
+              "opcode": "event_whenarduinobegin",
+              "next": "init",
+              "parent": null,
+              "inputs": {},
+              "fields": {},
+              "shadow": false,
+              "topLevel": true,
+              "x": 40,
+              "y": 40
+            },
+            "init": {
+              "opcode": "activeBuzzer_init",
+              "next": "digital",
+              "parent": "hat",
+              "inputs": {},
+              "fields": {
+                "PIN": [
+                  "4",
+                  null
+                ]
+              },
+              "shadow": false,
+              "topLevel": false
+            },
+            "digital": {
+              "opcode": "arduino_pin_setDigitalOutput",
+              "next": null,
+              "parent": "init",
+              "inputs": {
+                "LEVEL": [
+                  1,
+                  "level"
+                ]
+              },
+              "fields": {
+                "PIN": [
+                  "4",
+                  null
+                ]
+              },
+              "shadow": false,
+              "topLevel": false
+            },
+            "level": {
+              "opcode": "arduino_pin_menu_level",
+              "next": null,
+              "parent": "digital",
+              "inputs": {},
+              "fields": {
+                "level": [
+                  "HIGH",
+                  null
+                ]
+              },
+              "shadow": true,
+              "topLevel": false
+            }
+          },
+          "comments": {},
+          "currentCostume": 0,
+          "costumes": [
+            {
+              "assetId": "5de48e72637db4d7fc7f6bb526354114",
+              "name": "造型1",
+              "bitmapResolution": 1,
+              "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 93,
+              "rotationCenterY": 80
+            },
+            {
+              "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+              "name": "造型2",
+              "bitmapResolution": 1,
+              "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+              "dataFormat": "svg",
+              "rotationCenterX": 93,
+              "rotationCenterY": 80
+            }
+          ],
+          "sounds": [
+            {
+              "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+              "name": "啁啾",
+              "dataFormat": "wav",
+              "format": "",
+              "rate": 48000,
+              "sampleCount": 23683,
+              "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+            }
+          ],
+          "volume": 100,
+          "layerOrder": 1,
+          "visible": true,
+          "x": 0,
+          "y": 0,
+          "size": 100,
+          "direction": 90,
+          "draggable": false,
+          "rotationStyle": "all around"
+        }
+      ],
+      "monitors": [],
+      "device": {
+        "deviceId": "arduinoEsp32S3",
+        "type": "arduino"
+      },
+      "programMode": "upload",
+      "extensions": [],
+      "deviceExtensions": [
+        "activateBuzzer"
+      ],
+      "meta": {
+        "semver": "3.0.0",
+        "vm": "0.2.0-prerelease.20250609145235",
+        "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0"
+      }
+    },
+    "switches": [
+      {
+        "name": "Arduino Uno",
+        "message": "",
+        "afterState": {
+          "title": "OpenBlock作品",
+          "dirty": true,
+          "running": false,
+          "documentId": 0,
+          "editVersion": 17
+        },
+        "project": {
+          "targets": [
+            {
+              "isStage": true,
+              "name": "Stage",
+              "variables": {},
+              "lists": {},
+              "broadcasts": {},
+              "blocks": {},
+              "comments": {},
+              "currentCostume": 0,
+              "costumes": [
+                {
+                  "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                  "name": "背景1",
+                  "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 240,
+                  "rotationCenterY": 180
+                }
+              ],
+              "sounds": [
+                {
+                  "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                  "name": "啵",
+                  "dataFormat": "wav",
+                  "format": "",
+                  "rate": 48000,
+                  "sampleCount": 1123,
+                  "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+              ],
+              "volume": 100,
+              "layerOrder": 0,
+              "tempo": 60,
+              "videoTransparency": 50,
+              "videoState": "on",
+              "textToSpeechLanguage": null
+            },
+            {
+              "isStage": false,
+              "name": "角色1",
+              "variables": {},
+              "lists": {},
+              "broadcasts": {},
+              "blocks": {
+                "hat": {
+                  "opcode": "event_whenarduinobegin",
+                  "next": "init",
+                  "parent": null,
+                  "inputs": {},
+                  "fields": {},
+                  "shadow": false,
+                  "topLevel": true,
+                  "x": 40,
+                  "y": 40
+                },
+                "init": {
+                  "opcode": "activeBuzzer_init",
+                  "next": "digital",
+                  "parent": "hat",
+                  "inputs": {},
+                  "fields": {
+                    "PIN": [
+                      "4",
+                      null
+                    ]
+                  },
+                  "shadow": false,
+                  "topLevel": false
+                },
+                "digital": {
+                  "opcode": "arduino_pin_setDigitalOutput",
+                  "next": null,
+                  "parent": "init",
+                  "inputs": {
+                    "LEVEL": [
+                      1,
+                      "level"
+                    ]
+                  },
+                  "fields": {
+                    "PIN": [
+                      "4",
+                      null
+                    ]
+                  },
+                  "shadow": false,
+                  "topLevel": false
+                },
+                "level": {
+                  "opcode": "arduino_pin_menu_level",
+                  "next": null,
+                  "parent": "digital",
+                  "inputs": {},
+                  "fields": {
+                    "level": [
+                      "HIGH",
+                      null
+                    ]
+                  },
+                  "shadow": true,
+                  "topLevel": false
+                }
+              },
+              "comments": {},
+              "currentCostume": 0,
+              "costumes": [
+                {
+                  "assetId": "5de48e72637db4d7fc7f6bb526354114",
+                  "name": "造型1",
+                  "bitmapResolution": 1,
+                  "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 93,
+                  "rotationCenterY": 80
+                },
+                {
+                  "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+                  "name": "造型2",
+                  "bitmapResolution": 1,
+                  "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 93,
+                  "rotationCenterY": 80
+                }
+              ],
+              "sounds": [
+                {
+                  "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+                  "name": "啁啾",
+                  "dataFormat": "wav",
+                  "format": "",
+                  "rate": 48000,
+                  "sampleCount": 23683,
+                  "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+                }
+              ],
+              "volume": 100,
+              "layerOrder": 1,
+              "visible": true,
+              "x": 0,
+              "y": 0,
+              "size": 100,
+              "direction": 90,
+              "draggable": false,
+              "rotationStyle": "all around"
+            }
+          ],
+          "monitors": [],
+          "device": {
+            "deviceId": "arduinoUno",
+            "type": "arduino"
+          },
+          "programMode": "upload",
+          "extensions": [],
+          "deviceExtensions": [
+            "activateBuzzer"
+          ],
+          "meta": {
+            "semver": "3.0.0",
+            "vm": "0.2.0-prerelease.20250609145235",
+            "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0"
+          }
+        },
+        "code": "// generated by OpenBlock\n#include <Arduino.h>\n\nint activeBuzzerPin = 4;\n\nvoid setup() {\n  pinMode(activeBuzzerPin, OUTPUT);\n\n  digitalWrite(4, HIGH);\n}\n\nvoid loop() {\n}\n",
+        "pins": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "A0",
+          "A1",
+          "A2",
+          "A3",
+          "A4",
+          "A5"
+        ],
+        "modulePins": [
+          "0",
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "A0",
+          "A1",
+          "A2",
+          "A3",
+          "A4",
+          "A5"
+        ]
+      },
+      {
+        "name": "Aijite ESP32-S3",
+        "message": "",
+        "afterState": {
+          "title": "OpenBlock作品",
+          "dirty": true,
+          "running": false,
+          "documentId": 0,
+          "editVersion": 27
+        },
+        "project": {
+          "targets": [
+            {
+              "isStage": true,
+              "name": "Stage",
+              "variables": {},
+              "lists": {},
+              "broadcasts": {},
+              "blocks": {},
+              "comments": {},
+              "currentCostume": 0,
+              "costumes": [
+                {
+                  "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+                  "name": "背景1",
+                  "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 240,
+                  "rotationCenterY": 180
+                }
+              ],
+              "sounds": [
+                {
+                  "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+                  "name": "啵",
+                  "dataFormat": "wav",
+                  "format": "",
+                  "rate": 48000,
+                  "sampleCount": 1123,
+                  "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+                }
+              ],
+              "volume": 100,
+              "layerOrder": 0,
+              "tempo": 60,
+              "videoTransparency": 50,
+              "videoState": "on",
+              "textToSpeechLanguage": null
+            },
+            {
+              "isStage": false,
+              "name": "角色1",
+              "variables": {},
+              "lists": {},
+              "broadcasts": {},
+              "blocks": {
+                "hat": {
+                  "opcode": "event_whenarduinobegin",
+                  "next": "init",
+                  "parent": null,
+                  "inputs": {},
+                  "fields": {},
+                  "shadow": false,
+                  "topLevel": true,
+                  "x": 40,
+                  "y": 40
+                },
+                "init": {
+                  "opcode": "activeBuzzer_init",
+                  "next": "digital",
+                  "parent": "hat",
+                  "inputs": {},
+                  "fields": {
+                    "PIN": [
+                      "4",
+                      null
+                    ]
+                  },
+                  "shadow": false,
+                  "topLevel": false
+                },
+                "digital": {
+                  "opcode": "arduino_pin_setDigitalOutput",
+                  "next": null,
+                  "parent": "init",
+                  "inputs": {
+                    "LEVEL": [
+                      1,
+                      "level"
+                    ]
+                  },
+                  "fields": {
+                    "PIN": [
+                      "4",
+                      null
+                    ]
+                  },
+                  "shadow": false,
+                  "topLevel": false
+                },
+                "level": {
+                  "opcode": "arduino_pin_menu_level",
+                  "next": null,
+                  "parent": "digital",
+                  "inputs": {},
+                  "fields": {
+                    "level": [
+                      "HIGH",
+                      null
+                    ]
+                  },
+                  "shadow": true,
+                  "topLevel": false
+                }
+              },
+              "comments": {},
+              "currentCostume": 0,
+              "costumes": [
+                {
+                  "assetId": "5de48e72637db4d7fc7f6bb526354114",
+                  "name": "造型1",
+                  "bitmapResolution": 1,
+                  "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 93,
+                  "rotationCenterY": 80
+                },
+                {
+                  "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+                  "name": "造型2",
+                  "bitmapResolution": 1,
+                  "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+                  "dataFormat": "svg",
+                  "rotationCenterX": 93,
+                  "rotationCenterY": 80
+                }
+              ],
+              "sounds": [
+                {
+                  "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+                  "name": "啁啾",
+                  "dataFormat": "wav",
+                  "format": "",
+                  "rate": 48000,
+                  "sampleCount": 23683,
+                  "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+                }
+              ],
+              "volume": 100,
+              "layerOrder": 1,
+              "visible": true,
+              "x": 0,
+              "y": 0,
+              "size": 100,
+              "direction": 90,
+              "draggable": false,
+              "rotationStyle": "all around"
+            }
+          ],
+          "monitors": [],
+          "device": {
+            "deviceId": "aijiteESP32S3",
+            "type": "arduino"
+          },
+          "programMode": "upload",
+          "extensions": [],
+          "deviceExtensions": [
+            "activateBuzzer"
+          ],
+          "meta": {
+            "semver": "3.0.0",
+            "vm": "0.2.0-prerelease.20250609145235",
+            "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36 Edg/156.0.0.0"
+          }
+        },
+        "code": "// generated by OpenBlock\n#include <Arduino.h>\n\nint activeBuzzerPin = 4;\n\nvoid setup() {\n  pinMode(activeBuzzerPin, OUTPUT);\n\n  digitalWrite(4, HIGH);\n}\n\nvoid loop() {\n}\n",
+        "pins": [
+          "0",
+          "1",
+          "2",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ],
+        "modulePins": [
+          "0",
+          "1",
+          "2",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "38",
+          "39",
+          "40",
+          "41",
+          "42",
+          "43",
+          "44"
+        ]
+      }
+    ],
+    "errors": []
+  }
+]

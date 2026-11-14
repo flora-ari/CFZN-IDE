@@ -1,0 +1,102 @@
+{
+  "english": {
+    "locale": "en",
+    "vmLocale": "en",
+    "motion": "Motion",
+    "sameVm": true,
+    "sameLoadProject": true,
+    "sameLoadDeviceURL": true,
+    "controllers": [
+      {
+        "id": "cfzn-controller-firebeetleEsp32E",
+        "labels": [
+          "灰色积木仅上传模式可用",
+          "Pins",
+          "Serial",
+          "Data"
+        ]
+      }
+    ]
+  },
+  "returned": {
+    "locale": "zh-cn",
+    "vmLocale": "zh-cn",
+    "motion": "运动",
+    "sameVm": true,
+    "sameLoadProject": true,
+    "sameLoadDeviceURL": true,
+    "controllers": [
+      {
+        "id": "cfzn-controller-firebeetleEsp32E",
+        "labels": [
+          "灰色积木仅上传模式可用",
+          "引脚",
+          "串口",
+          "数据"
+        ]
+      }
+    ]
+  },
+  "boards": [
+    {
+      "id": "aijiteESP32S3",
+      "realtime": true,
+      "modules": 6,
+      "sameLoadProject": true,
+      "sameLoadDeviceURL": true,
+      "pins": [
+        "0",
+        "1",
+        "2",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10",
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44"
+      ]
+    },
+    {
+      "id": "firebeetleEsp32E",
+      "realtime": true,
+      "modules": 6,
+      "sameLoadProject": true,
+      "sameLoadDeviceURL": true,
+      "pins": [
+        "0",
+        "2",
+        "4",
+        "5",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "25",
+        "26",
+        "27"
+      ]
+    }
+  ],
+  "restoredAgain": true
+}

@@ -1,0 +1,64 @@
+[
+  {
+    "name": "dist serial close failure guard mock",
+    "status": "PASS",
+    "detail": {
+      "simulated": true,
+      "moduleRemovalNoPortChange": true,
+      "failedCloseRetainsOwner": true,
+      "clearRefused": true,
+      "noSecondOpen": true,
+      "noAuthorization": true
+    }
+  },
+  {
+    "name": "dist busy operation guard",
+    "status": "PASS",
+    "detail": {
+      "heldResource": true,
+      "removeBlocked": "当前操作尚未完成，请稍后移除。",
+      "clearBlocked": "当前操作尚未完成，请稍后移除。",
+      "localeBlocked": true,
+      "noDocumentMutation": true
+    }
+  },
+  {
+    "name": "dist injected candidate failure full rollback",
+    "status": "PASS",
+    "detail": {
+      "injectedPublicEntryOnly": true,
+      "candidateActuallyCleared": true,
+      "fullNativeRollback": true,
+      "monitors": 3,
+      "manual": true,
+      "noEditOnFailure": true,
+      "explicitRetry": true
+    }
+  },
+  {
+    "name": "dist native menu shadow reference",
+    "status": "PASS",
+    "detail": {
+      "nativeMenuOpcode": "arduino_pin_menu_pins",
+      "coreParent": true,
+      "shadowGuard": "当前主控仍被引用：角色1 1处。请先移除相关积木或监视器。"
+    }
+  },
+  {
+    "name": "dist focused v05 regression",
+    "status": "PASS",
+    "detail": {
+      "localeSameBindings": true,
+      "singleCategories": true,
+      "pureScratchAndArduinoCoexist": true,
+      "mixedRejected": true
+    }
+  },
+  {
+    "name": "VM byte boundary",
+    "status": "PASS",
+    "detail": {
+      "output": "{ vmModuleCount: 178, guiHooks: 42, noFactoryInjection: true }\n"
+    }
+  }
+]

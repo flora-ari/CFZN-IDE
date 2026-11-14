@@ -1,0 +1,733 @@
+{
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\parity-v07\\2026-11-12T02-32-03-879Z-dev-service",
+  "results": [
+    {
+      "name": "simulated service online",
+      "status": "PASS",
+      "detail": {
+        "status": "online",
+        "elapsed": 80,
+        "hardware": {
+          "deviceId": "arduinoEsp32",
+          "sessionId": null,
+          "connection": "disconnected",
+          "use": "idle",
+          "options": {
+            "baudRate": 115200,
+            "dataBits": 8,
+            "stopBits": 1,
+            "parity": "none",
+            "flowControl": "none"
+          },
+          "browserPorts": [],
+          "browserPortId": null,
+          "profiles": [
+            {
+              "id": "independent-arduinoUno",
+              "deviceId": "arduinoUno",
+              "label": "SIMULATED arduinoUno",
+              "chip": "avr",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32S3",
+              "deviceId": "arduinoEsp32S3",
+              "label": "SIMULATED arduinoEsp32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-aijiteESP32S3",
+              "deviceId": "aijiteESP32S3",
+              "label": "SIMULATED aijiteESP32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32",
+              "deviceId": "arduinoEsp32",
+              "label": "SIMULATED arduinoEsp32",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-firebeetleEsp32E",
+              "deviceId": "firebeetleEsp32E",
+              "label": "SIMULATED firebeetleEsp32E",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            }
+          ],
+          "ports": [
+            {
+              "portId": "SIMULATED-OS-PORT",
+              "displayName": "SIMULATED OS target"
+            }
+          ],
+          "profileId": "independent-arduinoEsp32",
+          "portId": "",
+          "busy": false,
+          "job": null,
+          "logs": [],
+          "message": "",
+          "error": "",
+          "restoreError": "",
+          "serialOperation": null,
+          "pendingBrowserPortId": null,
+          "serialError": "",
+          "scanning": false,
+          "scanError": "",
+          "localService": {
+            "status": "online",
+            "baseUrl": "http://127.0.0.1:3002/api/v1/hardware",
+            "message": "本机编译服务在线。"
+          },
+          "portError": ""
+        }
+      }
+    },
+    {
+      "name": "simulated service protocol",
+      "status": "PASS",
+      "detail": {
+        "status": "incompatible",
+        "elapsed": 72,
+        "hardware": {
+          "deviceId": "arduinoEsp32",
+          "sessionId": null,
+          "connection": "disconnected",
+          "use": "idle",
+          "options": {
+            "baudRate": 115200,
+            "dataBits": 8,
+            "stopBits": 1,
+            "parity": "none",
+            "flowControl": "none"
+          },
+          "browserPorts": [],
+          "browserPortId": null,
+          "profiles": [
+            {
+              "id": "independent-arduinoUno",
+              "deviceId": "arduinoUno",
+              "label": "SIMULATED arduinoUno",
+              "chip": "avr",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32S3",
+              "deviceId": "arduinoEsp32S3",
+              "label": "SIMULATED arduinoEsp32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-aijiteESP32S3",
+              "deviceId": "aijiteESP32S3",
+              "label": "SIMULATED aijiteESP32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32",
+              "deviceId": "arduinoEsp32",
+              "label": "SIMULATED arduinoEsp32",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-firebeetleEsp32E",
+              "deviceId": "firebeetleEsp32E",
+              "label": "SIMULATED firebeetleEsp32E",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            }
+          ],
+          "ports": [
+            {
+              "portId": "SIMULATED-OS-PORT",
+              "displayName": "SIMULATED OS target"
+            }
+          ],
+          "profileId": "independent-arduinoEsp32",
+          "portId": "",
+          "busy": false,
+          "job": null,
+          "logs": [],
+          "message": "",
+          "error": "",
+          "restoreError": "",
+          "serialOperation": null,
+          "pendingBrowserPortId": null,
+          "serialError": "",
+          "scanning": false,
+          "scanError": "",
+          "localService": {
+            "status": "incompatible",
+            "baseUrl": "http://127.0.0.1:3002/api/v1/hardware",
+            "message": "本机硬件服务协议不兼容：需要 protocolVersion=1、executionHost=local。"
+          },
+          "portError": ""
+        }
+      }
+    },
+    {
+      "name": "simulated service structure",
+      "status": "PASS",
+      "detail": {
+        "status": "incompatible",
+        "elapsed": 74,
+        "hardware": {
+          "deviceId": "arduinoEsp32",
+          "sessionId": null,
+          "connection": "disconnected",
+          "use": "idle",
+          "options": {
+            "baudRate": 115200,
+            "dataBits": 8,
+            "stopBits": 1,
+            "parity": "none",
+            "flowControl": "none"
+          },
+          "browserPorts": [],
+          "browserPortId": null,
+          "profiles": [
+            {
+              "id": "independent-arduinoUno",
+              "deviceId": "arduinoUno",
+              "label": "SIMULATED arduinoUno",
+              "chip": "avr",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32S3",
+              "deviceId": "arduinoEsp32S3",
+              "label": "SIMULATED arduinoEsp32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-aijiteESP32S3",
+              "deviceId": "aijiteESP32S3",
+              "label": "SIMULATED aijiteESP32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32",
+              "deviceId": "arduinoEsp32",
+              "label": "SIMULATED arduinoEsp32",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-firebeetleEsp32E",
+              "deviceId": "firebeetleEsp32E",
+              "label": "SIMULATED firebeetleEsp32E",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            }
+          ],
+          "ports": [
+            {
+              "portId": "SIMULATED-OS-PORT",
+              "displayName": "SIMULATED OS target"
+            }
+          ],
+          "profileId": "independent-arduinoEsp32",
+          "portId": "",
+          "busy": false,
+          "job": null,
+          "logs": [],
+          "message": "",
+          "error": "",
+          "restoreError": "",
+          "serialOperation": null,
+          "pendingBrowserPortId": null,
+          "serialError": "",
+          "scanning": false,
+          "scanError": "",
+          "localService": {
+            "status": "incompatible",
+            "baseUrl": "http://127.0.0.1:3002/api/v1/hardware",
+            "message": "本机硬件服务协议不兼容：profiles 字段无效。"
+          },
+          "portError": ""
+        }
+      }
+    },
+    {
+      "name": "simulated service offline",
+      "status": "PASS",
+      "detail": {
+        "status": "offline",
+        "elapsed": 99,
+        "hardware": {
+          "deviceId": "arduinoEsp32",
+          "sessionId": null,
+          "connection": "disconnected",
+          "use": "idle",
+          "options": {
+            "baudRate": 115200,
+            "dataBits": 8,
+            "stopBits": 1,
+            "parity": "none",
+            "flowControl": "none"
+          },
+          "browserPorts": [],
+          "browserPortId": null,
+          "profiles": [
+            {
+              "id": "independent-arduinoUno",
+              "deviceId": "arduinoUno",
+              "label": "SIMULATED arduinoUno",
+              "chip": "avr",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32S3",
+              "deviceId": "arduinoEsp32S3",
+              "label": "SIMULATED arduinoEsp32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-aijiteESP32S3",
+              "deviceId": "aijiteESP32S3",
+              "label": "SIMULATED aijiteESP32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32",
+              "deviceId": "arduinoEsp32",
+              "label": "SIMULATED arduinoEsp32",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-firebeetleEsp32E",
+              "deviceId": "firebeetleEsp32E",
+              "label": "SIMULATED firebeetleEsp32E",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            }
+          ],
+          "ports": [
+            {
+              "portId": "SIMULATED-OS-PORT",
+              "displayName": "SIMULATED OS target"
+            }
+          ],
+          "profileId": "independent-arduinoEsp32",
+          "portId": "",
+          "busy": false,
+          "job": null,
+          "logs": [],
+          "message": "",
+          "error": "",
+          "restoreError": "",
+          "serialOperation": null,
+          "pendingBrowserPortId": null,
+          "serialError": "",
+          "scanning": false,
+          "scanError": "",
+          "localService": {
+            "status": "offline",
+            "baseUrl": "http://127.0.0.1:3002/api/v1/hardware",
+            "message": "无法连接本机编译服务：Failed to fetch"
+          },
+          "portError": ""
+        }
+      }
+    },
+    {
+      "name": "simulated service missing-core",
+      "status": "PASS",
+      "detail": {
+        "status": "online",
+        "elapsed": 77,
+        "hardware": {
+          "deviceId": "arduinoEsp32",
+          "sessionId": null,
+          "connection": "disconnected",
+          "use": "idle",
+          "options": {
+            "baudRate": 115200,
+            "dataBits": 8,
+            "stopBits": 1,
+            "parity": "none",
+            "flowControl": "none"
+          },
+          "browserPorts": [],
+          "browserPortId": null,
+          "profiles": [
+            {
+              "id": "independent-arduinoUno",
+              "deviceId": "arduinoUno",
+              "label": "SIMULATED arduinoUno",
+              "chip": "avr",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": false,
+              "uploadAvailable": false,
+              "realtimeAvailable": false,
+              "reason": "SIMULATED core unavailable"
+            },
+            {
+              "id": "independent-arduinoEsp32S3",
+              "deviceId": "arduinoEsp32S3",
+              "label": "SIMULATED arduinoEsp32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": false,
+              "uploadAvailable": false,
+              "realtimeAvailable": false,
+              "reason": "SIMULATED core unavailable"
+            },
+            {
+              "id": "independent-aijiteESP32S3",
+              "deviceId": "aijiteESP32S3",
+              "label": "SIMULATED aijiteESP32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": false,
+              "uploadAvailable": false,
+              "realtimeAvailable": false,
+              "reason": "SIMULATED core unavailable"
+            },
+            {
+              "id": "independent-arduinoEsp32",
+              "deviceId": "arduinoEsp32",
+              "label": "SIMULATED arduinoEsp32",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": false,
+              "uploadAvailable": false,
+              "realtimeAvailable": false,
+              "reason": "SIMULATED core unavailable"
+            },
+            {
+              "id": "independent-firebeetleEsp32E",
+              "deviceId": "firebeetleEsp32E",
+              "label": "SIMULATED firebeetleEsp32E",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": false,
+              "uploadAvailable": false,
+              "realtimeAvailable": false,
+              "reason": "SIMULATED core unavailable"
+            }
+          ],
+          "ports": [
+            {
+              "portId": "SIMULATED-OS-PORT",
+              "displayName": "SIMULATED OS target"
+            }
+          ],
+          "profileId": "independent-arduinoEsp32",
+          "portId": "",
+          "busy": false,
+          "job": null,
+          "logs": [],
+          "message": "",
+          "error": "",
+          "restoreError": "",
+          "serialOperation": null,
+          "pendingBrowserPortId": null,
+          "serialError": "",
+          "scanning": false,
+          "scanError": "",
+          "localService": {
+            "status": "online",
+            "baseUrl": "http://127.0.0.1:3002/api/v1/hardware",
+            "message": "本机编译服务在线。"
+          },
+          "portError": ""
+        }
+      }
+    },
+    {
+      "name": "simulated service ports-fail",
+      "status": "PASS",
+      "detail": {
+        "status": "online",
+        "elapsed": 153,
+        "hardware": {
+          "deviceId": "arduinoEsp32",
+          "sessionId": null,
+          "connection": "disconnected",
+          "use": "idle",
+          "options": {
+            "baudRate": 115200,
+            "dataBits": 8,
+            "stopBits": 1,
+            "parity": "none",
+            "flowControl": "none"
+          },
+          "browserPorts": [],
+          "browserPortId": null,
+          "profiles": [
+            {
+              "id": "independent-arduinoUno",
+              "deviceId": "arduinoUno",
+              "label": "SIMULATED arduinoUno",
+              "chip": "avr",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32S3",
+              "deviceId": "arduinoEsp32S3",
+              "label": "SIMULATED arduinoEsp32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-aijiteESP32S3",
+              "deviceId": "aijiteESP32S3",
+              "label": "SIMULATED aijiteESP32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32",
+              "deviceId": "arduinoEsp32",
+              "label": "SIMULATED arduinoEsp32",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-firebeetleEsp32E",
+              "deviceId": "firebeetleEsp32E",
+              "label": "SIMULATED firebeetleEsp32E",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            }
+          ],
+          "ports": [
+            {
+              "portId": "SIMULATED-OS-PORT",
+              "displayName": "SIMULATED OS target"
+            }
+          ],
+          "profileId": "independent-arduinoEsp32",
+          "portId": "",
+          "busy": false,
+          "job": null,
+          "logs": [],
+          "message": "",
+          "error": "",
+          "restoreError": "",
+          "serialOperation": null,
+          "pendingBrowserPortId": null,
+          "serialError": "",
+          "scanning": false,
+          "scanError": "",
+          "localService": {
+            "status": "online",
+            "baseUrl": "http://127.0.0.1:3002/api/v1/hardware",
+            "message": "本机编译服务在线。"
+          },
+          "portError": "无法读取本机烧录端口：503: 本机硬件服务请求失败"
+        }
+      }
+    },
+    {
+      "name": "simulated service timeout",
+      "status": "PASS",
+      "detail": {
+        "status": "offline",
+        "elapsed": 8554,
+        "hardware": {
+          "deviceId": "arduinoEsp32",
+          "sessionId": null,
+          "connection": "disconnected",
+          "use": "idle",
+          "options": {
+            "baudRate": 115200,
+            "dataBits": 8,
+            "stopBits": 1,
+            "parity": "none",
+            "flowControl": "none"
+          },
+          "browserPorts": [],
+          "browserPortId": null,
+          "profiles": [
+            {
+              "id": "independent-arduinoUno",
+              "deviceId": "arduinoUno",
+              "label": "SIMULATED arduinoUno",
+              "chip": "avr",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32S3",
+              "deviceId": "arduinoEsp32S3",
+              "label": "SIMULATED arduinoEsp32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-aijiteESP32S3",
+              "deviceId": "aijiteESP32S3",
+              "label": "SIMULATED aijiteESP32S3",
+              "chip": "esp32s3",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-arduinoEsp32",
+              "deviceId": "arduinoEsp32",
+              "label": "SIMULATED arduinoEsp32",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            },
+            {
+              "id": "independent-firebeetleEsp32E",
+              "deviceId": "firebeetleEsp32E",
+              "label": "SIMULATED firebeetleEsp32E",
+              "chip": "esp32",
+              "fqbn": "SIMULATED:never:compile",
+              "compileAvailable": true,
+              "uploadAvailable": true,
+              "realtimeAvailable": false
+            }
+          ],
+          "ports": [
+            {
+              "portId": "SIMULATED-OS-PORT",
+              "displayName": "SIMULATED OS target"
+            }
+          ],
+          "profileId": "independent-arduinoEsp32",
+          "portId": "",
+          "busy": false,
+          "job": null,
+          "logs": [],
+          "message": "",
+          "error": "",
+          "restoreError": "",
+          "serialOperation": null,
+          "pendingBrowserPortId": null,
+          "serialError": "",
+          "scanning": false,
+          "scanError": "",
+          "localService": {
+            "status": "offline",
+            "baseUrl": "http://127.0.0.1:3002/api/v1/hardware",
+            "message": "无法连接本机编译服务：本机服务检查超时（8 秒）。"
+          },
+          "portError": "无法读取本机烧录端口：503: 本机硬件服务请求失败"
+        }
+      }
+    },
+    {
+      "name": "simulated running job remains owned through failed health and cancellation",
+      "status": "PASS",
+      "detail": {
+        "job": {
+          "id": "SIMULATED-JOB",
+          "kind": "build",
+          "state": "cancelled",
+          "stage": "complete",
+          "deviceId": "arduinoEsp32",
+          "profileId": "independent-arduinoEsp32",
+          "sourceHash": "SIMULATED",
+          "createdAt": "2026-11-12T02:32:19.869Z"
+        }
+      }
+    },
+    {
+      "name": "no uncaught browser errors",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    }
+  ]
+}

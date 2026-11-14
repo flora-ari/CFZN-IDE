@@ -1,0 +1,12 @@
+{
+  "job": {
+    "id": "8e78a365-2749-4faf-bbd6-ff650281bf03",
+    "kind": "build",
+    "state": "running",
+    "stage": "compiling",
+    "deviceId": "firebeetleEsp32E",
+    "profileId": "firebeetle-esp32e-4mb",
+    "sourceHash": "8c9757b2f475369706775d35d3813a7249f9231d554f7eac5fe6b6a35648f3e7",
+    "createdAt": "2026-11-10T03:40:56.733Z"
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "dev removed selected category fallback",
+    "status": "PASS",
+    "detail": {
+      "removedSelectedCategory": true,
+      "fallback": "motion",
+      "noGhost": true
+    }
+  },
+  {
+    "name": "dist removed selected category fallback",
+    "status": "PASS",
+    "detail": {
+      "removedSelectedCategory": true,
+      "fallback": "motion",
+      "noGhost": true
+    }
+  }
+]

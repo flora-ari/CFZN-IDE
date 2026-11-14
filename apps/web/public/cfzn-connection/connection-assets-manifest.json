@@ -1,0 +1,61 @@
+{
+  "recordedAt": "2026-11-10T06:15:47.686Z",
+  "assets": [
+    {
+      "file": "scan-sp.43a795b2.svg",
+      "relativePath": ".runtime/connection-modal-research/scan-sp.43a795b2.svg",
+      "bytes": 3034,
+      "sha256": "c8279ef7930d2d268e45b6c4b9fb111c5ea37c87713b3e9eb0147d24514a0c71",
+      "source": "https://ide.mindplus.top/realtime/static/media/scan-sp.43a795b2.svg"
+    },
+    {
+      "file": "searching.48df3abf.png",
+      "relativePath": ".runtime/connection-modal-research/searching.48df3abf.png",
+      "bytes": 42624,
+      "sha256": "6f989a176727ca6890d0f06796e650f6425235daa23de1506dcfa8c9e79f29fc",
+      "dimensions": {
+        "width": 240,
+        "height": 240
+      },
+      "source": "https://ide.mindplus.top/realtime/static/media/searching.48df3abf.png"
+    },
+    {
+      "file": "result-rings-inline.png",
+      "relativePath": ".runtime/connection-modal-research/result-rings-inline.png",
+      "bytes": 8589,
+      "sha256": "1f6a0fa66a72589f5b3cd2fdeebe356b661e558a63026acd94af9a444a4e2e27",
+      "dimensions": {
+        "width": 136,
+        "height": 136
+      },
+      "source": "realtime main.d8c89955.chunk.js @ UTF16 14772548, inline PNG; byte-identical in upload main.412a2633.chunk.js"
+    },
+    {
+      "file": "icon-serialport.svg",
+      "relativePath": ".runtime/connection-modal-research/icon-serialport.svg",
+      "bytes": 444,
+      "sha256": "81aaa9cc7171d2f221d794ab61c9108f26cdc0dd3977ae7d40812d530b33cb1b",
+      "source": "https://ide.mindplus.top/realtime/projects/editor DOM symbol #df-serialport; extracted by existing save-assets.mjs"
+    },
+    {
+      "file": "icon-link.svg",
+      "relativePath": ".runtime/connection-modal-research/icon-link.svg",
+      "bytes": 562,
+      "sha256": "bc94a6cbcb9570061a3c46ced53f6634de83ad96349cbee2a8d2b4dcabcc1fa2",
+      "source": "https://ide.mindplus.top/realtime/projects/editor DOM symbol #df-link; extracted by existing save-assets.mjs"
+    }
+  ],
+  "layoutReference": "scan-assets-loaded.png",
+  "priorBrowserObservation": "rea-inspect.json",
+  "staticProvenance": "selected-provenance.json",
+  "reaAnalysis": {
+    "summary": "rea-selected-summary.json",
+    "evidence": "rea-selected-evidence.json",
+    "parentEvidenceId": "ev_fc7dd16cd0414742325f401f4930efa9eec05877b39b2e960604db959cea2275"
+  },
+  "reuse": {
+    "observedPublicResources": true,
+    "licenseNotFoundInResearch": true,
+    "notes": "Keep source attribution; publish only with project-approved asset rights. Do not ship website JavaScript or Mind+ logos/runtime."
+  }
+}

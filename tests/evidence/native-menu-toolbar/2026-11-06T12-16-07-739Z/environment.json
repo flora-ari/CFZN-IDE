@@ -1,0 +1,13 @@
+{
+  "origin": "http://127.0.0.1:59160",
+  "apiOrigin": "http://127.0.0.1:59159",
+  "temporary": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-native-toolbar-test-fKw1go",
+  "builds": [
+    "/assets/editor-protocol-C1YyAqD7.js",
+    "/assets/editor-Newf58X1.js"
+  ],
+  "runId": "2026-11-06T12-16-07-739Z",
+  "placementOnly": true,
+  "saveRecheck": false,
+  "onlyCase": null
+}

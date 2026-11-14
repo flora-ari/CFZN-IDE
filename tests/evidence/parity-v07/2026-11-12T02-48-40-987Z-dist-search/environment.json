@@ -1,0 +1,11 @@
+{
+  "run": "2026-11-12T02-48-40-987Z",
+  "group": "search",
+  "surface": "dist",
+  "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-sdND5S",
+  "origin": "http://127.0.0.1:60427",
+  "api": "http://127.0.0.1:60426",
+  "simulatedHardware": true,
+  "guiSha256": "c0c8a51d40d0eee40c84541601915cc83d1454bf2d35adfdf320f016cf1699b3",
+  "html": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <link rel=\"icon\" href=\"/static/favicon.ico\" />\n    <title>OpenBlock</title>\n    <style>html,body,#editor{width:100%;height:100%;margin:0}body{overflow:hidden}#boot-message{position:fixed;inset:0;display:grid;place-content:center;text-align:center;background:#f4f8fc;color:#243958;font:16px system-ui;z-index:10000}#boot-message[hidden]{display:none}</style>\n    <script type=\"module\" crossorigin src=\"/assets/editor-BqeCIwvM.js\"></script>\n    <link rel=\"modulepreload\" crossorigin href=\"/assets/save-shortcut-DZCizx91.js\">\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/editor-BwFLiudp.css\">\n  </head>\n  <body>\n    <div id=\"editor\"></div>\n    <div id=\"boot-message\" role=\"status\">正在启动 OpenBlock 编辑器…</div>\n    <script src=\"/openblock-vendor/react-16.min.js\"></script>\n    <script src=\"/openblock-vendor/react-dom-16.min.js\"></script>\n    <script>window.react = window.React; window['react-dom'] = window.ReactDOM;</script>\n    <script src=\"/openblock-vendor/openblock-gui.js\"></script>\n    <script src=\"/cfzn-extensions/module-loader.js\"></script>\n  </body>\n</html>\n"
+}

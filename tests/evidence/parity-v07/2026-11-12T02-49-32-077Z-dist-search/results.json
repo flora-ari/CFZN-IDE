@@ -1,0 +1,8 @@
+[
+  {
+    "name": "English locale native search compared with identical fractional-coordinate no-search control",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:1293\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:141)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:93:2"
+  }
+]

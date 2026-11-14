@@ -1,0 +1,38 @@
+[
+  {
+    "name": "upload terminal joins h + ello CR + split LF immediately; repeated hello each one line",
+    "status": "PASS",
+    "detail": {
+      "rows": [
+        "RX hello",
+        "RX hello",
+        "RX hello"
+      ]
+    }
+  },
+  {
+    "name": "UTF8 bytewise, prompt without newline, raw HEX chunks and clear reset",
+    "status": "PASS",
+    "detail": {
+      "utf8": true,
+      "rawBytes": [
+        "E4",
+        "B8",
+        "AD",
+        "E6",
+        "96",
+        "87"
+      ],
+      "clearReset": true
+    }
+  },
+  {
+    "name": "session boundary does not join incomplete text/UTF8; upload pause discards incoming RX",
+    "status": "PASS",
+    "detail": {
+      "sessionIsolated": true,
+      "pauseDrops": true,
+      "errors": []
+    }
+  }
+]

@@ -1,0 +1,20 @@
+{
+  "mainRight": 273.765625,
+  "titleLeft": 273.765625,
+  "blank": 0,
+  "titleWidth": 40,
+  "input": 78.859375,
+  "titleGap": 6,
+  "tailGap": 6,
+  "tailRight": 800,
+  "menuRight": 800,
+  "menuHeight": 48,
+  "clientWidth": 111,
+  "scrollWidth": 302,
+  "scrollHeight": 48,
+  "clientHeight": 48,
+  "thumbRadius": "6px",
+  "barHeight": "6px",
+  "titleMargin": "0px",
+  "tailMargin": "0px"
+}

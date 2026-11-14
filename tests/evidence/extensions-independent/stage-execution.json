@@ -1,0 +1,14 @@
+{
+  "trace": [
+    "pen_clear",
+    "pen_penDown",
+    "pen_penUp",
+    "music_setTempo",
+    "music_playDrumForBeats"
+  ],
+  "x": 23,
+  "project": [
+    "pen",
+    "music"
+  ]
+}

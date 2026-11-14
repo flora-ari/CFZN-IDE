@@ -1,0 +1,14 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(!(await categories(s)).some(c=>c.id==='motion'))\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(!(await categories(s)).some(c=>c.id==='motion'))\n\n    at targetLocale (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:93:343)\n    at async normalChain (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:94:798)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:130:72"
+  },
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(!(await categories(s)).some(c=>c.id==='motion'))\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(!(await categories(s)).some(c=>c.id==='motion'))\n\n    at targetLocale (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:93:343)\n    at async normalChain (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:94:798)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:130:72"
+  }
+]

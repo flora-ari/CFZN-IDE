@@ -1,0 +1,39 @@
+[
+  {
+    "name": "native search Chinese and no result close restores category without state changes",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 15000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 15000ms exceeded.\n    at search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:40:280)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:57:265\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:48)\n    at async Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:57:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "dynamic variables lists and percent-n percent-s procedure are real draggable blocks",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 15000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 15000ms exceeded.\n    at search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:40:280)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:58:631\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:48)\n    at async Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:58:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "search close clear repeated rebuild preserves graph and undo",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 15000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 15000ms exceeded.\n    at search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:40:280)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:59:192\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:48)\n    at async Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:59:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "English locale native search roundtrip is read-only",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 15000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 15000ms exceeded.\n    at search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:40:280)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:60:162\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:48)\n    at async Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:60:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('返回', { exact: true })\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('返回', { exact: true })\u001b[22m\n\n    at back (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:30:119)\n    at async choose (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:33:128)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:112\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:48)\n    at async Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:61:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "pageErrors": []
+    }
+  }
+]

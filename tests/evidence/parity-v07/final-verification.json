@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-11-12T10:53:37.4687062+08:00",
+  "hashes": [
+    {
+      "path": "apps/web/dist/assets/app-kk7fVTCm.css",
+      "expected": "A0A8E427BE737D833CC27038BDBBE1ECA9CF1FEF326DEC0C0043E72EE7E82B07",
+      "actual": "A0A8E427BE737D833CC27038BDBBE1ECA9CF1FEF326DEC0C0043E72EE7E82B07",
+      "equal": true
+    },
+    {
+      "path": "apps/web/dist/assets/app-WvfxpJny.js",
+      "expected": "2D989C3351A29A23F114565BBF432F21191F4703FB394B3E3D17D19B4368C176",
+      "actual": "2D989C3351A29A23F114565BBF432F21191F4703FB394B3E3D17D19B4368C176",
+      "equal": true
+    },
+    {
+      "path": "apps/web/dist/assets/editor-BqeCIwvM.js",
+      "expected": "9D1FC47EEBFA3242C64554044965DE6C6BC2D7FB168007B7693C3A33AE323B2B",
+      "actual": "9D1FC47EEBFA3242C64554044965DE6C6BC2D7FB168007B7693C3A33AE323B2B",
+      "equal": true
+    },
+    {
+      "path": "apps/web/dist/assets/editor-BwFLiudp.css",
+      "expected": "C3A8F4AEE438E128C6968B34538472D29AA3998A6A784574EEFF19F02347B091",
+      "actual": "C3A8F4AEE438E128C6968B34538472D29AA3998A6A784574EEFF19F02347B091",
+      "equal": true
+    },
+    {
+      "path": "apps/web/dist/assets/save-shortcut-DZCizx91.js",
+      "expected": "E1176DDF804797080DD9B9CE9BA59A361294097DD82E3CF3D0163351D7F7058E",
+      "actual": "E1176DDF804797080DD9B9CE9BA59A361294097DD82E3CF3D0163351D7F7058E",
+      "equal": true
+    },
+    {
+      "path": "apps/web/dist/openblock-vendor/openblock-gui.js",
+      "expected": "C0C8A51D40D0EEE40C84541601915CC83D1454BF2D35ADFDF320F016CF1699B3",
+      "actual": "C0C8A51D40D0EEE40C84541601915CC83D1454BF2D35ADFDF320F016CF1699B3",
+      "equal": true
+    },
+    {
+      "path": "apps/web/dist/cfzn-extensions/module-loader.js",
+      "expected": "A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207",
+      "actual": "A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207",
+      "equal": true
+    }
+  ],
+  "allHashesEqual": true,
+  "tempCount": 36,
+  "remainingTemps": [],
+  "randomPortListeners": [],
+  "userServicesTouched": false,
+  "physicalHardwareUsed": false,
+  "oldReaDirectoriesTouched": false
+}

@@ -1,0 +1,10 @@
+{
+  "observedAt": "2026-11-10T03:42:53.091Z",
+  "observationMs": 15000,
+  "pending": [
+    "http://127.0.0.1:5173/openblock-vendor/openblock-gui.js"
+  ],
+  "failed": [],
+  "consoleMessages": [],
+  "body": "正在启动 OpenBlock 编辑器…"
+}

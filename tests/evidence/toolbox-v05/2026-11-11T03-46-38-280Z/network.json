@@ -1,0 +1,258 @@
+[
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/atomizer/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/atomizer/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/atomizer/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/atomizer/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/pirSensor/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/pirSensor/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/pirSensor/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/pirSensor/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/flameSensor/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/flameSensor/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/flameSensor/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/flameSensor/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/raindropSensor/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/raindropSensor/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/raindropSensor/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/raindropSensor/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/moreComments/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/moreComments/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/moreComments/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dev",
+    "url": "http://127.0.0.1:64925/cfzn-extensions/extensions/moreComments/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/atomizer/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/atomizer/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/atomizer/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/atomizer/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/pirSensor/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/pirSensor/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/pirSensor/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/pirSensor/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/flameSensor/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/flameSensor/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/flameSensor/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/flameSensor/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/raindropSensor/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/raindropSensor/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/raindropSensor/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/raindropSensor/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/moreComments/toolbox.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/moreComments/translations.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/moreComments/generator.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  },
+  {
+    "label": "dist",
+    "url": "http://127.0.0.1:64926/cfzn-extensions/extensions/moreComments/blocks.mjs?v=d0a100345f1a1c84a0ed7db66a05b7e6f89816b8527a1c391ef8b5e8b0f57caa&retry=0"
+  }
+]

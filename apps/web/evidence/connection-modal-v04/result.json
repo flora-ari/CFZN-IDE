@@ -1,0 +1,34 @@
+{
+  "checks": {
+    "authorizedConnectAndSync": true,
+    "cancelKeepsSession": true,
+    "switchAndRecovery": true,
+    "nativeMenuAndCloseKeepSession": true,
+    "localServiceIndependent": true,
+    "nativeDisconnectSync": true
+  },
+  "physicalSerial": false,
+  "calls": [
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "name": "adjacent title at four widths; five buttons and modes reachable",
+    "status": "PASS",
+    "detail": [
+      {
+        "width": 1440,
+        "gap": 6,
+        "titleWidth": 188,
+        "sameParent": true,
+        "input": 180
+      },
+      {
+        "width": 1776,
+        "gap": 6,
+        "titleWidth": 188,
+        "sameParent": true,
+        "input": 180
+      },
+      {
+        "width": 2560,
+        "gap": 6,
+        "titleWidth": 188,
+        "sameParent": true,
+        "input": 180
+      },
+      {
+        "width": 1000,
+        "gap": 6,
+        "titleWidth": 58.171875,
+        "sameParent": true,
+        "input": 89.09375
+      }
+    ]
+  },
+  {
+    "name": "real New Export Import Save show portal without layout shift; info and success dismiss",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.waitFor: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('project-notice') to be hidden\u001b[22m\n\u001b[2m    12 × locator resolved to visible <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div>\u001b[22m\n",
+    "stack": "locator.waitFor: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('project-notice') to be hidden\u001b[22m\n\u001b[2m    12 × locator resolved to visible <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div>\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:86:582\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/adjacent-title-notice.mjs:86:2"
+  },
+  {
+    "name": "hover focus remaining time manual close and replacement identity",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('new-project')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-testid=\"new-project\" class=\"cfzn-project-button\">新建</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('new-project')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-testid=\"new-project\" class=\"cfzn-project-button\">新建</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at fresh (F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:83:61)\n    at F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:87:97\n    at check (F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:28:30)\n    at F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:87:8"
+  },
+  {
+    "name": "real API conflict persists; save-as and reload recover; 390px error visible",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('save-project')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-testid=\"save-project\" class=\"cfzn-project-button cfzn-project-save\">保存</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByTestId('save-project')\u001b[22m\n\u001b[2m    - locator resolved to <button type=\"button\" data-testid=\"save-project\" class=\"cfzn-project-button cfzn-project-save\">保存</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div role=\"status\" aria-atomic=\"true\" class=\"notice info\" data-testid=\"project-notice\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:88:140\n    at check (F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:28:30)\n    at F:\\CFZN\\CFZN-IDE\\tests\\adjacent-title-notice.mjs:88:8"
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "types": {
+    "extension": [
+      "全部",
+      "主控板"
+    ],
+    "top": [
+      "全部",
+      "主控板"
+    ]
+  },
+  "conditions": [
+    {
+      "query": "Arduino",
+      "ids": [
+        "arduinoUno",
+        "arduinoNano",
+        "arduinoLeonardo",
+        "arduinoMega2560",
+        "arduinoUnoR4Minima",
+        "arduinoUnoR4Wifi",
+        "arduinoEsp32",
+        "arduinoEsp32S3",
+        "arduinoEsp8266NodeMCU",
+        "arduinoK210MaixDock",
+        "arduinoK210Maixduino",
+        "arduinoRaspberryPiPico",
+        "arduinoRaspberryPiPicoW",
+        "arduinoRaspberryPiPico2",
+        "arduinoRaspberryPiPico2W",
+        "makeyMakey",
+        "aijiteESP32S3",
+        "firebeetleEsp32E"
+      ]
+    },
+    {
+      "query": "ESP32",
+      "ids": [
+        "arduinoEsp32",
+        "arduinoEsp32S3",
+        "aijiteESP32S3",
+        "firebeetleEsp32E"
+      ]
+    },
+    {
+      "query": "Arduino Nano",
+      "ids": [
+        "arduinoNano"
+      ]
+    },
+    {
+      "query": "no-such-controller-qa",
+      "ids": []
+    },
+    {
+      "entry": "extension",
+      "type": "board",
+      "query": "ESP32",
+      "ids": [
+        "arduinoEsp32",
+        "arduinoEsp32S3",
+        "aijiteESP32S3",
+        "firebeetleEsp32E"
+      ]
+    },
+    {
+      "entry": "top",
+      "type": "board",
+      "query": "ESP32",
+      "ids": [
+        "arduinoEsp32",
+        "arduinoEsp32S3",
+        "aijiteESP32S3",
+        "firebeetleEsp32E"
+      ]
+    }
+  ],
+  "unknown": {
+    "id": "arduinoNano",
+    "name": "Arduino Nano",
+    "icon": "http://127.0.0.1:58847/static/assets/4b8007c6c177d93fbaca7ace4a4f84f8.png",
+    "description": "Arduino Nano 用于构建项目的经典小控制板。",
+    "disabled": false
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "run": "2026-11-11T03-43-14-476Z",
+  "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-toolbox-v05-yE2bmX",
+  "dev": "http://127.0.0.1:54292",
+  "deployed": "http://127.0.0.1:54293",
+  "api": "http://127.0.0.1:54290",
+  "distHtml": "<!doctype html>\n<html lang=\"zh-CN\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <link rel=\"icon\" href=\"/static/favicon.ico\" />\n    <title>OpenBlock</title>\n    <style>html,body,#editor{width:100%;height:100%;margin:0}body{overflow:hidden}#boot-message{position:fixed;inset:0;display:grid;place-content:center;text-align:center;background:#f4f8fc;color:#243958;font:16px system-ui;z-index:10000}#boot-message[hidden]{display:none}</style>\n    <script type=\"module\" crossorigin src=\"/assets/editor-D_pU3iT4.js\"></script>\n    <link rel=\"modulepreload\" crossorigin href=\"/assets/editor-protocol-D2Cz2SCd.js\">\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/editor-CrSKtmGm.css\">\n  </head>\n  <body>\n    <div id=\"editor\"></div>\n    <div id=\"boot-message\" role=\"status\">正在启动 OpenBlock 编辑器…</div>\n    <script src=\"/openblock-vendor/react-16.min.js\"></script>\n    <script src=\"/openblock-vendor/react-dom-16.min.js\"></script>\n    <script>window.react = window.React; window['react-dom'] = window.ReactDOM;</script>\n    <script src=\"/openblock-vendor/openblock-gui.js\"></script>\n    <script src=\"/cfzn-extensions/module-loader.js\"></script>\n  </body>\n</html>\n",
+  "helperSha256": "a2564c8772e19271635f1a935d3516ceaba305d26b63672c3e81632049348207"
+}

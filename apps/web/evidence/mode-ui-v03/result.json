@@ -1,0 +1,125 @@
+{
+  "checks": {
+    "noBoardModes": true,
+    "generatedManualDraft": true,
+    "coherentArchiveSnapshot": true,
+    "realStage": {
+      "beforeX": 0,
+      "afterX": 25,
+      "beforeCostume": 0,
+      "afterCostume": 1,
+      "sounds": 1
+    },
+    "noSerialSideEffects": true,
+    "menuGeometry": [
+      {
+        "class": "menu-bar_main-menu_3wjWH",
+        "width": 492.484375,
+        "scroll": 492,
+        "left": 0,
+        "right": 492.484375
+      },
+      {
+        "class": "menu-bar_file-menu_g7ufm",
+        "width": 90.265625,
+        "scroll": 90,
+        "left": 492.484375,
+        "right": 582.75
+      },
+      {
+        "class": "cfzn-project-tools",
+        "width": 386,
+        "scroll": 386,
+        "left": 588.75,
+        "right": 974.75
+      },
+      {
+        "class": "menu-bar_tail-menu_2dRXU",
+        "width": 459.25,
+        "scroll": 459,
+        "left": 980.75,
+        "right": 1440
+      }
+    ],
+    "invalidMetadataPreservesDocument": true,
+    "archiveFreshRestore": true,
+    "selectedSourceAndBusy": true,
+    "historicalClearsDraft": true,
+    "esp32ModesAndBoardDraft": true,
+    "newProjectProgramming": true
+  },
+  "calls": [
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/builds",
+      "method": "POST",
+      "body": {
+        "deviceId": "firebeetleEsp32E",
+        "profileId": "mock-firebeetleEsp32E",
+        "code": "// retained manual draft\nvoid setup(){Serial.begin(115200);}\nvoid loop(){Serial.println(\"mode-v03\");delay(1000);}\n",
+        "moduleIds": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      }
+    },
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-1",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/uploads",
+      "method": "POST",
+      "body": {
+        "buildId": "job-1",
+        "portId": "COM-MOCK"
+      }
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2/cancel",
+      "method": "POST",
+      "body": {}
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    }
+  ],
+  "errors": [],
+  "sockets": []
+}

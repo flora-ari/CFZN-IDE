@@ -1,0 +1,136 @@
+{
+  "width": 390,
+  "hostClass": "gui_menu-bar-position_3U1T0 menu-bar_menu-bar_JcuHF box_box_2jjDp",
+  "group": {
+    "x": 293.25,
+    "y": 0,
+    "width": 72,
+    "height": 48,
+    "top": 0,
+    "right": 365.25,
+    "bottom": 48,
+    "left": 293.25
+  },
+  "tabs": {
+    "x": 0,
+    "y": 48,
+    "width": 250,
+    "height": 44,
+    "top": 48,
+    "right": 250,
+    "bottom": 92,
+    "left": 0
+  },
+  "menu": {
+    "x": 0,
+    "y": 0,
+    "width": 390,
+    "height": 48,
+    "top": 0,
+    "right": 390,
+    "bottom": 48,
+    "left": 0
+  },
+  "status": {
+    "x": 595.25,
+    "y": 15,
+    "width": 72,
+    "height": 18,
+    "top": 15,
+    "right": 667.25,
+    "bottom": 33,
+    "left": 595.25
+  },
+  "directChild": true,
+  "overflowY": "visible",
+  "oldAttributes": 0,
+  "oldSpace": "",
+  "groupClientWidth": 72,
+  "groupScrollWidth": 374,
+  "buttons": [
+    {
+      "text": "项目",
+      "rect": {
+        "x": 293.25,
+        "y": 8,
+        "width": 42,
+        "height": 32,
+        "top": 8,
+        "right": 335.25,
+        "bottom": 40,
+        "left": 293.25
+      },
+      "hit": true
+    },
+    {
+      "text": "新建",
+      "rect": {
+        "x": 339.25,
+        "y": 8,
+        "width": 42,
+        "height": 32,
+        "top": 8,
+        "right": 381.25,
+        "bottom": 40,
+        "left": 339.25
+      },
+      "hit": true
+    },
+    {
+      "text": "导入",
+      "rect": {
+        "x": 385.25,
+        "y": 8,
+        "width": 42,
+        "height": 32,
+        "top": 8,
+        "right": 427.25,
+        "bottom": 40,
+        "left": 385.25
+      },
+      "hit": false
+    },
+    {
+      "text": "导出",
+      "rect": {
+        "x": 431.25,
+        "y": 8,
+        "width": 42,
+        "height": 32,
+        "top": 8,
+        "right": 473.25,
+        "bottom": 40,
+        "left": 431.25
+      },
+      "hit": false
+    },
+    {
+      "text": "保存",
+      "rect": {
+        "x": 477.25,
+        "y": 8,
+        "width": 42,
+        "height": 32,
+        "top": 8,
+        "right": 519.25,
+        "bottom": 40,
+        "left": 477.25
+      },
+      "hit": false
+    },
+    {
+      "text": "串口终端",
+      "rect": {
+        "x": 523.25,
+        "y": 8,
+        "width": 68,
+        "height": 32,
+        "top": 8,
+        "right": 591.25,
+        "bottom": 40,
+        "left": 523.25
+      },
+      "hit": false
+    }
+  ]
+}

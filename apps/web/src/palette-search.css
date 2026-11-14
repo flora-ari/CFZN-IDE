@@ -1,0 +1,12 @@
+.cfzn-search-workspace .blocklyToolboxDiv { padding-top: 36px; box-sizing: border-box; }
+.cfzn-palette-search { position: absolute; inset: 0 auto auto 0; z-index: 80; font: 12px sans-serif; pointer-events: none; }
+.cfzn-palette-search button, .cfzn-search-panel { pointer-events: auto; }
+.cfzn-search-toggle { height: 32px; width: 60px; margin: 2px; border: 1px solid #d9dde5; border-radius: 4px; color: #44516a; background: white; cursor: pointer; }
+.cfzn-search-panel { position: absolute; left: 66px; top: 2px; display: flex; align-items: center; gap: 4px; padding: 4px 6px; border: 1px solid #cbd7ed; border-radius: 5px; background: white; box-shadow: 0 2px 8px #23395b22; width: max-content; max-width: calc(100vw - 92px); }
+.cfzn-search-panel input { width: 166px; min-width: 60px; padding: 4px; border: 1px solid #b4bdcd; border-radius: 3px; }
+.cfzn-search-panel button { border: 0; background: #edf3fc; border-radius: 3px; padding: 5px; color: #344c77; cursor: pointer; }
+.cfzn-search-panel [role=status] { color: #5d6473; max-width: 160px; }
+.cfzn-search-panel :focus-visible, .cfzn-search-toggle:focus-visible { outline: 2px solid #4c97ff; outline-offset: 1px; }
+.cfzn-local-service { padding: 6px 0; border-bottom: 1px solid #dde2ea; }
+.cfzn-local-service button { margin-left: 8px; }
+.cfzn-local-service p { margin: 4px 0; overflow-wrap: anywhere; }

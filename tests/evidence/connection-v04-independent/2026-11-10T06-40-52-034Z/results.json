@@ -1,0 +1,8 @@
+[
+  {
+    "name": "busy hardware real native connection entry cannot throw or mutate serial",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.cfzn-connection-modal [class*=\"close-button_close-button\"]').first()\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.cfzn-connection-modal [class*=\"close-button_close-button\"]').first()\u001b[22m\n\n    at close (F:\\CFZN\\CFZN-IDE\\tests\\connection-v04-independent.mjs:81:132)\n    at F:\\CFZN\\CFZN-IDE\\tests\\connection-v04-independent.mjs:91:105\n    at check (F:\\CFZN\\CFZN-IDE\\tests\\connection-v04-independent.mjs:28:30)\n    at F:\\CFZN\\CFZN-IDE\\tests\\connection-v04-independent.mjs:91:8"
+  }
+]

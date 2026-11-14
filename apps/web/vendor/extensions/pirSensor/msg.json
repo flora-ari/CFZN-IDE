@@ -1,0 +1,5 @@
+{
+    "PIRSENSOR_CATEGORY": "PIR Sensor",
+    "PIRSENSOR_INIT": "init pir sensor pin %1",
+    "PIRSENSOR_DETECTED": "pir sensor motion detected?"
+}

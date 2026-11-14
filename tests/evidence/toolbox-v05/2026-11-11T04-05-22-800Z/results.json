@@ -1,0 +1,30 @@
+[
+  {
+    "name": "dist independent archive API restore",
+    "status": "PASS",
+    "detail": {
+      "bytes": 49119,
+      "assets": 5,
+      "mode": "realtime",
+      "modules": [
+        "activateBuzzer",
+        "atomizer",
+        "flameSensor",
+        "moreComments",
+        "pirSensor",
+        "raindropSensor"
+      ],
+      "manualDraft": true,
+      "newIframe": true,
+      "apiExactBytes": true,
+      "reopened": true
+    }
+  },
+  {
+    "name": "dist crossboard diagnostic",
+    "status": "PASS",
+    "detail": {
+      "board": "aijiteESP32S3"
+    }
+  }
+]

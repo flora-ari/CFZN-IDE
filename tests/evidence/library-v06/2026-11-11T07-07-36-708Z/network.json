@@ -1,0 +1,186 @@
+[
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-serial-guard",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-serial-guard",
+    "blockedHardware": "http://127.0.0.1:3002/api/v1/hardware/capabilities"
+  },
+  {
+    "label": "dist-serial-guard",
+    "blockedHardware": "http://127.0.0.1:3002/api/v1/hardware/ports"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/atomizer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/atomizer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/atomizer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-busy",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/atomizer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-rollback",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-rollback",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-menu-reference",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-menu-reference",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/toolbox.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/translations.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  },
+  {
+    "label": "dist-v05",
+    "url": "http://127.0.0.1:50568/cfzn-extensions/extensions/activateBuzzer/blocks.mjs?v=72d3568d38b08e5a4d54f601281e13ca75b6b94520d8565c49db405fedb4efc5&retry=0"
+  }
+]

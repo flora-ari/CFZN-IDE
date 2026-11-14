@@ -1,0 +1,108 @@
+[
+  {
+    "id": "ACTIVATEBUZZER_CATEGORY",
+    "blocks": [
+      {
+        "id": "activeBuzzer_on",
+        "type": "activeBuzzer_on",
+        "disabled": false
+      },
+      {
+        "id": "activeBuzzer_off",
+        "type": "activeBuzzer_off",
+        "disabled": false
+      },
+      {
+        "id": "activeBuzzer_init",
+        "type": "activeBuzzer_init",
+        "disabled": false
+      }
+    ],
+    "dragged": true
+  },
+  {
+    "id": "ATOMIZER_CATEGORY",
+    "blocks": [
+      {
+        "id": "atomizer_init",
+        "type": "atomizer_init",
+        "disabled": false
+      },
+      {
+        "id": "atomizer_setState",
+        "type": "atomizer_setState",
+        "disabled": false
+      },
+      {
+        "id": "atomizer_toggle",
+        "type": "atomizer_toggle",
+        "disabled": false
+      }
+    ],
+    "dragged": true
+  },
+  {
+    "id": "PIRSENSOR_CATEGORY",
+    "blocks": [
+      {
+        "id": "pirSensor_init",
+        "type": "pirSensor_init",
+        "disabled": false
+      },
+      {
+        "id": "pirSensor_detected",
+        "type": "pirSensor_detected",
+        "disabled": false
+      }
+    ],
+    "dragged": true
+  },
+  {
+    "id": "FLAMESENSOR_CATEGORY",
+    "blocks": [
+      {
+        "id": "flameSensor_readDigital",
+        "type": "flameSensor_readDigital",
+        "disabled": false
+      },
+      {
+        "id": "flameSensor_readAnalog",
+        "type": "flameSensor_readAnalog",
+        "disabled": false
+      }
+    ],
+    "dragged": true
+  },
+  {
+    "id": "RAINDROPSENSOR_CATEGORY",
+    "blocks": [
+      {
+        "id": "raindropSensor_readDigital",
+        "type": "raindropSensor_readDigital",
+        "disabled": false
+      },
+      {
+        "id": "raindropSensor_readAnalog",
+        "type": "raindropSensor_readAnalog",
+        "disabled": false
+      }
+    ],
+    "dragged": true
+  },
+  {
+    "id": "MORECOMMENTS_CATEGORY",
+    "blocks": [
+      {
+        "id": "moreComments_commandBlock",
+        "type": "moreComments_commandBlock",
+        "disabled": false
+      },
+      {
+        "id": "moreComments_branchBlock",
+        "type": "moreComments_branchBlock",
+        "disabled": false
+      }
+    ],
+    "dragged": true
+  }
+]

@@ -1,0 +1,8 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "FAIL",
+    "error": "Error: frame.waitForFunction: Frame was detached",
+    "stack": "frame.waitForFunction: Frame was detached\n    at load (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:30:178)\n    at async normalChain (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:95:1114)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:133:247"
+  }
+]

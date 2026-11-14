@@ -1,0 +1,13 @@
+{
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\parity-v07\\2026-11-12T02-52-15-375Z-dev-search",
+  "results": [
+    {
+      "name": "native open field and dropdown survive real dynamic search reindex",
+      "status": "PASS",
+      "detail": {
+        "fieldRetained": true,
+        "dropdownRetained": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "dist filter memory and support reset",
+    "status": "PASS",
+    "detail": {
+      "partitionMemory": true,
+      "nativePartitionClearsSearch": true,
+      "filtersNoDirty": true,
+      "supportedDefaultFalse": true,
+      "clearResetsSupport": true
+    }
+  },
+  {
+    "name": "dist selected blue card and narrow reachability",
+    "status": "PASS",
+    "detail": {
+      "border": "2px",
+      "color": "rgb(76, 151, 255)",
+      "selected": "true",
+      "selectedText": true,
+      "removeVisible": true,
+      "narrowReachable": true,
+      "noDirty": true
+    }
+  }
+]

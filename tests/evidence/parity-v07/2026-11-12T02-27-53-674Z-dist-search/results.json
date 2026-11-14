@@ -1,0 +1,64 @@
+[
+  {
+    "name": "native search Chinese and no result close restores category without state changes",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'cfzn-search-results'\n- 'motion'\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 'cfzn-search-results'\n- 'motion'\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:57:458\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:57:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "dynamic variables lists and percent-n percent-s procedure are real draggable blocks",
+    "status": "PASS",
+    "detail": {
+      "rows": [
+        {
+          "id": "dw;:$3c~?]%g([*7%:3;",
+          "type": "procedures_call",
+          "text": "独立过程 1 ???",
+          "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"dw;:$3c~?]%g([*7%:3;\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"D}YE(oza|rAQ6$I:fTm[\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"*8ed;xND_hX%)u?,]+2I\"><field name=\"TEXT\"></field></shadow></value></block>"
+        }
+      ],
+      "dragged": [
+        {
+          "id": "Pgtw%B-z;;LR6;0bgB~]",
+          "type": "procedures_call",
+          "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"Pgtw%B-z;;LR6;0bgB~]\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"A.G!mB)#Ruc}GBz$ez!-\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"hHC~,(@e5GqAE.iW2*ZM\"><field name=\"TEXT\"></field></shadow></value></block>"
+        },
+        {
+          "id": "A.G!mB)#Ruc}GBz$ez!-",
+          "type": "math_number",
+          "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"math_number\" id=\"A.G!mB)#Ruc}GBz$ez!-\"><field name=\"NUM\">1</field></shadow>"
+        },
+        {
+          "id": "hHC~,(@e5GqAE.iW2*ZM",
+          "type": "text",
+          "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"text\" id=\"hHC~,(@e5GqAE.iW2*ZM\"><field name=\"TEXT\"></field></shadow>"
+        }
+      ]
+    }
+  },
+  {
+    "name": "search close clear repeated rebuild preserves graph and undo",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    project: {\n      device: {\n        deviceId: null,\n        pnpIdList: [],\n...\n    },\n+   undo: 34,\n-   undo: 25,\n    workspace: '<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables><variable type=\"\" id=\"v1\" islocal=\"false\" iscloud=\"false\">独立变量</variable><variable type=\"list\" id=\"l1\" islocal=\"false\" iscloud=\"false\">独立列表</variable></variables><block type=\"procedures_definition\" id=\"ind-def\" x=\"50\" y=\"80\"><statement name=\"custom_block\"><block type=\"procedures_prototype\" id=\"ind-proto\" disabled=\"true\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" argumentnames=\"[&quot;数字&quot;,&quot;文字&quot;]\" argumentdefaults=\"[1,&quot;默认&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"argument_reporter_number\" id=\"Eb:2][Z$Nas=,WDsBYFZ\" editable=\"false\"><field name=\"VALUE\">数字</field></shadow></value><value name=\"str\"><shadow type=\"argument_reporter_string\" id=\"=lLaf},N6u]#JUd}9)k=\" editable=\"false\"><field name=\"VALUE\">文字</field></shadow></value></block></statement></block><block type=\"procedures_call\" id=\"Pgtw%B-z;;LR6;0bgB~]\" x=\"439\" y=\"653\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"A.G!mB)#Ruc}GBz$ez!-\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"hHC~,(@e5GqAE.iW2*ZM\"><field name=\"TEXT\"></field></shadow></value></block></xml>'\n  }\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    project: {\n      device: {\n        deviceId: null,\n        pnpIdList: [],\n...\n    },\n+   undo: 34,\n-   undo: 25,\n    workspace: '<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables><variable type=\"\" id=\"v1\" islocal=\"false\" iscloud=\"false\">独立变量</variable><variable type=\"list\" id=\"l1\" islocal=\"false\" iscloud=\"false\">独立列表</variable></variables><block type=\"procedures_definition\" id=\"ind-def\" x=\"50\" y=\"80\"><statement name=\"custom_block\"><block type=\"procedures_prototype\" id=\"ind-proto\" disabled=\"true\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" argumentnames=\"[&quot;数字&quot;,&quot;文字&quot;]\" argumentdefaults=\"[1,&quot;默认&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"argument_reporter_number\" id=\"Eb:2][Z$Nas=,WDsBYFZ\" editable=\"false\"><field name=\"VALUE\">数字</field></shadow></value><value name=\"str\"><shadow type=\"argument_reporter_string\" id=\"=lLaf},N6u]#JUd}9)k=\" editable=\"false\"><field name=\"VALUE\">文字</field></shadow></value></block></statement></block><block type=\"procedures_call\" id=\"Pgtw%B-z;;LR6;0bgB~]\" x=\"439\" y=\"653\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"A.G!mB)#Ruc}GBz$ez!-\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"hHC~,(@e5GqAE.iW2*ZM\"><field name=\"TEXT\"></field></shadow></value></block></xml>'\n  }\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:59:336\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:59:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "English locale native search roundtrip is read-only",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    device: {\n      deviceId: null,\n      pnpIdList: [],\n      type: null\n...\n            topLevel: true,\n+           x: 438,\n-           x: 439,\n            y: 653\n          },\n          'ind-def': {\n            fields: {},\n            inputs: {\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    device: {\n      deviceId: null,\n      pnpIdList: [],\n      type: null\n...\n            topLevel: true,\n+           x: 438,\n-           x: 439,\n            y: 653\n          },\n          'ind-def': {\n            fields: {},\n            inputs: {\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:60:491\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:60:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok((await flyout()).some(b=>b.type.startsWith('moreComments_')))\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok((await flyout()).some(b=>b.type.startsWith('moreComments_')))\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:312\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:61:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "pageErrors": []
+    }
+  }
+]

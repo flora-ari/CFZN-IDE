@@ -1,0 +1,428 @@
+{
+  "expected": [
+    {
+      "id": "arduinoUno",
+      "name": "Arduino Uno",
+      "icon": "http://127.0.0.1:58847/static/assets/a7e482656c8708b4fbda3a76cbe2772b.png",
+      "description": "很好的电子编程入门控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoNano",
+      "name": "Arduino Nano",
+      "icon": "http://127.0.0.1:58847/static/assets/4b8007c6c177d93fbaca7ace4a4f84f8.png",
+      "description": "Arduino Nano 用于构建项目的经典小控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoLeonardo",
+      "name": "Arduino Leonardo",
+      "icon": "http://127.0.0.1:58847/static/assets/a2f27658ed6b28792e6d40e058e606e2.png",
+      "description": "经典的Arduino板，可以用作鼠标或键盘。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoMega2560",
+      "name": "Arduino Mega 2560",
+      "icon": "http://127.0.0.1:58847/static/assets/dc9a6522e00a350de415ff35da0cc893.png",
+      "description": "拥有54个数字引脚，16个模拟输入，和4个串口的8位控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoUnoR4Minima",
+      "name": "Arduino Uno R4 Minima",
+      "icon": "http://127.0.0.1:58847/static/assets/1e37529463c1d3ad6cd386cca726a060.png",
+      "description": "提供更强的性能和更大的内存，同时保持与现有扩展板和配件的兼容性。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoUnoR4Wifi",
+      "name": "Arduino Uno R4 WiFi",
+      "icon": "http://127.0.0.1:58847/static/assets/a6d435fb872471d12813b14a2fdac81e.png",
+      "description": "提供 Wi-Fi 和蓝牙连接，并配备板载 12x8 LED 点阵用于可视化显示。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp32",
+      "name": "ESP32",
+      "icon": "http://127.0.0.1:58847/static/assets/0d2342a6ac4a24d3b4aedd0e42ffad5f.png",
+      "description": "功能强大且带有 Wi-Fi 和 蓝牙的控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp32S3",
+      "name": "ESP32-S3",
+      "icon": "http://127.0.0.1:58847/static/assets/bd58c18e2c4af10dfc628dbc980864e5.png",
+      "description": "集成专用AI加速器和丰富的外设，适用于高效、低功耗的物联网边缘与AI工作负载。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp8266NodeMCU",
+      "name": "NodeMCU",
+      "icon": "http://127.0.0.1:58847/static/assets/ee391d4556c47170aa89072b88669350.png",
+      "description": "低功耗 Wi-Fi SOC 控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoK210MaixDock",
+      "name": "MaixDock",
+      "icon": "http://127.0.0.1:58847/static/assets/49b93348956d521f4b31aedb047b1cc1.png",
+      "description": "基于K210 RISC-V芯片的控制板，只有基本功能，引出了所有IO管脚。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoK210Maixduino",
+      "name": "Maixduino",
+      "icon": "http://127.0.0.1:58847/static/assets/f5cc8a2daf29f7c4440b1f64482e531e.png",
+      "description": "内置ESP32的K210 RISC-V控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico",
+      "name": "Raspberry Pi Pico",
+      "icon": "http://127.0.0.1:58847/static/assets/dce89655ade5b48de30bfd6d39e5aefc.png",
+      "description": "一个友好且易于使用的微控制器开发板，让您的电子创意变为现实。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPicoW",
+      "name": "Raspberry Pi Pico W",
+      "icon": "http://127.0.0.1:58847/static/assets/a046448265bf2b55750ad92b6b0f52fe.png",
+      "description": "一款内置2.4 GHz Wi-Fi和Bluetooth 5.2的Pico，非常适合无线与物联网项目。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico2",
+      "name": "Raspberry Pi Pico 2",
+      "icon": "http://127.0.0.1:58847/static/assets/646ab9a5cb16c06fc4981589db2e44a7.png",
+      "description": "高性能双核MCU，配备充足的RAM和Flash，适用于复杂应用。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico2W",
+      "name": "Raspberry Pi Pico 2 W",
+      "icon": "http://127.0.0.1:58847/static/assets/189b1da760b0d569e410616b4cab89d8.png",
+      "description": "内置2.4 GHz Wi-Fi和蓝牙，实现无缝的无线物联网与智能家居集成。",
+      "disabled": false
+    },
+    {
+      "id": "microbit",
+      "name": "Micro:bit",
+      "icon": "http://127.0.0.1:58847/static/assets/4e19cc442fd34d5446b2db7beff53d6f.png",
+      "description": "可以学习电子知识的口袋计算机。",
+      "disabled": false
+    },
+    {
+      "id": "microbitV2",
+      "name": "Micro:bit V2",
+      "icon": "http://127.0.0.1:58847/static/assets/f297977110c526792c36e9691b2310ce.png",
+      "description": "升级的处理器，板载扬声器和麦克风，触摸感应徽标。",
+      "disabled": false
+    },
+    {
+      "id": "makeyMakey",
+      "name": "Makey Makey",
+      "icon": "http://127.0.0.1:58847/static/assets/9a0daedfe93c7ffa6116001ba50051e6.png",
+      "description": "把任何东西变成按键。",
+      "disabled": false
+    },
+    {
+      "id": "aijiteESP32S3",
+      "name": "Aijite ESP32-S3",
+      "icon": "http://127.0.0.1:58847/cfzn-extensions/aijite/aijiteEsp32S3.png",
+      "description": "基于 ESP32-S3，数字、模拟及触摸引脚菜单排除 IO3。",
+      "disabled": false
+    },
+    {
+      "id": "firebeetleEsp32E",
+      "name": "FireBeetle ESP32-E",
+      "icon": "http://127.0.0.1:58847/static/assets/0d2342a6ac4a24d3b4aedd0e42ffad5f.png",
+      "description": "ESP32 上传兼容主控；D/A 标签映射至实际 GPIO，实时固件未验证。",
+      "disabled": false
+    }
+  ],
+  "extension": [
+    {
+      "id": "arduinoUno",
+      "name": "Arduino Uno",
+      "icon": "http://127.0.0.1:58847/static/assets/a7e482656c8708b4fbda3a76cbe2772b.png",
+      "description": "很好的电子编程入门控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoNano",
+      "name": "Arduino Nano",
+      "icon": "http://127.0.0.1:58847/static/assets/4b8007c6c177d93fbaca7ace4a4f84f8.png",
+      "description": "Arduino Nano 用于构建项目的经典小控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoLeonardo",
+      "name": "Arduino Leonardo",
+      "icon": "http://127.0.0.1:58847/static/assets/a2f27658ed6b28792e6d40e058e606e2.png",
+      "description": "经典的Arduino板，可以用作鼠标或键盘。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoMega2560",
+      "name": "Arduino Mega 2560",
+      "icon": "http://127.0.0.1:58847/static/assets/dc9a6522e00a350de415ff35da0cc893.png",
+      "description": "拥有54个数字引脚，16个模拟输入，和4个串口的8位控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoUnoR4Minima",
+      "name": "Arduino Uno R4 Minima",
+      "icon": "http://127.0.0.1:58847/static/assets/1e37529463c1d3ad6cd386cca726a060.png",
+      "description": "提供更强的性能和更大的内存，同时保持与现有扩展板和配件的兼容性。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoUnoR4Wifi",
+      "name": "Arduino Uno R4 WiFi",
+      "icon": "http://127.0.0.1:58847/static/assets/a6d435fb872471d12813b14a2fdac81e.png",
+      "description": "提供 Wi-Fi 和蓝牙连接，并配备板载 12x8 LED 点阵用于可视化显示。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp32",
+      "name": "ESP32",
+      "icon": "http://127.0.0.1:58847/static/assets/0d2342a6ac4a24d3b4aedd0e42ffad5f.png",
+      "description": "功能强大且带有 Wi-Fi 和 蓝牙的控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp32S3",
+      "name": "ESP32-S3",
+      "icon": "http://127.0.0.1:58847/static/assets/bd58c18e2c4af10dfc628dbc980864e5.png",
+      "description": "集成专用AI加速器和丰富的外设，适用于高效、低功耗的物联网边缘与AI工作负载。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp8266NodeMCU",
+      "name": "NodeMCU",
+      "icon": "http://127.0.0.1:58847/static/assets/ee391d4556c47170aa89072b88669350.png",
+      "description": "低功耗 Wi-Fi SOC 控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoK210MaixDock",
+      "name": "MaixDock",
+      "icon": "http://127.0.0.1:58847/static/assets/49b93348956d521f4b31aedb047b1cc1.png",
+      "description": "基于K210 RISC-V芯片的控制板，只有基本功能，引出了所有IO管脚。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoK210Maixduino",
+      "name": "Maixduino",
+      "icon": "http://127.0.0.1:58847/static/assets/f5cc8a2daf29f7c4440b1f64482e531e.png",
+      "description": "内置ESP32的K210 RISC-V控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico",
+      "name": "Raspberry Pi Pico",
+      "icon": "http://127.0.0.1:58847/static/assets/dce89655ade5b48de30bfd6d39e5aefc.png",
+      "description": "一个友好且易于使用的微控制器开发板，让您的电子创意变为现实。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPicoW",
+      "name": "Raspberry Pi Pico W",
+      "icon": "http://127.0.0.1:58847/static/assets/a046448265bf2b55750ad92b6b0f52fe.png",
+      "description": "一款内置2.4 GHz Wi-Fi和Bluetooth 5.2的Pico，非常适合无线与物联网项目。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico2",
+      "name": "Raspberry Pi Pico 2",
+      "icon": "http://127.0.0.1:58847/static/assets/646ab9a5cb16c06fc4981589db2e44a7.png",
+      "description": "高性能双核MCU，配备充足的RAM和Flash，适用于复杂应用。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico2W",
+      "name": "Raspberry Pi Pico 2 W",
+      "icon": "http://127.0.0.1:58847/static/assets/189b1da760b0d569e410616b4cab89d8.png",
+      "description": "内置2.4 GHz Wi-Fi和蓝牙，实现无缝的无线物联网与智能家居集成。",
+      "disabled": false
+    },
+    {
+      "id": "microbit",
+      "name": "Micro:bit",
+      "icon": "http://127.0.0.1:58847/static/assets/4e19cc442fd34d5446b2db7beff53d6f.png",
+      "description": "可以学习电子知识的口袋计算机。",
+      "disabled": false
+    },
+    {
+      "id": "microbitV2",
+      "name": "Micro:bit V2",
+      "icon": "http://127.0.0.1:58847/static/assets/f297977110c526792c36e9691b2310ce.png",
+      "description": "升级的处理器，板载扬声器和麦克风，触摸感应徽标。",
+      "disabled": false
+    },
+    {
+      "id": "makeyMakey",
+      "name": "Makey Makey",
+      "icon": "http://127.0.0.1:58847/static/assets/9a0daedfe93c7ffa6116001ba50051e6.png",
+      "description": "把任何东西变成按键。",
+      "disabled": false
+    },
+    {
+      "id": "aijiteESP32S3",
+      "name": "Aijite ESP32-S3",
+      "icon": "http://127.0.0.1:58847/cfzn-extensions/aijite/aijiteEsp32S3.png",
+      "description": "基于 ESP32-S3，数字、模拟及触摸引脚菜单排除 IO3。",
+      "disabled": false
+    },
+    {
+      "id": "firebeetleEsp32E",
+      "name": "FireBeetle ESP32-E",
+      "icon": "http://127.0.0.1:58847/static/assets/0d2342a6ac4a24d3b4aedd0e42ffad5f.png",
+      "description": "ESP32 上传兼容主控；D/A 标签映射至实际 GPIO，实时固件未验证。",
+      "disabled": false
+    }
+  ],
+  "top": [
+    {
+      "id": "arduinoUno",
+      "name": "Arduino Uno",
+      "icon": "http://127.0.0.1:58847/static/assets/a7e482656c8708b4fbda3a76cbe2772b.png",
+      "description": "很好的电子编程入门控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoNano",
+      "name": "Arduino Nano",
+      "icon": "http://127.0.0.1:58847/static/assets/4b8007c6c177d93fbaca7ace4a4f84f8.png",
+      "description": "Arduino Nano 用于构建项目的经典小控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoLeonardo",
+      "name": "Arduino Leonardo",
+      "icon": "http://127.0.0.1:58847/static/assets/a2f27658ed6b28792e6d40e058e606e2.png",
+      "description": "经典的Arduino板，可以用作鼠标或键盘。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoMega2560",
+      "name": "Arduino Mega 2560",
+      "icon": "http://127.0.0.1:58847/static/assets/dc9a6522e00a350de415ff35da0cc893.png",
+      "description": "拥有54个数字引脚，16个模拟输入，和4个串口的8位控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoUnoR4Minima",
+      "name": "Arduino Uno R4 Minima",
+      "icon": "http://127.0.0.1:58847/static/assets/1e37529463c1d3ad6cd386cca726a060.png",
+      "description": "提供更强的性能和更大的内存，同时保持与现有扩展板和配件的兼容性。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoUnoR4Wifi",
+      "name": "Arduino Uno R4 WiFi",
+      "icon": "http://127.0.0.1:58847/static/assets/a6d435fb872471d12813b14a2fdac81e.png",
+      "description": "提供 Wi-Fi 和蓝牙连接，并配备板载 12x8 LED 点阵用于可视化显示。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp32",
+      "name": "ESP32",
+      "icon": "http://127.0.0.1:58847/static/assets/0d2342a6ac4a24d3b4aedd0e42ffad5f.png",
+      "description": "功能强大且带有 Wi-Fi 和 蓝牙的控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp32S3",
+      "name": "ESP32-S3",
+      "icon": "http://127.0.0.1:58847/static/assets/bd58c18e2c4af10dfc628dbc980864e5.png",
+      "description": "集成专用AI加速器和丰富的外设，适用于高效、低功耗的物联网边缘与AI工作负载。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoEsp8266NodeMCU",
+      "name": "NodeMCU",
+      "icon": "http://127.0.0.1:58847/static/assets/ee391d4556c47170aa89072b88669350.png",
+      "description": "低功耗 Wi-Fi SOC 控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoK210MaixDock",
+      "name": "MaixDock",
+      "icon": "http://127.0.0.1:58847/static/assets/49b93348956d521f4b31aedb047b1cc1.png",
+      "description": "基于K210 RISC-V芯片的控制板，只有基本功能，引出了所有IO管脚。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoK210Maixduino",
+      "name": "Maixduino",
+      "icon": "http://127.0.0.1:58847/static/assets/f5cc8a2daf29f7c4440b1f64482e531e.png",
+      "description": "内置ESP32的K210 RISC-V控制板。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico",
+      "name": "Raspberry Pi Pico",
+      "icon": "http://127.0.0.1:58847/static/assets/dce89655ade5b48de30bfd6d39e5aefc.png",
+      "description": "一个友好且易于使用的微控制器开发板，让您的电子创意变为现实。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPicoW",
+      "name": "Raspberry Pi Pico W",
+      "icon": "http://127.0.0.1:58847/static/assets/a046448265bf2b55750ad92b6b0f52fe.png",
+      "description": "一款内置2.4 GHz Wi-Fi和Bluetooth 5.2的Pico，非常适合无线与物联网项目。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico2",
+      "name": "Raspberry Pi Pico 2",
+      "icon": "http://127.0.0.1:58847/static/assets/646ab9a5cb16c06fc4981589db2e44a7.png",
+      "description": "高性能双核MCU，配备充足的RAM和Flash，适用于复杂应用。",
+      "disabled": false
+    },
+    {
+      "id": "arduinoRaspberryPiPico2W",
+      "name": "Raspberry Pi Pico 2 W",
+      "icon": "http://127.0.0.1:58847/static/assets/189b1da760b0d569e410616b4cab89d8.png",
+      "description": "内置2.4 GHz Wi-Fi和蓝牙，实现无缝的无线物联网与智能家居集成。",
+      "disabled": false
+    },
+    {
+      "id": "microbit",
+      "name": "Micro:bit",
+      "icon": "http://127.0.0.1:58847/static/assets/4e19cc442fd34d5446b2db7beff53d6f.png",
+      "description": "可以学习电子知识的口袋计算机。",
+      "disabled": false
+    },
+    {
+      "id": "microbitV2",
+      "name": "Micro:bit V2",
+      "icon": "http://127.0.0.1:58847/static/assets/f297977110c526792c36e9691b2310ce.png",
+      "description": "升级的处理器，板载扬声器和麦克风，触摸感应徽标。",
+      "disabled": false
+    },
+    {
+      "id": "makeyMakey",
+      "name": "Makey Makey",
+      "icon": "http://127.0.0.1:58847/static/assets/9a0daedfe93c7ffa6116001ba50051e6.png",
+      "description": "把任何东西变成按键。",
+      "disabled": false
+    },
+    {
+      "id": "aijiteESP32S3",
+      "name": "Aijite ESP32-S3",
+      "icon": "http://127.0.0.1:58847/cfzn-extensions/aijite/aijiteEsp32S3.png",
+      "description": "基于 ESP32-S3，数字、模拟及触摸引脚菜单排除 IO3。",
+      "disabled": false
+    },
+    {
+      "id": "firebeetleEsp32E",
+      "name": "FireBeetle ESP32-E",
+      "icon": "http://127.0.0.1:58847/static/assets/0d2342a6ac4a24d3b4aedd0e42ffad5f.png",
+      "description": "ESP32 上传兼容主控；D/A 标签映射至实际 GPIO，实时固件未验证。",
+      "disabled": false
+    }
+  ]
+}

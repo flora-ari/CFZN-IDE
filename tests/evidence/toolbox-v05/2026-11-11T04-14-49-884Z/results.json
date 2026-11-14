@@ -1,0 +1,1091 @@
+[
+  {
+    "name": "dev locale binding diagnostic",
+    "status": "PASS",
+    "detail": [
+      {
+        "locale": "en",
+        "sameVm": true,
+        "sameLoadProject": true,
+        "sameLoadDeviceURL": true,
+        "device": "firebeetleEsp32E",
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      },
+      {
+        "locale": "zh-cn",
+        "sameVm": true,
+        "sameLoadProject": true,
+        "sameLoadDeviceURL": true,
+        "device": "firebeetleEsp32E",
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "dev independent archive API restore",
+    "status": "PASS",
+    "detail": {
+      "bytes": 49110,
+      "assets": 5,
+      "mode": "realtime",
+      "modules": [
+        "activateBuzzer",
+        "atomizer",
+        "flameSensor",
+        "moreComments",
+        "pirSensor",
+        "raindropSensor"
+      ],
+      "manualDraft": true,
+      "newIframe": true,
+      "apiExactBytes": true,
+      "reopened": true
+    }
+  },
+  {
+    "name": "dev crossboard diagnostic",
+    "status": "PASS",
+    "detail": {
+      "board": "aijiteESP32S3"
+    }
+  },
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "PASS",
+    "detail": {
+      "initialMode": "realtime",
+      "programmingCategories": [
+        "motion",
+        "looks",
+        "sound",
+        "events",
+        "control",
+        "sensing",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "uploadCategories": [
+        "events",
+        "control",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "loaded": [
+        "activateBuzzer",
+        "atomizer",
+        "pirSensor",
+        "flameSensor",
+        "raindropSensor",
+        "moreComments"
+      ]
+    }
+  },
+  {
+    "name": "dev four controller programming palettes",
+    "status": "PASS",
+    "detail": [
+      {
+        "name": "FireBeetle ESP32-E",
+        "categoryId": "cfzn-controller-firebeetleEsp32E",
+        "states": [
+          {
+            "id": "4oS!gya(9I(t6Y3S)N5)",
+            "type": "arduino_pin_setPinMode",
+            "disabled": true
+          },
+          {
+            "id": "?yOBD,uFM$g~joGgvk7W",
+            "type": "arduino_pin_setDigitalOutput",
+            "disabled": true
+          },
+          {
+            "id": "2(M*X+o3T7O*V@9m5a-J",
+            "type": "arduino_pin_esp32SetPwmOutput",
+            "disabled": true
+          },
+          {
+            "id": "W?qL=y+LR]j@@,!g!B|o",
+            "type": "arduino_pin_esp32SetDACOutput",
+            "disabled": true
+          },
+          {
+            "id": "q3?i.!g[21kF^cx}?-+I",
+            "type": "arduino_pin_readDigitalPin",
+            "disabled": true
+          },
+          {
+            "id": "i~a{[WD#+@2Rj7V+#xk[",
+            "type": "arduino_pin_readAnalogPin",
+            "disabled": true
+          },
+          {
+            "id": "y#)$%mMsS!u2SsXte%b}",
+            "type": "arduino_pin_esp32ReadTouchPin",
+            "disabled": true
+          },
+          {
+            "id": "PmMq,W!N)hor-pQD3s78",
+            "type": "arduino_pin_esp32SetServoOutput",
+            "disabled": true
+          },
+          {
+            "id": "|PPv(1=pLfWQU~vd5hza",
+            "type": "arduino_pin_esp32AttachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "rgYV,3(([G3NzTj_=:Dc",
+            "type": "arduino_pin_esp32DetachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": ",u1X^,z{_G.A0(7Nhc.2",
+            "type": "arduino_serial_multiSerialBegin",
+            "disabled": true
+          },
+          {
+            "id": "VCe8_/tlCTP3CCe/!Xws",
+            "type": "arduino_serial_multiSerialPrint",
+            "disabled": true
+          },
+          {
+            "id": "qHo!HTRJVRwjZfbb$gL1",
+            "type": "arduino_serial_multiSerialAvailable",
+            "disabled": true
+          },
+          {
+            "id": "?o.DxOa1]Km;nJ:(aHL;",
+            "type": "arduino_serial_multiSerialReadAByte",
+            "disabled": true
+          },
+          {
+            "id": "Gl|oQ~V+LC2?BQ)+1D71",
+            "type": "arduino_data_dataMap",
+            "disabled": true
+          },
+          {
+            "id": "*.N.pX`qw_fBbD,Q)xNZ",
+            "type": "arduino_data_dataConstrain",
+            "disabled": true
+          },
+          {
+            "id": "R`cK-|-G2OlVY=G5o@,S",
+            "type": "arduino_data_dataConvert",
+            "disabled": true
+          },
+          {
+            "id": "MW?2cz;m=:1##h)O%D6D",
+            "type": "arduino_data_dataConvertASCIICharacter",
+            "disabled": true
+          },
+          {
+            "id": "~qS_|W?jkJoZ-T|Pv=c|",
+            "type": "arduino_data_dataConvertASCIINumber",
+            "disabled": true
+          }
+        ],
+        "drag": false
+      },
+      {
+        "name": "ESP32",
+        "categoryId": "cfzn-controller-arduinoEsp32",
+        "states": [
+          {
+            "id": "arduino_pin_setPinMode",
+            "type": "arduino_pin_setPinMode",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_setDigitalOutput",
+            "type": "arduino_pin_setDigitalOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetPwmOutput",
+            "type": "arduino_pin_esp32SetPwmOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetDACOutput",
+            "type": "arduino_pin_esp32SetDACOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_readDigitalPin",
+            "type": "arduino_pin_readDigitalPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_readAnalogPin",
+            "type": "arduino_pin_readAnalogPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32ReadTouchPin",
+            "type": "arduino_pin_esp32ReadTouchPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetServoOutput",
+            "type": "arduino_pin_esp32SetServoOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32AttachInterrupt",
+            "type": "arduino_pin_esp32AttachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32DetachInterrupt",
+            "type": "arduino_pin_esp32DetachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialBegin",
+            "type": "arduino_serial_multiSerialBegin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialPrint",
+            "type": "arduino_serial_multiSerialPrint",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialAvailable",
+            "type": "arduino_serial_multiSerialAvailable",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialReadAByte",
+            "type": "arduino_serial_multiSerialReadAByte",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataMap",
+            "type": "arduino_data_dataMap",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConstrain",
+            "type": "arduino_data_dataConstrain",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvert",
+            "type": "arduino_data_dataConvert",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvertASCIICharacter",
+            "type": "arduino_data_dataConvertASCIICharacter",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvertASCIINumber",
+            "type": "arduino_data_dataConvertASCIINumber",
+            "disabled": true
+          }
+        ],
+        "drag": false
+      },
+      {
+        "name": "ESP32-S3",
+        "categoryId": "cfzn-controller-arduinoEsp32S3",
+        "states": [
+          {
+            "id": "arduino_pin_setPinMode",
+            "type": "arduino_pin_setPinMode",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_setDigitalOutput",
+            "type": "arduino_pin_setDigitalOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetPwmOutput",
+            "type": "arduino_pin_esp32SetPwmOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_readDigitalPin",
+            "type": "arduino_pin_readDigitalPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_readAnalogPin",
+            "type": "arduino_pin_readAnalogPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32ReadTouchPin",
+            "type": "arduino_pin_esp32ReadTouchPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetServoOutput",
+            "type": "arduino_pin_esp32SetServoOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32AttachInterrupt",
+            "type": "arduino_pin_esp32AttachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32DetachInterrupt",
+            "type": "arduino_pin_esp32DetachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialBegin",
+            "type": "arduino_serial_multiSerialBegin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialPrint",
+            "type": "arduino_serial_multiSerialPrint",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialAvailable",
+            "type": "arduino_serial_multiSerialAvailable",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialReadAByte",
+            "type": "arduino_serial_multiSerialReadAByte",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataMap",
+            "type": "arduino_data_dataMap",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConstrain",
+            "type": "arduino_data_dataConstrain",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvert",
+            "type": "arduino_data_dataConvert",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvertASCIICharacter",
+            "type": "arduino_data_dataConvertASCIICharacter",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvertASCIINumber",
+            "type": "arduino_data_dataConvertASCIINumber",
+            "disabled": true
+          }
+        ],
+        "drag": false
+      },
+      {
+        "name": "Aijite ESP32-S3",
+        "categoryId": "cfzn-controller-aijiteESP32S3",
+        "states": [
+          {
+            "id": "Zy`[tz^.GVMn(BWVbQ!g",
+            "type": "arduino_pin_setPinMode",
+            "disabled": true
+          },
+          {
+            "id": "R]:86)W,hsyVBS7wj1UK",
+            "type": "arduino_pin_setDigitalOutput",
+            "disabled": true
+          },
+          {
+            "id": "YG6ks|ayT^QPE-)cCI*V",
+            "type": "arduino_pin_esp32SetPwmOutput",
+            "disabled": true
+          },
+          {
+            "id": "(cwYueg6/Deh49!)Z!/z",
+            "type": "arduino_pin_readDigitalPin",
+            "disabled": true
+          },
+          {
+            "id": "%iPXY2a!(gM4bwFQ~Ijh",
+            "type": "arduino_pin_readAnalogPin",
+            "disabled": true
+          },
+          {
+            "id": "%o_A/OG$P`fg#%:(.c#~",
+            "type": "arduino_pin_esp32ReadTouchPin",
+            "disabled": true
+          },
+          {
+            "id": "1idV$psWLV$rb.H_J}(Q",
+            "type": "arduino_pin_esp32SetServoOutput",
+            "disabled": true
+          },
+          {
+            "id": "8l7Aw0+$|MKpr*9FA_@O",
+            "type": "arduino_pin_esp32AttachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "s+=1*=V9*3WJbSCJ^7d2",
+            "type": "arduino_pin_esp32DetachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "=6ze2AJ,/3R?AO-U{Q!p",
+            "type": "arduino_serial_multiSerialBegin",
+            "disabled": true
+          },
+          {
+            "id": "3pG#cpr@mXi$UvJ_OE@R",
+            "type": "arduino_serial_multiSerialPrint",
+            "disabled": true
+          },
+          {
+            "id": "/{/H4MVT%Nrm?`4W~chw",
+            "type": "arduino_serial_multiSerialAvailable",
+            "disabled": true
+          },
+          {
+            "id": "IAeU}n1Mkd9|r!HvNSny",
+            "type": "arduino_serial_multiSerialReadAByte",
+            "disabled": true
+          },
+          {
+            "id": "V{y**v~[zXHyP.vG6s]Q",
+            "type": "arduino_data_dataMap",
+            "disabled": true
+          },
+          {
+            "id": "nR?.ngqLG+i+,B(ST.1=",
+            "type": "arduino_data_dataConstrain",
+            "disabled": true
+          },
+          {
+            "id": "Q[oc_2X(Y8h0_Xi0~Av0",
+            "type": "arduino_data_dataConvert",
+            "disabled": true
+          },
+          {
+            "id": "e4D{I*dLqw)9({G7Yk!?",
+            "type": "arduino_data_dataConvertASCIICharacter",
+            "disabled": true
+          },
+          {
+            "id": "Z*5U7V!Emz-cOa86}HXj",
+            "type": "arduino_data_dataConvertASCIINumber",
+            "disabled": true
+          }
+        ],
+        "drag": false
+      }
+    ]
+  },
+  {
+    "name": "dev stage execution guards",
+    "status": "PASS",
+    "detail": {
+      "scratchMoved": 19,
+      "standaloneArduino": true,
+      "parentRunRejected": true,
+      "greenFlagRejected": true,
+      "stackClickRejected": true,
+      "keyboardNoExecution": true,
+      "customCallRejected": true,
+      "liveEditStops": true,
+      "uploadEditingQuiet": true
+    }
+  },
+  {
+    "name": "dev parameter code and board compatibility",
+    "status": "PASS",
+    "detail": {
+      "sixModuleStatements": true,
+      "parameterSensitive": true,
+      "incompatibleUnoRefused": true,
+      "aijiteExcludes3": true,
+      "mode": "upload"
+    }
+  },
+  {
+    "name": "dist locale binding diagnostic",
+    "status": "PASS",
+    "detail": [
+      {
+        "locale": "en",
+        "sameVm": true,
+        "sameLoadProject": true,
+        "sameLoadDeviceURL": true,
+        "device": "firebeetleEsp32E",
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      },
+      {
+        "locale": "zh-cn",
+        "sameVm": true,
+        "sameLoadProject": true,
+        "sameLoadDeviceURL": true,
+        "device": "firebeetleEsp32E",
+        "modules": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "dist independent archive API restore",
+    "status": "PASS",
+    "detail": {
+      "bytes": 49114,
+      "assets": 5,
+      "mode": "realtime",
+      "modules": [
+        "activateBuzzer",
+        "atomizer",
+        "flameSensor",
+        "moreComments",
+        "pirSensor",
+        "raindropSensor"
+      ],
+      "manualDraft": true,
+      "newIframe": true,
+      "apiExactBytes": true,
+      "reopened": true
+    }
+  },
+  {
+    "name": "dist crossboard diagnostic",
+    "status": "PASS",
+    "detail": {
+      "board": "aijiteESP32S3"
+    }
+  },
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "PASS",
+    "detail": {
+      "initialMode": "realtime",
+      "programmingCategories": [
+        "motion",
+        "looks",
+        "sound",
+        "events",
+        "control",
+        "sensing",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "uploadCategories": [
+        "events",
+        "control",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "loaded": [
+        "activateBuzzer",
+        "atomizer",
+        "pirSensor",
+        "flameSensor",
+        "raindropSensor",
+        "moreComments"
+      ]
+    }
+  },
+  {
+    "name": "dist four controller programming palettes",
+    "status": "PASS",
+    "detail": [
+      {
+        "name": "FireBeetle ESP32-E",
+        "categoryId": "cfzn-controller-firebeetleEsp32E",
+        "states": [
+          {
+            "id": "hvL11@zdwK?$?H@DYxF`",
+            "type": "arduino_pin_setPinMode",
+            "disabled": true
+          },
+          {
+            "id": "[E/iEksb~FD{7$q^3TrS",
+            "type": "arduino_pin_setDigitalOutput",
+            "disabled": true
+          },
+          {
+            "id": "DKPNVI}tptLCf{%Z!*XY",
+            "type": "arduino_pin_esp32SetPwmOutput",
+            "disabled": true
+          },
+          {
+            "id": "7`nqHP*Bc4:ME;crf1#x",
+            "type": "arduino_pin_esp32SetDACOutput",
+            "disabled": true
+          },
+          {
+            "id": "L`0X@tCrfyA]yw+t#Em~",
+            "type": "arduino_pin_readDigitalPin",
+            "disabled": true
+          },
+          {
+            "id": "LyP`811-5c$H*+z}SIUp",
+            "type": "arduino_pin_readAnalogPin",
+            "disabled": true
+          },
+          {
+            "id": "ZlDM*QfKb-[2ZUife!YI",
+            "type": "arduino_pin_esp32ReadTouchPin",
+            "disabled": true
+          },
+          {
+            "id": "b,WADV0ji6zte]R4CVgq",
+            "type": "arduino_pin_esp32SetServoOutput",
+            "disabled": true
+          },
+          {
+            "id": ",fSN^m,ME1s|*H#c(@D`",
+            "type": "arduino_pin_esp32AttachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "?Nq2.NHI^fH/F50ge5SX",
+            "type": "arduino_pin_esp32DetachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "Bp{EJ5M8?YfycZVglfZ8",
+            "type": "arduino_serial_multiSerialBegin",
+            "disabled": true
+          },
+          {
+            "id": "-GUN^2mSS[=.H8DpaP4_",
+            "type": "arduino_serial_multiSerialPrint",
+            "disabled": true
+          },
+          {
+            "id": "/K%N*qy{bI4i{~$H#eRW",
+            "type": "arduino_serial_multiSerialAvailable",
+            "disabled": true
+          },
+          {
+            "id": "oO7NxOtN:)3GJLg?=cTv",
+            "type": "arduino_serial_multiSerialReadAByte",
+            "disabled": true
+          },
+          {
+            "id": "#}REhvL32A21=_i40?fZ",
+            "type": "arduino_data_dataMap",
+            "disabled": true
+          },
+          {
+            "id": "Cr#qf*Dqd,{x!km397Nb",
+            "type": "arduino_data_dataConstrain",
+            "disabled": true
+          },
+          {
+            "id": "3%pn$w1,=OOD1B_=V1Up",
+            "type": "arduino_data_dataConvert",
+            "disabled": true
+          },
+          {
+            "id": "zHx~aT06au`MKx)J$8Eh",
+            "type": "arduino_data_dataConvertASCIICharacter",
+            "disabled": true
+          },
+          {
+            "id": "1;PVvOf*u4]V5.tZw=|b",
+            "type": "arduino_data_dataConvertASCIINumber",
+            "disabled": true
+          }
+        ],
+        "drag": false
+      },
+      {
+        "name": "ESP32",
+        "categoryId": "cfzn-controller-arduinoEsp32",
+        "states": [
+          {
+            "id": "arduino_pin_setPinMode",
+            "type": "arduino_pin_setPinMode",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_setDigitalOutput",
+            "type": "arduino_pin_setDigitalOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetPwmOutput",
+            "type": "arduino_pin_esp32SetPwmOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetDACOutput",
+            "type": "arduino_pin_esp32SetDACOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_readDigitalPin",
+            "type": "arduino_pin_readDigitalPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_readAnalogPin",
+            "type": "arduino_pin_readAnalogPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32ReadTouchPin",
+            "type": "arduino_pin_esp32ReadTouchPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetServoOutput",
+            "type": "arduino_pin_esp32SetServoOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32AttachInterrupt",
+            "type": "arduino_pin_esp32AttachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32DetachInterrupt",
+            "type": "arduino_pin_esp32DetachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialBegin",
+            "type": "arduino_serial_multiSerialBegin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialPrint",
+            "type": "arduino_serial_multiSerialPrint",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialAvailable",
+            "type": "arduino_serial_multiSerialAvailable",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialReadAByte",
+            "type": "arduino_serial_multiSerialReadAByte",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataMap",
+            "type": "arduino_data_dataMap",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConstrain",
+            "type": "arduino_data_dataConstrain",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvert",
+            "type": "arduino_data_dataConvert",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvertASCIICharacter",
+            "type": "arduino_data_dataConvertASCIICharacter",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvertASCIINumber",
+            "type": "arduino_data_dataConvertASCIINumber",
+            "disabled": true
+          }
+        ],
+        "drag": false
+      },
+      {
+        "name": "ESP32-S3",
+        "categoryId": "cfzn-controller-arduinoEsp32S3",
+        "states": [
+          {
+            "id": "arduino_pin_setPinMode",
+            "type": "arduino_pin_setPinMode",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_setDigitalOutput",
+            "type": "arduino_pin_setDigitalOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetPwmOutput",
+            "type": "arduino_pin_esp32SetPwmOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_readDigitalPin",
+            "type": "arduino_pin_readDigitalPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_readAnalogPin",
+            "type": "arduino_pin_readAnalogPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32ReadTouchPin",
+            "type": "arduino_pin_esp32ReadTouchPin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32SetServoOutput",
+            "type": "arduino_pin_esp32SetServoOutput",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32AttachInterrupt",
+            "type": "arduino_pin_esp32AttachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "arduino_pin_esp32DetachInterrupt",
+            "type": "arduino_pin_esp32DetachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialBegin",
+            "type": "arduino_serial_multiSerialBegin",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialPrint",
+            "type": "arduino_serial_multiSerialPrint",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialAvailable",
+            "type": "arduino_serial_multiSerialAvailable",
+            "disabled": true
+          },
+          {
+            "id": "arduino_serial_multiSerialReadAByte",
+            "type": "arduino_serial_multiSerialReadAByte",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataMap",
+            "type": "arduino_data_dataMap",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConstrain",
+            "type": "arduino_data_dataConstrain",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvert",
+            "type": "arduino_data_dataConvert",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvertASCIICharacter",
+            "type": "arduino_data_dataConvertASCIICharacter",
+            "disabled": true
+          },
+          {
+            "id": "arduino_data_dataConvertASCIINumber",
+            "type": "arduino_data_dataConvertASCIINumber",
+            "disabled": true
+          }
+        ],
+        "drag": false
+      },
+      {
+        "name": "Aijite ESP32-S3",
+        "categoryId": "cfzn-controller-aijiteESP32S3",
+        "states": [
+          {
+            "id": "o-;W5J9kq_F6B3siR_=/",
+            "type": "arduino_pin_setPinMode",
+            "disabled": true
+          },
+          {
+            "id": "3RPH?.1P$XD,^$}pdj%C",
+            "type": "arduino_pin_setDigitalOutput",
+            "disabled": true
+          },
+          {
+            "id": "H/T+djaLp7SPP-M7ZgKm",
+            "type": "arduino_pin_esp32SetPwmOutput",
+            "disabled": true
+          },
+          {
+            "id": "P#~1)LCy!AlW/n*N!AtC",
+            "type": "arduino_pin_readDigitalPin",
+            "disabled": true
+          },
+          {
+            "id": "k#L~B/v0r:Jt$W6t;pl{",
+            "type": "arduino_pin_readAnalogPin",
+            "disabled": true
+          },
+          {
+            "id": "uxyP|/M7@K2XJqph/Fn)",
+            "type": "arduino_pin_esp32ReadTouchPin",
+            "disabled": true
+          },
+          {
+            "id": "V0ki@CqXSfyz+XA_YP=[",
+            "type": "arduino_pin_esp32SetServoOutput",
+            "disabled": true
+          },
+          {
+            "id": "De+d6D_N)|Qv|W/(ueRm",
+            "type": "arduino_pin_esp32AttachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": "vhDgjL7)OH+1r]N0y6R/",
+            "type": "arduino_pin_esp32DetachInterrupt",
+            "disabled": true
+          },
+          {
+            "id": ":[M}TovoWYw.SQzH:ibD",
+            "type": "arduino_serial_multiSerialBegin",
+            "disabled": true
+          },
+          {
+            "id": "f!im+la)2wux-u-08,K(",
+            "type": "arduino_serial_multiSerialPrint",
+            "disabled": true
+          },
+          {
+            "id": "x|6t%gST{-./^gnd#Qv_",
+            "type": "arduino_serial_multiSerialAvailable",
+            "disabled": true
+          },
+          {
+            "id": "DI3t`6wJ}8%wBLrG8^j4",
+            "type": "arduino_serial_multiSerialReadAByte",
+            "disabled": true
+          },
+          {
+            "id": "Y%pyc+%h-Ze0}}@IR4(.",
+            "type": "arduino_data_dataMap",
+            "disabled": true
+          },
+          {
+            "id": ",D!mUcu;QUiR+)!vES6C",
+            "type": "arduino_data_dataConstrain",
+            "disabled": true
+          },
+          {
+            "id": ",nu3f2Vy~hqOzo6vCvR2",
+            "type": "arduino_data_dataConvert",
+            "disabled": true
+          },
+          {
+            "id": "X*8lcdDsG4M+nO,`*e!?",
+            "type": "arduino_data_dataConvertASCIICharacter",
+            "disabled": true
+          },
+          {
+            "id": "^*-c0[+T-U$C/$fwye87",
+            "type": "arduino_data_dataConvertASCIINumber",
+            "disabled": true
+          }
+        ],
+        "drag": false
+      }
+    ]
+  },
+  {
+    "name": "dist stage execution guards",
+    "status": "PASS",
+    "detail": {
+      "scratchMoved": 19,
+      "standaloneArduino": true,
+      "parentRunRejected": true,
+      "greenFlagRejected": true,
+      "stackClickRejected": true,
+      "keyboardNoExecution": true,
+      "customCallRejected": true,
+      "liveEditStops": true,
+      "uploadEditingQuiet": true
+    }
+  },
+  {
+    "name": "dist parameter code and board compatibility",
+    "status": "PASS",
+    "detail": {
+      "sixModuleStatements": true,
+      "parameterSensitive": true,
+      "incompatibleUnoRefused": true,
+      "aijiteExcludes3": true,
+      "mode": "upload"
+    }
+  },
+  {
+    "name": "VM frozen upstream byte boundary",
+    "status": "PASS",
+    "detail": {
+      "output": "{ vmModuleCount: 178, guiHooks: 33, noFactoryInjection: true }\n"
+    }
+  }
+]

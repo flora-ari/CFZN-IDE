@@ -1,0 +1,95 @@
+/* An insertion in the native library, preserving OpenBlock's own cards, search and modal. */
+.cfzn-extension-controls {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  flex: 0 0 auto;
+  max-width: 100%;
+  font: inherit;
+}
+.cfzn-extension-categories { display: flex; align-items: center; gap: .35rem; }
+.cfzn-extension-category, .cfzn-extension-action {
+  appearance: none;
+  border: 0;
+  border-radius: 1rem;
+  background: transparent;
+  color: #575e75;
+  font: inherit;
+  font-weight: bold;
+  white-space: nowrap;
+  cursor: pointer;
+  padding: .65rem .8rem;
+}
+.cfzn-extension-category[aria-pressed="true"], .cfzn-extension-action { background: #4c97ff; color: white; }
+.cfzn-extension-category:hover, .cfzn-extension-action:hover { background: #3373cc; color: white; }
+.cfzn-extension-category:active, .cfzn-extension-action:active { transform: translateY(1px); }
+.cfzn-extension-category:focus-visible, .cfzn-extension-action:focus-visible { outline: 3px solid #243958; outline-offset: 2px; }
+body:has(.cfzn-extension-controls) [role="button"]:focus-visible { outline: 3px solid #243958; outline-offset: 2px; }
+.cfzn-supported-filter { display: flex; align-items: center; gap: .35rem; white-space: nowrap; }
+.cfzn-supported-filter input { accent-color: #4c97ff; width: 1rem; height: 1rem; }
+.cfzn-extension-status { white-space: nowrap; }
+.cfzn-extension-status.cfzn-current-controller { background: #2467b7; color: #fff; font-weight: 700; padding: 7px 12px; border-radius: 4px; }
+[data-cfzn-controller-selected="true"] { border: 2px solid #3373cc !important; box-shadow: none; }
+.cfzn-extension-error { color: #9d1426; max-width: 32rem; line-height: 1.4; }
+/* The native bar has a fixed height. Keep it scrollable without covering the cards on narrow screens. */
+div:has(> .cfzn-extension-controls) { overflow-x: auto; gap: .75rem; }
+div:has(> .cfzn-extension-controls) > .cfzn-extension-controls { padding: .25rem 0; }
+[class*="modal_full-screen"] > div:has(.cfzn-extension-controls) { min-width: 0; width: 100%; }
+div:has(> .cfzn-extension-controls[data-hardware="true"]) + div [class*="library-item_featured-image-container"] {
+  height: 186px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+div:has(> .cfzn-extension-controls[data-hardware="true"]) + div [class*="library-item_featured-image_"] {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+div:has(> .cfzn-extension-controls[data-hardware="true"]) + div [class*="library-item_coming-soon-text"] {
+  top: .5rem;
+  left: .5rem;
+  width: max-content;
+  max-width: calc(100% - 1rem);
+  transform: none !important;
+  box-shadow: none;
+}
+@media (max-width: 600px) {
+  body:has(.cfzn-extension-controls) [class*="modal_header-item-close"] { flex: 0 0 auto; }
+  body:has(.cfzn-extension-controls) [class*="modal_header-item-title"] { flex: 1 1 auto; margin: 0 !important; }
+  div:has(> .cfzn-extension-controls) + div { justify-content: center; }
+  div:has(> .cfzn-extension-controls) input[class*="library_filter-input"] {
+    width: 18rem !important;
+    max-width: calc(100vw - 3rem);
+    transition: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cfzn-extension-category:active, .cfzn-extension-action:active { transform: none; }
+}
+
+.cfzn-extension-controls { flex-direction: column; align-items: stretch; flex: 1 0 100%; gap: .4rem; }
+.cfzn-extension-main-row, .cfzn-extension-types { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem; }
+.cfzn-extension-type { appearance: none; border: 1px solid #c7d5e8; border-radius: 4px; color: #575e75; background: white; padding: .35rem .65rem; font: inherit; cursor: pointer; }
+.cfzn-extension-type[aria-pressed="true"] { border-color: #4c97ff; background: #e5f0ff; color: #2467b7; }
+.cfzn-extension-type:focus-visible, .cfzn-card-remove:focus-visible { outline: 3px solid #243958; outline-offset: 2px; }
+div:has(> .cfzn-extension-controls) { height: auto; flex: 0 0 auto; flex-wrap: wrap; overflow: visible; padding-block: .5rem; }
+div:has(> div > .cfzn-extension-controls) { display: flex; flex-direction: column; min-height: 0; }
+div:has(> .cfzn-extension-controls) + div { flex: 1 1 auto; height: 0; min-height: 0; }
+[data-cfzn-library-card] { position: relative; height: auto !important; opacity: 1 !important; border: 2px solid #d1d1d1 !important; }
+[data-cfzn-library-card][data-cfzn-selected="true"] { border-color: #4c97ff !important; }
+[data-cfzn-library-card] .cfzn-card-select { position: absolute; inset: 0; width: 100%; height: 100%; background: transparent; border: 0; border-radius: inherit; cursor: pointer; z-index: 2; }
+[data-cfzn-library-card]:has(.cfzn-card-select:focus-visible) { outline: 3px solid #243958; outline-offset: 2px; }
+[data-cfzn-library-card] .cfzn-card-select:focus-visible { outline: 0; }
+[data-cfzn-library-card] .cfzn-card-select[aria-disabled="true"] { cursor: default; }
+[data-cfzn-library-card] a[href], [data-cfzn-library-card] [class*="library-item_featured-extension-metadata-third-row"] { position: relative; z-index: 4; }
+[data-cfzn-library-card] > .cfzn-card-compatibility { position: absolute; top: 0; right: 0; left: auto; border: 1px solid #c7cbd2; background: #f2f3f5; color: #60656f; border-radius: 2px; padding: 4px 8px; font-size: 12px; line-height: 1.4; max-width: calc(100% - 16px); z-index: 3; pointer-events: none; }
+.cfzn-card-footer { position: relative; z-index: 4; padding: .6rem 1rem; margin-top: auto; background: white; text-align: left; }
+.cfzn-card-actions { display: flex; align-items: center; justify-content: space-between; min-height: 30px; gap: .5rem; }
+.cfzn-card-state { color: #2467b7; font-weight: 700; }
+.cfzn-card-remove { appearance: none; border: 1px solid #b8cbe5; border-radius: 4px; background: white; color: #2467b7; padding: .3rem .65rem; font: inherit; cursor: pointer; }
+.cfzn-card-remove:disabled { color: #747b86; background: #f2f3f5; cursor: default; }
+.cfzn-card-info { display: block; font-size: 12px; line-height: 1.5; color: #575e75; overflow-wrap: anywhere; }
+.cfzn-extension-empty { padding: 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+@media (max-width: 600px) { .cfzn-extension-status { white-space: normal; } }

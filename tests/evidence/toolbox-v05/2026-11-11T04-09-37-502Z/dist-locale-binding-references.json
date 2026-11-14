@@ -1,0 +1,32 @@
+[
+  {
+    "locale": "en",
+    "sameVm": true,
+    "sameLoadProject": false,
+    "sameLoadDeviceURL": false,
+    "device": "firebeetleEsp32E",
+    "modules": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ]
+  },
+  {
+    "locale": "zh-cn",
+    "sameVm": true,
+    "sameLoadProject": false,
+    "sameLoadDeviceURL": false,
+    "device": "firebeetleEsp32E",
+    "modules": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ]
+  }
+]

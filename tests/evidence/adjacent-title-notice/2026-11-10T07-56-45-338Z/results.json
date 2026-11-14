@@ -1,0 +1,64 @@
+[
+  {
+    "name": "adjacent title at four widths; five buttons and modes reachable",
+    "status": "PASS",
+    "detail": [
+      {
+        "width": 1440,
+        "gap": 6,
+        "titleWidth": 188,
+        "sameParent": true,
+        "input": 180
+      },
+      {
+        "width": 1776,
+        "gap": 6,
+        "titleWidth": 188,
+        "sameParent": true,
+        "input": 180
+      },
+      {
+        "width": 2560,
+        "gap": 6,
+        "titleWidth": 188,
+        "sameParent": true,
+        "input": 180
+      },
+      {
+        "width": 1000,
+        "gap": 6,
+        "titleWidth": 58.171875,
+        "sameParent": true,
+        "input": 89.125
+      }
+    ]
+  },
+  {
+    "name": "real New Export Import Save show portal without layout shift; info and success dismiss",
+    "status": "PASS",
+    "detail": {
+      "portal": true,
+      "new": true,
+      "export": true,
+      "import": true,
+      "save": true,
+      "noLayoutShift": true
+    }
+  },
+  {
+    "name": "hover focus remaining time manual close and replacement identity",
+    "status": "PASS",
+    "detail": {
+      "hoverPause": true,
+      "focusPause": true,
+      "manualClose": true,
+      "replacementSurvivesOldDeadline": true
+    }
+  },
+  {
+    "name": "real API conflict persists; save-as and reload recover; 390px error visible",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n3 !== 2\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n3 !== 2\n\n    at file:///F:/CFZN/CFZN-IDE/tests/adjacent-title-notice.mjs:88:1430\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/adjacent-title-notice.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/adjacent-title-notice.mjs:88:2"
+  }
+]

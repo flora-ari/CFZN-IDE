@@ -1,0 +1,102 @@
+[
+  {
+    "name": "FireBeetle and ESP32 center-name selection, committed highlight, real stage and draft",
+    "status": "PASS",
+    "detail": {
+      "before": {
+        "x": 0,
+        "c": 0
+      },
+      "after": {
+        "x": 17,
+        "c": 1,
+        "sound": 1
+      }
+    }
+  },
+  {
+    "name": "real project POST/GET PUT/GET with six modules, mode/draft/assets and fresh-context reopen",
+    "status": "PASS",
+    "detail": {
+      "projectId": "fe5ed02e-c0b0-4ffe-9070-ae9ea5fc2eb4",
+      "revision": 2,
+      "assets": {
+        "0:Stage/costumes/0:背景1": "c3b723d028900d9768878653c3a65c377871fe3ecfce5c7b66ef795505e85e1a",
+        "0:Stage/sounds/0:啵": "fb8c18242813d8763cccf5f6077daf44b672d0088f5d3688cca29d621b4959cc",
+        "1:角色1/costumes/0:造型1": "efdb9db805b7f7c52c35460c7ab9368317faeb221a6301a75c3ad94e2d32f640",
+        "1:角色1/costumes/1:造型2": "f9620cc3fc524dd4abe631f36d4735fba057569a519cc300744f21016ef8442c",
+        "1:角色1/sounds/0:啁啾": "03ca0366cc93de09372d3f9accde285474debb719e3a69d169b3d3f655eac021"
+      }
+    }
+  },
+  {
+    "name": "malformed/unsupported/oversize metadata preserves document; historical and New clear drafts",
+    "status": "PASS",
+    "detail": {
+      "invalid": 3,
+      "historical": true,
+      "newDraftCleared": true
+    }
+  },
+  {
+    "name": "shared serial unaffected by mode, selected manual source and mock upload ownership/busy",
+    "status": "PASS",
+    "detail": {
+      "modeSideEffects": false,
+      "currentSource": true,
+      "releaseBeforeUpload": true,
+      "cancelled": true
+    }
+  },
+  {
+    "name": "desktop/1100 MenuBar no overlapping siblings and visible Monaco; page errors",
+    "status": "PASS",
+    "detail": [
+      {
+        "width": 1440,
+        "geometry": [
+          {
+            "class": "menu-bar_main-menu_3wjWH",
+            "x": 0,
+            "right": 495.53125
+          },
+          {
+            "class": "menu-bar_file-menu_g7ufm",
+            "x": 495.53125,
+            "right": 582.75
+          },
+          {
+            "class": "cfzn-project-tools",
+            "x": 588.75,
+            "right": 974.75
+          },
+          {
+            "class": "menu-bar_tail-menu_2dRXU",
+            "x": 980.75,
+            "right": 1440
+          }
+        ]
+      },
+      {
+        "width": 1100,
+        "geometry": [
+          {
+            "class": "menu-bar_main-menu_3wjWH",
+            "x": 0,
+            "right": 264.609375
+          },
+          {
+            "class": "cfzn-project-tools",
+            "x": 270.609375,
+            "right": 747.53125
+          },
+          {
+            "class": "menu-bar_tail-menu_2dRXU",
+            "x": 753.53125,
+            "right": 1100
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,13 @@
+[
+  {
+    "name": "compatible controller switches preserve modules; native unsupported-controller guard",
+    "status": "PASS",
+    "ms": 5426,
+    "detail": {
+      "compatible": 3,
+      "rejectedDevice": "Micro:bit",
+      "nativeWorkspaceGuard": true,
+      "rejection": "Error: 无法切换到 Micro:bit：当前模块 activateBuzzer、atomizer、pirSensor、flameSensor、raindropSensor、moreComments 不支持此主控。请另存项目或新建项目后选择。"
+    }
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "before": {
+    "undo": [],
+    "redo": [
+      {
+        "type": "change",
+        "blockId": "undo-text",
+        "element": "field",
+        "name": "TEXT",
+        "newValue": "AFTER_REDO"
+      }
+    ]
+  },
+  "after": {
+    "undo": [],
+    "redo": [
+      {
+        "type": "change",
+        "blockId": "undo-text",
+        "element": "field",
+        "name": "TEXT",
+        "newValue": "AFTER_REDO"
+      }
+    ]
+  }
+}

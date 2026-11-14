@@ -1,0 +1,254 @@
+[
+  {
+    "label": "dev-clear-programming",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-clear-programming",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-clear-programming",
+    "method": "POST",
+    "url": "http://127.0.0.1:61193/api/v1/projects",
+    "status": 201,
+    "bodySha": "68113af853784b82e810578597c910ea4b5bed98ed4b7cf15cffb190d2c0b1b6"
+  },
+  {
+    "label": "dev-clear-programming",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-clear-programming",
+    "method": "PUT",
+    "url": "http://127.0.0.1:61193/api/v1/projects/d8b08d66-39db-40ca-a9db-51763cf215a1/content",
+    "status": 200,
+    "bodySha": "1e9519eadcf6175858248e4c510c22c0b2a2c65627dbb377ba8039435b69224d"
+  },
+  {
+    "label": "dev-clear-programming-reopened",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-clear-programming-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61193/api/v1/projects",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dev-clear-programming-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61193/api/v1/projects/d8b08d66-39db-40ca-a9db-51763cf215a1",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dev-clear-programming-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61193/api/v1/projects/d8b08d66-39db-40ca-a9db-51763cf215a1/content",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-clear-upload",
+    "method": "POST",
+    "url": "http://127.0.0.1:61193/api/v1/projects",
+    "status": 201,
+    "bodySha": "761e7769b0843a5d0143eec15dbc90bb900ee9b364c4f512cef35164b6ee1988"
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dev-clear-upload",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dev-clear-upload",
+    "method": "PUT",
+    "url": "http://127.0.0.1:61193/api/v1/projects/71421c93-c308-47ee-9148-c39f8c19bdd5/content",
+    "status": 200,
+    "bodySha": "c5b22163223b4949afe1403d5c175389e9faf8f278f28660af584759807130dc"
+  },
+  {
+    "label": "dev-clear-upload-reopened",
+    "url": "http://127.0.0.1:61193/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dev-clear-upload-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61193/api/v1/projects",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dev-clear-upload-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61193/api/v1/projects/71421c93-c308-47ee-9148-c39f8c19bdd5",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dev-clear-upload-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61193/api/v1/projects/71421c93-c308-47ee-9148-c39f8c19bdd5/content",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dist-clear-programming",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-clear-programming",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-clear-programming",
+    "method": "POST",
+    "url": "http://127.0.0.1:61194/api/v1/projects",
+    "status": 201,
+    "bodySha": "4835c3a7d396e19469f859568c0a4fd72dc232925f21c7f1e88fb5c947d9d052"
+  },
+  {
+    "label": "dist-clear-programming",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-clear-programming",
+    "method": "PUT",
+    "url": "http://127.0.0.1:61194/api/v1/projects/6f02ca58-939e-4bb0-9c15-d9bab8c6f7d2/content",
+    "status": 200,
+    "bodySha": "d16a4f0cac576181b971cc673f00c5db0b4a82b4b2240ca5ea4baeeb1474787d"
+  },
+  {
+    "label": "dist-clear-programming-reopened",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-clear-programming-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61194/api/v1/projects",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dist-clear-programming-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61194/api/v1/projects/6f02ca58-939e-4bb0-9c15-d9bab8c6f7d2",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dist-clear-programming-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61194/api/v1/projects/6f02ca58-939e-4bb0-9c15-d9bab8c6f7d2/content",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-clear-upload",
+    "method": "POST",
+    "url": "http://127.0.0.1:61194/api/v1/projects",
+    "status": 201,
+    "bodySha": "56e0ed84f07eeaf760923888c5416481da8ac02faa92f6cc913c0320beaf9993"
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/extensions/activateBuzzer/assets/activateBuzzer.png"
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/extensions/atomizer/assets/atomizer.png"
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/extensions/pirSensor/assets/pirSensor.png"
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/extensions/flameSensor/assets/flameSensor.png"
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/extensions/raindropSensor/assets/raindropSensor.png"
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/extensions/moreComments/assets/moreComments.png"
+  },
+  {
+    "label": "dist-clear-upload",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/aijite/aijiteEsp32S3.png"
+  },
+  {
+    "label": "dist-clear-upload",
+    "method": "PUT",
+    "url": "http://127.0.0.1:61194/api/v1/projects/d00012a4-3590-44cb-8e0a-6f166f153898/content",
+    "status": 200,
+    "bodySha": "07a2aa70ae83ab8a6f575d4edaeb4901b69a64c61adc9f8b892222522d4562e8"
+  },
+  {
+    "label": "dist-clear-upload-reopened",
+    "url": "http://127.0.0.1:61194/cfzn-extensions/module-loader.js"
+  },
+  {
+    "label": "dist-clear-upload-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61194/api/v1/projects",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dist-clear-upload-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61194/api/v1/projects/d00012a4-3590-44cb-8e0a-6f166f153898",
+    "status": 200,
+    "bodySha": null
+  },
+  {
+    "label": "dist-clear-upload-reopened",
+    "method": "GET",
+    "url": "http://127.0.0.1:61194/api/v1/projects/d00012a4-3590-44cb-8e0a-6f166f153898/content",
+    "status": 200,
+    "bodySha": null
+  }
+]

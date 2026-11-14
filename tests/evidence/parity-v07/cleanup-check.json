@@ -1,0 +1,326 @@
+[
+  {
+    "run": "2026-11-12T02-24-02-178Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-9qBMuK",
+    "exists": false,
+    "origin": "http://127.0.0.1:62311",
+    "api": "http://127.0.0.1:62310"
+  },
+  {
+    "run": "2026-11-12T02-24-38-470Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-1OzyQl",
+    "exists": false,
+    "origin": "http://127.0.0.1:62048",
+    "api": "http://127.0.0.1:62047"
+  },
+  {
+    "run": "2026-11-12T02-25-56-850Z",
+    "group": "save",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-1p9jgC",
+    "exists": false,
+    "origin": "http://127.0.0.1:51569",
+    "api": "http://127.0.0.1:51568"
+  },
+  {
+    "run": "2026-11-12T02-26-29-383Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-DM0MQT",
+    "exists": false,
+    "origin": "http://127.0.0.1:49879",
+    "api": "http://127.0.0.1:49878"
+  },
+  {
+    "run": "2026-11-12T02-27-32-860Z",
+    "group": "service",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-b5jm7B",
+    "exists": false,
+    "origin": "http://127.0.0.1:63630",
+    "api": "http://127.0.0.1:63629"
+  },
+  {
+    "run": "2026-11-12T02-27-53-674Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-moVCoW",
+    "exists": false,
+    "origin": "http://127.0.0.1:61415",
+    "api": "http://127.0.0.1:61414"
+  },
+  {
+    "run": "2026-11-12T02-28-48-928Z",
+    "group": "terminal",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-ibn8Xd",
+    "exists": false,
+    "origin": "http://127.0.0.1:52512",
+    "api": "http://127.0.0.1:52511"
+  },
+  {
+    "run": "2026-11-12T02-29-02-479Z",
+    "group": "loaded",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-HqOSH5",
+    "exists": false,
+    "origin": "http://127.0.0.1:58622",
+    "api": "http://127.0.0.1:58621"
+  },
+  {
+    "run": "2026-11-12T02-29-16-081Z",
+    "group": "service",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-vejADd",
+    "exists": false,
+    "origin": "http://127.0.0.1:58979",
+    "api": "http://127.0.0.1:58978"
+  },
+  {
+    "run": "2026-11-12T02-29-38-509Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-lKgp8h",
+    "exists": false,
+    "origin": "http://127.0.0.1:55866",
+    "api": "http://127.0.0.1:55865"
+  },
+  {
+    "run": "2026-11-12T02-30-01-959Z",
+    "group": "terminal",
+    "surface": "dev",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-S1LTQm",
+    "exists": false,
+    "origin": "http://127.0.0.1:60226",
+    "api": "http://127.0.0.1:56965"
+  },
+  {
+    "run": "2026-11-12T02-30-23-462Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-jLmtUq",
+    "exists": false,
+    "origin": "http://127.0.0.1:55611",
+    "api": "http://127.0.0.1:55610"
+  },
+  {
+    "run": "2026-11-12T02-31-01-149Z",
+    "group": "service",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-BBlf1Y",
+    "exists": false,
+    "origin": "http://127.0.0.1:63819",
+    "api": "http://127.0.0.1:63818"
+  },
+  {
+    "run": "2026-11-12T02-31-11-986Z",
+    "group": "loaded",
+    "surface": "dev",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-FDrKz6",
+    "exists": false,
+    "origin": "http://127.0.0.1:52595",
+    "api": "http://127.0.0.1:52593"
+  },
+  {
+    "run": "2026-11-12T02-31-29-369Z",
+    "group": "save",
+    "surface": "dev",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-Sx50Pp",
+    "exists": false,
+    "origin": "http://127.0.0.1:49216",
+    "api": "http://127.0.0.1:49215"
+  },
+  {
+    "run": "2026-11-12T02-31-45-108Z",
+    "group": "loaded",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-pwGp7s",
+    "exists": false,
+    "origin": "http://127.0.0.1:64652",
+    "api": "http://127.0.0.1:64651"
+  },
+  {
+    "run": "2026-11-12T02-32-03-879Z",
+    "group": "service",
+    "surface": "dev",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-55GfRO",
+    "exists": false,
+    "origin": "http://127.0.0.1:49878",
+    "api": "http://127.0.0.1:49876"
+  },
+  {
+    "run": "2026-11-12T02-32-14-334Z",
+    "group": "save",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-eRyLV7",
+    "exists": false,
+    "origin": "http://127.0.0.1:55348",
+    "api": "http://127.0.0.1:55347"
+  },
+  {
+    "run": "2026-11-12T02-41-48-971Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-R2PTbe",
+    "exists": false,
+    "origin": "http://127.0.0.1:61141",
+    "api": "http://127.0.0.1:61140"
+  },
+  {
+    "run": "2026-11-12T02-42-51-414Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-7juhvc",
+    "exists": false,
+    "origin": "http://127.0.0.1:58771",
+    "api": "http://127.0.0.1:58770"
+  },
+  {
+    "run": "2026-11-12T02-42-58-541Z",
+    "group": "loaded",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-auPy4d",
+    "exists": false,
+    "origin": "http://127.0.0.1:54550",
+    "api": "http://127.0.0.1:54549"
+  },
+  {
+    "run": "2026-11-12T02-44-05-917Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-smPRlZ",
+    "exists": false,
+    "origin": "http://127.0.0.1:57613",
+    "api": "http://127.0.0.1:57612"
+  },
+  {
+    "run": "2026-11-12T02-44-14-405Z",
+    "group": "loaded",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-sNpj8c",
+    "exists": false,
+    "origin": "http://127.0.0.1:55351",
+    "api": "http://127.0.0.1:55350"
+  },
+  {
+    "run": "2026-11-12T02-44-53-009Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-U8tOpg",
+    "exists": false,
+    "origin": "http://127.0.0.1:51721",
+    "api": "http://127.0.0.1:51720"
+  },
+  {
+    "run": "2026-11-12T02-46-07-596Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-5poFfa",
+    "exists": false,
+    "origin": "http://127.0.0.1:55552",
+    "api": "http://127.0.0.1:55551"
+  },
+  {
+    "run": "2026-11-12T02-46-16-111Z",
+    "group": "loaded",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-eXn6Rl",
+    "exists": false,
+    "origin": "http://127.0.0.1:57696",
+    "api": "http://127.0.0.1:57695"
+  },
+  {
+    "run": "2026-11-12T02-47-22-047Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-FZz82W",
+    "exists": false,
+    "origin": "http://127.0.0.1:61083",
+    "api": "http://127.0.0.1:61082"
+  },
+  {
+    "run": "2026-11-12T02-47-31-507Z",
+    "group": "loaded",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-XVT95d",
+    "exists": false,
+    "origin": "http://127.0.0.1:63887",
+    "api": "http://127.0.0.1:63886"
+  },
+  {
+    "run": "2026-11-12T02-48-40-987Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-sdND5S",
+    "exists": false,
+    "origin": "http://127.0.0.1:60427",
+    "api": "http://127.0.0.1:60426"
+  },
+  {
+    "run": "2026-11-12T02-48-48-666Z",
+    "group": "loaded",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-OUgVib",
+    "exists": false,
+    "origin": "http://127.0.0.1:51822",
+    "api": "http://127.0.0.1:51821"
+  },
+  {
+    "run": "2026-11-12T02-49-32-077Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-IP1iOo",
+    "exists": false,
+    "origin": "http://127.0.0.1:58516",
+    "api": "http://127.0.0.1:58515"
+  },
+  {
+    "run": "2026-11-12T02-49-42-620Z",
+    "group": "loaded",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-MMcZqe",
+    "exists": false,
+    "origin": "http://127.0.0.1:56640",
+    "api": "http://127.0.0.1:56639"
+  },
+  {
+    "run": "2026-11-12T02-51-12-011Z",
+    "group": "search",
+    "surface": "dev",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-X5yYgP",
+    "exists": false,
+    "origin": "http://127.0.0.1:53185",
+    "api": "http://127.0.0.1:53183"
+  },
+  {
+    "run": "2026-11-12T02-52-04-723Z",
+    "group": "search",
+    "surface": "dist",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-kLf93y",
+    "exists": false,
+    "origin": "http://127.0.0.1:58316",
+    "api": "http://127.0.0.1:58315"
+  },
+  {
+    "run": "2026-11-12T02-52-15-375Z",
+    "group": "search",
+    "surface": "dev",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-sNTtNW",
+    "exists": false,
+    "origin": "http://127.0.0.1:63346",
+    "api": "http://127.0.0.1:63340"
+  },
+  {
+    "run": "2026-11-12T02-52-32-823Z",
+    "group": "loaded",
+    "surface": "dev",
+    "temp": "C:\\Users\\YUUMEI\\AppData\\Local\\Temp\\cfzn-parity-v07-F56tQ6",
+    "exists": false,
+    "origin": "http://127.0.0.1:50071",
+    "api": "http://127.0.0.1:50070"
+  }
+]

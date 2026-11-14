@@ -1,0 +1,18 @@
+[
+  {
+    "name": "MenuBar original Edit dropdown, device selector, alert and extension library retain priority",
+    "status": "PASS",
+    "ms": 1174,
+    "detail": {
+      "editDropdown": {
+        "x": 221.21875,
+        "y": 48,
+        "width": 188,
+        "height": 70
+      },
+      "nativeDeviceLibrary": true,
+      "nativeAlert": true,
+      "extensionCategories": true
+    }
+  }
+]

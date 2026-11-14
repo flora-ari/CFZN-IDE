@@ -1,0 +1,77 @@
+{
+  "run": "2026-11-10T07-57-49-742Z",
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\adjacent-title-notice\\2026-11-10T07-57-49-742Z",
+  "results": [
+    {
+      "name": "adjacent title at four widths; five buttons and modes reachable",
+      "status": "PASS",
+      "detail": [
+        {
+          "width": 1440,
+          "gap": 6,
+          "titleWidth": 188,
+          "sameParent": true,
+          "input": 180
+        },
+        {
+          "width": 1776,
+          "gap": 6,
+          "titleWidth": 188,
+          "sameParent": true,
+          "input": 180
+        },
+        {
+          "width": 2560,
+          "gap": 6,
+          "titleWidth": 188,
+          "sameParent": true,
+          "input": 180
+        },
+        {
+          "width": 1000,
+          "gap": 6,
+          "titleWidth": 58.171875,
+          "sameParent": true,
+          "input": 89.125
+        }
+      ]
+    },
+    {
+      "name": "real New Export Import Save show portal without layout shift; info and success dismiss",
+      "status": "PASS",
+      "detail": {
+        "portal": true,
+        "new": true,
+        "export": true,
+        "import": true,
+        "save": true,
+        "noLayoutShift": true
+      }
+    },
+    {
+      "name": "hover focus remaining time manual close and replacement identity",
+      "status": "PASS",
+      "detail": {
+        "hoverPause": true,
+        "focusPause": true,
+        "manualClose": true,
+        "replacementSurvivesOldDeadline": true
+      }
+    },
+    {
+      "name": "real API conflict persists; save-as and reload recover; 390px error visible",
+      "status": "PASS",
+      "detail": {
+        "conflicts": 2,
+        "saveAs": true,
+        "reload": true,
+        "mobile": {
+          "x": 16,
+          "y": 20,
+          "width": 358,
+          "height": 106.59375
+        }
+      }
+    }
+  ]
+}

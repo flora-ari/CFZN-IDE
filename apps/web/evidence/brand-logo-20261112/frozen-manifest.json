@@ -1,0 +1,84 @@
+{
+  "frozen": "2026-11-12",
+  "productChangesStopped": true,
+  "asset": {
+    "path": "public/branding/IDE.png",
+    "runtimeUrl": "/branding/IDE.png",
+    "width": 1318,
+    "height": 509,
+    "bytes": 275981,
+    "sha256": "18C9295EDA2562707124E7A562ECB683BA19F60BF23A7038B7FB5A92F267D75F",
+    "regularFile": true
+  },
+  "buildAndTypecheck": true,
+  "vmModuleCount": 178,
+  "blocklyModuleCount": 15,
+  "guiHookFragments": 47,
+  "newGuiHookFragments": 1,
+  "protectedSourcesUnchanged": true,
+  "smoke": {
+    "devWidths": [
+      2560,
+      1200,
+      1199,
+      800,
+      1440
+    ],
+    "distWidths": [
+      2560,
+      1200,
+      1199,
+      800,
+      1440
+    ],
+    "nativeOverflowStates": [
+      false,
+      true
+    ],
+    "browserUiZoomTested": false,
+    "dprChanged": false,
+    "physicalSerialUsed": false
+  },
+  "files": [
+    {
+      "path": "apps/web/dist/assets/app-kk7fVTCm.css",
+      "sha256": "A0A8E427BE737D833CC27038BDBBE1ECA9CF1FEF326DEC0C0043E72EE7E82B07",
+      "bytes": 3446
+    },
+    {
+      "path": "apps/web/dist/assets/app-WvfxpJny.js",
+      "sha256": "2D989C3351A29A23F114565BBF432F21191F4703FB394B3E3D17D19B4368C176",
+      "bytes": 206215
+    },
+    {
+      "path": "apps/web/dist/assets/editor-BRr_St-Y.js",
+      "sha256": "9D1FC47EEBFA3242C64554044965DE6C6BC2D7FB168007B7693C3A33AE323B2B",
+      "bytes": 115964
+    },
+    {
+      "path": "apps/web/dist/assets/editor-C8aZSiQs.css",
+      "sha256": "F10C59145A039875B08D92F7A5E77312A66EA1A7B2063A32A34D7FDF8C31A7FD",
+      "bytes": 18634
+    },
+    {
+      "path": "apps/web/dist/assets/save-shortcut-DZCizx91.js",
+      "sha256": "E1176DDF804797080DD9B9CE9BA59A361294097DD82E3CF3D0163351D7F7058E",
+      "bytes": 2905
+    },
+    {
+      "path": "apps/web/dist/openblock-vendor/openblock-gui.js",
+      "sha256": "E3B1E80E0D1D2DF14F881288BEFACB0ED3A7BE863CAF749EA0ACFEE0C9D28086",
+      "bytes": 22662187
+    },
+    {
+      "path": "apps/web/dist/cfzn-extensions/module-loader.js",
+      "sha256": "A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207",
+      "bytes": 2459
+    },
+    {
+      "path": "apps/web/dist/branding/IDE.png",
+      "sha256": "18C9295EDA2562707124E7A562ECB683BA19F60BF23A7038B7FB5A92F267D75F",
+      "bytes": 275981
+    }
+  ]
+}

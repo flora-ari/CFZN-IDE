@@ -1,0 +1,251 @@
+{
+  "rows": [
+    {
+      "id": "|8n%3Kkq1Hz+?l7Dzzye",
+      "type": "procedures_call",
+      "text": "独立过程 1 ???",
+      "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"|8n%3Kkq1Hz+?l7Dzzye\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"`@Zzm+tmM~JLut#I0+S=\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\",zOGlOp%hE1`j_kqtOmo\"><field name=\"TEXT\"></field></shadow></value></block>"
+    }
+  ],
+  "dragged": [
+    {
+      "id": "@O5K?]SNV|r,Z,jQ(=8Y",
+      "type": "procedures_call",
+      "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"@O5K?]SNV|r,Z,jQ(=8Y\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"zDg.wR9/%4G5+wNfPe?0\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"b9wnR5rznA!-+ywCamau\"><field name=\"TEXT\"></field></shadow></value></block>"
+    },
+    {
+      "id": "zDg.wR9/%4G5+wNfPe?0",
+      "type": "math_number",
+      "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"math_number\" id=\"zDg.wR9/%4G5+wNfPe?0\"><field name=\"NUM\">1</field></shadow>"
+    },
+    {
+      "id": "b9wnR5rznA!-+ywCamau",
+      "type": "text",
+      "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"text\" id=\"b9wnR5rznA!-+ywCamau\"><field name=\"TEXT\"></field></shadow>"
+    }
+  ],
+  "project": {
+    "targets": [
+      {
+        "isStage": true,
+        "name": "Stage",
+        "variables": {
+          "field-reindex": [
+            "field-reindex",
+            0
+          ],
+          "v1": [
+            "独立变量",
+            0
+          ]
+        },
+        "lists": {
+          "l1": [
+            "独立列表",
+            []
+          ]
+        },
+        "broadcasts": {},
+        "blocks": {},
+        "comments": {},
+        "currentCostume": 0,
+        "costumes": [
+          {
+            "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+            "name": "背景1",
+            "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 240,
+            "rotationCenterY": 180
+          }
+        ],
+        "sounds": [
+          {
+            "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+            "name": "啵",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 1123,
+            "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+          }
+        ],
+        "volume": 100,
+        "layerOrder": 0,
+        "tempo": 60,
+        "videoTransparency": 50,
+        "videoState": "on",
+        "textToSpeechLanguage": null
+      },
+      {
+        "isStage": false,
+        "name": "角色1",
+        "variables": {},
+        "lists": {},
+        "broadcasts": {},
+        "blocks": {
+          "ind-def": {
+            "opcode": "procedures_definition",
+            "next": null,
+            "parent": null,
+            "inputs": {
+              "custom_block": [
+                2,
+                "ind-proto"
+              ]
+            },
+            "fields": {},
+            "shadow": false,
+            "topLevel": true,
+            "x": 50,
+            "y": 80
+          },
+          "ind-proto": {
+            "opcode": "procedures_prototype",
+            "next": null,
+            "parent": "ind-def",
+            "inputs": {
+              "num": [
+                1,
+                "8~tBb7X0{Xk-rZlm5C!Z"
+              ],
+              "str": [
+                1,
+                "Ze%M4:lPymw9po=QP~W6"
+              ]
+            },
+            "fields": {},
+            "shadow": false,
+            "topLevel": false,
+            "mutation": {
+              "tagName": "mutation",
+              "children": [],
+              "proccode": "独立过程 %n %s",
+              "argumentids": "[\"num\",\"str\"]",
+              "argumentnames": "[\"数字\",\"文字\"]",
+              "argumentdefaults": "[1,\"默认\"]",
+              "warp": "false"
+            }
+          },
+          "8~tBb7X0{Xk-rZlm5C!Z": {
+            "opcode": "argument_reporter_number",
+            "next": null,
+            "parent": "ind-proto",
+            "inputs": {},
+            "fields": {
+              "VALUE": [
+                "数字",
+                null
+              ]
+            },
+            "shadow": true,
+            "topLevel": false
+          },
+          "Ze%M4:lPymw9po=QP~W6": {
+            "opcode": "argument_reporter_string",
+            "next": null,
+            "parent": "ind-proto",
+            "inputs": {},
+            "fields": {
+              "VALUE": [
+                "文字",
+                null
+              ]
+            },
+            "shadow": true,
+            "topLevel": false
+          },
+          "@O5K?]SNV|r,Z,jQ(=8Y": {
+            "opcode": "procedures_call",
+            "next": null,
+            "parent": null,
+            "inputs": {
+              "num": [
+                1,
+                [
+                  4,
+                  "1"
+                ]
+              ],
+              "str": [
+                1,
+                [
+                  10,
+                  ""
+                ]
+              ]
+            },
+            "fields": {},
+            "shadow": false,
+            "topLevel": true,
+            "x": -358,
+            "y": 135,
+            "mutation": {
+              "tagName": "mutation",
+              "children": [],
+              "proccode": "独立过程 %n %s",
+              "argumentids": "[\"num\",\"str\"]",
+              "warp": "false"
+            }
+          }
+        },
+        "comments": {},
+        "currentCostume": 0,
+        "costumes": [
+          {
+            "assetId": "5de48e72637db4d7fc7f6bb526354114",
+            "name": "造型1",
+            "bitmapResolution": 1,
+            "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          },
+          {
+            "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+            "name": "造型2",
+            "bitmapResolution": 1,
+            "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          }
+        ],
+        "sounds": [
+          {
+            "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+            "name": "啁啾",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 23683,
+            "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+          }
+        ],
+        "volume": 100,
+        "layerOrder": 1,
+        "visible": true,
+        "x": 0,
+        "y": 0,
+        "size": 100,
+        "direction": 90,
+        "draggable": false,
+        "rotationStyle": "all around"
+      }
+    ],
+    "monitors": [],
+    "device": {
+      "deviceId": null,
+      "type": null,
+      "pnpIdList": []
+    },
+    "programMode": "realtime",
+    "extensions": [],
+    "deviceExtensions": [],
+    "meta": {
+      "semver": "3.0.0",
+      "vm": "0.2.0-prerelease.20250609145235",
+      "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "disabledReason": "先选择主控",
+  "disabledReasonCount": 6,
+  "width": 390,
+  "lastCardScrollReachable": true,
+  "searchFocusRevealsInput": true,
+  "searchKeepsCategory": true,
+  "categoryKeepsSearch": true,
+  "returnOperable": true
+}

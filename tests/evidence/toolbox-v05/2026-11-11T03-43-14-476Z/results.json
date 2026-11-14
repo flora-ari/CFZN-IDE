@@ -1,0 +1,108 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "PASS",
+    "detail": {
+      "initialMode": "realtime",
+      "programmingCategories": [
+        "motion",
+        "looks",
+        "sound",
+        "events",
+        "control",
+        "sensing",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "uploadCategories": [
+        "events",
+        "control",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "loaded": [
+        "activateBuzzer",
+        "atomizer",
+        "pirSensor",
+        "flameSensor",
+        "raindropSensor",
+        "moreComments"
+      ]
+    }
+  },
+  {
+    "name": "dev complete realtime archive API restore",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 10000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 10000ms exceeded.\n    at archiveCases (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:116:120)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:417"
+  },
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "PASS",
+    "detail": {
+      "initialMode": "realtime",
+      "programmingCategories": [
+        "motion",
+        "looks",
+        "sound",
+        "events",
+        "control",
+        "sensing",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "uploadCategories": [
+        "events",
+        "control",
+        "operators",
+        "variables",
+        "myBlocks",
+        "cfzn-controller-firebeetleEsp32E",
+        "ACTIVATEBUZZER_CATEGORY",
+        "ATOMIZER_CATEGORY",
+        "PIRSENSOR_CATEGORY",
+        "FLAMESENSOR_CATEGORY",
+        "RAINDROPSENSOR_CATEGORY",
+        "MORECOMMENTS_CATEGORY"
+      ],
+      "loaded": [
+        "activateBuzzer",
+        "atomizer",
+        "pirSensor",
+        "flameSensor",
+        "raindropSensor",
+        "moreComments"
+      ]
+    }
+  },
+  {
+    "name": "dist complete realtime archive API restore",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 10000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 10000ms exceeded.\n    at archiveCases (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:116:120)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:417"
+  }
+]

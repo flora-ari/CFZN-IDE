@@ -1,0 +1,102 @@
+{
+  "run": "2026-11-10T03-24-35-263Z",
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\mode-ui-v03-independent\\2026-11-10T03-24-35-263Z",
+  "results": [
+    {
+      "name": "final 1100 FireBeetle ESP32-E both mode controls inside viewport",
+      "status": "PASS",
+      "detail": [
+        {
+          "mode": "编程模式",
+          "rects": [
+            {
+              "name": "编程模式",
+              "x": 955,
+              "right": 1021,
+              "y": 8,
+              "bottom": 40,
+              "hit": true
+            },
+            {
+              "name": "上传模式",
+              "x": 1023,
+              "right": 1089,
+              "y": 8,
+              "bottom": 40,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "mode": "上传模式",
+          "rects": [
+            {
+              "name": "编程模式",
+              "x": 955,
+              "right": 1021,
+              "y": 8,
+              "bottom": 40,
+              "hit": true
+            },
+            {
+              "name": "上传模式",
+              "x": 1023,
+              "right": 1089,
+              "y": 8,
+              "bottom": 40,
+              "hit": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "final 1100 ESP32 both mode controls inside viewport",
+      "status": "PASS",
+      "detail": [
+        {
+          "mode": "编程模式",
+          "rects": [
+            {
+              "name": "编程模式",
+              "x": 955,
+              "right": 1021,
+              "y": 8,
+              "bottom": 40,
+              "hit": true
+            },
+            {
+              "name": "上传模式",
+              "x": 1023,
+              "right": 1089,
+              "y": 8,
+              "bottom": 40,
+              "hit": true
+            }
+          ]
+        },
+        {
+          "mode": "上传模式",
+          "rects": [
+            {
+              "name": "编程模式",
+              "x": 955,
+              "right": 1021,
+              "y": 8,
+              "bottom": 40,
+              "hit": true
+            },
+            {
+              "name": "上传模式",
+              "x": 1023,
+              "right": 1089,
+              "y": 8,
+              "bottom": 40,
+              "hit": true
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

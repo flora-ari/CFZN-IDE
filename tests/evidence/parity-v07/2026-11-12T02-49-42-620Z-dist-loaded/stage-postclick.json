@@ -1,0 +1,175 @@
+{
+  "loaded": [
+    "pen"
+  ],
+  "status": "未选择主控板",
+  "catalog": [
+    {
+      "name": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Music",
+          "id": "gui.extension.music.name",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "extensionId": "music",
+      "iconURL": "/static/assets/7eea42371f5ccb84b4fc7d0ba7331ea3.png",
+      "insetIconURL": "/static/assets/504d73be1b361b4b9ca7f655ce085dc6.svg",
+      "description": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Play instruments and drums.",
+          "id": "gui.extension.music.description",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "featured": true,
+      "isLoaded": false
+    },
+    {
+      "name": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Pen",
+          "id": "gui.extension.pen.name",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "extensionId": "pen",
+      "iconURL": "/static/assets/7679e8aa3b5a6b745823e00a7b950065.png",
+      "insetIconURL": "/static/assets/800f6f1573677d59954e8d3164602287.svg",
+      "description": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Draw with your sprites.",
+          "id": "gui.extension.pen.description",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "featured": true,
+      "isLoaded": false
+    },
+    {
+      "name": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Video Sensing",
+          "id": "gui.extension.videosensing.name",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "extensionId": "videoSensing",
+      "iconURL": "/static/assets/a03436c2c26c934fc0a7997065971874.png",
+      "insetIconURL": "/static/assets/5e8eccd5a576638f029a1ed2deb4784b.svg",
+      "description": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Sense motion with the camera.",
+          "id": "gui.extension.videosensing.description",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "featured": true,
+      "isLoaded": false
+    },
+    {
+      "name": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Text to Speech",
+          "id": "gui.extension.text2speech.name",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "extensionId": "text2speech",
+      "collaborator": "Amazon Web Services",
+      "iconURL": "/static/assets/d6f130fb79e78e4dd351fd930e742bcc.png",
+      "insetIconURL": "/static/assets/c7ffd288176b935f835311512a224d4b.svg",
+      "description": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Make your projects talk.",
+          "id": "gui.extension.text2speech.description",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "featured": true,
+      "internetConnectionRequired": true,
+      "isLoaded": false
+    },
+    {
+      "name": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Translate",
+          "id": "gui.extension.translate.name",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "extensionId": "translate",
+      "collaborator": "Google",
+      "iconURL": "/static/assets/b6162ffbfe48d4b6c67f0b469f1615ae.png",
+      "insetIconURL": "/static/assets/f40501ed87782097b1a4eec8747eb84a.png",
+      "description": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Translate text into many languages.",
+          "id": "gui.extension.translate.description",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "featured": true,
+      "internetConnectionRequired": true,
+      "isLoaded": false
+    },
+    {
+      "name": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Makey Makey",
+          "id": "gui.extension.makeymakey.name",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "extensionId": "makeymakey",
+      "collaborator": "JoyLabz",
+      "iconURL": "/static/assets/c30d6a0e73cf38ad6ea7f5e4fe0428a3.png",
+      "insetIconURL": "/static/assets/d61429ad96a25ec2917ebc77d900aae0.svg",
+      "description": {
+        "key": null,
+        "ref": null,
+        "props": {
+          "defaultMessage": "Make anything into a key.",
+          "id": "gui.extension.makeymakey.description",
+          "values": {}
+        },
+        "_owner": null
+      },
+      "featured": true,
+      "isLoaded": false
+    }
+  ]
+}

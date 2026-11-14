@@ -1,0 +1,104 @@
+[
+  {
+    "name": "dev catalog badges types search",
+    "status": "PASS",
+    "detail": {
+      "grayBadge": {
+        "right": 8,
+        "top": 8,
+        "color": "rgb(96, 101, 111)",
+        "background": "rgb(242, 243, 245)",
+        "border": "rgb(199, 203, 210)",
+        "font": "12px",
+        "radius": "2px"
+      },
+      "realTypes": true,
+      "searchIntersection": true,
+      "noDirty": true
+    }
+  },
+  {
+    "name": "dev keyboard removal readd board lifecycle",
+    "status": "PASS",
+    "detail": {
+      "dependencies": "请先移除模块：有源蜂鸣器。",
+      "independentKeyboardRemove": true,
+      "onceDirty": true,
+      "noOp": true,
+      "readdFreshMenus": true
+    }
+  },
+  {
+    "name": "dev all-target references and dependencies",
+    "status": "PASS",
+    "detail": [
+      {
+        "name": "other-target",
+        "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+      },
+      {
+        "name": "disabled-loose",
+        "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+      },
+      {
+        "name": "procedure",
+        "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+      },
+      {
+        "name": "controller-hat",
+        "error": "当前主控仍被引用：角色1 1处。请先移除相关积木或监视器。"
+      }
+    ]
+  },
+  {
+    "name": "dist catalog badges types search",
+    "status": "PASS",
+    "detail": {
+      "grayBadge": {
+        "right": 8,
+        "top": 8,
+        "color": "rgb(96, 101, 111)",
+        "background": "rgb(242, 243, 245)",
+        "border": "rgb(199, 203, 210)",
+        "font": "12px",
+        "radius": "2px"
+      },
+      "realTypes": true,
+      "searchIntersection": true,
+      "noDirty": true
+    }
+  },
+  {
+    "name": "dist keyboard removal readd board lifecycle",
+    "status": "PASS",
+    "detail": {
+      "dependencies": "请先移除模块：有源蜂鸣器。",
+      "independentKeyboardRemove": true,
+      "onceDirty": true,
+      "noOp": true,
+      "readdFreshMenus": true
+    }
+  },
+  {
+    "name": "dist all-target references and dependencies",
+    "status": "PASS",
+    "detail": [
+      {
+        "name": "other-target",
+        "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+      },
+      {
+        "name": "disabled-loose",
+        "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+      },
+      {
+        "name": "procedure",
+        "error": "有源蜂鸣器仍被引用：Stage 1处。请先移除相关积木或监视器。"
+      },
+      {
+        "name": "controller-hat",
+        "error": "当前主控仍被引用：角色1 1处。请先移除相关积木或监视器。"
+      }
+    ]
+  }
+]

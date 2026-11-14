@@ -1,0 +1,82 @@
+[
+  {
+    "name": "dev clear preserves archive true",
+    "status": "PASS",
+    "detail": {
+      "targets": 2,
+      "monitors": 3,
+      "extensions": [
+        "pen",
+        "music"
+      ],
+      "mode": "programming",
+      "nativeMonitors": 3,
+      "documentIdPreserved": true,
+      "onceDirty": true,
+      "manualPreserved": true,
+      "sameActiveId": true,
+      "postPutGetExact": true,
+      "newPageReopen": true
+    }
+  },
+  {
+    "name": "dev clear preserves archive false",
+    "status": "PASS",
+    "detail": {
+      "targets": 2,
+      "monitors": 3,
+      "extensions": [
+        "pen",
+        "music"
+      ],
+      "mode": "upload",
+      "nativeMonitors": 3,
+      "documentIdPreserved": true,
+      "onceDirty": true,
+      "manualPreserved": true,
+      "sameActiveId": true,
+      "postPutGetExact": true,
+      "newPageReopen": true
+    }
+  },
+  {
+    "name": "dist clear preserves archive true",
+    "status": "PASS",
+    "detail": {
+      "targets": 2,
+      "monitors": 3,
+      "extensions": [
+        "pen",
+        "music"
+      ],
+      "mode": "programming",
+      "nativeMonitors": 3,
+      "documentIdPreserved": true,
+      "onceDirty": true,
+      "manualPreserved": true,
+      "sameActiveId": true,
+      "postPutGetExact": true,
+      "newPageReopen": true
+    }
+  },
+  {
+    "name": "dist clear preserves archive false",
+    "status": "PASS",
+    "detail": {
+      "targets": 2,
+      "monitors": 3,
+      "extensions": [
+        "pen",
+        "music"
+      ],
+      "mode": "upload",
+      "nativeMonitors": 3,
+      "documentIdPreserved": true,
+      "onceDirty": true,
+      "manualPreserved": true,
+      "sameActiveId": true,
+      "postPutGetExact": true,
+      "newPageReopen": true
+    }
+  }
+]

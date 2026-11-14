@@ -1,0 +1,314 @@
+[
+  {
+    "name": "MenuBar direct ownership, File removal, no spacer, 1440/1894 one-row geometry",
+    "status": "PASS",
+    "ms": 300,
+    "detail": {
+      "layouts": [
+        {
+          "width": 1440,
+          "hostClass": "gui_menu-bar-position_3U1T0 menu-bar_menu-bar_JcuHF box_box_2jjDp",
+          "group": {
+            "x": 640.5625,
+            "y": 0,
+            "width": 374,
+            "height": 48,
+            "top": 0,
+            "right": 1014.5625,
+            "bottom": 48,
+            "left": 640.5625
+          },
+          "tabs": {
+            "x": 0,
+            "y": 48,
+            "width": 250,
+            "height": 44,
+            "top": 48,
+            "right": 250,
+            "bottom": 92,
+            "left": 0
+          },
+          "menu": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 48,
+            "top": 0,
+            "right": 1440,
+            "bottom": 48,
+            "left": 0
+          },
+          "status": {
+            "x": 942.5625,
+            "y": 15,
+            "width": 72,
+            "height": 18,
+            "top": 15,
+            "right": 1014.5625,
+            "bottom": 33,
+            "left": 942.5625
+          },
+          "directChild": true,
+          "overflowY": "visible",
+          "oldAttributes": 0,
+          "oldSpace": "",
+          "groupClientWidth": 374,
+          "groupScrollWidth": 374,
+          "buttons": [
+            {
+              "text": "项目",
+              "rect": {
+                "x": 640.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 682.5625,
+                "bottom": 40,
+                "left": 640.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "新建",
+              "rect": {
+                "x": 686.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 728.5625,
+                "bottom": 40,
+                "left": 686.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "导入",
+              "rect": {
+                "x": 732.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 774.5625,
+                "bottom": 40,
+                "left": 732.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "导出",
+              "rect": {
+                "x": 778.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 820.5625,
+                "bottom": 40,
+                "left": 778.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "保存",
+              "rect": {
+                "x": 824.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 866.5625,
+                "bottom": 40,
+                "left": 824.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "串口终端",
+              "rect": {
+                "x": 870.5625,
+                "y": 8,
+                "width": 68,
+                "height": 32,
+                "top": 8,
+                "right": 938.5625,
+                "bottom": 40,
+                "left": 870.5625
+              },
+              "hit": true
+            }
+          ]
+        },
+        {
+          "width": 1894,
+          "hostClass": "gui_menu-bar-position_3U1T0 menu-bar_menu-bar_JcuHF box_box_2jjDp",
+          "group": {
+            "x": 1094.5625,
+            "y": 0,
+            "width": 374,
+            "height": 48,
+            "top": 0,
+            "right": 1468.5625,
+            "bottom": 48,
+            "left": 1094.5625
+          },
+          "tabs": {
+            "x": 0,
+            "y": 48,
+            "width": 250,
+            "height": 44,
+            "top": 48,
+            "right": 250,
+            "bottom": 92,
+            "left": 0
+          },
+          "menu": {
+            "x": 0,
+            "y": 0,
+            "width": 1894,
+            "height": 48,
+            "top": 0,
+            "right": 1894,
+            "bottom": 48,
+            "left": 0
+          },
+          "status": {
+            "x": 1396.5625,
+            "y": 15,
+            "width": 72,
+            "height": 18,
+            "top": 15,
+            "right": 1468.5625,
+            "bottom": 33,
+            "left": 1396.5625
+          },
+          "directChild": true,
+          "overflowY": "visible",
+          "oldAttributes": 0,
+          "oldSpace": "",
+          "groupClientWidth": 374,
+          "groupScrollWidth": 374,
+          "buttons": [
+            {
+              "text": "项目",
+              "rect": {
+                "x": 1094.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 1136.5625,
+                "bottom": 40,
+                "left": 1094.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "新建",
+              "rect": {
+                "x": 1140.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 1182.5625,
+                "bottom": 40,
+                "left": 1140.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "导入",
+              "rect": {
+                "x": 1186.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 1228.5625,
+                "bottom": 40,
+                "left": 1186.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "导出",
+              "rect": {
+                "x": 1232.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 1274.5625,
+                "bottom": 40,
+                "left": 1232.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "保存",
+              "rect": {
+                "x": 1278.5625,
+                "y": 8,
+                "width": 42,
+                "height": 32,
+                "top": 8,
+                "right": 1320.5625,
+                "bottom": 40,
+                "left": 1278.5625
+              },
+              "hit": true
+            },
+            {
+              "text": "串口终端",
+              "rect": {
+                "x": 1324.5625,
+                "y": 8,
+                "width": 68,
+                "height": 32,
+                "top": 8,
+                "right": 1392.5625,
+                "bottom": 40,
+                "left": 1324.5625
+              },
+              "hit": true
+            }
+          ]
+        }
+      ],
+      "clean": true
+    }
+  },
+  {
+    "name": "MenuBar 390 internal horizontal scroll reaches all six controls and status",
+    "status": "FAIL",
+    "ms": 60,
+    "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(value.group.x >= 0 && value.group.right <= width)\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(value.group.x >= 0 && value.group.right <= width)\n\n    at geometry (file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:169:10)\n    at async file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:189:20\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:52:24)\n    at async placement (file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:188:3)\n    at async file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:246:22"
+  },
+  {
+    "name": "MenuBar original Edit dropdown, device selector, alert and extension library retain priority",
+    "status": "PASS",
+    "ms": 1167,
+    "detail": {
+      "editDropdown": {
+        "x": 221.21875,
+        "y": 48,
+        "width": 188,
+        "height": 70
+      },
+      "nativeDeviceLibrary": true,
+      "nativeAlert": true,
+      "extensionCategories": true
+    }
+  },
+  {
+    "name": "MenuBar real import/save/export, New, project and serial drawer clicks",
+    "status": "FAIL",
+    "ms": 14,
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at title (file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:121:99)\n    at async file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:225:26\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:52:24)\n    at async placement (file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:224:3)\n    at async file:///F:/CFZN/CFZN-IDE/tests/native-project-toolbar.mjs:246:22"
+  }
+]

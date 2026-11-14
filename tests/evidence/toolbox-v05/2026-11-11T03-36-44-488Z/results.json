@@ -1,0 +1,46 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('%{BKY_MORECOMMENTS_CATEGORY}', { exact: true }).last()\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('%{BKY_MORECOMMENTS_CATEGORY}', { exact: true }).last()\u001b[22m\n\n    at flyoutModeCheck (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:50:57)\n    at async normalChain (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:59:622)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:22:48)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:66:60"
+  },
+  {
+    "name": "dev fixed helper invalid/default/network/retry/cache",
+    "status": "PASS",
+    "detail": {
+      "invalidDefault": "扩展「activateBuzzer」的 blocks.mjs 未提供有效的默认注册函数。",
+      "networkFailure": "扩展「activateBuzzer」的 generator.mjs 加载失败：Failed to fetch dynamically imported module: http://127.0.0.1:58350/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&retry=1",
+      "retry": true,
+      "cacheNoRefetch": true,
+      "inputVersionGuards": [
+        "无法加载扩展：模块不在内置目录中。",
+        "无法加载扩展：资源版本无效，请刷新编辑器。",
+        "无法加载扩展：重试次数必须是非负安全整数。",
+        "扩展资源版本已变化，请先保存当前项目并刷新编辑器。"
+      ]
+    }
+  },
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('%{BKY_MORECOMMENTS_CATEGORY}', { exact: true }).last()\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('%{BKY_MORECOMMENTS_CATEGORY}', { exact: true }).last()\u001b[22m\n\n    at flyoutModeCheck (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:50:57)\n    at async normalChain (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:59:622)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:22:48)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:66:60"
+  },
+  {
+    "name": "dist fixed helper invalid/default/network/retry/cache",
+    "status": "PASS",
+    "detail": {
+      "invalidDefault": "扩展「activateBuzzer」的 blocks.mjs 未提供有效的默认注册函数。",
+      "networkFailure": "扩展「activateBuzzer」的 generator.mjs 加载失败：Failed to fetch dynamically imported module: http://127.0.0.1:58351/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&retry=1",
+      "retry": true,
+      "cacheNoRefetch": true,
+      "inputVersionGuards": [
+        "无法加载扩展：模块不在内置目录中。",
+        "无法加载扩展：资源版本无效，请刷新编辑器。",
+        "无法加载扩展：重试次数必须是非负安全整数。",
+        "扩展资源版本已变化，请先保存当前项目并刷新编辑器。"
+      ]
+    }
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "name": "native menu actual click, board title/table/assets, authorized connect no chooser, close keeps session",
+    "status": "PASS",
+    "detail": {
+      "title": "连接 FireBeetle ESP32-E",
+      "authorizedPorts": 2,
+      "chooser": 0
+    }
+  },
+  {
+    "name": "only Add authorizes with user activation; cancel and refresh failure preserve old session",
+    "status": "PASS",
+    "detail": {
+      "cancelKeptSession": true,
+      "scanErrorKeptConnection": true
+    }
+  },
+  {
+    "name": "two-way baud sync Modal/terminal/Redux, unchanged no-op, explicit ambiguous OS port",
+    "status": "PASS",
+    "detail": {
+      "rate": 38400,
+      "osExplicit": true
+    }
+  },
+  {
+    "name": "switch single ownership; target failure restores old; failed close blocks second port",
+    "status": "PASS",
+    "detail": {
+      "maxOwners": 1,
+      "restore": true,
+      "failedCloseBlocked": true
+    }
+  },
+  {
+    "name": "unavailable local hardware service does not block browser connect; unplug clears VM/MenuBar",
+    "status": "PASS",
+    "detail": {
+      "browserWithout3002": true,
+      "unplugClearsVm": true
+    }
+  },
+  {
+    "name": "final responsive 1440/390 modal bounds/table and local assets; five buttons and no page errors",
+    "status": "PASS",
+    "detail": [
+      {
+        "width": 1440,
+        "rect": {
+          "x": 376,
+          "y": 100,
+          "width": 688,
+          "height": 594,
+          "top": 100,
+          "right": 1064,
+          "bottom": 694,
+          "left": 376
+        },
+        "table": {
+          "x": 380,
+          "y": 214,
+          "width": 680,
+          "height": 148,
+          "top": 214,
+          "right": 1060,
+          "bottom": 362,
+          "left": 380
+        },
+        "scrollWidth": 680,
+        "clientWidth": 680
+      },
+      {
+        "width": 390,
+        "rect": {
+          "x": 12,
+          "y": 100,
+          "width": 366,
+          "height": 652,
+          "top": 100,
+          "right": 378,
+          "bottom": 752,
+          "left": 12
+        },
+        "table": {
+          "x": 16,
+          "y": 250,
+          "width": 358,
+          "height": 178,
+          "top": 250,
+          "right": 374,
+          "bottom": 428,
+          "left": 16
+        },
+        "scrollWidth": 358,
+        "clientWidth": 358
+      }
+    ]
+  }
+]

@@ -1,0 +1,270 @@
+[
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\api.ts",
+    "Hash": "0CC33F71BEFD610843AB7095E8466007351BC449FD7175A6BFB5784A64402395"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\App.tsx",
+    "Hash": "A26C158BD27843F90B5A87FE61BE75222D04A61A6B40FA83CF625FFA30CDECA9"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\connection-modal.ts",
+    "Hash": "FB5B897DF70AF2D2C6E0E679C6A7F00A21A91A43C8B4FA215AA2E60BB9553B12"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\editor-archive.ts",
+    "Hash": "56C358884BCBE183F997C4DE59B2B55895C6D55363E1E8BE15E155A6A67A212B"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\editor-bridge.ts",
+    "Hash": "0DD339766A3D59F2BB878AFAE1E376617434F6AA6E7CD66CA184B0811ABFBD63"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\editor-protocol.ts",
+    "Hash": "5D6E6D346A81CA41670351DD3300ECDCD9F6D38D899EE133CEEE0CC6392884A7"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\hardware-controller.ts",
+    "Hash": "4A35A48B5F48A05B8BBD79205FAF63DBC4DABFDE49490F5C65629E743529A309"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\hardware-session.ts",
+    "Hash": "4F58F1C04284C1E2F9477F96D393DF669A901D8AFB25A46ECF934573652184AA"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\hardware-types.ts",
+    "Hash": "1686333136FFEB92C9A8ACE723D9923703D5F38087807E5178E08084D4CB8768"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\local-service-view.ts",
+    "Hash": "2472DD40403B0ABECE3D2E3DC6BD49A999D70CC74D85839DA6D7DD8B0A571983"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\main.tsx",
+    "Hash": "8A3828CF12D1FFF1DD14B9BBDC04DD1FFBBAD10A7DFDF49E6400A4778E560110"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\mode-controller.ts",
+    "Hash": "BC77BC7061F64391A8B5F4B94D10146E85E13DB8C320B377A9088822B66372B2"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\mode-ui.css",
+    "Hash": "E4256EE36C795E654A649DCC91B3AC419B38860435BACA4E65B32AA06EDD6F3B"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\mode-ui.ts",
+    "Hash": "57EE768EEB7D1CFE7764445BE9875707E626DAC98A578CEBA6878310CB5AAC36"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\native-hardware.css",
+    "Hash": "E3AE1D0DB0B2C904A68C08689FA8435BD420819C2DB2C881CB57F3CACF720053"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\native-hardware.ts",
+    "Hash": "487B2288A192BFB10D3C382E2C34B43A1D16C65DD5C493676C7A44AAF56BB450"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\native-project-toolbar.css",
+    "Hash": "21C25B45A022CF903DECFFE59336E0B144DB86C1D394F738448C5D89D674B2DB"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\native-project-toolbar.ts",
+    "Hash": "A7C7411B6CDBA7CC8766D067992D6A092A66E7319A6755174E119A020C243075"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\native-serial-socket.ts",
+    "Hash": "198EE752F2A2A6E3C55A2CE2F5E9E55ADFB6C629B333AC0297F030E338F4927C"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\openblock.ts",
+    "Hash": "B72570BC4CEA3B53D3E650BFD2FB39E674E8888CF77ACDC5CD81FC0D5FECEE3D"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\palette-index.ts",
+    "Hash": "B8DC96F26A62EB2263C8F87DAD71F6C284437DB2544D905670E5B310A8A5BB6A"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\palette-search.css",
+    "Hash": "AA7C8954D3FDF9FAB3F6824634FC5BE2257A04E9AAD6AB936729F30659FE0DB8"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\palette-search.ts",
+    "Hash": "6E774EE6340B2677335CF452AB5BA78D5E4F1C3BCD8660C9731AA0B87E4CC7B7"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\ProjectNotice.tsx",
+    "Hash": "C804DBF1A2649DF1D11124AD152CA43E320B0E683D502C40D10551CBA38D6D24"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\save-shortcut.ts",
+    "Hash": "005868558F6986338AFBEA2E9CF9570D24176AC95E6B82639B8E7F66CE9005D6"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\serial-log.ts",
+    "Hash": "7D9D581598730309CCB7B9BED03011EBC84579739A868BF3F6F68087AA000F7D"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\serial.ts",
+    "Hash": "51D59DFB10E98B4836F10D3355B64396BCD74EF59F2F94BBC1CA9E13FB69DEE3"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\style.css",
+    "Hash": "C027ABA5E77B05975B14E7F5A832EDA51543FE5127BD3EA5BB7766902DF060F4"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\terminal-model.ts",
+    "Hash": "C740823B3BFE4BCE2E2FF2F6D5B84CC3E4C15A74A4D769603A3B430827AD760C"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\adapter.ts",
+    "Hash": "A5714B8410912AD2747B1F7361C0BE43DF79A71310563CA0405E55273F94058A"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\aijite.ts",
+    "Hash": "AFD7F6998D8D0073C795D4BED8534D1541CE7CD39224F008E7001C9CE90D3ADF"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\board-info.ts",
+    "Hash": "D0E192FE7EBAD8A6AF49F213C95059F7E3BA173D9AEA0A413F0D265D5DE224A6"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\builtin-resources.ts",
+    "Hash": "5600CCE2F5A8C2B306322115451FD60E98E4CDDF8435F08BCCE7727D1E94196E"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\catalog.ts",
+    "Hash": "299B6374F3076CC2946A2F2E1C8DDBC16B3D1E6043C0C6F9799A34E6B5CF159C"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\controller-compatibility.ts",
+    "Hash": "5667B400440E1544EA871F1F542D873EB0358988E1913CDDA11AF1115A6CC00C"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\device-registration.ts",
+    "Hash": "DF71EF3957849AF8528AA6214AA7B81FEA1C18E58801A30E6CB3FB7E6249AAD4"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\library.css",
+    "Hash": "934B4A70BDBC09FE4DFB0358B99911C0AF62799B64603732EDF34D18A8194717"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\library.ts",
+    "Hash": "9BCA4F63B214A8068027A3AF1224B82AA8F94299CF1DD073B84977ED637FE685"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\removal.ts",
+    "Hash": "65D7624971E49D50A79595227DC43F3EBE6FD3D157C94B67688C4064A24512CF"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\stage-execution.ts",
+    "Hash": "D977833CCA4115BDF0DE27327010D5C7C58298AC57D57EFD5C79E1228388B6E2"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\src\\extensions\\toolbox-presentation.ts",
+    "Hash": "7C523839C8B2929C3D93DA9A2AA271E9AAC85550D283943954A4FB403910DA5C"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\openblock-hooks.mjs",
+    "Hash": "5439C0F81F68C31FBE95A4D1F4BA87414C90D8D547656905E3C01687ADD9E40C"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\prepare-device-descriptions.mjs",
+    "Hash": "38EF7EDF740E29F5301CE4AAC9FEC182E93AFFA9FC254E0AC2038A8213EEF11C"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\prepare-openblock.mjs",
+    "Hash": "097C466557A02D85C3CA3F7A543CBFE4F89F1B91D8990D1C86561183E3D92B4D"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-brand-logo.mjs",
+    "Hash": "5FD1D3F2B2B6F0BC1C367108D13E45A842DD285CE8365C45A22A24F1DB39613E"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-connection-modal.mjs",
+    "Hash": "157903B1B5933EC508B36717423B5EF1F20316493C9AC262C62B6AB11130C86D"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-controller-switch.mjs",
+    "Hash": "19DF72D04FD5F12845E5D9263724CBD2B289A19161F27FC0C7015D94F719A227"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-extensions.mjs",
+    "Hash": "2595173381D501F78DC011823FAB02B8D160A423C68C932083C8B9DAA9919AD6"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-hardware.mjs",
+    "Hash": "0946B361FD47B6FC1D484CBD1B5CE9877921437090F5EDA1352FF5B79CAB317C"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-library-v06.mjs",
+    "Hash": "1B2508805B20A05C677B10F5B77BCFC70A969A27C999D468A33837D65CC991D6"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-mode-narrow.mjs",
+    "Hash": "6ACD6203028217E5508FB8E68537CCCE2F2529E882FB89154C524FD0FFC970BD"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-mode-ui.mjs",
+    "Hash": "69E719F7458E4DF13539F6DA609D0C086ECC9B791F7AC7CA8C14157F67674CAD"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-native-toolbar.mjs",
+    "Hash": "3E613B1E0706A83CE41CECF66333B7BB76EDE30B0D7DEAF22D3629F512485017"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-parity-v07.mjs",
+    "Hash": "8E38116B27242811C41CAFE2B7625D5D2E2E23A6AD780D7971B3D4C837F02501"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-programming-archive.mjs",
+    "Hash": "9FE4F413198E23AE7619965512D893C7B79600A89950D06B0CBCA1D97459F2A3"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-search-undo-v07.mjs",
+    "Hash": "82F6CF0E456EA3B5C25548CC13A0B07BA2971A6EAE66472AE44F5904EC470D4D"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-serial-text.mjs",
+    "Hash": "A867DD468DF3B36378BCBFCC7CAD019A8159FE3DBD1637EBDB8DDFC1623D7F39"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-toolbox-v05.mjs",
+    "Hash": "005E849C7096E5B27313F75DD80D0D27EF8496F9D4A5931356E496C651A65E4F"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\scripts\\verify-upstream-bytes.mjs",
+    "Hash": "BD012801A7C3DD111454F9D2C0C29E629E71C09D11FC21907E919D99DB69F6D2"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\public\\branding\\IDE.png",
+    "Hash": "18C9295EDA2562707124E7A562ECB683BA19F60BF23A7038B7FB5A92F267D75F"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\public\\cfzn-connection\\connection-assets-manifest.json",
+    "Hash": "3A1513ED5FCE8BC55939BEC521DC1B7B2196624471BBFC4EB0D19804E56070CF"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\public\\cfzn-connection\\icon-link.svg",
+    "Hash": "BC94A6CBCB9570061A3C46CED53F6634DE83AD96349CBEE2A8D2B4DCABCC1FA2"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\public\\cfzn-connection\\icon-serialport.svg",
+    "Hash": "81AAA9CC7171D2F221D794AB61C9108F26CDC0DD3977AE7D40812D530B33CB1B"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\public\\cfzn-connection\\result-rings-inline.png",
+    "Hash": "1F6A0FA66A72589F5B3CD2FDEEBE356B661E558A63026ACD94AF9A444A4E2E27"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\public\\cfzn-connection\\scan-sp.43a795b2.svg",
+    "Hash": "C8279EF7930D2D268E45B6C4B9FB111C5EA37C87713B3E9EB0147D24514A0C71"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\public\\cfzn-connection\\searching.48df3abf.png",
+    "Hash": "6F989A176727CA6890D0F06796E650F6425235DAA23DE1506DCFA8C9E79F29FC"
+  },
+  {
+    "Path": "F:\\CFZN\\CFZN-IDE\\apps\\web\\public\\cfzn-extensions\\module-loader.js",
+    "Hash": "A2564C8772E19271635F1A935D3516CEABA305D26B63672C3E81632049348207"
+  }
+]

@@ -1,0 +1,239 @@
+{
+  "surface": "dev",
+  "http": {
+    "status": 200,
+    "mime": "image/png",
+    "bytes": 275981,
+    "sha256": "18C9295EDA2562707124E7A562ECB683BA19F60BF23A7038B7FB5A92F267D75F"
+  },
+  "layouts": [
+    {
+      "width": 2560,
+      "src": "http://127.0.0.1:54837/branding/IDE.png",
+      "alt": "CFZN IDE",
+      "draggable": false,
+      "natural": [
+        1318,
+        509
+      ],
+      "logo": {
+        "x": 6,
+        "y": 4,
+        "width": 120,
+        "height": 40
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 2560,
+        "height": 48
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "maxWidth": "120px",
+      "maxHeight": "40px",
+      "flexGrow": "0",
+      "flexShrink": "0",
+      "isOverflow": false,
+      "sameNode": true,
+      "callbackPreserved": true,
+      "hasClickHandler": false,
+      "originalClass": true,
+      "buttons": [
+        "项目",
+        "新建",
+        "导入",
+        "导出",
+        "保存"
+      ],
+      "modes": [
+        "编程模式",
+        "上传模式"
+      ],
+      "status": true
+    },
+    {
+      "width": 1200,
+      "src": "http://127.0.0.1:54837/branding/IDE.png",
+      "alt": "CFZN IDE",
+      "draggable": false,
+      "natural": [
+        1318,
+        509
+      ],
+      "logo": {
+        "x": 6,
+        "y": 4,
+        "width": 120,
+        "height": 40
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 1200,
+        "height": 48
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "maxWidth": "120px",
+      "maxHeight": "40px",
+      "flexGrow": "0",
+      "flexShrink": "0",
+      "isOverflow": true,
+      "sameNode": true,
+      "callbackPreserved": true,
+      "hasClickHandler": false,
+      "originalClass": true,
+      "buttons": [
+        "项目",
+        "新建",
+        "导入",
+        "导出",
+        "保存"
+      ],
+      "modes": [
+        "编程模式",
+        "上传模式"
+      ],
+      "status": true
+    },
+    {
+      "width": 1199,
+      "src": "http://127.0.0.1:54837/branding/IDE.png",
+      "alt": "CFZN IDE",
+      "draggable": false,
+      "natural": [
+        1318,
+        509
+      ],
+      "logo": {
+        "x": 6,
+        "y": 4,
+        "width": 120,
+        "height": 40
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 1199,
+        "height": 48
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "maxWidth": "120px",
+      "maxHeight": "40px",
+      "flexGrow": "0",
+      "flexShrink": "0",
+      "isOverflow": false,
+      "sameNode": true,
+      "callbackPreserved": true,
+      "hasClickHandler": false,
+      "originalClass": true,
+      "buttons": [
+        "项目",
+        "新建",
+        "导入",
+        "导出",
+        "保存"
+      ],
+      "modes": [
+        "编程模式",
+        "上传模式"
+      ],
+      "status": true
+    },
+    {
+      "width": 800,
+      "src": "http://127.0.0.1:54837/branding/IDE.png",
+      "alt": "CFZN IDE",
+      "draggable": false,
+      "natural": [
+        1318,
+        509
+      ],
+      "logo": {
+        "x": 6,
+        "y": 4,
+        "width": 120,
+        "height": 40
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 800,
+        "height": 48
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "maxWidth": "120px",
+      "maxHeight": "40px",
+      "flexGrow": "0",
+      "flexShrink": "0",
+      "isOverflow": true,
+      "sameNode": true,
+      "callbackPreserved": true,
+      "hasClickHandler": false,
+      "originalClass": true,
+      "buttons": [
+        "项目",
+        "新建",
+        "导入",
+        "导出",
+        "保存"
+      ],
+      "modes": [
+        "编程模式",
+        "上传模式"
+      ],
+      "status": true
+    },
+    {
+      "width": 1440,
+      "src": "http://127.0.0.1:54837/branding/IDE.png",
+      "alt": "CFZN IDE",
+      "draggable": false,
+      "natural": [
+        1318,
+        509
+      ],
+      "logo": {
+        "x": 6,
+        "y": 4,
+        "width": 120,
+        "height": 40
+      },
+      "bar": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 48
+      },
+      "fit": "contain",
+      "position": "50% 50%",
+      "maxWidth": "120px",
+      "maxHeight": "40px",
+      "flexGrow": "0",
+      "flexShrink": "0",
+      "isOverflow": false,
+      "sameNode": true,
+      "callbackPreserved": true,
+      "hasClickHandler": false,
+      "originalClass": true,
+      "buttons": [
+        "项目",
+        "新建",
+        "导入",
+        "导出",
+        "保存"
+      ],
+      "modes": [
+        "编程模式",
+        "上传模式"
+      ],
+      "status": true
+    }
+  ],
+  "errors": [],
+  "zoom": "viewport changes only; no browser UI zoom or DPR change",
+  "physicalSerial": false
+}

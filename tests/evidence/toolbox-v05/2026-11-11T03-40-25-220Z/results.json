@@ -1,0 +1,111 @@
+[
+  {
+    "name": "dev normal UI six-module chain",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: data",
+    "stack": "AssertionError [ERR_ASSERTION]: data\n    at normalChain (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:93:513)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:60"
+  },
+  {
+    "name": "dev fixed helper invalid/default/network/retry/cache",
+    "status": "PASS",
+    "detail": {
+      "invalidDefault": "扩展「activateBuzzer」的 blocks.mjs 未提供有效的默认注册函数。",
+      "networkFailure": "扩展「activateBuzzer」的 generator.mjs 加载失败：Failed to fetch dynamically imported module: http://127.0.0.1:52441/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&retry=1",
+      "retry": true,
+      "cacheNoRefetch": true,
+      "inputVersionGuards": [
+        "无法加载扩展：模块不在内置目录中。",
+        "无法加载扩展：资源版本无效，请刷新编辑器。",
+        "无法加载扩展：重试次数必须是非负安全整数。",
+        "扩展资源版本已变化，请先保存当前项目并刷新编辑器。"
+      ]
+    }
+  },
+  {
+    "name": "dev stage execution guards",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at xml (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:36:39)\n    at stageCases (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:99:112)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:241"
+  },
+  {
+    "name": "dev parameter code and board compatibility",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at xml (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:36:39)\n    at generatorCases (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:109:176)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:308"
+  },
+  {
+    "name": "dev complete realtime archive API restore",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52441/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at xml (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:36:39)\n    at archiveCases (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:115:376)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:395"
+  },
+  {
+    "name": "dev UI resource registration rollback retries",
+    "status": "PASS",
+    "detail": {
+      "manifestRetry": true,
+      "preparationDocumentUnchanged": true,
+      "resourceRetry": true,
+      "registrationFullArchiveRollback": true,
+      "registrationExplicitRetry": true
+    }
+  },
+  {
+    "name": "dist normal UI six-module chain",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: data",
+    "stack": "AssertionError [ERR_ASSERTION]: data\n    at normalChain (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:93:513)\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:60"
+  },
+  {
+    "name": "dist fixed helper invalid/default/network/retry/cache",
+    "status": "PASS",
+    "detail": {
+      "invalidDefault": "扩展「activateBuzzer」的 blocks.mjs 未提供有效的默认注册函数。",
+      "networkFailure": "扩展「activateBuzzer」的 generator.mjs 加载失败：Failed to fetch dynamically imported module: http://127.0.0.1:52442/cfzn-extensions/extensions/activateBuzzer/generator.mjs?v=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&retry=1",
+      "retry": true,
+      "cacheNoRefetch": true,
+      "inputVersionGuards": [
+        "无法加载扩展：模块不在内置目录中。",
+        "无法加载扩展：资源版本无效，请刷新编辑器。",
+        "无法加载扩展：重试次数必须是非负安全整数。",
+        "扩展资源版本已变化，请先保存当前项目并刷新编辑器。"
+      ]
+    }
+  },
+  {
+    "name": "dist stage execution guards",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at xml (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:36:39)\n    at stageCases (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:99:112)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:241"
+  },
+  {
+    "name": "dist parameter code and board compatibility",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at xml (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:36:39)\n    at generatorCases (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:109:176)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:308"
+  },
+  {
+    "name": "dist complete realtime archive API restore",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: TypeError: Cannot read properties of null (reading 'isConnected')\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:264)\n    at Blockly.Xml.domToBlockHeadless_ (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315133:332)\n    at Blockly.Xml.domToBlock (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315127:237)\n    at Blockly.Xml.domToWorkspace (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315123:13)\n    at Blockly.Xml.clearWorkspaceAndLoadFromXml (http://127.0.0.1:52442/openblock-vendor/openblock-gui.js:315121:403)\n    at eval (eval at evaluate (:370:30), <anonymous>:1:16)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at xml (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:36:39)\n    at archiveCases (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:115:376)\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\toolbox-v05-independent.mjs:24:147)\n    at async file:///F:/CFZN/CFZN-IDE/tests/toolbox-v05-independent.mjs:128:395"
+  },
+  {
+    "name": "dist UI resource registration rollback retries",
+    "status": "PASS",
+    "detail": {
+      "manifestRetry": true,
+      "preparationDocumentUnchanged": true,
+      "resourceRetry": true,
+      "registrationFullArchiveRollback": true,
+      "registrationExplicitRetry": true
+    }
+  },
+  {
+    "name": "VM frozen upstream byte boundary",
+    "status": "PASS",
+    "detail": {
+      "output": "{ vmModuleCount: 178, guiHooks: 32, noFactoryInjection: true }\n"
+    }
+  }
+]

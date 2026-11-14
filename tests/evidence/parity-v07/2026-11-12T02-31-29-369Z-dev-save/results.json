@@ -1,0 +1,98 @@
+[
+  {
+    "name": "iframe title final edit POST; parent focused shortcut PUT",
+    "status": "PASS",
+    "detail": {
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/api/v1/projects",
+          "status": 201,
+          "name": "独立快捷保存末字",
+          "sha256": "59198b208491efa10a8d288ae58cd43c4e3e37cf8bf0f41e3ecd4f259aa2bca5",
+          "response": {
+            "project": {
+              "id": "0902101d-f3df-4cd5-85f5-c9795d3b5cbf",
+              "name": "独立快捷保存末字",
+              "revision": 1,
+              "format": "openblock",
+              "sizeBytes": 48299,
+              "createdAt": "2026-11-12T02:31:34.302Z",
+              "updatedAt": "2026-11-12T02:31:34.302Z"
+            }
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/projects/0902101d-f3df-4cd5-85f5-c9795d3b5cbf/content",
+          "status": 200,
+          "ifMatch": "\"1\"",
+          "sha256": "59198b208491efa10a8d288ae58cd43c4e3e37cf8bf0f41e3ecd4f259aa2bca5",
+          "response": {
+            "project": {
+              "id": "0902101d-f3df-4cd5-85f5-c9795d3b5cbf",
+              "name": "独立快捷保存末字",
+              "revision": 2,
+              "format": "openblock",
+              "sizeBytes": 48299,
+              "createdAt": "2026-11-12T02:31:34.302Z",
+              "updatedAt": "2026-11-12T02:31:34.414Z"
+            }
+          }
+        }
+      ],
+      "archiveFiles": [
+        "project.json",
+        "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+        "4e080acae1c3dc65eef30f07c2b0d4a5.wav",
+        "cd21514d0531fdffb22204e0ec5ed84a.svg",
+        "5de48e72637db4d7fc7f6bb526354114.svg",
+        "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+        "cfzn/editor.json"
+      ]
+    }
+  },
+  {
+    "name": "real native block field pending edit included in saved archive",
+    "status": "PASS",
+    "detail": {
+      "fieldCommitted": true
+    }
+  },
+  {
+    "name": "repeat/composition/modified key guard creates no write",
+    "status": "PASS",
+    "detail": {
+      "count": 3
+    }
+  },
+  {
+    "name": "native comment last input commits before shortcut archive",
+    "status": "PASS",
+    "detail": {
+      "commentCommitted": true
+    }
+  },
+  {
+    "name": "manual code pending input saves complete editor metadata and focus does not jump",
+    "status": "PASS",
+    "detail": {
+      "manualSource": "// independent last manual character\r\nvoid setup(){}\r\nvoid loop(){}",
+      "crossDocumentFocusPreserved": true
+    }
+  },
+  {
+    "name": "real API stale revision 412 preserves local document",
+    "status": "PASS",
+    "detail": {
+      "staleRevision": true
+    }
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "pageErrors": []
+    }
+  }
+]

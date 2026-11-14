@@ -1,0 +1,87 @@
+[
+  {
+    "name": "native open field and dropdown survive real dynamic search reindex",
+    "status": "FAIL",
+    "error": "Error: frame.evaluate: TypeError: Cannot read properties of null (reading 'showEditor_')\n    at eval (eval at evaluate (:370:30), <anonymous>:1:74)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)",
+    "stack": "frame.evaluate: TypeError: Cannot read properties of null (reading 'showEditor_')\n    at eval (eval at evaluate (:370:30), <anonymous>:1:74)\n    at UtilityScript.evaluate (<anonymous>:372:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:57:856\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:141)\n    at async Object.search (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:57:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:94:2"
+  },
+  {
+    "name": "search preserves effective undo redo stacks and next actions",
+    "status": "PASS",
+    "detail": {
+      "stacksPreserved": true,
+      "nextRedo": true,
+      "nextUndo": true
+    }
+  },
+  {
+    "name": "native search Chinese and no result close restores category without state changes",
+    "status": "PASS",
+    "detail": {
+      "category": "motion"
+    }
+  },
+  {
+    "name": "dynamic variables lists and percent-n percent-s procedure are real draggable blocks",
+    "status": "PASS",
+    "detail": {
+      "rows": [
+        {
+          "id": "|8n%3Kkq1Hz+?l7Dzzye",
+          "type": "procedures_call",
+          "text": "独立过程 1 ???",
+          "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"|8n%3Kkq1Hz+?l7Dzzye\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"`@Zzm+tmM~JLut#I0+S=\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\",zOGlOp%hE1`j_kqtOmo\"><field name=\"TEXT\"></field></shadow></value></block>"
+        }
+      ],
+      "dragged": [
+        {
+          "id": "@O5K?]SNV|r,Z,jQ(=8Y",
+          "type": "procedures_call",
+          "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"procedures_call\" id=\"@O5K?]SNV|r,Z,jQ(=8Y\"><mutation proccode=\"独立过程 %n %s\" argumentids=\"[&quot;num&quot;,&quot;str&quot;]\" warp=\"false\"></mutation><value name=\"num\"><shadow type=\"math_number\" id=\"zDg.wR9/%4G5+wNfPe?0\"><field name=\"NUM\">1</field></shadow></value><value name=\"str\"><shadow type=\"text\" id=\"b9wnR5rznA!-+ywCamau\"><field name=\"TEXT\"></field></shadow></value></block>"
+        },
+        {
+          "id": "zDg.wR9/%4G5+wNfPe?0",
+          "type": "math_number",
+          "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"math_number\" id=\"zDg.wR9/%4G5+wNfPe?0\"><field name=\"NUM\">1</field></shadow>"
+        },
+        {
+          "id": "b9wnR5rznA!-+ywCamau",
+          "type": "text",
+          "xml": "<shadow xmlns=\"http://www.w3.org/1999/xhtml\" type=\"text\" id=\"b9wnR5rznA!-+ywCamau\"><field name=\"TEXT\"></field></shadow>"
+        }
+      ]
+    }
+  },
+  {
+    "name": "search close clear repeated rebuild preserves graph and undo",
+    "status": "PASS",
+    "detail": {
+      "rebuilds": 3
+    }
+  },
+  {
+    "name": "English locale native search compared with identical fractional-coordinate no-search control",
+    "status": "PASS",
+    "detail": {
+      "englishAndChinese": true,
+      "controlDelta": 1,
+      "treatmentDelta": 0,
+      "searchSnapshotsStrictlyUnchanged": true
+    }
+  },
+  {
+    "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+    "status": "PASS",
+    "detail": {
+      "disabled": 4,
+      "parameterSensitive": true
+    }
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "pageErrors": []
+    }
+  }
+]

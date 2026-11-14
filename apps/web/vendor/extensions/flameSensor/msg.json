@@ -1,0 +1,5 @@
+{
+    "FLAMESENSOR_CATEGORY": "Flame Sensor",
+    "FLAMESENSOR_READDIGITAL": "flame sensor digital pin %1 detected?",
+    "FLAMESENSOR_READANALOG": "read flame sensor analog pin %1"
+}

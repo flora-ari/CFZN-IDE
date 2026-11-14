@@ -1,0 +1,10 @@
+[
+  {
+    "name": "busy hardware real native connection entry cannot throw or mutate serial",
+    "status": "PASS",
+    "detail": {
+      "disabled": false,
+      "pageErrors": []
+    }
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "runs": [
+    {
+      "run": "2026-11-11T08-09-47-046Z",
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:57169",
+      "dist": "http://127.0.0.1:57170",
+      "api": "http://127.0.0.1:57168",
+      "pageErrors": []
+    },
+    {
+      "run": "2026-11-11T08-10-52-878Z",
+      "tempRemoved": true,
+      "dev": "http://127.0.0.1:58846",
+      "dist": "http://127.0.0.1:58847",
+      "api": "http://127.0.0.1:58845",
+      "pageErrors": []
+    }
+  ],
+  "sha256": {
+    "apps/web/dist/assets/editor-pi1Qp4cx.js": "c51710b097867e3146015325833dd8c10076f55d367d1efddec76b35c3dcb1e6",
+    "apps/web/dist/openblock-vendor/openblock-gui.js": "d2fb1a1fa791e6df812918c2153235931647daead16f8922c9747a8d41bae4af",
+    "apps/web/dist/cfzn-extensions/module-loader.js": "a2564c8772e19271635f1a935d3516ceaba305d26b63672c3e81632049348207"
+  }
+}

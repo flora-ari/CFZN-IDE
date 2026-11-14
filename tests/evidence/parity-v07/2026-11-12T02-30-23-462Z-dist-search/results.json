@@ -1,0 +1,8 @@
+[
+  {
+    "name": "search close clear repeated rebuild preserves graph and undo",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    project: {\n      device: {\n        deviceId: null,\n        pnpIdList: [],\n...\n    },\n+   undo: 12,\n-   undo: 2,\n    workspace: '<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>'\n  }\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  {\n    project: {\n      device: {\n        deviceId: null,\n        pnpIdList: [],\n...\n    },\n+   undo: 12,\n-   undo: 2,\n    workspace: '<xml xmlns=\"http://www.w3.org/1999/xhtml\"><variables></variables></xml>'\n  }\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:59:614\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:141)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:59:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  }
+]

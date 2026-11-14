@@ -1,0 +1,85 @@
+{
+  "innerWidth": 768,
+  "ancestors": [
+    {
+      "tag": "DIV",
+      "className": "library_filter-bar_1W0DW",
+      "rect": {
+        "x": 0,
+        "y": 50,
+        "width": 768,
+        "height": 72,
+        "top": 50,
+        "right": 768,
+        "bottom": 122,
+        "left": 0
+      },
+      "minWidth": "0px",
+      "width": "768px"
+    },
+    {
+      "tag": "DIV",
+      "className": "box_box_2jjDp",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 917,
+        "top": 0,
+        "right": 768,
+        "bottom": 917,
+        "left": 0
+      },
+      "minWidth": "0px",
+      "width": "768px"
+    },
+    {
+      "tag": "DIV",
+      "className": "ReactModal__Content ReactModal__Content--after-open modal_modal-content_1h3ll modal_full-screen_FA4cr",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 917,
+        "top": 0,
+        "right": 768,
+        "bottom": 917,
+        "left": 0
+      },
+      "minWidth": "0px",
+      "width": "768px"
+    },
+    {
+      "tag": "DIV",
+      "className": "ReactModal__Overlay ReactModal__Overlay--after-open modal_modal-overlay_1Lcbx",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "width": 768,
+        "height": 917,
+        "top": 0,
+        "right": 768,
+        "bottom": 917,
+        "left": 0
+      },
+      "minWidth": "0px",
+      "width": "768px"
+    },
+    {
+      "tag": "DIV",
+      "className": "ReactModalPortal",
+      "rect": {
+        "x": 0,
+        "y": 917,
+        "width": 768,
+        "height": 0,
+        "top": 917,
+        "right": 768,
+        "bottom": 917,
+        "left": 0
+      },
+      "minWidth": "0px",
+      "width": "768px"
+    }
+  ]
+}

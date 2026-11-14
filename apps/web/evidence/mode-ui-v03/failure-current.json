@@ -1,0 +1,376 @@
+{
+  "error": "TimeoutError: locator.isDisabled: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: '编程模式', exact: true })\u001b[22m\n",
+  "checks": {
+    "noBoardModes": true,
+    "generatedManualDraft": true,
+    "realStage": {
+      "beforeX": 0,
+      "afterX": 25,
+      "beforeCostume": 0,
+      "afterCostume": 1,
+      "sounds": 1
+    },
+    "noSerialSideEffects": true,
+    "archiveFreshRestore": true
+  },
+  "errors": [],
+  "consoleErrors": [],
+  "calls": [
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/builds",
+      "method": "POST",
+      "body": {
+        "deviceId": "firebeetleEsp32E",
+        "profileId": "mock-firebeetleEsp32E",
+        "code": "// retained manual draft\nvoid setup(){Serial.begin(115200);}\nvoid loop(){Serial.println(\"mode-v03\");delay(1000);}\n",
+        "moduleIds": [
+          "activateBuzzer",
+          "atomizer",
+          "pirSensor",
+          "flameSensor",
+          "raindropSensor",
+          "moreComments"
+        ]
+      }
+    },
+    {
+      "path": "/api/v1/hardware/capabilities",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-1",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/ports",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/uploads",
+      "method": "POST",
+      "body": {
+        "buildId": "job-1",
+        "portId": "COM-MOCK"
+      }
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    },
+    {
+      "path": "/api/v1/hardware/jobs/job-2",
+      "method": "GET",
+      "body": null
+    }
+  ],
+  "text": "English\nРусский\n简体中文\n繁體中文\n编辑\nFireBeetle ESP32-E\n没有连接\n维基\n教程\n上传固件\n编程模式\n上传模式\n硬件作业进行中，请等待完成或取消并等待工具退出。\n代码\n事件\n控制\n运算\n变量\n自制积木\n引脚\n串口\n数据\n有源蜂鸣器\n雾化器\n人体红外传感器\n火焰传感器\n雨滴传感器\n更多注释\n初始化有源蜂鸣器 引脚\nD12 / IO4\n当 Arduino 启动\n1\n等待\n秒\n10\n重复执行\n次\n重复执行\n如果\n那么\n如果\n那么\n否则\n等待\n重复执行直到\n0\n0\n+\n0\n0\n-\n0\n0\n*\n0\n0\n/\n1\n10\n在\n和\n之间取随机数\n \n50\n>\n \n50\n<\n \n50\n=\n与\n或\n不成立\n苹果\n香蕉\n连接\n和\n1\n苹果\n的第\n个字符\n苹果\n的字符数\n苹果\n果\n包含\n?\n0\n0\n除以\n的余数\n0\n四舍五入\n0\n绝对值\n当 Arduino 启动\n设置引脚\nD12 / IO4\n模式\n输入\n高\n设置引脚\nD12 / IO4\n输出\n255\n设置 pwm 引脚\nD12 / IO4\n输出\n0\n设置 dac 引脚\nD2 / IO25\n输出\n读取数字引脚\nD12 / IO4\n读取模拟引脚\nA4 / IO15\n读取触摸引脚\nD12 / IO4\n90\n设置舵机引脚\nD12 / IO4\n输出\n设置中断引脚\nD12 / IO4\n模式\n上升沿\n执行\n取消中断引脚\nD12 / IO4\n串口\n0\n启动波特率\n115200\nHello OpenBlock\n串口\n0\n打印\n换行\n串口\n0\n可读取字节数\n串口\n0\n读取1个字节\n50\n1\n100\n1\n1000\n映射\n从 (\n,\n) 到 (\n,\n)\n50\n1\n100\n约束\n介于 (\n,\n)\n123\n转换\n为\n整数\n97\n转换\n为 ASCII 字符\na\n转换\n为 ASCII 编码\n打开有源蜂鸣器\n关闭有源蜂鸣器\n初始化有源蜂鸣器 引脚\nD5 / IO0\n初始化雾化器 引脚\nD5 / IO0\n设置雾化器\n开启\n切换雾化器状态\n初始化人体红外传感器 引脚\nD9 / IO2\n人体红外检测到运动？\n火焰传感器 数字引脚\nD9 / IO2\n检测到？\n读取火焰传感器 模拟引脚\nA4 / IO15\n雨滴传感器 数字引脚\nD9 / IO2\n潮湿？\n读取雨滴传感器 模拟引脚\nA4 / IO15\nadd your comments in here\n注释：\nadd your comments in here\n注释：\n事件\n控制\n运算\n变量\n建立一个变量\n建立一个列表\n自制积木\n制作新的积木\n引脚\n串口\n数据\n有源蜂鸣器\n雾化器\n人体红外传感器\n火焰传感器\n雨滴传感器\n更多注释\n角色\nx\ny\n显示\n大小\n方向\n角色1\n复制\n导出\n删除\n舞台\n背景\n1\n↑ 上传到设备\n设置 / 编译\n▣ 代码区\nArduino C\n自动生成\n手动编辑\n手稿 · 当前主控：FireBeetle ESP32-E · 切板后请核对源码\n1\n2\n3\n4\n// retained manual draft\nvoid setup(){Serial.begin(115200);}\nvoid loop(){Serial.println(\"mode-v03\");delay(1000);}\n \n\n硬件作业：running · upload\n\n串口终端\n未连接\n连接串口\n暂停\n清空\n波特率 \n应用\n接收 \n文本\nHEX\n文本\nHEX\n无行尾\nLF\nCR\nCRLF\n发送\n编译与上传\n主控 / Profile \n请选择主控 Profile\nfirebeetleEsp32E · esp32\n刷新能力及端口\n\nmock:firebeetleEsp32E\n\n本机烧录端口 \n请明确选择 OS 端口\nCOM-MOCK · simulated uploader target\n\n正在上传\n\n编译当前代码编辑器内容。\nbuild mock log\n释放浏览器串口，等待读写结束。\n上传到明确选择的 OS 端口 COM-MOCK。\nupload mock log\n\n编译检查\n编译并上传\n取消作业\n隐藏（作业继续）"
+}

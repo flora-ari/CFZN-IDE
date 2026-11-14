@@ -1,0 +1,32 @@
+[
+  {
+    "name": "three partitions default all and filter does not dirty",
+    "status": "PASS",
+    "detail": {
+      "舞台扩展": 0,
+      "主控扩展": 20,
+      "模块扩展": 6
+    }
+  },
+  {
+    "name": "real controller/module loaded state filter memory and removal",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 30000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 30000ms exceeded.\n    at F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:77:572\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:141)\n    at async Object.loaded (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:77:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "native device menu and extension controller entry share loaded filter",
+    "status": "PASS",
+    "detail": {
+      "sharedControllerFilter": true,
+      "catalog": 20
+    }
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "pageErrors": []
+    }
+  }
+]

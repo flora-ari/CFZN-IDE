@@ -1,0 +1,32 @@
+[
+  {
+    "name": "dist native monitor probe",
+    "status": "PASS",
+    "detail": [
+      {
+        "type": "data_variable",
+        "id": "v06-var",
+        "checked": false
+      },
+      {
+        "type": "data_listcontents",
+        "id": "v06-list",
+        "checked": false
+      },
+      {
+        "type": "music_getTempo",
+        "id": "music_getTempo"
+      }
+    ]
+  },
+  {
+    "name": "dist actual unsupported native board",
+    "status": "PASS",
+    "detail": {
+      "nativeBoard": "microbit",
+      "unsupported": 6,
+      "defaultAll": true,
+      "intersection": true
+    }
+  }
+]

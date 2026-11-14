@@ -1,0 +1,37 @@
+[
+  {
+    "type": "delete",
+    "recordUndo": true,
+    "workspaceId": "7eNBYL=*crY1ms9A?Dxe"
+  },
+  {
+    "type": "var_create",
+    "recordUndo": true,
+    "workspaceId": "7eNBYL=*crY1ms9A?Dxe"
+  },
+  {
+    "type": "var_create",
+    "recordUndo": true,
+    "workspaceId": "7eNBYL=*crY1ms9A?Dxe"
+  },
+  {
+    "type": "create",
+    "recordUndo": true,
+    "workspaceId": "7eNBYL=*crY1ms9A?Dxe"
+  },
+  {
+    "type": "move",
+    "recordUndo": true,
+    "workspaceId": "7eNBYL=*crY1ms9A?Dxe"
+  },
+  {
+    "type": "create",
+    "recordUndo": true,
+    "workspaceId": "7eNBYL=*crY1ms9A?Dxe"
+  },
+  {
+    "type": "move",
+    "recordUndo": true,
+    "workspaceId": "7eNBYL=*crY1ms9A?Dxe"
+  }
+]

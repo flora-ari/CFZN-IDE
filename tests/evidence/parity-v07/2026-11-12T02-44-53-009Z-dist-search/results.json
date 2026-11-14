@@ -1,0 +1,8 @@
+[
+  {
+    "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(JSON.stringify(first).includes('FIRST_PARAMETER'))\n",
+    "stack": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(JSON.stringify(first).includes('FIRST_PARAMETER'))\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:62:1406\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:141)\n    at async Object.search (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:62:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:93:2"
+  }
+]

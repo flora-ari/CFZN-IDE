@@ -1,0 +1,95 @@
+[
+  {
+    "name": "iframe title final edit POST; parent focused shortcut PUT",
+    "status": "PASS",
+    "detail": {
+      "requests": [
+        {
+          "method": "POST",
+          "path": "/api/v1/projects",
+          "status": 201,
+          "name": "独立快捷保存末字",
+          "sha256": "db9bdee43ba2068da9552d2c2e540a22743ab532fced79896e55243e55435ec6",
+          "response": {
+            "project": {
+              "id": "c22448a5-86d6-4b47-8f91-3046644b00be",
+              "name": "独立快捷保存末字",
+              "revision": 1,
+              "format": "openblock",
+              "sizeBytes": 48299,
+              "createdAt": "2026-11-12T02:26:02.626Z",
+              "updatedAt": "2026-11-12T02:26:02.626Z"
+            }
+          }
+        },
+        {
+          "method": "PUT",
+          "path": "/api/v1/projects/c22448a5-86d6-4b47-8f91-3046644b00be/content",
+          "status": 200,
+          "ifMatch": "\"1\"",
+          "sha256": "db9bdee43ba2068da9552d2c2e540a22743ab532fced79896e55243e55435ec6",
+          "response": {
+            "project": {
+              "id": "c22448a5-86d6-4b47-8f91-3046644b00be",
+              "name": "独立快捷保存末字",
+              "revision": 2,
+              "format": "openblock",
+              "sizeBytes": 48299,
+              "createdAt": "2026-11-12T02:26:02.626Z",
+              "updatedAt": "2026-11-12T02:26:02.748Z"
+            }
+          }
+        }
+      ],
+      "archiveFiles": [
+        "project.json",
+        "83a9787d4cb6f3b7632b4ddfebf74367.wav",
+        "4e080acae1c3dc65eef30f07c2b0d4a5.wav",
+        "cd21514d0531fdffb22204e0ec5ed84a.svg",
+        "5de48e72637db4d7fc7f6bb526354114.svg",
+        "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+        "cfzn/editor.json"
+      ]
+    }
+  },
+  {
+    "name": "real native block field pending edit included in saved archive",
+    "status": "PASS",
+    "detail": {
+      "fieldCommitted": true
+    }
+  },
+  {
+    "name": "repeat/composition/modified key guard creates no write",
+    "status": "PASS",
+    "detail": {
+      "count": 3
+    }
+  },
+  {
+    "name": "native comment last input commits before shortcut archive",
+    "status": "FAIL",
+    "error": "TimeoutError: locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('textarea.blocklyCommentTextarea,textarea.blocklyTextarea').first()\u001b[22m\n",
+    "stack": "locator.fill: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('textarea.blocklyCommentTextarea,textarea.blocklyTextarea').first()\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:52:342\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:48)\n    at async Object.save (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:52:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "manual code pending input saves complete editor metadata and focus does not jump",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:53:678\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:25:48)\n    at async Object.save (file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:53:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:91:2"
+  },
+  {
+    "name": "real API stale revision 412 preserves local document",
+    "status": "PASS",
+    "detail": {
+      "staleRevision": true
+    }
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "pageErrors": []
+    }
+  }
+]

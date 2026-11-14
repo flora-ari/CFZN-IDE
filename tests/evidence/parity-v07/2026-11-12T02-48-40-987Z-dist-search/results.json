@@ -1,0 +1,10 @@
+[
+  {
+    "name": "ESP32 disabled value blocks and comment module preserve source XML and parameter code",
+    "status": "PASS",
+    "detail": {
+      "disabled": 4,
+      "parameterSensitive": true
+    }
+  }
+]

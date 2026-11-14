@@ -1,0 +1,90 @@
+[
+  {
+    "name": "FireBeetle and ESP32 center-name selection, committed highlight, real stage and draft",
+    "status": "PASS",
+    "detail": {
+      "before": {
+        "x": 0,
+        "c": 0
+      },
+      "after": {
+        "x": 17,
+        "c": 1,
+        "sound": 1
+      }
+    }
+  },
+  {
+    "name": "real project POST/GET PUT/GET with six modules, mode/draft/assets and fresh-context reopen",
+    "status": "FAIL",
+    "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  Buffer(48602) [Uint8Array] [\n    80,\n    75,\n    3,\n    4,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    228,\n    152,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    159,\n    241,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    65,\n    93,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    136,\n    206,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    144,\n    254,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    65,\n    15,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    128,\n    168,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    228,\n    152,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    159,\n    241,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    65,\n    93,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    136,\n    206,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    144,\n    254,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    65,\n    15,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    128,\n    168,\n",
+    "stack": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n... Skipped lines\n\n  Buffer(48602) [Uint8Array] [\n    80,\n    75,\n    3,\n    4,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    228,\n    152,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    159,\n    241,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    65,\n    93,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    136,\n    206,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    144,\n    254,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    65,\n    15,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    128,\n    168,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    228,\n    152,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    159,\n    241,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    65,\n    93,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    136,\n    206,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    144,\n    254,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    65,\n    15,\n...\n    0,\n+   147,\n-   146,\n    90,\n    106,\n    93,\n    128,\n    168,\n\n    at file:///F:/CFZN/CFZN-IDE/tests/mode-ui-v03-independent.mjs:99:439\n    at async check (file:///F:/CFZN/CFZN-IDE/tests/mode-ui-v03-independent.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/mode-ui-v03-independent.mjs:96:2"
+  },
+  {
+    "name": "malformed/unsupported/oversize metadata preserves document; historical and New clear drafts",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 30000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 30000ms exceeded.\n    at F:\\CFZN\\CFZN-IDE\\tests\\mode-ui-v03-independent.mjs:105:184\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\mode-ui-v03-independent.mjs:28:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/mode-ui-v03-independent.mjs:102:2"
+  },
+  {
+    "name": "shared serial unaffected by mode, selected manual source and mock upload ownership/busy",
+    "status": "PASS",
+    "detail": {
+      "modeSideEffects": false,
+      "currentSource": true,
+      "releaseBeforeUpload": true,
+      "cancelled": true
+    }
+  },
+  {
+    "name": "desktop/1100 MenuBar no overlapping siblings and visible Monaco; page errors",
+    "status": "PASS",
+    "detail": [
+      {
+        "width": 1440,
+        "geometry": [
+          {
+            "class": "menu-bar_main-menu_3wjWH",
+            "x": 0,
+            "right": 495.53125
+          },
+          {
+            "class": "menu-bar_file-menu_g7ufm",
+            "x": 495.53125,
+            "right": 582.75
+          },
+          {
+            "class": "cfzn-project-tools",
+            "x": 588.75,
+            "right": 974.75
+          },
+          {
+            "class": "menu-bar_tail-menu_2dRXU",
+            "x": 980.75,
+            "right": 1440
+          }
+        ]
+      },
+      {
+        "width": 1100,
+        "geometry": [
+          {
+            "class": "menu-bar_main-menu_3wjWH",
+            "x": 0,
+            "right": 264.609375
+          },
+          {
+            "class": "cfzn-project-tools",
+            "x": 270.609375,
+            "right": 747.53125
+          },
+          {
+            "class": "menu-bar_tail-menu_2dRXU",
+            "x": 753.53125,
+            "right": 1100
+          }
+        ]
+      }
+    ]
+  }
+]

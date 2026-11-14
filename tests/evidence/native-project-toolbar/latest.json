@@ -1,0 +1,23 @@
+{
+  "runId": "2026-11-06T10-57-09-973Z",
+  "evidenceDirectory": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\native-project-toolbar\\2026-11-06T10-57-09-973Z",
+  "results": [
+    {
+      "name": "native POST and PUT show actual saved revisions; fresh project-list reopen preserves blocks/media",
+      "status": "PASS",
+      "ms": 2654,
+      "detail": {
+        "id": "8f1b0147-76d7-45e7-8c24-59b54e066528",
+        "revision": 2,
+        "archiveBytes": 47849,
+        "media": {
+          "stage:Stage#0/costumes:背景1#0": "c3b723d028900d9768878653c3a65c377871fe3ecfce5c7b66ef795505e85e1a",
+          "stage:Stage#0/sounds:啵#0": "fb8c18242813d8763cccf5f6077daf44b672d0088f5d3688cca29d621b4959cc",
+          "sprite:角色1#1/costumes:造型1#0": "efdb9db805b7f7c52c35460c7ab9368317faeb221a6301a75c3ad94e2d32f640",
+          "sprite:角色1#1/costumes:造型2#1": "f9620cc3fc524dd4abe631f36d4735fba057569a519cc300744f21016ef8442c",
+          "sprite:角色1#1/sounds:啁啾#0": "03ca0366cc93de09372d3f9accde285474debb719e3a69d169b3d3f655eac021"
+        }
+      }
+    }
+  ]
+}

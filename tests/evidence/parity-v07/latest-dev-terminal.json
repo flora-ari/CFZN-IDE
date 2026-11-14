@@ -1,0 +1,91 @@
+{
+  "out": "F:\\CFZN\\CFZN-IDE\\tests\\evidence\\parity-v07\\2026-11-12T02-30-01-959Z-dev-terminal",
+  "results": [
+    {
+      "name": "simulated terminal split UTF8 and successful TX",
+      "status": "PASS",
+      "detail": {
+        "simulated": true,
+        "requests": 1,
+        "opens": 1,
+        "closes": 0,
+        "readers": 1,
+        "writers": 1,
+        "writes": [
+          [
+            72,
+            69,
+            76,
+            76,
+            79
+          ]
+        ],
+        "authorized": true,
+        "failWrite": false
+      }
+    },
+    {
+      "name": "mode hide RX and retained draft formats newline pause",
+      "status": "PASS",
+      "detail": {
+        "simulated": true,
+        "requests": 1,
+        "opens": 1,
+        "closes": 0,
+        "readers": 1,
+        "writers": 1,
+        "writes": [
+          [
+            72,
+            69,
+            76,
+            76,
+            79
+          ]
+        ],
+        "authorized": true,
+        "failWrite": false
+      }
+    },
+    {
+      "name": "terminal locale roundtrip retains log draft and settings",
+      "status": "PASS",
+      "detail": {
+        "localeRoundtrip": true,
+        "counts": {
+          "simulated": true,
+          "requests": 1,
+          "opens": 1,
+          "closes": 0,
+          "readers": 1,
+          "writers": 1,
+          "writes": [
+            [
+              72,
+              69,
+              76,
+              76,
+              79
+            ]
+          ],
+          "authorized": true,
+          "failWrite": false
+        }
+      }
+    },
+    {
+      "name": "clear display retains connection and failed write creates no TX",
+      "status": "PASS",
+      "detail": {
+        "failedWriteNoTX": true
+      }
+    },
+    {
+      "name": "no uncaught browser errors",
+      "status": "PASS",
+      "detail": {
+        "pageErrors": []
+      }
+    }
+  ]
+}

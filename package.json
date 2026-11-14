@@ -1,0 +1,21 @@
+{
+  "name": "cfzn-ide",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Maker IDE with OpenBlock, local project storage and browser serial debugging",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "setup": "node scripts/setup.mjs",
+    "dev": "concurrently -k -n api,web \"npm --prefix apps/api run dev\" \"npm --prefix apps/web run dev\"",
+    "hardware": "npm --prefix apps/api run hardware",
+    "build": "npm --prefix apps/api run build && npm --prefix apps/web run build",
+    "test": "npm --prefix apps/api test && npm --prefix apps/web test",
+    "test:e2e": "node tests/extensions-independent.mjs && node tests/extensions-switch-repro.mjs",
+    "test:toolbar": "node tests/native-project-toolbar.mjs",
+    "typecheck": "npm --prefix apps/api run typecheck && npm --prefix apps/web run typecheck"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "concurrently": "^9.2.1"
+  }
+}

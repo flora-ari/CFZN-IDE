@@ -1,0 +1,8 @@
+[
+  {
+    "name": "native stage pen loaded filter uses real extension state and search intersection",
+    "status": "FAIL",
+    "error": "TimeoutError: frame.waitForFunction: Timeout 30000ms exceeded.",
+    "stack": "frame.waitForFunction: Timeout 30000ms exceeded.\n    at F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:77:895\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:25:141)\n    at async Object.loaded (F:\\CFZN\\CFZN-IDE\\tests\\parity-v07-independent.mjs:77:2)\n    at async file:///F:/CFZN/CFZN-IDE/tests/parity-v07-independent.mjs:93:2"
+  }
+]

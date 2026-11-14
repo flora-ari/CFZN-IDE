@@ -1,0 +1,47 @@
+{
+  "frozenAt": "2026-11-12T05:54:54.350Z",
+  "productFrozen": true,
+  "buildLog": "build.log",
+  "artifacts": [
+    {
+      "path": "openblock-vendor/openblock-gui.js",
+      "sha256": "534E11D74533CF04D869E94FCFFC4D96BDB945236358542B654D1B0DEC2EFDA9"
+    },
+    {
+      "path": "openblock-vendor/manifest.json",
+      "sha256": "5171989062F8157558EB5A81927FA697CA750064F84FAAA225EE65AC68903715"
+    },
+    {
+      "path": "branding/IDE.png",
+      "sha256": "18C9295EDA2562707124E7A562ECB683BA19F60BF23A7038B7FB5A92F267D75F"
+    },
+    {
+      "path": "assets/app-kk7fVTCm.css",
+      "sha256": "A0A8E427BE737D833CC27038BDBBE1ECA9CF1FEF326DEC0C0043E72EE7E82B07"
+    },
+    {
+      "path": "assets/app-WvfxpJny.js",
+      "sha256": "2D989C3351A29A23F114565BBF432F21191F4703FB394B3E3D17D19B4368C176"
+    },
+    {
+      "path": "assets/editor-BYnA3_tl.css",
+      "sha256": "DB20BD560C64108CBB498301BF570AD5897393B6048B6D4A1799C45ACF49B90E"
+    },
+    {
+      "path": "assets/editor-BYzD-xt1.js",
+      "sha256": "9D1FC47EEBFA3242C64554044965DE6C6BC2D7FB168007B7693C3A33AE323B2B"
+    },
+    {
+      "path": "assets/save-shortcut-DZCizx91.js",
+      "sha256": "E1176DDF804797080DD9B9CE9BA59A361294097DD82E3CF3D0163351D7F7058E"
+    },
+    {
+      "path": "index.html",
+      "sha256": "4E836F3C3EE1333D449201097437859BB0F137ED3F0678AA4D344485383FEBA1"
+    },
+    {
+      "path": "openblock.html",
+      "sha256": "697502BB019EB010C7103F1F4159DD40E78AD9417DB3A451C7CEA30D5AFED396"
+    }
+  ]
+}

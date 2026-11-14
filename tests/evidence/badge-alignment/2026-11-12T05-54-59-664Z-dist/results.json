@@ -1,0 +1,21 @@
+[
+  {
+    "name": "gray badges wide narrow actual zoom and retained branding",
+    "status": "FAIL",
+    "error": "Error: locator.evaluate: Target page, context or browser has been closed",
+    "stack": "locator.evaluate: Target page, context or browser has been closed\n    at F:\\CFZN\\CFZN-IDE\\tests\\badge-alignment-independent.mjs:34:60\n    at async check (F:\\CFZN\\CFZN-IDE\\tests\\badge-alignment-independent.mjs:18:75)\n    at async file:///F:/CFZN/CFZN-IDE/tests/badge-alignment-independent.mjs:30:2"
+  },
+  {
+    "name": "supported badges select remove and unsupported native board",
+    "status": "FAIL",
+    "error": "Error: locator.count: Target page, context or browser has been closed",
+    "stack": "locator.count: Target page, context or browser has been closed\n    at library (F:\\CFZN\\CFZN-IDE\\tests\\badge-alignment-independent.mjs:21:78)\n    at F:\\CFZN\\CFZN-IDE\\tests\\badge-alignment-independent.mjs:37:8\n    at check (F:\\CFZN\\CFZN-IDE\\tests\\badge-alignment-independent.mjs:18:81)\n    at F:\\CFZN\\CFZN-IDE\\tests\\badge-alignment-independent.mjs:36:8"
+  },
+  {
+    "name": "no uncaught browser errors",
+    "status": "PASS",
+    "detail": {
+      "errors": []
+    }
+  }
+]

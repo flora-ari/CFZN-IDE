@@ -1,0 +1,12 @@
+[
+  {
+    "surface": "dist",
+    "checks": {
+      "realTypesAndSearch": true,
+      "removeReaddAndReferenceGuard": true,
+      "completeArchiveClear": true
+    },
+    "errors": [],
+    "physicalSerial": false
+  }
+]

@@ -1,0 +1,138 @@
+{
+  "surface": "dist",
+  "checks": {
+    "searchPreservesUndoRedo": true,
+    "lifecycleStillDelivered": true,
+    "existingRedoStillWorks": true,
+    "newEditUndoRedoStillWorks": true
+  },
+  "before": {
+    "undo": [],
+    "redo": [
+      {
+        "type": "move",
+        "recordUndo": true,
+        "json": {
+          "type": "move",
+          "group": "oKk%U|-1x3,qcokJ{rLn",
+          "blockId": "v07-undo-move",
+          "newCoordinate": "440,140"
+        }
+      },
+      {
+        "type": "create",
+        "recordUndo": true,
+        "json": {
+          "type": "create",
+          "group": "oKk%U|-1x3,qcokJ{rLn",
+          "blockId": "v07-undo-move",
+          "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"motion_movesteps\" id=\"v07-undo-move\" x=\"0\" y=\"0\"><value name=\"STEPS\"><shadow type=\"math_number\" id=\"-v)x=;)kBe*o(uj46pgy\"><field name=\"NUM\">10</field></shadow></value></block>",
+          "ids": [
+            "v07-undo-move",
+            "-v)x=;)kBe*o(uj46pgy"
+          ]
+        }
+      }
+    ],
+    "recordUndo": true
+  },
+  "after": {
+    "undo": [],
+    "redo": [
+      {
+        "type": "move",
+        "recordUndo": true,
+        "json": {
+          "type": "move",
+          "group": "oKk%U|-1x3,qcokJ{rLn",
+          "blockId": "v07-undo-move",
+          "newCoordinate": "440,140"
+        }
+      },
+      {
+        "type": "create",
+        "recordUndo": true,
+        "json": {
+          "type": "create",
+          "group": "oKk%U|-1x3,qcokJ{rLn",
+          "blockId": "v07-undo-move",
+          "xml": "<block xmlns=\"http://www.w3.org/1999/xhtml\" type=\"motion_movesteps\" id=\"v07-undo-move\" x=\"0\" y=\"0\"><value name=\"STEPS\"><shadow type=\"math_number\" id=\"-v)x=;)kBe*o(uj46pgy\"><field name=\"NUM\">10</field></shadow></value></block>",
+          "ids": [
+            "v07-undo-move",
+            "-v)x=;)kBe*o(uj46pgy"
+          ]
+        }
+      }
+    ],
+    "recordUndo": true
+  },
+  "lifecycle": [
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    },
+    {
+      "type": "toolBoxFinish",
+      "recordUndo": false,
+      "workspaceId": "Vg(S:fm[P!Ulc-pA3!Q$"
+    }
+  ],
+  "errors": [],
+  "physicalHardware": false
+}

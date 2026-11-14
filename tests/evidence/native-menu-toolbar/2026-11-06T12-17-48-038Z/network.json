@@ -1,0 +1,34 @@
+[
+  {
+    "label": "main",
+    "method": "POST",
+    "path": "/api/v1/projects",
+    "status": 201,
+    "bodyBytes": 48169
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects",
+    "status": 200
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects",
+    "status": 200
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects/fca3e7bc-27ce-419a-b5e0-6370afaa5d99",
+    "status": 200
+  },
+  {
+    "label": "main",
+    "method": "GET",
+    "path": "/api/v1/projects/fca3e7bc-27ce-419a-b5e0-6370afaa5d99/content",
+    "status": 200,
+    "ifMatch": "\"1\""
+  }
+]

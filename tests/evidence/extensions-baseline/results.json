@@ -1,0 +1,1832 @@
+[
+  {
+    "name": "native library, search, missing-controller and responsive keyboard/scroll",
+    "status": "PASS",
+    "ms": 958,
+    "detail": [
+      {
+        "width": 1440,
+        "library": {
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 848,
+          "top": 0,
+          "right": 1440,
+          "bottom": 848,
+          "left": 0
+        },
+        "barWidth": 1440,
+        "barScrollWidth": 1440,
+        "lastCard": {
+          "x": 332,
+          "y": 490.390625,
+          "width": 300,
+          "height": 336.390625,
+          "top": 490.390625,
+          "right": 632,
+          "bottom": 826.78125,
+          "left": 332
+        }
+      },
+      {
+        "width": 768,
+        "library": {
+          "x": 0,
+          "y": 0,
+          "width": 768,
+          "height": 917,
+          "top": 0,
+          "right": 768,
+          "bottom": 917,
+          "left": 0
+        },
+        "barWidth": 768,
+        "barScrollWidth": 1061,
+        "lastCard": {
+          "x": 332,
+          "y": 582.78125,
+          "width": 300,
+          "height": 336.390625,
+          "top": 582.78125,
+          "right": 632,
+          "bottom": 919.171875,
+          "left": 332
+        }
+      },
+      {
+        "width": 390,
+        "library": {
+          "x": 0,
+          "y": 0,
+          "width": 390,
+          "height": 879,
+          "top": 0,
+          "right": 390,
+          "bottom": 879,
+          "left": 0
+        },
+        "barWidth": 390,
+        "barScrollWidth": 739,
+        "lastCard": {
+          "x": 45,
+          "y": 526.953125,
+          "width": 300,
+          "height": 336.390625,
+          "top": 526.953125,
+          "right": 345,
+          "bottom": 863.34375,
+          "left": 45
+        }
+      }
+    ]
+  },
+  {
+    "name": "three actual controllers; generic IO3 and Aijite digital/analog/touch exclusion",
+    "status": "PASS",
+    "ms": 833,
+    "detail": {
+      "generic": [
+        [
+          "arduino_pin_setDigitalOutput",
+          [
+            [
+              "IO0",
+              "0"
+            ],
+            [
+              "IO1",
+              "1"
+            ],
+            [
+              "IO2",
+              "2"
+            ],
+            [
+              "IO3",
+              "3"
+            ],
+            [
+              "IO4",
+              "4"
+            ],
+            [
+              "IO5",
+              "5"
+            ],
+            [
+              "IO6",
+              "6"
+            ],
+            [
+              "IO7",
+              "7"
+            ],
+            [
+              "IO8",
+              "8"
+            ],
+            [
+              "IO9",
+              "9"
+            ],
+            [
+              "IO10",
+              "10"
+            ],
+            [
+              "IO11",
+              "11"
+            ],
+            [
+              "IO12",
+              "12"
+            ],
+            [
+              "IO13",
+              "13"
+            ],
+            [
+              "IO14",
+              "14"
+            ],
+            [
+              "IO15",
+              "15"
+            ],
+            [
+              "IO16",
+              "16"
+            ],
+            [
+              "IO17",
+              "17"
+            ],
+            [
+              "IO18",
+              "18"
+            ],
+            [
+              "IO19",
+              "19"
+            ],
+            [
+              "IO20",
+              "20"
+            ],
+            [
+              "IO21",
+              "21"
+            ],
+            [
+              "IO38",
+              "38"
+            ],
+            [
+              "IO39",
+              "39"
+            ],
+            [
+              "IO40",
+              "40"
+            ],
+            [
+              "IO41",
+              "41"
+            ],
+            [
+              "IO42",
+              "42"
+            ],
+            [
+              "IO43",
+              "43"
+            ],
+            [
+              "IO44",
+              "44"
+            ]
+          ]
+        ],
+        [
+          "arduino_pin_readDigitalPin",
+          [
+            [
+              "IO0",
+              "0"
+            ],
+            [
+              "IO1",
+              "1"
+            ],
+            [
+              "IO2",
+              "2"
+            ],
+            [
+              "IO3",
+              "3"
+            ],
+            [
+              "IO4",
+              "4"
+            ],
+            [
+              "IO5",
+              "5"
+            ],
+            [
+              "IO6",
+              "6"
+            ],
+            [
+              "IO7",
+              "7"
+            ],
+            [
+              "IO8",
+              "8"
+            ],
+            [
+              "IO9",
+              "9"
+            ],
+            [
+              "IO10",
+              "10"
+            ],
+            [
+              "IO11",
+              "11"
+            ],
+            [
+              "IO12",
+              "12"
+            ],
+            [
+              "IO13",
+              "13"
+            ],
+            [
+              "IO14",
+              "14"
+            ],
+            [
+              "IO15",
+              "15"
+            ],
+            [
+              "IO16",
+              "16"
+            ],
+            [
+              "IO17",
+              "17"
+            ],
+            [
+              "IO18",
+              "18"
+            ],
+            [
+              "IO19",
+              "19"
+            ],
+            [
+              "IO20",
+              "20"
+            ],
+            [
+              "IO21",
+              "21"
+            ],
+            [
+              "IO38",
+              "38"
+            ],
+            [
+              "IO39",
+              "39"
+            ],
+            [
+              "IO40",
+              "40"
+            ],
+            [
+              "IO41",
+              "41"
+            ],
+            [
+              "IO42",
+              "42"
+            ],
+            [
+              "IO43",
+              "43"
+            ],
+            [
+              "IO44",
+              "44"
+            ]
+          ]
+        ],
+        [
+          "arduino_pin_readAnalogPin",
+          [
+            [
+              "IO1",
+              "1"
+            ],
+            [
+              "IO2",
+              "2"
+            ],
+            [
+              "IO3",
+              "3"
+            ],
+            [
+              "IO4",
+              "4"
+            ],
+            [
+              "IO5",
+              "5"
+            ],
+            [
+              "IO6",
+              "6"
+            ],
+            [
+              "IO7",
+              "7"
+            ],
+            [
+              "IO8",
+              "8"
+            ],
+            [
+              "IO9",
+              "9"
+            ],
+            [
+              "IO10",
+              "10"
+            ],
+            [
+              "IO11",
+              "11"
+            ],
+            [
+              "IO12",
+              "12"
+            ],
+            [
+              "IO13",
+              "13"
+            ],
+            [
+              "IO14",
+              "14"
+            ],
+            [
+              "IO15",
+              "15"
+            ],
+            [
+              "IO16",
+              "16"
+            ],
+            [
+              "IO17",
+              "17"
+            ],
+            [
+              "IO18",
+              "18"
+            ],
+            [
+              "IO19",
+              "19"
+            ],
+            [
+              "IO20",
+              "20"
+            ]
+          ]
+        ],
+        [
+          "arduino_pin_esp32ReadTouchPin",
+          [
+            [
+              "IO1",
+              "1"
+            ],
+            [
+              "IO2",
+              "2"
+            ],
+            [
+              "IO3",
+              "3"
+            ],
+            [
+              "IO4",
+              "4"
+            ],
+            [
+              "IO5",
+              "5"
+            ],
+            [
+              "IO6",
+              "6"
+            ],
+            [
+              "IO7",
+              "7"
+            ],
+            [
+              "IO8",
+              "8"
+            ],
+            [
+              "IO9",
+              "9"
+            ],
+            [
+              "IO10",
+              "10"
+            ],
+            [
+              "IO11",
+              "11"
+            ],
+            [
+              "IO12",
+              "12"
+            ],
+            [
+              "IO13",
+              "13"
+            ],
+            [
+              "IO14",
+              "14"
+            ],
+            [
+              "IO15",
+              "15"
+            ]
+          ]
+        ]
+      ],
+      "aijite": [
+        [
+          "arduino_pin_setDigitalOutput",
+          [
+            [
+              "IO0",
+              "0"
+            ],
+            [
+              "IO1",
+              "1"
+            ],
+            [
+              "IO2",
+              "2"
+            ],
+            [
+              "IO4",
+              "4"
+            ],
+            [
+              "IO5",
+              "5"
+            ],
+            [
+              "IO6",
+              "6"
+            ],
+            [
+              "IO7",
+              "7"
+            ],
+            [
+              "IO8",
+              "8"
+            ],
+            [
+              "IO9",
+              "9"
+            ],
+            [
+              "IO10",
+              "10"
+            ],
+            [
+              "IO11",
+              "11"
+            ],
+            [
+              "IO12",
+              "12"
+            ],
+            [
+              "IO13",
+              "13"
+            ],
+            [
+              "IO14",
+              "14"
+            ],
+            [
+              "IO15",
+              "15"
+            ],
+            [
+              "IO16",
+              "16"
+            ],
+            [
+              "IO17",
+              "17"
+            ],
+            [
+              "IO18",
+              "18"
+            ],
+            [
+              "IO19",
+              "19"
+            ],
+            [
+              "IO20",
+              "20"
+            ],
+            [
+              "IO21",
+              "21"
+            ],
+            [
+              "IO38",
+              "38"
+            ],
+            [
+              "IO39",
+              "39"
+            ],
+            [
+              "IO40",
+              "40"
+            ],
+            [
+              "IO41",
+              "41"
+            ],
+            [
+              "IO42",
+              "42"
+            ],
+            [
+              "IO43",
+              "43"
+            ],
+            [
+              "IO44",
+              "44"
+            ]
+          ]
+        ],
+        [
+          "arduino_pin_readDigitalPin",
+          [
+            [
+              "IO0",
+              "0"
+            ],
+            [
+              "IO1",
+              "1"
+            ],
+            [
+              "IO2",
+              "2"
+            ],
+            [
+              "IO4",
+              "4"
+            ],
+            [
+              "IO5",
+              "5"
+            ],
+            [
+              "IO6",
+              "6"
+            ],
+            [
+              "IO7",
+              "7"
+            ],
+            [
+              "IO8",
+              "8"
+            ],
+            [
+              "IO9",
+              "9"
+            ],
+            [
+              "IO10",
+              "10"
+            ],
+            [
+              "IO11",
+              "11"
+            ],
+            [
+              "IO12",
+              "12"
+            ],
+            [
+              "IO13",
+              "13"
+            ],
+            [
+              "IO14",
+              "14"
+            ],
+            [
+              "IO15",
+              "15"
+            ],
+            [
+              "IO16",
+              "16"
+            ],
+            [
+              "IO17",
+              "17"
+            ],
+            [
+              "IO18",
+              "18"
+            ],
+            [
+              "IO19",
+              "19"
+            ],
+            [
+              "IO20",
+              "20"
+            ],
+            [
+              "IO21",
+              "21"
+            ],
+            [
+              "IO38",
+              "38"
+            ],
+            [
+              "IO39",
+              "39"
+            ],
+            [
+              "IO40",
+              "40"
+            ],
+            [
+              "IO41",
+              "41"
+            ],
+            [
+              "IO42",
+              "42"
+            ],
+            [
+              "IO43",
+              "43"
+            ],
+            [
+              "IO44",
+              "44"
+            ]
+          ]
+        ],
+        [
+          "arduino_pin_readAnalogPin",
+          [
+            [
+              "IO1",
+              "1"
+            ],
+            [
+              "IO2",
+              "2"
+            ],
+            [
+              "IO4",
+              "4"
+            ],
+            [
+              "IO5",
+              "5"
+            ],
+            [
+              "IO6",
+              "6"
+            ],
+            [
+              "IO7",
+              "7"
+            ],
+            [
+              "IO8",
+              "8"
+            ],
+            [
+              "IO9",
+              "9"
+            ],
+            [
+              "IO10",
+              "10"
+            ],
+            [
+              "IO11",
+              "11"
+            ],
+            [
+              "IO12",
+              "12"
+            ],
+            [
+              "IO13",
+              "13"
+            ],
+            [
+              "IO14",
+              "14"
+            ],
+            [
+              "IO15",
+              "15"
+            ],
+            [
+              "IO16",
+              "16"
+            ],
+            [
+              "IO17",
+              "17"
+            ],
+            [
+              "IO18",
+              "18"
+            ],
+            [
+              "IO19",
+              "19"
+            ],
+            [
+              "IO20",
+              "20"
+            ]
+          ]
+        ],
+        [
+          "arduino_pin_esp32ReadTouchPin",
+          [
+            [
+              "IO1",
+              "1"
+            ],
+            [
+              "IO2",
+              "2"
+            ],
+            [
+              "IO4",
+              "4"
+            ],
+            [
+              "IO5",
+              "5"
+            ],
+            [
+              "IO6",
+              "6"
+            ],
+            [
+              "IO7",
+              "7"
+            ],
+            [
+              "IO8",
+              "8"
+            ],
+            [
+              "IO9",
+              "9"
+            ],
+            [
+              "IO10",
+              "10"
+            ],
+            [
+              "IO11",
+              "11"
+            ],
+            [
+              "IO12",
+              "12"
+            ],
+            [
+              "IO13",
+              "13"
+            ],
+            [
+              "IO14",
+              "14"
+            ],
+            [
+              "IO15",
+              "15"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  {
+    "name": "all six real module blocks, flyout, menus and idempotent selection",
+    "status": "PASS",
+    "ms": 1015,
+    "detail": [
+      {
+        "type": "activeBuzzer_init",
+        "defined": true,
+        "generator": "function",
+        "flyout": true,
+        "pins": [
+          [
+            "IO0",
+            "0"
+          ],
+          [
+            "IO1",
+            "1"
+          ],
+          [
+            "IO2",
+            "2"
+          ],
+          [
+            "IO4",
+            "4"
+          ],
+          [
+            "IO5",
+            "5"
+          ],
+          [
+            "IO6",
+            "6"
+          ],
+          [
+            "IO7",
+            "7"
+          ],
+          [
+            "IO8",
+            "8"
+          ],
+          [
+            "IO9",
+            "9"
+          ],
+          [
+            "IO10",
+            "10"
+          ],
+          [
+            "IO11",
+            "11"
+          ],
+          [
+            "IO12",
+            "12"
+          ],
+          [
+            "IO13",
+            "13"
+          ],
+          [
+            "IO14",
+            "14"
+          ],
+          [
+            "IO15",
+            "15"
+          ],
+          [
+            "IO16",
+            "16"
+          ],
+          [
+            "IO17",
+            "17"
+          ],
+          [
+            "IO18",
+            "18"
+          ],
+          [
+            "IO19",
+            "19"
+          ],
+          [
+            "IO20",
+            "20"
+          ],
+          [
+            "IO21",
+            "21"
+          ],
+          [
+            "IO38",
+            "38"
+          ],
+          [
+            "IO39",
+            "39"
+          ],
+          [
+            "IO40",
+            "40"
+          ],
+          [
+            "IO41",
+            "41"
+          ],
+          [
+            "IO42",
+            "42"
+          ],
+          [
+            "IO43",
+            "43"
+          ],
+          [
+            "IO44",
+            "44"
+          ]
+        ]
+      },
+      {
+        "type": "activeBuzzer_on",
+        "defined": true,
+        "generator": "function",
+        "flyout": true
+      },
+      {
+        "type": "activeBuzzer_off",
+        "defined": true,
+        "generator": "function",
+        "flyout": true
+      },
+      {
+        "type": "atomizer_init",
+        "defined": true,
+        "generator": "function",
+        "flyout": true,
+        "pins": [
+          [
+            "IO0",
+            "0"
+          ],
+          [
+            "IO1",
+            "1"
+          ],
+          [
+            "IO2",
+            "2"
+          ],
+          [
+            "IO4",
+            "4"
+          ],
+          [
+            "IO5",
+            "5"
+          ],
+          [
+            "IO6",
+            "6"
+          ],
+          [
+            "IO7",
+            "7"
+          ],
+          [
+            "IO8",
+            "8"
+          ],
+          [
+            "IO9",
+            "9"
+          ],
+          [
+            "IO10",
+            "10"
+          ],
+          [
+            "IO11",
+            "11"
+          ],
+          [
+            "IO12",
+            "12"
+          ],
+          [
+            "IO13",
+            "13"
+          ],
+          [
+            "IO14",
+            "14"
+          ],
+          [
+            "IO15",
+            "15"
+          ],
+          [
+            "IO16",
+            "16"
+          ],
+          [
+            "IO17",
+            "17"
+          ],
+          [
+            "IO18",
+            "18"
+          ],
+          [
+            "IO19",
+            "19"
+          ],
+          [
+            "IO20",
+            "20"
+          ],
+          [
+            "IO21",
+            "21"
+          ],
+          [
+            "IO38",
+            "38"
+          ],
+          [
+            "IO39",
+            "39"
+          ],
+          [
+            "IO40",
+            "40"
+          ],
+          [
+            "IO41",
+            "41"
+          ],
+          [
+            "IO42",
+            "42"
+          ],
+          [
+            "IO43",
+            "43"
+          ],
+          [
+            "IO44",
+            "44"
+          ]
+        ]
+      },
+      {
+        "type": "atomizer_setState",
+        "defined": true,
+        "generator": "function",
+        "flyout": true
+      },
+      {
+        "type": "atomizer_toggle",
+        "defined": true,
+        "generator": "function",
+        "flyout": true
+      },
+      {
+        "type": "pirSensor_init",
+        "defined": true,
+        "generator": "function",
+        "flyout": true,
+        "pins": [
+          [
+            "IO0",
+            "0"
+          ],
+          [
+            "IO1",
+            "1"
+          ],
+          [
+            "IO2",
+            "2"
+          ],
+          [
+            "IO4",
+            "4"
+          ],
+          [
+            "IO5",
+            "5"
+          ],
+          [
+            "IO6",
+            "6"
+          ],
+          [
+            "IO7",
+            "7"
+          ],
+          [
+            "IO8",
+            "8"
+          ],
+          [
+            "IO9",
+            "9"
+          ],
+          [
+            "IO10",
+            "10"
+          ],
+          [
+            "IO11",
+            "11"
+          ],
+          [
+            "IO12",
+            "12"
+          ],
+          [
+            "IO13",
+            "13"
+          ],
+          [
+            "IO14",
+            "14"
+          ],
+          [
+            "IO15",
+            "15"
+          ],
+          [
+            "IO16",
+            "16"
+          ],
+          [
+            "IO17",
+            "17"
+          ],
+          [
+            "IO18",
+            "18"
+          ],
+          [
+            "IO19",
+            "19"
+          ],
+          [
+            "IO20",
+            "20"
+          ],
+          [
+            "IO21",
+            "21"
+          ],
+          [
+            "IO38",
+            "38"
+          ],
+          [
+            "IO39",
+            "39"
+          ],
+          [
+            "IO40",
+            "40"
+          ],
+          [
+            "IO41",
+            "41"
+          ],
+          [
+            "IO42",
+            "42"
+          ],
+          [
+            "IO43",
+            "43"
+          ],
+          [
+            "IO44",
+            "44"
+          ]
+        ]
+      },
+      {
+        "type": "pirSensor_detected",
+        "defined": true,
+        "generator": "function",
+        "flyout": true
+      },
+      {
+        "type": "flameSensor_readDigital",
+        "defined": true,
+        "generator": "function",
+        "flyout": true,
+        "pins": [
+          [
+            "IO0",
+            "0"
+          ],
+          [
+            "IO1",
+            "1"
+          ],
+          [
+            "IO2",
+            "2"
+          ],
+          [
+            "IO4",
+            "4"
+          ],
+          [
+            "IO5",
+            "5"
+          ],
+          [
+            "IO6",
+            "6"
+          ],
+          [
+            "IO7",
+            "7"
+          ],
+          [
+            "IO8",
+            "8"
+          ],
+          [
+            "IO9",
+            "9"
+          ],
+          [
+            "IO10",
+            "10"
+          ],
+          [
+            "IO11",
+            "11"
+          ],
+          [
+            "IO12",
+            "12"
+          ],
+          [
+            "IO13",
+            "13"
+          ],
+          [
+            "IO14",
+            "14"
+          ],
+          [
+            "IO15",
+            "15"
+          ],
+          [
+            "IO16",
+            "16"
+          ],
+          [
+            "IO17",
+            "17"
+          ],
+          [
+            "IO18",
+            "18"
+          ],
+          [
+            "IO19",
+            "19"
+          ],
+          [
+            "IO20",
+            "20"
+          ],
+          [
+            "IO21",
+            "21"
+          ],
+          [
+            "IO38",
+            "38"
+          ],
+          [
+            "IO39",
+            "39"
+          ],
+          [
+            "IO40",
+            "40"
+          ],
+          [
+            "IO41",
+            "41"
+          ],
+          [
+            "IO42",
+            "42"
+          ],
+          [
+            "IO43",
+            "43"
+          ],
+          [
+            "IO44",
+            "44"
+          ]
+        ]
+      },
+      {
+        "type": "flameSensor_readAnalog",
+        "defined": true,
+        "generator": "function",
+        "flyout": true,
+        "pins": [
+          [
+            "IO1",
+            "1"
+          ],
+          [
+            "IO2",
+            "2"
+          ],
+          [
+            "IO4",
+            "4"
+          ],
+          [
+            "IO5",
+            "5"
+          ],
+          [
+            "IO6",
+            "6"
+          ],
+          [
+            "IO7",
+            "7"
+          ],
+          [
+            "IO8",
+            "8"
+          ],
+          [
+            "IO9",
+            "9"
+          ],
+          [
+            "IO10",
+            "10"
+          ],
+          [
+            "IO11",
+            "11"
+          ],
+          [
+            "IO12",
+            "12"
+          ],
+          [
+            "IO13",
+            "13"
+          ],
+          [
+            "IO14",
+            "14"
+          ],
+          [
+            "IO15",
+            "15"
+          ],
+          [
+            "IO16",
+            "16"
+          ],
+          [
+            "IO17",
+            "17"
+          ],
+          [
+            "IO18",
+            "18"
+          ],
+          [
+            "IO19",
+            "19"
+          ],
+          [
+            "IO20",
+            "20"
+          ]
+        ]
+      },
+      {
+        "type": "raindropSensor_readDigital",
+        "defined": true,
+        "generator": "function",
+        "flyout": true,
+        "pins": [
+          [
+            "IO0",
+            "0"
+          ],
+          [
+            "IO1",
+            "1"
+          ],
+          [
+            "IO2",
+            "2"
+          ],
+          [
+            "IO4",
+            "4"
+          ],
+          [
+            "IO5",
+            "5"
+          ],
+          [
+            "IO6",
+            "6"
+          ],
+          [
+            "IO7",
+            "7"
+          ],
+          [
+            "IO8",
+            "8"
+          ],
+          [
+            "IO9",
+            "9"
+          ],
+          [
+            "IO10",
+            "10"
+          ],
+          [
+            "IO11",
+            "11"
+          ],
+          [
+            "IO12",
+            "12"
+          ],
+          [
+            "IO13",
+            "13"
+          ],
+          [
+            "IO14",
+            "14"
+          ],
+          [
+            "IO15",
+            "15"
+          ],
+          [
+            "IO16",
+            "16"
+          ],
+          [
+            "IO17",
+            "17"
+          ],
+          [
+            "IO18",
+            "18"
+          ],
+          [
+            "IO19",
+            "19"
+          ],
+          [
+            "IO20",
+            "20"
+          ],
+          [
+            "IO21",
+            "21"
+          ],
+          [
+            "IO38",
+            "38"
+          ],
+          [
+            "IO39",
+            "39"
+          ],
+          [
+            "IO40",
+            "40"
+          ],
+          [
+            "IO41",
+            "41"
+          ],
+          [
+            "IO42",
+            "42"
+          ],
+          [
+            "IO43",
+            "43"
+          ],
+          [
+            "IO44",
+            "44"
+          ]
+        ]
+      },
+      {
+        "type": "raindropSensor_readAnalog",
+        "defined": true,
+        "generator": "function",
+        "flyout": true,
+        "pins": [
+          [
+            "IO1",
+            "1"
+          ],
+          [
+            "IO2",
+            "2"
+          ],
+          [
+            "IO4",
+            "4"
+          ],
+          [
+            "IO5",
+            "5"
+          ],
+          [
+            "IO6",
+            "6"
+          ],
+          [
+            "IO7",
+            "7"
+          ],
+          [
+            "IO8",
+            "8"
+          ],
+          [
+            "IO9",
+            "9"
+          ],
+          [
+            "IO10",
+            "10"
+          ],
+          [
+            "IO11",
+            "11"
+          ],
+          [
+            "IO12",
+            "12"
+          ],
+          [
+            "IO13",
+            "13"
+          ],
+          [
+            "IO14",
+            "14"
+          ],
+          [
+            "IO15",
+            "15"
+          ],
+          [
+            "IO16",
+            "16"
+          ],
+          [
+            "IO17",
+            "17"
+          ],
+          [
+            "IO18",
+            "18"
+          ],
+          [
+            "IO19",
+            "19"
+          ],
+          [
+            "IO20",
+            "20"
+          ]
+        ]
+      },
+      {
+        "type": "moreComments_commandBlock",
+        "defined": true,
+        "generator": "function",
+        "flyout": true
+      },
+      {
+        "type": "moreComments_branchBlock",
+        "defined": true,
+        "generator": "function",
+        "flyout": true
+      }
+    ]
+  },
+  {
+    "name": "real mouse drag and edited parameter",
+    "status": "FAIL",
+    "ms": 31137,
+    "error": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('menuitem', { name: 'IO4', exact: true })\u001b[22m\n",
+    "stack": "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('menuitem', { name: 'IO4', exact: true })\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\extensions-independent.mjs:216:65\n    at async test (F:\\CFZN\\CFZN-IDE\\tests\\extensions-independent.mjs:74:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/extensions-independent.mjs:205:3"
+  },
+  {
+    "name": "all-module combinations and nested comments generate actual Arduino",
+    "status": "PASS",
+    "ms": 111,
+    "detail": "// generated by OpenBlock\n#include <Arduino.h>\n\nint activeBuzzerPin = 4;\nint atomizerPin = 5;\nbool atomizerState = false;\nint pirSensorPin = 6;\n\nvoid setup() {\n  pinMode(activeBuzzerPin, OUTPUT);\n  pinMode(atomizerPin, OUTPUT);\n  digitalWrite(atomizerPin, LOW);\n  pinMode(pirSensorPin, INPUT);\n\n  // QA statement\n  // QA outer\n  if (digitalRead(pirSensorPin) == HIGH) {\n    // QA nested\n    digitalWrite(activeBuzzerPin, HIGH);\n    atomizerState = LOW == HIGH;\n    digitalWrite(atomizerPin, LOW);\n    // End of QA nested\n    digitalWrite(activeBuzzerPin, LOW);\n        }\n  if (digitalRead(2) == LOW) {\n    Serial.println(analogRead(4));\n  }\n  if (digitalRead(7) == LOW) {\n    Serial.println(analogRead(8));\n  }\n  // End of QA outer\n  atomizerState = !atomizerState;\n  digitalWrite(atomizerPin, atomizerState ? HIGH : LOW);\n}\n\nvoid loop() {\n}\n"
+  },
+  {
+    "name": "compatible controller switches preserve modules; incompatible pin switch rolls back",
+    "status": "FAIL",
+    "ms": 36396,
+    "error": "TimeoutError: locator.innerText: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.cfzn-extension-error')\u001b[22m\n",
+    "stack": "locator.innerText: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.cfzn-extension-error')\u001b[22m\n\n    at F:\\CFZN\\CFZN-IDE\\tests\\extensions-independent.mjs:243:59\n    at async test (F:\\CFZN\\CFZN-IDE\\tests\\extensions-independent.mjs:74:24)\n    at async file:///F:/CFZN/CFZN-IDE/tests/extensions-independent.mjs:227:3"
+  },
+  {
+    "name": "top toolbar POST and PUT, fresh iframe reopen, identity-mapped asset bytes, export/import",
+    "status": "PASS",
+    "ms": 5046,
+    "detail": {
+      "id": "84bc2eb2-85f7-4342-828f-63d2abecc8e6",
+      "revision": 2,
+      "bytes": 48347,
+      "assets": {
+        "stage:Stage#0/costumes:背景1#0": {
+          "bytes": 202,
+          "sha256": "c3b723d028900d9768878653c3a65c377871fe3ecfce5c7b66ef795505e85e1a",
+          "metadata": {
+            "name": "背景1",
+            "dataFormat": "svg",
+            "rotationCenterX": 240,
+            "rotationCenterY": 180
+          }
+        },
+        "stage:Stage#0/sounds:啵#0": {
+          "bytes": 560,
+          "sha256": "fb8c18242813d8763cccf5f6077daf44b672d0088f5d3688cca29d621b4959cc",
+          "metadata": {
+            "name": "啵",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 1123
+          }
+        },
+        "sprite:角色1#1/costumes:造型1#0": {
+          "bytes": 5289,
+          "sha256": "efdb9db805b7f7c52c35460c7ab9368317faeb221a6301a75c3ad94e2d32f640",
+          "metadata": {
+            "name": "造型1",
+            "bitmapResolution": 1,
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          }
+        },
+        "sprite:角色1#1/costumes:造型2#1": {
+          "bytes": 4913,
+          "sha256": "f9620cc3fc524dd4abe631f36d4735fba057569a519cc300744f21016ef8442c",
+          "metadata": {
+            "name": "造型2",
+            "bitmapResolution": 1,
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          }
+        },
+        "sprite:角色1#1/sounds:啁啾#0": {
+          "bytes": 47410,
+          "sha256": "03ca0366cc93de09372d3f9accde285474debb719e3a69d169b3d3f655eac021",
+          "metadata": {
+            "name": "啁啾",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 23683
+          }
+        }
+      },
+      "loadedUnusedModule": "raindropSensor",
+      "freshDirty": false
+    }
+  },
+  {
+    "name": "unknown controller/module/stage IDs preserve project; legacy alias; ordinary/new clear selections",
+    "status": "PASS",
+    "ms": 5332,
+    "detail": {
+      "unknownIds": 3,
+      "alias": "aijiteESP32S3",
+      "cleared": [
+        "ordinary",
+        "new"
+      ]
+    }
+  },
+  {
+    "name": "actual module resource failure rollback, retry, busy-save and rapid duplicate selection",
+    "status": "PASS",
+    "ms": 3834,
+    "detail": {
+      "failedResource": "atomizer/generator.mjs",
+      "preserved": true,
+      "retry": true,
+      "noBusyWrite": true
+    }
+  },
+  {
+    "name": "unsupported controller filter and realtime mode explanation/switch",
+    "status": "PASS",
+    "ms": 3626,
+    "detail": {
+      "unsupported": "Micro:bit",
+      "switch": true,
+      "modeRefusedWithLoadedModule": true,
+      "labels": "Delete"
+    }
+  },
+  {
+    "name": "original stage pen/music load and execute in real VM",
+    "status": "PASS",
+    "ms": 3217,
+    "detail": {
+      "trace": [
+        "pen_clear",
+        "pen_penDown",
+        "pen_penUp",
+        "music_setTempo",
+        "music_playDrumForBeats"
+      ],
+      "x": 23,
+      "project": [
+        "pen",
+        "music"
+      ]
+    }
+  },
+  {
+    "name": "no old source paths / 20112 module resource dependency",
+    "status": "PASS",
+    "ms": 2,
+    "detail": {
+      "localModuleRequests": 146,
+      "oldResourceRequests": [],
+      "optionalLinkProbes": []
+    }
+  }
+]

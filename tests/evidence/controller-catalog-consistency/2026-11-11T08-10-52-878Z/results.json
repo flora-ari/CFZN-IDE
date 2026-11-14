@@ -1,0 +1,113 @@
+[
+  {
+    "name": "dev full ordered metadata through both actual entries",
+    "status": "PASS",
+    "detail": {
+      "count": 20,
+      "nonFive": [
+        "arduinoNano",
+        "arduinoLeonardo",
+        "arduinoMega2560",
+        "arduinoUnoR4Minima",
+        "arduinoUnoR4Wifi",
+        "arduinoEsp8266NodeMCU",
+        "arduinoK210MaixDock",
+        "arduinoK210Maixduino",
+        "arduinoRaspberryPiPico",
+        "arduinoRaspberryPiPicoW",
+        "arduinoRaspberryPiPico2",
+        "arduinoRaspberryPiPico2W",
+        "microbit",
+        "microbitV2",
+        "makeyMakey"
+      ],
+      "allMetadataAndOrder": true,
+      "unchangedSnapshot": true
+    }
+  },
+  {
+    "name": "dev paired search type unknown and clear",
+    "status": "PASS",
+    "detail": {
+      "pairedQueries": 4,
+      "boardTypeSame": true,
+      "typedQuerySame": true,
+      "clearRestoresOrderedAll": true,
+      "unknownInAllAndSearch": "arduinoNano",
+      "noDirty": true
+    }
+  },
+  {
+    "name": "dev native selection sync mode removal and compatibility",
+    "status": "PASS",
+    "detail": {
+      "nonFiveSelected": "arduinoNano",
+      "bottomToTop": true,
+      "topToBottom": true,
+      "repeatedNoEdit": true,
+      "modePreserved": true,
+      "sixUnsupported": true,
+      "moduleDependencyGuard": "请先移除模块：有源蜂鸣器。",
+      "explicitRemove": true
+    }
+  },
+  {
+    "name": "dist full ordered metadata through both actual entries",
+    "status": "PASS",
+    "detail": {
+      "count": 20,
+      "nonFive": [
+        "arduinoNano",
+        "arduinoLeonardo",
+        "arduinoMega2560",
+        "arduinoUnoR4Minima",
+        "arduinoUnoR4Wifi",
+        "arduinoEsp8266NodeMCU",
+        "arduinoK210MaixDock",
+        "arduinoK210Maixduino",
+        "arduinoRaspberryPiPico",
+        "arduinoRaspberryPiPicoW",
+        "arduinoRaspberryPiPico2",
+        "arduinoRaspberryPiPico2W",
+        "microbit",
+        "microbitV2",
+        "makeyMakey"
+      ],
+      "allMetadataAndOrder": true,
+      "unchangedSnapshot": true
+    }
+  },
+  {
+    "name": "dist paired search type unknown and clear",
+    "status": "PASS",
+    "detail": {
+      "pairedQueries": 4,
+      "boardTypeSame": true,
+      "typedQuerySame": true,
+      "clearRestoresOrderedAll": true,
+      "unknownInAllAndSearch": "arduinoNano",
+      "noDirty": true
+    }
+  },
+  {
+    "name": "dist native selection sync mode removal and compatibility",
+    "status": "PASS",
+    "detail": {
+      "nonFiveSelected": "arduinoNano",
+      "bottomToTop": true,
+      "topToBottom": true,
+      "repeatedNoEdit": true,
+      "modePreserved": true,
+      "sixUnsupported": true,
+      "moduleDependencyGuard": "请先移除模块：有源蜂鸣器。",
+      "explicitRemove": true
+    }
+  },
+  {
+    "name": "VM byte boundary",
+    "status": "PASS",
+    "detail": {
+      "output": "{ vmModuleCount: 178, guiHooks: 42, noFactoryInjection: true }\n"
+    }
+  }
+]

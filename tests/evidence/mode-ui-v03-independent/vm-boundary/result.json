@@ -1,0 +1,9 @@
+{
+  "name": "VM byte boundary: GUI-only hooks and all sourcemapped VM webpack modules unchanged",
+  "status": "PASS",
+  "detail": {
+    "vmModuleCount": 178,
+    "guiHooks": 42,
+    "noFactoryInjection": true
+  }
+}

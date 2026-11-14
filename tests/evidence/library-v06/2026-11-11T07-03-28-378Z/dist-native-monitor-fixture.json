@@ -1,0 +1,264 @@
+{
+  "monitors": [
+    {
+      "type": "data_variable",
+      "id": "v06-var",
+      "checked": false
+    },
+    {
+      "type": "data_listcontents",
+      "id": "v06-list",
+      "checked": false
+    },
+    {
+      "type": "music_getTempo",
+      "id": "music_getTempo"
+    }
+  ],
+  "project": {
+    "targets": [
+      {
+        "isStage": true,
+        "name": "Stage",
+        "variables": {
+          "v06-var": [
+            "v06 counter",
+            42
+          ]
+        },
+        "lists": {
+          "v06-list": [
+            "v06 items",
+            [
+              "alpha",
+              7
+            ]
+          ]
+        },
+        "broadcasts": {},
+        "blocks": {},
+        "comments": {},
+        "currentCostume": 0,
+        "costumes": [
+          {
+            "assetId": "cd21514d0531fdffb22204e0ec5ed84a",
+            "name": "背景1",
+            "md5ext": "cd21514d0531fdffb22204e0ec5ed84a.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 240,
+            "rotationCenterY": 180
+          }
+        ],
+        "sounds": [
+          {
+            "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
+            "name": "啵",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 1123,
+            "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+          }
+        ],
+        "volume": 100,
+        "layerOrder": 0,
+        "tempo": 99,
+        "videoTransparency": 50,
+        "videoState": "on",
+        "textToSpeechLanguage": null
+      },
+      {
+        "isStage": false,
+        "name": "角色1",
+        "variables": {},
+        "lists": {},
+        "broadcasts": {},
+        "blocks": {
+          "clear-flag": {
+            "opcode": "event_whenflagclicked",
+            "next": "Kr~H67Cn@KgddzA+;9Fb",
+            "parent": null,
+            "inputs": {},
+            "fields": {},
+            "shadow": false,
+            "topLevel": true,
+            "x": 40,
+            "y": 50
+          },
+          "Kr~H67Cn@KgddzA+;9Fb": {
+            "opcode": "pen_clear",
+            "next": "Mb(yzD=.8J;9noIhaaB0",
+            "parent": "clear-flag",
+            "inputs": {},
+            "fields": {},
+            "shadow": false,
+            "topLevel": false
+          },
+          "Mb(yzD=.8J;9noIhaaB0": {
+            "opcode": "pen_penDown",
+            "next": "clear-move",
+            "parent": "Kr~H67Cn@KgddzA+;9Fb",
+            "inputs": {},
+            "fields": {},
+            "shadow": false,
+            "topLevel": false
+          },
+          "clear-move": {
+            "opcode": "motion_changexby",
+            "next": "lcPi/+20i@48nCYX3Rk,",
+            "parent": "Mb(yzD=.8J;9noIhaaB0",
+            "inputs": {
+              "DX": [
+                1,
+                [
+                  4,
+                  "17"
+                ]
+              ]
+            },
+            "fields": {},
+            "shadow": false,
+            "topLevel": false
+          },
+          "lcPi/+20i@48nCYX3Rk,": {
+            "opcode": "pen_penUp",
+            "next": "?x2i=WM,#NQaac!,s+w[",
+            "parent": "clear-move",
+            "inputs": {},
+            "fields": {},
+            "shadow": false,
+            "topLevel": false
+          },
+          "?x2i=WM,#NQaac!,s+w[": {
+            "opcode": "music_setTempo",
+            "next": null,
+            "parent": "lcPi/+20i@48nCYX3Rk,",
+            "inputs": {
+              "TEMPO": [
+                1,
+                [
+                  4,
+                  "99"
+                ]
+              ]
+            },
+            "fields": {},
+            "shadow": false,
+            "topLevel": false
+          }
+        },
+        "comments": {},
+        "currentCostume": 0,
+        "costumes": [
+          {
+            "assetId": "5de48e72637db4d7fc7f6bb526354114",
+            "name": "造型1",
+            "bitmapResolution": 1,
+            "md5ext": "5de48e72637db4d7fc7f6bb526354114.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          },
+          {
+            "assetId": "48bbc82a10af3d0e0b7d5c677097df0e",
+            "name": "造型2",
+            "bitmapResolution": 1,
+            "md5ext": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+            "dataFormat": "svg",
+            "rotationCenterX": 93,
+            "rotationCenterY": 80
+          }
+        ],
+        "sounds": [
+          {
+            "assetId": "4e080acae1c3dc65eef30f07c2b0d4a5",
+            "name": "啁啾",
+            "dataFormat": "wav",
+            "format": "",
+            "rate": 48000,
+            "sampleCount": 23683,
+            "md5ext": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+          }
+        ],
+        "volume": 100,
+        "layerOrder": 1,
+        "visible": true,
+        "x": 17,
+        "y": 0,
+        "size": 100,
+        "direction": 90,
+        "draggable": false,
+        "rotationStyle": "all around"
+      }
+    ],
+    "monitors": [
+      {
+        "id": "v06-var",
+        "mode": "default",
+        "opcode": "data_variable",
+        "params": {
+          "VARIABLE": "v06 counter"
+        },
+        "spriteName": null,
+        "value": 42,
+        "width": 0,
+        "height": 0,
+        "x": 5,
+        "y": 5,
+        "visible": true,
+        "sliderMin": 0,
+        "sliderMax": 100,
+        "isDiscrete": true
+      },
+      {
+        "id": "v06-list",
+        "mode": "list",
+        "opcode": "data_listcontents",
+        "params": {
+          "LIST": "v06 items"
+        },
+        "spriteName": null,
+        "value": [
+          "alpha",
+          7
+        ],
+        "width": 0,
+        "height": 0,
+        "x": 5,
+        "y": 32,
+        "visible": true
+      },
+      {
+        "id": "music_getTempo",
+        "mode": "default",
+        "opcode": "music_getTempo",
+        "params": {},
+        "spriteName": null,
+        "value": 99,
+        "width": 0,
+        "height": 0,
+        "x": 5,
+        "y": 239,
+        "visible": true,
+        "sliderMin": 0,
+        "sliderMax": 100,
+        "isDiscrete": true
+      }
+    ],
+    "device": {
+      "deviceId": "firebeetleEsp32E",
+      "type": "arduino"
+    },
+    "programMode": "realtime",
+    "extensions": [
+      "pen",
+      "music"
+    ],
+    "deviceExtensions": [],
+    "meta": {
+      "semver": "3.0.0",
+      "vm": "0.2.0-prerelease.20250609145235",
+      "agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+    }
+  }
+}

@@ -1,0 +1,1278 @@
+[
+  {
+    "event": "start",
+    "time": 1988.699999999255,
+    "runtime": null,
+    "gui": null,
+    "blockly": null,
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "request:FireBeetle ESP32-E",
+    "time": 2130.4000000003725,
+    "runtime": null,
+    "gui": null,
+    "blockly": null,
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 2204.4000000003725,
+    "runtime": null,
+    "gui": null,
+    "blockly": null,
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [],
+    "busyText": "正在选择主控 FireBeetle ESP32-E…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 2259.5,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在选择主控 FireBeetle ESP32-E…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 2400.699999999255,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在选择主控 FireBeetle ESP32-E…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 2405.9000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "当前主控：FireBeetle ESP32-E",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 2526.5,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "编程视图可加载查看；模块积木仅上传模式可用。",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 2616.199999999255,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 有源蜂鸣器…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 2641,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 有源蜂鸣器…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 2649.5,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 有源蜂鸣器…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 2663.4000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "编程视图可加载查看；模块积木仅上传模式可用。",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 2849.2999999988824,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 雾化模块…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 2875.5,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 雾化模块…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 2883.9000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 雾化模块…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 2898.7999999988824,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "编程视图可加载查看；模块积木仅上传模式可用。",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3066,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 人体红外…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 3089,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 人体红外…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 3095.7999999988824,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 人体红外…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3114.9000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "编程视图可加载查看；模块积木仅上传模式可用。",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3300.9000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 火焰传感器…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 3333.5999999996275,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 火焰传感器…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 3341.0999999996275,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 火焰传感器…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3355,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "编程视图可加载查看；模块积木仅上传模式可用。",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3539,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 水滴传感器…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 3557.2999999988824,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 水滴传感器…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 3563.5999999996275,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 水滴传感器…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3577.7999999988824,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "编程视图可加载查看；模块积木仅上传模式可用。",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3789,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 积木注释…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 3810.9000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 积木注释…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 3818.5,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在加载模块 积木注释…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3831.0999999996275,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "编程视图可加载查看；模块积木仅上传模式可用。",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 3949.199999999255,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 3958.2999999988824,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "6dvPSh0v0P6^=I||`ls|",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 3961.9000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "6dvPSh0v0P6^=I||`ls|",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 4373.0999999996275,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 4376.799999998882,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 4723,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 4725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 5144.0999999996275,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 5145.9000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": true,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 5364.699999999255,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 5540.4000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "当前主控：FireBeetle ESP32-E",
+    "error": ""
+  },
+  {
+    "event": "request:Arduino Uno",
+    "time": 5586.299999998882,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "当前主控：FireBeetle ESP32-E",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 5663.799999998882,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": "无法切换到 Arduino Uno：现有积木 activeBuzzer_init 的引脚 25 不受目标主控支持。原设备、积木和参数保持不变。"
+  },
+  {
+    "event": "poll",
+    "time": 5742.0999999996275,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 5971.799999998882,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "当前主控：FireBeetle ESP32-E",
+    "error": ""
+  },
+  {
+    "event": "request:Aijite ESP32-S3",
+    "time": 6013.9000000003725,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "当前主控：FireBeetle ESP32-E",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 6071.5,
+    "runtime": "firebeetleEsp32E",
+    "gui": "firebeetleEsp32E",
+    "blockly": "firebeetleEsp32E",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "firebeetleEsp32E"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 6107.0999999996275,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 6183.5999999996275,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 6185,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 6192.4000000003725,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 6193.299999998882,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 6201.699999999255,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 6202.9000000003725,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 6210.299999998882,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 6211.5,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 6220.299999998882,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 6221.5999999996275,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "BLOCKSINFO_UPDATE",
+    "time": 6229.5,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 6230.5,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "workspaceUpdate",
+    "time": 6236,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "正在选择主控 Aijite ESP32-S3…",
+    "error": ""
+  },
+  {
+    "event": "poll",
+    "time": 6261,
+    "runtime": "aijiteESP32S3",
+    "gui": "aijiteESP32S3",
+    "blockly": "aijiteESP32S3",
+    "mode": false,
+    "targets": 2,
+    "editing": "Ei72XbVtc,F4uYknLZgA",
+    "loaded": [
+      "activateBuzzer",
+      "atomizer",
+      "pirSensor",
+      "flameSensor",
+      "raindropSensor",
+      "moreComments"
+    ],
+    "deviceKeys": [
+      "aijiteESP32S3"
+    ],
+    "busyText": "当前主控：Aijite ESP32-S3",
+    "error": ""
+  }
+]

@@ -1,0 +1,131 @@
+[
+  {
+    "label": "main",
+    "kind": "project",
+    "method": "POST",
+    "path": "/api/v1/projects",
+    "status": 201
+  },
+  {
+    "label": "main",
+    "kind": "project",
+    "method": "PUT",
+    "path": "/api/v1/projects/ef50bc50-f69c-4af2-aee3-cce7c8a8f7e4/content",
+    "status": 200
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/capabilities",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "POST",
+    "path": "/api/v1/hardware/builds",
+    "body": {
+      "deviceId": "arduinoEsp32",
+      "profileId": "ind-arduinoEsp32",
+      "code": "// independent retained draft v03\nvoid setup(){Serial.begin(115200);}\nvoid loop(){Serial.println(2718);}\n",
+      "moduleIds": [
+        "activateBuzzer",
+        "atomizer",
+        "pirSensor",
+        "flameSensor",
+        "raindropSensor",
+        "moreComments"
+      ]
+    }
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/capabilities",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/jobs/ind-job-1",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/ports",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "POST",
+    "path": "/api/v1/hardware/uploads",
+    "body": {
+      "buildId": "ind-job-1",
+      "portId": "OS-INDEPENDENT-PORT"
+    },
+    "ownership": {
+      "open": false,
+      "readLocked": false,
+      "writeLocked": false,
+      "events": [
+        "open",
+        "closed"
+      ]
+    }
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/jobs/ind-job-2",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "POST",
+    "path": "/api/v1/hardware/jobs/ind-job-2/cancel",
+    "body": {}
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/jobs/ind-job-2",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/jobs/ind-job-2",
+    "body": null
+  },
+  {
+    "label": "main",
+    "kind": "mock",
+    "method": "GET",
+    "path": "/api/v1/hardware/jobs/ind-job-2",
+    "body": null
+  }
+]

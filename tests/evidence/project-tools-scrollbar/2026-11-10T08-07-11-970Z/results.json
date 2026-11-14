@@ -1,0 +1,188 @@
+[
+  {
+    "name": "targeted scrollbar geometry keyboard wheel style",
+    "status": "PASS",
+    "detail": [
+      {
+        "width": 110.984375,
+        "x": 319.765625,
+        "clientWidth": 111,
+        "scrollWidth": 302,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "overflowX": "auto",
+        "overflowY": "hidden",
+        "menuHeight": 48,
+        "gap": 6,
+        "barHeight": "6px",
+        "thumbRadius": "6px",
+        "thumbColor": "rgba(144, 147, 153, 0.3)",
+        "track": "rgba(0, 0, 0, 0)",
+        "wheel": 191,
+        "focus": [
+          {
+            "label": "项目",
+            "left": 0,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "新建",
+            "left": 0,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "导入",
+            "left": 23,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "导出",
+            "left": 104,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "保存",
+            "left": 115,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          }
+        ]
+      },
+      {
+        "width": 292.8125,
+        "x": 337.9375,
+        "clientWidth": 293,
+        "scrollWidth": 302,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "overflowX": "auto",
+        "overflowY": "hidden",
+        "menuHeight": 48,
+        "gap": 6,
+        "barHeight": "6px",
+        "thumbRadius": "6px",
+        "thumbColor": "rgba(144, 147, 153, 0.5)",
+        "track": "rgba(0, 0, 0, 0)",
+        "wheel": 9,
+        "focus": [
+          {
+            "label": "项目",
+            "left": 0,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "新建",
+            "left": 0,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "导入",
+            "left": 0,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "导出",
+            "left": 0,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "保存",
+            "left": 0,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          }
+        ]
+      },
+      {
+        "width": 302,
+        "x": 635.765625,
+        "clientWidth": 302,
+        "scrollWidth": 302,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "overflowX": "visible",
+        "overflowY": "visible",
+        "menuHeight": 48,
+        "gap": 6,
+        "barHeight": "6px",
+        "thumbRadius": "6px",
+        "thumbColor": "rgba(144, 147, 153, 0.3)",
+        "track": "rgba(0, 0, 0, 0)",
+        "wheel": null,
+        "focus": []
+      },
+      {
+        "width": 72,
+        "x": 319.765625,
+        "clientWidth": 72,
+        "scrollWidth": 302,
+        "clientHeight": 48,
+        "scrollHeight": 48,
+        "overflowX": "auto",
+        "overflowY": "hidden",
+        "menuHeight": 48,
+        "gap": 6,
+        "barHeight": "6px",
+        "thumbRadius": "6px",
+        "thumbColor": "rgba(144, 147, 153, 0.3)",
+        "track": "rgba(0, 0, 0, 0)",
+        "wheel": 230,
+        "focus": [
+          {
+            "label": "项目",
+            "left": 0,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "新建",
+            "left": 16,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "导入",
+            "left": 77,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "导出",
+            "left": 108,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          },
+          {
+            "label": "保存",
+            "left": 169,
+            "visible": true,
+            "focused": true,
+            "outline": "none"
+          }
+        ]
+      }
+    ]
+  }
+]

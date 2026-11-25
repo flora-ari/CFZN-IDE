@@ -1,0 +1,67 @@
+{
+  "preparationOnly": false,
+  "passed": false,
+  "baselineGUI": {
+    "url": "/openblock-vendor/openblock-gui.js",
+    "rawBytes": 22664720,
+    "sha256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2",
+    "moduleCount": 1959,
+    "module520SHA256": "077638cfd3c1b32732c06a0a8afcfb912131dfaed9e8d6b8ca8e2e1ca10e240e",
+    "syntaxCompilationOnly": true,
+    "actualExecutionVerified": false,
+    "representations": [
+      {
+        "encoding": "identity",
+        "bytes": 22664720,
+        "sha256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2"
+      },
+      {
+        "encoding": "gzip",
+        "bytes": 5480379,
+        "sha256": "f4fb6fc8574ffe1e932bf1bbef83298c7d70b5d0810d978fadfd5699efa547be",
+        "decodedSHA256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2",
+        "idealGUITransferSecondsAt800KiBps": 6.689915771484375
+      }
+    ]
+  },
+  "candidateGUI": {
+    "url": "/openblock-vendor/openblock-gui.a4c534b8c1f9171b.js",
+    "rawBytes": 17374070,
+    "sha256": "a4c534b8c1f9171b6de723ee9b0372eba7bfd553f5237523e7d0bb3643ee86d2",
+    "moduleCount": 1959,
+    "module520SHA256": "077638cfd3c1b32732c06a0a8afcfb912131dfaed9e8d6b8ca8e2e1ca10e240e",
+    "syntaxCompilationOnly": true,
+    "actualExecutionVerified": false,
+    "representations": [
+      {
+        "encoding": "identity",
+        "bytes": 17374070,
+        "sha256": "a4c534b8c1f9171b6de723ee9b0372eba7bfd553f5237523e7d0bb3643ee86d2"
+      }
+    ]
+  },
+  "mismatchCount": 1732,
+  "firstMismatchModules": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19"
+  ],
+  "failure": "AssertionError [ERR_ASSERTION]: AST/signatures/identifiers/constants/raw tokens/license changed; module count=1732, first 20=0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19\n\n1732 !== 0\n\n    at file:///D:/CFZN/CFZN-IDE/tests/cold-start-performance-20261124.mjs:102:10"
+}

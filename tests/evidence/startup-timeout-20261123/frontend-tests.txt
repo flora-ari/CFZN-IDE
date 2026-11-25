@@ -1,0 +1,24 @@
+✔ audited GUI messages cover every shipped locale, preserve interpolation and leave unrelated content untouched (10.5144ms)
+✔ the actual connected Intl hook brands initial and switched locales with stable cached identity and complete fallbacks (14.1252ms)
+✔ generator branding changes only the exact first line and the real mode adapter preserves manual drafts (52.5014ms)
+✔ locale remount initialization retains existing titles while initial creation uses the localized GUI default (8.4932ms)
+✔ the native Website action opens the exact product URL without an opener and keeps tutorial targets (22.7828ms)
+✔ the native Logo is a real accessible new-tab anchor in both layout states without invoking a project callback (6.9786ms)
+✔ native logos use the same local brand in both overflow states and the outer crash description does not promise reporting (46.599ms)
+✔ the local product icon requires no network assets and the historical user PNG stays byte-identical (1.5185ms)
+✔ the supplied PNG stays byte-identical and its display viewport includes the complete visible wordmark and Chinese subtitle (69.9185ms)
+✔ editor draft round trip preserves native entries and JSON escaping at the exact source limit (156.3172ms)
+✔ historical archive clears inherited draft; invalid metadata is rejected before loading (8.6898ms)
+✔ 45 seconds is a slow status; a real late READY clears only startup state and retains normal request timing (11.6039ms)
+✔ 180 seconds exposes explicit retry; disposal removes all old timers/listeners and a fresh frame ignores stale events (1.0059ms)
+✔ actual BOOT_ERROR is immediate, cancels both thresholds, and remains recoverable by a later real READY (0.7624ms)
+✔ the real early observer catches critical script failure before the module exists and replays it only to the same-origin parent (3.6972ms)
+✔ the early observer reports script evaluation and initialization failures but stops before runtime editing (7.0624ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2944.7069

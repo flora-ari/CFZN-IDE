@@ -3,6 +3,7 @@ import type { EditorSnapshot, ProjectArchive } from './editor-protocol';
 import { installDeviceMetadata } from './extensions/aijite';
 import { installExtensionAdapter } from './extensions/adapter';
 import type { ExtensionAdapter } from './extensions/adapter';
+import { CUSTOM_MODULE_ID } from './extensions/custom-module-definition';
 import { makeLibraryRenderer } from './extensions/library';
 import { nativeProjectToolbar } from './native-project-toolbar';
 import { nativeHardware } from './native-hardware';
@@ -12,9 +13,10 @@ import { modeUi } from './mode-ui';
 import { installSaveShortcut } from './save-shortcut';
 import { PaletteSearch } from './palette-search';
 import { SEARCH_CATEGORY } from './palette-index';
-import { addEditorMetadata, readEditorMetadata, defaultEditorMetadata } from './editor-archive';
+import { addEditorMetadata, readEditorMetadata, defaultEditorMetadata, readProjectModuleReferences } from './editor-archive';
 import { ToolboxPresentation, uploadOnlyBoards } from './extensions/toolbox-presentation';
 import { executionGraphs, unsafeStageOpcode } from './extensions/stage-execution';
+import { brandMessages, DEFAULT_PROJECT_TITLE } from './branding';
 
 interface GuiState {
   projectChanged: boolean;
@@ -27,7 +29,7 @@ interface GuiState {
 }
 
 interface GuiStore {
-  getState(): { scratchGui: GuiState };
+  getState(): { scratchGui: GuiState; locales?: { locale: string; messages: Record<string, string> } };
   subscribe(listener: () => void): () => void;
   dispatch(action: { type: string; [name: string]: unknown }): void;
 }
@@ -48,7 +50,10 @@ const upstream = window as unknown as {
   ReactDOM?: { render(element: unknown, container: HTMLElement): { store: GuiStore } };
 };
 
-const defaultTitle = '未命名项目';
+function defaultTitle() {
+  const locales = store?.getState().locales;
+  return brandMessages(locales?.messages, locales?.locale ?? navigator.language)[DEFAULT_PROJECT_TITLE];
+}
 const origin = window.location.origin;
 const projectAction = 'scratch-gui/project-state/';
 const modalAction = 'scratch-gui/modals/';
@@ -67,6 +72,7 @@ let nativeNew = false;
 let changedQueued = false;
 let updatingPersistedTitle = false;
 let extensions: ExtensionAdapter;
+let factoryWorkspace: { Blockly: any; workspace: any } | undefined;
 let hardwareUi: ReturnType<typeof nativeHardware>;
 let modes: ModeController;
 const toolbox = new ToolboxPresentation();
@@ -106,7 +112,7 @@ function send(type: string, payload?: unknown, requestId?: string, transfer: Tra
 function snapshot(): EditorSnapshot {
   const gui = store.getState().scratchGui;
   return {
-    title: gui.projectTitle || defaultTitle,
+    title: gui.projectTitle || defaultTitle(),
     dirty: editVersion !== savedVersion,
     running: gui.vmStatus.running,
     documentId,
@@ -165,6 +171,7 @@ function bindVm(value: OpenBlockVm) {
   vm = value;
   extensions = installExtensionAdapter(vm, installDeviceMetadata(window), {
     getStore: () => store,
+    getBlockly: () => factoryWorkspace?.Blockly,
     isProjectLoading: () => loading || nativeNew || !ready,
     isHardwareBusy: () => !!(hardwareUi?.hardware.busy || hardwareUi?.session.operation),
     operationBlockedReason: () => modes?.transitioning ? '模式正在切换，请稍候。' : localePending ? '语言正在更新，请稍候。' : '',
@@ -194,7 +201,9 @@ function bindVm(value: OpenBlockVm) {
     await rawLoad(bytes);
     await modes.restore(metadata);
   };
-  hardwareUi = nativeHardware(vm, () => ({ deviceId: extensions.currentDevice(), moduleIds: extensions.loaded(),
+  // The build service expects bundled module IDs. Private modules already contribute their generated Arduino source.
+  hardwareUi = nativeHardware(vm, () => ({ deviceId: extensions.currentDevice(), moduleIds: extensions.loaded().filter(id => !CUSTOM_MODULE_ID.test(id)),
+    libraries: extensions.projectArduinoLibraries(),
     realtime: modes.protocolActive, programming: modes.editorMode === 'programming',
     generationError: modes.codeMode === 'generated' ? modes.generationError : '',
     code: modes.selectedSource, documentId, editVersion }), () => store, () => modes.transitioning || extensions.status.busy,
@@ -250,8 +259,9 @@ function nextFrame() {
 
 function bootFailure(error: unknown) {
   const message = error instanceof Error ? error.message : String(error);
-  bootMessage.textContent = `OpenBlock 启动失败：${message}`;
-  send('BOOT_ERROR', { message });
+  if ((window as any).CFZNEditorStartup) { (window as any).CFZNEditorStartup.fail(`CCraft 启动失败：${message}`); return; }
+  bootMessage.textContent = `CCraft 启动失败：${message}`;
+  send('BOOT_ERROR', { message: `CCraft 启动失败：${message}` });
 }
 
 async function projectLoaded() {
@@ -266,6 +276,7 @@ async function projectLoaded() {
       ready = true;
       projectTools.refresh();
       modes.publish();
+      (window as any).CFZNEditorStartup?.ready();
       bootMessage.hidden = true;
       send('READY', snapshot());
     } catch (error) {
@@ -316,8 +327,11 @@ async function loadProject(bytes: ArrayBuffer, title: string, dirty = false) {
   }
   loading = true;
   let backup: ArrayBuffer | undefined;
+  let started = false;
   let applied = false;
   try {
+    await extensions.prepareCustomProject(readProjectModuleReferences(bytes));
+    started = true;
     store.dispatch({ type: `${projectAction}START_LOADING_VM_FILE_UPLOAD` });
     store.dispatch({ type: `${modalAction}OPEN_MODAL`, modal: 'loadingProject' });
     vm.stopAll();
@@ -339,10 +353,12 @@ async function loadProject(bytes: ArrayBuffer, title: string, dirty = false) {
         throw new Error(recoveryMessage);
       }
     }
-    throw new Error(`无法读取 OpenBlock 项目：${String(message)}`);
+    throw new Error(`无法读取 CCraft 项目：${String(message)}`);
   } finally {
-    store.dispatch({ type: `${projectAction}${applied ? 'DONE_LOADING_VM_WITHOUT_ID' : 'RETURN_TO_SHOWING'}` });
-    store.dispatch({ type: `${modalAction}CLOSE_MODAL`, modal: 'loadingProject' });
+    if (started) {
+      store.dispatch({ type: `${projectAction}${applied ? 'DONE_LOADING_VM_WITHOUT_ID' : 'RETURN_TO_SHOWING'}` });
+      store.dispatch({ type: `${modalAction}CLOSE_MODAL`, modal: 'loadingProject' });
+    }
     await nextFrame();
     setGuiDirty(editVersion !== savedVersion);
     loading = false;
@@ -356,18 +372,18 @@ async function handle(type: string, payload: unknown): Promise<unknown> {
   if (type === 'GET_STATE') return snapshot();
   const hw = hardwareUi.hardware;
   if (type === 'GET_HARDWARE_STATE') return hw.snapshot();
-  if (type === 'OPEN_HARDWARE_CONNECT') { hardwareUi.openConnect(); return hw.snapshot(); }
+  if (type === 'OPEN_HARDWARE_CONNECT') { await hardwareUi.openConnect(); return hw.snapshot(); }
   if (type === 'DISCONNECT_HARDWARE') return hardwareUi.disconnect();
   if (type === 'HARDWARE_CANCEL') return hw.cancel();
   if (type === 'HARDWARE_COMPILE' || type === 'HARDWARE_UPLOAD') {
     const selection = payload as any;
     if (selection && (typeof selection !== 'object' || (selection.profileId !== undefined && typeof selection.profileId !== 'string') || (selection.portId !== undefined && typeof selection.portId !== 'string'))) throw new Error('硬件目标无效。');
     if (selection?.profileId || selection?.portId) hw.configure(selection.profileId ?? hw.profileId, selection.portId ?? hw.portId);
-    hardwareUi.start(type === 'HARDWARE_UPLOAD'); return hw.snapshot();
+    await hardwareUi.start(type === 'HARDWARE_UPLOAD'); return hw.snapshot();
   }
   if (loading || nativeNew) throw new Error('编辑器正在加载项目，请稍后重试。');
   switch (type) {
-    case 'NEW_PROJECT': return loadProject(defaultArchive, defaultTitle);
+    case 'NEW_PROJECT': return loadProject(defaultArchive, defaultTitle());
     case 'LOAD_PROJECT': {
       const { bytes, title, dirty } = payload as { bytes: ArrayBuffer; title: string; dirty?: boolean };
       if (!(bytes instanceof ArrayBuffer) || typeof title !== 'string') throw new Error('项目数据格式无效。');
@@ -436,6 +452,9 @@ try {
   if (!GUI || !React || !ReactDOM) throw new Error('官方编辑器资源未加载。');
   installDeviceMetadata(window);
   (window as any).CFZNOpenBlock = { renderLibrary: makeLibraryRenderer(() => extensions), renderProjectTools: projectTools.render,
+    brandMessages,
+    brandMessage: (id: string) => brandMessages(undefined, store?.getState().locales?.locale ?? navigator.language)[id],
+    initialProjectTitle: (requested?: string) => ready ? store.getState().scratchGui.projectTitle : requested,
     captureController: (info: any, locale: string, deviceId?: string) => toolbox.capture(info, locale, deviceId),
     composeToolbox: (native: (...args: any[]) => string, args: any[], locale: string) => toolbox.compose(native, [...args, extensions?.loaded() ?? []], locale),
     deferWorkspaceUpdate: () => extensions?.deferWorkspaceUpdate ?? false,
@@ -448,8 +467,15 @@ try {
       if (ids.includes(selected)) return selected;
       const fallback = ids[0]; if (fallback) workspace.toolbox_.setSelectedCategoryById(fallback); return fallback;
     },
-    attachPaletteSearch: (B: any, workspace: any, xml: string, refresh: () => void) => paletteSearch.attach(B, workspace, xml, refresh),
-    detachPaletteSearch: (workspace: any) => paletteSearch.detach(workspace),
+    attachPaletteSearch: (B: any, workspace: any, xml: string, refresh: () => void) => {
+      factoryWorkspace = { Blockly: B, workspace };
+      paletteSearch.attach(B, workspace, xml, refresh);
+      if (ready) extensions?.refreshViews();
+    },
+    detachPaletteSearch: (workspace: any) => {
+      if (factoryWorkspace?.workspace === workspace) factoryWorkspace = undefined;
+      paletteSearch.detach(workspace);
+    },
     paletteToolbox: (workspace: any, xml: string) => paletteSearch.decorate(workspace, xml),
     paletteDidUpdate: (workspace: any) => paletteSearch.afterUpdate(workspace),
     renderPaletteSearch: (R: any) => paletteSearch.render(R),
@@ -478,7 +504,6 @@ try {
     projectId: '0',
     projectHost: `${origin}/openblock-vendor/projects`,
     // Optional Scratch library assets retain the upstream public asset host.
-    projectTitle: defaultTitle,
     canSave: false,
     canCreateNew: false,
     canEditTitle: true,

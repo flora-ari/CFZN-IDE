@@ -1,0 +1,47 @@
+{
+  "observedAt": "2026-11-24T02:51:43.073Z",
+  "page": "http://127.0.0.1:5173/",
+  "scope": "Production UI and real local directory; no device was opened, closed or changed",
+  "buttons": [
+    {
+      "disabled": false,
+      "text": "重新检测"
+    },
+    {
+      "disabled": false,
+      "text": "刷新设备"
+    },
+    {
+      "disabled": false,
+      "text": "保存偏好"
+    },
+    {
+      "disabled": true,
+      "text": "连接"
+    }
+  ],
+  "dialog": {
+    "bottom": 704,
+    "right": 1090,
+    "x": 190,
+    "y": 16
+  },
+  "headers": [
+    "设备名称",
+    "端口",
+    "波特率",
+    "状态",
+    "操作"
+  ],
+  "removedAuthorizationBlock": true,
+  "rows": [
+    {
+      "source": "local",
+      "text": "设备名称Silicon Labs CP210x USB to UART Bridge (COM3)本机直连端口COM3波特率已保存 115200状态其它窗口占用操作保存偏好连接"
+    }
+  ],
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}

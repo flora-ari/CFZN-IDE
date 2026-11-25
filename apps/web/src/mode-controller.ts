@@ -1,5 +1,6 @@
 import type { EditorMetadata } from './editor-archive';
-import { defaultEditorMetadata, validateEditorMetadata } from './editor-archive';
+import { defaultEditorMetadata, validateEditorMetadata } from './editor-archive.ts';
+import { brandGeneratedSource } from './branding.ts';
 
 export type EditorMode = 'programming' | 'upload';
 export class ModeController {
@@ -13,7 +14,13 @@ export class ModeController {
   private suppress = 0;
   private listeners = new Set<() => void>();
   private changingCode = false;
-  constructor(private vm: any, private getStore: () => any, private busy: () => string, private changed: () => void) {}
+  private vm: any;
+  private getStore: () => any;
+  private busy: () => string;
+  private changed: () => void;
+  constructor(vm: any, getStore: () => any, busy: () => string, changed: () => void) {
+    this.vm = vm; this.getStore = getStore; this.busy = busy; this.changed = changed;
+  }
   get editorMode(): EditorMode { return this.vm.runtime.isRealtimeMode() ? 'programming' : 'upload'; }
   get selectedSource() { return this.codeMode === 'manual' ? this.manualSource ?? '' : this.generatedSource; }
   get protocolActive() { return this.vm.runtime.getDevice().deviceId === 'arduinoUno' && this.editorMode === 'programming' && this.vm.getPeripheralIsConnected('arduinoUno'); }
@@ -33,7 +40,7 @@ export class ModeController {
     if (!workspace) return;
     try {
       const code = Blockly.Arduino.workspaceToCode(workspace);
-      this.generatedSource = code; this.generationError = '';
+      this.generatedSource = brandGeneratedSource(code); this.generationError = '';
     } catch (e) { this.generationError = `代码生成失败：${e instanceof Error ? e.message : String(e)}`; }
     this.setNativeCode(); this.publish();
   }

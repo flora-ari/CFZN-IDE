@@ -1,0 +1,1682 @@
+[
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 340,
+    "start": 1795517643211,
+    "elapsedMs": 15,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/assets/app-C88jyimZ.css",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1419,
+    "start": 1795517643251,
+    "elapsedMs": 8,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/assets/save-shortcut-C_DI86IG.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2104,
+    "start": 1795517643251,
+    "elapsedMs": 16,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/assets/app-C0XuQYw1.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 65394,
+    "start": 1795517643250,
+    "elapsedMs": 95,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/openblock.html",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2340,
+    "start": 1795517643398,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/assets/save-shortcut-C_DI86IG.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2104,
+    "start": 1795517643423,
+    "elapsedMs": 37,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/assets/editor-A53goq4q.css",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 7332,
+    "start": 1795517643421,
+    "elapsedMs": 45,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/openblock-vendor/react-dom-16.min.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 38124,
+    "start": 1795517643424,
+    "elapsedMs": 52,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/cfzn-extensions/module-loader.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1235,
+    "start": 1795517643466,
+    "elapsedMs": 11,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/openblock-vendor/react-16.min.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 4908,
+    "start": 1795517643423,
+    "elapsedMs": 58,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/assets/editor-sqHyfw8P.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 69948,
+    "start": 1795517643423,
+    "elapsedMs": 98,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/openblock-vendor/openblock-gui.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 5480379,
+    "start": 1795517643424,
+    "elapsedMs": 7931,
+    "throttled": true
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/openblock-vendor/device-descriptions.json",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 3046,
+    "start": 1795517652770,
+    "elapsedMs": 28,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/bbbd98ae6a34eac772e34a57aaa5f977.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795517652801,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/f9dce53613d5f85b311ce9f84423c08b.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1126,
+    "start": 1795517652805,
+    "elapsedMs": 6,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/branding/ccraft-logo.png",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 495240,
+    "start": 1795517652809,
+    "elapsedMs": 8,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/ce5820b006d753e4133f46ae776f4d96.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1122,
+    "start": 1795517652809,
+    "elapsedMs": 11,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/1319094a51748798730f01d1dc0972ac.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 743,
+    "start": 1795517652810,
+    "elapsedMs": 11,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/49ba9617d58a3e29df87ade0f5a9ff6e.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 951,
+    "start": 1795517652817,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/ff3c49d02045a3d05a72f4c004cdb80c.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1373,
+    "start": 1795517652815,
+    "elapsedMs": 8,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/d6b0a87b93bac86032448b70ffc7b6e1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795517652820,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1636,
+    "start": 1795517652822,
+    "elapsedMs": 12,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/664d94e5cb8676c780c74c695f2e972c.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 904,
+    "start": 1795517652814,
+    "elapsedMs": 22,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/c102ba4a6efab67e215e7d102fe2b893.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 679,
+    "start": 1795517652826,
+    "elapsedMs": 11,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/e587d9d7e9a2f1f28041ba5c15db7a40.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 779,
+    "start": 1795517652829,
+    "elapsedMs": 11,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/44ef836f327ccbeff19f7aa0ba7157ed.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 653,
+    "start": 1795517652824,
+    "elapsedMs": 17,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/36fcc7dbca20720abcab01e49d4955f9.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 586,
+    "start": 1795517652839,
+    "elapsedMs": 7,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/422b48c2206d5240a6717c92496ba21a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1061,
+    "start": 1795517652841,
+    "elapsedMs": 9,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/257e3788c5fbfe56c151a97e97dc20d8.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 709,
+    "start": 1795517652827,
+    "elapsedMs": 26,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/2258ea6dfe9ad15440ca55aca291698d.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1005,
+    "start": 1795517652845,
+    "elapsedMs": 8,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/51d228f5f5d5e42a252cc88210fd0cd2.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 561,
+    "start": 1795517652844,
+    "elapsedMs": 10,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/a246880e69bc7a2a793c90a2fb013ae1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 559,
+    "start": 1795517652848,
+    "elapsedMs": 8,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/497f797eeffe5fa7e6a626abc0db08a1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1186,
+    "start": 1795517652852,
+    "elapsedMs": 7,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/2e0c4790f8f9cf28e3c346b9cef0fcb6.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 471,
+    "start": 1795517652856,
+    "elapsedMs": 6,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/38a70367a21e2f1fb15aa59b7d367450.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 898,
+    "start": 1795517652842,
+    "elapsedMs": 21,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/9ddae4f6c1aeaf0784007203d9d4ac9c.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 506,
+    "start": 1795517652857,
+    "elapsedMs": 10,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/68d9ddbb2aa63310b88c7697e5b0c6c9.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1017,
+    "start": 1795517652858,
+    "elapsedMs": 9,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/acc6c29b5eee67bc6b2aa85854d9bb3a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 654,
+    "start": 1795517652861,
+    "elapsedMs": 7,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/5f4208a6b7257c456c018d57efc8a7e9.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 894,
+    "start": 1795517652855,
+    "elapsedMs": 15,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/1dfe5425b42628b6f1df1f39e97a319f.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795517652865,
+    "elapsedMs": 6,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/1915c266b9444348e709aa415ceb7162.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 934,
+    "start": 1795517652873,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/blocks-media/zoom-out.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 582,
+    "start": 1795517652874,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/blocks-media/zoom-in.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 634,
+    "start": 1795517652874,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/94b06fb716871f81bec601724e29a457.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1121,
+    "start": 1795517652873,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/301439e2e5ab88b658368ee525e6752b.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1144,
+    "start": 1795517652864,
+    "elapsedMs": 15,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/blocks-media/dropdown-arrow.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 569,
+    "start": 1795517652882,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/blocks-media/green-flag.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 651,
+    "start": 1795517652883,
+    "elapsedMs": 8,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/blocks-media/repeat.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 696,
+    "start": 1795517652885,
+    "elapsedMs": 6,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/551aae506dfa65ce3b45713b5300a678.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 806,
+    "start": 1795517652874,
+    "elapsedMs": 18,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/blocks-media/zoom-reset.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 501,
+    "start": 1795517652880,
+    "elapsedMs": 20,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/725089014557d28fd2c38904a6326b81.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 574,
+    "start": 1795517653045,
+    "elapsedMs": 13,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/a5787bb7364d8131ed49a8f53037d7f4.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1120,
+    "start": 1795517653299,
+    "elapsedMs": 10,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/assets/385aa4b73a425883b4f9e91501a52299.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1241,
+    "start": 1795517653301,
+    "elapsedMs": 11,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/blocks-media/rotate-right.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 537,
+    "start": 1795517653823,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/static/blocks-media/rotate-left.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 546,
+    "start": 1795517653824,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5183",
+    "pathname": "/branding/ccraft-tab-icon.png",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 1657390,
+    "start": 1795517653851,
+    "elapsedMs": 13,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 340,
+    "start": 1795517664244,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/assets/app-C0XuQYw1.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 65394,
+    "start": 1795517664264,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/assets/app-C88jyimZ.css",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1419,
+    "start": 1795517664269,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/assets/save-shortcut-C_DI86IG.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2104,
+    "start": 1795517664269,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/openblock.html",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2340,
+    "start": 1795517664340,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/assets/editor-A53goq4q.css",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 7332,
+    "start": 1795517664365,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/assets/save-shortcut-C_DI86IG.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2104,
+    "start": 1795517664365,
+    "elapsedMs": 4,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/assets/editor-sqHyfw8P.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 69948,
+    "start": 1795517664364,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/openblock-vendor/react-16.min.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 4908,
+    "start": 1795517664371,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/openblock-vendor/react-dom-16.min.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 38124,
+    "start": 1795517664371,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/cfzn-extensions/module-loader.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1235,
+    "start": 1795517664372,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/openblock-vendor/openblock-gui.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 5480379,
+    "start": 1795517664372,
+    "elapsedMs": 7864,
+    "throttled": true
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/openblock-vendor/device-descriptions.json",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 3046,
+    "start": 1795517673543,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/bbbd98ae6a34eac772e34a57aaa5f977.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795517673567,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/f9dce53613d5f85b311ce9f84423c08b.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1126,
+    "start": 1795517673569,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/ce5820b006d753e4133f46ae776f4d96.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1122,
+    "start": 1795517673571,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/664d94e5cb8676c780c74c695f2e972c.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 904,
+    "start": 1795517673575,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/branding/ccraft-logo.png",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 495240,
+    "start": 1795517673575,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/1319094a51748798730f01d1dc0972ac.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 743,
+    "start": 1795517673575,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/49ba9617d58a3e29df87ade0f5a9ff6e.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 951,
+    "start": 1795517673582,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/ff3c49d02045a3d05a72f4c004cdb80c.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1373,
+    "start": 1795517673581,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/d6b0a87b93bac86032448b70ffc7b6e1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795517673585,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1636,
+    "start": 1795517673585,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/44ef836f327ccbeff19f7aa0ba7157ed.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 653,
+    "start": 1795517673586,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/c102ba4a6efab67e215e7d102fe2b893.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 679,
+    "start": 1795517673586,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/5f4208a6b7257c456c018d57efc8a7e9.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 894,
+    "start": 1795517673589,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/497f797eeffe5fa7e6a626abc0db08a1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1186,
+    "start": 1795517673589,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/e587d9d7e9a2f1f28041ba5c15db7a40.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 779,
+    "start": 1795517673591,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/acc6c29b5eee67bc6b2aa85854d9bb3a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 654,
+    "start": 1795517673591,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/51d228f5f5d5e42a252cc88210fd0cd2.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 561,
+    "start": 1795517673592,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/a246880e69bc7a2a793c90a2fb013ae1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 559,
+    "start": 1795517673592,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/257e3788c5fbfe56c151a97e97dc20d8.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 709,
+    "start": 1795517673594,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/422b48c2206d5240a6717c92496ba21a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1061,
+    "start": 1795517673594,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/2e0c4790f8f9cf28e3c346b9cef0fcb6.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 471,
+    "start": 1795517673596,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/36fcc7dbca20720abcab01e49d4955f9.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 586,
+    "start": 1795517673597,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/68d9ddbb2aa63310b88c7697e5b0c6c9.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1017,
+    "start": 1795517673598,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/9ddae4f6c1aeaf0784007203d9d4ac9c.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 506,
+    "start": 1795517673597,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/38a70367a21e2f1fb15aa59b7d367450.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 898,
+    "start": 1795517673599,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/2258ea6dfe9ad15440ca55aca291698d.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1005,
+    "start": 1795517673599,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/1dfe5425b42628b6f1df1f39e97a319f.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795517673600,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/301439e2e5ab88b658368ee525e6752b.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1144,
+    "start": 1795517673601,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/1915c266b9444348e709aa415ceb7162.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 934,
+    "start": 1795517673605,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/94b06fb716871f81bec601724e29a457.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1121,
+    "start": 1795517673605,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/blocks-media/zoom-in.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 634,
+    "start": 1795517673606,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/blocks-media/zoom-out.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 582,
+    "start": 1795517673606,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/blocks-media/zoom-reset.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 501,
+    "start": 1795517673607,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/551aae506dfa65ce3b45713b5300a678.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 806,
+    "start": 1795517673606,
+    "elapsedMs": 4,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/blocks-media/dropdown-arrow.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 569,
+    "start": 1795517673609,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/blocks-media/green-flag.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 651,
+    "start": 1795517673612,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/blocks-media/repeat.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 696,
+    "start": 1795517673613,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/725089014557d28fd2c38904a6326b81.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 574,
+    "start": 1795517673693,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/a5787bb7364d8131ed49a8f53037d7f4.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1120,
+    "start": 1795517673858,
+    "elapsedMs": 4,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/assets/385aa4b73a425883b4f9e91501a52299.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1241,
+    "start": 1795517673861,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/branding/ccraft-tab-icon.png",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 1657390,
+    "start": 1795517673890,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/blocks-media/rotate-left.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 546,
+    "start": 1795517674158,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5184",
+    "pathname": "/static/blocks-media/rotate-right.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 537,
+    "start": 1795517674158,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 340,
+    "start": 1795519799986,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/assets/app-C88jyimZ.css",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1419,
+    "start": 1795519800056,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/assets/save-shortcut-C_DI86IG.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2104,
+    "start": 1795519800057,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/assets/app-C0XuQYw1.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 65394,
+    "start": 1795519800056,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/openblock.html",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2340,
+    "start": 1795519800141,
+    "elapsedMs": 4,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/assets/editor-A53goq4q.css",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 7332,
+    "start": 1795519800184,
+    "elapsedMs": 10,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/openblock-vendor/react-16.min.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 4908,
+    "start": 1795519800192,
+    "elapsedMs": 4,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/openblock-vendor/react-dom-16.min.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 38124,
+    "start": 1795519800192,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/assets/save-shortcut-C_DI86IG.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 2104,
+    "start": 1795519800191,
+    "elapsedMs": 6,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/assets/editor-sqHyfw8P.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 69948,
+    "start": 1795519800191,
+    "elapsedMs": 8,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/cfzn-extensions/module-loader.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1235,
+    "start": 1795519800202,
+    "elapsedMs": 13,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/openblock-vendor/openblock-gui.js",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 5480379,
+    "start": 1795519800195,
+    "elapsedMs": 7926,
+    "throttled": true
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/openblock-vendor/device-descriptions.json",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 3046,
+    "start": 1795519809264,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/bbbd98ae6a34eac772e34a57aaa5f977.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795519809284,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/f9dce53613d5f85b311ce9f84423c08b.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1126,
+    "start": 1795519809288,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/ce5820b006d753e4133f46ae776f4d96.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1122,
+    "start": 1795519809290,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/branding/ccraft-logo.png",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 495240,
+    "start": 1795519809290,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/664d94e5cb8676c780c74c695f2e972c.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 904,
+    "start": 1795519809292,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/1319094a51748798730f01d1dc0972ac.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 743,
+    "start": 1795519809292,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/49ba9617d58a3e29df87ade0f5a9ff6e.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 951,
+    "start": 1795519809300,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/ff3c49d02045a3d05a72f4c004cdb80c.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1373,
+    "start": 1795519809299,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/d6b0a87b93bac86032448b70ffc7b6e1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795519809300,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/b433ee02a13fa2a12f7f7059f1f6729a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1636,
+    "start": 1795519809301,
+    "elapsedMs": 5,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/44ef836f327ccbeff19f7aa0ba7157ed.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 653,
+    "start": 1795519809303,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/c102ba4a6efab67e215e7d102fe2b893.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 679,
+    "start": 1795519809304,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/2e0c4790f8f9cf28e3c346b9cef0fcb6.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 471,
+    "start": 1795519809307,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/36fcc7dbca20720abcab01e49d4955f9.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 586,
+    "start": 1795519809307,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/5f4208a6b7257c456c018d57efc8a7e9.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 894,
+    "start": 1795519809307,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/38a70367a21e2f1fb15aa59b7d367450.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 898,
+    "start": 1795519809310,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/9ddae4f6c1aeaf0784007203d9d4ac9c.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 506,
+    "start": 1795519809309,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/301439e2e5ab88b658368ee525e6752b.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1144,
+    "start": 1795519809310,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/51d228f5f5d5e42a252cc88210fd0cd2.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 561,
+    "start": 1795519809311,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/257e3788c5fbfe56c151a97e97dc20d8.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 709,
+    "start": 1795519809312,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/497f797eeffe5fa7e6a626abc0db08a1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1186,
+    "start": 1795519809313,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/1dfe5425b42628b6f1df1f39e97a319f.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1127,
+    "start": 1795519809312,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/e587d9d7e9a2f1f28041ba5c15db7a40.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 779,
+    "start": 1795519809314,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/acc6c29b5eee67bc6b2aa85854d9bb3a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 654,
+    "start": 1795519809314,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/68d9ddbb2aa63310b88c7697e5b0c6c9.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1017,
+    "start": 1795519809315,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/422b48c2206d5240a6717c92496ba21a.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1061,
+    "start": 1795519809316,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/2258ea6dfe9ad15440ca55aca291698d.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1005,
+    "start": 1795519809317,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/a246880e69bc7a2a793c90a2fb013ae1.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 559,
+    "start": 1795519809319,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/1915c266b9444348e709aa415ceb7162.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 934,
+    "start": 1795519809324,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/blocks-media/zoom-out.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 582,
+    "start": 1795519809325,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/blocks-media/zoom-in.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 634,
+    "start": 1795519809325,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/94b06fb716871f81bec601724e29a457.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1121,
+    "start": 1795519809324,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/blocks-media/zoom-reset.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 501,
+    "start": 1795519809325,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/551aae506dfa65ce3b45713b5300a678.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 806,
+    "start": 1795519809324,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/blocks-media/dropdown-arrow.svg",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 569,
+    "start": 1795519809328,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/blocks-media/repeat.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 696,
+    "start": 1795519809333,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/blocks-media/green-flag.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 651,
+    "start": 1795519809332,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/725089014557d28fd2c38904a6326b81.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 574,
+    "start": 1795519809415,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/a5787bb7364d8131ed49a8f53037d7f4.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1120,
+    "start": 1795519809562,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/assets/385aa4b73a425883b4f9e91501a52299.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 1241,
+    "start": 1795519809564,
+    "elapsedMs": 2,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/branding/ccraft-tab-icon.png",
+    "status": 200,
+    "encoding": "identity",
+    "bytes": 1657390,
+    "start": 1795519809609,
+    "elapsedMs": 3,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/blocks-media/rotate-left.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 546,
+    "start": 1795519809845,
+    "elapsedMs": 1,
+    "throttled": false
+  },
+  {
+    "host": "127.0.0.1:5185",
+    "pathname": "/static/blocks-media/rotate-right.svg",
+    "status": 200,
+    "encoding": "gzip",
+    "bytes": 537,
+    "start": 1795519809845,
+    "elapsedMs": 1,
+    "throttled": false
+  }
+]

@@ -1,0 +1,68 @@
+{
+  "cases": [
+    {
+      "name": "frozen entries, original PNG, protected VM/Blockly bytes and licenses",
+      "detail": {
+        "guiSha256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+        "pngSha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2",
+        "protectedModules": {
+          "vm": 178,
+          "blockly": 15
+        }
+      }
+    },
+    {
+      "name": "final inline guard reports stylesheet and modulepreload failures and releases on pagehide",
+      "detail": {
+        "checked": [
+          "stylesheet",
+          "modulepreload"
+        ],
+        "criticalDependencyOrder": [
+          "/openblock-vendor/react-16.min.js",
+          "/openblock-vendor/react-dom-16.min.js",
+          "/openblock-vendor/openblock-gui.js",
+          "/cfzn-extensions/module-loader.js"
+        ],
+        "noNetwork": true
+      }
+    },
+    {
+      "name": "180s cutoff still accepts authenticated late READY and ready workspaces never become retryable",
+      "detail": {
+        "cutoff": 180000,
+        "lateReady": true,
+        "foreignIgnored": true,
+        "businessNoticeIndependent": true
+      }
+    },
+    {
+      "name": "actual GUI precompression roundtrips without changing source bytes or modification time",
+      "detail": {
+        "originalBytes": 22664239,
+        "gzipBytes": 5480187,
+        "ratio": 0.24179885325070918,
+        "sha256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+        "originalMtimePreserved": true,
+        "copiedMtimePreserved": true
+      }
+    },
+    {
+      "name": "IDE gzip negotiation and stable URL caching are configured independently of API compression",
+      "detail": {
+        "gzipModuleSimulation": [
+          {
+            "module": "--with-http_gzip_static_module",
+            "configuration": "gzip_static on;\ngzip_static off;"
+          },
+          {
+            "module": "--with-http_ssl_module",
+            "configuration": ""
+          }
+        ],
+        "actualHttpHeadersAnd304": "main coordinator verification required"
+      }
+    }
+  ],
+  "browserAndNetwork": "Not executed. Actual UI and deployed HTTP negotiation are main coordinator coverage."
+}

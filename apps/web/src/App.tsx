@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ApiError, projectsApi } from './api';
 import type { Project } from './api';
 import { EditorBridge } from './editor-bridge';
+import type { EditorBootState } from './editor-bridge';
 import { projectToolbarState } from './editor-protocol';
 import type { EditorSnapshot, ProjectToolbarAction } from './editor-protocol';
 import { ProjectNotice } from './ProjectNotice';
@@ -34,6 +35,9 @@ export function App() {
   const listEpoch = useRef(0);
   const importFromEditor = useRef<(file: ImportFile) => void>(() => undefined);
   const toolbarAction = useRef<(action: ProjectToolbarAction) => void>(() => undefined);
+  const hasBeenReady = useRef(false);
+  const [startupAttempt, setStartupAttempt] = useState(0);
+  const [boot, setBoot] = useState<EditorBootState>({ phase: 'loading', message: '正在启动 CCraft 编辑器…' });
   const [snapshot, setSnapshot] = useState<EditorSnapshot | null>(null);
   const [active, setActive] = useState<Project | null>(null);
   const [items, setItems] = useState<Project[]>([]);
@@ -224,12 +228,20 @@ export function App() {
     }
   };
 
+  function retryStartup() {
+    const client = bridge.current;
+    if (hasBeenReady.current || snapshotRef.current || !client?.canRetryStartup) return;
+    client.dispose(); bridge.current = null;
+    setBoot({ phase: 'loading', message: '正在启动 CCraft 编辑器…' });
+    setStartupAttempt(attempt => attempt + 1);
+  }
+
   useEffect(() => {
     if (!frame.current) return;
     const client = new EditorBridge(frame.current, {
       onState: receive,
       onReplace(state) { receive(state); select(null); setNotice(null); },
-      onBootError: (message) => setNotice({ level: 'error', message }),
+      onBootState: (state) => { if (state.phase === 'ready') hasBeenReady.current = true; setBoot(state); },
       onImport: (file) => importFromEditor.current(file),
       onImportError: (message) => setNotice({ level: 'error', message }),
       onToolbarAction: (intent) => toolbarAction.current(intent),
@@ -243,10 +255,10 @@ export function App() {
     return () => {
       stopSave();
       client.dispose();
-      bridge.current = null;
+      if (bridge.current === client) bridge.current = null;
       window.removeEventListener('beforeunload', warn);
     };
-  }, []);
+  }, [startupAttempt]);
 
   const disabled = Boolean(busy) || !snapshot;
   const toolbarView = projectToolbarState(snapshot, active?.revision ?? null, busy, drawer);
@@ -258,6 +270,10 @@ export function App() {
 
   return (
     <div className="app">
+      {(boot.phase === 'slow' || boot.phase === 'error') && <section className={`editor-startup ${boot.phase}`} role={boot.phase === 'error' ? 'alert' : 'status'} data-testid="editor-startup-status">
+        <p>{boot.message}</p>
+        {boot.phase === 'error' && !snapshot && !hasBeenReady.current && <button type="button" className="button" onClick={retryStartup}>重新加载编辑器</button>}
+      </section>}
       {notice && <ProjectNotice notice={notice} onClose={closing => setNotice(current => current === closing ? null : current)}>
         {notice.conflictId && <div className="notice-actions">
           <button type="button" className="button" disabled={disabled} onClick={() => { void openProject(notice.conflictId!); }}>重新载入</button>
@@ -265,10 +281,10 @@ export function App() {
         </div>}
       </ProjectNotice>}
       <main ref={workspace} className="workspace" onKeyDown={event => { if (event.key === 'Escape' && drawer) setDrawer(null); }}>
-        <iframe ref={frame} src="/openblock.html" title="OpenBlock 编辑器" data-testid="openblock-frame" inert={busy === '正在打开…' || busy === '正在导入…' || busy === '正在新建…'} />
+        <iframe key={startupAttempt} ref={frame} src="/openblock.html" title="CCraft 编辑器" data-testid="openblock-frame" inert={busy === '正在打开…' || busy === '正在导入…' || busy === '正在新建…'} />
         {drawer === 'projects' && <aside className="drawer" aria-label="项目列表" data-testid="project-panel">
           <div className="drawer-header"><div><p className="eyebrow">LOCAL WORKSPACE</p><h2>我的项目</h2></div><button type="button" className="icon-button" aria-label="关闭项目列表" onClick={() => setDrawer(null)}>×</button></div>
-          <div className="current-project-row"><span>当前项目：{snapshot?.title ?? 'OpenBlock'}</span><button type="button" className="button" disabled={disabled} onClick={() => { void renameProject(activeRef.current ?? undefined); }}>重命名当前项目</button></div>
+          <div className="current-project-row"><span>当前项目：{snapshot?.title ?? 'CCraft作品'}</span><button type="button" className="button" disabled={disabled} onClick={() => { void renameProject(activeRef.current ?? undefined); }}>重命名当前项目</button></div>
           <div className="projects-heading"><p className="drawer-copy">保存的项目存储在本机。</p><button type="button" className="button quiet" disabled={listLoading} onClick={() => { void list(); }}>刷新</button></div>
           {listLoading && <p role="status" className="drawer-copy">正在读取项目…</p>}
           {listError && <p role="alert" className="list-error">{listError}</p>}

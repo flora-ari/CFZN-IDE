@@ -1,0 +1,103 @@
+{
+  "date": "2026-11-24",
+  "preparationOnly": true,
+  "bandwidthBytesPerSecond": 819200,
+  "metricBoundary": "transfer estimates are not READY, editable time or LCP",
+  "baseline": {
+    "label": "baseline",
+    "directory": "D:\\CFZN\\CFZN-IDE\\build\\deploy\\20261124T081631Z-cfe8ac8d\\bundle\\web",
+    "gui": {
+      "url": "/openblock-vendor/openblock-gui.js",
+      "rawBytes": 22664720,
+      "sha256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2",
+      "moduleCount": 1959,
+      "module520SHA256": "077638cfd3c1b32732c06a0a8afcfb912131dfaed9e8d6b8ca8e2e1ca10e240e",
+      "syntaxCompilationOnly": true,
+      "actualExecutionVerified": false,
+      "representations": [
+        {
+          "encoding": "identity",
+          "bytes": 22664720,
+          "sha256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2"
+        },
+        {
+          "encoding": "gzip",
+          "bytes": 5480379,
+          "sha256": "f4fb6fc8574ffe1e932bf1bbef83298c7d70b5d0810d978fadfd5699efa547be",
+          "decodedSHA256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2",
+          "idealGUITransferSecondsAt800KiBps": 6.689915771484375
+        }
+      ]
+    },
+    "ast": {
+      "locator": "unique outer CallExpression array, per-slot AST leading marker",
+      "modules": 1959,
+      "functionCount": 41164,
+      "empty1169": "OmittedExpression",
+      "unreliableSlots": []
+    },
+    "protectedModules": {
+      "vm": 178,
+      "blockly": 15,
+      "byteHashesMatch": true
+    },
+    "documents": [
+      {
+        "file": "index.html",
+        "sha256": "23cad25bf852ce310168ce2a3eb4dfde1f0f6aa0e3794018a018e7a39c324342",
+        "icon": {
+          "tag": "<link rel=\"icon\" type=\"image/png\" href=\"/branding/ccraft-tab-icon.png\" />",
+          "url": "/branding/ccraft-tab-icon.png",
+          "bytes": 1657390,
+          "sha256": "c4375f067f4da96b6fb4b14a6c4ede4df0bb7a440f840e35c9a33680557292cb"
+        },
+        "preloads": [
+          "<link rel=\"modulepreload\" crossorigin href=\"/assets/save-shortcut-C_DI86IG.js\">"
+        ],
+        "scripts": [
+          "<script type=\"module\" crossorigin src=\"/assets/app-C0XuQYw1.js\">"
+        ]
+      },
+      {
+        "file": "openblock.html",
+        "sha256": "3af5fff7078b2448a98cae46c5020fb6d49a7d3425b9887814e46b23982f343c",
+        "icon": {
+          "tag": "<link rel=\"icon\" type=\"image/png\" href=\"/branding/ccraft-tab-icon.png\" />",
+          "url": "/branding/ccraft-tab-icon.png",
+          "bytes": 1657390,
+          "sha256": "c4375f067f4da96b6fb4b14a6c4ede4df0bb7a440f840e35c9a33680557292cb"
+        },
+        "preloads": [
+          "<link rel=\"modulepreload\" crossorigin href=\"/assets/save-shortcut-C_DI86IG.js\">"
+        ],
+        "scripts": [
+          "<script id=\"editor-startup-observer\">",
+          "<script type=\"module\" crossorigin src=\"/assets/editor-sqHyfw8P.js\">",
+          "<script src=\"/openblock-vendor/react-16.min.js\">",
+          "<script src=\"/openblock-vendor/react-dom-16.min.js\">",
+          "<script>",
+          "<script src=\"/openblock-vendor/openblock-gui.js\">",
+          "<script src=\"/cfzn-extensions/module-loader.js\">"
+        ]
+      }
+    ],
+    "licenses": [
+      {
+        "name": "LICENSE",
+        "bytes": 1069,
+        "sha256": "9e3d6d9f930561c9085c05d18ef3acd27b706359ba7098e799c73381affb1d4f"
+      },
+      {
+        "name": "LICENSE.MIT",
+        "bytes": 1508,
+        "sha256": "4d7f8fd635fa6e9b318ca895132274d2acf1ef1e7d689f9e7bc96ed53d6de862"
+      },
+      {
+        "name": "TRADEMARK",
+        "bytes": 476,
+        "sha256": "0788d533ce4a6dd95020cc3a2ebf154e23523a37b746cb7c02ad32eaa9be70f4"
+      }
+    ],
+    "originalHeaderAndFaviconPreserved": true
+  }
+}

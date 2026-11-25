@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-24",
+  "baselineRelease": "20261124T081631Z-cfe8ac8d",
+  "gui": {
+    "rawBytes": 22664720,
+    "gzipBytes": 5480379
+  },
+  "directHttps": {
+    "homeTotalSeconds": 0.064868,
+    "guiFirstByteSeconds": 0.05561,
+    "guiTotalSeconds": 6.890202,
+    "tlsHostVerified": true
+  },
+  "http2": {
+    "tlsAuthorized": true,
+    "alpn": "h2"
+  },
+  "browser": {
+    "environment": "IAB, isolated localhost origin, Cache-Control no-store, GUI response capped at 800 KiB/s",
+    "readyMs": 15938,
+    "guiFetchStartMs": 524,
+    "guiDurationMs": 10087,
+    "guiEncodedBytes": 5480379,
+    "guiDecodedBytes": 22664720,
+    "measurement": "iframe navigation through actual boot-message hidden/READY; not production Internet end-to-end timing"
+  },
+  "independentNetworkIssue": {
+    "systemDns": "WLAN 192.168.140.1",
+    "normalDnsRequest": "resolution timed out at 10 seconds",
+    "publicDns223_5_5_5": "A 8.138.226.239 TTL 600",
+    "settingsChanged": false
+  },
+  "resumedComparison": {
+    "readyMs": [
+      10564,
+      9976,
+      9832
+    ],
+    "medianReadyMs": 9976,
+    "usedForFinalComparison": true,
+    "reason": "Conservative same-machine baseline measured after the pause; initial baseline retained."
+  }
+}

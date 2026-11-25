@@ -1,0 +1,97 @@
+{
+  "date": "2026-11-24",
+  "scope": "actual frontend objects + simulated HTTP and browser serial",
+  "cases": [
+    {
+      "name": "all unavailable service states win over empty Profile across start, native upload and both rendered buttons",
+      "passed": true,
+      "detail": {
+        "statuses": [
+          "unknown",
+          "checking",
+          "offline",
+          "incompatible"
+        ],
+        "posts": 0,
+        "terminalCloses": 0,
+        "nativeErrorsMatchButtons": true
+      }
+    },
+    {
+      "name": "recovery GETs run together, repair default Profile and clear stale preflight feedback without choosing OS or starting a job",
+      "passed": true,
+      "detail": {
+        "parallelGETs": true,
+        "repairedProfile": "esp-default",
+        "automaticOSSelection": false,
+        "automaticJobs": 0,
+        "explicitCompilePosts": 1,
+        "terminalCloses": 0
+      }
+    },
+    {
+      "name": "valid unavailable selection is preserved; invalid or cross-device selection repairs; busy response cannot alter captured job settings",
+      "passed": true,
+      "detail": {
+        "explicitUnavailablePreserved": true,
+        "repairs": [
+          "empty",
+          "removed",
+          "cross-device"
+        ],
+        "busyCapturedProfile": "esp-explicit",
+        "capturedDevice": "arduinoEsp32",
+        "noMatchingProfileDiagnosed": true
+      }
+    },
+    {
+      "name": "port enumeration error precedes absent OS choice, leaves compile enabled and preserves actual failed job diagnostics on recovery",
+      "passed": true,
+      "detail": {
+        "compileDuringPortsFailure": true,
+        "uploadDiagnostic": "无法读取本机烧录端口：SERIAL_IO_ERROR: fixture OS enumeration denied。请刷新烧录端口后重试。",
+        "failedJobAndLogsRetained": true,
+        "restoreErrorRetained": true,
+        "terminalCloses": 0
+      }
+    },
+    {
+      "name": "real simulated upload failure plus failed terminal restoration survive service refresh",
+      "passed": true,
+      "detail": {
+        "uploadSchema": [
+          "buildId",
+          "portId"
+        ],
+        "failedUploadRetained": true,
+        "actualRestorationFailureRetained": true,
+        "terminalReopens": 0
+      }
+    },
+    {
+      "name": "unknown upload submission remains busy and is not retried or restored by successful service detection",
+      "passed": true,
+      "detail": {
+        "submissionUnknownRetained": true,
+        "busyRetained": true,
+        "automaticRetry": false,
+        "automaticRestore": false,
+        "posts": 2
+      }
+    },
+    {
+      "name": "final entry, protected upstream modules, licenses and original PNG retain agreed bytes",
+      "passed": true,
+      "detail": {
+        "editor": "editor-DUATB_QJ.js",
+        "css": "editor-CwQOS_yH.css",
+        "editorSHA256": "26973ecaa997ed2ae360bceb8d0b0fb23f08cb65081b7089fa67166a2fc73b31",
+        "guiSHA256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+        "vmModules": 178,
+        "blocklyModules": 15,
+        "licenses": 3,
+        "pngSHA256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2"
+      }
+    }
+  ]
+}

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { HardwareController } from '../src/hardware-controller.ts';
 import { HardwareSession } from '../src/hardware-session.ts';
+import { renderLocalService } from '../src/local-service-view.ts';
 import type { HardwareCapabilities, HardwareJob } from '../src/hardware-types.ts';
 import type { HardwareSource } from '../src/hardware-controller.ts';
 
@@ -65,8 +66,29 @@ test('missing compiler/core remains online and capabilities checks preserve expl
   assert.match(hardware.profiles[0].reason!, /core/);
   assert.throws(() => hardware.start(false), /core/);
   available = { ...available, profiles: [] }; await hardware.checkLocalService();
-  assert.equal(hardware.profileId, 'esp32'); assert.equal(hardware.portId, 'COM-MOCK');
+  assert.equal(hardware.profileId, ''); assert.equal(hardware.portId, 'COM-MOCK');
   assert.equal(hardware.snapshot().localService.status, 'online');
+});
+
+test('the service retry action refreshes capabilities and OS ports without clearing job or serial diagnostics', async () => {
+  const calls: string[] = [];
+  const { hardware, session } = fixture(async (url, init) => {
+    assert.equal(init?.method, 'GET');
+    calls.push(path(url));
+    return response(path(url).endsWith('/ports') ? ports : capability());
+  });
+  hardware.profileId = 'esp32'; hardware.portId = 'COM-MOCK';
+  hardware.error = 'job failure'; hardware.restoreError = 'restore failure'; session.serialError = 'serial failure';
+  let retry!: () => void;
+  renderLocalService({ createElement: (type: string, props: any) => {
+    if (type === 'button') retry = props.onClick;
+  } }, hardware, hardware.snapshot());
+  retry();
+  await until(() => calls.length === 2 && hardware.snapshot().localService.status === 'online' && hardware.ports.length === 1);
+  assert.deepEqual(calls.sort(), ['/api/v1/hardware/capabilities', '/api/v1/hardware/ports']);
+  assert.equal(hardware.profileId, 'esp32'); assert.equal(hardware.portId, 'COM-MOCK');
+  assert.equal(hardware.error, 'job failure'); assert.equal(hardware.restoreError, 'restore failure');
+  assert.equal(session.serialError, 'serial failure'); assert.equal(session.portId, null);
 });
 
 test('confirmed incompatible service cannot submit new jobs using previously cached profiles', async () => {

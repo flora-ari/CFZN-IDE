@@ -1,0 +1,17 @@
+✔ ordinary trivia changes pass all invariants (21.9633ms)
+✔ JSDoc parameter/type names are trivia, not executable identifiers (6.0565ms)
+✔ function names and argument binding changes cannot pass (2.7095ms)
+✔ constant folding and undefined guards cannot pass even without a signature change (4.8006ms)
+✔ raw string and regexp literal spelling remain protected (3.9747ms)
+✔ template raw spelling and escapes remain protected (2.2179ms)
+✔ return ASI changes fail structure even when raw nontrivia tokens match (1.7008ms)
+✔ prefix versus postfix ASI changes fail structure with the same raw tokens (1.524ms)
+✔ license removal is rejected independently of executable token equality (1.0671ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 514.7587

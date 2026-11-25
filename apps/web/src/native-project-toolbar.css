@@ -1,5 +1,7 @@
 [data-cfzn-menu-host][class*="menu-bar_menu-bar"] { align-items: center; justify-content: flex-start; }
-[data-cfzn-menu-host] img[data-cfzn-brand-logo] { width: 120px; height: 40px; max-width: 120px; max-height: 40px; object-fit: contain; object-position: center; flex: 0 0 auto; align-self: center; }
+[data-cfzn-menu-host] img[data-cfzn-brand-logo], [class*="stage-header_embed-openblock-logo"] img[data-cfzn-brand-logo] { width: 120px; height: 40px; max-width: 120px; max-height: 40px; object-fit: cover; object-position: 50% 53%; opacity: 1; flex: 0 0 auto; align-self: center; }
+[data-cfzn-brand-link] { text-decoration: none; }
+[data-cfzn-brand-link]:focus-visible { outline: 2px solid white; outline-offset: -2px; border-radius: 4px; }
 [data-cfzn-menu-host] > [class*="menu-bar_main-menu"] { flex: 0 0 auto; }
 [data-cfzn-menu-host] > [class*="menu-bar_file-menu"] { flex: 0 1 188px; min-width: 108px; max-width: 228px; margin-inline-start: auto; overflow: hidden; }
 [data-cfzn-menu-host] > [class*="menu-bar_file-menu"] > div { min-width: 0; max-width: 100%; }

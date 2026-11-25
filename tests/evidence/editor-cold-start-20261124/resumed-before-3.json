@@ -1,0 +1,1 @@
+{"label":"before","readyMs":9832,"timeOrigin":1795519800132.7,"topReadyMs":9986,"gui":[{"url":"/openblock-vendor/openblock-gui.js","fetchStart":41,"startTime":41,"duration":7902,"encodedBodySize":5480379,"decodedBodySize":22664720,"transferSize":5480679}],"parentGui":[],"longTasks":[{"start":8020,"duration":716},{"start":8743,"duration":423},{"start":9477,"duration":234}]}

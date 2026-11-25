@@ -1,0 +1,16 @@
+✔ the actual dependency reproduces 121 background resumes in 120 frames; patched initialization schedules none (74.894ms)
+✔ only trusted active gestures resume synchronously; synthetic, inactive and ineffective input cannot unlock (17.4132ms)
+✔ same-context registrations merge targets and pending resumes; each callback completes once on running (17.7835ms)
+✔ resume rejection and synchronous failure allow a later gesture without background retries (19.941ms)
+✔ touch drag is ignored and trusted mouse/touch activation still works without the optional activation API (13.9422ms)
+✔ close, initially-closed contexts and unload clean pending listeners without false completion or rejection (15.7312ms)
+✔ separate contexts retain independent completion, and a new registration can unlock a later suspension (16.3766ms)
+✔ the audited hook changes only module 520, preserves its license, and rejects moved/changed/duplicate input (285.3894ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1354.0824

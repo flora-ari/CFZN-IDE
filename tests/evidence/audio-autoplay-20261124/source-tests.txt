@@ -1,0 +1,16 @@
+✔ actual original dependency resumes 121 times across registration and 120 animation frames (37.3089ms)
+✔ corrected dependency performs no resume, animation request or timer before real user activation (27.8019ms)
+✔ a genuine activated gesture resumes synchronously and running resolves the Promise and optional callback once (26.6657ms)
+✔ same-context registrations share in-flight recovery while retaining each registration completion (25.325ms)
+✔ resume rejection is handled without background retry and a later real gesture can succeed (26.4777ms)
+✔ running and closed contexts do not resume and closed pending recovery releases listeners (38.7388ms)
+✔ independent contexts complete separately and unloading prevents later recovery (25.3488ms)
+✔ original element forms retain Promise and callback behavior for arrays, NodeList, selector and jQuery-like input (144.6183ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1229.6915

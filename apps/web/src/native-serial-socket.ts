@@ -19,6 +19,7 @@ export class NativeSerialSocket {
   private mayCloseSession: () => boolean;
   connectionTask?: Promise<unknown>;
   connectionOptions?: SerialOptions;
+  discoverySource: 'local' | 'browser' = 'local';
   constructor(hardware: HardwareController, protocolAllowed = () => true, modeSwitching = () => false, mayCloseSession = () => true) { this.hardware = hardware; this.protocolAllowed = protocolAllowed; this.modeSwitching = modeSwitching; this.mayCloseSession = mayCloseSession; }
   setOnOpen(fn: () => void) { this.onOpen = fn; }
   setOnClose(fn: () => void) { this.onClose = fn; }
@@ -44,7 +45,9 @@ export class NativeSerialSocket {
     const session = this.hardware.session;
     switch (method) {
       case 'discover': {
-        const ports = await session.refresh();
+        await this.hardware.ensureLinkReady();
+        const ports = (await session.refresh(this.discoverySource)).filter(port => (port.source ?? 'browser') === this.discoverySource || port.id === session.portId);
+        if (this.hardware.linkDisabledReason) throw new Error(this.hardware.linkDisabledReason);
         setTimeout(() => ports.forEach(port => this.notify('didDiscoverPeripheral', { peripheralId: port.id, name: port.label })), 0);
         return null;
       }
@@ -68,7 +71,7 @@ export class NativeSerialSocket {
         await this.hardware.applySerialSettings({ options: { ...session.options, baudRate: Number(params.baudRate) } }, 'native'); return null;
       case 'upload':
         // Header and bridge use the same controller; native RPC callers are supported too.
-        this.hardware.start(true, new TextDecoder().decode(decodeWire(params.message, params.encoding))); return null;
+        await this.hardware.start(true, new TextDecoder().decode(decodeWire(params.message, params.encoding))); return null;
       case 'abortUpload': return this.hardware.cancel();
       case 'uploadFirmware': throw new Error('当前实时固件未验证，不提供自动刷写。');
       default: throw new Error(`不支持的串口操作：${method}`);

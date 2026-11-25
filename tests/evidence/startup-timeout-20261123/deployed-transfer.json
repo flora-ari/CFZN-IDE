@@ -1,0 +1,158 @@
+{
+  "release": "20261123T085924Z-cfe8ac8d",
+  "verifiedAt": "2026-11-23T09:08:06.247Z",
+  "allPassed": true,
+  "rawBytes": 22664239,
+  "gzipBytes": 5480187,
+  "reductionPercent": 75.82,
+  "guiSha256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+  "decodedSha256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+  "results": [
+    {
+      "pathname": "/openblock-vendor/openblock-gui.js",
+      "status": 200,
+      "transferredBytes": 5480187,
+      "firstByteSeconds": 0.043219,
+      "totalSeconds": 6.682427,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Mon, 23 Nov 2026 09:07:59 GMT",
+        "content-type": "application/javascript",
+        "content-length": "5480187",
+        "last-modified": "Mon, 23 Nov 2026 08:58:17 GMT",
+        "connection": "keep-alive",
+        "vary": "Accept-Encoding",
+        "etag": "\"6b040029-539efb\"",
+        "content-encoding": "gzip",
+        "expires": "Mon, 23 Nov 2026 09:07:58 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)"
+      }
+    },
+    {
+      "pathname": "/openblock-vendor/openblock-gui.js",
+      "status": 200,
+      "transferredBytes": 0,
+      "firstByteSeconds": 0.0549,
+      "totalSeconds": 0.055477,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Mon, 23 Nov 2026 09:08:06 GMT",
+        "content-type": "application/javascript",
+        "content-length": "22664239",
+        "last-modified": "Mon, 23 Nov 2026 08:58:17 GMT",
+        "connection": "keep-alive",
+        "vary": "Accept-Encoding",
+        "etag": "\"6b040029-159d42f\"",
+        "expires": "Mon, 23 Nov 2026 09:08:05 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      }
+    },
+    {
+      "pathname": "/openblock-vendor/openblock-gui.js",
+      "status": 304,
+      "transferredBytes": 0,
+      "firstByteSeconds": 0.064175,
+      "totalSeconds": 0.06441,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Mon, 23 Nov 2026 09:08:06 GMT",
+        "last-modified": "Mon, 23 Nov 2026 08:58:17 GMT",
+        "connection": "keep-alive",
+        "vary": "Accept-Encoding",
+        "etag": "\"6b040029-539efb\"",
+        "expires": "Mon, 23 Nov 2026 09:08:05 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)"
+      }
+    },
+    {
+      "pathname": "/api/v1/health",
+      "status": 200,
+      "transferredBytes": 47,
+      "firstByteSeconds": 0.062541,
+      "totalSeconds": 0.062956,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Mon, 23 Nov 2026 09:08:06 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "47",
+        "connection": "keep-alive",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)"
+      }
+    },
+    {
+      "pathname": "/openblock.html",
+      "status": 200,
+      "transferredBytes": 4085,
+      "firstByteSeconds": 0.059806,
+      "totalSeconds": 0.060554,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Mon, 23 Nov 2026 09:08:06 GMT",
+        "content-type": "text/html",
+        "content-length": "4085",
+        "last-modified": "Mon, 23 Nov 2026 08:58:27 GMT",
+        "connection": "keep-alive",
+        "vary": "Accept-Encoding",
+        "etag": "\"6b040033-ff5\"",
+        "expires": "Mon, 23 Nov 2026 09:08:05 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      }
+    },
+    {
+      "pathname": "/cfzn-extensions/extensions/activateBuzzer/blocks.mjs",
+      "status": 200,
+      "transferredBytes": 0,
+      "firstByteSeconds": 0.061601,
+      "totalSeconds": 0.062194,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Mon, 23 Nov 2026 09:08:06 GMT",
+        "content-type": "application/javascript",
+        "content-length": "1635",
+        "last-modified": "Mon, 23 Nov 2026 08:58:17 GMT",
+        "connection": "keep-alive",
+        "vary": "Accept-Encoding",
+        "etag": "\"6b040029-663\"",
+        "expires": "Mon, 23 Nov 2026 09:08:05 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      }
+    },
+    {
+      "pathname": "/assets/ccraft-missing-20261123.js",
+      "status": 404,
+      "transferredBytes": 153,
+      "firstByteSeconds": 0.085394,
+      "totalSeconds": 0.085897,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Mon, 23 Nov 2026 09:08:06 GMT",
+        "content-type": "text/html",
+        "content-length": "153",
+        "connection": "keep-alive",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)"
+      }
+    }
+  ]
+}

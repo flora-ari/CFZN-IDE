@@ -3,17 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/static/favicon.ico" />
-    <title>OpenBlock</title>
+    <script id="editor-startup-observer">
+      (function () {
+        var phase = 'loading', failure = '';
+        function showFailure() {
+          var element = document.getElementById('boot-message');
+          if (element && failure) { element.textContent = failure; element.hidden = false; }
+        }
+        function report() {
+          if (window.parent !== window && failure) window.parent.postMessage({ protocol: 'cfzn.openblock', version: 1, type: 'BOOT_ERROR', payload: { message: failure } }, window.location.origin);
+        }
+        function stopErrors() {
+          window.removeEventListener('error', resourceError, true);
+          window.removeEventListener('unhandledrejection', rejected);
+        }
+        function dispose() {
+          stopErrors();
+          window.removeEventListener('message', hello);
+          window.removeEventListener('pagehide', dispose);
+          document.removeEventListener('DOMContentLoaded', showFailure);
+        }
+        function fail(message) {
+          if (phase !== 'loading') return;
+          phase = 'failed'; failure = message; stopErrors(); showFailure(); report();
+        }
+        function resourceError(event) {
+          var target = event.target, tag = target && target.tagName;
+          var resource = tag === 'SCRIPT' ? target.src : tag === 'LINK' && /^(stylesheet|modulepreload)$/.test(target.rel) ? target.href : '';
+          if (!resource && !event.filename) return;
+          var url;
+          try { url = new URL(resource || event.filename, window.location.href); } catch (_) { return; }
+          if (url.origin !== window.location.origin) return;
+          fail(resource ? '编辑器资源加载失败，可重新加载编辑器：' + url.pathname : 'CCraft 初始化失败：' + (event.message || '脚本执行失败') + '（' + url.pathname + '）');
+        }
+        function rejected(event) {
+          fail('CCraft 初始化失败：' + (event.reason instanceof Error ? event.reason.message : '初始化异步操作失败。'));
+        }
+        function hello(event) {
+          var data = event.data;
+          if (event.source === window.parent && event.origin === window.location.origin && data && data.protocol === 'cfzn.openblock' && data.version === 1 && data.type === 'HELLO') report();
+        }
+        window.CFZNEditorStartup = { fail: fail, ready: function () { phase = 'ready'; failure = ''; dispose(); } };
+        window.addEventListener('error', resourceError, true);
+        window.addEventListener('unhandledrejection', rejected);
+        window.addEventListener('message', hello);
+        window.addEventListener('pagehide', dispose);
+        document.addEventListener('DOMContentLoaded', showFailure);
+      }());
+    </script>
+    <link rel="icon" type="image/png" href="/branding/ccraft-tab-icon.png" />
+    <title>CCraft 编辑器</title>
     <style>html,body,#editor{width:100%;height:100%;margin:0}body{overflow:hidden}#boot-message{position:fixed;inset:0;display:grid;place-content:center;text-align:center;background:#f4f8fc;color:#243958;font:16px system-ui;z-index:10000}#boot-message[hidden]{display:none}</style>
   </head>
   <body>
     <div id="editor"></div>
-    <div id="boot-message" role="status">正在启动 OpenBlock 编辑器…</div>
+    <div id="boot-message" role="status">正在启动 CCraft 编辑器…</div>
     <script src="/openblock-vendor/react-16.min.js"></script>
     <script src="/openblock-vendor/react-dom-16.min.js"></script>
     <script>window.react = window.React; window['react-dom'] = window.ReactDOM;</script>
-    <script src="/openblock-vendor/openblock-gui.js"></script>
+    <script src="__CCRAFT_FAST_GUI_URL__"></script>
     <script src="/cfzn-extensions/module-loader.js"></script>
     <script type="module" src="/src/openblock.ts"></script>
   </body>

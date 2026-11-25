@@ -1,5 +1,55 @@
 # CFZN-IDE API contract v0.1
 
+## 主控目录与模块支持范围（2026-11-20）
+
+主控扩展与顶部主控入口显示原生注册目录中全部可见主控，并保留原生顺序、名称与图标。取消选项及隐藏父设备继续通过既有过滤排除。主控页去掉“全部”和“主控板”类型控件及其类型筛选条件，搜索、“已加载”和“仅当前模式”继续按完整目录筛选。模块扩展仍按实际模块类型筛选。
+
+- `apps/api/src/common/controller-catalog.json` 是前后端共用的可信可选主控 ID 清单，当前包含 18 项原生可见设备及 Aijite ESP32-S3、FireBeetle ESP32-E 两项派生设备，共 20 项。工厂通过当前 IDE 注册目录取得名称和显示顺序，前端定义校验及 API `supportDevice` 校验使用这份完整清单。
+- 私有模块路由和 `schemaVersion: 1` 沿用已有协议。`supportDevice` 为非空、去重的可信 ID 数组，新增主控选择须能保存、读取及创建新版本。旧模块保存的五板范围按原样读取。未知、隐藏父设备、取消及空 ID 继续拒绝。
+- 原五板 `controllerIds` 继续作为六个内置模块与已实现硬件能力的兼容范围。自定义模块作者声明的支持列表独立于服务器编译 profile。C++ 模板、MicroPython 原生生成、现有设备通信和编译工具链遵循各自既有实现。
+- 主控目录、工厂复选框的 ID、名称和顺序在真实浏览器中逐项比对，验证完整 20 项、新旧模块保存重读和实际新增 Arduino 主控的一次积木加载与生成。工厂遇到未缓存的引脚描述时明确提示，候选值从可信设备描述读取。
+
+## 积木定义弹窗（2026-11-18）
+
+工作台的 Function、Output、Boolean、Hat 新增按钮和每行 Edit 使用旧工厂的 Modify Block 弹窗。使用原生 Blockly 声明工作区，按添加顺序组合片段，点击积木片段可编辑或移除。五个按钮分别添加文字、文本、数字、布尔和下拉变量。参数默认值区默认展开，可设置下拉自定义选项、默认项或三种主控引脚来源。确认后更新草稿，取消、关闭和 Escape 放弃这次弹窗修改。每行生成器代码、Arduino 公共代码和官方库搜索使用独立弹窗。生成预览打开独立的 Blockly 工作区，允许试拖工作台积木，关闭后清理预览，不写入作品。当前 IDE 的模块发布入口仍是私有版本保存。
+
+编辑积木定义时按原行更新并保留对应生成代码，参数由稳定 ID 关联默认值。逻辑和公共代码弹窗的 OK 提交编辑，库搜索在选择精确版本后通过添加或更换提交，关闭结束查询。最终保存创建不可变私有版本。
+
+- 私有模块仍采用 `schemaVersion: 1` 和现有 HTTP 路由。积木 ID 放宽为 `/^[a-z][a-z0-9_]{0,31}$/`，同一模块内仍须唯一。参数 ID 继续遵循大写规则。
+- 新增 `textValue`（缺省为空字符串）、`numberValue`（缺省为 0，默认值须为有限数）和 `boolean`（缺省为 false，默认值须为 JSON 布尔值）。三种类型都是可连接的值输入，有连接时使用子块代码。文本与数字带原生 shadow，布尔槽限定 Boolean，无连接时生成保存的布尔默认值。原有参数类型与已归档积木布局保持兼容。
+- 自定义下拉继续保存 `[显示名称, 代码值][]`，选择默认项时将整对移到首位。设备菜单继续只保存 `digitalOutputPin | analogInputPin | digitalInputPin`，由 IDE 的可信设备映射提供实时选项。编译前使用实际候选值，候选缺失时提示选择或检查设备。下拉模式切换仅影响当前弹窗草稿。
+
+## 积木工厂工作台与 Arduino 库（2026-11-18）
+
+参考爱集特旧工厂的新增界面。工作台左栏管理模块信息、颜色、公共代码和 Arduino 依赖，右侧积木表显示 ID、真实 Blockly 预览、逻辑和操作，支持指令、返回值、布尔和帽子积木。编辑与生成预览复用 OpenBlock 内置 Monaco。工厂从已挂载的代码工作区取得 Blockly，在无主控时也可预览普通积木。配置主体仍为 Arduino C++ 模板，运行与保存继续通过现有 IDE 的模块适配器。
+
+- 私有模块定义仍为 `schemaVersion: 1`。新增可选 `appearance: { color: '#RRGGBB', secondaryColor: '#RRGGBB' }` 和 `libraries: [{ name, version }]`。原有版本缺少上述字段时使用默认颜色与空依赖。积木形状增加 `hat`，支持后接指令，按 Arduino 代码栈生成。
+- `GET /api/v1/arduino/libraries/search?q=关键词` 从 Arduino Library Manager 官方索引查询，响应 `{items: [{ name, author, description, versions: [{ version, architectures }] }]}`。工厂按库名和明确版本添加依赖到当前草稿，保存后绑定不可变私有模块版本，作品继续只记录模块 ID。
+- 硬件编译请求可提供 `libraries: [{ name, version }]`。服务根据官方索引将精确版本准备到编译作业目录并传给现有 Arduino CLI。依赖不直接提供包网址、系统路径、命令或 CLI 参数。同名版本发生冲突时提示调整依赖。编译继续使用现有硬件 profile，真实设备上传沿用已有流程。
+
+## 私有自定义模块（2026-11-18）
+
+“模块扩展”在当前主控状态旁提供“自定义模块扩展”。在现有 React、TypeScript 和 Blockly 实例中编辑模块信息、支持主控、积木形状、参数和 Arduino 代码，预览积木及生成内容。保存创建不可变版本。编辑时以现有版本为起点另存，已有作品继续按原 ID 加载。隐藏版本会移出目录，原所有者可通过旧作品读取该版本。
+
+- API 为 `GET /api/v1/custom-modules`（`{items}`）、`POST /api/v1/custom-modules`（请求 `{definition}`，响应 `{item}`，201）、`GET /api/v1/custom-modules/:id`（`{item}`）和 `DELETE /api/v1/custom-modules/:id`（204）。条目 `{id, definition, createdAt}`。服务端生成 `custom` 加 32 个小写十六进制字符。隐藏的条目从列表省略，同一所有者可用 ID 读取。其他所有者的 ID 返回 404。
+- 现阶段使用服务端签发的本地浏览器匿名凭据和文件存储。初次打开目录以 GET 建立 cookie。全部操作从服务端可信身份解析端口获得范围，未来可注入已验证的用户信息。请求体和查询字符串不提供所有者。已配置用户身份解析器但未解析到用户时拒绝访问。现有作品 API 保持原有协议。
+- `createApp(dataDir, { customModuleIdentity, customModuleOrigins })` 接受服务端身份解析器。解析器输出已验证的 `issuer`、`subject` 及可选 `tenant`。本地默认来源为 `http://127.0.0.1:5173` 和 `http://localhost:5173`。其他来源通过 `CUSTOM_MODULE_ORIGINS` 配置，使用保留 Host 的同源反向代理。
+- `definition` 含 `schemaVersion:1, name, description, version, author, type, supportDevice, blocks, definitions, setup`。文本字段为字符串，`name` 与 `version` 必填。后四个辅助字符串 `description, author, definitions, setup` 可为空，客户端发送这些字段。`type` 为 `sensor | actuator | function`。`supportDevice` 从前后端共用的完整可选主控清单中选择。请求限 128 KiB，模块最多 24 块，每块最多 10 个参数。
+- 块含 `key, message, shape, inputs, code`。块 key 为 1–32 个小写字母、数字、下划线且以字母开头，同模块唯一。形状 `command | reporter | boolean | hat`。参数含 `name, type`，可附 `defaultValue` 或下拉 `options: [显示名称, 代码值][]`。参数 ID 为 1–24 个大写字母、数字、下划线且以字母开头，同块唯一。支持 `number | text | dropdown | value | statement | textValue | numberValue | boolean | digitalOutputPin | digitalInputPin | analogInputPin`。数字默认值为有限数，文本和通用值输入可用字符串默认值，布尔默认值为 JSON 布尔值，语句输入用于指令或帽子块。下拉选项的代码值非空且唯一。积木文字使用 `{{NAME}}` 声明参数位置，每个参数出现一次。代码可使用同样的占位符读取字段、嵌套表达式或语句。模块级 `definitions` 和 `setup` 是首次生成该模块时加入的 Arduino 文本。模块与块 ID 构成唯一 opcode `<id>_<key>`。
+- 模块定义按数据验证并通过受信 Blockly 工厂注册。用户提供的 Arduino 文本仅用于生成上传模式代码。编程模式沿用上传积木禁用提示和运行保护。主控更换继承现有兼容检查，设备动态引脚菜单读取当前主控。私有模块管理与项目中的加载、移除分开，后两项沿用已有归档、回滚、串口忙锁和在用积木检查。
+- 作品的 `deviceExtensions` 只记录已加载模块的不可变 ID。重新打开作品时预先解析当前访问范围内的引用，缺少定义时保留当前编辑内容。项目归档无私有定义的副本，目录读取不根据他人作品的引用扩大授权。本机浏览器会话以同一浏览器配置和访问地址为范围。
+
+## 桌面扩展库分类与展示（2026-11-18，主控冻结）
+
+参考本机 Mind+ V1.8.1 RC3.0。主控用 CraftAnything CLI 调查 `D:/Mind+/resources/app.asar`，SHA-256 为 `48c783ff8b907f98728179b9abf8311b5e4d05db7a570165101147f9b0ee1f59`。renderer 模块 1009 负责目录、模式和分类，2429 负责卡片、关键词和已加载分组。静态证据为 `ev_870f8e142d4079277b6e3b5a9ea44828344549be4317dda77d13974cc84e014e` 和 `ev_bb159c8762b87a5164bf41e9eb7ef1403a783106caa0afd829963588ee02ef21`。运行证据 `ev_c1593be91619be43c7fc22afe2b32831b0dec13a6f7d23025a87dfab732bf347` 记录了功能模块窗口。主控实际点击验证默认主控页、无板时功能模块可达、硬件分类受限、不区分大小写的查询和切分类清空搜索。已加载分组和两组的匹配字段由静态代码确认。详见 [CraftAnything 调查](../.runtime/mindplus-desktop.cany/findings.md) 及两侧设计 [前端](design/mindplus-desktop-library-frontend.md)、[后端](design/mindplus-desktop-library-backend.md)。
+
+- 左下扩展按钮打开原生扩展库并默认显示“主控扩展”，两种 IDE 模式和有无当前主控均遵循这一规则。库内切换“主控扩展”“模块扩展”“舞台扩展”。顶部设备入口继续直达主控并与扩展库共用完整的已注册可见主控目录、显示顺序和搜索结果。取消命令及隐藏项不作为卡片。主控默认保留完整目录。主控和模块均提供默认关闭的“仅当前模式”筛选。主控按原生注册项的 `programMode` 标记匹配，缺失标记仍能在未勾选的完整目录查看。模块按 CFZN 实际可执行/生成的能力匹配。六个内置模块的积木当前用于上传，编程模式可添加并展示其类别，卡片说明“积木仅上传模式”。切换筛选不切换 IDE 模式，也不代表连接、烧录或实时硬件协议可用。
+- 模块类型从目录显式元数据生成，仅展示“全部”“传感器”“执行器”“功能模块”等实际分类。默认按当前已提交主控的真实兼容性显示模块。无板时模块页给出选择主控的入口。有板但分类在默认视图无兼容项时说明原因，不报资源加载失败。保留可逆的“显示全部模块”浏览开关，允许查看未选主控或不兼容的条目、右上角标和支持列表，这些卡片不能添加。兼容视图仍允许查询和切类型。分类始终从完整目录生成，搜索和已加载筛选不能移除分类。既有编程模式中的模块添加和积木展示能力继续生效。目录兼容不表示浏览器实时协议能力。
+- 主控和模块在当前分类内按名称、说明和可用的可信标识（原 ID、已有标签或 SKU）进行大小写不敏感的子串查询，与类型、兼容、当前模式和“已加载”条件取交集。切换主分类或模块类型时清关键词并回到列表顶部。查询不自动切分类。空搜索结果可清除关键词和当前分类的其它选项，回到该分类默认的兼容视图。清除筛选不选择或卸载条目。
+- 模块页把通过筛选的“已加载”和候选“可添加”卡片分组，按原目录顺序排列，每个 ID 只出现一次。浏览全部时仍不可添加的条目另标明“暂不可用”或以能准确区分的方式呈现。空分组隐藏。只有全部结果为空时显示对应空态，区分未选板、无兼容项、当前模式无可用项和筛选未命中。主控不拆分目录，保留当前主控蓝边、可读状态和独立移除。模块状态只取已提交 `adapter.loaded()`，舞台继续使用既有原生状态和行为。加载和移除继续走现有事务，沿用失败、引用、换板兼容及串口守卫、回滚和操作后的焦点恢复。卡片与筛选样式沿用 CFZN/OpenBlock，保留已验收的卡片右上角标对齐与窄屏可达性。
+- 本次只改变目录和显示。公共 HTTP、项目归档、后端、依赖、VM 和 Blockly 源码及其构建模块保持原样。适配器加载/卸载仍经现有入口。只有真实提交产生作品编辑，筛选不写入项目。完整 `.ob` 经现有 API 保存、重新打开，保留扩展 ID、积木及素材。Python 用户接口和 OSS 等正式契约可用后另行接入。
+- 验收覆盖真实左下入口、顶部主控目录一致性、编程和上传模式、无板默认与全部浏览、兼容/不兼容板、类型与查询重置、分组及移除/加回、键盘与窄屏、筛选对作品无副作用和保存后恢复。通过固定上游模块逐字节检查 VM/Blockly，使用隔离服务和测试存储，不连接实体串口。
+
 ## 模块兼容角标边框对齐（2026-11-12，主控冻结）
 
 用户要求模块扩展卡片的“未选择主控板”提示统一靠每张卡片的右上边框。两侧设计为docs/design/module-badge-alignment-frontend.md及module-badge-alignment-backend.md；本附录只修显示定位，不改变提示状态、文字或业务语义。
@@ -472,3 +522,170 @@ nativeDevices 仅影响模态标题/大分类导航等入口外观，不决定�
 选中、移除、依赖/引用拒绝、模式保留和 busy/硬件守卫全部复用已有 adapter；展示完整目录不代表六模块与其他板兼容或新增硬件能力。无 HTTP、后端、归档、依赖或 VM 变更，预计只需局部 library/目录选择器修改，不改 GUI hooks。
 
 前端 Sol ultra 局部实现、构建/类型检查及有界自验后冻结；后端 Sol ultra 只做零改动交接。随后 Sol low 用隔离真实 Vite dev 与静态 dist 聚焦比较两个实际入口在全部/同查询/同类型下逐项 ID、名称、顺序与关键元数据（不只比数量）；核对五板之外原生条目未丢失、空取消命令不出现；任一入口选板后另一入口同样选中、重复不 dirty、移除与模块依赖保护仍生效；至少一个非五板走已有原生选择路径，六模块兼容矩阵不变。验证新构建与 VM 字节边界，不扩大到完整硬件/API/归档或重跑无关 v0.6 矩阵。不操作用户服务或 COM3。
+# 上传前配置与错误反馈（2026-11-23，主控冻结）
+
+采用 `docs/design/hardware-upload-feedback-{frontend,backend}.md`。Hardware v0.2 的 HTTP、profile ID、作业、归档及串口所有权规则不变，不修改 OpenBlock VM。
+
+- 选择主控/当前 profile/OS 端口与本机工具链可用性分别判断。已有选择时保留启动检查的实际失败原因，不能落入通用“请选择主控和端口”覆盖分支；代码生成、忙守卫、协议等错误同样不能覆盖。主控已选不意味着其编译依赖就绪。
+- 设置面板明确展示当前主控编译/上传是否可用及原因。对精确的未配置工具链原因提供中文处理提示，保留原始诊断供查看。上传按钮同时要求可编译、可上传及明确 OS 端口。当前准备状态随最新能力更新，历史操作错误须明确为历史结果或仅在其对应前置状态仍失败时呈现；不清除实际作业错误/日志来制造成功。
+- “重新检测”并行刷新本机能力与 OS 端口，保留显式 profile/端口选择、不自动创建作业、不打开物理串口。不存在的 OS 端口仍按现有校验拒绝，不能从浏览器 USB 标识猜 COM 端口。保存项目不是编译或上传的前置条件。
+- `loadHardwareConfig` 未指定 `HARDWARE_CONFIG` 时默认读取项目根 `.runtime/hardware/hardware.local.json`，查找位置不受启动 cwd 或 `HARDWARE_RUNTIME_DIR` 影响。只有默认文件 ENOENT 回退空配置；显式文件不存在、读取失败、损坏 JSON、非对象及非法配置均明确失败并指出配置来源。显式配置环境变量优先，运行目录/来源环境覆盖保持现有优先级。允许内部可选默认路径参数供临时目录测试，不能通过 HTTP 选择配置。
+- 本机保留通用 ESP32 的独立 1.0.6 工具链；FireBeetle profile 在机器配置中覆盖为官方 `esp32:esp32:dfrobot_firebeetle2_esp32e` / 2.0.17（4 MB、DIO、40 MHz），使用独立工具链 ID 与安装根。准确板型、CLI/core 检查及真实构建分别验证，不将旧 `firebeetle32` 当作 ESP32-E。配置在执行器启动时加载，页面重检测读取已启动执行器的新能力。
+
+前端开发负责 `apps/web`，后端开发负责配置加载、相应隔离测试与 `apps/api/HARDWARE.md`。主控独占本机安装/配置、服务重启与端口；独立测试仅使用临时环境、模拟能力和无实体串口构建。本轮不写实体固件、不部署服务器；交付说明区分代码部署与用户电脑驱动/工具链安装。
+# 上传端口恢复与可见操作栏（2026-11-23，主控冻结）
+
+采用 `docs/design/upload-port-recovery-{frontend,backend}.md`，修复线上网页中无端口首次上传后、补选有效 OS 端口仍残留启动前错误，以及弹窗底部动作不可达的问题。后端、HTTP、任务/串口所有权和 VM 保持现有契约，不引入云编译。
+
+- 启动前同步失败单独关联当次设备/profile/OS 端口配置。有效选择发生后，已不适用的该类提示立即消失；通过连接弹窗选择或主控变化后重开也按当前配置判断。下一次显式重试只显示本次原因。配置校验失败不得伪造选择成功。真实作业错误、日志、取消/未知状态及终端恢复错误保持原语义，不因选择变化清除。
+- 只有已选择当前设备的有效 profile、编译/上传能力均可用、明确端口仍存在于当前清单，且现有空闲/串口/模式守卫允许时，显示当前配置就绪及“点击编译并上传”的明确指引。依旧由用户显式点击启动；选择、重新检测、打开弹窗均不得自动编译/上传或打开串口。保留实际 start 的最终校验和编译后重新枚举端口流程。
+- 上传弹窗独立约束在可视高度内，正文可滚动、标题与关闭可见，操作栏置于正文外并始终可达。长 FQBN 和错误换行，日志有界。四个原有按钮及隐藏时作业继续、取消等待终态保持不变。连接弹窗不受布局回归影响。
+- 验收覆盖初次缺端口→有效选择→显式重试仅一次构建与上传、无选择不自动烧录、跨入口恢复/重新打开、失效端口/主控/能力、真实作业失败保全，以及常见低高度视口/缩放/长文本下动作的真实浏览器几何。不得仅凭能力 flags 宣称实体烧录成功。
+
+前端开发仅修改 apps/web；后端开发零业务改动交接；独立测试负责 tests/ 与报告。主控负责配置、上线、真实部署页验证及硬件协调，分支不得访问 COM3 或操作用户服务。
+
+# CCraft 前端品牌（2026-11-23，主控冻结）
+
+采用 `docs/design/ccraft-branding-{frontend,backend}.md`。面向用户的产品名称拼写统一为 **CCraft**，启动提示为“正在启动 CCraft 编辑器…”。本轮只改前端品牌展示，后端业务、HTTP 和完整作品格式不变。
+
+- 用户最终 Logo 图片覆盖自主文字字标方案：将 `codex-clipboard-969e63a3-55ec-423c-994d-9638a6f51ef3.png` 原字节存为 `apps/web/public/branding/` 项目资产，并记录来源、尺寸与 SHA-256。顶部正常/溢出状态及全屏产品主标志使用该图，alt 仍为 CCraft。保留原图文件，不重编码、重绘或修改透明像素；可按实际透明留白在展示层用受控布局呈现完整清晰的标志，不拉伸或裁掉文字。独立小图标/favicon 可继续采用自主 CCraft 图标。此前自主 SVG 主字标版包不作为最终发布。
+
+- 用户补充：顶部“维基”入口改为“官网”，点击新标签页打开 `https://maker.xiaodaiyang.top/`，不导航或重载当前编辑页面。继续使用原生工具栏同一位置和操作控件，正确处理可访问名称及 locale（简中“官网”、繁中“官網”、英文“Website”），由精确 GUI src/消息挂点接入，不改 VM，不替换其他真实帮助资料链接。
+
+- 外层页面与编辑器 HTML 标题、启动/失败/未就绪/关闭/读项目提示、iframe 可访问名称、项目视图兜底名、空下载名及恢复备份名使用 CCraft。新建中文默认标题为“CCraft作品”，英文为“CCraft Project”，随实际 locale 正确展示。已保存/导入作品名称、用户代码/字符串/注释/素材均保留原内容，不扫描重写用户数据。
+- 顶栏（正常及溢出状态）、全屏舞台产品标识、favicon、产品通用 fallback 图使用本地 CCraft 字标/图标。使用自主 SVG 资源，无网络字体或新依赖，保留现有菜单/全屏操作和尺寸适配。全屏产品入口链接可指向同源首页；第三方文档和设备/模块真实图片不伪装来源。
+- GUI 系统消息通过精确 GUI `src/lib/connected-intl-provider.jsx` 的运行时消息入口和明确审核的消息 ID 适配，缓存派生结果，保留插值和 locale 生命周期。缺失翻译提供 CCraft 默认文案；必要的 Intl 外层 crash fallback 可增加精确 GUI src 挂点。不用全页 DOM 文字替换，不改 VM/Blockly 模块。连接服务文案不得虚构“CCraft Link”实现，崩溃文案不得承诺未启用的自动上报。
+- 当前可达自动生成代码出口只按精确固定首行将生成器品牌注释改为 CCraft（正确处理换行），其余生成内容、用户手动代码及含 OpenBlock 的程序字符串完全不变。不改受保护生成器/VM 源码或打包模块。
+- 技术兼容标识 `cfzn.openblock`、`application/x.openblock.ob`、`format:'openblock'`、`.ob/.sb3`、现有路径/包名/内部挂点/CSS/opcode 等保留。LICENSE/TRADEMARK、版权注释和来源记录按第三方原文保留。
+
+前端开发仅维护 apps/web 和相应测试，完成 typecheck/build/相关检查；后端开发零业务改动交接。独立测试聚焦可见品牌、locale、用户内容保全、真实新建/保存/重开兼容与固定 VM/Blockly 字节。主控负责根文档、真实浏览器验收、构建打包与部署；不得操作实体串口或改动硬件链路。
+
+# 网页启动传输与 Logo 官网入口（2026-11-23，主控冻结）
+
+- 本轮两侧设计见 `docs/design/startup-timeout-frontend.md` 和 `startup-timeout-backend.md`。已确认首页/API TTFB 约 40ms、服务器资源正常，而 22,663,813 字节 GUI 未使用 gzip；45 秒启动计时覆盖完整下载，晚到 READY 又未清理旧错误提示。
+- 传输优化由主控负责 `deploy/`：打包时为适合的文本静态文件生成 `.gz` 表示，保留原文件字节和时间；仅 IDE HTTPS 站点开启 gzip/gzip_static（按模块能力）、Vary 与 ETag，API 关闭 gzip。支持 gzip 的客户端取得压缩表示，identity 客户端取得原始表示，解压必须逐字节相同。稳定 URL 保留 no-cache/ETag 校验，Vite 哈希 assets 保持一年缓存。本轮不引入 GUI 摘要 URL 或缓存身份重构，不把设计中的可选摘要方案作为本轮要求。
+- 前端保留真实 React→ReactDOM→GUI→helper→编辑器及默认项目 READY 的依赖关系。45 秒仅显示“加载较慢，仍在等待”的启动专用状态，不能声明已失败；180 秒未就绪可提供明确等待超时和手动重试。真实资源加载失败及 BOOT_ERROR 立即显示可重试原因。不得仅通过延长超时作为修复。
+- 成功 READY 必须清除本次启动提示，不能清除后续保存等业务提示。启动状态与业务 notice 分开。初次尚未 READY 时才允许手动重建 iframe/bridge；销毁旧计时器和监听，忽略已失效尝试事件，禁止自动无限重试。已就绪工作区不得因启动提示而重载。无字节观测时不显示假进度。
+- 关键依赖之前安装轻量资源失败监听，使用同源的既有 BOOT_ERROR 信封，不传用户作品内容，不修改协议名称或 VERSION。内部回调可以表达启动状态，已有请求超时、项目格式、API 和硬件守卫保持原语义。启动异常处理也要清理监听，避免运行期编辑错误误变为启动失败。
+- 左上角 CCraft PNG Logo 的正常和溢出状态均为官网入口，名称“CCraft 官网”，Tab 可聚焦并以 Enter 激活；以原生链接或同步用户手势在新标签打开 `https://maker.xiaodaiyang.top/`，带 noopener/noreferrer，保留编辑页状态。现有“官网”入口保持同样目标。PNG 原字节、比例及 VM/Blockly 边界不变。
+- 验收包含压缩/identity 解码一致、Content-Encoding/Vary/MIME/安全头/ETag 条件请求、冷启动真实进入编辑器、45 秒慢加载后 READY 恢复、资源错误与重试、Logo 实际新标签行为、上游保护模块及必要的保存执行回归。主控独占线上配置、浏览器与部署，测试会话独立审查，临时测试服务完成后关闭。
+# 本机串口设备列表与行内设置（2026-11-23，主控冻结）
+
+用户最新要求覆盖旧版“仅 Web Serial 调试”的实现限定：连接面板直接列本机设备并在行内连接，波特率每行独立，操作在最右。保留 React/TypeScript、Nest/TypeScript 和真实原生 GUI，不改 VM/Blockly 字节。设计依据为 `docs/design/serial-device-panel-frontend.md`、`serial-device-panel-backend.md`；本节优先于其中建议。本机直连由 USB 所在电脑的 3002 硬件服务完成，线上项目 API 不代理 USB。
+
+## 行与布局
+
+- 列顺序固定为 **设备名称｜端口｜波特率｜状态｜操作**。连接、断开、切换和已连接行的应用按钮均在最右操作列。窄屏改带可见字段名的卡片，操作底部右对齐；不能裁掉右侧按钮。
+- 默认本机 OS 目录，显示真实 displayName/portId（如 COM3）。枚举不打开设备，不以浏览器未授权隐藏本机端口。浏览器后备是明确的次要入口，首次授权仍使用真实 requestPort，不冒充 OS 连接。两个来源身份分开，禁止按 VID/PID 或排序猜 COM 映射。
+- 本机行偏好按 `本机服务地址 + 规范 portId` 保留，浏览器行按当前编辑器的对象身份保留。每行有自己的草稿、已保存选项和实际已应用值；刷新、重开面板或连接其它行不覆盖未相关行。默认 115200，沿用 SerialOptions 范围。未连接行保存偏好不打开串口；已连接行显式应用成功后才提交实际值。无效输入和失败落到对应行，不改上传速率或作品内容。
+- 本机能力与编译工具链分别判断。服务新版 serial 可用即可串口连接，无需先配置编译器；旧版缺 serial 时仍可显示 `/ports` 清单，但直接连接禁用并提示更新本机服务。离线、枚举失败、空列表及状态未确认分别说明，禁止伪造设备或静默自动接管。
+- 一个编辑器保持一个 HardwareSession、一个 reader 和有序 writer。新增本机 SerialLike/SerialPortLike 外部适配，复用 NativeSerialSocket、TerminalModel 和既有 VM 接口。切换来源只改变列表，不自动断开当前连接；旧活动行保留可解释状态。关闭面板不等于关闭串口。
+- 连接弹窗使用高特异性的 `.cfzn-hardware-modal.cfzn-connection-modal` 有界 flex：宽 `min(900px,100vw - 32px)`，高/最大高 `min(760px,100dvh - 32px)`，16px 外距、border-box；原生中间 wrapper `min-height:0`，标题和关闭固定，正文滚动。移除挤占空间的大结果图与全局波特率控制，连接面板不再重复烧录端口下拉，上传窗口保留原明确 OS 选择。表头与单元格 border-box。验收 1280×720、1366×768、1920×910、约1528×728及360×640，不改变用户浏览器缩放。
+
+## 本机 HTTP 串口接口
+
+沿用 base `http://127.0.0.1:3002/api/v1/hardware`、capabilities 外层 protocolVersion=1/executionHost=local，增加可选：
+
+```ts
+serial: { version: 1; available: boolean; reason?: string; transport: 'http-poll'; instanceId: string;
+  maxReadBytes: 65536; maxWriteBytes: 65536; maxWaitMs: 15000; readLeaseMs: 45000; firstReadMs: 5000 }
+
+LocalSerialSession = { id: string; instanceId: string; deviceRef: string; portId: string;
+  state: 'opening'|'open'|'closing'|'closed'|'disconnected'|'error'; held: boolean;
+  options: SerialOptions; nextWriteSequence: number; error?: {code:string;message:string} }
+LocalSerialDevice = { deviceRef: string; portId: string; displayName: string;
+  usbVendorId?: string; usbProductId?: string;
+  ownership: 'idle'|'owned'|'other-client'|'opening'|'closing'|'uploading'; session?: LocalSerialSession }
+```
+
+新路由要求准确允许的 Origin；除创建客户端外均带 `X-CCraft-Serial-Token`，256-bit 随机令牌只保存在编辑器内存，绑定 Origin 和执行器 instanceId。原有端口/编译/上传接口兼容，不改其请求 schema。Token 不是用户账号，不落作品、数据库或 OSS。
+
+| 路由 | 输入 | 成功结果 |
+| --- | --- | --- |
+| POST `/serial/clients` | `{}` | 201 `{clientToken,instanceId}`；不打开设备 |
+| GET `/serial/devices` | token | 200 `{instanceId,items:LocalSerialDevice[]}` |
+| POST `/serial/sessions` | `{requestId,deviceRef,options}` | 201 `{session}`；真实打开成功才为 open |
+| GET `/serial/sessions/:id` | token | 200 `{session,pendingWriteSequence?:number}` |
+| GET `/serial/sessions/:id/read?after=N&waitMs=15000` | token，字节游标初始0；waitMs为0–15000整数 | 200 `{session,from,next,dataBase64}`，解码最多64KiB；安静空响应保留游标 |
+| POST `/serial/sessions/:id/write` | `{sequence,dataBase64}` | 200 `{sequence,sizeBytes}`；从1递增，实际 write+drain 后确认 |
+| POST `/serial/sessions/:id/close` | `{}` | 200 `{session}`；真实释放后才 held=false，重复关闭幂等 |
+
+- 新 serial 路由 JSON 上限96KiB、inflate=false，严格字段白名单和 Base64、序号、游标、options校验。现有通用7MiB解析保持兼容。CORS精确增加token请求头，保持loopback/Host/Origin限制和no-store，不新增全站通配。
+- 统一可靠枚举 provider。deviceRef 由服务根据 instanceId、实际 OS path、可得硬件身份及存在代次签发；持锁后重新枚举确认引用仍有效才用服务记录路径打开，客户端任意路径不参与选路。旧引用/重启/已观测替换拒绝，VID/PID不作为唯一身份。枚举与锁不宣称外部软件未占用，open失败如实返回。
+- 每个编辑器一条连接；服务按真实端口排他，可允许其它编辑器使用不同端口。目录仅对当前客户端返回自身 session，禁止跨客户端读写/关闭。最多64客户端、16活动会话；客户端空闲30分钟回收，终态记录120秒供状态核对。幂等/终态历史须额外有界，不能因保留已关闭记录而把正常重连当活动会话超额。
+- open 的相同 requestId（UUID）和载荷只执行一次并重用结果；相同ID不同载荷409。打开响应丢失使用同一个ID核对/重试，不按新ID盲开；旧结果关闭后不隐式创建新连接。
+- 每会话一个在途read；after确认之前字节，相同未确认游标可重取；保留最多1MiB未确认RX，不静默丢弃。溢出/游标失效显式失败并关闭流。前端确认/去重游标后按序交HardwareSession，不另建VM/终端读取流。
+- TX每次最多64KiB，待写最多256KiB；保留最近64次序号/摘要/结果去重，同序号同数据不重复写，冲突/跳号/过旧拒绝。写+drain总截止30秒，结果不明不可按新序号自动重发；低波特率数据分片，错误准确说明可能已发送。新写在closing后拒绝。
+- open后5秒未开始首个read则回收。read最大15秒、读活动租约45秒，按消费者存活续期而非按RX字节续期；真实中断取消等待并发起关闭，正常空响应不算断线。编辑器卸载取消读泵并请求close，静默设备/断网最终也释放。拔出由原生error/close和枚举更新，唤醒读写等待；关闭失败保留held与端口锁，允许重试，不能谎报断开。
+- 新串口open/切换/设置与既有CLI作业共享同步保留/互斥检查，覆盖异步枚举竞态。编译可保留已有RX，但期间阻止新open和TX；串口打开/关闭事务阻止新CLI。上传必须等前端当前真实会话关闭确认，后端再检查目标端口锁；不关闭其它客户端连接。CLI锁至进程退出，取消不提前释放。既有uploads `{buildId,portId}` 本轮不增加或强制deviceRef；不能改变原显式烧录选择或自动烧录。作业结束的原来源/设置恢复沿现有事务，失败独立报告。
+- 服务重启或连接结果未知不能自动另开浏览器接管。前端识别旧服务/新instance，并在恢复时刷新真实目录，禁止对已失效引用自动重连。
+- 标准错误沿现有 `{error:{code,message,details?}}`：400 VALIDATION_ERROR；401 SERIAL_CLIENT_REQUIRED；403 SERIAL_ORIGIN_FORBIDDEN；404 PORT_NOT_FOUND/SERIAL_SESSION_NOT_FOUND；409 PORT_STALE/SERIAL_PORT_BUSY/SERIAL_SESSION_STATE/SERIAL_SEQUENCE_CONFLICT/SERIAL_CURSOR_INVALID/HARDWARE_BUSY；413 PAYLOAD_TOO_LARGE；429 SERIAL_CAPACITY_EXCEEDED；503 SERIAL_UNAVAILABLE/SERIAL_IO_ERROR；504 SERIAL_IO_TIMEOUT。
+
+开发和测试不得并发访问物理 COM3。后端用官方串口库及 MockBinding/可注入真实字节夹具，前端做两行不同波特率与状态事务；独立测试后由主控统一实际USB/视口/线上验收。主控于本轮确认 CP210x COM3 已被系统及旧 `/ports` 正常识别、驱动错误码0，不重装驱动。完成后生产编译、打包部署网页，并更新USB所在电脑的本机服务；公共服务器不会获得客户端USB能力。
+
+### 打开失败结果核对补充（2026-11-24）
+
+`POST /serial/sessions` 的错误保持原 HTTP 状态和错误 code/message，增加标准可选 `error.details.session`：已创建本次请求的会话时返回当前 `LocalSerialSession`（含实际 held），明确未创建会话时返回 null。相同 requestId 的失败结果重取也要携带最新会话快照，不能只重复抛出早期错误而使客户端永远无法确认句柄。
+
+只有服务已确认本次未创建会话时才可返回 null；已有同 ID 请求或可能仍持有的会话不能报 null。前端保存并校验该字段身份：null 或有效会话 held=false 才清除本次待确认占有，held=true 则保留并使用返回 id 走幂等 close。缺失字段、网络中断、无效响应仍是结果未知，不能仅按503/504或其它状态码认定已释放。结果核对不得再执行 driver.open，冲突载荷不能改变已有请求与占有状态。此补充不新增路由或更改成功响应。
+
+### 浏览器串口默认入口（2026-11-24，主控冻结）
+
+本节按用户最新要求覆盖此前“默认本机来源”和“单独授权后再连接”的交互规则；本机串口 HTTP、上传 API、逐行设置、身份隔离与事务守卫保持原契约。
+
+- 支持 Web Serial 时面板默认“浏览器串口”，不支持时默认“本机直连”。初始化只执行一次；手动选择来源、刷新和重开面板不重置已有连接或设置。
+- 浏览器来源打开和刷新时自动读取 getPorts，仅列出本网站已有许可的真实对象，不自动打开设备，不调用 requestPort，不等待本机 HTTP 成功。来源枚举保留另一来源缓存与当前活动对象；本机来源仍执行既有能力与目录刷新。
+- 去掉独立“授权浏览器串口”按钮。已有行最右“连接”直接复用该对象；“连接新设备”从真实点击栈同步调用现有 chooseSerialPort/requestPort，前面不 await 扫描、检测或网络。选择成功后立即按该行配置续接既有 activate/connect 事务，无需再次点击连接。
+- 新对象使用默认 115200；已知对象继续使用该行设置。取消/拒绝保留旧连接与偏好，不自动重试。选择完成后重新检查守卫；重复点击、CLI/协议操作、未知占用及关闭失败仍受既有互斥约束。
+- 浏览器来源不显示未活动的本机 Failed to fetch 大块状态；提供简洁的本来源错误反馈。本机来源保留真实服务提示；另一来源活动行和释放异常保持可见。五列顺序和最右操作、视口内弹窗不变。
+
+首次新设备权限由浏览器要求用户实际选择并确认，网页不能默认授予；许可已存在时无需再次授权。不得改浏览器安全设置或用伪造授权/VID-PID 映射实现免确认。依据 [Chrome 官方 Web Serial 文档](https://developer.chrome.com/docs/capabilities/serial/)。本轮无需后端实现或依赖变更。
+
+### 已连接串口时的编译服务恢复（2026-11-24，主控冻结）
+
+浏览器串口状态与本机编译/烧录状态分别显示。前端保留忙、释放、模式/协议等操作守卫；进入编译准备后先检查本机服务在线，再检查当前设备/Profile、工具链、代码和上传 OS 端口。unknown/checking/offline/incompatible 分别提示检测、等待、启动或恢复服务后重新检测、更新或检查地址。不得让空 Profile 提示覆盖服务不可用；start 和按钮状态共用校验，不可用时不创建作业、不关闭正常终端。
+
+重新检测沿用 capabilities 与 ports 的并行请求及防旧响应覆盖机制，成功后补选当前设备默认 Profile：空或失效/跨设备的选择按既有首个匹配规则补选；有效显式选择保留，即使工具链不可用也保留实际原因。忙时不改捕获配置。无匹配项明确报告当前设备无 Profile。OS 端口始终由用户明确选择，不因只有一个 COM3 或浏览器已授权而推测或自动选择。端口枚举失败阻止上传并优先显示枚举诊断，不妨碍编译检查。
+
+失效的启动前提示随当前阻塞原因/配置变化清除；重新检测不清真实 job 错误、日志、恢复失败或提交结果未知。恢复后仍需用户明确点击编译/上传，不自动烧录。上传弹窗在正文与固定操作区显示当前阻塞原因，并区分“终端已连接”和“编译上传待就绪”。离线恢复说明提供在 USB 电脑启动 `npm run hardware`、重新检测及必要的站点本地网络访问检查，不把再次授权 Web Serial 当作恢复本机 HTTP 的办法。
+
+本轮不改 HTTP schema、权限、VM/Blockly 或烧录实现。主控已确认本机 3002 此前被测试清理关闭，本轮恢复服务并保留其运行供用户使用；只清理临时 QA 服务。主控实际核对 HTTPS 产品 Origin 许可、预检、ESP32 工具链与 COM3，并完成截图同类程序的真实编译；实体烧录证据另行明确记录。
+
+### 本机串口面板精简（2026-11-24，主控冻结）
+
+按用户最新要求，本节覆盖此前浏览器来源默认入口规则。连接面板固定本机目录：删除“浏览器串口”切换按钮、整个首次授权说明区和“连接新设备”按钮，不列普通浏览器许可候选行。保留本机服务状态、重新检测、刷新、五列设备表、逐行波特率和最右操作。打开/刷新面板不请求浏览器授权、不自动连接设备，不重开或断开当前会话。
+
+本机来源状态在构造、面板打开与原生 discover 路径保持一致。若存在旧浏览器活动/待释放句柄，仍显示该活动行及必要错误，允许按既有守卫断开或重试释放；确认释放后才从本机列表移除。不能按 VID/PID 合并两个来源，不能为精简而隐藏占用、强制关闭或删除底层 Web Serial/VM 兼容实现。空列表与说明不再引导用户授权或切换来源。
+
+本次面板精简仅涉及前端；前端构建和聚焦验证由主控统一验收。
+
+## 编辑器强刷冷启动优化（2026-11-24，主控冻结）
+
+用户明确为首次强制刷新后加载时间长；本次目标减少实际下载/处理耗时，不以延长超时、提前隐藏加载态或缓存命中代替冷启动改善。后端零业务 API 变更，线上已验证 ALPN h2，不以重新开启 HTTP/2 为本轮收益。不修改本机 DNS/hosts 或用户硬件服务。
+
+- 保留已有 legacy GUI 完整产物（含音频修复），另生成 identity 字节摘要命名的快速 GUI，例如 `/openblock-vendor/openblock-gui.<16hex>.js`。仅对非保护顶层 module factory 去空白；禁用标识符、属性和语法压缩，保持函数名、参数、调用/初始化边界及许可原文。可靠定位顶层 Webpack 模块，不以可能重复的数字注释简单切包。全部 178 VM、15 Blockly、独立音频 520、嵌套表 237/435 及其内部、空槽 1169、包尾入口 1958 和任何无法可靠处理的片段原字节保留。
+- 顶层保护模块及全部许可必须在输出后再核对；不可靠输入拒绝或原样复制，不能静默转为全文件 minify。prepare 指纹包含优化 helper、保护名单、工具版本和必需输出，摘要取最终 identity JS；快速文件与 legacy 文件均纳入生产构建。
+- 首页提前 preload 与 iframe script 完全相同的 hash URL（as=script，模式/凭证一致）；编辑器直接访问亦能正确装载。保持原 classic 脚本执行依赖、原初始化与真正 READY；核对无重复 GUI 下载。标签页图标和音频修复保持已有行为，本轮不重绘用户图标。
+- 主控可为该 hash GUI 生成 `.br`，作为字节一致的 HTTP 表示。仅配置本 IDE 的严格文件名路由；无需安装或更换 Nginx 模块。严格解析显式 br 与合法 q 值，q=0 不可返回 br；正确 Vary、Content-Type、安全头、HEAD、表示独立验证器与 304，关闭双重压缩，并保持 gzip/identity 回退。所有已支持表示均明确拒绝时返回 406。内部表示路径不对外开放，缺文件不能带错误的 Content-Encoding。该部分只有通过实际服务验证后发布，不能假设模块存在。
+- 本轮以线上 `20261124T081631Z-cfe8ac8d` 发布包隔离合入快速 GUI、对应 HTML/预加载、压缩表示与必要清单；不把工作区并行 CCraft Link 代码/API带入发布。
+- 记录至少三次相同机器/限速/no-store 的浏览器真实 READY（说明独立源、代码缓存及初次异常），以及线上 identity/gzip/br 字节与耗时。保留启动失败重试、默认项目、新建、保存/打开、舞台与声音回归；不能把 gzip 节省比例直接当作整页加速比例。
+
+## AudioContext 解锁与警告洪泛修复（2026-11-24，主控冻结）
+
+本次零 HTTP/API 变更。已确认固定 GUI 上游中的独立依赖 `node_modules/startaudiocontext/StartAudioContext.js`（当前 bundle 模块 520）在 `onStarted` 中逐动画帧调用 `resume()`，导致未发生用户手势时持续警告；120 帧对照产生 121 次恢复调用。
+
+- 仅允许在准备脚本中对该独立依赖实施精确、可审计的修复例外；继续校验固定上游哈希、模块/片段匹配唯一性。不能将例外扩大为任意 node_modules 或 VM 钩子，178 个 VM、15 个 Blockly 模块及原许可字节必须保持一致。
+- 未发生真实用户激活时不调用 `resume()`，不以 rAF、定时器、重渲染或状态循环尝试解锁。仅在可信且符合浏览器激活条件的鼠标、触摸或键盘手势同步栈中调用；不伪造激活、不改浏览器策略或全局 AudioContext/console。
+- 同一上下文合并解锁监听和在途恢复尝试；恢复失败后允许后续真实手势再次尝试，不执行后台重试。通过状态变化确认 running，保持原 Promise 与可选 callback 的接口，每次注册最多完成一次。running/closed/卸载后清理资源，关闭时不能产生未处理拒绝或继续恢复。
+- 保持 GUI/AudioEngine 初始化与资源解码顺序，首次用户操作后声音预览和积木播放继续可用。修复持续洪泛；浏览器在最初创建受限上下文时仍可能给出单次策略提示，不承诺删除浏览器自身所有提示。
+- 聚焦验收原始/修复依赖调用次数、合成事件拒绝、在途去重、失败恢复、完成/关闭清理与多上下文隔离；构建后核对保护模块，主控再做真实浏览器与线上资源验收。不得重启或操作用户的串口/Link 服务。
+
+## CCraft Link 检测与安装引导（2026-11-24）
+
+用户要求 IDE 检测 CCraft Link 运行状态，缺失时强制下载并引导安装启动。通过 `VITE_HARDWARE_BASE_URL`（默认 `http://127.0.0.1:3002/api/v1/hardware`）下的 `GET /link/health` 检测服务。响应必须满足 `{ product: 'ccraft-link', protocolVersion: 1, version: 非空字符串, instanceId: 非空字符串, serialDetection: 'serialport.list' }`。总超时 3 秒，单次检测合并并发调用，不能把旧硬件服务或无关端口监听判为 CCraft Link 在线。
+
+编辑器启动、连接设备与编译上传入口执行检测。服务未就绪时阻止相应硬件操作并显示安装启动引导，首次失败自动下载一次，提供手动下载与重新检测。引导可见时每 3 秒重新检测，页面隐藏或销毁时停止无用轮询。检测恢复后关闭引导并刷新能力和设备，用户再次明确点击才会上传。保留离线编辑。空串口列表、缺少工具链与 Link 服务缺失分别处理。
+
+安装包稳定同源地址为 `/downloads/CCraft-Link-Setup.exe`，通过 `VITE_CCRAFT_LINK_DOWNLOAD_URL` 可覆盖。发布包包含真实 Tauri 2 + NSIS 产物。Link 内嵌 Node 和 `serialport`，枚举使用 `SerialPort.list()`，复用本节之前的串口和硬件作业协议。独立项目契约位于 `D:\CFZN\CCraft Link\docs\link-contract.md`。
+
+用户已另行要求在 Link 测试前关闭旧串口服务，主控已核对并停止 PID 72632 的 `node dist/hardware-main.js`，确认 3002 端口释放。后续由独立 CCraft Link 启动服务。

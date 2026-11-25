@@ -1,4 +1,4 @@
-import { modules, normalizeDeviceId } from './catalog.ts';
+import { modules, normalizeDeviceId, type ModuleEntry } from './catalog.ts';
 
 interface PaletteBlock { xml: string; opcode: string; filter?: string[]; modes?: string[]; hidden: boolean }
 interface PaletteGroup { id: string; name: string; color1?: string; color2?: string; icon?: string; status: boolean; blocks: PaletteBlock[] }
@@ -8,7 +8,7 @@ export const uploadOnlyBoards = new Set(['arduinoEsp32', 'arduinoEsp32S3', 'aiji
 // Recomputable GUI presentation only. Runtime committed device/module IDs remain authoritative.
 export class ToolboxPresentation {
   private controller?: { id: string; locale: string; groups: PaletteGroup[] };
-  private moduleXML = new Map<string, string>();
+  private moduleXML = new Map<string, { xml: string; entry?: ModuleEntry }>();
   private rendered = { deviceId: '', xml: '' };
   private controllerMenus: string[] = [];
   capture(info: any, locale: string, currentDeviceId?: string) {
@@ -33,7 +33,9 @@ export class ToolboxPresentation {
     this.controllerMenus = categories.flatMap((category: any) => [...(category.menus ?? []), ...Object.values(category.customFieldTypes ?? {}).map((field: any) => field.scratchBlocksDefinition)]
       .map((block: any) => block?.json?.type ?? block?.type).filter(Boolean));
   }
-  setModule(id: string, xml: string) { this.moduleXML.set(id, xml); }
+  setModule(id: string, xml: string, entry = modules.find(module => module.extensionId === id)) {
+    this.moduleXML.set(id, { xml, entry });
+  }
   removeModule(id: string) { this.moduleXML.delete(id); }
   controllerOpcodes(id: string) { return new Set(this.controller?.id === id ? [...this.controllerMenus, ...this.controller.groups.flatMap(group => group.blocks.map(block => block.opcode).filter(Boolean))] : []); }
   reset() { this.controller = undefined; this.controllerMenus = []; this.moduleXML.clear(); this.rendered = { deviceId: '', xml: '' }; }
@@ -45,10 +47,14 @@ export class ToolboxPresentation {
       .map(block => ({ ...block, disabled: realtime && (uploadOnlyBoards.has(deviceId) || !!block.modes && !block.modes.includes('realtime')) })) }))
       .filter(group => group.blocks.some(block => !!block.opcode)) ?? [];
     return { controller: groups.length ? { id: `cfzn-controller-${deviceId}`, groups } : undefined,
-      modules: [...new Set(loaded)].flatMap(id => this.moduleXML.has(id) ? [{ id, xml: this.moduleXML.get(id)!, disabled: realtime }] : []) };
+      modules: [...new Set(loaded)].flatMap(id => {
+        const module = this.moduleXML.get(id);
+        return module ? [{ id, xml: module.xml, disabled: realtime }] : [];
+      }) };
   }
   unsupportedOpcodes(deviceId: string) {
     const opcodes = new Set(modules.flatMap(entry => entry.opcodes));
+    for (const { entry } of this.moduleXML.values()) for (const opcode of entry?.opcodes ?? []) opcodes.add(opcode);
     if (this.controller?.id === deviceId) for (const group of this.controller.groups) for (const block of group.blocks) {
       if (block.opcode && (uploadOnlyBoards.has(deviceId) || block.modes && !block.modes.includes('realtime'))) opcodes.add(block.opcode);
     }
@@ -56,7 +62,7 @@ export class ToolboxPresentation {
   }
   hasModule(deviceId: string, id: string, opcodes: string[]) {
     if (this.rendered.deviceId !== deviceId) return false;
-    const categoryId = modules.find(entry => entry.extensionId === id)?.categoryId;
+    const categoryId = this.moduleXML.get(id)?.entry?.categoryId;
     const xml = new DOMParser().parseFromString(this.rendered.xml, 'application/xml');
     const category = Array.from(xml.getElementsByTagName('category')).find(item => item.getAttribute('id') === categoryId);
     const visible = new Set(Array.from(category?.getElementsByTagName('block') ?? []).map(block => block.getAttribute('type')));
@@ -70,6 +76,10 @@ export class ToolboxPresentation {
     const controller = this.controller;
     const removed = new Set([...(controller && controller.id === deviceId ? controller.groups.map(group => group.id) : []),
       ...modules.flatMap(entry => [entry.extensionId, entry.categoryId])]);
+    for (const [id, { entry }] of this.moduleXML) {
+      removed.add(id);
+      if (entry) removed.add(entry.categoryId);
+    }
     const unique = new Map<string, { id: string; xml: string }>();
     for (const category of dynamic ?? []) if (!removed.has(category.id) && category.xml && !unique.has(category.id)) unique.set(category.id, category);
     const core = [...unique.values()].filter(entry => coreIds.has(entry.id));

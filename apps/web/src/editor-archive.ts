@@ -29,6 +29,13 @@ export async function addEditorMetadata(archive: Promise<Blob>, metadata: Editor
   return new Blob([result as Uint8Array<ArrayBuffer>], { type: 'application/x.openblock.ob' });
 }
 
+export function readProjectModuleReferences(bytes: ArrayBuffer): unknown {
+  // Leave unusually large archives to native deserialization. The project API accepts at most 5 MiB of JSON.
+  const files = unzipSync(new Uint8Array(bytes), { filter: file => file.name === 'project.json' &&
+    file.originalSize <= 5 * 1024 * 1024 });
+  return files['project.json'] && JSON.parse(strFromU8(files['project.json'])).deviceExtensions;
+}
+
 export function archiveWithoutController(bytes: ArrayBuffer): ArrayBuffer {
   const files = unzipSync(new Uint8Array(bytes));
   const project = JSON.parse(strFromU8(files['project.json']!));

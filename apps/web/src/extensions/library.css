@@ -1,4 +1,40 @@
 /* An insertion in the native library, preserving OpenBlock's own cards, search and modal. */
+[class*="modal_header_"].cfzn-library-header {
+  display: grid;
+  flex: 0 0 auto;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-areas: "back title search";
+  align-items: center;
+  column-gap: .5rem;
+  padding-inline: 1rem;
+}
+.cfzn-library-header > [class*="modal_header-item-close"] {
+  grid-area: back;
+  justify-self: start;
+  padding: 0;
+}
+.cfzn-library-header > [class*="modal_header-item-title"] {
+  grid-area: title;
+  margin: 0 !important;
+  padding: 0;
+}
+.cfzn-library-header-search {
+  grid-area: search;
+  justify-self: end;
+  width: min(100%, 15rem);
+  min-width: 0;
+}
+.cfzn-library-header .cfzn-library-header-search input[class*="library_filter-input"] {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  transition: none;
+}
+.cfzn-library-header-search [class*="filter_filter_"]:focus-within {
+  outline: 2px solid #243958;
+  outline-offset: 1px;
+}
 .cfzn-extension-controls {
   display: flex;
   align-items: center;
@@ -7,7 +43,7 @@
   max-width: 100%;
   font: inherit;
 }
-.cfzn-extension-categories { display: flex; align-items: center; gap: .35rem; }
+.cfzn-extension-categories { display: flex; align-items: center; flex-wrap: wrap; gap: .35rem; }
 .cfzn-extension-category, .cfzn-extension-action {
   appearance: none;
   border: 0;
@@ -27,6 +63,7 @@
 body:has(.cfzn-extension-controls) [role="button"]:focus-visible { outline: 3px solid #243958; outline-offset: 2px; }
 .cfzn-supported-filter { display: flex; align-items: center; gap: .35rem; white-space: nowrap; }
 .cfzn-supported-filter input { accent-color: #4c97ff; width: 1rem; height: 1rem; }
+.cfzn-supported-filter input:focus-visible { outline: 3px solid #243958; outline-offset: 2px; }
 .cfzn-extension-status { white-space: nowrap; }
 .cfzn-extension-status.cfzn-current-controller { background: #2467b7; color: #fff; font-weight: 700; padding: 7px 12px; border-radius: 4px; }
 [data-cfzn-controller-selected="true"] { border: 2px solid #3373cc !important; box-shadow: none; }
@@ -56,14 +93,9 @@ div:has(> .cfzn-extension-controls[data-hardware="true"]) + div [class*="library
   box-shadow: none;
 }
 @media (max-width: 600px) {
-  body:has(.cfzn-extension-controls) [class*="modal_header-item-close"] { flex: 0 0 auto; }
-  body:has(.cfzn-extension-controls) [class*="modal_header-item-title"] { flex: 1 1 auto; margin: 0 !important; }
+  [class*="modal_header_"].cfzn-library-header { padding-inline: .5rem; }
+  .cfzn-library-header .cfzn-library-header-search input[class*="library_filter-input"] { padding-inline: 2.25rem 2rem; }
   div:has(> .cfzn-extension-controls) + div { justify-content: center; }
-  div:has(> .cfzn-extension-controls) input[class*="library_filter-input"] {
-    width: 18rem !important;
-    max-width: calc(100vw - 3rem);
-    transition: none;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .cfzn-extension-category:active, .cfzn-extension-action:active { transform: none; }
@@ -91,5 +123,11 @@ div:has(> .cfzn-extension-controls) + div { flex: 1 1 auto; height: 0; min-heigh
 .cfzn-card-remove { appearance: none; border: 1px solid #b8cbe5; border-radius: 4px; background: white; color: #2467b7; padding: .3rem .65rem; font: inherit; cursor: pointer; }
 .cfzn-card-remove:disabled { color: #747b86; background: #f2f3f5; cursor: default; }
 .cfzn-card-info { display: block; font-size: 12px; line-height: 1.5; color: #575e75; overflow-wrap: anywhere; }
+.cfzn-module-group { flex: 0 0 100%; min-width: 0; padding-bottom: .5rem; }
+.cfzn-module-group h2 { margin: .75rem .5rem .25rem; color: #575e75; font-size: 1rem; }
+.cfzn-module-grid { display: flex; flex-wrap: wrap; align-items: flex-start; }
 .cfzn-extension-empty { padding: 2rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-@media (max-width: 600px) { .cfzn-extension-status { white-space: normal; } }
+@media (max-width: 600px) {
+  .cfzn-extension-status { white-space: normal; }
+  .cfzn-module-grid { justify-content: center; }
+}

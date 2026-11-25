@@ -1,0 +1,67 @@
+{
+  "release": "20261124T013735Z-cfe8ac8d",
+  "verifiedAt": "2026-11-24T01:42:45.405Z",
+  "allPassed": true,
+  "transport": "HTTPS with verified hostname; explicit server address avoids local DNS timeout",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "2992d04c4466e696f8947731aad4c174c3a8a5bb7264faee78fa1fb868249382"
+    },
+    {
+      "path": "/openblock.html",
+      "status": 200,
+      "sha256": "e6c595d879402f8601fbd547521b7d62ccecc9eb7e5824189a978b9b7028de3c"
+    },
+    {
+      "path": "/branding/ccraft-logo.png",
+      "status": 200,
+      "bytes": 495240,
+      "sha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2"
+    },
+    {
+      "path": "/assets/app-C0XuQYw1.js",
+      "status": 200,
+      "bytes": 206445,
+      "sha256": "7bda177605a3c09f77e2dc9ff005d0efe1d56bc54da051aebee233150735b61f"
+    },
+    {
+      "path": "/assets/save-shortcut-C_DI86IG.js",
+      "status": 200,
+      "bytes": 4269,
+      "sha256": "3bad633f2db02f5efd6002c2106d4ff43e6b6821cd6fc897d354b055016775cc"
+    },
+    {
+      "path": "/assets/app-C88jyimZ.css",
+      "status": 200,
+      "bytes": 3760,
+      "sha256": "8e34f80c379d9a7d8e8e73a2483fae96e316abfafb85db135b47cac75d0a9563"
+    },
+    {
+      "path": "/assets/editor-DUATB_QJ.js",
+      "status": 200,
+      "bytes": 203895,
+      "sha256": "26973ecaa997ed2ae360bceb8d0b0fb23f08cb65081b7089fa67166a2fc73b31"
+    },
+    {
+      "path": "/assets/editor-CwQOS_yH.css",
+      "status": 200,
+      "bytes": 35099,
+      "sha256": "3da65cd6d284c5ad5a3099f8232413ba5d28225586270ec0a510a999657dea63"
+    }
+  ],
+  "health": {
+    "status": 200,
+    "result": "ok"
+  },
+  "gui": {
+    "rawBytes": 22664239,
+    "gzipBytes": 5480187,
+    "seconds": 26.550633,
+    "decodedSha256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+    "localSha256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+    "warmStatus": 304
+  },
+  "browserScope": "Recorded separately; HTTP and byte equality are not browser rendering assertions"
+}

@@ -6,6 +6,8 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { moduleSource, patchOpenBlock } from './openblock-hooks.mjs';
 import { prepareDeviceDescriptions } from './prepare-device-descriptions.mjs';
+import { optimizeGui, guiOptimizerInputs } from './optimize-gui.mjs';
+import { fastGuiUrl } from './fast-gui-html.mjs';
 
 const runtime = fileURLToPath(new URL('../../../.runtime/', import.meta.url));
 const archiveDir = join(runtime, 'upstream');
@@ -18,6 +20,9 @@ const builtinModuleKinds = ['blocks', 'generator', 'toolbox', 'translations'];
 const requiredOutputs = [
   'openblock-vendor/openblock-gui.js',
   'branding/IDE.png',
+  'branding/ccraft-logo.png',
+  'branding/ccraft-icon.svg',
+  'branding/ccraft-tab-icon.png',
   'cfzn-extensions/module-loader.js',
   ...builtinModuleIds.flatMap((id) => builtinModuleKinds.map((kind) => `cfzn-extensions/extensions/${id}/${kind}.mjs`)),
 ];
@@ -32,12 +37,18 @@ async function fingerprint(directory, hash = createHash('sha256')) {
 const inputs = await fingerprint(vendorSource);
 await fingerprint(publicSource, inputs);
 inputs.update(await readFile(new URL('./openblock-hooks.mjs', import.meta.url)));
+inputs.update(await readFile(new URL('./audio-unlock-hook.mjs', import.meta.url)));
+inputs.update(await readFile(new URL('./optimize-gui.mjs', import.meta.url)));
+inputs.update(await readFile(new URL('./gui-lexical-whitespace.mjs', import.meta.url)));
+inputs.update(await readFile(new URL('./fast-gui-html.mjs', import.meta.url)));
+inputs.update(JSON.stringify(guiOptimizerInputs));
 inputs.update(await readFile(new URL('./prepare-openblock.mjs', import.meta.url)));
 inputs.update(await readFile(new URL('./prepare-device-descriptions.mjs', import.meta.url)));
 const manifest = {
-  layout: 2,
+  layout: 3,
   integrationSha256: inputs.digest('hex'),
   upstreamCommit: 'cdd3478c3d9bbced4cb50f4ac0dda8593416c889',
+  guiOptimizer: guiOptimizerInputs,
   packages: {
     'openblock-gui': {
       version: '0.1.0-prerelease.20250611102354',
@@ -53,7 +64,6 @@ const manifest = {
     },
   },
 };
-const manifestText = `${JSON.stringify(manifest, null, 2)}\n`;
 const manifestPath = 'openblock-vendor/manifest.json';
 const exists = async (path) => access(path).then(() => true, () => false);
 
@@ -79,8 +89,17 @@ async function getArchive(name, entry) {
 }
 
 async function prepare() {
-  if (await exists(join(output, manifestPath)) && await readFile(join(output, manifestPath), 'utf8') === manifestText
-    && (await Promise.all(requiredOutputs.map((file) => exists(join(output, file))))).every(Boolean)) return;
+  if (await exists(join(output, manifestPath))) {
+    try {
+      const cached = JSON.parse(await readFile(join(output, manifestPath), 'utf8'));
+      const { fastGui, ...cachedInputs } = cached;
+      const fastPath = fastGuiUrl(cached).slice(1);
+      if (JSON.stringify(cachedInputs) === JSON.stringify(manifest)
+        && (await Promise.all([...requiredOutputs, fastPath].map(file => exists(join(output, file))))).every(Boolean)
+        && createHash('sha256').update(await readFile(join(output, fastPath))).digest('hex') === fastGui.sha256
+        && createHash('sha256').update(await readFile(join(output, 'openblock-vendor/openblock-gui.js'))).digest('hex') === fastGui.legacySha256) return;
+    } catch { /* Missing/corrupt metadata or required output is regenerated. */ }
+  }
   await mkdir(archiveDir, { recursive: true });
   const stage = await mkdtemp(join(runtime, 'web-openblock-build-'));
   try {
@@ -115,7 +134,11 @@ async function prepare() {
         await cp(join(dist, fileName), join(generated, fileName));
         await cp(join(dist, fileName), join(staticDir, fileName));
       }
-      await writeFile(join(vendor, 'openblock-gui.js'), patchOpenBlock(await readFile(join(dist, 'openblock-gui.js'), 'utf8')));
+      const legacy = patchOpenBlock(await readFile(join(dist, 'openblock-gui.js'), 'utf8'));
+      const fast = await optimizeGui(legacy);
+      manifest.fastGui = fast.metadata;
+      await writeFile(join(vendor, 'openblock-gui.js'), legacy);
+      await writeFile(join(generated, fast.metadata.url.slice(1)), fast.code);
       for (const fileName of ['LICENSE', 'LICENSE.MIT', 'TRADEMARK']) {
         await cp(join(pkg, fileName), join(vendor, fileName));
       }
@@ -129,7 +152,7 @@ async function prepare() {
         await writeFile(join(directory, `${kind}.mjs`), moduleSource(await readFile(join(directory, `${kind}.js`), 'utf8'), kind));
       }
     }
-    await writeFile(join(generated, manifestPath), manifestText);
+    await writeFile(join(generated, manifestPath), `${JSON.stringify(manifest, null, 2)}\n`);
     // Both paths are fixed children of this repository's runtime directory.
     if (!output.startsWith(runtime) || !stage.startsWith(runtime)) throw new Error('Unexpected preparation directory');
     await rm(output, { recursive: true, force: true });

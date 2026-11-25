@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+import test from 'node:test';
+import { createRequire } from 'node:module';
+import { join } from 'node:path';
+import { guiAstInvariants } from './helpers/gui-ast-invariants.mjs';
+const requireWeb = createRequire(join(import.meta.dirname, '../apps/web/package.json')), ts = requireWeb('typescript');
+function inspect(source) { const file = ts.createSourceFile('guard-case.js', source, ts.ScriptTarget.Latest, true, ts.ScriptKind.JS); assert.equal(file.parseDiagnostics.length, 0); return guiAstInvariants(ts, file, file, source); }
+test('ordinary trivia changes pass all invariants', () => { assert.deepEqual(inspect('function f(x) { return x + 1; }'), inspect('function f(x){/* nonlegal trivia */return x+1;}')); });
+test('JSDoc parameter/type names are trivia, not executable identifiers', () => { assert.deepEqual(inspect('/** @param {number} x explanation */function f(x){return x+1;}'), inspect('function f(x){return x+1;}')); });
+test('function names and argument binding changes cannot pass', () => { for (const source of ['function f2(x){return x+1;}', 'function f(x2){return x2+1;}']) { const a = inspect('function f(x){return x+1;}'), b = inspect(source); assert.notEqual(a.functions, b.functions); assert.notEqual(a.identifiers, b.identifiers); assert.notEqual(a.rawTokens, b.rawTokens); } });
+test('constant folding and undefined guards cannot pass even without a signature change', () => { for (const [a, b] of [['function f(){return 1+2;}', 'function f(){return 3;}'], ['function f(){return (undefined && undefined.x)||fallback();}', 'function f(){return fallback();}']]) { const before = inspect(a), after = inspect(b); assert.equal(before.functions, after.functions); assert.notEqual(before.astStructure, after.astStructure); assert.notEqual(before.rawTokens, after.rawTokens); } });
+test('raw string and regexp literal spelling remain protected', () => { for (const [a, b] of [["function f(){return 'value';}", 'function f(){return "value";}'], ['function f(){return /a b/g;}', 'function f(){return /ab/g;}']]) assert.notEqual(inspect(a).rawTokens, inspect(b).rawTokens); });
+test('template raw spelling and escapes remain protected', () => { const before = inspect('function f(){return `a\\u0062${x} c`;}'), after = inspect('function f(){return `ab${x} c`;}'); assert.notEqual(before.rawTokens, after.rawTokens); });
+test('return ASI changes fail structure even when raw nontrivia tokens match', () => { const a = inspect('function f(){return\n{value:1};}'), b = inspect('function f(){return {value:1};}'); assert.equal(a.rawTokens, b.rawTokens); assert.notEqual(a.astStructure, b.astStructure); });
+test('prefix versus postfix ASI changes fail structure with the same raw tokens', () => { const a = inspect('function f(){a\n++b;}'), b = inspect('function f(){a++\nb;}'); assert.equal(a.rawTokens, b.rawTokens); assert.notEqual(a.astStructure, b.astStructure); });
+test('license removal is rejected independently of executable token equality', () => { const a = inspect('function f(){/* Copyright Fixture. MIT license. */return 1;}'), b = inspect('function f(){return 1;}'); assert.equal(a.rawTokens, b.rawTokens); assert.notEqual(a.legalNotices, b.legalNotices); assert.equal(a.legalNoticeCount, 1); });

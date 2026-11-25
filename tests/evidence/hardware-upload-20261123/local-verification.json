@@ -1,0 +1,118 @@
+{
+  "verifiedAt": "2026-11-23T15:01:54.1600270+08:00",
+  "verifiedBy": "main coordinator",
+  "origin": "http://127.0.0.1:5173",
+  "localService": "http://127.0.0.1:3002/api/v1/hardware",
+  "defaultConfigStartup": {
+    "configuration": ".runtime/hardware/hardware.local.json",
+    "explicitConfigEnvironment": false,
+    "workingDirectory": "apps/api",
+    "workerPid": 67152
+  },
+  "profiles": [
+    {
+      "id": "esp32-4mb-dio",
+      "deviceId": "arduinoEsp32",
+      "label": "ESP32 · 4 MB DIO",
+      "chip": "esp32",
+      "fqbn": "esp32:esp32:esp32:FlashMode=dio,FlashFreq=40,FlashSize=4M,PartitionScheme=default,UploadSpeed=115200",
+      "compileAvailable": true,
+      "uploadAvailable": true,
+      "realtimeAvailable": false
+    },
+    {
+      "id": "firebeetle-esp32e-4mb",
+      "deviceId": "firebeetleEsp32E",
+      "label": "FireBeetle ESP32-E · 4 MB",
+      "chip": "esp32",
+      "fqbn": "esp32:esp32:dfrobot_firebeetle2_esp32e:FlashMode=dio,FlashFreq=40,FlashSize=4M,PartitionScheme=default,UploadSpeed=115200",
+      "compileAvailable": true,
+      "uploadAvailable": true,
+      "realtimeAvailable": false
+    }
+  ],
+  "ports": [
+    {
+      "portId": "COM3",
+      "displayName": "Silicon Labs CP210x USB to UART Bridge (COM3)",
+      "usbVendorId": "10C4",
+      "usbProductId": "EA60"
+    }
+  ],
+  "builds": [
+    {
+      "job": {
+        "id": "ccb0d303-d0a4-43e1-b927-a4edacdedd69",
+        "kind": "build",
+        "state": "succeeded",
+        "stage": "complete",
+        "deviceId": "firebeetleEsp32E",
+        "profileId": "firebeetle-esp32e-4mb",
+        "sourceHash": "33077eda5dd40f64a7603c7b42f67a9655fba7ca8af172acf6abe18e67853e9c",
+        "createdAt": "2026-11-23T06:53:39.269Z",
+        "finishedAt": "2026-11-23T06:54:41.513Z"
+      },
+      "coreVersion": "2.0.17",
+      "fqbn": "esp32:esp32:dfrobot_firebeetle2_esp32e:FlashMode=dio,FlashFreq=40,FlashSize=4M,PartitionScheme=default,UploadSpeed=115200",
+      "artifacts": [
+        {
+          "name": "sketch.ino.bin",
+          "sizeBytes": 264080,
+          "sha256": "9837433e891e8dc48b2e35042f402371564025ffbaea4c1a9d9979b0fee8d3b2"
+        },
+        {
+          "name": "sketch.ino.partitions.bin",
+          "sizeBytes": 3072,
+          "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+        },
+        {
+          "name": "sketch.ino.elf",
+          "sizeBytes": 6067268,
+          "sha256": "ae6a8be67043ede7bbb685799dab84320d7b799690fbe12750c8c2fdd0ee0163"
+        }
+      ]
+    },
+    {
+      "job": {
+        "id": "e5159dea-71e3-4bc1-99f5-59673c5ba31d",
+        "kind": "build",
+        "state": "succeeded",
+        "stage": "complete",
+        "deviceId": "firebeetleEsp32E",
+        "profileId": "firebeetle-esp32e-4mb",
+        "sourceHash": "951714c5d084ab541baafbe27a07524d2d3e76ab7ad68ea0ed6f29cc8c3e0590",
+        "createdAt": "2026-11-23T06:58:22.091Z",
+        "finishedAt": "2026-11-23T06:59:17.48Z"
+      },
+      "coreVersion": "2.0.17",
+      "fqbn": "esp32:esp32:dfrobot_firebeetle2_esp32e:FlashMode=dio,FlashFreq=40,FlashSize=4M,PartitionScheme=default,UploadSpeed=115200",
+      "artifacts": [
+        {
+          "name": "sketch.ino.bin",
+          "sizeBytes": 231504,
+          "sha256": "f597363a8ca1c8294210e59588b665d77ea1f86d5898989301390f21df780fdb"
+        },
+        {
+          "name": "sketch.ino.partitions.bin",
+          "sizeBytes": 3072,
+          "sha256": "148b959cbff1c38aa8e1d5c0ba9d612c54997b945e56a63f41223eef650653a1"
+        },
+        {
+          "name": "sketch.ino.elf",
+          "sizeBytes": 5400784,
+          "sha256": "9e99eeda517c9f651f46970a6bbf6d1a3d875698add916b854414c511ae4eb10"
+        }
+      ]
+    }
+  ],
+  "browserChecks": [
+    "FireBeetle profile selected",
+    "Explicit COM3 choice preserved after refresh",
+    "Compile and upload buttons enabled",
+    "Compile check reached succeeded",
+    "Post-restart refresh retained successful result"
+  ],
+  "screenshot": "firebeetle-compile-success.jpg",
+  "screenshotSha256": "1e6b4610197fce4e22989f7b7ada63429513578a0a531388128cc0e4483163de",
+  "physicalUploads": 0
+}

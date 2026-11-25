@@ -1,0 +1,18 @@
+✔ audited GUI messages cover every shipped locale, preserve interpolation and leave unrelated content untouched (20.4052ms)
+✔ the actual connected Intl hook brands initial and switched locales with stable cached identity and complete fallbacks (19.9893ms)
+✔ generator branding changes only the exact first line and the real mode adapter preserves manual drafts (55.086ms)
+✔ locale remount initialization retains existing titles while initial creation uses the localized GUI default (17.6163ms)
+✔ the native Website action opens the exact product URL without an opener and keeps tutorial targets (41.4708ms)
+✔ native logos use the same local brand in both overflow states and the outer crash description does not promise reporting (90.9723ms)
+✔ the local product icon requires no network assets and the historical user PNG stays byte-identical (15.2387ms)
+✔ the supplied PNG stays byte-identical and its display viewport includes the complete visible wordmark and Chinese subtitle (279.176ms)
+✔ editor draft round trip preserves native entries and JSON escaping at the exact source limit (226.7136ms)
+✔ historical archive clears inherited draft; invalid metadata is rejected before loading (10.5487ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6583.1252

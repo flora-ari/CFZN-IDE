@@ -7,6 +7,9 @@ import type { ToolboxPresentation } from './toolbox-presentation';
 import { archiveWithoutController } from '../editor-archive';
 import { extensionReferences, removalMessage } from './removal';
 import type { RemovalTarget, RemovalState } from './removal';
+import { CUSTOM_MODULE_ID, type CustomModuleRecord } from './custom-module-definition';
+import { customModuleEntry, customModuleParts, customModulePinFields } from './custom-module-runtime';
+import { customModulesApi } from './custom-modules-api';
 
 // The pinned React 16/VM bundle has no TypeScript declarations. Keep this boundary local.
 export type NativeVm = any;
@@ -19,6 +22,27 @@ async function until(test: () => boolean, message: string) {
     await pause();
   }
   throw new Error(message);
+}
+
+function restoredWorkspaceBlock(expected: Element, restored: any, workspace: any): boolean {
+  const id = expected.getAttribute('id');
+  if (!restored || restored.id !== id || workspace.getBlockById(id) !== restored ||
+    restored.type !== expected.getAttribute('type') || restored.isShadow() !== (expected.localName === 'shadow')) return false;
+
+  for (const slot of expected.children) {
+    if (slot.localName !== 'value' && slot.localName !== 'statement' && slot.localName !== 'next') continue;
+    const children = Array.from(slot.children);
+    const block = children.find(child => child.localName === 'block');
+    const shadow = children.find(child => child.localName === 'shadow');
+    const active = block ?? shadow;
+    if (!active) continue;
+    const connection = slot.localName === 'next' ? restored.nextConnection : restored.getInput(slot.getAttribute('name'))?.connection;
+    if (!connection || !restoredWorkspaceBlock(active, connection.targetBlock(), workspace)) return false;
+    // A real child obscures its default shadow. Blockly keeps that shadow's XML on the
+    // connection and materializes the block with the original ID when the child is removed.
+    if (block && shadow && !shadow.isEqualNode(connection.getShadowDom())) return false;
+  }
+  return true;
 }
 
 function toolboxForDevice(xml: string, Blockly: any) {
@@ -38,6 +62,7 @@ function toolboxForDevice(xml: string, Blockly: any) {
 
 export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
   getStore(): any;
+  getBlockly?(): any;
   onChanged(): void;
   isProjectLoading(): boolean;
   isHardwareBusy?(): boolean;
@@ -68,6 +93,51 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
   const currentDevice = () => runtime.getDevice().deviceId as string | null;
   const loaded = (): string[] => runtime.getLoadedDeviceExtension();
   const changed = () => { if (!restoring && !options.isProjectLoading()) options.onChanged(); publish(); };
+  const customRecords = new Map<string, CustomModuleRecord>();
+  let visibleCustomIds: string[] = [];
+  let catalogRequest = 0;
+  const moduleEntry = (id: string) => {
+    const record = customRecords.get(id);
+    return record ? customModuleEntry(record) : modules.find(entry => entry.extensionId === id);
+  };
+  const moduleCatalog = () => [...modules, ...[...new Set([...visibleCustomIds, ...loaded()])]
+    .flatMap(id => {
+      const record = customRecords.get(id);
+      return record ? [customModuleEntry(record)] : [];
+    })];
+  async function reloadCustomModules() {
+    const request = ++catalogRequest;
+    const records = await customModulesApi.list();
+    if (request === catalogRequest) {
+      for (const record of records) customRecords.set(record.id, record);
+      visibleCustomIds = records.map(record => record.id);
+      publish();
+    }
+    return records;
+  }
+  function projectArduinoLibraries() {
+    const versions = loaded().flatMap(id => customRecords.get(id)?.definition.libraries ?? []);
+    return [...new Map(versions.map(item => [JSON.stringify([item.name.toLowerCase(), item.version]), item])).values()];
+  }
+  async function resolveCustomModules(ids: unknown, refresh = false) {
+    if (!Array.isArray(ids)) return;
+    const wanted = [...new Set(ids.filter((id): id is string =>
+      typeof id === 'string' && CUSTOM_MODULE_ID.test(id) && (refresh || !customRecords.has(id))))];
+    const records = await Promise.all(wanted.map(async id => {
+      try {
+        const record = await customModulesApi.get(id);
+        if (record.id !== id) throw new Error('模块服务返回了不同的版本。');
+        return record;
+      } catch (error) {
+        throw new Error('无法读取私有模块版本 ' + id + '。' + (error instanceof Error ? error.message : String(error)));
+      }
+    }));
+    for (const record of records) customRecords.set(record.id, record);
+  }
+  function prepareModule(id: string) {
+    const record = customRecords.get(id);
+    return record ? Promise.resolve(customModuleParts(record)) : resources.prepare(id);
+  }
 
   function assertIdle() {
     const blocked = options.operationBlockedReason?.(); if (blocked) throw new Error(blocked);
@@ -114,9 +184,9 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
     const xml = options.getStore()?.getState().scratchGui.toolbox.toolboxXML ?? '<xml/>';
     return new Set(Array.from(new DOMParser().parseFromString(xml, 'application/xml').getElementsByTagName('category')).map(node => node.getAttribute('id')!));
   }
-  const moduleName = (id: string) => modules.find(entry => entry.extensionId === id)?.name ?? id;
+  const moduleName = (id: string) => moduleEntry(id)?.name ?? id;
   function removalState(target: RemovalTarget, locked = false): RemovalState {
-    const entry = target.kind === 'module' ? modules.find(module => module.extensionId === target.id) : devices.find(device => device.deviceId === target.id && target.id !== 'null');
+    const entry = target.kind === 'module' ? moduleEntry(target.id) : devices.find(device => device.deviceId === target.id && target.id !== 'null');
     const selected = target.kind === 'module' ? loaded().includes(target.id) : currentDevice() === target.id;
     if (!entry) return { selected, allowed: false, reason: 'unsupported' };
     if (!selected) return target.kind === 'controller' && currentDevice() ? { selected, allowed: false, reason: 'stale' } : { selected, allowed: true };
@@ -124,7 +194,7 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
     if ((!locked && (status.busy || restoring || internal)) || status.recovery || options.isProjectLoading() || options.isHardwareBusy?.() || blocked) {
       return { selected, allowed: false, reason: 'busy', detail: blocked };
     }
-    const dependents = target.kind === 'controller' ? loaded() : loaded().filter(id => modules.find(module => module.extensionId === id)?.dependencies?.includes(target.id));
+    const dependents = target.kind === 'controller' ? loaded() : loaded().filter(id => moduleEntry(id)?.dependencies?.includes(target.id));
     if (dependents.length) return { selected, allowed: false, reason: 'modules-loaded', dependentModuleIds: dependents };
     if (target.kind === 'controller') {
       const reason = options.clearBlockedReason?.(); if (reason) return { selected, allowed: false, reason: 'serial-owned', detail: reason };
@@ -146,7 +216,7 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
     const target: RemovalTarget = { kind: 'module', id };
     if (!requireRemoval(target).selected) return;
     await transaction(`移除模块 ${moduleName(id)}`, async () => {
-      const keep = categoryIds(), category = modules.find(module => module.extensionId === id)!.categoryId; keep.delete(category);
+      const keep = categoryIds(), category = moduleEntry(id)!.categoryId; keep.delete(category);
       rawUnload(id); options.presentation.removeModule(id); vm.emitWorkspaceUpdate();
       await until(() => !loaded().includes(id) && !categoryIds().has(category) && [...keep].every(category => categoryIds().has(category)), '模块分类未能完整更新。');
     }, undefined, () => { requireRemoval(target, true); });
@@ -183,17 +253,17 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
   }
 
   async function registerModule(id: string, prepared?: BuiltinFunctions) {
-    const entry = modules.find(item => item.extensionId === id);
+    const entry = moduleEntry(id);
     if (!entry) throw new Error(`此网站没有模块实现：${id}`);
     if (!supportsModule(entry, currentDevice())) throw new Error(`${entry.name}不支持当前主控，请先选择兼容的 Arduino 主控。`);
     if (manager.isDeviceExtensionLoaded(id)) return;
-    const parts = prepared ?? await resources.prepare(id);
+    const parts = prepared ?? await prepareModule(id);
     for (const part of Object.values(parts)) if (typeof part !== 'function') throw new Error(`${entry.name}缺少注册函数。`);
     const Blockly = await deviceReady(currentDevice()!);
     const xml = toolboxForDevice(parts.toolbox(), Blockly);
     runtime.emit('DEVICE_EXTENSION_ADDED', { defineMessages: parts.translations, defineGenerators: parts.generator, defineBlocks: parts.blocks });
     await until(() => entry.opcodes.every(opcode => Blockly.Blocks[opcode] && typeof Blockly.Arduino[opcode] === 'function'), `${entry.name}的积木或生成器未能注册。`);
-    options.presentation.setModule(id, xml);
+    options.presentation.setModule(id, xml, entry);
     runtime.addDeviceExtension(id, xml, undefined);
     vm.emitWorkspaceUpdate();
     await until(() => options.presentation.hasModule(currentDevice()!, id, entry.opcodes), `${entry.name}未能呈现在工具箱类别中。`);
@@ -219,12 +289,19 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
     const id = normalizeDeviceId(device.deviceId);
     if (currentDevice() === id) return;
     const retain = loaded();
-    const incompatible = retain.filter(moduleId => !supportsModule(modules.find(item => item.extensionId === moduleId)!, id));
+    const incompatible = retain.filter(moduleId => {
+      const entry = moduleEntry(moduleId);
+      return !entry || !supportsModule(entry, id);
+    });
     if (incompatible.length) throw new Error(`无法切换到 ${device.name}：当前模块 ${incompatible.join('、')} 不支持此主控。请另存项目或新建项目后选择。`);
     // Reject before rawSave/stopAll/rawDevice or any toolbox event. Cached Blockly factories and
     // the current flyout describe the old board, so neither is evidence of target compatibility.
     const target = controllerIds.includes(id as typeof controllerIds[number]) ? boardDescription(id) : new Map();
-    assertControllerCompatible(runtime.targets, runtime.getDevice().type, device.type, target, device.name);
+    const records = retain.flatMap(moduleId => {
+      const record = customRecords.get(moduleId);
+      return record ? [record] : [];
+    });
+    assertControllerCompatible(runtime.targets, runtime.getDevice().type, device.type, target, device.name, customModulePinFields(records));
     const stageExtensions: string[] = runtime.getLoadedScratchExtension();
     const realtime = runtime.isRealtimeMode();
     await transaction(`选择主控 ${device.name}`, async prepared => {
@@ -234,21 +311,21 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
       for (const extension of stageExtensions) await manager.loadExtensionURL(extension);
       for (const moduleId of retain) await registerModule(moduleId, prepared.get(moduleId));
       vm.emitWorkspaceUpdate();
-    }, async () => new Map(await Promise.all(retain.map(async moduleId => [moduleId, await resources.prepare(moduleId)] as const))));
+    }, async () => new Map(await Promise.all(retain.map(async moduleId => [moduleId, await prepareModule(moduleId)] as const))));
   }
 
   async function loadModule(id: string) {
     assertIdle();
     if (manager.isDeviceExtensionLoaded(id)) return;
-    const entry = modules.find(item => item.extensionId === id);
+    const entry = moduleEntry(id);
     if (!entry) throw new Error(`此网站没有模块实现：${id}`);
     // Validate before snapshotting or stopping the previous editable project.
     if (!supportsModule(entry, currentDevice())) throw new Error(`${entry.name}需要兼容主控，请先选择主控。`);
-    await transaction(`加载模块 ${entry.name}`, prepared => registerModule(id, prepared), () => resources.prepare(id));
+    await transaction(`加载模块 ${entry.name}`, prepared => registerModule(id, prepared), () => prepareModule(id));
   }
 
   manager.getDeviceList = async () => undefined; // makeDeviceLibrary retains every official built-in board + Aijite.
-  manager.getDeviceExtensionsList = async () => modules.map(entry => ({ ...entry, isLoaded: manager.isDeviceExtensionLoaded(entry.extensionId) }));
+  manager.getDeviceExtensionsList = async () => moduleCatalog().map(entry => ({ ...entry, isLoaded: manager.isDeviceExtensionLoaded(entry.extensionId) }));
   manager.loadDeviceURL = (device: any) => restoring ? loadDevice(device, false) : selectController(device);
   manager.loadDeviceExtension = (id: string) => restoring ? registerModule(id) : loadModule(id);
   manager.unloadDeviceExtension = (id: string) => {
@@ -269,7 +346,13 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
   vm.saveProjectSb3 = () => { assertIdle(); return rawSave(); };
   vm.deserializeProject = async (project: any, zip: any) => {
     await descriptionsReady;
-    const normalized = validateProjectExtensions(project, devices.map(device => device.deviceId), true);
+    await resolveCustomModules(project.deviceExtensions);
+    const projectModules = [...modules, ...(Array.isArray(project.deviceExtensions) ? project.deviceExtensions : [])
+      .flatMap((id: string) => {
+        const record = customRecords.get(id);
+        return record ? [customModuleEntry(record)] : [];
+      })];
+    const normalized = validateProjectExtensions(project, devices.map(device => device.deviceId), true, projectModules);
     const stageIds = normalized.extensions ?? [];
     for (const id of Array.isArray(stageIds) ? stageIds : []) {
       if (!['pen', 'music', 'text2speech', 'translate', 'videoSensing', 'makeymakey', 'coreExample'].includes(id)) {
@@ -297,14 +380,24 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
         // after every module definition exists, avoiding partial XML loads and queued deletes.
         if (completed && withModules) {
           const target = vm.editingTarget;
-          const xml = new DOMParser().parseFromString(`<xml>${target.blocks.toXML(target.comments)}</xml>`, 'application/xml');
-          const expected = Array.from(xml.querySelectorAll('block, shadow')).map(block => ({ id: block.getAttribute('id')!, type: block.getAttribute('type')! }));
+          // Use the same namespace as the VM's workspace-update XML so obscured shadow
+          // nodes can be compared directly, including their IDs, fields and descendants.
+          const xml = new DOMParser().parseFromString(
+            `<xml xmlns="http://www.w3.org/1999/xhtml">${target.blocks.toXML(target.comments)}</xml>`, 'application/xml');
+          if (xml.querySelector('parsererror')) throw new Error('模块项目积木 XML 无效，正在恢复原项目。');
+          const roots = Array.from(xml.documentElement.children);
+          const expected = Array.from(xml.querySelectorAll('block, shadow'));
           vm.emitWorkspaceUpdate();
           // Native Blockly events are queued. Confirm after that queue has had a turn, before
           // the import can report success, and let the existing archive rollback handle failure.
           await pause();
-          await until(() => expected.every(block => target.blocks.getBlock(block.id)?.opcode === block.type &&
-            blocks.getMainWorkspace().getBlockById(block.id)?.type === block.type), '模块项目积木未能完整恢复，正在恢复原项目。');
+          await until(() => {
+            const workspace = blocks.getMainWorkspace();
+            return expected.every(node => {
+              const block = target.blocks.getBlock(node.getAttribute('id'));
+              return block?.opcode === node.getAttribute('type') && block.shadow === (node.localName === 'shadow');
+            }) && roots.every(node => restoredWorkspaceBlock(node, workspace.getBlockById(node.getAttribute('id')), workspace));
+          }, '模块项目积木未能完整恢复，正在恢复原项目。');
         }
       } finally { restoring--; publish(); }
     }
@@ -312,7 +405,9 @@ export function installExtensionAdapter(vm: NativeVm, devices: any[], options: {
 
   return {
     assertIdle, selectController, loadModule, currentDevice, loaded, removeModule, clearController, removalState, refreshViews: publish,
-    get blocks() { return blocks; },
+    moduleCatalog, reloadCustomModules, projectArduinoLibraries,
+    prepareCustomProject: (ids: unknown) => resolveCustomModules(ids, true),
+    get blocks() { return options.getBlockly?.() ?? blocks; },
     get suppressChanges() { return status.busy || restoring > 0; },
     get deferWorkspaceUpdate() { return deferredWorkspace > 0; },
     get status() { return status; },

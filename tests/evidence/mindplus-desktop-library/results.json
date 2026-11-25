@@ -1,0 +1,846 @@
+{
+  "cases": [
+    {
+      "name": "VM and Blockly exact upstream module bytes",
+      "status": "PASS",
+      "evidence": {
+        "upstreamSha256": "eb3f8ee4d4e4ce89ffff1b9aec0e4154b66d0044d79cdb1e6e97c7dcef0e6cb9",
+        "devDistGuiSha256": "7d7f4210f8cd921f8fd3d259e4d49ff743b3c55bfc174747252a5f073711e558",
+        "groups": {
+          "vm": {
+            "count": 178,
+            "manifestSha256": "c015ad5457ac9108f94503ba58366acd014956ee107b31c6ca361b006e37ed41"
+          },
+          "blockly": {
+            "count": 15,
+            "manifestSha256": "67dd7c71b1dffa174c67b434b8de5405f3ba7cb9de00a4d72a8a83dcb99f0dec"
+          }
+        }
+      }
+    },
+    {
+      "name": "dev controller parity",
+      "status": "PASS",
+      "evidence": {
+        "baseline": [
+          "arduinoUno",
+          "arduinoNano",
+          "arduinoLeonardo",
+          "arduinoMega2560",
+          "arduinoUnoR4Minima",
+          "arduinoUnoR4Wifi",
+          "arduinoEsp32",
+          "arduinoEsp32S3",
+          "arduinoEsp8266NodeMCU",
+          "arduinoK210MaixDock",
+          "arduinoK210Maixduino",
+          "arduinoRaspberryPiPico",
+          "arduinoRaspberryPiPicoW",
+          "arduinoRaspberryPiPico2",
+          "arduinoRaspberryPiPico2W",
+          "microbit",
+          "microbitV2",
+          "makeyMakey",
+          "aijiteESP32S3",
+          "firebeetleEsp32E"
+        ],
+        "realtime": {
+          "orderedModeIds": [
+            "arduinoUno",
+            "arduinoNano",
+            "arduinoMega2560"
+          ],
+          "byId": [
+            "arduinoUno"
+          ],
+          "descriptionOnly": [
+            "arduinoUno"
+          ],
+          "intersection": [
+            "arduinoUno"
+          ]
+        },
+        "upload": {
+          "orderedModeIds": [
+            "arduinoUno",
+            "arduinoNano",
+            "arduinoLeonardo",
+            "arduinoMega2560",
+            "arduinoUnoR4Minima",
+            "arduinoUnoR4Wifi",
+            "arduinoEsp32",
+            "arduinoEsp32S3",
+            "arduinoEsp8266NodeMCU",
+            "arduinoK210MaixDock",
+            "arduinoK210Maixduino",
+            "arduinoRaspberryPiPico",
+            "arduinoRaspberryPiPicoW",
+            "arduinoRaspberryPiPico2",
+            "arduinoRaspberryPiPico2W",
+            "microbit",
+            "microbitV2",
+            "makeyMakey",
+            "aijiteESP32S3",
+            "firebeetleEsp32E"
+          ],
+          "byId": [
+            "arduinoUno",
+            "arduinoUnoR4Minima",
+            "arduinoUnoR4Wifi"
+          ],
+          "descriptionOnly": [
+            "arduinoUno"
+          ],
+          "intersection": [
+            "arduinoUno"
+          ]
+        }
+      }
+    },
+    {
+      "name": "dev compatibility and corner badges",
+      "status": "PASS",
+      "evidence": {
+        "noBoard": [
+          {
+            "id": "module-activateBuzzer",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-atomizer",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-pirSensor",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-flameSensor",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-raindropSensor",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-moreComments",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          }
+        ],
+        "unsupported": [
+          {
+            "id": "module-activateBuzzer",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-atomizer",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-pirSensor",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-flameSensor",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-raindropSensor",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-moreComments",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          }
+        ],
+        "incompatibleDevice": "microbit"
+      }
+    },
+    {
+      "name": "dev module grouping, filters, keyboard, mobile, and stage",
+      "status": "PASS",
+      "evidence": {
+        "compatible": [
+          {
+            "id": "module-activateBuzzer",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-atomizer",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-pirSensor",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-flameSensor",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-raindropSensor",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-moreComments",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          }
+        ],
+        "mobile": {
+          "search": {
+            "x": 16,
+            "y": 224.140625,
+            "width": 288,
+            "height": 40
+          },
+          "mode": {
+            "x": 20,
+            "y": 111.171875,
+            "width": 16,
+            "height": 16
+          },
+          "remove": {
+            "x": 272.21875,
+            "y": 669.125,
+            "width": 54.78125,
+            "height": 32.59375
+          }
+        },
+        "addAndRemoveEdits": [
+          1,
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "name": "dev persistence",
+      "status": "PASS",
+      "evidence": {
+        "id": "8e2c2775-a72e-4acd-a411-b1de07ade641",
+        "sha256": "6253ca4e3a2a566399c3279d8bc1ff675e97f2f64a464e3d7fb5eb77fd318618",
+        "block": "EyR0tzJ:OduprWC!LoG,",
+        "assets": 5
+      }
+    },
+    {
+      "name": "dist controller parity",
+      "status": "PASS",
+      "evidence": {
+        "baseline": [
+          "arduinoUno",
+          "arduinoNano",
+          "arduinoLeonardo",
+          "arduinoMega2560",
+          "arduinoUnoR4Minima",
+          "arduinoUnoR4Wifi",
+          "arduinoEsp32",
+          "arduinoEsp32S3",
+          "arduinoEsp8266NodeMCU",
+          "arduinoK210MaixDock",
+          "arduinoK210Maixduino",
+          "arduinoRaspberryPiPico",
+          "arduinoRaspberryPiPicoW",
+          "arduinoRaspberryPiPico2",
+          "arduinoRaspberryPiPico2W",
+          "microbit",
+          "microbitV2",
+          "makeyMakey",
+          "aijiteESP32S3",
+          "firebeetleEsp32E"
+        ],
+        "realtime": {
+          "orderedModeIds": [
+            "arduinoUno",
+            "arduinoNano",
+            "arduinoMega2560"
+          ],
+          "byId": [
+            "arduinoUno"
+          ],
+          "descriptionOnly": [
+            "arduinoUno"
+          ],
+          "intersection": [
+            "arduinoUno"
+          ]
+        },
+        "upload": {
+          "orderedModeIds": [
+            "arduinoUno",
+            "arduinoNano",
+            "arduinoLeonardo",
+            "arduinoMega2560",
+            "arduinoUnoR4Minima",
+            "arduinoUnoR4Wifi",
+            "arduinoEsp32",
+            "arduinoEsp32S3",
+            "arduinoEsp8266NodeMCU",
+            "arduinoK210MaixDock",
+            "arduinoK210Maixduino",
+            "arduinoRaspberryPiPico",
+            "arduinoRaspberryPiPicoW",
+            "arduinoRaspberryPiPico2",
+            "arduinoRaspberryPiPico2W",
+            "microbit",
+            "microbitV2",
+            "makeyMakey",
+            "aijiteESP32S3",
+            "firebeetleEsp32E"
+          ],
+          "byId": [
+            "arduinoUno",
+            "arduinoUnoR4Minima",
+            "arduinoUnoR4Wifi"
+          ],
+          "descriptionOnly": [
+            "arduinoUno"
+          ],
+          "intersection": [
+            "arduinoUno"
+          ]
+        }
+      }
+    },
+    {
+      "name": "dist compatibility and corner badges",
+      "status": "PASS",
+      "evidence": {
+        "noBoard": [
+          {
+            "id": "module-activateBuzzer",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-atomizer",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-pirSensor",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-flameSensor",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-raindropSensor",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-moreComments",
+            "label": "未选择主控板",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          }
+        ],
+        "unsupported": [
+          {
+            "id": "module-activateBuzzer",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-atomizer",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-pirSensor",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-flameSensor",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-raindropSensor",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-moreComments",
+            "label": "不支持当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "true",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          }
+        ],
+        "incompatibleDevice": "microbit"
+      }
+    },
+    {
+      "name": "dist module grouping, filters, keyboard, mobile, and stage",
+      "status": "PASS",
+      "evidence": {
+        "compatible": [
+          {
+            "id": "module-activateBuzzer",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-atomizer",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-pirSensor",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-flameSensor",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-raindropSensor",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          },
+          {
+            "id": "module-moreComments",
+            "label": "兼容当前主控",
+            "direct": true,
+            "top": 0,
+            "right": 0,
+            "disabled": "false",
+            "support": "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+          }
+        ],
+        "mobile": {
+          "search": {
+            "x": 16,
+            "y": 224.140625,
+            "width": 288,
+            "height": 40
+          },
+          "mode": {
+            "x": 20,
+            "y": 111.171875,
+            "width": 16,
+            "height": 16
+          },
+          "remove": {
+            "x": 272.21875,
+            "y": 669.125,
+            "width": 54.78125,
+            "height": 32.59375
+          }
+        },
+        "addAndRemoveEdits": [
+          1,
+          2,
+          4
+        ]
+      }
+    },
+    {
+      "name": "dist persistence",
+      "status": "PASS",
+      "evidence": {
+        "id": "c5922905-b9ff-4e98-b38c-ac5aaa56879a",
+        "sha256": "243e87c071385ac459ef0a6f1edad780245512562378ccc4ee71f7f923609cdc",
+        "block": "pUmyI-KKyHWjaDGk}Bmn",
+        "assets": 5
+      }
+    },
+    {
+      "name": "no page exceptions and frozen editor bytes",
+      "status": "PASS",
+      "evidence": {
+        "pageErrors": 0,
+        "editorSha": "6d327c831bd74e211dd8c04e27dafbf4ce20bfebbb61a1bc8e624796288db36c"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "blocked": [],
+  "failedResponses": [],
+  "persistence": {
+    "dev": {
+      "generatedLines": [
+        "int activeBuzzerPin = 0;",
+        "  pinMode(activeBuzzerPin, OUTPUT);"
+      ],
+      "block": {
+        "id": "EyR0tzJ:OduprWC!LoG,",
+        "hatId": "/RE5F6+~b-wl5HYX@MLJ"
+      },
+      "saved": {
+        "id": "8e2c2775-a72e-4acd-a411-b1de07ade641",
+        "name": "OpenBlock作品",
+        "revision": 1,
+        "format": "openblock",
+        "sizeBytes": 48470,
+        "createdAt": "2026-11-18T02:46:58.050Z",
+        "updatedAt": "2026-11-18T02:46:58.050Z"
+      },
+      "sha256": "6253ca4e3a2a566399c3279d8bc1ff675e97f2f64a464e3d7fb5eb77fd318618",
+      "assets": [
+        {
+          "targetIndex": 0,
+          "target": "Stage",
+          "kind": "costumes",
+          "index": 0,
+          "name": "背景1",
+          "sha256": "c3b723d028900d9768878653c3a65c377871fe3ecfce5c7b66ef795505e85e1a",
+          "key": "cd21514d0531fdffb22204e0ec5ed84a.svg"
+        },
+        {
+          "targetIndex": 0,
+          "target": "Stage",
+          "kind": "sounds",
+          "index": 0,
+          "name": "啵",
+          "sha256": "fb8c18242813d8763cccf5f6077daf44b672d0088f5d3688cca29d621b4959cc",
+          "key": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+        },
+        {
+          "targetIndex": 1,
+          "target": "角色1",
+          "kind": "costumes",
+          "index": 0,
+          "name": "造型1",
+          "sha256": "efdb9db805b7f7c52c35460c7ab9368317faeb221a6301a75c3ad94e2d32f640",
+          "key": "5de48e72637db4d7fc7f6bb526354114.svg"
+        },
+        {
+          "targetIndex": 1,
+          "target": "角色1",
+          "kind": "costumes",
+          "index": 1,
+          "name": "造型2",
+          "sha256": "f9620cc3fc524dd4abe631f36d4735fba057569a519cc300744f21016ef8442c",
+          "key": "48bbc82a10af3d0e0b7d5c677097df0e.svg"
+        },
+        {
+          "targetIndex": 1,
+          "target": "角色1",
+          "kind": "sounds",
+          "index": 0,
+          "name": "啁啾",
+          "sha256": "03ca0366cc93de09372d3f9accde285474debb719e3a69d169b3d3f655eac021",
+          "key": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+        }
+      ],
+      "blockRecord": {
+        "opcode": "activeBuzzer_init",
+        "next": null,
+        "parent": "/RE5F6+~b-wl5HYX@MLJ",
+        "inputs": {},
+        "fields": {
+          "PIN": [
+            "0",
+            null
+          ]
+        },
+        "shadow": false,
+        "topLevel": false
+      },
+      "cleanSnapshot": {
+        "title": "OpenBlock作品",
+        "dirty": false,
+        "running": false,
+        "documentId": 0,
+        "editVersion": 8
+      },
+      "reopen": {
+        "ifMatch": "\"1\"",
+        "etag": "\"1\"",
+        "freshContext": true,
+        "assets": 5,
+        "reexportRenamedKeys": [
+          {
+            "saved": "5de48e72637db4d7fc7f6bb526354114.svg",
+            "reexport": "d1161ccb17f66578dc919d4bdb67efac.svg"
+          },
+          {
+            "saved": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+            "reexport": "351fdca070b092d1ee1fdf79417b60af.svg"
+          }
+        ]
+      }
+    },
+    "dist": {
+      "generatedLines": [
+        "int activeBuzzerPin = 0;",
+        "  pinMode(activeBuzzerPin, OUTPUT);"
+      ],
+      "block": {
+        "id": "pUmyI-KKyHWjaDGk}Bmn",
+        "hatId": "r[=;{2%,)hTW9`CMiX1l"
+      },
+      "saved": {
+        "id": "c5922905-b9ff-4e98-b38c-ac5aaa56879a",
+        "name": "OpenBlock作品",
+        "revision": 1,
+        "format": "openblock",
+        "sizeBytes": 48471,
+        "createdAt": "2026-11-18T02:47:31.542Z",
+        "updatedAt": "2026-11-18T02:47:31.542Z"
+      },
+      "sha256": "243e87c071385ac459ef0a6f1edad780245512562378ccc4ee71f7f923609cdc",
+      "assets": [
+        {
+          "targetIndex": 0,
+          "target": "Stage",
+          "kind": "costumes",
+          "index": 0,
+          "name": "背景1",
+          "sha256": "c3b723d028900d9768878653c3a65c377871fe3ecfce5c7b66ef795505e85e1a",
+          "key": "cd21514d0531fdffb22204e0ec5ed84a.svg"
+        },
+        {
+          "targetIndex": 0,
+          "target": "Stage",
+          "kind": "sounds",
+          "index": 0,
+          "name": "啵",
+          "sha256": "fb8c18242813d8763cccf5f6077daf44b672d0088f5d3688cca29d621b4959cc",
+          "key": "83a9787d4cb6f3b7632b4ddfebf74367.wav"
+        },
+        {
+          "targetIndex": 1,
+          "target": "角色1",
+          "kind": "costumes",
+          "index": 0,
+          "name": "造型1",
+          "sha256": "efdb9db805b7f7c52c35460c7ab9368317faeb221a6301a75c3ad94e2d32f640",
+          "key": "5de48e72637db4d7fc7f6bb526354114.svg"
+        },
+        {
+          "targetIndex": 1,
+          "target": "角色1",
+          "kind": "costumes",
+          "index": 1,
+          "name": "造型2",
+          "sha256": "f9620cc3fc524dd4abe631f36d4735fba057569a519cc300744f21016ef8442c",
+          "key": "48bbc82a10af3d0e0b7d5c677097df0e.svg"
+        },
+        {
+          "targetIndex": 1,
+          "target": "角色1",
+          "kind": "sounds",
+          "index": 0,
+          "name": "啁啾",
+          "sha256": "03ca0366cc93de09372d3f9accde285474debb719e3a69d169b3d3f655eac021",
+          "key": "4e080acae1c3dc65eef30f07c2b0d4a5.wav"
+        }
+      ],
+      "blockRecord": {
+        "opcode": "activeBuzzer_init",
+        "next": null,
+        "parent": "r[=;{2%,)hTW9`CMiX1l",
+        "inputs": {},
+        "fields": {
+          "PIN": [
+            "0",
+            null
+          ]
+        },
+        "shadow": false,
+        "topLevel": false
+      },
+      "cleanSnapshot": {
+        "title": "OpenBlock作品",
+        "dirty": false,
+        "running": false,
+        "documentId": 0,
+        "editVersion": 8
+      },
+      "reopen": {
+        "ifMatch": "\"1\"",
+        "etag": "\"1\"",
+        "freshContext": true,
+        "assets": 5,
+        "reexportRenamedKeys": [
+          {
+            "saved": "5de48e72637db4d7fc7f6bb526354114.svg",
+            "reexport": "d1161ccb17f66578dc919d4bdb67efac.svg"
+          },
+          {
+            "saved": "48bbc82a10af3d0e0b7d5c677097df0e.svg",
+            "reexport": "351fdca070b092d1ee1fdf79417b60af.svg"
+          }
+        ]
+      }
+    }
+  },
+  "environment": {
+    "editor": "editor-CyzMayYi.js",
+    "editorSha": "6d327c831bd74e211dd8c04e27dafbf4ce20bfebbb61a1bc8e624796288db36c",
+    "devOrigin": "http://127.0.0.1:57541",
+    "distOrigin": "http://127.0.0.1:57542",
+    "apiOrigin": "http://127.0.0.1:57540",
+    "mime": {
+      "dev": "text/javascript",
+      "dist": "text/javascript"
+    },
+    "browser": "157.0.4341.60"
+  },
+  "cleanupErrors": []
+}

@@ -24,3 +24,5 @@ npm run dev
 接口以 [统一契约](../../docs/api-contract.md) 为准。首次保存 POST multipart `name` + `file`，可导入兼容 `.ob` 或 `.sb3`。归档以 ZIP 内容验证，保存时保留上传的所有字节。再次保存 PUT 原始归档，允许 `application/octet-stream` 或 `application/x.openblock.ob`。读取内容返回 `.ob` 下载；读取元数据后可把其 ETag 作为 `If-Match` 传给下载请求。保存、重命名和删除都必须带当前带引号的 ETag，例如 `If-Match: "1"`。
 
 每个项目在 `<PROJECT_DATA_DIR>/projects/<UUID>/` 下保存 `metadata.json` 和完整归档。归档通过校验后，先写新的文件，再原子替换元数据指针。每个项目的读写在同一把锁内执行，适用于一个 API 进程。`ProjectStore` 是未来替换本地存储的边界。
+
+积木工厂通过 `GET /api/v1/arduino/libraries/search?q=Servo` 查找 Arduino Library Manager 库。结果展示库名、作者、描述、可选版本及各版本支持的架构。服务缓存官方索引 30 分钟。私有模块版本保存颜色、积木配置，以及用户选定的库名和确切版本；已保存的模块可离线读取。

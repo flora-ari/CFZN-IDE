@@ -1,0 +1,35 @@
+{
+  "module": 6,
+  "baselineIncludingJSDoc": 1029,
+  "candidateIncludingJSDoc": 1025,
+  "removedNonExecutableJSDocLeaves": [
+    {
+      "kind": "Identifier",
+      "raw": "class",
+      "insideJSDoc": true,
+      "excerpt": " return self;\r\n}\r\nvar DisposableStore = /** @class */ (function () {\r\n    function DisposableSt"
+    },
+    {
+      "kind": "Identifier",
+      "raw": "class",
+      "insideJSDoc": true,
+      "excerpt": "osableStore;\r\n}());\r\n\r\nvar Disposable = /** @class */ (function () {\r\n    function Disposable()"
+    },
+    {
+      "kind": "Identifier",
+      "raw": "class",
+      "insideJSDoc": true,
+      "excerpt": "eaned up.\r\n */\r\nvar MutableDisposable = /** @class */ (function () {\r\n    function MutableDispo"
+    },
+    {
+      "kind": "Identifier",
+      "raw": "class",
+      "insideJSDoc": true,
+      "excerpt": "able;\r\n}());\r\n\r\nvar ImmortalReference = /** @class */ (function () {\r\n    function ImmortalRefe"
+    }
+  ],
+  "executableTokensBaseline": 1025,
+  "executableTokensCandidate": 1025,
+  "executableStreamsIdentical": true,
+  "interpretation": "JSDoc type names are parser comment subnodes, not JavaScript execution tokens; legal comments remain independently hashed"
+}

@@ -90,13 +90,19 @@ for (const surface of surfaces) {
     await open('模块扩展');
     await frame.evaluate(()=>testVm.runtime.emit('DEVICE_EXTENSION_ADDED',{defineMessages:B=>{window.testBlockly=B;return B;}}));
     const clean=await bridge('GET_STATE');
+    const showAllModules=frame.getByRole('checkbox',{name:'显示全部模块',exact:true});
+    await frame.locator('.cfzn-extension-empty').getByText(/请先选择主控板/).waitFor();
+    assert.equal(await frame.locator('[data-cfzn-library-card]').count(),0);
+    await showAllModules.check();
     assert.equal(await frame.locator('.cfzn-card-compatibility').filter({hasText:'未选择主控板'}).count(),6);
-    assert.equal(await frame.getByRole('checkbox',{name:'支持当前主控',exact:true}).isDisabled(),true);
     assert.deepEqual(await frame.getByRole('group',{name:'扩展类型'}).getByRole('button').allTextContents(),['全部','传感器','执行器','功能模块']);
     await frame.getByRole('button',{name:'传感器',exact:true}).click();assert.equal(await frame.locator('[data-cfzn-library-card]').count(),3);
     const search=frame.locator('input[class*="library_filter-input"]');await search.fill('红外');assert.equal(await frame.locator('[data-cfzn-library-card]').count(),1);
-    await frame.getByRole('button',{name:'执行器',exact:true}).click();await frame.locator('.cfzn-extension-empty').waitFor();assert.equal(await search.inputValue(),'红外');
-    await frame.getByRole('button',{name:'清除筛选',exact:true}).click();assert.equal(await frame.locator('[data-cfzn-library-card]').count(),6);assert.equal(await search.inputValue(),'');
+    await frame.getByRole('button',{name:'执行器',exact:true}).click();assert.equal(await search.inputValue(),'');
+    await search.fill('红外');await frame.locator('.cfzn-extension-empty').waitFor();
+    await frame.getByRole('button',{name:'清除筛选',exact:true}).click();assert.equal(await frame.locator('[data-cfzn-library-card]').count(),0);assert.equal(await search.inputValue(),'');
+    assert.equal(await showAllModules.isChecked(),false);
+    await showAllModules.check();
     assert.equal((await bridge('GET_STATE')).editVersion,clean.editVersion);
     await page.screenshot({path:resolve(output,surface+'-no-board.png')});checks.realTypesAndSearch=true;
     await open('主控扩展');const board=card('controller-firebeetleEsp32E');
@@ -150,7 +156,7 @@ for (const surface of surfaces) {
     for(const[ti,target]of project.targets.entries())for(const kind of ['costumes','sounds'])for(const[ai,asset]of target[kind].entries()){const fresh=next.targets[ti][kind][ai];assert.equal(sha(files[asset.md5ext]),sha(cleared[fresh.md5ext]));}
     const state=await bridge('GET_STATE');assert.equal(state.documentId,before.documentId);assert.equal(state.editVersion,before.editVersion+1);
     await writeFile(resolve(output,surface+'-cleared.ob'),new Uint8Array(after.bytes));await page.screenshot({path:resolve(output,surface+'-cleared.png')});checks.completeArchiveClear=true;
-    await open('模块扩展');await page.setViewportSize({width:390,height:900});await page.screenshot({path:resolve(output,surface+'-narrow.png')});
+    await open('模块扩展');await showAllModules.check();await page.setViewportSize({width:390,height:900});await page.screenshot({path:resolve(output,surface+'-narrow.png')});
     assert.deepEqual(errors,[]);results.push({surface,checks,errors,physicalSerial:false});await writeFile(resolve(output,surface+'-result.json'),JSON.stringify(results.at(-1),null,2));console.log(JSON.stringify(results.at(-1)));
   }catch(error){console.log('BODY',(await frame?.locator('body').innerText())?.slice(-3500));await page.screenshot({path:resolve(output,surface+'-failure.png')});throw error;}
   finally{await browser.close();await vite?.close();server.closeAllConnections();await new Promise(r=>server.close(r));}

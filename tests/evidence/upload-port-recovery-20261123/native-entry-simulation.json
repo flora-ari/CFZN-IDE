@@ -1,0 +1,148 @@
+{
+  "scope": "Node simulated render tree using production nativeHardware and HardwareController",
+  "cases": [
+    {
+      "name": "native upload preserves specific preflight failures and previous job error",
+      "detail": [
+        {
+          "label": "missing board",
+          "expected": "从主控扩展选择主控"
+        },
+        {
+          "label": "missing profile",
+          "expected": "选择当前主控的 Profile"
+        },
+        {
+          "label": "stale profile",
+          "expected": "Profile 已失效"
+        },
+        {
+          "label": "wrong-board profile",
+          "expected": "不属于当前主控"
+        },
+        {
+          "label": "missing port",
+          "expected": "明确选择本机烧录端口"
+        },
+        {
+          "label": "stale port",
+          "expected": "烧录端口已失效"
+        },
+        {
+          "label": "toolchain unavailable",
+          "expected": "尚未配置本机工具链.*No toolchain configured"
+        },
+        {
+          "label": "upload unavailable",
+          "expected": "上传工具不可用.*fixture uploader missing"
+        },
+        {
+          "label": "generation failure",
+          "expected": "GENERATION_FIXTURE_DETAIL"
+        },
+        {
+          "label": "mode guard",
+          "expected": "切换到上传模式"
+        },
+        {
+          "label": "mutation guard",
+          "expected": "MUTATION_FIXTURE_DETAIL"
+        },
+        {
+          "label": "busy guard",
+          "expected": "硬件作业仍在进行"
+        },
+        {
+          "label": "retained serial owner",
+          "expected": "串口仍被持有"
+        },
+        {
+          "label": "incompatible protocol",
+          "expected": "协议不兼容"
+        }
+      ]
+    },
+    {
+      "name": "progress buttons distinguish compile and upload availability, and render actual job failure",
+      "detail": [
+        {
+          "compile": false,
+          "upload": false,
+          "port": true,
+          "compileDisabled": true,
+          "uploadDisabled": true
+        },
+        {
+          "compile": false,
+          "upload": true,
+          "port": true,
+          "compileDisabled": true,
+          "uploadDisabled": true
+        },
+        {
+          "compile": true,
+          "upload": false,
+          "port": true,
+          "compileDisabled": false,
+          "uploadDisabled": true
+        },
+        {
+          "compile": true,
+          "upload": true,
+          "port": false,
+          "compileDisabled": false,
+          "uploadDisabled": true
+        },
+        {
+          "compile": true,
+          "upload": true,
+          "port": true,
+          "compileDisabled": false,
+          "uploadDisabled": false
+        }
+      ]
+    },
+    {
+      "name": "retry refreshes both GET endpoints and preserves choice, job and logs while showing current readiness",
+      "detail": {
+        "methods": [
+          {
+            "path": "/api/v1/hardware/capabilities",
+            "method": "GET"
+          },
+          {
+            "path": "/api/v1/hardware/ports",
+            "method": "GET"
+          },
+          {
+            "path": "/api/v1/hardware/capabilities",
+            "method": "GET"
+          },
+          {
+            "path": "/api/v1/hardware/ports",
+            "method": "GET"
+          }
+        ],
+        "profile": "firebeetle-esp32e-4mb",
+        "port": "COM-ISOLATED",
+        "noSerialOwner": true
+      }
+    },
+    {
+      "name": "native missing-port attempt recovers through the rendered selector and starts only on explicit retry",
+      "detail": {
+        "posts": [
+          {
+            "path": "/api/v1/hardware/builds",
+            "method": "POST"
+          },
+          {
+            "path": "/api/v1/hardware/uploads",
+            "method": "POST"
+          }
+        ],
+        "state": "succeeded"
+      }
+    }
+  ]
+}

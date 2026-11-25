@@ -1,0 +1,66 @@
+{
+  "observedAt": "2026-11-24T01:38:19.350Z",
+  "url": "http://127.0.0.1:5173/",
+  "jobId": "22209a49-a51f-4afe-9257-0b3056ea0702",
+  "scope": "Actual production page submitted generated empty sketch to real ESP32 compiler; upload was not invoked",
+  "firmwareFlashed": false,
+  "buttons": [
+    {
+      "bottom": 128.60000228881836,
+      "disabled": false,
+      "text": "重新检测"
+    },
+    {
+      "bottom": 279.0000114440918,
+      "disabled": false,
+      "text": "刷新烧录端口"
+    },
+    {
+      "bottom": 688.0000267028809,
+      "disabled": false,
+      "text": "编译检查"
+    },
+    {
+      "bottom": 688.0000267028809,
+      "disabled": false,
+      "text": "编译并上传"
+    },
+    {
+      "bottom": 688.0000267028809,
+      "disabled": true,
+      "text": "取消作业"
+    },
+    {
+      "bottom": 688.0000267028809,
+      "disabled": false,
+      "text": "关闭"
+    }
+  ],
+  "dialog": {
+    "bottom": 704,
+    "right": 970,
+    "x": 310,
+    "y": 16
+  },
+  "selections": [
+    {
+      "selected": "ESP32 · 4 MB DIO · esp32",
+      "value": "esp32-4mb-dio"
+    },
+    {
+      "selected": "Silicon Labs CP210x USB to UART Bridge (COM3)",
+      "value": "COM3"
+    }
+  ],
+  "status": [
+    "本机编译服务：在线",
+    "终端：未连接 · 编译上传：已就绪",
+    "编译：可用 · 上传：可用",
+    "编译：succeeded",
+    "当前配置已就绪，点击“编译并上传”。"
+  ],
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}

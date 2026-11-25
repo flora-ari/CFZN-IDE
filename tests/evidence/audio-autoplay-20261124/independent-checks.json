@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-24",
+  "candidatePath": "apps/web/dist/openblock-vendor/openblock-gui.js",
+  "evidence": "actual webpack dependency with simulated trusted events, activation and AudioContext; not real browser autoplay",
+  "cases": [
+    {
+      "name": "actual original dependency resumes 121 times across registration and 120 animation frames",
+      "passed": true,
+      "detail": {
+        "frames": 120,
+        "resumeCalls": 121,
+        "pendingFrames": 1,
+        "originalModuleSHA256": "69a9c3f526988f3988faea665710bb2db666bc361a5c87f18c2f573a5625c94c"
+      }
+    },
+    {
+      "name": "corrected dependency performs no resume, animation request or timer before real user activation",
+      "passed": true,
+      "detail": {
+        "frames": 120,
+        "resumeCalls": 0,
+        "frameRequests": 0,
+        "timers": 0,
+        "syntheticAndInactiveEventsRejected": true
+      }
+    },
+    {
+      "name": "a genuine activated gesture resumes synchronously and running resolves the Promise and optional callback once",
+      "passed": true,
+      "detail": {
+        "synchronousResumeCalls": 1,
+        "promiseCompletions": 1,
+        "callbacks": 1,
+        "gestureListenersAfterRunning": 0
+      }
+    },
+    {
+      "name": "same-context registrations share in-flight recovery while retaining each registration completion",
+      "passed": true,
+      "detail": {
+        "registrations": 2,
+        "inFlightResumeCalls": 1,
+        "completions": 2
+      }
+    },
+    {
+      "name": "resume rejection is handled without background retry and a later real gesture can succeed",
+      "passed": true,
+      "detail": {
+        "deniedAttempts": 1,
+        "backgroundRetries": 0,
+        "newGestureAttemptSucceeded": true,
+        "callbacks": 1
+      }
+    },
+    {
+      "name": "running and closed contexts do not resume and closed pending recovery releases listeners",
+      "passed": true,
+      "detail": {
+        "alreadyRunningCallback": 1,
+        "closedResumeCalls": 0,
+        "listenersAfterClose": 0
+      }
+    },
+    {
+      "name": "independent contexts complete separately and unloading prevents later recovery",
+      "passed": true,
+      "detail": {
+        "contextACompleted": 1,
+        "contextBCompleted": 0,
+        "contextBResumesAfterUnload": 0,
+        "listenersAfterUnload": 0
+      }
+    },
+    {
+      "name": "original element forms retain Promise and callback behavior for arrays, NodeList, selector and jQuery-like input",
+      "passed": true,
+      "detail": {
+        "interfaceForms": [
+          "default",
+          "element",
+          "array",
+          "NodeList",
+          "selector",
+          "jquery"
+        ]
+      }
+    },
+    {
+      "name": "source preparation and production retain protected modules, original licenses and user PNG",
+      "passed": true,
+      "detail": {
+        "dependencyModule": 520,
+        "productionGuiSHA256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2",
+        "vmModules": 178,
+        "blocklyModules": 15,
+        "licensesIdentical": true,
+        "originalHeaderPNG": true,
+        "faviconSHA256": "c4375f067f4da96b6fb4b14a6c4ede4df0bb7a440f840e35c9a33680557292cb",
+        "faviconOriginalBytes": 1657390,
+        "faviconDocuments": [
+          "index.html",
+          "openblock.html"
+        ]
+      }
+    }
+  ]
+}

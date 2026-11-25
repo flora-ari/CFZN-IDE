@@ -1,0 +1,15 @@
+{
+  "observedAt": "2026-11-23T17:29:48.4596271+08:00",
+  "localServicePort": 3002,
+  "driverStatus": "OK",
+  "driverErrorCode": 0,
+  "items": [
+    {
+      "portId": "COM3",
+      "displayName": "Silicon Labs CP210x USB to UART Bridge (COM3)",
+      "usbVendorId": "10C4",
+      "usbProductId": "EA60"
+    }
+  ],
+  "priorPanelSource": "Browser-authorized ports only; OS list separate for upload"
+}

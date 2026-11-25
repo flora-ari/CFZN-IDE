@@ -1,0 +1,12 @@
+✔ AST table slots keep repeated nested Webpack IDs scoped and preserve omitted slots (26.4712ms)
+✔ whitespace compaction preserves factory/inner names, parameter binding, directives, eval and legal text (13.3962ms)
+✔ original token printing preserves ASI, regex/template literals and duplicate inner names without folding (36.1248ms)
+✔ home preload and editor classic script share the exact hash URL and preserve dependency order (1.2386ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 700.3227

@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-24",
+  "sourceReview": {
+    "panelAndSourcesFixedLocal": true,
+    "refreshAndNativeDiscoverLocal": true,
+    "removedBrowserSwitchAndAuthorizationBlock": true,
+    "inactiveBrowserCandidatesFiltered": true,
+    "legacyActiveRowReleaseOnlyInView": true,
+    "internalCompatibilityMethodsRetained": true,
+    "browserGeometryVerified": false
+  },
+  "assets": {
+    "editor": "editor-sqHyfw8P.js",
+    "editorSHA256": "71d786a1c5d9ed83bc5e7887b8b135b016bcdaf771a0b806b8d9072137065f71",
+    "css": "editor-A53goq4q.css",
+    "cssSHA256": "d04aa6eda109f15eb038ebb70d21c456dcd4703b0c5bc218026f066b01d6b8dd",
+    "guiSHA256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+    "vmModules": 178,
+    "blocklyModules": 15,
+    "licenses": [
+      {
+        "name": "LICENSE",
+        "sha256": "9e3d6d9f930561c9085c05d18ef3acd27b706359ba7098e799c73381affb1d4f"
+      },
+      {
+        "name": "LICENSE.MIT",
+        "sha256": "4d7f8fd635fa6e9b318ca895132274d2acf1ef1e7d689f9e7bc96ed53d6de862"
+      },
+      {
+        "name": "TRADEMARK",
+        "sha256": "0788d533ce4a6dd95020cc3a2ebf154e23523a37b746cb7c02ad32eaa9be70f4"
+      }
+    ],
+    "pngs": [
+      {
+        "path": "apps/web/public/branding/ccraft-logo.png",
+        "sha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2"
+      },
+      {
+        "path": "apps/web/dist/branding/ccraft-logo.png",
+        "sha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-24",
+  "environment": "Node with strip-types; real frontend objects and fake SerialLike permission objects",
+  "browserGeometry": "not exercised",
+  "cases": [
+    {
+      "name": "mount, reopen, refresh and native discovery enumerate browser objects without HTTP, permission or open",
+      "passed": true,
+      "detail": {
+        "browserScans": 4,
+        "localHTTP": 0,
+        "permissionPrompts": 0,
+        "existingPortDirectOpens": 1,
+        "baud": 57600
+      }
+    },
+    {
+      "name": "actual new-device button requests permission synchronously, suppresses repeats and connects once with row settings",
+      "passed": true,
+      "detail": {
+        "syncClick": true,
+        "repeatedClickPrompts": 1,
+        "newPortOpens": 1,
+        "newPortBaud": 115200,
+        "knownPortBaud": 38400,
+        "sameTargetNoReopen": true
+      }
+    },
+    {
+      "name": "cancel and denied selections preserve the old stream and independent drafts with no automatic retry",
+      "passed": true,
+      "detail": {
+        "cancelledAndDenied": true,
+        "permissionCalls": 2,
+        "oldCloses": 0,
+        "oldBaud": 19200,
+        "otherDraft": 57600
+      }
+    },
+    {
+      "name": "guards are rechecked after permission selection and unknown ownership or failed close blocks a new chooser",
+      "passed": true,
+      "detail": {
+        "lateGuards": [
+          "busy",
+          "protocol",
+          "mutation"
+        ],
+        "targetOpens": 0,
+        "newPromptsWhileHeld": 0,
+        "retryCloseReleased": true
+      }
+    },
+    {
+      "name": "source cache, active opposite-source objects and manual source choice survive refresh and view recreation",
+      "passed": true,
+      "detail": {
+        "localCachePreserved": true,
+        "localActiveVisibleInBrowser": true,
+        "browserRefreshLocalHTTP": 0,
+        "manualSourceSurvivesMount": true,
+        "bothRatesPreserved": [
+          9600,
+          57600
+        ]
+      }
+    },
+    {
+      "name": "stale browser enumeration cannot remove newly selected object and unsupported browser defaults to local",
+      "passed": true,
+      "detail": {
+        "staleScanPreservesSelection": true,
+        "unsupportedDefault": "local",
+        "unsupportedPrompts": 0
+      }
+    },
+    {
+      "name": "five columns retain only rightmost row actions; browser view hides inactive local errors and separate authorization button",
+      "passed": true,
+      "detail": {
+        "columns": 5,
+        "rowActionColumn": 5,
+        "independentAuthorizationButton": false,
+        "browserErrorVisible": true,
+        "inactiveLocalErrorHidden": true,
+        "evidenceType": "React element structure, no actual browser layout"
+      }
+    },
+    {
+      "name": "final entry and protected GUI, VM, Blockly, licenses and user PNG remain byte-identical",
+      "passed": true,
+      "detail": {
+        "editor": "editor-DKjvixSe.js",
+        "css": "editor-D-1o8Rs6.css",
+        "editorSHA256": "b72da8e1eca5c2728525f63422ab8f60b20a0edef004564c4ad054bc45925e78",
+        "guiSHA256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+        "vmModules": 178,
+        "blocklyModules": 15,
+        "licenses": 3,
+        "pngSHA256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2"
+      }
+    }
+  ]
+}

@@ -44,11 +44,18 @@ export function capabilitiesFromInfo(categories: any[], type: string, id: string
 }
 
 export function assertControllerCompatible(targets: any[], sourceType: string | null, targetType: string | null,
-  target: DeviceCapabilities, targetName: string) {
+  target: DeviceCapabilities, targetName: string, customPins?: ReadonlyMap<string, ReadonlyMap<string, string>>) {
   for (const sprite of targets) {
     for (const block of Object.values(sprite.blocks?._blocks ?? {}) as any[]) {
       const deviceBlock = sourceType && block.opcode.startsWith(`${sourceType}_`);
       const moduleMenu = modulePinOpcodes[block.opcode];
+      for (const [field, menu] of customPins?.get(block.opcode) ?? []) {
+        const value = block.fields?.[field]?.value;
+        const choices = target.get(menu)?.fields.get('PIN');
+        if (!choices?.length || (value !== undefined && !choices.includes(String(value)))) {
+          throw new Error('无法切换到 ' + targetName + '：自定义积木 ' + block.opcode + ' 的引脚 ' + String(value ?? field) + ' 不受支持。');
+        }
+      }
       if (block.opcode === 'event_whenarduinobegin' && targetType !== 'arduino') {
         throw new Error(`无法切换到 ${targetName}：现有积木 event_whenarduinobegin 不受目标主控支持。原项目保持不变。`);
       }

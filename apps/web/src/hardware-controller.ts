@@ -1,9 +1,33 @@
 import { HardwareSession, describeError } from './hardware-session.ts';
 import type { SerialSettings } from './hardware-session.ts';
-import type { DeviceId, HardwareCapabilities, HardwareJob, HardwareLog, HardwarePort, HardwareSnapshot, LocalServiceState } from './hardware-types.ts';
+import type { DeviceId, HardwareCapabilities, HardwareJob, HardwareLog, HardwarePort, HardwareProfile, HardwareSnapshot, LocalServiceState } from './hardware-types.ts';
+import type { ArduinoLibraryReference } from './extensions/custom-module-definition';
+import type { LinkGuard } from './ccraft-link.ts';
 
-export interface HardwareSource { deviceId: string | null; code: string; documentId: number; editVersion: number; moduleIds: string[]; realtime: boolean; programming?: boolean; generationError?: string }
+export interface HardwareSource {
+  deviceId: string | null; code: string; documentId: number; editVersion: number;
+  moduleIds: string[]; libraries?: ArduinoLibraryReference[];
+  realtime: boolean; programming?: boolean; generationError?: string;
+}
 const terminal = (job: HardwareJob) => ['succeeded', 'failed', 'cancelled'].includes(job.state);
+
+export function profileUnavailableReason(profile: HardwareProfile, upload: boolean) {
+  if (profile.compileAvailable && (!upload || profile.uploadAvailable)) return '';
+  const message = profile.reason === 'No toolchain configured for this profile.'
+    ? '当前主控尚未配置本机工具链，请完成执行器配置后重新检测。'
+    : !profile.compileAvailable ? '当前主控的本机编译工具链不可用。' : '当前主控的本机上传工具不可用。';
+  return profile.reason ? message + ' ' + profile.reason : message;
+}
+export function localServiceUnavailableReason(service: LocalServiceState) {
+  const reason = {
+    unknown: '尚未检测本机编译服务，请点击“检测本机服务”。',
+    checking: '正在检测本机编译服务，请稍候。',
+    offline: '无法访问本机编译服务，请启动或恢复服务后重新检测。',
+    incompatible: '本机编译服务协议不兼容，请检查服务地址或更新服务后重新检测。',
+    online: '',
+  }[service.status];
+  return reason && (service.status === 'offline' || service.status === 'incompatible') ? `${reason} 诊断：${service.message}` : reason;
+}
 
 export class HardwareController {
   profiles: HardwareCapabilities['profiles'] = [];
@@ -22,6 +46,7 @@ export class HardwareController {
   private cursor = 0;
   private pendingSubmission: 'build' | 'upload' | null = null;
   private mutationGuard: () => string = () => '';
+  private link?: LinkGuard;
   private localService: LocalServiceState;
   private portError = '';
   private serviceGeneration = 0;
@@ -40,6 +65,7 @@ export class HardwareController {
     pause: () => Promise<void> = () => new Promise(resolve => setTimeout(resolve, 500))) {
     this.session = session; this.source = source; this.base = base; this.stopHardware = stopHardware; this.request = request.bind(globalThis); this.pause = pause;
     this.localService = { status: 'unknown', baseUrl: base, message: '尚未检查本机编译服务。' };
+    session.setWriteGuard(() => this.busy ? '硬件作业仍在进行，请等待完成后发送。' : this.linkDisabledReason);
     session.subscribe(() => this.publish());
   }
   subscribe(fn: () => void) { this.listeners.add(fn); return () => { this.listeners.delete(fn); }; }
@@ -59,16 +85,21 @@ export class HardwareController {
   changed() {
     const id = this.source().deviceId;
     if (id === this.knownDevice) return;
-    this.knownDevice = id; this.profileId = this.profiles.find(p => p.deviceId === id)?.id ?? '';
+    this.knownDevice = id;
+    if (!this.busy) this.profileId = this.profiles.find(p => p.deviceId === id)?.id ?? '';
     this.publish();
   }
   setMutationGuard(guard: () => string) { this.mutationGuard = guard; }
+  setLinkGuard(link: LinkGuard) { this.link = link; link.subscribe(this.publish); }
+  async ensureLinkReady() { await this.link?.ensureReady(); }
+  get linkDisabledReason() { return this.link?.reason ?? ''; }
   get protocolRequested() { const source = this.source(); return source.deviceId === 'arduinoUno' && !!source.programming; }
   get serialDisabledReason() {
     return this.busy ? '硬件作业仍在进行，请等待完成或取消并等待工具退出。' : this.session.operation ? '请先完成当前串口操作。' : this.mutationGuard();
   }
   assertIdle() { const reason = this.serialDisabledReason; if (reason) throw new Error(reason); }
   async applySerialSettings(input: SerialSettings, origin: 'user' | 'native' = 'user') {
+    if (this.link) await this.ensureLinkReady();
     this.assertIdle();
     if (origin === 'user' && this.source().realtime) throw new Error('实时硬件协议占用串口，请先结束协议连接。');
     await this.session.applySerialSettings(input); return this.snapshot();
@@ -114,6 +145,7 @@ export class HardwareController {
     } finally { clearTimeout(timer); signal.removeEventListener('abort', onAbort); }
   }
   async checkLocalService(): Promise<void> {
+    if (this.link) { try { await this.ensureLinkReady(); } catch { return; } }
     const generation = ++this.serviceGeneration;
     this.serviceCheck?.abort();
     const check = this.serviceCheck = new AbortController();
@@ -123,8 +155,9 @@ export class HardwareController {
       const capability = capabilities(await this.diagnosticJson('/capabilities', check));
       if (generation !== this.serviceGeneration) return;
       this.profiles = capability.profiles;
-      // Initial default only; checking never replaces an explicit profile or OS port choice.
-      if (!this.profileId) this.profileId = this.profiles.find(p => p.deviceId === this.source().deviceId)?.id ?? '';
+      // Repair a missing/stale choice for the current board without changing an active job's captured configuration.
+      const deviceId = this.source().deviceId;
+      if (!this.busy && !this.profiles.some(p => p.id === this.profileId && p.deviceId === deviceId)) this.profileId = this.profiles.find(p => p.deviceId === deviceId)?.id ?? '';
       this.localService = { status: 'online', baseUrl: this.base, message: '本机编译服务在线。' };
     } catch (e) {
       if (generation !== this.serviceGeneration) return;
@@ -135,6 +168,7 @@ export class HardwareController {
     if (generation === this.serviceGeneration) { this.serviceCheck = undefined; this.publish(); }
   }
   async refreshUploadPorts(): Promise<void> {
+    if (this.link) { try { await this.ensureLinkReady(); } catch { return; } }
     const generation = ++this.portGeneration;
     this.portCheck?.abort();
     const check = this.portCheck = new AbortController();
@@ -157,20 +191,41 @@ export class HardwareController {
     if (portId && !this.ports.some(p => p.portId === portId)) throw new Error('所选 OS 端口已消失，请刷新后重新选择。');
     this.profileId = profileId; this.portId = portId; this.publish();
   }
-  start(upload: boolean, capturedCode?: string) {
+  startDisabledReason(upload: boolean) {
+    try { this.validateStart(upload); return ''; }
+    catch (e) { return describeError(e); }
+  }
+  private validateStart(upload: boolean, capturedCode?: string) {
     this.assertIdle();
+    if (this.linkDisabledReason) throw new Error(this.linkDisabledReason);
     if (this.session.portId && this.session.status !== 'open') throw new Error('当前串口仍被持有，请先重试断开。');
     if (['requesting', 'opening', 'closing'].includes(this.session.status)) throw new Error('请先完成当前串口操作。');
     const source = this.source();
-    if (capturedCode !== undefined && capturedCode !== source.code) throw new Error('上传捕获的代码已变化，请重新使用当前代码编辑器内容。');
     if (source.programming || source.realtime) throw new Error('请先切换到上传模式。');
-    if (source.generationError) throw new Error(source.generationError);
-    if (this.localService.status === 'incompatible') throw new Error('本机硬件服务协议不兼容，请检查服务地址并重试本机服务检查。');
+    const serviceReason = localServiceUnavailableReason(this.localService);
+    if (serviceReason) throw new Error(serviceReason);
+    if (!source.deviceId) throw new Error('请先从主控扩展选择主控。');
+    if (!this.profiles.some(p => p.deviceId === source.deviceId)) throw new Error('本机服务没有当前主控的 Profile，请检查本机服务配置后重新检测。');
+    if (!this.profileId) throw new Error('请先选择当前主控的 Profile。');
     const profile = this.profiles.find(p => p.id === this.profileId && p.deviceId === source.deviceId);
-    if (!profile?.compileAvailable || (upload && !profile.uploadAvailable)) throw new Error(profile?.reason || '当前主控的本机工具链不可用，请刷新硬件能力。');
+    if (!profile) throw new Error('所选主控 Profile 已失效或不属于当前主控，请重新检测并选择。');
+    const unavailable = profileUnavailableReason(profile, upload);
+    if (unavailable) throw new Error(unavailable);
+    if (capturedCode !== undefined && capturedCode !== source.code) throw new Error('上传捕获的代码已变化，请重新使用当前代码编辑器内容。');
+    if (source.generationError) throw new Error(source.generationError);
     if (!source.code.trim()) throw new Error('当前代码为空。');
     if (new TextEncoder().encode(source.code).length > 1024 * 1024) throw new Error('当前源码超过 1 MiB。');
-    if (upload && !this.ports.some(p => p.portId === this.portId)) throw new Error('请先明确选择本机烧录端口。');
+    if (upload && this.portError) throw new Error(`${this.portError}。请刷新烧录端口后重试。`);
+    if (upload && !this.portId) throw new Error('请先明确选择本机烧录端口。');
+    if (upload && !this.ports.some(p => p.portId === this.portId)) throw new Error('所选本机烧录端口已失效，请刷新后重新选择。');
+    return { source, profile };
+  }
+  start(upload: boolean, capturedCode?: string) {
+    if (this.link) return this.ensureLinkReady().then(() => this.beginStart(upload, capturedCode));
+    return this.beginStart(upload, capturedCode);
+  }
+  private beginStart(upload: boolean, capturedCode?: string) {
+    const { source, profile } = this.validateStart(upload, capturedCode);
     this.busy = true; this.cancelled = false; this.use = 'build'; this.job = null; this.logs = [];
     this.error = ''; this.restoreError = ''; this.publish();
     void this.run(source, profile.id, upload, this.portId);
@@ -213,10 +268,15 @@ export class HardwareController {
     let uncertain = false;
     try {
       this.log('编译当前代码编辑器内容。\n');
-      const build = await this.poll(await this.submit('/builds', { deviceId: source.deviceId as DeviceId, profileId, code: source.code, moduleIds: source.moduleIds }, 'build'));
+      const build = await this.poll(await this.submit('/builds', {
+        deviceId: source.deviceId as DeviceId, profileId, code: source.code, moduleIds: source.moduleIds,
+        ...(source.libraries?.length ? { libraries: source.libraries } : {}),
+      }, 'build'));
       if (build.state !== 'succeeded' || this.cancelled || !upload) return;
       const now = this.source();
-      if (now.deviceId !== source.deviceId || now.code !== source.code || now.documentId !== source.documentId || now.editVersion !== source.editVersion || this.profileId !== profileId) {
+      if (now.deviceId !== source.deviceId || now.code !== source.code || now.documentId !== source.documentId ||
+        now.editVersion !== source.editVersion || this.profileId !== profileId ||
+        JSON.stringify(now.libraries ?? []) !== JSON.stringify(source.libraries ?? [])) {
         throw new Error('构建期间项目、主控或代码已变化，请重新上传当前代码。');
       }
       const portGeneration = ++this.portGeneration;
@@ -225,7 +285,7 @@ export class HardwareController {
       if (portGeneration === this.portGeneration) { this.ports = available; this.portError = ''; }
       if (!available.some(p => p.portId === portId)) { this.portId = ''; throw new Error('所选烧录端口已消失，请刷新后重新选择。'); }
       if (this.cancelled) return;
-      this.use = 'releasing'; this.log('释放浏览器串口，等待读写结束。\n');
+      this.use = 'releasing'; this.log('释放当前串口，等待读写结束。\n');
       restoreId = this.session.status === 'open' ? this.session.portId : null;
       this.stopHardware(); await this.session.close();
       if (this.cancelled) return;

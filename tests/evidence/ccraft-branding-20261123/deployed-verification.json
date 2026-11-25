@@ -1,0 +1,114 @@
+{
+  "release": "20261123T083322Z-cfe8ac8d",
+  "verifiedAt": "2026-11-23T08:40:52.080Z",
+  "origin": "https://ide.xiaodaiyang.top",
+  "apiHealth": {
+    "statusCode": 200,
+    "status": "ok"
+  },
+  "artifacts": [
+    {
+      "pathname": "/",
+      "status": 200,
+      "sizeBytes": 563,
+      "sha256": "22172656aff07773974ae5f91bc829d0d44467b16b6369b5f41c32353b2819d7",
+      "byteIdentical": true,
+      "contentType": "text/html",
+      "cacheControl": "no-cache"
+    },
+    {
+      "pathname": "/openblock.html",
+      "status": 200,
+      "sizeBytes": 1292,
+      "sha256": "c495ab218285f6eea3d6d74bb50a5f35ef7c0147325db9837b0371ad6ae54211",
+      "byteIdentical": true,
+      "contentType": "text/html",
+      "cacheControl": "no-cache"
+    },
+    {
+      "pathname": "/branding/ccraft-icon.svg",
+      "status": 200,
+      "sizeBytes": 442,
+      "sha256": "b203242130798df7f9d19f4871ba2bcb4897a9f492b608e02bd1540c1d64caf0",
+      "byteIdentical": true,
+      "contentType": "image/svg+xml",
+      "cacheControl": "no-cache"
+    },
+    {
+      "pathname": "/assets/app-nn_yBamJ.js",
+      "status": 200,
+      "sizeBytes": 204831,
+      "sha256": "443bd939bf687c3cd5dda2c2b2eea2c782073f63ea16debec14d3baef28edab0",
+      "byteIdentical": true,
+      "contentType": "application/javascript",
+      "cacheControl": "max-age=31536000"
+    },
+    {
+      "pathname": "/assets/save-shortcut-C_DI86IG.js",
+      "status": 200,
+      "sizeBytes": 4269,
+      "sha256": "3bad633f2db02f5efd6002c2106d4ff43e6b6821cd6fc897d354b055016775cc",
+      "byteIdentical": true,
+      "contentType": "application/javascript",
+      "cacheControl": "max-age=31536000"
+    },
+    {
+      "pathname": "/assets/app-kk7fVTCm.css",
+      "status": 200,
+      "sizeBytes": 3446,
+      "sha256": "a0a8e427be737d833cc27038bdbbe1eca9cf1fef326dec0c0043e72ee7e82b07",
+      "byteIdentical": true,
+      "contentType": "text/css",
+      "cacheControl": "max-age=31536000"
+    },
+    {
+      "pathname": "/assets/editor-DZdxa2LI.js",
+      "status": 200,
+      "sizeBytes": 182461,
+      "sha256": "8784e3d8b6bed9bf6b77a42d67aa4a360c4ef3bd65da715d5bc8ffb6f41415fd",
+      "byteIdentical": true,
+      "contentType": "application/javascript",
+      "cacheControl": "max-age=31536000"
+    },
+    {
+      "pathname": "/assets/editor-DRDKyc1b.css",
+      "status": 200,
+      "sizeBytes": 35674,
+      "sha256": "85cd269f6080030eb003bdf616e7d8b960dd7029f369766abe9e73ae5fda09ad",
+      "byteIdentical": true,
+      "contentType": "text/css",
+      "cacheControl": "max-age=31536000"
+    },
+    {
+      "pathname": "/branding/ccraft-logo.png",
+      "status": 200,
+      "sizeBytes": 495240,
+      "sha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2",
+      "byteIdentical": true,
+      "contentType": "image/png",
+      "cacheControl": "no-cache"
+    },
+    {
+      "pathname": "/openblock-vendor/openblock-gui.js",
+      "status": 200,
+      "sizeBytes": 22663813,
+      "sha256": "779645f288c17a3ffc4c181908a681d203e410387026ccbf202dc571a6ea359d",
+      "byteIdentical": true,
+      "contentType": "application/javascript",
+      "cacheControl": "no-cache",
+      "method": "Complete HTTPS download with PowerShell Invoke-WebRequest"
+    }
+  ],
+  "failures": [],
+  "allPassed": true,
+  "transportNotes": [
+    "Initial concurrent requests failed transiently; retry verified nine files. The 22.7 MB GUI exceeded the first 45 second download limit; a complete HTTPS download with a longer timeout passed byte comparison."
+  ],
+  "server": {
+    "currentRelease": "20261123T083322Z-cfe8ac8d",
+    "serviceStatus": "active",
+    "guiSha256": "779645f288c17a3ffc4c181908a681d203e410387026ccbf202dc571a6ea359d",
+    "logoSha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2",
+    "verifiedBy": "Read-only SSH readlink, sha256sum and systemctl is-active"
+  }
+}

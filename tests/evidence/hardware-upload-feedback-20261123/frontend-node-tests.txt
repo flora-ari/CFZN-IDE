@@ -1,0 +1,49 @@
+✔ shared session orders writes, distributes the same RX, and retains ownership after failed close (23.4023ms)
+✔ cancelled chooser is a disconnected terminal state (0.8892ms)
+✔ RPC id zero replies, discoveries and shared raw byte IO do not require Link (26.5828ms)
+✔ upload uses current code, explicit OS selection, successful release and safe terminal restore (70.6249ms)
+✔ release failure prevents upload; source changes prevent stale artifact upload (8.3741ms)
+✔ restore error is separate from upload success and cancellation stays busy until tool exits (17.9887ms)
+✔ upload preflight reports missing or stale selections and preserves generation and busy failures (2.0631ms)
+✔ a selected profile and OS port retain their identity while unavailable tooling is diagnosed and then recovers (7.6102ms)
+✔ local service starts unknown, publishes checking, and only performs a bounded GET against its configured address (51.9766ms)
+✔ missing compiler/core remains online and capabilities checks preserve explicit profile and OS port selections (12.8657ms)
+✔ the service retry action refreshes capabilities and OS ports without clearing job or serial diagnostics (14.4889ms)
+✔ confirmed incompatible service cannot submit new jobs using previously cached profiles (4.2936ms)
+✔ network and HTTP capability failures are offline while existing job and serial diagnostics are preserved (1.8058ms)
+▶ reachable incompatible protocols and malformed consumed fields are incompatible rather than offline
+  ✔ protocol (1.7783ms)
+  ✔ host (1.0603ms)
+  ✔ profiles (1.4441ms)
+  ✔ boolean (0.7461ms)
+  ✔ reason (1.1084ms)
+  ✔ profile identity (1.0424ms)
+  ✔ fqbn (0.7176ms)
+  ✔ duplicate profile IDs (0.4851ms)
+  ✔ toolchain (0.4124ms)
+✔ reachable incompatible protocols and malformed consumed fields are incompatible rather than offline (15.6023ms)
+✔ OS port enumeration failures only update portError and retain browser serial and explicit choices (2.2262ms)
+▶ malformed OS port responses retain the prior list and stay separate from service compatibility
+  ✔ null (0.9762ms)
+  ✔ {"items":{}} (0.7496ms)
+  ✔ {"items":[null]} (0.5693ms)
+  ✔ {"items":[{"portId":"x","displayName":3}]} (0.6133ms)
+  ✔ {"items":[{"portId":"x","displayName":"x","usbVendorId":1}]} (0.5391ms)
+  ✔ {"items":[{"portId":"COM-MOCK","displayName":"Mock OS serial"},{"portId":"COM-MOCK","displayName":"Mock OS serial"}]} (1.0436ms)
+✔ malformed OS port responses retain the prior list and stay separate from service compatibility (5.7104ms)
+✔ a later capability check supersedes both late successes and late errors without overwriting its result (1.9933ms)
+✔ a check superseded synchronously by a subscriber also terminates without starting its stale transport (0.9195ms)
+✔ a later port refresh supersedes late lists and late errors while keeping explicit selection (1.2215ms)
+✔ capability checks time out after eight seconds even when transport ignores abort, and late success cannot restore online (2.6527ms)
+✔ port response-body reads are bounded too and do not change an online capability service (2.391ms)
+✔ malformed upload preflight port lists are rejected before release and never replace the last valid list (25.1386ms)
+✔ upload preflight and manual refresh share response generations while upload validates its own fresh result (4.5843ms)
+✔ health checks do not release an active job or browser port when status polling and cancellation are interrupted (5.5497ms)
+ℹ tests 39
+ℹ suites 0
+ℹ pass 39
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 463.2398

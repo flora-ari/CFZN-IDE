@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-11-24T01:28:00.530Z",
+  "origin": "https://ide.xiaodaiyang.top",
+  "localService": "http://127.0.0.1:3002/api/v1/hardware",
+  "profile": {
+    "id": "esp32-4mb-dio",
+    "deviceId": "arduinoEsp32",
+    "label": "ESP32 · 4 MB DIO",
+    "chip": "esp32",
+    "fqbn": "esp32:esp32:esp32:FlashMode=dio,FlashFreq=40,FlashSize=4M,PartitionScheme=default,UploadSpeed=115200",
+    "compileAvailable": true,
+    "uploadAvailable": true,
+    "realtimeAvailable": false
+  },
+  "portIds": [
+    "COM3"
+  ],
+  "allowedOrigin": true,
+  "preflightStatus": 204,
+  "privateNetworkHeader": "true",
+  "codeScope": "Representative Serial.begin(9600)/Hello OpenBlock loop from the supplied screenshot; no GPIO changes",
+  "job": {
+    "id": "1d4b9ae7-5a92-457e-a5e4-39317d8c8a63",
+    "kind": "build",
+    "state": "succeeded",
+    "stage": "complete",
+    "deviceId": "arduinoEsp32",
+    "profileId": "esp32-4mb-dio",
+    "sourceHash": "713fa9d2531853fbfeab4f346263b88e41e40f4f21423bd334faf86599a70c59",
+    "createdAt": "2026-11-24T01:27:31.265Z",
+    "finishedAt": "2026-11-24T01:28:00.472Z"
+  },
+  "logLines": 92,
+  "firmwareFlashed": false
+}

@@ -1,0 +1,236 @@
+{
+  "checkedAt": "2026-11-24T06:59:54.867Z",
+  "deviceOpened": false,
+  "connectionPreserved": true,
+  "browserPolicyTested": false,
+  "results": [
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "status": 200,
+      "ms": 34,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type"
+    },
+    {
+      "path": "/serial/clients",
+      "method": "OPTIONS",
+      "status": 204,
+      "ms": 3,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token"
+    },
+    {
+      "path": "/serial/devices",
+      "method": "OPTIONS",
+      "status": 204,
+      "ms": 1,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token"
+    },
+    {
+      "path": "/serial/clients",
+      "method": "POST",
+      "status": 201,
+      "ms": 5,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token"
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 3,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 4,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 2,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 2,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 3,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 3,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 3,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 4,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 3,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 3,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 2,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    },
+    {
+      "path": "/serial/devices",
+      "method": "GET",
+      "status": 200,
+      "ms": 2,
+      "allowOrigin": "https://ide.xiaodaiyang.top",
+      "allowPrivate": "true",
+      "allowHeaders": "Content-Type,X-CCraft-Serial-Token",
+      "ports": [
+        {
+          "portId": "COM4",
+          "displayName": "USB-SERIAL CH340 (COM4)",
+          "ownership": "other-client"
+        }
+      ]
+    }
+  ]
+}

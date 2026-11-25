@@ -1,0 +1,25 @@
+{
+  "checkedAt": "2026-11-24T06:56:00.179Z",
+  "status": "online",
+  "confirmed": true,
+  "message": "本机串口可用，枚举不会打开设备。",
+  "rows": [
+    {
+      "name": "USB-SERIAL CH340 (COM4)",
+      "port": "COM4",
+      "source": "local",
+      "active": false,
+      "status": "其它窗口占用",
+      "blocked": "其它窗口占用"
+    }
+  ],
+  "paths": [
+    "/api/v1/hardware/capabilities",
+    "/api/v1/hardware/ports",
+    "/api/v1/hardware/capabilities",
+    "/api/v1/hardware/serial/clients",
+    "/api/v1/hardware/serial/devices"
+  ],
+  "deviceOpened": false,
+  "browserSecurityTested": false
+}

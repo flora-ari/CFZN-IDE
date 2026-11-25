@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-24T09:42:54.0285027+08:00",
+  "hardwarePid": 72632,
+  "retained": true,
+  "profileId": "esp32-4mb-dio",
+  "compileAvailable": true,
+  "uploadAvailable": true,
+  "ports": [
+    {
+      "portId": "COM3",
+      "displayName": "Silicon Labs CP210x USB to UART Bridge (COM3)"
+    }
+  ],
+  "listeners": [
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 3002,
+      "OwningProcess": 72632
+    }
+  ]
+}

@@ -24,31 +24,52 @@ export const PROFILES: { id: string; deviceId: DeviceId; label: string; chip: 'a
   { id: 'firebeetle-esp32e-4mb', deviceId: 'firebeetleEsp32E', label: 'FireBeetle ESP32-E · 4 MB', chip: 'esp32', fqbn: 'mindplus:esp32:fireBeetleEsp32E' },
 ];
 
-export async function loadHardwareConfig(env = process.env): Promise<HardwareConfig> {
-  const input = env.HARDWARE_CONFIG ? JSON.parse(await readFile(resolve(env.HARDWARE_CONFIG), 'utf8')) : {};
-  const runtimeDir = resolve(env.HARDWARE_RUNTIME_DIR ?? input.runtimeDir ?? resolve(__dirname, '../../../../.runtime/hardware'));
-  const toolchains: Record<string, ToolchainConfig> = input.toolchains ?? {};
-  const profiles: Record<string, ProfileBinding> = input.profiles ?? {};
-  const origins: string[] = env.HARDWARE_ALLOWED_ORIGINS?.split(',').map((value) => value.trim()).filter(Boolean)
-    ?? input.allowedOrigins ?? [];
-  for (const [id, toolchain] of Object.entries(toolchains)) {
-    if (!/^[a-z0-9-]+$/i.test(id) || !toolchain || !isAbsolute(toolchain.cliPath) || !isAbsolute(toolchain.sourceDataDir) ||
-        !Array.isArray(toolchain.packages) || !toolchain.packages.every((name) => /^[a-z0-9_-]+$/i.test(name)) ||
-        toolchain.builtinToolsDir !== undefined && !isAbsolute(toolchain.builtinToolsDir)) {
-      throw new Error(`Invalid hardware toolchain configuration: ${id}`);
+const defaultRuntimeDir = resolve(__dirname, '../../../../.runtime/hardware');
+
+export async function loadHardwareConfig(
+  env = process.env,
+  defaultConfigPath = resolve(defaultRuntimeDir, 'hardware.local.json'),
+): Promise<HardwareConfig> {
+  const configPath = resolve(env.HARDWARE_CONFIG || defaultConfigPath);
+  try {
+    let contents: string;
+    try {
+      contents = await readFile(configPath, 'utf8');
+    } catch (error) {
+      if (env.HARDWARE_CONFIG || (error as NodeJS.ErrnoException).code !== 'ENOENT') throw error;
+      contents = '{}';
     }
-  }
-  for (const [id, binding] of Object.entries(profiles)) {
-    if (!PROFILES.some((profile) => profile.id === id) || !binding || !toolchains[binding.toolchain] ||
-        typeof binding.coreVersion !== 'string' || !/^[\w.-]+$/.test(binding.coreVersion) ||
-        binding.fqbn !== undefined && !/^[\w:.,=+-]+$/.test(binding.fqbn) ||
-        binding.libraries !== undefined && (!Array.isArray(binding.libraries) || !binding.libraries.every(isAbsolute))) {
-      throw new Error(`Invalid hardware profile configuration: ${id}`);
+    const input = JSON.parse(contents);
+    if (input === null || typeof input !== 'object' || Array.isArray(input)) {
+      throw new Error('Hardware configuration must be a JSON object.');
     }
+    const runtimeDir = resolve(env.HARDWARE_RUNTIME_DIR ?? input.runtimeDir ?? defaultRuntimeDir);
+    const toolchains: Record<string, ToolchainConfig> = input.toolchains ?? {};
+    const profiles: Record<string, ProfileBinding> = input.profiles ?? {};
+    const origins: string[] = env.HARDWARE_ALLOWED_ORIGINS?.split(',').map((value) => value.trim()).filter(Boolean)
+      ?? input.allowedOrigins ?? [];
+    for (const [id, toolchain] of Object.entries(toolchains)) {
+      if (!/^[a-z0-9-]+$/i.test(id) || !toolchain || !isAbsolute(toolchain.cliPath) || !isAbsolute(toolchain.sourceDataDir) ||
+          !Array.isArray(toolchain.packages) || !toolchain.packages.every((name) => /^[a-z0-9_-]+$/i.test(name)) ||
+          toolchain.builtinToolsDir !== undefined && !isAbsolute(toolchain.builtinToolsDir)) {
+        throw new Error(`Invalid hardware toolchain configuration: ${id}`);
+      }
+    }
+    for (const [id, binding] of Object.entries(profiles)) {
+      if (!PROFILES.some((profile) => profile.id === id) || !binding || !toolchains[binding.toolchain] ||
+          typeof binding.coreVersion !== 'string' || !/^[\w.-]+$/.test(binding.coreVersion) ||
+          binding.fqbn !== undefined && !/^[\w:.,=+-]+$/.test(binding.fqbn) ||
+          binding.libraries !== undefined && (!Array.isArray(binding.libraries) || !binding.libraries.every(isAbsolute))) {
+        throw new Error(`Invalid hardware profile configuration: ${id}`);
+      }
+    }
+    for (const origin of origins) {
+      const url = new URL(origin);
+      if (!['http:', 'https:'].includes(url.protocol) || url.origin !== origin) throw new Error(`Invalid product origin: ${origin}`);
+    }
+    return { runtimeDir, toolchains, profiles, allowedOrigins: origins };
+  } catch (error) {
+    const reason = error instanceof Error ? error.message : String(error);
+    throw new Error(`Failed to load hardware configuration "${configPath}": ${reason}`, { cause: error });
   }
-  for (const origin of origins) {
-    const url = new URL(origin);
-    if (!['http:', 'https:'].includes(url.protocol) || url.origin !== origin) throw new Error(`Invalid product origin: ${origin}`);
-  }
-  return { runtimeDir, toolchains, profiles, allowedOrigins: origins };
 }

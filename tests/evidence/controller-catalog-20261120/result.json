@@ -1,0 +1,625 @@
+{
+  "steps": [
+    {
+      "name": "dist paired catalogs, retained filters and five-board built-in compatibility",
+      "detail": {
+        "expected": [
+          {
+            "id": "arduinoUno",
+            "name": "Arduino Uno"
+          },
+          {
+            "id": "arduinoNano",
+            "name": "Arduino Nano"
+          },
+          {
+            "id": "arduinoLeonardo",
+            "name": "Arduino Leonardo"
+          },
+          {
+            "id": "arduinoMega2560",
+            "name": "Arduino Mega 2560"
+          },
+          {
+            "id": "arduinoUnoR4Minima",
+            "name": "Arduino Uno R4 Minima"
+          },
+          {
+            "id": "arduinoUnoR4Wifi",
+            "name": "Arduino Uno R4 WiFi"
+          },
+          {
+            "id": "arduinoEsp32",
+            "name": "ESP32"
+          },
+          {
+            "id": "arduinoEsp32S3",
+            "name": "ESP32-S3"
+          },
+          {
+            "id": "arduinoEsp8266NodeMCU",
+            "name": "NodeMCU"
+          },
+          {
+            "id": "arduinoK210MaixDock",
+            "name": "MaixDock"
+          },
+          {
+            "id": "arduinoK210Maixduino",
+            "name": "Maixduino"
+          },
+          {
+            "id": "arduinoRaspberryPiPico",
+            "name": "Raspberry Pi Pico"
+          },
+          {
+            "id": "arduinoRaspberryPiPicoW",
+            "name": "Raspberry Pi Pico W"
+          },
+          {
+            "id": "arduinoRaspberryPiPico2",
+            "name": "Raspberry Pi Pico 2"
+          },
+          {
+            "id": "arduinoRaspberryPiPico2W",
+            "name": "Raspberry Pi Pico 2 W"
+          },
+          {
+            "id": "microbit",
+            "name": "Micro:bit"
+          },
+          {
+            "id": "microbitV2",
+            "name": "Micro:bit V2"
+          },
+          {
+            "id": "makeyMakey",
+            "name": "Makey Makey"
+          },
+          {
+            "id": "aijiteESP32S3",
+            "name": "Aijite ESP32-S3"
+          },
+          {
+            "id": "firebeetleEsp32E",
+            "name": "FireBeetle ESP32-E"
+          }
+        ],
+        "support": [
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+        ]
+      }
+    },
+    {
+      "name": "dist UI Nano save, details, immutable all20 new version and five-board reread",
+      "detail": {
+        "choices": [
+          {
+            "id": "on",
+            "name": "Arduino Uno"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Nano"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Leonardo"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Mega 2560"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Uno R4 Minima"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Uno R4 WiFi"
+          },
+          {
+            "id": "on",
+            "name": "ESP32"
+          },
+          {
+            "id": "on",
+            "name": "ESP32-S3"
+          },
+          {
+            "id": "on",
+            "name": "NodeMCU"
+          },
+          {
+            "id": "on",
+            "name": "MaixDock"
+          },
+          {
+            "id": "on",
+            "name": "Maixduino"
+          },
+          {
+            "id": "on",
+            "name": "Raspberry Pi Pico"
+          },
+          {
+            "id": "on",
+            "name": "Raspberry Pi Pico W"
+          },
+          {
+            "id": "on",
+            "name": "Raspberry Pi Pico 2"
+          },
+          {
+            "id": "on",
+            "name": "Raspberry Pi Pico 2 W"
+          },
+          {
+            "id": "on",
+            "name": "Micro:bit"
+          },
+          {
+            "id": "on",
+            "name": "Micro:bit V2"
+          },
+          {
+            "id": "on",
+            "name": "Makey Makey"
+          },
+          {
+            "id": "on",
+            "name": "Aijite ESP32-S3"
+          },
+          {
+            "id": "on",
+            "name": "FireBeetle ESP32-E"
+          }
+        ],
+        "original": {
+          "id": "custome6d4d34ff1765654847ccfbf81e44b5e",
+          "definition": {
+            "schemaVersion": 1,
+            "name": "Nano Catalog QA",
+            "description": "",
+            "version": "1.0.0",
+            "author": "",
+            "type": "function",
+            "supportDevice": [
+              "arduinoNano"
+            ],
+            "blocks": [
+              {
+                "key": "nano_write",
+                "message": "积木名称",
+                "shape": "command",
+                "inputs": [],
+                "code": "digitalWrite(13, HIGH);"
+              }
+            ],
+            "definitions": "",
+            "setup": ""
+          },
+          "createdAt": "2026-11-20T02:28:33.897Z"
+        },
+        "next": {
+          "id": "customf0f9908eaabb2e4461e9c1e04af1ca7e",
+          "definition": {
+            "schemaVersion": 1,
+            "name": "Nano Catalog QA",
+            "description": "",
+            "version": "2.0.0",
+            "author": "",
+            "type": "function",
+            "supportDevice": [
+              "arduinoNano",
+              "arduinoUno",
+              "arduinoLeonardo",
+              "arduinoMega2560",
+              "arduinoUnoR4Minima",
+              "arduinoUnoR4Wifi",
+              "arduinoEsp32",
+              "arduinoEsp32S3",
+              "arduinoEsp8266NodeMCU",
+              "arduinoK210MaixDock",
+              "arduinoK210Maixduino",
+              "arduinoRaspberryPiPico",
+              "arduinoRaspberryPiPicoW",
+              "arduinoRaspberryPiPico2",
+              "arduinoRaspberryPiPico2W",
+              "microbit",
+              "microbitV2",
+              "makeyMakey",
+              "aijiteESP32S3",
+              "firebeetleEsp32E"
+            ],
+            "blocks": [
+              {
+                "key": "nano_write",
+                "message": "积木名称",
+                "shape": "command",
+                "inputs": [],
+                "code": "digitalWrite(13, HIGH);"
+              }
+            ],
+            "definitions": "",
+            "setup": ""
+          },
+          "createdAt": "2026-11-20T02:28:34.769Z"
+        },
+        "legacy": {
+          "id": "custom27b1791cf70c5557db9f646c68d9a858",
+          "definition": {
+            "schemaVersion": 1,
+            "name": "Legacy five boards",
+            "description": "",
+            "version": "1.0.0",
+            "author": "",
+            "type": "function",
+            "supportDevice": [
+              "arduinoUno",
+              "arduinoEsp32S3",
+              "aijiteESP32S3",
+              "arduinoEsp32",
+              "firebeetleEsp32E"
+            ],
+            "blocks": [
+              {
+                "key": "nano_write",
+                "message": "积木名称",
+                "shape": "command",
+                "inputs": [],
+                "code": "digitalWrite(13, HIGH);"
+              }
+            ],
+            "definitions": "",
+            "setup": ""
+          },
+          "createdAt": "2026-11-20T02:28:34.798Z"
+        }
+      }
+    },
+    {
+      "name": "dist Nano native drag, Arduino generation, OB roundtrip and cross-session isolation",
+      "detail": {
+        "block": {
+          "id": "wI=vgpzUdL4J~AW]Kk}p",
+          "hatId": "zO-n3lHM0aI2R=]RU0}A"
+        },
+        "project": {
+          "id": "33ee994f-d244-410a-b028-379b7db3618d",
+          "name": "OpenBlock作品",
+          "revision": 1,
+          "format": "openblock",
+          "sizeBytes": 48473,
+          "createdAt": "2026-11-20T02:28:36.568Z",
+          "updatedAt": "2026-11-20T02:28:36.568Z"
+        },
+        "sha256": "e6a44f134640dbb4d7f1c3a3945d9a1b731edcb3a8844dca71f626b9b40ef6fd"
+      }
+    },
+    {
+      "name": "dev paired catalogs, retained filters and five-board built-in compatibility",
+      "detail": {
+        "expected": [
+          {
+            "id": "arduinoUno",
+            "name": "Arduino Uno"
+          },
+          {
+            "id": "arduinoNano",
+            "name": "Arduino Nano"
+          },
+          {
+            "id": "arduinoLeonardo",
+            "name": "Arduino Leonardo"
+          },
+          {
+            "id": "arduinoMega2560",
+            "name": "Arduino Mega 2560"
+          },
+          {
+            "id": "arduinoUnoR4Minima",
+            "name": "Arduino Uno R4 Minima"
+          },
+          {
+            "id": "arduinoUnoR4Wifi",
+            "name": "Arduino Uno R4 WiFi"
+          },
+          {
+            "id": "arduinoEsp32",
+            "name": "ESP32"
+          },
+          {
+            "id": "arduinoEsp32S3",
+            "name": "ESP32-S3"
+          },
+          {
+            "id": "arduinoEsp8266NodeMCU",
+            "name": "NodeMCU"
+          },
+          {
+            "id": "arduinoK210MaixDock",
+            "name": "MaixDock"
+          },
+          {
+            "id": "arduinoK210Maixduino",
+            "name": "Maixduino"
+          },
+          {
+            "id": "arduinoRaspberryPiPico",
+            "name": "Raspberry Pi Pico"
+          },
+          {
+            "id": "arduinoRaspberryPiPicoW",
+            "name": "Raspberry Pi Pico W"
+          },
+          {
+            "id": "arduinoRaspberryPiPico2",
+            "name": "Raspberry Pi Pico 2"
+          },
+          {
+            "id": "arduinoRaspberryPiPico2W",
+            "name": "Raspberry Pi Pico 2 W"
+          },
+          {
+            "id": "microbit",
+            "name": "Micro:bit"
+          },
+          {
+            "id": "microbitV2",
+            "name": "Micro:bit V2"
+          },
+          {
+            "id": "makeyMakey",
+            "name": "Makey Makey"
+          },
+          {
+            "id": "aijiteESP32S3",
+            "name": "Aijite ESP32-S3"
+          },
+          {
+            "id": "firebeetleEsp32E",
+            "name": "FireBeetle ESP32-E"
+          }
+        ],
+        "support": [
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E",
+          "支持：Arduino Uno、ESP32-S3、Aijite ESP32-S3、ESP32、FireBeetle ESP32-E"
+        ]
+      }
+    },
+    {
+      "name": "dev UI Nano save, details, immutable all20 new version and five-board reread",
+      "detail": {
+        "choices": [
+          {
+            "id": "on",
+            "name": "Arduino Uno"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Nano"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Leonardo"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Mega 2560"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Uno R4 Minima"
+          },
+          {
+            "id": "on",
+            "name": "Arduino Uno R4 WiFi"
+          },
+          {
+            "id": "on",
+            "name": "ESP32"
+          },
+          {
+            "id": "on",
+            "name": "ESP32-S3"
+          },
+          {
+            "id": "on",
+            "name": "NodeMCU"
+          },
+          {
+            "id": "on",
+            "name": "MaixDock"
+          },
+          {
+            "id": "on",
+            "name": "Maixduino"
+          },
+          {
+            "id": "on",
+            "name": "Raspberry Pi Pico"
+          },
+          {
+            "id": "on",
+            "name": "Raspberry Pi Pico W"
+          },
+          {
+            "id": "on",
+            "name": "Raspberry Pi Pico 2"
+          },
+          {
+            "id": "on",
+            "name": "Raspberry Pi Pico 2 W"
+          },
+          {
+            "id": "on",
+            "name": "Micro:bit"
+          },
+          {
+            "id": "on",
+            "name": "Micro:bit V2"
+          },
+          {
+            "id": "on",
+            "name": "Makey Makey"
+          },
+          {
+            "id": "on",
+            "name": "Aijite ESP32-S3"
+          },
+          {
+            "id": "on",
+            "name": "FireBeetle ESP32-E"
+          }
+        ],
+        "original": {
+          "id": "customdfbc6e8ec2a0cdaa0ee3394bf684d4f9",
+          "definition": {
+            "schemaVersion": 1,
+            "name": "Nano Catalog QA",
+            "description": "",
+            "version": "1.0.0",
+            "author": "",
+            "type": "function",
+            "supportDevice": [
+              "arduinoNano"
+            ],
+            "blocks": [
+              {
+                "key": "nano_write",
+                "message": "积木名称",
+                "shape": "command",
+                "inputs": [],
+                "code": "digitalWrite(13, HIGH);"
+              }
+            ],
+            "definitions": "",
+            "setup": ""
+          },
+          "createdAt": "2026-11-20T02:28:49.692Z"
+        },
+        "next": {
+          "id": "custom00c3ebbf7d7727b40110ba3bae9b7025",
+          "definition": {
+            "schemaVersion": 1,
+            "name": "Nano Catalog QA",
+            "description": "",
+            "version": "2.0.0",
+            "author": "",
+            "type": "function",
+            "supportDevice": [
+              "arduinoNano",
+              "arduinoUno",
+              "arduinoLeonardo",
+              "arduinoMega2560",
+              "arduinoUnoR4Minima",
+              "arduinoUnoR4Wifi",
+              "arduinoEsp32",
+              "arduinoEsp32S3",
+              "arduinoEsp8266NodeMCU",
+              "arduinoK210MaixDock",
+              "arduinoK210Maixduino",
+              "arduinoRaspberryPiPico",
+              "arduinoRaspberryPiPicoW",
+              "arduinoRaspberryPiPico2",
+              "arduinoRaspberryPiPico2W",
+              "microbit",
+              "microbitV2",
+              "makeyMakey",
+              "aijiteESP32S3",
+              "firebeetleEsp32E"
+            ],
+            "blocks": [
+              {
+                "key": "nano_write",
+                "message": "积木名称",
+                "shape": "command",
+                "inputs": [],
+                "code": "digitalWrite(13, HIGH);"
+              }
+            ],
+            "definitions": "",
+            "setup": ""
+          },
+          "createdAt": "2026-11-20T02:28:50.687Z"
+        },
+        "legacy": {
+          "id": "custom6163d7ac0f5dc1b7e95657bde6312da1",
+          "definition": {
+            "schemaVersion": 1,
+            "name": "Legacy five boards",
+            "description": "",
+            "version": "1.0.0",
+            "author": "",
+            "type": "function",
+            "supportDevice": [
+              "arduinoUno",
+              "arduinoEsp32S3",
+              "aijiteESP32S3",
+              "arduinoEsp32",
+              "firebeetleEsp32E"
+            ],
+            "blocks": [
+              {
+                "key": "nano_write",
+                "message": "积木名称",
+                "shape": "command",
+                "inputs": [],
+                "code": "digitalWrite(13, HIGH);"
+              }
+            ],
+            "definitions": "",
+            "setup": ""
+          },
+          "createdAt": "2026-11-20T02:28:50.727Z"
+        }
+      }
+    },
+    {
+      "name": "dev Nano native drag, Arduino generation, OB roundtrip and cross-session isolation",
+      "detail": {
+        "block": {
+          "id": "%6!{MxWSnspJ%QVzhd3$",
+          "hatId": "^~bUxh}BMrfRKK,E/MA2"
+        },
+        "project": {
+          "id": "12a87abd-4b7a-463c-955a-1442cead3d93",
+          "name": "OpenBlock作品",
+          "revision": 1,
+          "format": "openblock",
+          "sizeBytes": 48472,
+          "createdAt": "2026-11-20T02:28:53.109Z",
+          "updatedAt": "2026-11-20T02:28:53.109Z"
+        },
+        "sha256": "0d1b6cbe945e66041bfdd70ecbe78b2f380e50240e881d73aebf1320e439abcf"
+      }
+    },
+    {
+      "name": "No page exceptions and frozen dist bytes",
+      "detail": {
+        "pageErrors": 0,
+        "editorSha256": "8d8675dc3037075ac65f7e209bd991f7627f73c58580fa243ea101fe7e2c07fd"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "environment": {
+    "editor": "editor-0hVWSKVB.js",
+    "editorSha256": "8d8675dc3037075ac65f7e209bd991f7627f73c58580fa243ea101fe7e2c07fd",
+    "browser": "157.0.4341.60",
+    "deployed": "http://127.0.0.1:59961",
+    "dev": "http://127.0.0.1:59962",
+    "apiOrigin": "http://127.0.0.1:62659"
+  },
+  "cleaned": true
+}

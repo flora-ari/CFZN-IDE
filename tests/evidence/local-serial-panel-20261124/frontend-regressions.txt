@@ -1,0 +1,42 @@
+✔ panel construction, opening, refresh and native discovery stay local and never request browser permission or enumerate candidates (38.4524ms)
+✔ a legacy browser handle remains visible and release-only through local refresh and failed close, then disappears after confirmed release (14.4764ms)
+✔ explicit browser enumeration and native compatibility discovery remain independent of a pending local adapter (5.5095ms)
+✔ internal browser selection keeps its first-gesture call, uses the selected row settings and avoids reopening the same object (3.4024ms)
+▶ internal cancelled or refused selection preserves the old stream and independent saved drafts
+  ✔ NotFoundError (1.2293ms)
+  ✔ SecurityError (1.2714ms)
+✔ internal cancelled or refused selection preserves the old stream and independent saved drafts (3.3401ms)
+✔ internal duplicate selections and a changed busy/protocol/ownership guard cannot replace the old connection (1.7934ms)
+✔ explicit browser cache refresh preserves local stream and preferences without exposing inactive browser candidates (59.7771ms)
+✔ late browser enumeration cannot discard a newly selected compatibility object (1.1628ms)
+✔ without Web Serial the panel is also local and permission is never attempted (3.5616ms)
+✔ OS rows are independent of compiler availability and browser permission; two drafts survive refresh and source changes (87.7052ms)
+✔ only saved local options persist by service plus canonical OS port; browser authorization stays a synchronous explicit fallback (5.1383ms)
+✔ failed switching and failed rate application restore the old actual connection while keeping the target draft and error (16.3244ms)
+✔ quiet reads keep polling; overlapping cursor data is delivered once and a gap stops the shared stream (108.0011ms)
+✔ close failure retains ownership, blocks another row or source, and ignores a late response after explicit recovery (12.103ms)
+✔ TX chunks respect baud and byte limits, stay ordered, and a busy guard preserves RX without submitting a write (15.2972ms)
+✔ a lost TX response is never resent under another sequence and its row explains that bytes may have been sent (9.864ms)
+▶ definitive open failures use authoritative null/held-false diagnostics; held-true failures keep the closeable session
+  ✔ null (6.1269ms)
+  ✔ released (3.8367ms)
+  ✔ held (8.5427ms)
+✔ definitive open failures use authoritative null/held-false diagnostics; held-true failures keep the closeable session (20.3805ms)
+▶ missing or foreign error diagnostics retain uncertainty until the same request returns a valid result
+  ✔ missing (6.268ms)
+  ✔ wrong (8.1399ms)
+✔ missing or foreign error diagnostics retain uncertainty until the same request returns a valid result (15.6803ms)
+✔ lost open responses reconcile the same UUID and payload without a second driver open or browser takeover (16.7784ms)
+✔ legacy services still list OS rows but cannot connect; offline cached rows and a new instance never auto-open stale references (27.0421ms)
+✔ the rendered panel has five fixed columns and every row action is in the last cell; narrow cards retain visible labels (12.4982ms)
+✔ a browser without Web Serial can still enumerate local rows (3.6592ms)
+✔ editor disposal aborts its read pump and requests an authenticated keepalive close without taking over a browser port (19.9821ms)
+✔ unknown open reconciliation cannot reuse an ID after the bounded server history may have expired (7.4971ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 747.9275

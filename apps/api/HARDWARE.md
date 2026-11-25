@@ -1,16 +1,13 @@
 # 本地硬件执行器 v0.2
 
-执行器单独绑定 `127.0.0.1:3002`，基础地址 `http://127.0.0.1:3002/api/v1/hardware`。项目 API 仍在 3001，归档、revision/ETag 和项目数据目录不变。执行器不提供串口终端、WebSocket 或浏览器烧录器，不依赖旧 Link 协议，也不修改 OpenBlock VM。
+执行器单独绑定 `127.0.0.1:3002`，基础地址 `http://127.0.0.1:3002/api/v1/hardware`。项目 API 仍在 3001。浏览器终端可通过本机 HTTP 轮询会话收发原始串口字节，Arduino CLI 负责编译和上传。
 
 ## 配置与启动
 
-在 `apps/api` 运行。已有依赖时无需重新安装；复制部署可先执行 `npm ci`。
+在 `apps/api` 运行。已有依赖时无需重新安装；复制部署可先执行 `npm ci`。将本机工具配置保存在项目根 `.runtime/hardware/hardware.local.json`，执行器启动时自动读取。
 
 ```powershell
-# 先复制示例到自己的配置文件，并修改工具路径、core 版本与 runtimeDir。
-$env:HARDWARE_CONFIG = 'F:/CFZN/CFZN-IDE/apps/api/hardware.config.example.json'
-$env:HARDWARE_RUNTIME_DIR = 'F:/CFZN/CFZN-IDE/.runtime/hardware'
-$env:HARDWARE_PORT = '3002'
+# 先按示例准备 hardware.local.json，使用本机的工具路径、core 版本与 runtimeDir。
 npm run hardware
 ```
 
@@ -18,10 +15,14 @@ npm run hardware
 
 | 环境变量 | 用途 |
 | --- | --- |
-| `HARDWARE_CONFIG` | 运维方提供的 JSON 配置绝对/相对文件路径；未提供时服务仍启动，五个 profile 均报告不可用 |
+| `HARDWARE_CONFIG` | 显式选择 JSON 配置，绝对路径或相对启动工作目录的路径均可；优先于项目根 `.runtime/hardware/hardware.local.json` |
 | `HARDWARE_RUNTIME_DIR` | 覆盖 JSON 的 `runtimeDir`，默认仓库 `.runtime/hardware`；所有生成配置、用户目录、缓存、源码、产物与证据在此处 |
 | `HARDWARE_PORT` | 本机端口，默认 3002；始终绑定 127.0.0.1 |
 | `HARDWARE_ALLOWED_ORIGINS` | 逗号分隔的精确产品 origin，覆盖 JSON 的 `allowedOrigins`；默认允许 localhost/127.0.0.1:5173 |
+
+默认配置通过模块位置定位，启动工作目录和 `HARDWARE_RUNTIME_DIR` 均不会改变查找位置。只有默认文件不存在（`ENOENT`）时以空配置启动，五个 profile 报告未配置，串口能力独立检查。默认文件的其它读取错误，以及显式文件的缺失、权限、JSON、顶层类型或配置字段错误均终止启动，错误包含所选文件路径。配置顶层须为 JSON 对象，空对象可用于零配置部署。
+
+环境变量继续覆盖配置中的生成目录和允许来源。配置在启动时加载，修改配置后由操作者重启硬件执行器，再在网页重新检测能力。
 
 示例包含本次机器的**显式安装路径**，不是所有用户通用的默认值。换机器时需要准备可用 Arduino CLI 和匹配 core/tool，然后修改 JSON：
 
@@ -47,13 +48,40 @@ CLI/core 来源、再分发授权及安装由部署者负责；本仓库示例�
 
 `compileAvailable/uploadAvailable` 表示配置、CLI、core 和 board details 检查可用；每次实际作业仍以真实进程退出、产物/上传验证结果为准，不保证所有生成器及第三方库都兼容。所有 `realtimeAvailable` 当前均为 false：未验证兼容实时固件/协议，连接时不自动刷入任何固件。
 
-六个受控 moduleIds：`activateBuzzer`、`atomizer`、`pirSensor`、`flameSensor`、`raindropSensor`、`moreComments`。这些模块当前只生成基本 Arduino 调用，不需要额外库；构建仍使用页面提交的当前源码。需要 Servo 等外部库时运维在 profile 配置中明确提供，并记录版本，不接收网页任意库路径。
+六个受控 moduleIds：`activateBuzzer`、`atomizer`、`pirSensor`、`flameSensor`、`raindropSensor`、`moreComments`。这些模块当前只生成基本 Arduino 调用。工厂模块需要 Servo 等库时，构建请求可以提交选定的库名和确切版本。执行器从 Arduino Library Manager 索引解析、核验文件大小和 SHA-256、解包到作业目录，再用 `--library` 交给 CLI。CLI 按当前 profile 编译，额外依赖可在工厂中选定确切版本。同名冲突会在创建作业前返回错误。
+
+## 本机串口会话
+
+硬件服务使用锁定的 `serialport@13.0.0`，以 `autoOpen:false` 创建原生串口对象，先注册事件再打开。实际 API 已按安装包类型核对，包括 `SerialPort.list()`、open/close 回调和 write 后 drain。原生绑定加载失败时，`capabilities.serial.available` 为 false 并提供原因，编译 profile 独立报告自身能力。
+
+网页依据可选的 `capabilities.serial` 判断是否可以直接连接。旧版服务缺少此字段时，页面提示升级 USB 所在电脑的本机服务，端口目录仍可查看。更新 API 包和依赖后，由操作者在作业结束时重启该电脑上的 3002 服务，再在网页重新检测。公共服务器上的项目 API 处理作品存储，USB 枚举、连接和收发运行在插有设备的电脑。
+
+新串口路由均要求精确允许的 Origin 和 loopback Host。先 POST `/serial/clients`，提交空对象，取得 256-bit `clientToken` 及执行器 `instanceId`。其余串口请求通过 `X-CCraft-Serial-Token` 请求头传入令牌。令牌只在当前编辑器内存中保存，绑定 Origin 与执行器实例。CORS 精确允许该请求头，串口 JSON 上限 96 KiB，inflate=false，响应均为 no-store。
+
+| 方法与路径 | 行为 |
+| --- | --- |
+| GET `/serial/devices` | 返回本机目录、当前存在代次的 `deviceRef`、真实端口与所有权。只向当前客户端提供自身 session。 |
+| POST `/serial/sessions` | 提交 `{requestId,deviceRef,options}`。持锁后重新枚举并验证引用，实际打开成功返回 201。相同 UUID 与载荷重试复用同一次操作，关闭后的旧请求不会重新打开。 |
+| GET `/serial/sessions/:id` | 查询会话状态、`held`、选项、`nextWriteSequence` 及可选 `pendingWriteSequence`。 |
+| GET `/serial/sessions/:id/read?after=0&waitMs=15000` | 返回 `{session,from,next,dataBase64}`。游标确认已收到的连续字节，相同未确认游标可重取。安静响应为空且游标保持。 |
+| POST `/serial/sessions/:id/write` | 提交 `{sequence,dataBase64}`。序号从 1 开始，有序 write 和 drain 完成后才确认 `{sequence,sizeBytes}`。 |
+| POST `/serial/sessions/:id/close` | 提交空对象。幂等关闭，实际释放后才返回 `held:false`，失败保留端口占用并允许重试。 |
+
+打开失败的标准错误详情提供 `details.session`。已创建会话时返回当前快照，明确没有创建时返回 null。同 requestId 失败重取也返回最新快照，原始状态码和原因继续保留。客户端可用返回的 session ID 查询或关闭仍 held 的会话，只有明确 null 或 `held:false` 才能确认没有占用。打开和关闭等待最多 30 秒，超时仍保留可能持有的句柄及同步保留，直到驱动实际确认结果。
+
+每次读写最多 64 KiB，RX 最多保留 1 MiB 未确认字节，待写总量最多 256 KiB。每会话只允许一个在途 read，单次等待最多 15 秒。RX 溢出或无效游标明确报错并关闭流。TX 保存最近 64 次序号、摘要和结果，相同序号同载荷不会重复发送，冲突、跳号与过旧序号拒绝。写入和 drain 总期限为 30 秒，超时提示字节可能已发送。`nextWriteSequence` 表示下一可接收序号，在途操作由 `pendingWriteSequence` 核对。
+
+打开后 5 秒未开始首个 read 会回收。后续租约为 45 秒，由读消费者活动续期，安静设备也可通过空读保持连接。等待中的 HTTP read 中断会关闭该会话。拔出和已观测到的设备身份变化使旧引用失效，唤醒读写并关闭句柄。关闭未确认或关闭失败时保持 `held:true` 和端口锁。新执行器实例要求重新获取令牌和目录。
+
+服务最多接受 64 个客户端和 16 个活动会话，每个编辑器同时持有一个会话。客户端空闲 30 分钟回收，终态与打开请求结果保留 120 秒。打开请求历史最多每客户端 64 项、执行器总计 256 项，满额返回 `SERIAL_CAPACITY_EXCEEDED`。终态历史独立于活动会话计数。
+
+串口打开、关闭和 TX 与 CLI 共用同步保留检查，跨异步枚举仍保持互斥。编译期间已有连接可继续 RX，新 open 和 TX 拒绝。上传前须确认前端会话已关闭，服务还会检查目标端口锁。上传请求继续提交 `{buildId,portId}`，其它编辑器的连接由其所有者管理。CLI 取消等待真实进程退出后释放占用。
 
 ## HTTP 与任务行为
 
 精确 wire schema 以 `docs/api-contract.md` 顶部 Hardware v0.2 为准。实现包含 `GET capabilities/ports`、`POST builds/uploads`、`GET jobs/:id?afterLog=0`、`POST jobs/:id/cancel`。POST 只接受 JSON，工具路径、FQBN、CLI flags、产物路径均不属于页面输入。产品 origin 必须精确登记；没有 Origin 的本地脚本也可调用。
 
-构建传 `{deviceId,profileId,code,moduleIds?}`；上传只传 `{buildId,portId}`。`buildId` 是同一执行器会话中成功 build job 的 ID；重启不从磁盘恢复旧 buildId，需重新构建。网页应以 capabilities 为 profile 来源，以 `/ports` 为本机 OS 端口来源，用户明确选择；禁止推断浏览器 Web Serial 句柄等同 COM3。`GET ports` 仅查询 Windows CIM/Linux/macOS 设备列表，不打开端口或查询固件。后端分支的真实编译脚本不调用 ports/upload。
+构建传 `{deviceId,profileId,code,moduleIds?,libraries?:[{name,version}]}`；上传只传 `{buildId,portId}`。`buildId` 是同一执行器会话中成功 build job 的 ID；重启不从磁盘恢复旧 buildId，需重新构建。网页应以 capabilities 为 profile 来源，以 `/ports` 为本机 OS 端口来源，用户明确选择；禁止推断浏览器 Web Serial 句柄等同 COM3。`GET ports` 与串口目录、上传检查使用同一枚举 provider，原生绑定可用时使用其 OS 目录，不可用时使用现有 Windows CIM 或 `/dev` 后备。枚举只读取清单，不打开端口或查询固件。后端分支的真实编译脚本不调用 ports/upload。
 
 每个执行器同时只有一个 build/upload；第二项返回 409 HARDWARE_BUSY。源码最多 1 MiB UTF-8；构建最长 10 分钟，上传 3 分钟。CLI 以 `spawn(executable, argv, {shell:false})` 调用；板包自身固定 recipe 可启动其工具。取消和超时只终止该次拥有的 PID 进程树（Windows taskkill /PID /T /F；POSIX 进程组）；实际关闭前保持 cancelling/占用，绝不取消用户已有 Mind+/Link/Vite/API。
 

@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-11-24T06:49:35.333Z",
+  "portId": "COM4",
+  "deviceName": "USB-SERIAL CH340 (COM4)",
+  "ownershipBefore": "idle",
+  "origin": "https://ide.xiaodaiyang.top",
+  "transmittedApplicationBytes": 0,
+  "firmwareFlashed": false,
+  "openStatus": 201,
+  "opened": true,
+  "baudRate": 115200,
+  "readStatus": 200,
+  "receivedBytes": 0,
+  "closeStatus": 200,
+  "released": true,
+  "ownershipAfter": "idle"
+}

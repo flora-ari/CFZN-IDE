@@ -1,0 +1,23 @@
+{
+  "url": "https://ide.xiaodaiyang.top/",
+  "assets": [
+    {
+      "match": true,
+      "asset": "editor-CBb0ccAP.js",
+      "sha256": "4b0a1b63bff22b369e5877484205fafe5b9b30e39cd9fcaf78b6afa89e3a4bec"
+    },
+    {
+      "match": true,
+      "asset": "editor-D5NDjZiN.css",
+      "sha256": "9894611a1321c780facac82f2044f3293701dafb134c56da54c29d411690c646"
+    }
+  ],
+  "deploymentExitCode": 0,
+  "release": "20261123T073417Z-cfe8ac8d",
+  "health": {
+    "status": "ok",
+    "storage": "local",
+    "auth": "none"
+  },
+  "verifiedAt": "2026-11-23T15:45:32.6706762+08:00"
+}

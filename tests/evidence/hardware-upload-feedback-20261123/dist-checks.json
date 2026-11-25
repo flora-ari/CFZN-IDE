@@ -1,0 +1,39 @@
+{
+  "editor": "editor-ByCJsQIT.js",
+  "editorSha256": "e734ec0f0c85b3a591a82d4205003073251e9362c751a02aa4934f4845117281",
+  "labels": [
+    {
+      "label": "上次上传未开始：",
+      "files": [
+        "editor-ByCJsQIT.js"
+      ]
+    },
+    {
+      "label": "上次设置或启动操作未完成：",
+      "files": [
+        "editor-ByCJsQIT.js"
+      ]
+    },
+    {
+      "label": "当前主控尚未配置本机工具链",
+      "files": [
+        "editor-ByCJsQIT.js"
+      ]
+    },
+    {
+      "label": "请先选择当前主控的 Profile。",
+      "files": [
+        "editor-ByCJsQIT.js"
+      ]
+    },
+    {
+      "label": "所选本机烧录端口已失效",
+      "files": [
+        "editor-ByCJsQIT.js"
+      ]
+    }
+  ],
+  "oldGenericMessageAbsent": true,
+  "compiledConfigDefaultAndErrorBranches": true,
+  "screenshotPresent": true
+}

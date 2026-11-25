@@ -1,0 +1,128 @@
+{
+  "sourceReviewOnly": true,
+  "nginxExecuted": false,
+  "bashSyntax": true,
+  "heredocVariablesPreserved": true,
+  "allThreeLocationsRepeatSafetyAndVary": true,
+  "privateRepresentations": 2,
+  "gzipStaticCapabilityAware": true,
+  "invalidFilenameRejected": true,
+  "selectionPolicy": "br > gzip > identity among positive acceptable representations; not positive q-weight ranking",
+  "generatedRegexCases": [
+    {
+      "header": "",
+      "expected": "identity",
+      "actual": "identity",
+      "passed": true
+    },
+    {
+      "header": "BR ; Q=1.000 , gzip;q=0, identity;q=0",
+      "expected": "br",
+      "actual": "br",
+      "passed": true
+    },
+    {
+      "header": "br;q=0.001,gzip;q=0,identity;q=0",
+      "expected": "br",
+      "actual": "br",
+      "passed": true
+    },
+    {
+      "header": "br;q=0.1,gzip;q=1",
+      "expected": "br",
+      "actual": "br",
+      "passed": true
+    },
+    {
+      "header": "br;q=0,gzip;q=1",
+      "expected": "gzip",
+      "actual": "gzip",
+      "passed": true
+    },
+    {
+      "header": "br;q=0.000,gzip;q=0,identity;q=1",
+      "expected": "identity",
+      "actual": "identity",
+      "passed": true
+    },
+    {
+      "header": "br;q=0,gzip;q=0,identity;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    },
+    {
+      "header": "br;q=0.0,gzip;q=0,identity;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    },
+    {
+      "header": "*;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    },
+    {
+      "header": "*;q=0,identity;q=1",
+      "expected": "identity",
+      "actual": "identity",
+      "passed": true
+    },
+    {
+      "header": "*;q=1,br;q=0,identity;q=0",
+      "expected": "gzip",
+      "actual": "gzip",
+      "passed": true
+    },
+    {
+      "header": "br;q=bogus,*;q=1,identity;q=0",
+      "expected": "gzip",
+      "actual": "gzip",
+      "passed": true
+    },
+    {
+      "header": "xbr,gzip;q=0,identity;q=1",
+      "expected": "identity",
+      "actual": "identity",
+      "passed": true
+    },
+    {
+      "header": "br;q=bogus,gzip;q=0,identity;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    },
+    {
+      "header": "br;q=.5,gzip;q=0,identity;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    },
+    {
+      "header": "br;q=-1,gzip;q=0,identity;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    },
+    {
+      "header": "br;q=1.001,gzip;q=0,identity;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    },
+    {
+      "header": "br;q=0.1234,gzip;q=0,identity;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    },
+    {
+      "header": "br;q=1.0000,gzip;q=0,identity;q=0",
+      "expected": "none",
+      "actual": "none",
+      "passed": true
+    }
+  ],
+  "actualHEAD304AndHeaders": "await real Nginx QA evidence"
+}

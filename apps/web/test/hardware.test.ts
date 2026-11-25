@@ -76,6 +76,7 @@ test('RPC id zero replies, discoveries and shared raw byte IO do not require Lin
   const { session, port, id } = await setup(false); const api = mock(port);
   const controller = new HardwareController(session, source, 'http://mock/api', () => {}, api.request, async () => {});
   const socket = new NativeSerialSocket(controller); const messages: any[] = [];
+  socket.discoverySource = 'browser'; // This case exercises the retained browser transport compatibility.
   socket.setHandleMessage(m => messages.push(m)); socket.setOnOpen(() => {}); socket.open();
   socket.sendMessage({ id: 0, method: 'discover' }); await new Promise(r => setTimeout(r, 10));
   assert.ok(messages.some(m => m.id === 0 && 'result' in m)); assert.ok(messages.some(m => m.method === 'didDiscoverPeripheral'));
@@ -116,4 +117,62 @@ test('restore error is separate from upload success and cancellation stays busy 
   while (controller.snapshot().job?.kind !== 'upload' || controller.snapshot().job?.state !== 'running') await new Promise(r => setTimeout(r, 0));
   await controller.cancel(); assert.equal(controller.busy, true); assert.equal(controller.job?.state, 'cancelling');
   await finished(controller); assert.equal(controller.job?.state, 'cancelled');
+});
+
+test('upload preflight reports missing or stale selections and preserves generation and busy failures', async () => {
+  const session = new HardwareSession();
+  const api = mock(new Port());
+  const current = source();
+  const hardware = new HardwareController(session, () => current, 'http://mock/api', () => {}, api.request);
+  await hardware.refresh();
+  hardware.configure('esp32', 'COM-MOCK');
+  const cases: [() => void, RegExp][] = [
+    [() => { current.deviceId = null; }, /从主控扩展选择主控/],
+    [() => { current.deviceId = 'arduinoEsp32'; hardware.profileId = ''; }, /当前主控的 Profile/],
+    [() => { hardware.profileId = 'removed-profile'; }, /Profile 已失效/],
+    [() => { hardware.profileId = 'esp32'; hardware.portId = ''; }, /明确选择本机烧录端口/],
+    [() => { hardware.portId = 'removed-port'; }, /烧录端口已失效/],
+    [() => { hardware.portId = 'COM-MOCK'; current.generationError = '代码生成失败：测试积木'; }, /代码生成失败：测试积木/],
+    [() => { current.generationError = ''; hardware.setMutationGuard(() => '正在切换项目'); }, /正在切换项目/],
+    [() => { hardware.setMutationGuard(() => ''); hardware.busy = true; }, /硬件作业仍在进行/],
+    [() => { hardware.busy = false; session.portId = 'still-owned'; session.status = 'error'; }, /串口仍被持有/],
+  ];
+  hardware.error = 'previous job error';
+  for (const [change, expected] of cases) {
+    change();
+    assert.throws(() => hardware.start(true), expected);
+    assert.equal(hardware.error, 'previous job error');
+    assert.equal(api.calls.some(call => call.body !== undefined), false);
+  }
+});
+
+test('a selected profile and OS port retain their identity while unavailable tooling is diagnosed and then recovers', async () => {
+  const api = mock(new Port()), current = source();
+  let compileAvailable = false, uploadAvailable = true;
+  const request: typeof fetch = async (url, init) => {
+    const response = await api.request(url, init);
+    if (!String(url).endsWith('/capabilities')) return response;
+    const data = await response.json();
+    Object.assign(data.profiles[0], { compileAvailable, uploadAvailable,
+      ...(!compileAvailable ? { reason: 'No toolchain configured for this profile.' } : {}) });
+    return Response.json(data);
+  };
+  const hardware = new HardwareController(new HardwareSession(), () => current, 'http://mock/api', () => {}, request, async () => {});
+  await hardware.refresh();
+  hardware.configure('esp32', 'COM-MOCK');
+  assert.throws(() => hardware.start(true), error => error instanceof Error &&
+    error.message.includes('尚未配置本机工具链') && error.message.includes('No toolchain configured for this profile.'));
+  assert.equal(hardware.profileId, 'esp32'); assert.equal(hardware.portId, 'COM-MOCK');
+  assert.equal(api.calls.some(call => call.body !== undefined), false);
+  compileAvailable = true; uploadAvailable = false;
+  await hardware.refresh();
+  assert.throws(() => hardware.start(true), /上传工具不可用/);
+  uploadAvailable = true;
+  await hardware.refresh();
+  assert.equal(hardware.profileId, 'esp32'); assert.equal(hardware.portId, 'COM-MOCK');
+  assert.equal(api.calls.some(call => call.body !== undefined), false);
+  hardware.start(true);
+  await finished(hardware);
+  assert.equal(hardware.job?.state, 'succeeded');
+  assert.equal(hardware.error, '');
 });

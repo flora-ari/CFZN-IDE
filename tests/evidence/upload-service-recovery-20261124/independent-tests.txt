@@ -1,0 +1,15 @@
+✔ all unavailable service states win over empty Profile across start, native upload and both rendered buttons (85.2918ms)
+✔ recovery GETs run together, repair default Profile and clear stale preflight feedback without choosing OS or starting a job (12.7758ms)
+✔ valid unavailable selection is preserved; invalid or cross-device selection repairs; busy response cannot alter captured job settings (31.2555ms)
+✔ port enumeration error precedes absent OS choice, leaves compile enabled and preserves actual failed job diagnostics on recovery (16.5411ms)
+✔ real simulated upload failure plus failed terminal restoration survive service refresh (14.7849ms)
+✔ unknown upload submission remains busy and is not retried or restored by successful service detection (15.7344ms)
+✔ final entry, protected upstream modules, licenses and original PNG retain agreed bytes (1132.2263ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1457.7002

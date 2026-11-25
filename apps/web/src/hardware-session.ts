@@ -25,6 +25,7 @@ export class HardwareSession {
   private writer?: WritableStreamDefaultWriter<Uint8Array>;
   private reading?: Promise<void>;
   private writes: Promise<void> = Promise.resolve();
+  private queuedBytes = 0;
   private releasing?: Promise<void>;
   private closing?: Promise<void>;
   private port?: SerialPortLike;
@@ -35,13 +36,16 @@ export class HardwareSession {
   private listeners = new Set<() => void>();
   private receivers = new Set<(bytes: Uint8Array) => void>();
   private serial?: SerialLike;
+  private writeGuard: () => string = () => '';
   constructor(serial?: SerialLike) { this.serial = serial; this.status = serial ? 'disconnected' : 'unsupported'; }
   subscribe(fn: () => void) { this.listeners.add(fn); return () => { this.listeners.delete(fn); }; }
+  setWriteGuard(guard: () => string) { this.writeGuard = guard; }
   onBytes(fn: (bytes: Uint8Array) => void) { this.receivers.add(fn); return () => { this.receivers.delete(fn); }; }
   private publish() { this.listeners.forEach(fn => fn()); }
   private update(status: SerialStatus, message = '') { this.status = status; this.message = message; this.publish(); }
   get ports(): BrowserPort[] {
     return [...this.known].map(([id, port], index) => {
+      if (port.connectionInfo) return { ...port.connectionInfo, id };
       const info = port.getInfo?.();
       const usb = info?.usbVendorId ? `USB ${info.usbVendorId.toString(16).padStart(4, '0')}:${(info.usbProductId ?? 0).toString(16).padStart(4, '0')}` : 'USB 信息不可用';
       const chip = info?.usbVendorId === 0x10c4 ? info.usbProductId === 0xea60 ? 'Silicon Labs CP210x' : 'Silicon Labs USB 串口' : info?.usbVendorId === 0x1a86 ? 'WCH USB 串口' : info?.usbVendorId === 0x0403 ? 'FTDI USB 串口' : '已授权串口设备';
@@ -50,16 +54,16 @@ export class HardwareSession {
   }
   private remember(port: SerialPortLike) {
     for (const [id, known] of this.known) if (known === port) return id;
-    const id = `browser-${++this.sequence}`; this.known.set(id, port); return id;
+    const id = port.connectionInfo?.id ?? `browser-${++this.sequence}`; this.known.set(id, port); return id;
   }
-  async refresh() {
+  async refresh(source?: 'local' | 'browser') {
     const scan = ++this.scanGeneration, previous = new Set(this.known.keys());
     this.scanning = true; this.scanError = ''; this.publish();
     try {
       if (!this.serial) throw new Error('此浏览器不支持 Web Serial，请使用 Chrome 或 Edge。');
-      const ports = await this.serial.getPorts?.() ?? [];
+      const ports = await this.serial.getPorts?.(source) ?? [];
       if (scan !== this.scanGeneration) return this.ports;
-      for (const [id, port] of this.known) if (previous.has(id) && !ports.includes(port) && port !== this.port) this.known.delete(id);
+      for (const [id, port] of this.known) if (previous.has(id) && (!source || (port.connectionInfo?.source ?? 'browser') === source) && !ports.includes(port) && port !== this.port) this.known.delete(id);
       ports.forEach(port => this.remember(port));
     } catch (e) { if (scan === this.scanGeneration) this.scanError = `刷新已授权设备失败：${describeError(e)}`; }
     finally { if (scan === this.scanGeneration) { this.scanning = false; this.publish(); } }
@@ -112,7 +116,7 @@ export class HardwareSession {
         if (wasOpen && oldId) {
           this.operation = 'restoring'; this.publish();
           try {
-            const authorized = await this.serial?.getPorts?.();
+            const authorized = await this.serial?.getPorts?.(this.known.get(oldId)?.connectionInfo?.source ?? 'browser');
             if (authorized && !authorized.includes(this.known.get(oldId)!)) throw new Error('原端口已不可用或授权已撤销。');
             await this.acquire(oldId, oldOptions);
           } catch (restore) {
@@ -135,12 +139,17 @@ export class HardwareSession {
   private async acquire(id: string, options: SerialOptions) {
     const port = this.known.get(id); if (!port) throw new Error('串口授权已失效。');
     this.update('opening');
-    await port.open(options);
+    try { await port.open(options); }
+    catch (e) {
+      // A local HTTP open can have reached the service even if its response was lost.
+      if (port.held) { this.port = port; this.portId = id; }
+      throw e;
+    }
     this.port = port; this.portId = id;
     if (!port.readable || !port.writable) throw new Error('串口没有可用的读写流。');
     this.reader = port.readable.getReader(); this.writer = port.writable.getWriter();
     const generation = ++this.generation;
-    this.options = { ...options }; this.sessionId = `serial-${++this.sequence}`;
+    this.options = { ...(port.appliedOptions ?? options) }; this.sessionId = `serial-${++this.sequence}`;
     this.unplug = () => this.ended(port, generation, '设备已拔出。');
     port.addEventListener('disconnect', this.unplug);
     this.reading = this.read(this.reader, port, generation);
@@ -166,9 +175,12 @@ export class HardwareSession {
     queueMicrotask(() => this.ended(port, generation, failure || '串口读取已结束。'));
   }
   write(bytes: Uint8Array) {
+    const blocked = this.writeGuard(); if (blocked) return Promise.reject(new Error(blocked));
     if (!this.writer || this.status !== 'open' || this.operation || this.releasing) return Promise.reject(new Error('串口未连接或正在切换/释放。'));
+    if (this.queuedBytes + bytes.byteLength > 262144) return Promise.reject(new Error('串口待发送队列不能超过 256 KiB。'));
+    this.queuedBytes += bytes.byteLength;
     const writer = this.writer;
-    const task = this.writes.then(() => writer.write(bytes));
+    const task = this.writes.then(() => { const reason = this.writeGuard(); if (reason) throw new Error(reason); return writer.write(bytes); }).finally(() => { this.queuedBytes -= bytes.byteLength; });
     this.writes = task.catch(() => undefined); return task;
   }
   close(): Promise<void> {

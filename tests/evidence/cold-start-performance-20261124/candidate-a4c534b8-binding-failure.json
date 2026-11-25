@@ -1,0 +1,251 @@
+{
+  "date": "2026-11-24",
+  "status": "blocked",
+  "candidateSHA256": "a4c534b8c1f9171b6de723ee9b0372eba7bfd553f5237523e7d0bb3643ee86d2",
+  "module": 3,
+  "sourceReview": "actual baseline and candidate module 3 AST; initial full metadata verification located its outer slot with AST",
+  "functionsBefore": 196,
+  "functionsAfter": 196,
+  "mismatches": [
+    {
+      "functionIndexWithinModule": 56,
+      "before": {
+        "kind": "FunctionExpression",
+        "name": "",
+        "parameters": [
+          "d",
+          "b"
+        ]
+      },
+      "after": {
+        "kind": "FunctionExpression",
+        "name": "",
+        "parameters": [
+          "d2",
+          "b2"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 57,
+      "before": {
+        "kind": "FunctionExpression",
+        "name": "",
+        "parameters": [
+          "d",
+          "b"
+        ]
+      },
+      "after": {
+        "kind": "FunctionExpression",
+        "name": "",
+        "parameters": [
+          "d2",
+          "b2"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 92,
+      "before": {
+        "kind": "FunctionDeclaration",
+        "name": "DomListener",
+        "parameters": [
+          "node",
+          "type",
+          "handler",
+          "options"
+        ]
+      },
+      "after": {
+        "kind": "FunctionDeclaration",
+        "name": "DomListener2",
+        "parameters": [
+          "node",
+          "type",
+          "handler",
+          "options"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 99,
+      "before": {
+        "kind": "FunctionExpression",
+        "name": "addStandardDisposableListener",
+        "parameters": [
+          "node",
+          "type",
+          "handler",
+          "useCapture"
+        ]
+      },
+      "after": {
+        "kind": "FunctionExpression",
+        "name": "addStandardDisposableListener2",
+        "parameters": [
+          "node",
+          "type",
+          "handler",
+          "useCapture"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 100,
+      "before": {
+        "kind": "FunctionExpression",
+        "name": "addStandardDisposableListener",
+        "parameters": [
+          "node",
+          "handler",
+          "useCapture"
+        ]
+      },
+      "after": {
+        "kind": "FunctionExpression",
+        "name": "addStandardDisposableListener2",
+        "parameters": [
+          "node",
+          "handler",
+          "useCapture"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 108,
+      "before": {
+        "kind": "FunctionExpression",
+        "name": "",
+        "parameters": [
+          "callback"
+        ]
+      },
+      "after": {
+        "kind": "FunctionExpression",
+        "name": "",
+        "parameters": [
+          "callback2"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 111,
+      "before": {
+        "kind": "FunctionDeclaration",
+        "name": "AnimationFrameQueueItem",
+        "parameters": [
+          "runner",
+          "priority"
+        ]
+      },
+      "after": {
+        "kind": "FunctionDeclaration",
+        "name": "AnimationFrameQueueItem2",
+        "parameters": [
+          "runner",
+          "priority"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 121,
+      "before": {
+        "kind": "FunctionDeclaration",
+        "name": "TimeoutThrottledDomListener",
+        "parameters": [
+          "node",
+          "type",
+          "handler",
+          "eventMerger",
+          "minimumTimeMs"
+        ]
+      },
+      "after": {
+        "kind": "FunctionDeclaration",
+        "name": "TimeoutThrottledDomListener2",
+        "parameters": [
+          "node",
+          "type",
+          "handler",
+          "eventMerger",
+          "minimumTimeMs"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 128,
+      "before": {
+        "kind": "FunctionDeclaration",
+        "name": "SizeUtils",
+        "parameters": []
+      },
+      "after": {
+        "kind": "FunctionDeclaration",
+        "name": "SizeUtils2",
+        "parameters": []
+      }
+    },
+    {
+      "functionIndexWithinModule": 144,
+      "before": {
+        "kind": "FunctionDeclaration",
+        "name": "Dimension",
+        "parameters": [
+          "width",
+          "height"
+        ]
+      },
+      "after": {
+        "kind": "FunctionDeclaration",
+        "name": "Dimension2",
+        "parameters": [
+          "width",
+          "height"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 170,
+      "before": {
+        "kind": "FunctionDeclaration",
+        "name": "FocusTracker",
+        "parameters": [
+          "element"
+        ]
+      },
+      "after": {
+        "kind": "FunctionDeclaration",
+        "name": "FocusTracker2",
+        "parameters": [
+          "element"
+        ]
+      }
+    },
+    {
+      "functionIndexWithinModule": 178,
+      "before": {
+        "kind": "FunctionExpression",
+        "name": "",
+        "parameters": [
+          "Namespace"
+        ]
+      },
+      "after": {
+        "kind": "FunctionExpression",
+        "name": "",
+        "parameters": [
+          "Namespace2"
+        ]
+      }
+    }
+  ],
+  "constantExpressionEvidence": {
+    "baselineContainsUndefinedGuard": true,
+    "candidateContainsImmediatelyInvokedFallback": true,
+    "baselineExcerpt": "var __extends = (undefined && undefined.__extends) || (function () {\r\n    var extendStatics = function (d, b) {\r\n        extendStatics = Object.setPrototypeOf ||\r\n       ",
+    "candidateExcerpt": "var __extends=(function(){var extendStatics=function(d,b){extendStatics=Object.setPrototypeOf||{__proto__:[]}instanceof Array&&function(d2,b2){d2.__pr"
+  },
+  "contract": "only whitespace; preserve inner function names/parameters and disable syntax compaction",
+  "suggestion": "reject or preserve unchanged any factory whose complete AST binding/signature/semantics changes; outer factory signature check is insufficient"
+}

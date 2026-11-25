@@ -1,0 +1,23 @@
+✔ loads the default hardware file and preserves explicit-file and environment precedence (37.8141ms)
+✔ only a missing default file falls back to empty hardware configuration (16.7148ms)
+✔ reports the selected file for malformed JSON, nonobjects and invalid hardware fields (117.7905ms)
+✔ reports permission and directory errors without using empty configuration (12.541ms)
+✔ finds the project default in source and dist layouts independently of cwd and runtime override (592.3172ms)
+✔ hardware compiles exact job-local library versions and rejects unsafe packages before CLI launch (2348.9957ms)
+✔ hardware HTTP binds source/profile/artifacts and upload verification without project API routes (985.7907ms)
+✔ hardware validates exact fields, sizes, profiles, origin and missing jobs (474.5251ms)
+✔ hardware enforces one active job and remains cancelling until runner confirms exit (384.5709ms)
+✔ exit zero without actual artifacts fails, and timeout carries its own error (591.3229ms)
+✔ logs retain a bounded tail with an explicit truncation notice and monotonic cursors (28.624ms)
+✔ upload reports real failure or missing verification rather than accepting exit zero (994.8322ms)
+✔ configured core data remains read-only and one missing core does not disable an installed profile (261.2168ms)
+✔ real spawn keeps shell syntax inert and task cancellation/timeout closes owned children (1347.6061ms)
+✔ unconfigured deployment starts with five truthful unavailable profiles (21.3726ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8628.6071

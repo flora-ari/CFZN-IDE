@@ -1,0 +1,55 @@
+✔ shared session orders writes, distributes the same RX, and retains ownership after failed close (13.6921ms)
+✔ cancelled chooser is a disconnected terminal state (0.514ms)
+✔ RPC id zero replies, discoveries and shared raw byte IO do not require Link (49.9202ms)
+✔ upload uses current code, explicit OS selection, successful release and safe terminal restore (31.2213ms)
+✔ release failure prevents upload; source changes prevent stale artifact upload (2.676ms)
+✔ restore error is separate from upload success and cancellation stays busy until tool exits (4.6273ms)
+✔ upload preflight reports missing or stale selections and preserves generation and busy failures (0.7483ms)
+✔ a selected profile and OS port retain their identity while unavailable tooling is diagnosed and then recovers (1.7276ms)
+✔ local service starts unknown, publishes checking, and only performs a bounded GET against its configured address (26.244ms)
+✔ missing compiler/core remains online and capabilities checks preserve explicit profile and OS port selections (3.5674ms)
+✔ the service retry action refreshes capabilities and OS ports without clearing job or serial diagnostics (4.9988ms)
+✔ confirmed incompatible service cannot submit new jobs using previously cached profiles (2.0134ms)
+✔ network and HTTP capability failures are offline while existing job and serial diagnostics are preserved (0.7225ms)
+▶ reachable incompatible protocols and malformed consumed fields are incompatible rather than offline
+  ✔ protocol (0.4183ms)
+  ✔ host (0.2436ms)
+  ✔ profiles (0.2402ms)
+  ✔ boolean (0.2446ms)
+  ✔ reason (0.2696ms)
+  ✔ profile identity (0.1913ms)
+  ✔ fqbn (0.1999ms)
+  ✔ duplicate profile IDs (0.9578ms)
+  ✔ toolchain (0.1641ms)
+✔ reachable incompatible protocols and malformed consumed fields are incompatible rather than offline (4.0938ms)
+✔ OS port enumeration failures only update portError and retain browser serial and explicit choices (0.9408ms)
+▶ malformed OS port responses retain the prior list and stay separate from service compatibility
+  ✔ null (0.3844ms)
+  ✔ {"items":{}} (0.3595ms)
+  ✔ {"items":[null]} (0.2021ms)
+  ✔ {"items":[{"portId":"x","displayName":3}]} (0.2877ms)
+  ✔ {"items":[{"portId":"x","displayName":"x","usbVendorId":1}]} (0.2182ms)
+  ✔ {"items":[{"portId":"COM-MOCK","displayName":"Mock OS serial"},{"portId":"COM-MOCK","displayName":"Mock OS serial"}]} (0.2083ms)
+✔ malformed OS port responses retain the prior list and stay separate from service compatibility (2.1341ms)
+✔ a later capability check supersedes both late successes and late errors without overwriting its result (0.4596ms)
+✔ a check superseded synchronously by a subscriber also terminates without starting its stale transport (0.2656ms)
+✔ a later port refresh supersedes late lists and late errors while keeping explicit selection (0.4948ms)
+✔ capability checks time out after eight seconds even when transport ignores abort, and late success cannot restore online (0.7817ms)
+✔ port response-body reads are bounded too and do not change an online capability service (0.7498ms)
+✔ malformed upload preflight port lists are rejected before release and never replace the last valid list (7.9336ms)
+✔ upload preflight and manual refresh share response generations while upload validates its own fresh result (1.9888ms)
+✔ health checks do not release an active job or browser port when status polling and cancellation are interrupted (1.6945ms)
+✔ missing port feedback clears through the rendered selector and only explicit retry builds and uploads once (31.8776ms)
+✔ external connection configuration, profile changes and board changes invalidate old feedback even while closed (1.1164ms)
+✔ invalid configuration and retry show one latest cause while capability recovery clears a resolved startup failure (1.835ms)
+✔ readiness shares startup guards and refuses a removed OS port without submitting (3.1626ms)
+✔ selection and health checks preserve actual failed job diagnostics, logs and terminal restore errors (2.7589ms)
+✔ an unknown submission keeps ownership and its error when retry or configuration is attempted (1.3738ms)
+ℹ tests 45
+ℹ suites 0
+ℹ pass 45
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 263.364

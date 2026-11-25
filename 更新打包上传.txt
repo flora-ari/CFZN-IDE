@@ -1,0 +1,229 @@
+CFZN-IDE 网站构建、上传与 Nginx 部署说明
+适用项目：D:\CFZN\CFZN-IDE
+说明更新：2026-11-23
+
+一、部署配置
+
+服务器：8.138.226.239
+SSH 账号：root
+SSH 端口：22
+项目目录：/home/wwwroot/cfzn-ide/
+网站地址：https://ide.xiaodaiyang.top/
+编辑器地址：https://ide.xiaodaiyang.top/openblock.html
+健康检查：https://ide.xiaodaiyang.top/api/v1/health
+
+前端在 Windows 本地构建，由服务器 Nginx 直接提供静态文件。
+后端 TypeScript 在本地编译成 JavaScript，由服务器 Node.js 运行，systemd 管理进程。
+Nginx 将 /api/ 请求反向代理到 IDE 后端；浏览器通过同一个 HTTPS 域名访问页面和 API。
+密码按 SSH/SCP 的终端提示输入，不写入文档、脚本或部署包。
+
+二、当前这次失败部署如何恢复
+
+已上传的发布编号：20261123T014854Z-cfe8ac8d
+本地清单：build\deploy\20261123T014854Z-cfe8ac8d\manifest.json
+
+根据服务器回传日志，此包已上传，HTTPS 证书已签发并安装。
+随后 HTTPS 检查收到了过期证书，安装退出码为 1，脚本回滚了 IDE 服务和 Nginx 站点配置。
+当前不能视为部署成功；实际返回的过期证书来源仍待检查。
+
+在本机 PowerShell 执行以下命令，使用当前项目中已更新的恢复脚本：
+
+  cd D:\CFZN\CFZN-IDE
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\Deploy-Ide.ps1 -Resume -RetryFailed -ManifestPath .\build\deploy\20261123T014854Z-cfe8ac8d\manifest.json
+
+这条命令仅重新上传部署脚本，复用服务器上已有的部署包，不重新编译或上传网站包。
+服务器会归档原失败日志和退出码，并重新校验部署包；仍有效的证书会被复用。
+恢复会拒绝覆盖 current 正在使用的发布目录，并为本次尝试创建独立配置备份。
+如果 /tmp 中的部署包已被清理，按第四节生成新的发布重新部署。
+
+三、部署前准备
+
+本机要求：
+1. Node.js 22.12 或更新版本，以及 npm。
+2. Git、Windows OpenSSH 的 ssh/scp 命令和 tar 命令。
+3. 项目开发依赖和 OpenBlock 资源已准备好。首次配置项目时执行：
+
+  cd D:\CFZN\CFZN-IDE
+  npm run setup
+
+服务器要求：
+1. Linux + systemd，现有 nginx.service 正常运行。
+2. Nginx 主配置包含 /etc/nginx/conf.d/*.conf，并且 nginx -t 通过。
+3. 域名 ide.xiaodaiyang.top 的 A 记录指向 8.138.226.239；没有指向错误服务器的 AAAA 记录。
+4. 公网可以访问 80/443，SSH 22 端口可从部署电脑访问。
+5. 有 Node.js 22.12 或更新版本、npm，以及 Bash、curl、OpenSSL、ss、tar、sha256sum、getent、flock、runuser、useradd、timeout 等命令。
+6. 能下载 npm 生产依赖。已有有效站点证书，或 /root/.acme.sh/acme.sh 可申请证书。
+7. 若 /home/wwwroot/cfzn-ide/ 已存在，它必须由本项目部署脚本管理；未标记的现有目录和非本项目管理的站点配置不会被直接覆盖。
+
+若系统 PATH 中没有合适的 Node.js/npm，脚本会尝试服务器已有的：
+/home/wwwroot/harness-ota/runtime/node-v24.14.0-linux-x64/bin
+IDE 随后将 Node 可执行文件单独保存在自己的 runtime/ 目录中。
+
+四、首次部署或发布新的代码
+
+每次需要发布最新代码时，在本机 PowerShell 执行：
+
+  cd D:\CFZN\CFZN-IDE
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\Deploy-Ide.ps1 -Server 8.138.226.239 -SshUser root
+
+脚本会依次：
+1. 运行 npm run build，构建前端并编译后端。
+2. 在 build\deploy\<发布编号>\ 生成 cfzn-ide.tar.gz 和 manifest.json。
+3. 通过 SSH 创建服务器临时上传目录，通过 SCP 上传部署包和部署脚本。
+4. 在服务器校验 SHA-256，解包，并安装后端生产依赖。
+5. 准备站点证书，检查可用端口，创建环境配置和 cfzn-ide.service。
+6. 配置 Nginx，检查语法并平滑重载。
+7. 检查服务器本机 HTTPS，再从部署电脑检查公网首页、编辑器和 API。
+
+命令执行期间可能多次提示输入 SSH 密码，这是多个独立 SSH/SCP 连接。
+首次连接如果提示服务器主机指纹，应核对后再接受。
+
+五、只打包，或上传已有部署包
+
+只在本机构建并打包：
+
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\Deploy-Ide.ps1 -PackageOnly
+
+产物位于：
+build\deploy\<发布编号>\cfzn-ide.tar.gz
+build\deploy\<发布编号>\manifest.json
+
+使用已构建的部署包时，将下面的 <发布编号> 替换成实际目录名：
+
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\Deploy-Ide.ps1 -ManifestPath .\build\deploy\<发布编号>\manifest.json
+
+这条命令不重新构建，会上传清单指定的包，并校验其 SHA-256。
+manifest.json 中包含部署包的本机绝对路径；移动整个项目后，应重新打包或确认清单路径仍然有效。
+上传后若发布目录已经存在，需先判断是成功发布、仍在安装，还是失败，不能直接重复覆盖。
+
+六、连接中断与失败恢复
+
+情况 A：包已上传，SSH 监控中断，尚未确定安装结果。
+使用原发布清单续接，先查看既有安装任务和结果：
+
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\Deploy-Ide.ps1 -Resume -ManifestPath .\build\deploy\<发布编号>\manifest.json
+
+-Resume 不重新上传网站包，只更新部署脚本并续接任务监控。
+服务器安装由独立 systemd 临时服务运行，SSH 断开后任务可能仍在执行。
+续接要求服务器 /tmp/cfzn-ide-<发布编号>/ 中仍有对应部署包；若包已被清理，按第四节生成新的发布重新部署。
+如果已有失败退出码，普通 -Resume 只显示结果，不自动重试。
+
+情况 B：已确认 install.exit 是非零退出码。
+使用原清单，并显式添加 -RetryFailed：
+
+  powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\Deploy-Ide.ps1 -Resume -RetryFailed -ManifestPath .\build\deploy\<发布编号>\manifest.json
+
+-RetryFailed 必须与 -Resume、-ManifestPath 一起使用。
+它不会把已成功的发布当作失败发布重新覆盖；活动发布目录也会受到保护。
+
+情况 C：上次部署成功，现在有新的代码要发布。
+按第四节运行完整部署，生成新的发布编号；发布切换保留服务器 data/ 数据。
+
+七、Nginx、端口与服务器目录
+
+公网访问使用 Nginx 的 80/443 端口，HTTP 自动跳转到 HTTPS。
+IDE 后端仅监听 127.0.0.1，脚本在 9111–9199 中自动选择空闲端口。
+选择时同时检查现有 TCP 监听和 Nginx 已引用的端口；启动后核对监听进程属于 IDE 服务。
+后端实际端口以部署日志的 Selected unused API port 和 /etc/cfzn-ide.env 中的 PORT 为准。
+不固定占用 9111，也不覆盖其他应用已使用的端口；如果范围内没有可用端口，部署会停止。
+后端端口无需向公网开放。
+
+项目根目录：/home/wwwroot/cfzn-ide/
+当前发布链接：/home/wwwroot/cfzn-ide/current
+发布文件目录：/home/wwwroot/cfzn-ide/releases/<发布编号>/
+前端静态目录：/home/wwwroot/cfzn-ide/current/web/
+后端启动文件：/home/wwwroot/cfzn-ide/current/api/dist/main.js
+作品与自定义模块：/home/wwwroot/cfzn-ide/data/
+独立 Node 运行时：/home/wwwroot/cfzn-ide/runtime/
+配置备份目录：/home/wwwroot/cfzn-ide/backups/
+服务名：cfzn-ide.service
+服务配置：/etc/systemd/system/cfzn-ide.service
+环境变量：/etc/cfzn-ide.env
+Nginx 站点配置：/etc/nginx/conf.d/ide.xiaodaiyang.top.conf
+证书：/etc/nginx/ssl/ide.xiaodaiyang.top/fullchain.pem
+私钥：/etc/nginx/ssl/ide.xiaodaiyang.top/privkey.pem
+
+Nginx 的 root 指向 current/web，/api/ 代理到本次选定的本机 API 端口。
+网站静态资源包括 OpenBlock 编辑器、模块扩展和相关图片；服务器不执行前端构建。
+服务器 data/ 独立于发布目录，更新部署保留现有作品和自定义模块。
+自动回滚恢复的是 IDE 配置和发布链接，不能代替用户数据备份。
+
+八、确认是否真正部署完成
+
+最终应看到：
+
+  Server installation exit code: 0
+  Deployment verified: https://ide.xiaodaiyang.top
+
+仅出现域名验证成功、Cert success、Reload successful 或 nginx -t 通过，都不代表整套部署完成。
+服务器检查与部署电脑的公网检查都通过后，再打开网站验证积木编辑、保存和重新打开作品。
+
+可在本机 PowerShell 单独检查：
+
+  curl.exe --noproxy "*" --http1.1 -I --connect-timeout 10 --max-time 20 https://ide.xiaodaiyang.top/
+  Invoke-RestMethod https://ide.xiaodaiyang.top/api/v1/health
+
+首页应返回 HTTP 200，健康接口的 status 应为 ok。
+
+九、日志与常见问题
+
+先登录服务器：
+
+  ssh root@8.138.226.239
+
+以下命令在服务器 Bash 中执行；将发布编号替换为本次实际值：
+
+  release=20261123T014854Z-cfe8ac8d
+  tail -n 100 "/tmp/cfzn-ide-$release/install.log"
+  cat "/tmp/cfzn-ide-$release/install.exit"
+  systemctl status cfzn-ide --no-pager
+  journalctl -u cfzn-ide -n 80 --no-pager
+  nginx -t
+  cat /etc/cfzn-ide.env
+  ss -lntp
+
+install.exit 不存在可能表示任务仍在运行，也可能没有正常记录结果，应结合部署任务状态和日志判断。
+部署任务名为 cfzn-ide-deploy-<发布编号>.service。
+显式失败重试会将旧日志与结果归档为 install.failed-<时间与进程号>.log/.exit。
+
+1. Set DNS A record ...
+检查域名在服务器上的解析结果，并核对 A/AAAA 记录。不要靠重复上传解决解析错误。
+
+2. certificate has expired / SEC_E_CERT_EXPIRED
+比较已安装证书与实际服务证书；在服务器执行：
+
+  openssl x509 -in /etc/nginx/ssl/ide.xiaodaiyang.top/fullchain.pem -noout -subject -issuer -dates
+  timeout 8 openssl s_client -connect 127.0.0.1:443 -servername ide.xiaodaiyang.top </dev/null 2>/dev/null | openssl x509 -noout -subject -issuer -dates
+
+若校验持续失败，新脚本会在回滚前输出两份证书摘要。需根据摘要、Nginx 监听配置和日志定位原因。
+不能只凭“证书签发成功”认定浏览器已收到正确证书，也不能通过关闭证书校验宣称部署成功。
+
+3. Unit cfzn-ide.service could not be found / 站点配置文件不存在
+首次部署在创建服务前可能没有该 unit；若日志同时显示 Deployment failed; restoring previous IDE configuration，
+表示部署已失败并回滚，应先处理前面的错误，再按第六节执行显式失败恢复。
+
+4. ERR_HTTP2_PROTOCOL_ERROR
+该截图不足以确认根因。先检查完整安装日志、HTTPS 证书和 Nginx 实际站点配置，
+再用第八节的 HTTP/1.1 请求检查访问链路。
+
+5. SSH connection failed before upload / 连接服务器 22 端口 Permission denied
+如果错误发生在输入密码之前，应检查部署环境是否允许 SSH 网络访问。
+如果已经进入账号验证阶段，则根据完整 SSH 错误检查认证。更换密码不能解除本机运行环境的网络限制。
+
+6. 证书续期
+部署会为 acme.sh 安装证书复制和 Nginx 重载命令；需核对服务器已有续期任务。
+若服务器使用 acme-renew.timer，可检查 systemctl status acme-renew.timer --no-pager；
+若使用 cron，则核对实际 acme.sh 定时项。不要把一次成功签发等同于续期任务已经验收。
+
+十、浏览器串口与本机编译服务
+
+网站部署完成后，Web Serial 连接的是访问者电脑上的开发板。
+编译和烧录仍需要在插有设备的电脑上配置并运行本地硬件服务；默认地址为 127.0.0.1:3002。
+本地硬件服务需要允许准确的网站 Origin：https://ide.xiaodaiyang.top。
+生产浏览器还需允许相关串口和本地网络访问权限，具体按 apps/api/HARDWARE.md 配置。
+服务器网站部署成功不能代替实机烧录验收。
+
+当前项目的作品 API 采用匿名共享存储，自定义模块按浏览器会话隔离。
+本部署流程没有接入登录、注册或账号归属系统。
+
+详细脚本参数、目录映射和本地检查入口见 deploy/README.md。

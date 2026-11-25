@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { extensionReferences } from '../src/extensions/removal.ts';
 import { archiveWithoutController } from '../src/editor-archive.ts';
-import { modules, controllerTypes } from '../src/extensions/catalog.ts';
+import { modules, controllerIds, selectableControllerIds } from '../src/extensions/catalog.ts';
+import { validateCustomModuleDefinition } from '../src/extensions/custom-module-definition.ts';
+import { matchesLibraryKeyword } from '../src/extensions/library-keyword.ts';
 import { strFromU8, strToU8, zipSync, unzipSync } from 'fflate';
 
 const blocks = (rows: Record<string, any>) => ({ getAllIds: () => Object.keys(rows), getBlock: (id: string) => rows[id] });
@@ -28,5 +30,32 @@ test('controller removal candidate changes only device and preserves complete en
 });
 test('library types are explicit actual catalog entries', () => {
   assert.deepEqual(modules.map(module => module.type), ['actuator', 'actuator', 'sensor', 'sensor', 'sensor', 'function']);
-  assert.equal(Object.keys(controllerTypes).length, 5); assert.ok(Object.values(controllerTypes).every(type => type === 'board'));
+  assert.equal(controllerIds.length, 5);
+  assert.equal(selectableControllerIds.length, 20);
+});
+test('private definitions accept the complete trusted controller catalog while built-in compatibility stays scoped', () => {
+  const definition = { schemaVersion: 1, name: 'Controller scope', description: '', author: '', version: '1', type: 'function',
+    supportDevice: selectableControllerIds, definitions: '', setup: '',
+    blocks: [{ key: 'nop', message: '操作', shape: 'command', inputs: [], code: 'delay(1);' }] };
+  assert.deepEqual(validateCustomModuleDefinition(definition).supportDevice, selectableControllerIds);
+  assert.deepEqual(validateCustomModuleDefinition({ ...definition, supportDevice: controllerIds }).supportDevice, controllerIds);
+  for (const id of ['', 'null', 'unknown', 'arduino', 'arduinoNanoHidden']) {
+    assert.throws(() => validateCustomModuleDefinition({ ...definition, supportDevice: [id] }), /支持主控/);
+  }
+  assert.throws(() => validateCustomModuleDefinition({ ...definition, supportDevice: ['arduinoNano', 'arduinoNano'] }), /支持主控/);
+  assert.ok(modules.every(module => !module.supportDevice.includes('arduinoNano')));
+});
+test('hardware library searches localized descriptions and registered identifiers within each field', () => {
+  const entry = {
+    name: 'Demo Board', description: { props: { id: 'demo.description', defaultMessage: 'Default description' } },
+    deviceId: 'demoController', tags: ['Embedded Kit'], sku: 'SKU-Ab12',
+  };
+  const formatMessage = ({ id }: { id: string }) => id === 'demo.description' ? '支持数字输入' : '';
+  for (const query of ['BOARD', '数字输入', 'CONTROLLER', 'EMBEDDED', 'sku-aB']) {
+    assert.equal(matchesLibraryKeyword(entry, query, formatMessage), true, query);
+  }
+  for (const query of ['Default description', 'Board支持', 'unregistered']) {
+    assert.equal(matchesLibraryKeyword(entry, query, formatMessage), false, query);
+  }
+  assert.equal(matchesLibraryKeyword({ extensionId: 'moreComments' }, 'MOREcomments', formatMessage), true);
 });

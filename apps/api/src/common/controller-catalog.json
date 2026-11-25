@@ -1,0 +1,22 @@
+[
+  "arduinoUno",
+  "arduinoNano",
+  "arduinoLeonardo",
+  "arduinoMega2560",
+  "arduinoUnoR4Minima",
+  "arduinoUnoR4Wifi",
+  "arduinoEsp32",
+  "arduinoEsp32S3",
+  "arduinoEsp8266NodeMCU",
+  "arduinoK210MaixDock",
+  "arduinoK210Maixduino",
+  "arduinoRaspberryPiPico",
+  "arduinoRaspberryPiPicoW",
+  "arduinoRaspberryPiPico2",
+  "arduinoRaspberryPiPico2W",
+  "microbit",
+  "microbitV2",
+  "makeyMakey",
+  "aijiteESP32S3",
+  "firebeetleEsp32E"
+]

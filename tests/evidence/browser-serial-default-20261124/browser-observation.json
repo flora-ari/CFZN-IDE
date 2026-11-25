@@ -1,0 +1,18 @@
+{
+  "observedAt": "2026-11-24T01:19:15.607Z",
+  "productionPage": "http://127.0.0.1:5173/",
+  "browserDefault": true,
+  "dialog": {
+    "bottom": 704,
+    "right": 1090,
+    "x": 190,
+    "y": 16
+  },
+  "text": "连接 ESP32本机直连浏览器串口刷新设备已授权设备会自动显示，可直接连接。新设备首次需要在浏览器中选择。连接新设备设备名称端口波特率状态操作尚无已授权设备，点击连接新设备。每行保存自己的波特率；保存偏好不会打开设备。关闭面板保留当前连接。",
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  },
+  "nativeFirstChooserCompleted": false,
+  "physicalSerialOpened": false
+}

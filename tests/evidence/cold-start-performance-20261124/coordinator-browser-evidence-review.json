@@ -1,0 +1,62 @@
+{
+  "source": "coordinator supplied browser files, read-only review by independent task",
+  "runs": [
+    {
+      "host": "127.0.0.1:5180",
+      "iframeReadyMs": 8351,
+      "parentReadyMs": 8628,
+      "guiBodyCount": 1,
+      "encodedBodyBytes": 3753908,
+      "iframeTransferSize": 0,
+      "guiLimitedOnly": true
+    },
+    {
+      "host": "127.0.0.1:5181",
+      "iframeReadyMs": 7742,
+      "parentReadyMs": 7825,
+      "guiBodyCount": 1,
+      "encodedBodyBytes": 3753908,
+      "iframeTransferSize": 0,
+      "guiLimitedOnly": true
+    },
+    {
+      "host": "127.0.0.1:5182",
+      "iframeReadyMs": 7674,
+      "parentReadyMs": 7770,
+      "guiBodyCount": 1,
+      "encodedBodyBytes": 3753908,
+      "iframeTransferSize": 0,
+      "guiLimitedOnly": true
+    }
+  ],
+  "medianIframeReadyMs": 7742,
+  "medianParentReadyMs": 7825,
+  "sameRoundBaseline": "coordinator resumed baseline reviewed; local observed comparison only, no Internet guarantee",
+  "browserProcessRestarted": null,
+  "networkCacheBoundary": "each run downloaded a complete GUI body; HTTP network coldness is evidenced, new-process/code-cache coldness is not",
+  "baselineRuns": [
+    {
+      "iframeReadyMs": 10564,
+      "parentReadyMs": 10756,
+      "encodedBodyBytes": 5480379,
+      "fullNetworkBody": true
+    },
+    {
+      "iframeReadyMs": 9976,
+      "parentReadyMs": 10066,
+      "encodedBodyBytes": 5480379,
+      "fullNetworkBody": true
+    },
+    {
+      "iframeReadyMs": 9832,
+      "parentReadyMs": 9986,
+      "encodedBodyBytes": 5480379,
+      "fullNetworkBody": true
+    }
+  ],
+  "medianBaselineIframeReadyMs": 9976,
+  "observedMedianSavedMs": 2234,
+  "observedMedianReductionFraction": 0.22393744987971131,
+  "browserProcessBoundary": "same machine and IAB type; tool bindings reconstructed, process/CPU/compiled-code cache were not controlled",
+  "sourceEnvironmentCorrection": "coordinator correction supersedes older same-process wording in performance-comparison.json"
+}

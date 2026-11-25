@@ -1,0 +1,72 @@
+{
+  "transport": "real Nest HTTP on OS-assigned loopback ports",
+  "driver": "injected EventEmitter fake; no OS serial binding loaded",
+  "cases": [
+    {
+      "name": "same VID, two persisted rates and stream lifecycle",
+      "savedRates": [
+        9600,
+        57600
+      ],
+      "rx": [
+        0,
+        10,
+        13,
+        128,
+        255,
+        5,
+        6
+      ],
+      "txSequences": [
+        1,
+        2
+      ],
+      "readCursors": [
+        0,
+        5
+      ],
+      "duplicateTxDidNotWrite": true,
+      "driverOpens": 2
+    },
+    {
+      "name": "authoritative open error snapshots",
+      "nullCleared": true,
+      "releasedCleared": true,
+      "heldIdClosed": "67438ab5-b47a-4bac-87d1-c1dd32967087",
+      "retainedUntilExplicitRetry": true,
+      "otherRowBlocked": true
+    },
+    {
+      "name": "lost open response with real backend idempotence",
+      "submissions": 3,
+      "uniqueRequestIds": 1,
+      "driverOpens": 1,
+      "released": true
+    },
+    {
+      "name": "legacy and action structure",
+      "legacyRows": 2,
+      "driverOpens": 0,
+      "columns": 5,
+      "actionsOnlyInLastCell": true,
+      "actualBrowserGeometry": "not exercised in this independent task"
+    },
+    {
+      "name": "frozen protected resources",
+      "guiSHA256": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+      "vmModules": 178,
+      "blocklyModules": 15,
+      "licenses": 3,
+      "pngHashes": [
+        {
+          "path": "apps/web/public/branding/ccraft-logo.png",
+          "sha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2"
+        },
+        {
+          "path": "apps/web/dist/branding/ccraft-logo.png",
+          "sha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2"
+        }
+      ]
+    }
+  ]
+}

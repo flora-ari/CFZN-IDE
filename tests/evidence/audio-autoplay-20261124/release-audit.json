@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-24",
+  "stage": "D:\\CFZN\\CFZN-IDE\\build\\deploy\\20261124T081631Z-cfe8ac8d\\bundle",
+  "baseline": "D:\\CFZN\\CFZN-IDE\\build\\deploy\\20261124T025043Z-cfe8ac8d\\bundle",
+  "passed": true,
+  "filesBefore": 2258,
+  "filesAfter": 2259,
+  "identicalFiles": 2250,
+  "apiIdenticalFiles": 36,
+  "changedOrAdded": [
+    {
+      "path": "compression.json",
+      "status": "modified",
+      "before": "4f8a3b58e1dba42a02420da1fea345a469e546f0b32876afd182e3b12d66f85a",
+      "after": "493a78084cc8cfda622794941b5fc8b788758a718d0b082ff9d9a2eaaaba712a"
+    },
+    {
+      "path": "release.json",
+      "status": "modified",
+      "before": "db479b2a5946a13001c42bda8fdc709c39fe277d021b39d5dc528758c2cf1952",
+      "after": "3b3fd98e57ef4965433b78c82c8290a9e94fee358212830147fab400ebe20a74"
+    },
+    {
+      "path": "web/branding/ccraft-tab-icon.png",
+      "status": "added",
+      "before": null,
+      "after": "c4375f067f4da96b6fb4b14a6c4ede4df0bb7a440f840e35c9a33680557292cb"
+    },
+    {
+      "path": "web/index.html",
+      "status": "modified",
+      "before": "2992d04c4466e696f8947731aad4c174c3a8a5bb7264faee78fa1fb868249382",
+      "after": "23cad25bf852ce310168ce2a3eb4dfde1f0f6aa0e3794018a018e7a39c324342"
+    },
+    {
+      "path": "web/openblock-vendor/manifest.json",
+      "status": "modified",
+      "before": "a0262f9dcbfd1d7925476a5116bb1ef877f094f7e880848051476dfd383ceee0",
+      "after": "87cfd298a001e4bde10b772b443925a154e5c37774e0e808034b617d8622fee9"
+    },
+    {
+      "path": "web/openblock-vendor/openblock-gui.js",
+      "status": "modified",
+      "before": "78c7b2c43ea6eddffe6877c43b8fe677b9568849d84d45b436f9d077b1fbcbb5",
+      "after": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2"
+    },
+    {
+      "path": "web/openblock-vendor/openblock-gui.js.gz",
+      "status": "modified",
+      "before": "4d5c875c871cbde186a30c83b50bb62c5f194a9e482a34752a7d0499831c27eb",
+      "after": "f4fb6fc8574ffe1e932bf1bbef83298c7d70b5d0810d978fadfd5699efa547be"
+    },
+    {
+      "path": "web/openblock.html",
+      "status": "modified",
+      "before": "b21274b18d2eaef9d912f6b267ca6580e4e3b3291287ddb378d14173ecf9df4d",
+      "after": "3af5fff7078b2448a98cae46c5020fb6d49a7d3425b9887814e46b23982f343c"
+    },
+    {
+      "path": "web/openblock.html.gz",
+      "status": "modified",
+      "before": "4f0b41390d49deabb23b5edce848907540115b5b71783f74b4a15bc77eb00bd6",
+      "after": "71168e0d05ec34a94d896922df03e35b0a2a94090f486cd52931052b1aa232b3"
+    }
+  ],
+  "gzipChangedOrAdded": 2,
+  "gzipCopiesRoundtripped": 284,
+  "guiOnlyModule520Changed": true,
+  "guiSHA256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2",
+  "htmlChangesOnlyFavicon": [
+    {
+      "path": "web/index.html",
+      "oldTag": "<link rel=\"icon\" type=\"image/svg+xml\" href=\"/branding/ccraft-icon.svg\" />",
+      "newTag": "<link rel=\"icon\" type=\"image/png\" href=\"/branding/ccraft-tab-icon.png\" />"
+    },
+    {
+      "path": "web/openblock.html",
+      "oldTag": "<link rel=\"icon\" type=\"image/svg+xml\" href=\"/branding/ccraft-icon.svg\" />",
+      "newTag": "<link rel=\"icon\" type=\"image/png\" href=\"/branding/ccraft-tab-icon.png\" />"
+    }
+  ],
+  "vendorManifestOnlyReleasePatch": true,
+  "legacyHeaderLogoIdentical": true,
+  "newFaviconSHA256": "c4375f067f4da96b6fb4b14a6c4ede4df0bb7a440f840e35c9a33680557292cb",
+  "oldEditorAndAllOtherFrontendIdentical": true,
+  "archiveSHA256": "ee3f4bdf8594fd9d602850e9f2797997308bc65f635540d3fd06561822085ca5",
+  "archiveCriticalFilesMatchStage": [
+    "web/index.html",
+    "web/openblock.html",
+    "web/openblock-vendor/openblock-gui.js",
+    "web/branding/ccraft-tab-icon.png"
+  ]
+}

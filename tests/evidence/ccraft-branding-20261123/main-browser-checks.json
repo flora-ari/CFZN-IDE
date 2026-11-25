@@ -1,0 +1,35 @@
+{
+  "scope": "Local final production build, isolated real API, IAB browser, 1280x720",
+  "localUrl": "http://127.0.0.1:57627/",
+  "bootTextObserved": "正在启动 CCraft 编辑器…",
+  "logo": {
+    "src": "/branding/ccraft-logo.png",
+    "naturalWidth": 1448,
+    "naturalHeight": 1086,
+    "renderedWidth": 120,
+    "renderedHeight": 40,
+    "objectFit": "cover",
+    "objectPosition": "50% 53%",
+    "opacity": "1",
+    "visuallyVerified": true
+  },
+  "officialWebsite": {
+    "newTabUrl": "https://maker.xiaodaiyang.top/",
+    "newTabTitle": "诚飞创客平台 · CFZN Maker Platform",
+    "originalEditorUrlUnchanged": true
+  },
+  "fullscreen": {
+    "enteredAndExited": true,
+    "brandVisibleNotAsserted": true
+  },
+  "liveBrowserVerification": {
+    "passed": false,
+    "reason": "Public site browser binding timed out; online files instead compared byte-for-byte with locally tested production build."
+  },
+  "temporaryQaServerStopped": true,
+  "screenshots": [
+    "local-boot.jpg",
+    "local-final-header.jpg",
+    "local-fullscreen.jpg"
+  ]
+}

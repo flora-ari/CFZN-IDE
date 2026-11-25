@@ -1,0 +1,96 @@
+{
+  "date": "2026-11-24",
+  "release": "20261124T091653Z-cfe8ac8d",
+  "stage": "D:\\CFZN\\CFZN-IDE\\build\\deploy\\20261124T091653Z-cfe8ac8d\\bundle",
+  "baseline": "D:\\CFZN\\CFZN-IDE\\build\\deploy\\20261124T081631Z-cfe8ac8d\\bundle",
+  "structuralAuditPassed": true,
+  "candidateSemanticsAndPerformanceAcceptance": "separate strict AST/execution/READY checks required; a4c534b8 candidate is rejected",
+  "fastGui": {
+    "url": "/openblock-vendor/openblock-gui.a4c534b8c1f9171b.js",
+    "sha256": "a4c534b8c1f9171b6de723ee9b0372eba7bfd553f5237523e7d0bb3643ee86d2",
+    "bytes": 17374070
+  },
+  "filesBefore": 2259,
+  "filesAfter": 2263,
+  "identicalFiles": 2253,
+  "apiFilesIdentical": 36,
+  "changed": [
+    {
+      "file": "compression.json",
+      "kind": "modified",
+      "sha256": "ca2d825a4e89c26cc3453ab6bc8551fbf4f19c7cde7c1c8f9815dddac7ba1973",
+      "bytes": 236
+    },
+    {
+      "file": "release.json",
+      "kind": "modified",
+      "sha256": "0ae24a10468427d2195aa08a786fa90081ff8d45ee9466dfdc33d91651bdd164",
+      "bytes": 1081
+    },
+    {
+      "file": "web/index.html",
+      "kind": "modified",
+      "sha256": "c8f757ea213c2165f4e310592935cfff85e02929a544a0e27a2788d3aec91d6f",
+      "bytes": 682
+    },
+    {
+      "file": "web/openblock-vendor/manifest.json",
+      "kind": "modified",
+      "sha256": "512c0a36cb2fc41ae86fd53b81511a7bf6e983f1bbe9327af0e2ddb03a861895",
+      "bytes": 32643
+    },
+    {
+      "file": "web/openblock.html",
+      "kind": "modified",
+      "sha256": "ceb127cdad3e4cc29fe3738558ea9ce87da81f5f99d06b5acf1a61f7a99f71cc",
+      "bytes": 4102
+    },
+    {
+      "file": "web/openblock.html.gz",
+      "kind": "modified",
+      "sha256": "69a5af17fdaeb251f043e31c6b32482323e15a9d08bd50bb50f8cc7d9021ce56",
+      "bytes": 1637
+    },
+    {
+      "file": "web/openblock-vendor/manifest.json.gz",
+      "kind": "added",
+      "sha256": "5df3c1e7bdeedeca51b61ed7f837505503ebff98412b1d3573c7d70946884810",
+      "bytes": 9970
+    },
+    {
+      "file": "web/openblock-vendor/openblock-gui.a4c534b8c1f9171b.js",
+      "kind": "added",
+      "sha256": "a4c534b8c1f9171b6de723ee9b0372eba7bfd553f5237523e7d0bb3643ee86d2",
+      "bytes": 17374070
+    },
+    {
+      "file": "web/openblock-vendor/openblock-gui.a4c534b8c1f9171b.js.br",
+      "kind": "added",
+      "sha256": "20dac6cb2fff37a5c05b0f00ddab7893238a75a82d76b786410b092fe3393066",
+      "bytes": 3744649
+    },
+    {
+      "file": "web/openblock-vendor/openblock-gui.a4c534b8c1f9171b.js.gz",
+      "kind": "added",
+      "sha256": "5a5992bcee1b5e82cebf81853ea29213a3c729d3c56121de99c9ff2aa67b1693",
+      "bytes": 4637749
+    }
+  ],
+  "representationsVerified": 287,
+  "fastRepresentations": [
+    {
+      "file": "web/openblock-vendor/openblock-gui.a4c534b8c1f9171b.js.br",
+      "bytes": 3744649,
+      "decodedBytes": 17374070
+    },
+    {
+      "file": "web/openblock-vendor/openblock-gui.a4c534b8c1f9171b.js.gz",
+      "bytes": 4637749,
+      "decodedBytes": 17374070
+    }
+  ],
+  "legacyUnchanged": true,
+  "htmlOnlyFastURLAndPreload": true,
+  "vendorManifestOnlyFastMetadata": true,
+  "archiveSHA256": "c9b01dc8372565e605758bc4b5ca1e4f475f2b66d084069fbe6741b13d7f88bc"
+}

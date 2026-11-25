@@ -1,0 +1,30 @@
+{
+  "editor": "editor-CBb0ccAP.js",
+  "css": "editor-D5NDjZiN.css",
+  "editorSha256": "4b0a1b63bff22b369e5877484205fafe5b9b30e39cd9fcaf78b6afa89e3a4bec",
+  "cssSha256": "9894611a1321c780facac82f2044f3293701dafb134c56da54c29d411690c646",
+  "staticChecks": {
+    "bodyScrollable": true,
+    "fixedActions": true,
+    "viewportBound": true,
+    "wrap": true,
+    "headerNoShrink": true,
+    "compiledUploadBody": true,
+    "compiledUploadActions": true,
+    "readyHint": true
+  },
+  "browser": {
+    "tool": "cua_repl",
+    "attempt": "createBrowserTab iab about:blank visible false",
+    "timeoutMs": 15000,
+    "result": "js execution timed out; kernel reset",
+    "geometryVerified": false,
+    "pendingViewports": [
+      "1366x768",
+      "1024x600",
+      "800x600"
+    ],
+    "zoomVerified": false
+  },
+  "hardware": "all job responses mocked, no serial owner or hardware commands"
+}

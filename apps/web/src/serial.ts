@@ -7,6 +7,9 @@ export interface SerialOptions {
 }
 
 export interface SerialPortLike extends EventTarget {
+  readonly connectionInfo?: { id: string; source: 'local'; name: string; label: string; portId: string; preferenceKey: string; confirmed: boolean; reason: string; ownership: string; transportError?: string };
+  readonly held?: boolean;
+  readonly appliedOptions?: SerialOptions;
   getInfo?(): { usbVendorId?: number; usbProductId?: number };
   readonly readable: ReadableStream<Uint8Array> | null;
   readonly writable: WritableStream<Uint8Array> | null;
@@ -16,7 +19,7 @@ export interface SerialPortLike extends EventTarget {
 
 export interface SerialLike {
   requestPort(): Promise<SerialPortLike>;
-  getPorts?(): Promise<SerialPortLike[]>;
+  getPorts?(source?: 'local' | 'browser'): Promise<SerialPortLike[]>;
 }
 
 export type SerialStatus = 'unsupported' | 'disconnected' | 'requesting' | 'opening' | 'open' | 'closing' | 'error';

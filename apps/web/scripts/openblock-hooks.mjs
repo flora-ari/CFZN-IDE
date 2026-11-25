@@ -1,4 +1,5 @@
 import { createHash } from 'node:crypto';
+import { patchAudioUnlock } from './audio-unlock-hook.mjs';
 
 // These exact fragments belong to the pinned official release, not an arbitrary minified bundle.
 // Source locations are retained here so upgrading the release is an explicit review.
@@ -10,11 +11,102 @@ const patches = [
         className: classnames_default()(menu_bar_default.a.openblockLogo, menu_bar_defineProperty({}, menu_bar_default.a.clickable, typeof this.props.onClickLogo !== 'undefined')),
         draggable: false,
         src: this.state.isOverflow ? this.props.logoSmall : this.props.logo,`,
-    after: `alt: window.CFZNOpenBlock ? "CFZN IDE" : "OpenBlock",
+    after: `alt: window.CFZNOpenBlock ? "CCraft" : "OpenBlock",
         className: classnames_default()(menu_bar_default.a.openblockLogo, menu_bar_defineProperty({}, menu_bar_default.a.clickable, typeof this.props.onClickLogo !== 'undefined')),
         draggable: false,
         "data-cfzn-brand-logo": window.CFZNOpenBlock ? true : undefined,
-        src: window.CFZNOpenBlock ? "/branding/IDE.png" : this.state.isOverflow ? this.props.logoSmall : this.props.logo,`,
+        src: window.CFZNOpenBlock ? "/branding/ccraft-logo.png" : this.state.isOverflow ? this.props.logoSmall : this.props.logo,`,
+  },
+  {
+    source: 'src/components/menu-bar/menu-bar.jsx / native Logo is an accessible product website link',
+    before: `external_react_default.a.createElement("div", {
+        className: classnames_default()(menu_bar_default.a.menuBarItem)
+      }, /*#__PURE__*/external_react_default.a.createElement("img", {`,
+    after: `external_react_default.a.createElement(window.CFZNOpenBlock ? "a" : "div", {
+        className: classnames_default()(menu_bar_default.a.menuBarItem),
+        href: window.CFZNOpenBlock ? "https://maker.xiaodaiyang.top/" : undefined,
+        target: window.CFZNOpenBlock ? "_blank" : undefined,
+        rel: window.CFZNOpenBlock ? "noopener noreferrer" : undefined,
+        "aria-label": window.CFZNOpenBlock ? "CCraft 官网" : undefined,
+        "data-cfzn-brand-link": window.CFZNOpenBlock ? true : undefined
+      }, /*#__PURE__*/external_react_default.a.createElement("img", {`,
+  },
+  {
+    source: 'src/components/menu-bar/menu-bar.jsx / Logo navigation retains the current editing document',
+    before: `onClick: this.props.onClickLogo
+      })), this.props.canChangeLanguage`,
+    after: `onClick: window.CFZNOpenBlock ? undefined : this.props.onClickLogo
+      })), this.props.canChangeLanguage`,
+  },
+  {
+    source: 'src/lib/connected-intl-provider.jsx / cached product messages at the live locale boundary',
+    before: `key: state.locales.locale,
+    locale: state.locales.locale,
+    messages: state.locales.messages`,
+    after: `key: state.locales.locale,
+    locale: state.locales.locale,
+    messages: window.CFZNOpenBlock ? window.CFZNOpenBlock.brandMessages(state.locales.messages, state.locales.locale) : state.locales.messages`,
+  },
+  {
+    source: 'src/components/menu-bar/menu-bar.jsx / native website control opens the product site without an opener',
+    before: `value: function handleClickOpenWiki() {
+      window.open('https://wiki.openblock.cc');
+    }`,
+    after: `value: function handleClickOpenWiki() {
+      window.open('https://maker.xiaodaiyang.top/', '_blank', 'noopener,noreferrer');
+    }`,
+  },
+  {
+    source: 'src/lib/titled-hoc.jsx / preserve the current document title across locale remounts',
+    before: `value: function componentDidMount() {
+        this.handleReceivedProjectTitle(this.props.projectTitle);
+      }`,
+    after: `value: function componentDidMount() {
+        this.handleReceivedProjectTitle(window.CFZNOpenBlock ? window.CFZNOpenBlock.initialProjectTitle(this.props.projectTitle) : this.props.projectTitle);
+      }`,
+  },
+  {
+    source: 'src/components/menu-bar/menu-bar.jsx / keyboard access to the existing website control',
+    before: `"aria-label": this.props.intl.formatMessage(ariaMessages.wiki),
+        className: classnames_default()(menu_bar_default.a.menuBarItem, menu_bar_default.a.hoverable),
+        onClick: this.handleClickOpenWiki`,
+    after: `"aria-label": this.props.intl.formatMessage(ariaMessages.wiki),
+        role: "link",
+        tabIndex: 0,
+        onKeyDown: (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); this.handleClickOpenWiki(); } },
+        className: classnames_default()(menu_bar_default.a.menuBarItem, menu_bar_default.a.hoverable),
+        onClick: this.handleClickOpenWiki`,
+  },
+  {
+    source: 'src/components/stage-header/stage-header.jsx / full-screen product brand without changing stage controls',
+    before: `className: stage_header_default.a.embedOpenblockLogo
+    }, /*#__PURE__*/external_react_default.a.createElement("a", {
+      href: "https://openblock.cc",
+      rel: "noopener noreferrer",
+      target: "_blank"
+    }, /*#__PURE__*/external_react_default.a.createElement("img", {
+      alt: "OpenBlock",
+      src: openblock_logo_default.a`,
+    after: `className: stage_header_default.a.embedOpenblockLogo
+    }, /*#__PURE__*/external_react_default.a.createElement("a", {
+      href: window.CFZNOpenBlock ? "/" : "https://openblock.cc",
+      rel: "noopener noreferrer",
+      target: "_blank"
+    }, /*#__PURE__*/external_react_default.a.createElement("img", {
+      alt: window.CFZNOpenBlock ? "CCraft" : "OpenBlock",
+      "data-cfzn-brand-logo": window.CFZNOpenBlock ? true : undefined,
+      src: window.CFZNOpenBlock ? "/branding/ccraft-logo.png" : openblock_logo_default.a`,
+  },
+  {
+    source: 'src/components/crash-message/crash-message.jsx / accurate product description outside the connected Intl subtree',
+    before: `external_react_default.a.createElement(index_es["a" /* FormattedMessage */], {
+    defaultMessage: 'We are so sorry, but it looks like OpenBlock has crashed. This bug has been' + ' automatically reported to the OpenBlock Team. Please refresh your page to try' + ' again.',
+    id: "gui.crashMessage.description"
+  })`,
+    after: `(window.CFZNOpenBlock ? window.CFZNOpenBlock.brandMessage("gui.crashMessage.description") : external_react_default.a.createElement(index_es["a" /* FormattedMessage */], {
+    defaultMessage: 'We are so sorry, but it looks like OpenBlock has crashed. This bug has been' + ' automatically reported to the OpenBlock Team. Please refresh your page to try' + ' again.',
+    id: "gui.crashMessage.description"
+  }))`,
   },
   {
     source: 'src/containers/blocks.jsx / compose native base and external hardware categories',
@@ -203,9 +295,53 @@ const patches = [
     after: '',
   },
   {
-    source: 'src/components/library/library.jsx / filterBar optional child',
-    before: 'className: library_default.a.filterBar\n      }, this.props.filterable &&',
-    after: 'className: library_default.a.filterBar\n      }, this.props.categoryControls, this.props.filterable &&',
+    source: 'src/components/library/library.jsx / reuse the native search in the CFZN modal header',
+    before: `var _this4 = this;
+
+      return /*#__PURE__*/external_react_default.a.createElement(containers_modal, {
+        fullScreen: true,
+        contentLabel: this.props.title,
+        id: this.props.id,
+        onRequestClose: this.handleClose
+      }, (this.props.filterable || this.props.tags) && /*#__PURE__*/external_react_default.a.createElement("div", {
+        className: library_default.a.filterBar
+      }, this.props.filterable && /*#__PURE__*/external_react_default.a.createElement(filter_filter, {
+        className: classnames_default()(library_default.a.filterBarItem, library_default.a.filter),
+        filterQuery: this.state.filterQuery,
+        inputClassName: library_default.a.filterInput,
+        placeholderText: this.props.intl.formatMessage(library_messages.filterPlaceholder),
+        onChange: this.handleFilterChange,
+        onClear: this.handleFilterClear
+      }), this.props.filterable && this.props.tags &&`,
+    after: `var _this4 = this;
+      var searchInHeader = !!this.props.categoryControls;
+      var search = this.props.filterable && /*#__PURE__*/external_react_default.a.createElement(filter_filter, {
+        className: searchInHeader ? undefined : classnames_default()(library_default.a.filterBarItem, library_default.a.filter),
+        filterQuery: this.state.filterQuery,
+        inputClassName: library_default.a.filterInput,
+        placeholderText: this.props.intl.formatMessage(library_messages.filterPlaceholder),
+        onChange: this.handleFilterChange,
+        onClear: this.handleFilterClear
+      });
+      return /*#__PURE__*/external_react_default.a.createElement(containers_modal, {
+        fullScreen: true,
+        contentLabel: this.props.title,
+        id: this.props.id,
+        onRequestClose: this.handleClose,
+        headerFilter: searchInHeader ? search : undefined
+      }, (this.props.filterable || this.props.tags) && /*#__PURE__*/external_react_default.a.createElement("div", {
+        className: library_default.a.filterBar
+      }, this.props.categoryControls, !searchInHeader && search, !searchInHeader && this.props.filterable && this.props.tags &&`,
+  },
+  {
+    source: 'src/components/modal/modal.jsx / optional header filter styling',
+    before: 'classnames_default()(modal_default.a.header, props.headerClassName)',
+    after: 'classnames_default()(modal_default.a.header, props.headerClassName, props.headerFilter && "cfzn-library-header")',
+  },
+  {
+    source: 'src/components/modal/modal.jsx / optional header filter slot',
+    before: '}) : null)), props.children));',
+    after: '}) : null), props.headerFilter ? /*#__PURE__*/external_react_default.a.createElement("div", { className: "cfzn-library-header-search" }, props.headerFilter) : null), props.children));',
   },
   {
     source: 'src/components/library-item/library-item.jsx / featured-card keyboard semantics',
@@ -253,14 +389,37 @@ const patches = [
     after: 'id: "gui.extensionLibrary.notLoaded"\n      })))) : null, this.props.cfznCard && this.props.cfznCard.footer) :',
   },
   {
-    source: 'src/components/library/library.jsx / optional native search reset on partition change',
+    source: 'src/components/library/library.jsx / optional native search and scroll reset on category change',
     before: 'value: function componentDidUpdate(prevProps, prevState) {\n      if (prevState.filterQuery',
-    after: 'value: function componentDidUpdate(prevProps, prevState) {\n      if (this.props.cfznResetKey !== undefined && this.props.cfznResetKey !== prevProps.cfznResetKey) this.handleFilterClear();\n      if (prevState.filterQuery',
+    after: `value: function componentDidUpdate(prevProps, prevState) {
+      if (this.props.cfznResetKey !== undefined && this.props.cfznResetKey !== prevProps.cfznResetKey) {
+        this.handleFilterClear();
+        this.scrollToTop();
+      }
+      if (prevState.filterQuery`,
   },
   {
-    source: 'src/components/library/library.jsx / optional filtered empty result slot',
+    source: 'src/components/library/library.jsx / optional keyword matcher with native locale',
+    before: 'if (!this.state.filterQuery) return data;\n        return data.filter(function (dataItem) {',
+    after: `if (!this.state.filterQuery) return data;
+        if (this.props.cfznMatchesKeyword) return data.filter(function (item) {
+          return _this3.props.cfznMatchesKeyword(item, _this3.state.filterQuery, _this3.props.intl.formatMessage);
+        });
+        return data.filter(function (dataItem) {`,
+  },
+  {
+    source: 'src/components/library/library.jsx / optional grouping and empty presentation of the native search results',
     before: '}, this.state.loaded ? this.getFilteredData().map(function (dataItem, index) {',
-    after: '}, this.state.loaded && this.props.renderEmpty && this.getFilteredData().length === 0 ? this.props.renderEmpty(this.handleFilterClear) : null, this.state.loaded ? this.getFilteredData().map(function (dataItem, index) {',
+    after: `}, this.state.loaded ? (function (renderCard) {
+        var data = _this4.getFilteredData();
+        if (!data.length && _this4.props.renderEmpty) return _this4.props.renderEmpty(_this4.handleFilterClear, _this4.state.filterQuery);
+        return _this4.props.cfznRenderGroups ? _this4.props.cfznRenderGroups(data, renderCard) : data.map(renderCard);
+      })(function (dataItem, index) {`,
+  },
+  {
+    source: 'src/components/library/library.jsx / stable keys for CFZN hardware cards',
+    before: "key: typeof dataItem.name === 'string' ? dataItem.name : dataItem.rawURL,",
+    after: "key: dataItem.cfznCard ? dataItem.cfznCard.key : typeof dataItem.name === 'string' ? dataItem.name : dataItem.rawURL,",
   },
   {
     source: 'src/containers/blocks.jsx / reset public Blockly device view on native removal',
@@ -285,14 +444,14 @@ const patches = [
   {
     source: 'src/containers/extension-library.jsx / render boundary',
     before: 'var extensionLibraryThumbnailData = [];\n      var device = this.props.deviceData.find',
-    after: `if (window.CFZNOpenBlock) return window.CFZNOpenBlock.renderLibrary(external_react_default.a, library_library, this.props, libraries_extensions, false);
+    after: `if (window.CFZNOpenBlock) return window.CFZNOpenBlock.renderLibrary(external_react_default.a, library_library, this.props, libraries_extensions, false, containers_code_editor);
       var extensionLibraryThumbnailData = [];
       var device = this.props.deviceData.find`,
   },
   {
     source: 'src/containers/device-library.jsx / render boundary (preserve official boards)',
     before: 'var deviceLibraryThumbnailData = this.props.deviceData.map',
-    after: `if (window.CFZNOpenBlock) return window.CFZNOpenBlock.renderLibrary(external_react_default.a, library_library, this.props, libraries_extensions, true);
+    after: `if (window.CFZNOpenBlock) return window.CFZNOpenBlock.renderLibrary(external_react_default.a, library_library, this.props, libraries_extensions, true, containers_code_editor);
       var deviceLibraryThumbnailData = this.props.deviceData.map`,
   },
   {
@@ -313,7 +472,7 @@ export function patchOpenBlock(original) {
     if (patched.split(patch.before).length !== (patch.matches ?? 1) + 1) throw new Error(`OpenBlock hook match count changed: ${patch.source}`);
     patched = patched.split(patch.before).join(patch.after);
   }
-  return patched;
+  return patchAudioUnlock(patched);
 }
 
 export function moduleSource(source, kind) {

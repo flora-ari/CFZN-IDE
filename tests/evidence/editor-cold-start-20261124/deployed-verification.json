@@ -1,0 +1,97 @@
+{
+  "release": "20261124T092948Z-cfe8ac8d",
+  "verifiedAt": "2026-11-24T11:33:07.580Z",
+  "allPassed": true,
+  "transport": "HTTPS hostname and certificate verified; explicit address avoids local DNS failure",
+  "checks": [
+    {
+      "path": "/",
+      "status": 200,
+      "sha256": "26136359026860feea23c564c9da91faaf124eafa9b303657d36bb88efb4543c"
+    },
+    {
+      "path": "/openblock.html",
+      "status": 200,
+      "sha256": "8aeca5d421381e0f782f5429c8f7b1e3cdf721b9d32a44ecb14f13667deb778f"
+    },
+    {
+      "path": "/branding/ccraft-logo.png",
+      "status": 200,
+      "bytes": 495240,
+      "sha256": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2"
+    },
+    {
+      "path": "/branding/ccraft-tab-icon.png",
+      "status": 200,
+      "bytes": 1657390,
+      "sha256": "c4375f067f4da96b6fb4b14a6c4ede4df0bb7a440f840e35c9a33680557292cb"
+    },
+    {
+      "path": "/assets/app-C0XuQYw1.js",
+      "status": 200,
+      "bytes": 206445,
+      "sha256": "7bda177605a3c09f77e2dc9ff005d0efe1d56bc54da051aebee233150735b61f"
+    },
+    {
+      "path": "/assets/save-shortcut-C_DI86IG.js",
+      "status": 200,
+      "bytes": 4269,
+      "sha256": "3bad633f2db02f5efd6002c2106d4ff43e6b6821cd6fc897d354b055016775cc"
+    },
+    {
+      "path": "/assets/app-C88jyimZ.css",
+      "status": 200,
+      "bytes": 3760,
+      "sha256": "8e34f80c379d9a7d8e8e73a2483fae96e316abfafb85db135b47cac75d0a9563"
+    },
+    {
+      "path": "/assets/editor-sqHyfw8P.js",
+      "status": 200,
+      "bytes": 202651,
+      "sha256": "71d786a1c5d9ed83bc5e7887b8b135b016bcdaf771a0b806b8d9072137065f71"
+    },
+    {
+      "path": "/assets/editor-A53goq4q.css",
+      "status": 200,
+      "bytes": 34963,
+      "sha256": "d04aa6eda109f15eb038ebb70d21c456dcd4703b0c5bc218026f066b01d6b8dd"
+    }
+  ],
+  "gui": {
+    "url": "/openblock-vendor/openblock-gui.0f3346f8af93e2a9.js",
+    "rawBytes": 17619329,
+    "sha256": "0f3346f8af93e2a988f5afb23ac870389e60acb2ee021692c5401c83eb9c1d55",
+    "representations": [
+      {
+        "encoding": "br",
+        "bytes": 3753908,
+        "seconds": null,
+        "etag": "\"6b055910-3947b4\"",
+        "sha256": "98bf9326eb475f9b6b329da05e4f08ca6625bbce4c67a7c2453af67065c0a34a",
+        "decodedSha256": "0f3346f8af93e2a988f5afb23ac870389e60acb2ee021692c5401c83eb9c1d55",
+        "conditionalStatus": 304
+      },
+      {
+        "encoding": "gzip",
+        "bytes": 4662697,
+        "seconds": null,
+        "etag": "\"6b055910-4725a9\"",
+        "sha256": "3941fced6c4af218844a4c401f36525eb88f30e9d886dec9d436a4dfb7b14266",
+        "decodedSha256": "0f3346f8af93e2a988f5afb23ac870389e60acb2ee021692c5401c83eb9c1d55",
+        "conditionalStatus": 304
+      }
+    ]
+  },
+  "legacy": {
+    "available": true,
+    "gzipBytes": 5480379,
+    "decodedSha256": "1bb1133602dfc5044f00404ea246321ad4bec5071a9baa482ec6fa8356ffb0d2"
+  },
+  "health": "ok",
+  "http2": {
+    "authorized": true,
+    "alpn": "h2"
+  },
+  "browserScope": "HTTP is separate from real-browser READY measurements",
+  "httpEvidence": "Saved raw HTTPS headers and bodies from the initial successful assertions, replayed locally after fixing the separate TLS probe port; download durations not retained and left null. Final ALPN probe is a fresh verified TLS connection."
+}

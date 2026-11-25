@@ -1,0 +1,183 @@
+{
+  "date": "2026-11-24",
+  "target": "https://ide.xiaodaiyang.top/openblock-vendor/openblock-gui.0f3346f8af93e2a9.js",
+  "connectIP": "8.138.226.239",
+  "tlsHostnameVerification": "default certificate verification retained; URL Host and SNI unchanged",
+  "client": "raw node:http/https; no automatic response decompression",
+  "cases": [
+    {
+      "name": "explicit br only",
+      "passed": true,
+      "status": 200,
+      "encoding": "br",
+      "transferredBytes": 3753908
+    },
+    {
+      "name": "case and whitespace",
+      "passed": true,
+      "status": 200,
+      "encoding": "br",
+      "transferredBytes": 3753908
+    },
+    {
+      "name": "minimum positive legal br q",
+      "passed": true,
+      "status": 200,
+      "encoding": "br",
+      "transferredBytes": 3753908
+    },
+    {
+      "name": "documented server preference among positive q values",
+      "passed": true,
+      "status": 200,
+      "encoding": "br",
+      "transferredBytes": 3753908
+    },
+    {
+      "name": "gzip only",
+      "passed": true,
+      "status": 200,
+      "encoding": "gzip",
+      "transferredBytes": 4662697
+    },
+    {
+      "name": "identity only",
+      "passed": true,
+      "status": 200,
+      "encoding": null,
+      "transferredBytes": 17619329
+    },
+    {
+      "name": "legal zero br q",
+      "passed": true,
+      "status": 200,
+      "encoding": "gzip",
+      "transferredBytes": 4662697
+    },
+    {
+      "name": "exact token rather than substring",
+      "passed": true,
+      "status": 200,
+      "encoding": null,
+      "transferredBytes": 17619329
+    },
+    {
+      "name": "all supported representations rejected",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "zero with one decimal remains zero",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "wildcard rejects all",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "identity explicitly overrides wildcard rejection",
+      "passed": true,
+      "status": 200,
+      "encoding": null,
+      "transferredBytes": 17619329
+    },
+    {
+      "name": "explicit br rejection overrides wildcard acceptance",
+      "passed": true,
+      "status": 200,
+      "encoding": "gzip",
+      "transferredBytes": 4662697
+    },
+    {
+      "name": "invalid br q rejected: bogus",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "invalid br q rejected: .5",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "invalid br q rejected: -1",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "invalid br q rejected: 1.001",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "invalid br q rejected: 0.1234",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "invalid br q rejected: 1.0000",
+      "passed": true,
+      "status": 406,
+      "encoding": null,
+      "transferredBytes": 163
+    },
+    {
+      "name": "br HEAD, conditional 304 and foreign representation validator",
+      "passed": true,
+      "etag": "\"6b055910-3947b4\"",
+      "representationBytes": 3753908
+    },
+    {
+      "name": "gzip HEAD, conditional 304 and foreign representation validator",
+      "passed": true,
+      "etag": "\"6b055910-4725a9\"",
+      "representationBytes": 4662697
+    },
+    {
+      "name": "identity HEAD, conditional 304 and foreign representation validator",
+      "passed": true,
+      "etag": "\"6b055910-10cd981\"",
+      "representationBytes": 17619329
+    },
+    {
+      "name": "missing or private representation path",
+      "path": "/openblock-vendor/openblock-gui.0000000000000000.js",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "name": "missing or private representation path",
+      "path": "/openblock-vendor/openblock-gui.0f3346f8af93e2a9.js.br",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "name": "missing or private representation path",
+      "path": "/openblock-vendor/openblock-gui.0f3346f8af93e2a9.js.gz",
+      "passed": true,
+      "status": 404
+    },
+    {
+      "name": "absent Accept-Encoding does not implicitly opt into dedicated br",
+      "passed": true,
+      "encoding": "identity"
+    }
+  ]
+}

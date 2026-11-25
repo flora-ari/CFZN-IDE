@@ -1,0 +1,91 @@
+{
+  "cases": [
+    {
+      "name": "frozen HTML, parent and editor entries and local visual resources",
+      "detail": {
+        "editorSha256": "8784e3d8b6bed9bf6b77a42d67aa4a360c4ef3bd65da715d5bc8ffb6f41415fd",
+        "appSha256": "443bd939bf687c3cd5dda2c2b2eea2c782073f63ea16debec14d3baef28edab0",
+        "assets": [
+          {
+            "name": "ccraft-icon.svg",
+            "sha256": "b203242130798df7f9d19f4871ba2bcb4897a9f492b608e02bd1540c1d64caf0"
+          },
+          {
+            "name": "ccraft-wordmark.svg",
+            "sha256": "258df1201e318b2fe55d19863bb0a76b99978dfc0a6f4fadaef9af73d8aa9949"
+          }
+        ]
+      }
+    },
+    {
+      "name": "shipped GUI matches audited GUI-only hooks and protected modules and original licenses",
+      "detail": {
+        "guiSha256": "5c7a3442eb885cca98a42259602255eb1dd5f5fbb6678b13830fab86c3a1d265",
+        "hookCount": 57,
+        "modules": {
+          "vm": 178,
+          "blockly": 15
+        },
+        "licenses": [
+          {
+            "name": "LICENSE",
+            "sha256": "9e3d6d9f930561c9085c05d18ef3acd27b706359ba7098e799c73381affb1d4f"
+          },
+          {
+            "name": "LICENSE.MIT",
+            "sha256": "4d7f8fd635fa6e9b318ca895132274d2acf1ef1e7d689f9e7bc96ed53d6de862"
+          },
+          {
+            "name": "TRADEMARK",
+            "sha256": "0788d533ce4a6dd95020cc3a2ebf154e23523a37b746cb7c02ad32eaa9be70f4"
+          }
+        ]
+      }
+    },
+    {
+      "name": "runtime message cache, locale fallback and shipped Website handler preserve user text and current page",
+      "detail": {
+        "locales": [
+          [
+            "zh_CN",
+            "CCraft作品",
+            "官网"
+          ],
+          [
+            "zh-Hant",
+            "CCraft作品",
+            "官網"
+          ],
+          [
+            "zh-HK",
+            "CCraft作品",
+            "官網"
+          ],
+          [
+            "en_US",
+            "CCraft Project",
+            "Website"
+          ]
+        ],
+        "website": [
+          "https://maker.xiaodaiyang.top/",
+          "_blank",
+          "noopener,noreferrer"
+        ],
+        "currentPage": "unchanged in handler simulation"
+      }
+    },
+    {
+      "name": "real isolated project API preserves existing OpenBlock name, strings, manual code and asset bytes",
+      "detail": {
+        "name": "我的 OpenBlock 旧作品",
+        "format": "openblock",
+        "bytes": 714,
+        "sha256": "e24d5e4aacb10018946101aa6646f797c627a6796178023a78dfb7fb991a773c",
+        "manualAndAssetPreserved": true
+      }
+    }
+  ],
+  "browserCoverage": "provided separately by main coordinator",
+  "cleaned": true
+}

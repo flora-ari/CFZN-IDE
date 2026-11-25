@@ -1,0 +1,35 @@
+{
+  "baseline": {
+    "nativeState": "suspended",
+    "nativeResumeCalls": 3501,
+    "fixtureResumeCalls": 3501
+  },
+  "afterIdle": {
+    "fixtureState": "suspended",
+    "fixtureResumeCalls": 0,
+    "fixtureCompleted": 0,
+    "nativeState": "suspended",
+    "nativeResumeCalls": 0,
+    "tonesStarted": 0,
+    "errors": []
+  },
+  "mouse": {
+    "fixtureState": "running",
+    "fixtureResumeCalls": 1,
+    "fixtureCompleted": 1,
+    "nativeState": "running",
+    "nativeResumeCalls": 1,
+    "tonesStarted": 1,
+    "errors": []
+  },
+  "keyboard": {
+    "fixtureState": "running",
+    "fixtureResumeCalls": 1,
+    "fixtureCompleted": 1,
+    "nativeState": "running",
+    "nativeResumeCalls": 1,
+    "tonesStarted": 1,
+    "errors": []
+  },
+  "scope": "Actual production dependency in browser harness; native AudioContext plus controlled blocked fixture. No autoplay policy override."
+}

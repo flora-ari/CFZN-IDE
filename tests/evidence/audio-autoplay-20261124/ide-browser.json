@@ -1,0 +1,11 @@
+{
+  "page": "http://127.0.0.1:5173/",
+  "scope": "Isolated final release bundle",
+  "homeIcon": "/branding/ccraft-tab-icon.png",
+  "editorIcon": "/branding/ccraft-tab-icon.png",
+  "soundPreviewState": [
+    "The focused UI element is 545 button 停止"
+  ],
+  "audioLogs": [],
+  "physicalAudibilityMeasured": false
+}

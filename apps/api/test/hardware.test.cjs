@@ -1,4 +1,5 @@
 const assert = require('node:assert/strict');
+const { ZipFile } = require('yazl');
 const { mkdtemp, mkdir, readFile, writeFile, rm } = require('node:fs/promises');
 const { tmpdir } = require('node:os');
 const { join } = require('node:path');
@@ -31,7 +32,7 @@ async function wait(request, id) {
   }
   throw new Error('Hardware job did not terminate.');
 }
-async function fixture(t, handler) {
+async function fixture(t, handler, { configuredLibrary, ...options } = {}) {
   const runtimeDir = await mkdtemp(join(tmpdir(), 'cfzn-hardware-'));
   const platformPath = join(runtimeDir, 'platform');
   await mkdir(platformPath);
@@ -40,6 +41,12 @@ async function fixture(t, handler) {
   const view = { ...PROFILES.find((profile) => profile.id === buildBody.profileId), compileAvailable: true, uploadAvailable: true, realtimeAvailable: false };
   const profile = { view, binding: { toolchain: 'test', coreVersion: '1.0.6', libraries: [] },
     cliPath: process.execPath, configPath: join(runtimeDir, 'cli.json'), platformPath, cliVersion: 'fixture-cli-1', env: process.env };
+  if (configuredLibrary) {
+    const path = join(runtimeDir, 'local-library');
+    await mkdir(path);
+    await writeFile(join(path, 'library.properties'), `name=${configuredLibrary}\nversion=0.1.0\n`);
+    profile.binding.libraries.push(path);
+  }
   profile.identity = await toolIdentity(profile);
   const calls = [];
   const runner = async (command) => {
@@ -57,12 +64,87 @@ async function fixture(t, handler) {
   const config = { runtimeDir, toolchains: {}, profiles: {}, allowedOrigins: ['https://ide.example.test'] };
   const views = PROFILES.map((base) => base.id === view.id ? view : { ...base, compileAvailable: false, uploadAvailable: false, realtimeAvailable: false, reason: 'missing fixture core' });
   const app = await createHardwareApp(config, { runner, ports: async () => [{ portId: 'COM_TEST', displayName: 'Mock serial' }],
-    discovered: { views, ready: new Map([[view.id, profile]]), cliVersion: profile.cliVersion } });
+    discovered: { views, ready: new Map([[view.id, profile]]), cliVersion: profile.cliVersion }, ...options });
   await app.listen(0, '127.0.0.1');
   const base = `${await app.getUrl()}/api/v1/hardware`;
   t.after(async () => { await app.close(); await rm(runtimeDir, { recursive: true, force: true }); });
   return { request: (path, options) => fetch(`${base}${path}`, options), runtimeDir, calls, profile };
 }
+
+test('hardware compiles exact job-local library versions and rejects unsafe packages before CLI launch', async (t) => {
+  const packages = new Map();
+  for (const version of ['1.2.2', '1.3.0', '1.4.0', '1.5.0', '1.6.0']) {
+    const zip = new ZipFile();
+    zip.addBuffer(Buffer.from(`name=Fixture Servo\nversion=${version}\n`), 'FixtureRoot/library.properties');
+    zip.addBuffer(Buffer.from(version), 'FixtureRoot/src/FixtureServo.h');
+    if (version === '1.5.0') zip.addBuffer(Buffer.from('unsafe'), 'FixtureRoot/NUL.txt');
+    if (version === '1.6.0') zip.addBuffer(Buffer.from('duplicate'), 'FixtureRoot/src/fixtureservo.h');
+    zip.end();
+    const chunks = [];
+    for await (const chunk of zip.outputStream) chunks.push(chunk);
+    const bytes = Buffer.concat(chunks);
+    const name = 'Fixture Servo';
+    const url = `https://downloads.arduino.cc/libraries/github.com/f/FixtureServo-${version}.zip`;
+    const checksum = `SHA-256:${version === '1.4.0' ? 'b'.repeat(64) : digest(bytes)}`;
+    packages.set(url, { bytes, row: { name, version, url, checksum, size: bytes.length } });
+  }
+  let requestedDownload;
+  const downloading = new Promise((resolve) => { requestedDownload = resolve; });
+  let holdDownload = false;
+  const arduinoLibraryFetch = async (url, { redirect, signal }) => {
+    assert.equal(redirect, 'error');
+    if (url === 'https://downloads.arduino.cc/libraries/library_index.json') {
+      return Response.json({ libraries: [...packages.values()].map(({ row }) => row) });
+    }
+    assert.ok(packages.has(url));
+    if (holdDownload) {
+      requestedDownload();
+      return new Promise((_, reject) => signal.addEventListener('abort', () => reject(signal.reason), { once: true }));
+    }
+    return new Response(packages.get(url).bytes);
+  };
+  const { request, calls, runtimeDir } = await fixture(t, undefined, { arduinoLibraryFetch, configuredLibrary: 'Fixture Servo' });
+  const library = (version) => ({ name: 'Fixture Servo', version });
+  const build = (libraries) => post(request, '/builds', { ...buildBody, libraries });
+  const start = async (libraries) => {
+    const response = await build(libraries);
+    assert.equal(response.status, 202);
+    return (await response.json()).job.id;
+  };
+  for (const [position, version] of ['1.2.2', '1.3.0'].entries()) {
+    const id = await start([library(version), library(version)]);
+    const { job } = await wait(request, id);
+    assert.equal(job.state, 'succeeded', job.error?.message);
+    const [command] = calls.slice(position);
+    assert.equal(command.args.filter((arg) => arg === '--library').length, 1);
+    const path = command.args[command.args.indexOf('--library') + 1];
+    assert.equal(path, join(runtimeDir, 'jobs', id, 'l', '0', 'Fixture_Servo'));
+    assert.equal(await readFile(join(path, 'src', 'FixtureServo.h'), 'utf8'), version);
+  }
+  const conflict = await build([library('1.2.2'), library('1.3.0')]);
+  assert.equal(conflict.status, 400);
+  assert.match((await conflict.json()).error.message, /1\.2\.2.*1\.3\.0/);
+  await error(await build([{ ...library('1.2.2'), url: 'https://example.test/a.zip' }]), 400, 'VALIDATION_ERROR');
+  for (const [version, code, message] of [
+    ['1.4.0', 'ARDUINO_LIBRARY_PREPARATION_FAILED', /SHA-256/],
+    ['1.5.0', 'ARDUINO_LIBRARY_PREPARATION_FAILED', /unsafe library path/],
+    ['1.6.0', 'ARDUINO_LIBRARY_PREPARATION_FAILED', /conflicting or duplicate paths/],
+    ['1.7.0', 'ARDUINO_LIBRARY_NOT_FOUND', /unavailable in the official index/],
+  ]) {
+    const id = await start([library(version)]);
+    const { job } = await wait(request, id);
+    assert.equal(job.state, 'failed');
+    assert.equal(job.error.code, code);
+    assert.match(job.error.message, message);
+    await assert.rejects(readFile(join(runtimeDir, 'jobs', id, 'l', '0', 'Fixture_Servo', 'library.properties')), { code: 'ENOENT' });
+  }
+  holdDownload = true;
+  const cancelled = await start([library('1.2.2')]);
+  await downloading;
+  assert.equal((await post(request, `/jobs/${cancelled}/cancel`, {})).status, 200);
+  assert.equal((await wait(request, cancelled)).job.state, 'cancelled');
+  assert.equal(calls.length, 2);
+});
 
 test('hardware HTTP binds source/profile/artifacts and upload verification without project API routes', async (t) => {
   const { request, calls, runtimeDir } = await fixture(t);
@@ -254,7 +336,7 @@ test('real spawn keeps shell syntax inert and task cancellation/timeout closes o
 
 test('unconfigured deployment starts with five truthful unavailable profiles', async (t) => {
   const runtimeDir = await mkdtemp(join(tmpdir(), 'cfzn-unconfigured-'));
-  const config = await loadHardwareConfig({ HARDWARE_RUNTIME_DIR: runtimeDir });
+  const config = await loadHardwareConfig({ HARDWARE_RUNTIME_DIR: runtimeDir }, join(runtimeDir, 'missing.json'));
   const app = await createHardwareApp(config);
   t.after(async () => { await app.close(); await rm(runtimeDir, { recursive: true, force: true }); });
   await app.listen(0, '127.0.0.1');

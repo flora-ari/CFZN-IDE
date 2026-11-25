@@ -1,0 +1,17 @@
+{
+  "testedAt": "2026-11-24T09:15:56.124Z",
+  "endpoint": "server loopback 127.0.0.1:19124",
+  "nginx": "1.20.1",
+  "fixtureIdentityBytes": 75000,
+  "fixtureGzipBytes": 361,
+  "fixtureBrotliBytes": 63,
+  "passed": true,
+  "scope": "Observed via SSH: private standalone Nginx started with generated deployment helpers, probe.mjs completed with passed:true and exit 0; trap quit stopped this QA master. No production Nginx reload.",
+  "checks": [
+    "23 encoding acceptance/rejection cases",
+    "br/gzip/identity HEAD and representation-specific 304",
+    "distinct ETags and cross-representation 200",
+    "internal .br/.gz direct access 404",
+    "missing Brotli file 404 without Content-Encoding"
+  ]
+}

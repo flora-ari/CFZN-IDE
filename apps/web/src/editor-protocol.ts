@@ -83,6 +83,6 @@ export function isEnvelope(value: unknown): value is Envelope {
 }
 
 export function archiveName(title: string) {
-  return `${title.replace(/[<>:"/\\|?*\x00-\x1f]/g, '_').replace(/[. ]+$/, '') || 'OpenBlock'}.ob`;
+  return `${title.replace(/[<>:"/\\|?*\x00-\x1f]/g, '_').replace(/[. ]+$/, '') || 'CCraft'}.ob`;
 }
 import type { HardwareSnapshot } from './hardware-types';

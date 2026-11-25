@@ -16,7 +16,7 @@ export interface HardwareJob {
   createdAt: string; finishedAt?: string; buildId?: string; portId?: string; error?: { code: string; message: string };
 }
 export interface HardwareLog { index: number; stream: 'stdout' | 'stderr' | 'system'; text: string }
-export interface BrowserPort { id: string; label: string; name: string }
+export interface BrowserPort { id: string; label: string; name: string; source?: 'local'; portId?: string; preferenceKey?: string; confirmed?: boolean; reason?: string; ownership?: string; transportError?: string }
 export type SerialOperation = 'authorizing' | 'connecting' | 'switching' | 'closing' | 'restoring' | null;
 // Editor-only diagnostics. This is not part of the hardware HTTP schema.
 export interface LocalServiceState {

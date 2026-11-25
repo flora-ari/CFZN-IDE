@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-11-24T10:54:41.4476087+08:00",
+  "retainedHardwarePid": 72632,
+  "hardwareRestarted": false,
+  "physicalPortChanged": false,
+  "listeners": [
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 3002,
+      "OwningProcess": 72632
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-24",
+  "release": "20261124T092948Z-cfe8ac8d",
+  "baselineRelease": "20261124T081631Z-cfe8ac8d",
+  "environment": "Same machine and IAB browser type, local isolated production releases, GUI response capped at 800 KiB/s. Browser process lifecycle/CPU/compiled-code cache not controlled across pauses and tool rebinding. Before responses no-store; after three fresh origins with immutable GUI. Every first navigation had a full network GUI response and one HTTP body per origin; all samples retained.",
+  "metric": "iframe navigation to actual existing boot-message hidden / READY; test-only DOM observation; not a production Internet end-to-end guarantee",
+  "before": {
+    "readyMs": [
+      10564,
+      9976,
+      9832
+    ],
+    "medianReadyMs": 9976,
+    "guiRawBytes": 22664720,
+    "guiEncodedBytes": 5480379,
+    "encoding": "gzip"
+  },
+  "after": {
+    "readyMs": [
+      8351,
+      7742,
+      7674
+    ],
+    "medianReadyMs": 7742,
+    "guiRawBytes": 17619329,
+    "guiEncodedBytes": 3753908,
+    "encoding": "br",
+    "freshOrigins": [
+      5180,
+      5181,
+      5182
+    ]
+  },
+  "improvement": {
+    "medianMillisecondsSaved": 2234,
+    "medianFraction": 0.22393744987971131,
+    "guiEncodedBytesSaved": 1726471,
+    "guiEncodedFraction": 0.3150276650574714
+  },
+  "protectedModules": {
+    "vm": 178,
+    "blockly": 15,
+    "verifiedSeparately": true
+  },
+  "obsoleteCandidateExcluded": "a4c534b8c1f9171b"
+}

@@ -76,8 +76,11 @@ export function subscribeIdeSession(listener: (state: SessionState) => void) {
   return () => { listeners.delete(listener); };
 }
 
-export async function checkIdeSession() {
+export async function checkIdeSession(force = false) {
   if (sessionState === 'changed') return sessionState;
+  // A known-expired session must not probe /me again on every window focus; the
+  // account toolbar and the session BroadcastChannel force a fresh check instead.
+  if (!force && sessionState === 'expired') return sessionState;
   const user = await resolveIdeUser();
   setSessionState(!user ? 'expired' : user.id !== boundUser?.id ? 'changed' : 'active');
   return sessionState;
@@ -96,7 +99,7 @@ export function ideProjectAttempt(): Attempt {
 export async function recoverIdeProjectSession(attempt: Attempt) {
   if (sessionState !== 'changed' && attempt.generation === refreshGeneration) {
     const generation = refreshGeneration;
-    await checkIdeSession();
+    await checkIdeSession(true);
     if (generation === refreshGeneration) refreshGeneration++;
   }
   ideProjectAttempt();
@@ -104,13 +107,14 @@ export async function recoverIdeProjectSession(attempt: Attempt) {
 
 const sessionChannelName = 'ccraft-ide-session';
 
-export function watchIdeSession(check: () => void) {
+export function watchIdeSession(check: (force?: boolean) => void) {
   const channel = typeof BroadcastChannel === 'function' ? new BroadcastChannel(sessionChannelName) : null;
-  channel?.addEventListener('message', check);
-  window.addEventListener('focus', check);
+  const onFocus = () => check(false);
+  channel?.addEventListener('message', () => check(true));
+  window.addEventListener('focus', onFocus);
   return () => {
     channel?.close();
-    window.removeEventListener('focus', check);
+    window.removeEventListener('focus', onFocus);
   };
 }
 

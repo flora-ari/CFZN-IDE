@@ -133,7 +133,7 @@ export function App({ account, guest = false }: { account?: IdeUser; guest?: boo
   async function checkSessionFromToolbar() {
     if (guest || !account || session !== 'expired' || checkingSession) return;
     setCheckingSession(true);
-    try { await checkIdeSession(); } catch (error) {
+    try { await checkIdeSession(true); } catch (error) {
       setNotice({ level: 'error', message: error instanceof Error ? error.message : '无法验证登录状态。' });
     } finally { setCheckingSession(false); }
   }
@@ -146,7 +146,7 @@ export function App({ account, guest = false }: { account?: IdeUser; guest?: boo
       const state = snapshotRef.current && await bridge.current?.request('GET_STATE', undefined);
       if (state) receive(state);
       if (state?.dirty && !window.confirm('当前项目有未保存的更改。选择取消后可先使用工具栏导出。放弃更改并继续吗？')) return;
-      const currentSession = await checkIdeSession();
+      const currentSession = await checkIdeSession(true);
       if (currentSession !== 'changed') await ideLogout();
       allowNav.current = true;
       window.location.replace(currentSession === 'changed' ? '/' : '/login');
@@ -342,7 +342,7 @@ export function App({ account, guest = false }: { account?: IdeUser; guest?: boo
             throw new Error(`「${project.name}」${error instanceof Error ? error.message : String(error)}`);
           }
         });
-        if (account) await checkIdeSession();
+        if (account) await checkIdeSession(true);
         assertProjectAccount();
         download(file.blob, file.name);
         setBatchFeedback({ message: `已导出 ${projects.length} 个已保存项目。` });
@@ -430,7 +430,7 @@ export function App({ account, guest = false }: { account?: IdeUser; guest?: boo
         setNotice(null);
       }
     });
-    const stopWatch = watchIdeSession(() => { void checkIdeSession().catch(() => undefined); });
+    const stopWatch = watchIdeSession(force => { void checkIdeSession(force).catch(() => undefined); });
     return () => { stopWatch(); unsubscribe(); };
   }, [account, guest]);
 

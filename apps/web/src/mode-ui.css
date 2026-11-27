@@ -9,7 +9,7 @@
 .cfzn-upload-workspace button { cursor: pointer; white-space: nowrap; }
 .cfzn-upload-workspace button:disabled { opacity: .55; cursor: default; }
 .cfzn-upload-workspace button:focus-visible, .cfzn-mode-controls button:focus-visible { outline: 2px solid #173f7a; outline-offset: 2px; }
-.cfzn-upload-heading { display: flex; align-items: center; gap: 5px; padding: 7px 8px; background: #f5f8fc; border-bottom: 1px solid #c9d5e5; flex-wrap: wrap; }
+.cfzn-upload-heading { display: flex; align-items: center; gap: 5px; padding: 7px 8px; background: #fff; border-bottom: 1px solid #c9d5e5; flex-wrap: wrap; }
 .cfzn-upload-heading .cfzn-upload-primary { background: #4c97ff; color: white; border-color: #4c97ff; font-weight: 700; }
 .cfzn-code-area { flex: 1 1 55%; min-height: 120px; display: flex; flex-direction: column; }
 .cfzn-code-area[hidden] { display: none; }

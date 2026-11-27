@@ -523,6 +523,16 @@ const patches = [
     after: `window.CFZNDeviceMetadata = deviceData;
 var makeDeviceLibrary = function makeDeviceLibrary() {`,
   },
+  {
+    source: 'src/vendor/monaco/dom.js / content widgets tolerate a zero-sized hidden document',
+    before: "    throw new Error('Unable to figure out browser width and height');",
+    after: '    return new Dimension(0, 0);',
+  },
+  {
+    source: 'src/vendor/paper/canvas-provider.js / small pooled canvases use willReadFrequently',
+    before: "\t\tvar ctx = canvas.getContext('2d');\n\t\tif (!ctx) {",
+    after: "\t\tvar ctx = canvas.getContext('2d', width <= 16 && height <= 16 ? { willReadFrequently: true } : undefined);\n\t\tif (!ctx) {",
+  },
 ];
 
 export function patchOpenBlock(original) {

@@ -35,7 +35,7 @@ export function renderConnectionPanel(R: any, panel: SerialDevicePanel) {
         R.createElement('p', null, local.message)),
       R.createElement('div', { className: 'cfzn-connection-controls' },
         R.createElement('span', null, '本机直连'),
-        R.createElement('button', { type: 'button', disabled: state.scanning || local.status === 'checking', onClick: () => { void panel.refresh(); } }, '刷新设备')),
+        R.createElement('button', { type: 'button', disabled: state.scanning || local.status === 'checking', onClick: () => { void panel.refreshLocal(); } }, '刷新设备')),
       R.createElement('datalist', { id: 'cfzn-device-baud-rates' }, ...[9600, 19200, 38400, 57600, 115200, 230400, 460800, 921600].map(rate => R.createElement('option', { key: rate, value: String(rate) }))),
       R.createElement('div', { className: 'cfzn-connection-table' }, R.createElement('table', { 'aria-label': '串口设备' },
         R.createElement('thead', null, R.createElement('tr', null, ...labels.map(label => R.createElement('th', { key: label, scope: 'col' }, label)))),

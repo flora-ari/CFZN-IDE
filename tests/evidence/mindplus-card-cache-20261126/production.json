@@ -1,0 +1,87 @@
+{
+  "result": "PASS",
+  "sourceFiles": [
+    {
+      "path": "apps/web/src/board-toolchain-card.ts",
+      "beforeSha256": "5be73ea48ff430e9ce32b73fc612d8223faa52b72a31d3a136ad4acfd1eac76e",
+      "sha256": "35ade34ea81fd374daa1017a077f3ed82363eb34166ab48defafbbd83b334d5f",
+      "bytes": 7087
+    },
+    {
+      "path": "apps/web/src/hardware-controller.ts",
+      "beforeSha256": "bbd512c7151dba9cabe91c51386fb3ad11bab17f3d72bac6ec81d0c0a6376ac9",
+      "sha256": "09444f98bd45b3a7402de83994935fc98a811205bd4d43a6f821abd7f62a5d92",
+      "bytes": 35031
+    },
+    {
+      "path": "apps/web/src/toolchain-preparation.ts",
+      "beforeSha256": "1b3b6a4742dab6eea20e57998e60c44ec9cb62729b788ab3f8b565d1a5925cd3",
+      "sha256": "7314ceefff4f84e59ba1e5cdb14bbe098e3fd143ff03f9a17575dec5bd10a3d6",
+      "bytes": 17890
+    },
+    {
+      "path": "apps/web/src/extensions/library.css",
+      "beforeSha256": "33846ce80504b5ef9e1d02a9a21063927d47e937b23b0a182efb1eaead0adfc6",
+      "sha256": "a9aa3305a26fd90d38a0dbc4212c08d416f991879f139bd47efa28c30e34a652",
+      "bytes": 10138
+    },
+    {
+      "path": "apps/web/test/toolchain-preparation.test.ts",
+      "beforeSha256": "455f54d4f5e8274c4a8c02442c2a657e90bc7f0cb9f268fbf300b64c80092f28",
+      "sha256": "185e88b4fb885d057b70994004645e4fea4f0c7ace42c5896c00b8987f1b0445",
+      "bytes": 40459
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "apps/web/dist/index.html",
+      "bytes": 897,
+      "sha256": "171835fb97ed2f3ceddea0fc723207288c48e70d123b5d9c46f41ce91e249065"
+    },
+    {
+      "path": "apps/web/dist/openblock.html",
+      "bytes": 4474,
+      "sha256": "21be5edfb84fb3cfdc79fc8b7a91c323b97cadaa371818af92218ef82c25ccac"
+    },
+    {
+      "path": "apps/web/dist/login.html",
+      "bytes": 842,
+      "sha256": "dc66318fafdba6387008f99bf2a1ab07fa6d0d5a68b2342c7e743cbd3ad4389e"
+    },
+    {
+      "path": "apps/web/dist/sso.html",
+      "bytes": 776,
+      "sha256": "7d84994f78728ae842d2997253c9afacbdbd9e90ff969f7367d38c5cf3f9cb30"
+    },
+    {
+      "path": "apps/web/dist/openblock-vendor/openblock-gui.js",
+      "bytes": 22665795,
+      "sha256": "6894755e27261ca3f03fc239a9b0d64bacf2269e9dc5f1e9bd2f289860621420"
+    },
+    {
+      "path": "apps/web/dist/assets/editor-CuBpnqbv.css",
+      "bytes": 40985,
+      "sha256": "864241b89cceb38854264d49a8d98a77e83a70a6bd4d9a956ff18eb2da1501ba"
+    },
+    {
+      "path": "apps/web/dist/assets/editor-DeEyQ3Tw.js",
+      "bytes": 228028,
+      "sha256": "442358b88ee946fde8f06af48c64c59ffa80a71b888bece46391a15eb92e29ad"
+    }
+  ],
+  "entryReferences": [
+    "/branding/ccraft-tab-icon.png",
+    "/assets/editor-DeEyQ3Tw.js",
+    "/assets/ide-config-Dsfji1Uy.js",
+    "/assets/save-shortcut-CWWLfAkh.js",
+    "/assets/browser-BGd-KbJ4.js",
+    "/assets/editor-CuBpnqbv.css",
+    "/openblock-vendor/react-16.min.js",
+    "/openblock-vendor/react-dom-16.min.js",
+    "/openblock-vendor/openblock-gui.4535c7feb8eb7fb7.js",
+    "/cfzn-extensions/module-loader.js"
+  ],
+  "guiAndBrandingUnchanged": true,
+  "libraryComponentUnchanged": true,
+  "scope": "read-only hashes/references, no browser or build"
+}

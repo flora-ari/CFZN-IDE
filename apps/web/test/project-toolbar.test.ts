@@ -16,13 +16,23 @@ test('toolbar status gives busy/readiness/dirty priority over a confirmed revisi
   });
 });
 
-test('new bridge messages accept only the frozen view/action shapes', () => {
-  assert.ok(isProjectToolbarState(projectToolbarState(clean, 2, '', 'projects')));
+test('the toolbar bridge validates project and account messages', () => {
+  const view = projectToolbarState(clean, 2, '', 'projects');
+  assert.ok(isProjectToolbarState(view));
+  const account = { name: 'maker', session: 'expired', busy: false, checking: true };
+  assert.ok(isProjectToolbarState({ ...view, account }));
+  assert.ok(isProjectToolbarState({ ...view, account: { name: '游客', session: 'active', busy: false, checking: false, guest: true } }));
+  assert.equal(isProjectToolbarState({ ...view, account: { ...account, guest: 'true' } }), false);
+  assert.equal(isProjectToolbarState({ ...view, account: { ...account, session: 'invalid' } }), false);
+  assert.equal(isProjectToolbarState({ ...view, account: { ...account, checking: 1 } }), false);
+  assert.equal(isProjectToolbarState({ ...view, account: null }), false);
   assert.equal(isProjectToolbarState({ statusText: 'saved', statusKind: 'saved', drawer: null }), false);
   assert.equal(isProjectToolbarState({ statusText: 'saved', statusKind: 'error', documentActionsDisabled: false, drawer: null }), false);
   assert.equal(isProjectToolbarState({ statusText: 'saved', statusKind: 'saved', documentActionsDisabled: false, drawer: 'extension' }), false);
   assert.equal(isProjectToolbarState({ statusText: 'saved', statusKind: 'saved', documentActionsDisabled: false, drawer: 'serial' }), false);
-  for (const action of ['projects', 'new', 'export', 'save']) assert.ok(isProjectToolbarAction({ action }));
+  for (const action of ['projects', 'new', 'export', 'save', 'verify-session', 'leave-account', 'login-account']) {
+    assert.ok(isProjectToolbarAction({ action }));
+  }
   assert.equal(isProjectToolbarAction({ action: 'serial' }), false);
   assert.equal(isProjectToolbarAction({ action: 'import' }), false);
   assert.equal(isProjectToolbarAction({ action: 'save', revision: 9 }), false);

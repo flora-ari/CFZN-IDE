@@ -1,4 +1,5 @@
 import { ARCHIVE_MIME, archiveName, envelope, isEnvelope, isProjectToolbarState } from './editor-protocol';
+import { projectMaxBytes, projectTooLarge } from './ide-config';
 import type { EditorSnapshot, ProjectArchive } from './editor-protocol';
 import { installDeviceMetadata } from './extensions/aijite';
 import { installExtensionAdapter } from './extensions/adapter';
@@ -6,7 +7,7 @@ import type { ExtensionAdapter } from './extensions/adapter';
 import { CUSTOM_MODULE_ID } from './extensions/custom-module-definition';
 import { makeLibraryRenderer } from './extensions/library';
 import { nativeProjectToolbar } from './native-project-toolbar';
-import { nativeHardware } from './native-hardware';
+import { createNativeLink, nativeHardware } from './native-hardware';
 import { controllerIds } from './extensions/catalog';
 import { ModeController } from './mode-controller';
 import { modeUi } from './mode-ui';
@@ -74,6 +75,7 @@ let updatingPersistedTitle = false;
 let extensions: ExtensionAdapter;
 let factoryWorkspace: { Blockly: any; workspace: any } | undefined;
 let hardwareUi: ReturnType<typeof nativeHardware>;
+let linkUi: ReturnType<typeof createNativeLink>;
 let modes: ModeController;
 const toolbox = new ToolboxPresentation();
 const guardedListeners = new WeakMap<object, (event: any) => void>();
@@ -96,7 +98,9 @@ const projectTools = nativeProjectToolbar({
       disabled: documentDisabled() };
   },
   action: action => {
-    if (action !== 'projects' && (projectTools.state.documentActionsDisabled || loading || nativeNew || !ready)) return;
+    if (!ready) return;
+    if (action !== 'projects' && action !== 'leave-account' && action !== 'verify-session' && action !== 'login-account' &&
+        (projectTools.state.documentActionsDisabled || loading || nativeNew)) return;
     send('PROJECT_TOOLBAR_ACTION', { action });
   },
   import: chooseImport,
@@ -202,7 +206,7 @@ function bindVm(value: OpenBlockVm) {
     await modes.restore(metadata);
   };
   // The build service expects bundled module IDs. Private modules already contribute their generated Arduino source.
-  hardwareUi = nativeHardware(vm, () => ({ deviceId: extensions.currentDevice(), moduleIds: extensions.loaded().filter(id => !CUSTOM_MODULE_ID.test(id)),
+  hardwareUi = nativeHardware(linkUi.link, vm, () => ({ deviceId: extensions.currentDevice(), moduleIds: extensions.loaded().filter(id => !CUSTOM_MODULE_ID.test(id)),
     libraries: extensions.projectArduinoLibraries(),
     realtime: modes.protocolActive, programming: modes.editorMode === 'programming',
     generationError: modes.codeMode === 'generated' ? modes.generationError : '',
@@ -302,8 +306,8 @@ importInput.addEventListener('change', async () => {
     const file = importInput.files?.[0];
     importInput.value = '';
     if (!file) return;
-    if (file.size > 20 * 1024 * 1024) {
-      send('IMPORT_ERROR', { message: '文件超过 20 MiB。' });
+    if (file.size > projectMaxBytes) {
+      send('IMPORT_ERROR', { message: projectTooLarge });
       return;
     }
     try {
@@ -319,7 +323,7 @@ function chooseImport() {
 }
 
 async function loadProject(bytes: ArrayBuffer, title: string, dirty = false) {
-  hardwareUi.hardware.assertIdle();
+  hardwareUi.hardware.assertDocumentIdle();
   extensions.assertIdle();
   readEditorMetadata(bytes); // Validate the sidecar before loading state, backup or VM stop/replacement.
   if (loading || nativeNew || store.getState().scratchGui.projectState.loadingState !== 'SHOWING_WITHOUT_ID') {
@@ -451,7 +455,9 @@ try {
   const { GUI, React, ReactDOM } = upstream;
   if (!GUI || !React || !ReactDOM) throw new Error('官方编辑器资源未加载。');
   installDeviceMetadata(window);
-  (window as any).CFZNOpenBlock = { renderLibrary: makeLibraryRenderer(() => extensions), renderProjectTools: projectTools.render,
+  linkUi = createNativeLink();
+  (window as any).CFZNOpenBlock = { renderLibrary: makeLibraryRenderer(() => extensions, () => hardwareUi?.hardware), renderProjectTools: projectTools.render,
+    renderAccountTools: projectTools.renderAccount,
     brandMessages,
     brandMessage: (id: string) => brandMessages(undefined, store?.getState().locales?.locale ?? navigator.language)[id],
     initialProjectTitle: (requested?: string) => ready ? store.getState().scratchGui.projectTitle : requested,
@@ -489,6 +495,8 @@ try {
       return guardedListeners.get(value);
     },
     renderModeControls: (R: any) => modeViews.renderControls(R),
+    renderLinkControls: linkUi.renderControls,
+    allowFirmwareUpload: linkUi.allowFirmwareUpload,
     renderUploadWorkspace: (R: any, CodeEditor: any, props: any) => modeViews.renderWorkspace(R, CodeEditor, props),
     generateCode: (B: any, workspace: any) => modes?.generate(B, workspace),
     supportsHardware: (id: string) => (controllerIds as readonly string[]).includes(id),

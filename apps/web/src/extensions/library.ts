@@ -3,6 +3,8 @@ import { factoryErrorMessage, makeCustomModuleFactory, type FactoryDirectory } f
 import { libraryLabel, matchesLibraryKeyword } from './library-keyword';
 import { removalMessage } from './removal';
 import type { ExtensionAdapter } from './adapter';
+import type { HardwareController } from '../hardware-controller';
+import { boardSelectionHint, renderBoardToolchain } from '../board-toolchain-card';
 import './library.css';
 
 type Category = 'controllers' | 'modules' | 'stage';
@@ -14,7 +16,7 @@ const moduleGroups = [
 ] as const;
 
 // Native Library owns search and modal layout; optional slots use the iframe's React 16.
-export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
+export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter, getHardware: () => HardwareController | undefined = () => undefined) {
   let Component: any;
   let Factory: ReturnType<typeof makeCustomModuleFactory>;
   const filters: Record<Category, typeof defaultFilters> = {
@@ -24,6 +26,7 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
     Factory ??= makeCustomModuleFactory(R, CodeEditor);
     Component ??= function ExtensionLibrary({ nativeProps, stageCatalog, nativeDevices }: any) {
       const adapter = getAdapter();
+      const hardware = getHardware();
       const [chosenCategory, setCategory] = R.useState('controllers');
       const category: Category = nativeDevices ? 'controllers' : chosenCategory;
       const filter = filters[category];
@@ -31,6 +34,7 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
       const [stageEntries, setStageEntries] = R.useState(stageCatalog);
       const [, refresh] = R.useState(0);
       const [error, setError] = R.useState('');
+      const [cardFeedback, setCardFeedback] = R.useState({ deviceId: '', message: '' });
       const [factoryOpen, setFactoryOpen] = R.useState(false);
       const [directory, setDirectory]: [FactoryDirectory, (state: FactoryDirectory) => void] =
         R.useState({ status: 'loading', items: [], error: '' });
@@ -40,6 +44,7 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
       const directoryRequest = R.useRef(0);
       const selects = R.useRef(new Map<string, HTMLButtonElement>());
       const controlsRef = R.useRef(null) as { current: HTMLDivElement | null };
+      const mounted = R.useRef(true);
       const committed = R.useRef(null);
       // While the adapter is rebuilding the runtime, keep displaying its last committed selection.
       if (!committed.current || !adapter.suppressChanges) {
@@ -64,7 +69,13 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
         }
       };
       R.useEffect(() => adapter.subscribe(rerender), [adapter]);
-      R.useEffect(() => () => { directoryRequest.current++; }, []);
+      R.useEffect(() => {
+        const stop = hardware?.subscribe(rerender);
+        // A fresh library mount rehydrates existing tasks; it never submits a download.
+        if (hardware) void hardware.refresh();
+        return stop;
+      }, [hardware]);
+      R.useEffect(() => { mounted.current = true; return () => { mounted.current = false; directoryRequest.current++; }; }, []);
       R.useEffect(() => {
         if (isModules) void refreshDirectory().catch(() => {});
       }, [adapter, isModules]);
@@ -147,11 +158,23 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
         const support = isControllers ? '' : '支持：' + item.supportDevice.map(deviceName).join('、');
         const usage = isModules && item.blockModes.includes('upload') && !item.blockModes.includes('realtime') ? '积木仅上传模式' : '';
         const descriptionId = 'cfzn-card-info-' + key;
+        const preparation = isControllers && hardware ? renderBoardToolchain(R, hardware, id, name,
+          message => { if (mounted.current) setCardFeedback({ deviceId: id, message }); },
+          cardFeedback.deviceId === id ? cardFeedback.message : '') : null;
         const select = R.createElement('button', { type: 'button', className: 'cfzn-card-select', 'aria-label': name,
           'aria-pressed': selected, 'aria-disabled': !!disabled, 'aria-describedby': descriptionId, disabled: busy, onKeyDown: keyboardActivate,
           ref: (node: HTMLButtonElement | null) => { if (node) selects.current.set(key, node); else selects.current.delete(key); },
-          onClick: () => { if (!disabled) void act(() => isControllers ? adapter.selectController(item) : adapter.loadModule(id), key); } });
-        const footer = R.createElement('div', { className: 'cfzn-card-footer' },
+          onClick: () => {
+            if (disabled) return;
+            const hint = isControllers && hardware ? boardSelectionHint(hardware, id) : '';
+            if (hint) {
+              setCardFeedback({ deviceId: id, message: hint });
+              return;
+            }
+            setCardFeedback({ deviceId: '', message: '' });
+            void act(() => isControllers ? adapter.selectController(item) : adapter.loadModule(id), key);
+          } });
+        const footer = isControllers ? null : R.createElement('div', { className: 'cfzn-card-footer' },
           R.createElement('div', { className: 'cfzn-card-actions' }, R.createElement('span', { className: 'cfzn-card-state' }, selected ? isControllers ? '当前主控' : '已添加' : ''),
             removal && R.createElement('button', { type: 'button', className: 'cfzn-card-remove', 'aria-label': '移除 ' + name,
               disabled: busy || !removal.allowed, title: reason || '从当前项目移除', 'aria-describedby': descriptionId, onKeyDown: keyboardActivate,
@@ -160,7 +183,7 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
             usage && R.createElement('div', null, usage), support && R.createElement('div', null, support), reason && R.createElement('div', null, reason)));
         return { ...item, featured: true, rawURL: item.iconURL, disabled, isLoaded: selected,
           cfznGroup: selected ? 'loaded' : canAdd ? 'available' : 'unavailable',
-          cfznCard: { key, selected, select, footer, badge: compatibility && R.createElement('span', { className: 'cfzn-card-compatibility', title: support }, compatibility) } };
+          cfznCard: { key, selected, select, footer, badge: preparation?.decoration || (compatibility && R.createElement('span', { className: 'cfzn-card-compatibility', title: support }, compatibility)) } };
       });
       const clearFilters = (clearSearch: () => void) => {
         const previous = document.activeElement;
@@ -177,6 +200,8 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
         return [R.createElement('section', { key: id, className: 'cfzn-module-group', 'data-cfzn-module-group': id, 'aria-labelledby': heading },
           R.createElement('h2', { id: heading }, label), R.createElement('div', { className: 'cfzn-module-grid' }, cards))];
       });
+      const renderControllers = (items: any[], renderCard: (item: any, index: number) => any) =>
+        R.createElement('div', { className: 'cfzn-controller-grid' }, ...items.map(renderCard));
       let emptyMessage = '没有符合筛选条件的扩展';
       if (isModules && !showAllModules && !deviceId) emptyMessage = '请先选择主控板，或勾选“显示全部模块”浏览目录。';
       else if (isModules && !showAllModules && !compatibleEntries.length) emptyMessage = '当前分类没有兼容此主控的模块，可勾选“显示全部模块”查看。';
@@ -198,7 +223,7 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
             onKeyDown: keyboardActivate, onClick: () => setFactoryOpen(true) }, '自定义模块扩展'),
           isModules && !deviceId && R.createElement('button', { type: 'button', className: 'cfzn-extension-action', onKeyDown: keyboardActivate, onClick: () => changeCategory('controllers', true) }, '选择主控'),
           dependencies && isControllers && !nativeDevices && R.createElement('button', { type: 'button', className: 'cfzn-extension-action', onKeyDown: keyboardActivate, onClick: () => changeCategory('modules', true) }, '前往模块扩展'),
-          nativeDevices && deviceId && R.createElement('button', { type: 'button', className: 'cfzn-extension-action', disabled: !adapter.removalState({ kind: 'controller', id: deviceId }).allowed,
+          isControllers && deviceId && R.createElement('button', { type: 'button', className: 'cfzn-extension-action', disabled: busy || !adapter.removalState({ kind: 'controller', id: deviceId }).allowed,
             onKeyDown: keyboardActivate, onClick: () => { void act(() => adapter.clearController(deviceId), 'controller-' + deviceId); } }, '取消当前主控')),
         isModules && R.createElement('div', { className: 'cfzn-extension-types', role: 'group', 'aria-label': '扩展类型' },
           ...['all', ...Object.keys(typeNames).filter(key => available.has(key))].map(key => R.createElement('button', { key, type: 'button', className: 'cfzn-extension-type',
@@ -221,7 +246,7 @@ export function makeLibraryRenderer(getAdapter: () => ExtensionAdapter) {
         categoryControls: R.createElement(R.Fragment, null, controls, factory),
         cfznResetKey: category + ':' + selectedType,
         cfznMatchesKeyword: category === 'stage' ? undefined : matchesLibraryKeyword,
-        cfznRenderGroups: isModules ? renderGroups : undefined,
+        cfznRenderGroups: isModules ? renderGroups : isControllers ? renderControllers : undefined,
         renderEmpty: (clearSearch: () => void, query: string) => R.createElement('div', { className: 'cfzn-extension-empty' },
           R.createElement('span', { role: 'status' }, emptyMessage),
           (query || selectedType !== 'all' || filter.loadedOnly || filter.currentModeOnly || (isModules && showAllModules)) &&

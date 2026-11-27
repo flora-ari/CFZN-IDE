@@ -1,0 +1,81 @@
+{
+  "result": "PASS",
+  "ideAuthBuildDeclaration": true,
+  "sourceFreezeMatches": true,
+  "artifactHashes": [
+    {
+      "path": "apps/web/dist/openblock.html",
+      "bytes": 4474,
+      "sha256": "c9d74629f2657db4a3d47e95dd2d25c3ecdddfc591a6ec5da54bddc033f81b37"
+    },
+    {
+      "path": "apps/web/dist/login.html",
+      "bytes": 842,
+      "sha256": "dc66318fafdba6387008f99bf2a1ab07fa6d0d5a68b2342c7e743cbd3ad4389e"
+    },
+    {
+      "path": "apps/web/dist/sso.html",
+      "bytes": 776,
+      "sha256": "7d84994f78728ae842d2997253c9afacbdbd9e90ff969f7367d38c5cf3f9cb30"
+    },
+    {
+      "path": "apps/web/dist/openblock-vendor/openblock-gui.js",
+      "bytes": 22665795,
+      "sha256": "6894755e27261ca3f03fc239a9b0d64bacf2269e9dc5f1e9bd2f289860621420"
+    },
+    {
+      "path": "apps/web/dist/assets/editor-2FWVdJTS.css",
+      "bytes": 41055,
+      "sha256": "7b97349bb0c72cbc11dd420d3355331c2a1ecfef9ec0ce161299f5879dd7f2ef"
+    },
+    {
+      "path": "apps/web/dist/assets/editor-BatrKq4c.js",
+      "bytes": 226131,
+      "sha256": "933350f2569283b92bb406e272d9c411f5e0157e8e18701a3ed59942b495e9d3"
+    }
+  ],
+  "references": {
+    "index": [
+      "/openblock-vendor/openblock-gui.4535c7feb8eb7fb7.js",
+      "/branding/ccraft-tab-icon.png",
+      "/assets/app-BJ-yZc1V.js",
+      "/assets/ide-config-Dsfji1Uy.js",
+      "/assets/style-kh2BzkMl.js",
+      "/assets/index-B07bj4X_.js",
+      "/assets/save-shortcut-CWWLfAkh.js",
+      "/assets/style-TLKu5rpE.css"
+    ],
+    "openblock": [
+      "/branding/ccraft-tab-icon.png",
+      "/assets/editor-BatrKq4c.js",
+      "/assets/ide-config-Dsfji1Uy.js",
+      "/assets/save-shortcut-CWWLfAkh.js",
+      "/assets/browser-BGd-KbJ4.js",
+      "/assets/editor-2FWVdJTS.css",
+      "/openblock-vendor/react-16.min.js",
+      "/openblock-vendor/react-dom-16.min.js",
+      "/openblock-vendor/openblock-gui.4535c7feb8eb7fb7.js",
+      "/cfzn-extensions/module-loader.js"
+    ],
+    "login": [
+      "/branding/ccraft-tab-icon.png",
+      "/assets/login-8_cTyAQi.js",
+      "/assets/ide-config-Dsfji1Uy.js",
+      "/assets/style-kh2BzkMl.js",
+      "/assets/index-B07bj4X_.js",
+      "/assets/style-TLKu5rpE.css",
+      "/assets/ide-login-BFSycsRR.css"
+    ],
+    "sso": [
+      "/branding/ccraft-tab-icon.png",
+      "/assets/sso-kByvi_Ni.js",
+      "/assets/ide-config-Dsfji1Uy.js",
+      "/assets/style-kh2BzkMl.js",
+      "/assets/style-TLKu5rpE.css",
+      "/assets/ide-login-BFSycsRR.css"
+    ]
+  },
+  "legacyAndFastGUIUnchanged": true,
+  "brandingUnchanged": true,
+  "scope": "read-only metadata, hashes and entry references; no login/browser/network/SDK test"
+}

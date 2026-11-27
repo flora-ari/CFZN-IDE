@@ -1,0 +1,205 @@
+{
+  "result": "PASS",
+  "origin": "https://ide.xiaodaiyang.top",
+  "health": {
+    "status": "ok",
+    "storage": "minio",
+    "auth": "maker"
+  },
+  "metadata": {
+    "toolchainMode": "on-demand",
+    "version": "0.1.5",
+    "sha256": "d95f9d4a498ad032bebaab0a614d12e4a6b6029cb03aef3adc5d38f0e1ff7d5d",
+    "file": "CCraft-Link-Setup.exe",
+    "sizeBytes": 53313236
+  },
+  "observations": [
+    {
+      "path": "/openblock.html",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "text/html",
+        "content-length": "4474",
+        "last-modified": "Thu, 26 Nov 2026 07:11:52 GMT",
+        "connection": "keep-alive",
+        "vary": "Accept-Encoding",
+        "etag": "\"6b07dbb8-117a\"",
+        "expires": "Thu, 26 Nov 2026 07:16:23 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      },
+      "bytes": 4474,
+      "sha256": "21be5edfb84fb3cfdc79fc8b7a91c323b97cadaa371818af92218ef82c25ccac"
+    },
+    {
+      "path": "/assets/editor-DeEyQ3Tw.js",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "application/javascript",
+        "content-length": "228028",
+        "last-modified": "Thu, 26 Nov 2026 07:11:52 GMT",
+        "connection": "keep-alive",
+        "vary": "Accept-Encoding",
+        "etag": "\"6b07dbb8-37abc\"",
+        "expires": "Fri, 26 Nov 2027 07:16:24 GMT",
+        "cache-control": "max-age=31536000",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      },
+      "bytes": 228028,
+      "sha256": "442358b88ee946fde8f06af48c64c59ffa80a71b888bece46391a15eb92e29ad"
+    },
+    {
+      "path": "/assets/editor-CuBpnqbv.css",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "text/css",
+        "content-length": "40985",
+        "last-modified": "Thu, 26 Nov 2026 07:11:52 GMT",
+        "connection": "keep-alive",
+        "vary": "Accept-Encoding",
+        "etag": "\"6b07dbb8-a019\"",
+        "expires": "Fri, 26 Nov 2027 07:16:24 GMT",
+        "cache-control": "max-age=31536000",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      },
+      "bytes": 40985,
+      "sha256": "864241b89cceb38854264d49a8d98a77e83a70a6bd4d9a956ff18eb2da1501ba"
+    },
+    {
+      "path": "/api/v1/health",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "48",
+        "connection": "keep-alive",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)"
+      },
+      "bytes": 48,
+      "sha256": "6d88cbeb9a058cbffc7caf258b1d3ac73361a7b863c8ed7457b490aede171714"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "text/html",
+        "content-length": "897",
+        "last-modified": "Thu, 26 Nov 2026 07:11:52 GMT",
+        "connection": "keep-alive",
+        "etag": "\"6b07dbb8-381\"",
+        "expires": "Thu, 26 Nov 2026 07:16:23 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      },
+      "bytes": 897,
+      "sha256": "171835fb97ed2f3ceddea0fc723207288c48e70d123b5d9c46f41ce91e249065"
+    },
+    {
+      "path": "/login.html",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "text/html",
+        "content-length": "842",
+        "last-modified": "Thu, 26 Nov 2026 07:11:52 GMT",
+        "connection": "keep-alive",
+        "etag": "\"6b07dbb8-34a\"",
+        "cache-control": "no-store",
+        "referrer-policy": "no-referrer",
+        "x-content-type-options": "nosniff",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      },
+      "bytes": 842,
+      "sha256": "dc66318fafdba6387008f99bf2a1ab07fa6d0d5a68b2342c7e743cbd3ad4389e"
+    },
+    {
+      "path": "/?mode=guest",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "text/html",
+        "content-length": "897",
+        "last-modified": "Thu, 26 Nov 2026 07:11:52 GMT",
+        "connection": "keep-alive",
+        "etag": "\"6b07dbb8-381\"",
+        "expires": "Thu, 26 Nov 2026 07:16:23 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      },
+      "bytes": 897,
+      "sha256": "171835fb97ed2f3ceddea0fc723207288c48e70d123b5d9c46f41ce91e249065"
+    },
+    {
+      "path": "/downloads/CCraft-Link-latest.json",
+      "status": 200,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "application/json",
+        "content-length": "204",
+        "last-modified": "Thu, 26 Nov 2026 06:26:10 GMT",
+        "connection": "keep-alive",
+        "etag": "\"6b07d102-cc\"",
+        "expires": "Thu, 26 Nov 2026 07:16:23 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "accept-ranges": "bytes"
+      },
+      "bytes": 204,
+      "sha256": "3599fa336a8a892dce341ca569e182645aac4062f3467adbe8eff173335034bd"
+    },
+    {
+      "path": "/downloads/CCraft-Link-Setup.exe",
+      "status": 206,
+      "headers": {
+        "server": "nginx/1.20.1",
+        "date": "Thu, 26 Nov 2026 07:16:24 GMT",
+        "content-type": "application/octet-stream",
+        "content-length": "64",
+        "last-modified": "Thu, 26 Nov 2026 06:14:06 GMT",
+        "connection": "keep-alive",
+        "etag": "\"6b07ce2e-32d7ed4\"",
+        "expires": "Thu, 26 Nov 2026 07:16:23 GMT",
+        "cache-control": "no-cache",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "strict-origin-when-cross-origin",
+        "permissions-policy": "serial=(self), usb=(self)",
+        "content-range": "bytes 0-63/53313236"
+      },
+      "bytes": 64,
+      "sha256": "720facc4408fc9406eb3c06f41676fe828405dc69d1b16dcf492f3aa6fea6287"
+    }
+  ],
+  "coverage": "HTTPS default certificate validation; read-only GET; installer only 64-byte Range, no full SHA verification; no browser or Link"
+}

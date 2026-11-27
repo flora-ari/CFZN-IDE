@@ -18,28 +18,45 @@ select_api_port() {
 
 verify_https() {
     local domain=$1 certificate=$2 diagnostics=$3
+    local ide_auth=${4:-false}
     local attempts=${CFZN_TLS_ATTEMPTS:-30} delay=${CFZN_TLS_RETRY_DELAY:-1}
-    local attempt endpoint code ready
+    local attempt endpoint code ready expected body_check
+    local -a endpoints=(/ /openblock.html /api/v1/health /api/v1/custom-modules)
+    if [[ $ide_auth == true ]]; then
+        endpoints+=(/login /sso /api/v1/ide/auth/me/ /api/v1/projects)
+    fi
     [[ $attempts =~ ^[1-9][0-9]*$ && $attempts -le 60 && $delay =~ ^[0-5]$ ]] || return 2
     # A reload signals the master; the new workers may not accept connections yet.
     # Use fresh direct connections and keep certificate/hostname validation enabled.
     for ((attempt=1; attempt<=attempts; attempt++)); do
         ready=1
-        for endpoint in / /openblock.html /api/v1/health /api/v1/custom-modules; do
+        for endpoint in "${endpoints[@]}"; do
+            expected=200
+            case "$endpoint" in
+                /api/v1/ide/auth/me/|/api/v1/projects) expected=401 ;;
+            esac
             if ! code=$(curl -q --noproxy '*' --http1.1 --connect-timeout 3 --max-time 8 \
-                -fsS --resolve "$domain:443:127.0.0.1" "https://$domain$endpoint" \
+                -sS --resolve "$domain:443:127.0.0.1" "https://$domain$endpoint" \
                 -o "$diagnostics/https-body" -w '%{http_code}' 2> "$diagnostics/https-error"); then
                 ready=0
                 break
             fi
-            if [[ $code != 200 ]]; then
+            if [[ $code != "$expected" ]]; then
                 printf 'Unexpected HTTP %s for %s\n' "$code" "$endpoint" > "$diagnostics/https-error"
                 ready=0
                 break
             fi
-            if [[ $endpoint == /api/v1/health ]] &&
-                ! node -e 'if(JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).status!=="ok")process.exit(1)' \
-                    "$diagnostics/https-body" 2> "$diagnostics/https-error"; then
+            body_check=''
+            if [[ $endpoint == /api/v1/health ]]; then body_check=health; fi
+            if [[ $expected == 401 ]]; then body_check=unauthorized; fi
+            if [[ -n $body_check ]] &&
+                ! node -e '
+                    const [file, check, auth] = process.argv.slice(1);
+                    const body = JSON.parse(require("fs").readFileSync(file,"utf8"));
+                    const healthy = body.status === "ok" && (auth !== "true" || (body.auth === "maker" && body.storage === "minio"));
+                    if (check === "health" ? !healthy : body.error?.code !== "UNAUTHORIZED") process.exit(1);
+                ' "$diagnostics/https-body" "$body_check" "$ide_auth" 2> "$diagnostics/https-error"; then
+                printf 'Unexpected API response for %s\n' "$endpoint" >> "$diagnostics/https-error"
                 ready=0
                 break
             fi
@@ -66,6 +83,38 @@ gzip_static_setting() {
     if nginx -V 2>&1 | grep -q -- '--with-http_gzip_static_module'; then
         printf 'gzip_static %s;\n' "$1"
     fi
+}
+
+ide_auth_locations() {
+    local port=$1 path
+    for path in '= /api/v1/projects' '^~ /api/v1/projects/'; do
+        cat <<EOF
+    location $path {
+        client_max_body_size 80m;
+        gzip off;
+        $(gzip_static_setting off)
+        proxy_pass http://127.0.0.1:$port;
+        proxy_http_version 1.1;
+        proxy_set_header Host \$http_host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
+        proxy_request_buffering off;
+        proxy_read_timeout 300s;
+        proxy_send_timeout 300s;
+    }
+EOF
+    done
+    cat <<'NGINX'
+    location ~ ^/(?<ide_auth_page>login|sso)(?:[.]html|/)?$ {
+        access_log off;
+        try_files /$ide_auth_page.html =404;
+        add_header Cache-Control no-store always;
+        add_header Referrer-Policy no-referrer always;
+        add_header X-Content-Type-Options nosniff always;
+        add_header Permissions-Policy "serial=(self), usb=(self)" always;
+    }
+NGINX
 }
 
 # Static representation negotiation for the one content-addressed startup file.
@@ -171,6 +220,7 @@ BASE=/home/wwwroot/cfzn-ide
 CONF=/etc/nginx/conf.d/ide.xiaodaiyang.top.conf
 UNIT=/etc/systemd/system/cfzn-ide.service
 ENVFILE=/etc/cfzn-ide.env
+INTEGRATION_ENVFILE=/etc/cfzn-ide-integration.env
 release=${1:?release ID required}
 checksum=${2:?SHA-256 required}
 reuse_staged=0
@@ -243,6 +293,12 @@ install -d -m 755 "$BASE" "$BASE/releases" "$BASE/backups" "$BASE/runtime" "$TAR
 touch "$BASE/.cfzn-ide-managed"
 tar -xzf "$UPLOAD/cfzn-ide.tar.gz" -C "$TARGET"
 [[ -s $TARGET/web/index.html && -s $TARGET/web/openblock.html && -s $TARGET/api/dist/main.js ]]
+ide_auth=$(node -e 'process.stdout.write(String(JSON.parse(require("fs").readFileSync(process.argv[1], "utf8")).ideAuth === true))' "$TARGET/release.json")
+if [[ $ide_auth == true ]]; then
+    [[ -s $TARGET/web/login.html && -s $TARGET/web/sso.html && -s $INTEGRATION_ENVFILE ]] || {
+        echo 'Authenticated releases require login.html, sso.html and the server integration environment file.' >&2; exit 1;
+    }
+fi
 fast_gui=$(validated_fast_gui "$TARGET/web")
 (cd "$TARGET/api" && npm ci --omit=dev --ignore-scripts --no-audit --no-fund)
 # The IDE service does not need access to Harness's private runtime directories.
@@ -316,6 +372,7 @@ NODE_ENV=production
 PORT=$PORT
 PROJECT_DATA_DIR=$BASE/data
 CUSTOM_MODULE_ORIGINS=https://$DOMAIN
+$(if [[ $ide_auth == true ]]; then printf 'IDE_AUTH_MODE=maker\n'; fi)
 EOF
 chmod 640 "$ENVFILE"
 cat > "$UNIT" <<EOF
@@ -329,6 +386,7 @@ User=cfzn-ide
 Group=cfzn-ide
 WorkingDirectory=$BASE/current/api
 EnvironmentFile=$ENVFILE
+$(if [[ $ide_auth == true ]]; then printf 'EnvironmentFile=%s\n' "$INTEGRATION_ENVFILE"; fi)
 ExecStart=$NODE $BASE/current/api/dist/main.js
 Restart=on-failure
 RestartSec=3
@@ -369,6 +427,7 @@ server {
     listen 80;
     server_name $DOMAIN;
     location ^~ /.well-known/acme-challenge/ { root $CHALLENGE; }
+$(if [[ $ide_auth == true ]]; then printf '    location ~ ^/(login|sso)(?:[.]html|/)?$ { access_log off; return 301 https://%s$request_uri; }\n' "$DOMAIN"; fi)
     location / { return 301 https://$DOMAIN\$request_uri; }
 }
 server {
@@ -393,6 +452,7 @@ server {
     add_header Referrer-Policy strict-origin-when-cross-origin always;
     add_header Permissions-Policy "serial=(self), usb=(self)" always;
 $(if [[ -n $fast_gui ]]; then gui_representation_locations "$fast_gui"; fi)
+$(if [[ $ide_auth == true ]]; then ide_auth_locations "$PORT"; fi)
     location /api/ {
         gzip off;
         $(gzip_static_setting off)
@@ -413,6 +473,6 @@ $(if [[ -n $fast_gui ]]; then gui_representation_locations "$fast_gui"; fi)
 EOF
 nginx -t
 systemctl reload nginx
-verify_https "$DOMAIN" "$CERT" "$backup"
+verify_https "$DOMAIN" "$CERT" "$backup" "$ide_auth"
 trap - ERR
 printf 'DEPLOYED https://%s\nAPI: 127.0.0.1:%s\nRelease: %s\nBackup: %s\n' "$DOMAIN" "$PORT" "$TARGET" "$backup"

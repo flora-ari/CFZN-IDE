@@ -10,11 +10,11 @@ import { validateProjectArchive } from './project-archive.validator';
 import { projectId, projectName, revisionHeader } from './project-input';
 import { PROJECT_STORE, type Project, type ProjectStore } from './project-store';
 
-function mediaType(request: Request): string | undefined {
+export function mediaType(request: Request): string | undefined {
   return request.get('content-type')?.split(';', 1)[0].trim().toLowerCase();
 }
 
-function onlyName(body: unknown): string {
+export function onlyName(body: unknown): string {
   if (!body || typeof body !== 'object' || Array.isArray(body) || Object.keys(body).some((key) => key !== 'name')) {
     throw invalid('Provide a single name field.', 'name');
   }
@@ -25,7 +25,7 @@ function setRevision(response: Response, project: Project): void {
   response.set({ ETag: `"${project.revision}"`, 'Cache-Control': 'no-store' });
 }
 
-function attachmentName(name: string): string {
+export function attachmentName(name: string): string {
   const safeName = Buffer.from(name.replace(/[/\\]/g, '_'), 'utf8').toString('utf8');
   const encoded = encodeURIComponent(`${safeName}.ob`).replace(/[!'()*]/g, (char) =>
     `%${char.charCodeAt(0).toString(16).toUpperCase()}`);

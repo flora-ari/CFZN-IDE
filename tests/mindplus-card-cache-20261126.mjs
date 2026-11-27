@@ -1,0 +1,38 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {createHash} from 'node:crypto';
+import React from '../apps/web/node_modules/react/index.js';
+import {renderToStaticMarkup} from '../apps/web/node_modules/react-dom/server.node.js';
+import {HardwareSession} from '../apps/web/src/hardware-session.ts';
+import {HardwareController} from '../apps/web/src/hardware-controller.ts';
+import {renderBoardToolchain} from '../apps/web/src/board-toolchain-card.ts';
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const candidate=JSON.parse(fs.readFileSync('.runtime/mindplus-resource-cache-20261126/candidate.json'));
+for(const f of candidate.files)assert.equal(sha(fs.readFileSync(f.path)),f.sha256,f.path);
+assert.equal(sha(fs.readFileSync('apps/web/src/extensions/library.ts')),'89a9ac35839e979d4b9a15016f95256db36ab6e9d94611884634d20fc768e77c');
+const backend={instance:'A',ready:true,catalog:'ready',online:true};const calls=[];
+function create(){
+ let listener=()=>{};
+ const profile={id:'esp32-4mb-dio',deviceId:'arduinoEsp32',label:'ESP32',chip:'esp32',fqbn:'esp32:esp32:esp32',compileAvailable:backend.ready,uploadAvailable:backend.ready,realtimeAvailable:false};
+ const request=async(url,init)=>{const path=new URL(url).pathname;calls.push({path,method:init?.method??'GET',instance:backend.instance});
+  if((init?.method??'GET')!=='GET')throw Error('No POST allowed in independent recovery fixture');
+  if(path==='/capabilities')return Response.json({protocolVersion:1,executionHost:'local',toolchain:{cliVersion:'QA',description:'mock'},profiles:[{...profile,compileAvailable:backend.ready,uploadAvailable:backend.ready}]});
+  if(path==='/toolchains')return Response.json({supported:true,activeJobId:null,profiles:[{profileId:profile.id,planId:'esp32-2.0.17',state:backend.catalog,installable:true}]});
+  if(path==='/ports')return Response.json({items:[]});throw Error(path);
+ };
+ const session=new HardwareSession({getPorts:async()=>[],requestPort:async()=>{throw Error('No serial authorization');}});
+ const hardware=new HardwareController(session,()=>({deviceId:null,code:'',documentId:1,editVersion:1,moduleIds:[],realtime:true}), 'http://mock.test',()=>{},request,async()=>{});
+ hardware.setLinkGuard({get instanceId(){return backend.online?backend.instance:undefined;},get reason(){return backend.online?'':'offline';},ensureReady:async()=>{},subscribe:f=>{listener=f;return()=>{};}});
+ return {hardware,notify:()=>listener(),html:()=>renderToStaticMarkup(React.createElement(React.Fragment,null,renderBoardToolchain(React,hardware,'arduinoEsp32','ESP32',()=>{}).decoration))};
+}
+const first=create();await first.hardware.refresh();assert.equal(first.html(),'');first.hardware.toolchains.dispose();
+const second=create();await second.hardware.refresh();assert.equal(second.html(),'');await second.hardware.refresh();assert.equal(second.html(),'','reopening view / refreshing ready cannot add a placeholder');
+backend.online=false;second.notify();assert.equal(second.html(),'','offline cached caps stay neutral');
+backend.instance='B';backend.online=true;backend.ready=false;backend.catalog='missing';second.notify();assert.equal(second.html(),'','new instance before reads cannot claim missing');
+await second.hardware.refresh();assert.match(second.html(),/cfzn-card-download-veil/);assert.match(second.html(),/下载 ESP32 编译环境/);
+assert.ok(!renderBoardToolchain(React,second.hardware,'arduinoNano','Nano',()=>{}).decoration,'no profile stays neutral');
+backend.ready=true;backend.catalog='ready';await second.hardware.refresh();assert.equal(second.html(),'','fresh ready removes every decoration');second.hardware.toolchains.dispose();
+assert.equal(calls.filter(c=>c.method!=='GET').length,0);
+const css=fs.readFileSync('apps/web/src/extensions/library.css','utf8');assert.ok(css.includes('grid-auto-rows: 1fr'));assert.ok(css.includes('hsla(0, 0%, 84.7%, .4)')||css.includes('hsla(0,0%,84.7%,.4)'));
+fs.mkdirSync('tests/evidence/mindplus-card-cache-20261126',{recursive:true});fs.writeFileSync('tests/evidence/mindplus-card-cache-20261126/independent.json',JSON.stringify({result:'PASS',realClasses:['HardwareController','HardwareSession','ToolchainPreparation'],renderer:'actual React SSR',rebuiltObservers:2,preparePosts:0,calls,sourceHashes:candidate.files,browserGeometry:false,network:'injected fake only'},null,2));
+console.log('PASS actual controller/observer reconstruction and React SSR: ready empty, instance neutral, fresh missing download, zero POST.');

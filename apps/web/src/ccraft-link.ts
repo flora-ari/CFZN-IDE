@@ -4,7 +4,8 @@ export interface LinkHealth {
 export interface LinkState { status: 'unknown' | 'checking' | 'ready' | 'missing'; message: string; health?: LinkHealth }
 export interface LinkGuard {
   readonly reason: string;
-  ensureReady(): Promise<void>;
+  readonly instanceId?: string;
+  ensureReady(showGuide?: boolean): Promise<void>;
   subscribe(listener: () => void): () => void;
 }
 const nonempty = (value: unknown) => typeof value === 'string' && !!value.trim();
@@ -23,49 +24,50 @@ export class CCraftLink implements LinkGuard {
   private generation = 0;
   private active = true;
   private disposed = false;
-  private guiding = false;
-  private downloaded = false;
+  private guideOpen = false;
   readonly base: string;
   private request: typeof fetch;
-  private download: () => void;
-  private storage?: Pick<Storage, 'getItem' | 'setItem'>;
   private timeoutMs: number;
-  constructor(base: string, request: typeof fetch = fetch, download = () => {},
-    storage?: Pick<Storage, 'getItem' | 'setItem'>, timeoutMs = 3000) {
-    this.base = base; this.request = request.bind(globalThis); this.download = download; this.storage = storage; this.timeoutMs = timeoutMs;
+  constructor(base: string, request: typeof fetch = fetch, timeoutMs = 3000) {
+    this.base = base; this.request = request.bind(globalThis); this.timeoutMs = timeoutMs;
   }
   subscribe(listener: () => void) { this.listeners.add(listener); return () => { this.listeners.delete(listener); }; }
   private publish() { this.listeners.forEach(listener => listener()); }
+  get showingGuide() { return this.guideOpen; }
+  get checking() { return !!this.pending; }
+  get instanceId() { return this.state.health?.instanceId; }
   get reason() {
-    if (this.state.status === 'ready' || this.state.status === 'checking' && this.state.health && !this.guiding) return '';
+    if (this.state.status === 'ready') return '';
     return this.state.status === 'checking' ? '正在检测 CCraft Link，请稍候。' : '请安装并启动 CCraft Link 后使用硬件功能。';
+  }
+  showGuide() {
+    if (this.disposed || !this.active || this.state.status === 'ready' || this.guideOpen) return;
+    this.guideOpen = true; this.publish();
+  }
+  hideGuide() {
+    if (!this.guideOpen) return;
+    this.guideOpen = false; this.publish();
   }
   private schedule() {
     clearTimeout(this.timer);
-    if (!this.disposed && this.active && this.guiding) this.timer = setTimeout(() => { void this.check(); }, 3000);
+    if (!this.disposed && this.active) this.timer = setTimeout(() => { void this.check(); }, 3000);
   }
   setActive(active: boolean) {
     if (this.disposed || this.active === active) return;
     this.active = active; clearTimeout(this.timer);
     if (!active) {
       ++this.generation; this.abort?.abort(); this.abort = undefined; this.pending = undefined;
-      if (this.state.status === 'checking') this.state = { status: this.guiding ? 'missing' : 'unknown', message: '恢复页面后继续检测 CCraft Link。' };
+      if (this.state.status === 'checking') this.state = { status: 'unknown', message: '恢复页面后继续检测 CCraft Link。' };
       this.publish();
-    } else if (this.guiding || this.state.status === 'unknown') void this.check();
-  }
-  private autoDownload() {
-    const key = 'ccraft.link.installer.downloaded.v1';
-    if (this.downloaded) return;
-    this.downloaded = true;
-    try { if (this.storage?.getItem(key)) return; this.storage?.setItem(key, '1'); } catch { /* In-memory deduplication still works. */ }
-    try { this.download(); } catch { /* A blocked automatic download leaves the explicit download link available. */ }
+    } else void this.check();
   }
   check(): Promise<boolean> {
-    if (this.disposed) return Promise.resolve(false);
+    if (this.disposed || !this.active) return Promise.resolve(false);
     if (this.pending) return this.pending;
     const generation = ++this.generation, abort = this.abort = new AbortController();
     clearTimeout(this.timer);
-    this.state = { status: 'checking', message: '正在检测 CCraft Link…', health: this.state.health };
+    // Keep the last confirmed online status visible while checking it again.
+    if (this.state.status !== 'ready') this.state = { status: 'checking', message: '正在检测 CCraft Link…' };
     let rejectAbort!: (reason: unknown) => void;
     const aborted = new Promise<never>((_resolve, reject) => { rejectAbort = reject; });
     const onAbort = () => rejectAbort(abort.signal.reason);
@@ -81,44 +83,112 @@ export class CCraftLink implements LinkGuard {
           return data;
         })(), aborted]);
         if (generation !== this.generation || this.disposed) return false;
-        this.guiding = false; this.state = { status: 'ready', health, message: `CCraft Link ${health.version} 已就绪。` }; this.publish(); return true;
+        this.guideOpen = false;
+        this.state = { status: 'ready', health, message: `CCraft Link ${health.version} 已就绪。` };
+        return true;
       } catch (error) {
         if (generation !== this.generation || this.disposed) return false;
-        this.guiding = true; this.state = { status: 'missing', message: error instanceof Error ? error.message : String(error) };
-        this.publish(); this.autoDownload(); return false;
+        this.state = { status: 'missing', message: error instanceof TypeError ? '暂未连接到本机 CCraft Link。' : String(error instanceof Error ? error.message : error) };
+        return false;
       } finally {
         clearTimeout(timeout); abort.signal.removeEventListener('abort', onAbort);
-        if (generation === this.generation) { this.pending = undefined; this.abort = undefined; this.schedule(); }
+        if (generation === this.generation) { this.pending = undefined; this.abort = undefined; this.schedule(); this.publish(); }
       }
     })();
     this.pending = work; this.publish(); return work;
   }
-  async ensureReady() { if (!await this.check()) throw new Error(this.reason); }
+  async ensureReady(showGuide = true) {
+    if (await this.check()) return;
+    if (showGuide) this.showGuide();
+    throw new Error(this.reason || '页面恢复后请重新检测 CCraft Link。');
+  }
   dispose() { this.disposed = true; ++this.generation; clearTimeout(this.timer); this.abort?.abort(); this.listeners.clear(); }
 }
 
-export function mountLinkGuide(link: CCraftLink, downloadUrl: string, doc = document, host = window) {
-  const panel = doc.createElement('section'); panel.className = 'ccraft-link-guide'; panel.hidden = true;
-  panel.setAttribute('aria-labelledby', 'ccraft-link-title'); panel.setAttribute('data-testid', 'ccraft-link-guide');
-  const title = doc.createElement('h2'); title.id = 'ccraft-link-title'; title.textContent = '安装并启动 CCraft Link';
-  const description = doc.createElement('p'); description.textContent = '设备连接、编译和上传必须先运行 CCraft Link。已尝试自动下载安装包；若下载未开始，请点击下方下载安装包。安装完成后请启动 CCraft Link。您可以继续离线编辑项目。';
-  const status = doc.createElement('p'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
-  const permission = doc.createElement('p'); permission.textContent = '若已启动仍无法连接，请允许本站访问本地网络。此处每 3 秒自动重新检测。';
-  const download = doc.createElement('a'); download.href = downloadUrl; download.download = 'CCraft-Link-Setup.exe'; download.textContent = '下载安装包';
-  const retry = doc.createElement('button'); retry.type = 'button'; retry.textContent = '重新检测'; retry.onclick = () => { void link.check(); };
-  panel.append(title, description, status, permission, download, retry); doc.body.append(panel);
-  let shown = false;
-  const stop = link.subscribe(() => {
-    if (link.state.status === 'missing') shown = true;
-    if (link.state.status === 'ready') shown = false;
-    panel.hidden = !shown; status.textContent = link.state.message; retry.disabled = link.state.status === 'checking';
-  });
-  const visibility = () => link.setActive(doc.visibilityState !== 'hidden' && doc.hasFocus());
-  doc.addEventListener('visibilitychange', visibility); host.addEventListener('focus', visibility); host.addEventListener('blur', visibility);
-  return () => { stop(); panel.remove(); doc.removeEventListener('visibilitychange', visibility); host.removeEventListener('focus', visibility); host.removeEventListener('blur', visibility); link.dispose(); };
-}
+const launchUrl = 'ccraft-link://launch';
 
-export function downloadLinkInstaller(url: string, doc = document) {
-  const anchor = doc.createElement('a'); anchor.href = url; anchor.download = 'CCraft-Link-Setup.exe';
-  doc.body.append(anchor); anchor.click(); anchor.remove();
+export function mountLinkGuide(link: CCraftLink, downloadUrl: string | undefined, doc = document, host = window) {
+  const panel = doc.createElement('dialog'); panel.className = 'ccraft-link-guide';
+  panel.setAttribute('aria-labelledby', 'ccraft-link-title'); panel.setAttribute('data-testid', 'ccraft-link-guide');
+  const header = doc.createElement('div'); header.className = 'ccraft-link-guide-header';
+  const title = doc.createElement('h2'); title.id = 'ccraft-link-title'; title.textContent = '安装并启动 CCraft Link';
+  const close = doc.createElement('button'); close.type = 'button'; close.textContent = '×';
+  close.setAttribute('aria-label', '关闭连接引导'); close.onclick = () => panel.close();
+  header.append(title, close);
+
+  const body = doc.createElement('div'); body.className = 'ccraft-link-guide-body';
+  const status = doc.createElement('p'); status.setAttribute('role', 'status'); status.setAttribute('aria-live', 'polite');
+  const description = doc.createElement('p'); description.textContent = downloadUrl
+    ? '连接主控、编译和烧录需要在本机运行 CCraft Link。'
+    : '连接主控、编译和烧录需要运行 CCraft Link，目前只提供 Windows 安装包。';
+  body.append(description);
+
+  const steps = doc.createElement('div'); steps.className = 'ccraft-link-guide-steps';
+  function launchLink() {
+    if (link.state.status === 'ready') return;
+    // Stay in the original user gesture, including when the editor is embedded.
+    // This requests an external handler; only health can confirm Link is running.
+    try { (host.top ?? host).location.href = launchUrl; }
+    catch { status.textContent = '浏览器未能打开 CCraft Link，请从 Windows 开始菜单启动后重新检测。'; }
+    void link.check();
+  }
+  if (downloadUrl) {
+    const install = doc.createElement('p'); install.textContent = '首次使用，请下载并安装 CCraft Link。';
+    const download = doc.createElement('a'); download.href = downloadUrl; download.download = 'CCraft-Link-Setup.exe';
+    download.textContent = '下载 Windows 安装包'; download.className = 'ccraft-link-guide-action';
+    const start = doc.createElement('p'); start.textContent = '已安装时可直接打开。若浏览器未调起，请从 Windows 开始菜单启动 CCraft Link，或更新安装包。';
+    const launch = doc.createElement('button'); launch.type = 'button';
+    launch.textContent = '打开 CCraft Link'; launch.className = 'ccraft-link-guide-action';
+    launch.onclick = launchLink;
+    steps.append(install, download, start, launch);
+    body.append(steps);
+  }
+
+  const permission = doc.createElement('p'); permission.className = 'ccraft-link-guide-note';
+  permission.textContent = '若已启动仍无法连接，请在浏览器中允许本站访问本地网络。关闭此窗口可继续离线编辑。';
+  const retry = doc.createElement('button'); retry.type = 'button'; retry.textContent = '重新检测';
+  retry.className = 'ccraft-link-guide-action'; retry.onclick = () => { void link.check(); };
+  status.className = 'ccraft-link-guide-status';
+  body.append(status, permission, retry); panel.append(header, body); doc.body.append(panel);
+
+  let returnFocus: HTMLElement | null = null;
+  const stop = link.subscribe(() => {
+    if (link.showingGuide && !panel.open) {
+      returnFocus = doc.activeElement as HTMLElement | null;
+      panel.showModal();
+    } else if (!link.showingGuide && panel.open) {
+      panel.close();
+      queueMicrotask(() => {
+        if (returnFocus?.isConnected) returnFocus.focus();
+        else doc.querySelector<HTMLElement>('[data-cfzn-link-restored-focus]')?.focus();
+      });
+    }
+    status.textContent = link.state.message;
+    retry.disabled = link.checking;
+  });
+  panel.addEventListener('close', () => { if (!panel.open) link.hideGuide(); });
+
+  const visibility = () => link.setActive(doc.visibilityState !== 'hidden');
+  const onPageHide = (event: PageTransitionEvent) => { if (event.persisted) link.setActive(false); else dispose(); };
+  function dispose() {
+    stop(); panel.remove(); link.dispose();
+    doc.removeEventListener('visibilitychange', visibility);
+    host.removeEventListener('pagehide', onPageHide);
+    host.removeEventListener('pageshow', visibility);
+  }
+  doc.addEventListener('visibilitychange', visibility);
+  host.addEventListener('pagehide', onPageHide);
+  host.addEventListener('pageshow', visibility);
+  visibility(); void link.check();
+
+  return {
+    connect() {
+      if (link.state.status === 'ready') return;
+      link.showGuide();
+      // External app activation must happen in the original click, before any async check.
+      if (downloadUrl) launchLink();
+      else void link.check();
+    },
+    dispose,
+  };
 }

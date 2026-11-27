@@ -5,7 +5,7 @@ export function renderLocalService(R: any, hardware: HardwareController, state: 
   const label = { unknown: '尚未检测', checking: '检测中', online: '在线', offline: '无法访问', incompatible: '协议不兼容' }[service.status];
   return R.createElement('section', { className: 'cfzn-local-service', 'aria-label': '本机编译服务', 'data-status': service.status },
     R.createElement('strong', { role: 'status' }, `本机编译服务：${label}`),
-    R.createElement('button', { type: 'button', disabled: service.status === 'checking', onClick: () => { void hardware.refresh(); } }, service.status === 'unknown' ? '检测本机服务' : '重新检测'),
+    R.createElement('button', { type: 'button', disabled: service.status === 'checking', onClick: () => { void hardware.refresh(true); } }, service.status === 'unknown' ? '检测本机服务' : '重新检测'),
     R.createElement('p', null, service.message),
     service.status !== 'online' && R.createElement('small', null, '请在 USB 所在电脑安装并启动 CCraft Link，然后重新检测；若仍无法访问，请检查本站的本地网络访问权限。'));
 }

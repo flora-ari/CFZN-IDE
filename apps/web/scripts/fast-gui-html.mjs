@@ -15,10 +15,14 @@ export function injectFastGui(html, manifest) {
   return html.replace(fastGuiToken, fastGuiUrl(manifest));
 }
 export function fastGuiHtmlPlugin(publicRoot) {
-  return { name: 'ccraft-fast-gui', transformIndexHtml: { order: 'pre', handler(html) {
+  let authEnabled = false;
+  return { name: 'ccraft-fast-gui',
+    configResolved(config) { authEnabled = config.env.VITE_IDE_AUTH === 'true'; },
+    transformIndexHtml: { order: 'pre', handler(html, context) {
+    if (/[/\\](login|sso)\.html$/.test(context.filename)) return html;
     const manifest = JSON.parse(readFileSync(join(publicRoot, 'openblock-vendor/manifest.json'), 'utf8'));
     const url = fastGuiUrl(manifest);
     if (!existsSync(join(publicRoot, url.slice(1)))) throw new Error('Prepared fast GUI file is missing.');
-    return injectFastGui(html, manifest);
+    return injectFastGui(html, manifest).replace('__CCRAFT_IDE_AUTH_REQUIRED__', String(authEnabled));
   } } };
 }

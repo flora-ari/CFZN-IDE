@@ -8,6 +8,7 @@
 .cfzn-hardware-error { color: #a32925; overflow-wrap: anywhere; }
 .cfzn-hardware-log { background: #f3f5f7; padding: 12px; height: 230px; overflow: auto; white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; }
 .cfzn-hardware-tools { font-size: 12px; cursor: pointer; margin: 0 5px; }
+.cfzn-hardware-tools-group { display: inline-flex; align-items: center; gap: 6px; }
 .cfzn-hardware-modal.cfzn-upload-modal { box-sizing: border-box; width: min(660px, calc(100vw - 32px)); height: min(760px, calc(100dvh - 32px)); max-height: calc(100dvh - 32px); margin: 16px auto; display: flex; flex-direction: column; overflow: hidden; }
 .cfzn-upload-modal > div { display: flex; flex-direction: column; flex: 1; min-height: 0; min-width: 0; }
 .cfzn-upload-header { flex-shrink: 0; }
@@ -62,14 +63,33 @@
   .cfzn-connection-table td:last-child { text-align: right; border-top: 1px solid #e5e8ed; margin-top: 6px; padding-top: 10px; }
   .cfzn-connection-row-actions { justify-content: flex-end; }
 }
-.ccraft-link-guide {
-  position: fixed; right: 24px; bottom: 24px; z-index: 2147483647;
-  width: min(420px, calc(100vw - 48px)); box-sizing: border-box; padding: 20px;
-  color: #21354b; background: #fff; border: 2px solid #2a83c5; border-radius: 12px;
-  box-shadow: 0 8px 32px #1238; font: 14px/1.6 system-ui, sans-serif;
+.ccraft-link-connect {
+  flex: 0 0 auto; margin-inline: 6px; padding: 6px 10px; min-height: 30px;
+  border: 1px solid #ffffff9c; border-radius: 4px; background: #2264ba;
+  color: white; font: inherit; white-space: nowrap; cursor: pointer;
 }
-.ccraft-link-guide[hidden] { display: none; }
-.ccraft-link-guide h2 { margin: 0 0 8px; font-size: 18px; }
-.ccraft-link-guide p { margin: 8px 0; }
-.ccraft-link-guide a, .ccraft-link-guide button { display: inline-block; margin: 8px 12px 0 0; padding: 7px 12px; border: 1px solid #2775ad; border-radius: 5px; color: #145581; background: #f0f8ff; font: inherit; cursor: pointer; }
-.ccraft-link-guide :focus-visible { outline: 3px solid #075caa; outline-offset: 3px; }
+.ccraft-link-connect:hover { background: #18539f; }
+.ccraft-link-connect:focus-visible { outline: 2px solid white; outline-offset: 2px; }
+.ccraft-link-guide {
+  position: fixed; inset: 0; margin: auto;
+  width: min(520px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px);
+  box-sizing: border-box; padding: 0; color: #21354b; background: #fff;
+  border: 1px solid #c5d7ef; border-radius: 10px; box-shadow: 0 12px 38px #142b4655;
+  overflow: auto; font: 14px/1.6 system-ui, sans-serif;
+}
+.ccraft-link-guide::backdrop { background: #142b4666; }
+.ccraft-link-guide-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 16px; color: white; background: #367fe1; }
+.ccraft-link-guide-header h2 { margin: 0; font-size: 17px; }
+.ccraft-link-guide-header button { width: 32px; height: 32px; padding: 0; border: 0; border-radius: 4px; color: inherit; background: transparent; cursor: pointer; font: 23px/1 system-ui, sans-serif; }
+.ccraft-link-guide-header button:hover { background: #1d5fbd; }
+.ccraft-link-guide-header button:focus-visible { outline: 2px solid white; }
+.ccraft-link-guide-body { padding: 16px 20px 20px; }
+.ccraft-link-guide-body p { margin: 0 0 10px; }
+.ccraft-link-guide-steps { margin: 14px 0; padding: 12px; border: 1px solid #dce8f6; border-radius: 6px; background: #f5f9ff; }
+.ccraft-link-guide-steps a + p { margin-top: 12px; }
+.ccraft-link-guide-status { color: #244469; font-weight: 600; }
+.ccraft-link-guide-note { color: #4f6279; }
+.ccraft-link-guide-action { display: inline-block; padding: 6px 10px; border: 1px solid #bed3ee; border-radius: 4px; color: #164e94; background: #fff; font: inherit; text-decoration: none; cursor: pointer; }
+.ccraft-link-guide-action:hover:not(:disabled) { background: #eaf3ff; }
+.ccraft-link-guide-action:focus-visible { outline: 2px solid #2675d0; outline-offset: 2px; }
+.ccraft-link-guide-action:disabled { opacity: .55; cursor: default; }

@@ -23,7 +23,13 @@ SSH 密码在终端提示时输入，不保存在文件或部署包中。
 
 ## 当前发布状态
 
-2026-11-24 已成功发布 `20261124T092948Z-cfe8ac8d`，包含首次加载的严格词法压缩、摘要 GUI 提前下载与静态 Brotli。安装退出码为 `0`，服务器与公网 HTTPS、首页、编辑器及 API 检查通过；当前 API 绑定 `127.0.0.1:9111`。GUI 原文为 17,619,329 B，br 为 3,753,908 B，gzip 为 4,662,697 B；各表示解码一致，条件请求 304。受控网络冷启动中位数 9.976 → 7.742 秒，性能环境和浏览器宿主限制见 [主控发布记录](../docs/editor-cold-start-release-20261124.md)。本次从上一线上包隔离构建，没有发布并行 CCraft Link/API 修改。
+2026-11-26 当前发布为 `20261126T012636Z-48e345c3`，API 监听 `127.0.0.1:9111`。本次在前端接入主控选板后台自动准备工具链、一键编译与上传自动续接以及精简编译上传弹窗，CCraft Link 0.1.3 安装包与 `/toolchains` 协议保持不变。
+
+2026-11-25 发布 `20261125T090320Z-48e345c3`，API 监听 `127.0.0.1:9111`。上传弹窗已接入按需安装主控编译环境，Windows 下载更新为 CCraft Link 0.1.3，53,244,889 B，SHA-256 为 `119ac89f4d2b104defacdb5a1c0912a983b8fea471fa2f03fdd5ca97d252f762`。固定下载为 `/downloads/CCraft-Link-Setup.exe`，版本清单为 `/downloads/CCraft-Link-latest.json`。首次准备所选主控的工具链需要联网，后续可复用缓存。线上完整下载、缓存与断点续传检查通过，三个旧发布中的安装包已清理。[本轮发布记录](../docs/link-013-release-20261125.md)
+
+`20261125T025216Z-48e345c3` 增加登录页 `/?mode=guest` 游客编辑入口；游客可本地导入导出，服务器项目操作在前端请求前拦截。账号菜单、项目批量操作和 Link 安装启动引导已在此前的 `20261125T023217Z-48e345c3` 发布。`20261125T014113Z-48e345c3` 的真实创客账号、保存重开、MinIO 归档和两账号隔离验收见[独立验收](../tests/MAKER-IDE-INTEGRATION-REPORT.md)。
+
+2026-11-24 发布的 `20261124T092948Z-cfe8ac8d` 引入首次加载的严格词法压缩、摘要 GUI 提前下载和静态 Brotli。该版 GUI 原文为 17,619,329 B，br 为 3,753,908 B，gzip 为 4,662,697 B；各表示解码一致，条件请求 304。受控网络冷启动中位数 9.976 → 7.742 秒。[冷启动发布记录](../docs/editor-cold-start-release-20261124.md)
 
 早期 `20261123T014854Z-cfe8ac8d` 的证书失败及回滚已由后续成功发布取代，不需要再恢复该旧发布。新版本应重新构建打包；中断恢复仅对同一次发布按下文说明执行。
 
@@ -47,6 +53,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\Deploy-Ide.ps1 -Ser
 ```
 
 每次完整部署生成新的发布编号：本地 `npm run build` → 打包 → SSH/SCP 上传 → 服务器校验与安装生产依赖 → 证书准备 → 选择空闲 API 端口 → 启动服务 → Nginx 检查与平滑重载 → 服务器 HTTPS 和部署电脑公网检查。
+
+生产打包会启用 `VITE_IDE_AUTH=true`。安装前在服务器准备 `/etc/cfzn-ide-integration.env`，由 root 持有并限制为 `0600`。配置字段见 [API 环境变量示例](../apps/api/.env.example)。本站通过 `http://127.0.0.1:8801` 的创客账号服务验证身份，项目归档使用 `http://127.0.0.1:9000` 的私有 MinIO 桶 `cfzn-ide-projects`，仅 IDE 服务账号拥有该桶权限。部署生成的主环境文件启用 `IDE_AUTH_MODE=maker`，集成环境文件中的会话密钥和 MinIO 密钥在常规发布中保留。
 
 上传包含前端 `dist`、后端 `dist`、后端 `package.json`/lockfile 和 `release.json`。服务器不构建前端；后端依赖使用 `npm ci --omit=dev --ignore-scripts --no-audit --no-fund` 安装。发布切换保留 `data/`；配置自动回滚不代替数据备份。
 
@@ -109,18 +117,20 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\Deploy-Ide.ps1 -Res
 | 配置备份 | `/home/wwwroot/cfzn-ide/backups/<发布编号>/`；重试使用独立的 `-retry-<时间>-<进程号>` 目录 |
 | 服务配置 | `/etc/systemd/system/cfzn-ide.service` |
 | 环境变量 | `/etc/cfzn-ide.env` |
+| 认证与存储环境变量 | `/etc/cfzn-ide-integration.env`，部署前单独准备 |
 | 站点配置 | `/etc/nginx/conf.d/ide.xiaodaiyang.top.conf` |
 | 证书和私钥 | `/etc/nginx/ssl/ide.xiaodaiyang.top/{fullchain.pem,privkey.pem}` |
 | 临时上传与日志 | `/tmp/cfzn-ide-<发布编号>/` |
 | 安装任务 | `cfzn-ide-deploy-<发布编号>.service` |
 
-Nginx 的 `root` 指向 `current/web`，`location /api/` 代理到实际选定的 API 端口，并保留原请求 Host。安装生成的环境变量包括：
+Nginx 的 `root` 指向 `current/web`，API 请求进入同一个 NestJS 端口。项目接口允许 80 MiB 的请求体，为 64 MiB 归档和 multipart 开销留出空间。`/login` 和 `/sso` 对应各自的静态入口，禁止缓存和 referrer，同时关闭该入口的访问日志以保护 SSO 票据。安装生成的环境变量包括：
 
 ```dotenv
 NODE_ENV=production
 PORT=<本次自动选择的端口>
 PROJECT_DATA_DIR=/home/wwwroot/cfzn-ide/data
 CUSTOM_MODULE_ORIGINS=https://ide.xiaodaiyang.top
+IDE_AUTH_MODE=maker
 ```
 
 选端口发生在证书处理后、启动服务前，同时检查 TCP 监听和 Nginx 引用；启动后核对端口属于 IDE 服务主进程。实际端口以日志和 `/etc/cfzn-ide.env` 为准，无需向公网开放。
@@ -136,7 +146,7 @@ Server installation exit code: 0
 Deployment verified: https://ide.xiaodaiyang.top
 ```
 
-证书签发、Nginx 语法检查或重载成功只是中间步骤。安装脚本检查首页、`/openblock.html`、`/api/v1/health` 和 `/api/v1/custom-modules`，随后 PowerShell 再检查相同公网地址。还应在浏览器验证积木编辑、保存、重新打开及自定义模块。
+安装脚本检查首页、`/openblock.html`、`/login`、`/sso`、API 健康与私有模块，以及匿名访问 `/api/v1/ide/auth/me/`、`/api/v1/projects` 均返回 `401 UNAUTHORIZED`。PowerShell 随后检查公网入口与认证存储模式。浏览器验收覆盖创客账号、真实积木编辑、保存、重新打开及自定义模块。
 
 本机 PowerShell 访问检查：
 
@@ -174,4 +184,4 @@ powershell -NoProfile -ExecutionPolicy Bypass -File .\deploy\test-resume.ps1 -Ma
 
 Web Serial 连接访问者电脑上的开发板。编译、烧录依赖同一电脑运行的本机硬件服务，默认 `127.0.0.1:3002`；需允许准确的网站 Origin 并按 [硬件说明](../apps/api/HARDWARE.md) 配置浏览器和本机服务。网站上线不能替代实机烧录验收。
 
-当前作品 API 使用匿名共享存储，自定义模块按浏览器会话隔离。此部署流程不引入登录、注册或账号归属系统。
+线上项目按创客用户 ID 隔离。账号端点验证创客平台现有账户，私有模块仍按浏览器会话隔离。旧匿名项目保留在原目录，确认归属后可从归档导入账户。

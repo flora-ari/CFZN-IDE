@@ -4,6 +4,44 @@ import { patchAudioUnlock } from './audio-unlock-hook.mjs';
 // These exact fragments belong to the pinned official release, not an arbitrary minified bundle.
 // Source locations are retained here so upgrading the release is an explicit review.
 export const upstreamSha256 = 'eb3f8ee4d4e4ce89ffff1b9aec0e4154b66d0044d79cdb1e6e97c7dcef0e6cb9';
+const nativeFirmwareLabel = `/*#__PURE__*/external_react_default.a.createElement(index_es["a" /* FormattedMessage */], {
+        defaultMessage: "Upload Firmware",
+        id: "gui.menuBar.uploadFirmware"
+      })`;
+const nativeFirmwareControl = `/*#__PURE__*/external_react_default.a.createElement("div", {
+        className: classnames_default()(menu_bar_default.a.menuBarItem, this.props.isRealtimeMode && this.props.peripheralName ? menu_bar_default.a.hoverable : menu_bar_default.a.disabled),
+        onMouseUp: this.props.isRealtimeMode && this.props.peripheralName ? this.handleUploadFirmware : null
+      }, /*#__PURE__*/external_react_default.a.createElement("img", {
+        alt: "UploadFirmware",
+        className: classnames_default()(menu_bar_default.a.uploadFirmwareLogo),
+        draggable: false,
+        src: icon_upload_firmware_default.a
+      }), this.state.isOverflow ? null : ${nativeFirmwareLabel})`;
+// This fragment matches the board label after the scoped selected-controller hook below.
+const nativeDeviceControls = `/*#__PURE__*/external_react_default.a.createElement("div", {
+        className: classnames_default()(menu_bar_default.a.menuBarItem, menu_bar_default.a.hoverable),
+        onMouseUp: this.handleSelectDeviceMouseUp
+      }, /*#__PURE__*/external_react_default.a.createElement("img", {
+        className: menu_bar_default.a.deviceIcon,
+        src: icon_device_default.a
+      }), this.props.deviceName ? /*#__PURE__*/external_react_default.a.createElement("span", { "data-cfzn-current-device": true }, this.props.deviceName) : /*#__PURE__*/external_react_default.a.createElement(index_es["a" /* FormattedMessage */], {
+        defaultMessage: "No device selected",
+        id: "gui.menuBar.noDeviceSelected"
+      })), /*#__PURE__*/external_react_default.a.createElement(components_divider_divider, {
+        className: classnames_default()(menu_bar_default.a.divider)
+      }), /*#__PURE__*/external_react_default.a.createElement("div", {
+        className: classnames_default()(menu_bar_default.a.menuBarItem, menu_bar_default.a.hoverable),
+        onMouseUp: this.handleConnectionMouseUp
+      }, this.props.peripheralName ? /*#__PURE__*/external_react_default.a.createElement(external_react_default.a.Fragment, null, /*#__PURE__*/external_react_default.a.createElement("img", {
+        className: menu_bar_default.a.connectedIcon,
+        src: icon_connected_default.a
+      }), this.state.isOverflow ? null : this.props.peripheralName) : /*#__PURE__*/external_react_default.a.createElement(external_react_default.a.Fragment, null, /*#__PURE__*/external_react_default.a.createElement("img", {
+        className: menu_bar_default.a.unconnectedIcon,
+        src: icon_unconnected_default.a
+      }), this.state.isOverflow ? null : /*#__PURE__*/external_react_default.a.createElement(index_es["a" /* FormattedMessage */], {
+        defaultMessage: "Unconnected",
+        id: "gui.menuBar.noConnection"
+      })))`;
 const patches = [
   {
     source: 'src/components/menu-bar/menu-bar.jsx / one local brand image for both native overflow states',
@@ -227,6 +265,17 @@ const patches = [
     after: 'this.props.deviceName ? /*#__PURE__*/external_react_default.a.createElement("span", { "data-cfzn-current-device": true }, this.props.deviceName)',
   },
   {
+    source: 'src/components/menu-bar/menu-bar.jsx / connect Link in the board and serial slot',
+    before: nativeDeviceControls,
+    after: `(function (deviceControls) {
+        return window.CFZNOpenBlock && window.CFZNOpenBlock.renderLinkControls
+          ? window.CFZNOpenBlock.renderLinkControls(external_react_default.a, deviceControls)
+          : deviceControls;
+      })(/*#__PURE__*/external_react_default.a.createElement(external_react_default.a.Fragment, null, ${nativeDeviceControls.replace(
+        'onMouseUp: this.handleSelectDeviceMouseUp', 'tabIndex: -1, "data-cfzn-link-restored-focus": true, onMouseUp: this.handleSelectDeviceMouseUp',
+      )}))`,
+  },
+  {
     source: 'src/containers/blocks.jsx / external UI mode choice does not fabricate device capabilities',
     before: 'if (supportUploadMode && supportRealtimeMode) {\n          this.props.onSetSupportSwitchMode(true);',
     after: 'if (window.CFZNOpenBlock) { this.props.onSetSupportSwitchMode(true); } else if (supportUploadMode && supportRealtimeMode) {\n          this.props.onSetSupportSwitchMode(true);',
@@ -275,6 +324,20 @@ const patches = [
     source: 'src/components/menu-bar/menu-bar.jsx / direct project controls before tailMenu',
     before: '})), /*#__PURE__*/external_react_default.a.createElement("div", {\n        className: menu_bar_default.a.tailMenu',
     after: '})), window.CFZNOpenBlock && window.CFZNOpenBlock.renderProjectTools(external_react_default.a), /*#__PURE__*/external_react_default.a.createElement("div", {\n        className: menu_bar_default.a.tailMenu',
+  },
+  {
+    source: 'src/components/menu-bar/menu-bar.jsx / account menu in the realtime firmware slot',
+    before: nativeFirmwareControl,
+    after: `(function (firmwareControl, uploadFirmware) {
+        return window.CFZNOpenBlock && window.CFZNOpenBlock.renderAccountTools
+          ? window.CFZNOpenBlock.renderAccountTools(external_react_default.a, firmwareControl, uploadFirmware, ${nativeFirmwareLabel})
+          : firmwareControl;
+      })(${nativeFirmwareControl}, this.props.isRealtimeMode && this.props.peripheralName ? this.handleUploadFirmware : undefined)`,
+  },
+  {
+    source: 'src/components/menu-bar/menu-bar.jsx / require Link for realtime firmware action',
+    before: 'value: function handleUploadFirmware() {\n      if (this.props.deviceId) {',
+    after: 'value: function handleUploadFirmware() {\n      if (window.CFZNOpenBlock && window.CFZNOpenBlock.allowFirmwareUpload && !window.CFZNOpenBlock.allowFirmwareUpload()) return;\n      if (this.props.deviceId) {',
   },
   {
     source: 'src/components/menu-bar/menu-bar.jsx / omit only redundant native File entry',

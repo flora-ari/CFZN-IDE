@@ -12,12 +12,14 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $repo = Split-Path $PSScriptRoot -Parent
+$previousIdeAuth = $env:VITE_IDE_AUTH
 Push-Location $repo
 try {
     if ($Resume -and -not $ManifestPath) { throw 'Resume requires -ManifestPath for the already uploaded release.' }
     if ($RetryFailed -and (-not $Resume -or -not $ManifestPath)) { throw 'RetryFailed requires -Resume and -ManifestPath for a recorded failed deployment.' }
     $env:npm_config_cache = Join-Path $repo '.runtime\npm-cache'
     if (-not $ManifestPath) {
+        $env:VITE_IDE_AUTH = 'true'
         & npm.cmd run build
         if ($LASTEXITCODE -ne 0) { throw 'Production build failed.' }
         $result = & node.exe (Join-Path $PSScriptRoot 'package.mjs')
@@ -74,15 +76,22 @@ try {
         throw "SSH monitoring ended or server installation failed. The server job may still be running. Log: $remote/install.log ; result: $remote/install.exit . Run again with -Resume and the same -ManifestPath to check this release."
     }
 
-    foreach ($path in @('/', '/openblock.html', '/api/v1/health', '/api/v1/custom-modules')) {
+    $publicPaths = @('/', '/openblock.html', '/api/v1/health', '/api/v1/custom-modules')
+    if ($bundle.ideAuth -eq $true) { $publicPaths += @('/login', '/sso') }
+    foreach ($path in $publicPaths) {
         $response = Invoke-WebRequest -Uri "https://ide.xiaodaiyang.top$path" -UseBasicParsing -TimeoutSec 45 @httpOptions
         if ($response.StatusCode -ne 200) { throw "Public verification failed: $path" }
-        if ($path -eq '/api/v1/health' -and ($response.Content | ConvertFrom-Json).status -ne 'ok') {
-            throw 'The public hostname is not serving the expected IDE API.'
+        if ($path -eq '/api/v1/health') {
+            $health = $response.Content | ConvertFrom-Json
+            if ($health.status -ne 'ok' -or
+                ($bundle.ideAuth -eq $true -and ($health.auth -ne 'maker' -or $health.storage -ne 'minio'))) {
+                throw 'The public hostname is not serving the expected IDE API.'
+            }
         }
         Write-Host "PASS https://ide.xiaodaiyang.top$path"
     }
     Write-Host 'Deployment verified: https://ide.xiaodaiyang.top'
 } finally {
+    $env:VITE_IDE_AUTH = $previousIdeAuth
     Pop-Location
 }

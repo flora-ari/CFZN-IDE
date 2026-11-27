@@ -1,0 +1,25 @@
+
+WindowStart : 2026-11-19T10:30:33.4781842+08:00
+WindowEnd   : 2026-11-26T10:30:33.7436545+08:00
+EventCount  : 80
+CCraftCount : 0
+
+
+WERRoot             : C:\ProgramData\Microsoft\Windows\WER\ReportArchive
+MatchingDirectories : 0
+ReadErrors          : 
+
+
+WERRoot             : C:\ProgramData\Microsoft\Windows\WER\ReportQueue
+MatchingDirectories : 0
+ReadErrors          : 
+
+Absent/inaccessible: C:\Users\flora\AppData\Local\Microsoft\Windows\WER\ReportArchive
+Absent/inaccessible: C:\Users\flora\AppData\Local\Microsoft\Windows\WER\ReportQueue
+
+Path           : D:\CCraft Link\ccraft-link.exe
+Bytes          : 11020288
+LastWrite      : 2026-11-25T16:40:56.0000000+08:00
+FileVersion    : 0.1.3
+ProductVersion : 0.1.3
+SHA256         : AA34F4294056F1F3249D32723B4302A2A8D7E1DD46F773EE9FDB76FBDEC8C4AB

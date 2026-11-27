@@ -1,0 +1,43 @@
+{
+  "result": "PASS source/artifact/real React fixture structure",
+  "sourceHashes": [
+    {
+      "path": "apps/web/src/board-toolchain-card.ts",
+      "sha256": "66221c2a8ee7109ab20f52a8f5e1c0eb5a28845605ce049a15f9ec7a1d3d570f"
+    },
+    {
+      "path": "apps/web/src/extensions/library.ts",
+      "sha256": "89a9ac35839e979d4b9a15016f95256db36ab6e9d94611884634d20fc768e77c"
+    },
+    {
+      "path": "apps/web/src/extensions/library.css",
+      "sha256": "33846ce80504b5ef9e1d02a9a21063927d47e937b23b0a182efb1eaead0adfc6"
+    },
+    {
+      "path": "apps/web/test/toolchain-preparation.test.ts",
+      "sha256": "44551d16fdb116f774255a4d9853c639ca7259c40080280666bc837159231c0d"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "apps/web/dist/openblock.html",
+      "bytes": 4475,
+      "sha256": "455c7cf1fd5b27a8b8a7413df3d2614ce6c122ce1d477aa409700930d12aaef7"
+    },
+    {
+      "path": "apps/web/dist/assets/editor-CEd-R6SL.js",
+      "bytes": 225744,
+      "sha256": "7916c135274b217c35a1e7046bcd3dd77485c604f0460265a4b8cbf68e52e363"
+    },
+    {
+      "path": "apps/web/dist/assets/editor-2FWVdJTS.css",
+      "bytes": 41055,
+      "sha256": "7b97349bb0c72cbc11dd420d3355331c2a1ecfef9ec0ce161299f5879dd7f2ef"
+    }
+  ],
+  "renderedCases": 7,
+  "cardsPerCase": 3,
+  "uniformMeasurementAssertionPresent": true,
+  "geometryExecuted": false,
+  "realDownloadVerified": false
+}

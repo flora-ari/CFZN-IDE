@@ -32,9 +32,9 @@ export class SerialDevicePanel {
   }
   subscribe(fn: () => void) { this.listeners.add(fn); return () => { this.listeners.delete(fn); }; }
   private publish() { this.listeners.forEach(fn => fn()); }
-  refresh() { return this.refreshLocal(); }
-  async refreshLocal() {
-    try { await this.hardware.ensureLinkReady(); }
+  refresh() { return this.refreshLocal(false); }
+  async refreshLocal(showGuide = true) {
+    try { await this.hardware.ensureLinkReady(showGuide); }
     catch { this.publish(); return; }
     this.sources.setSource('local'); await Promise.all([this.hardware.refresh(), this.hardware.session.refresh('local')]); this.publish();
   }

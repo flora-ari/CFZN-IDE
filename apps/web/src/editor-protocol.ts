@@ -24,17 +24,29 @@ export interface ProjectToolbarState {
   statusKind: 'pending' | 'dirty' | 'saved' | 'unsaved';
   documentActionsDisabled: boolean;
   drawer: 'projects' | null;
+  account?: AccountToolbarState;
 }
-export type ProjectToolbarAction = 'projects' | 'new' | 'export' | 'save';
+export interface AccountToolbarState {
+  name: string;
+  session: 'active' | 'expired' | 'changed';
+  busy: boolean;
+  checking: boolean;
+  guest?: boolean;
+}
+export type ProjectToolbarAction = 'projects' | 'new' | 'export' | 'save' | 'verify-session' | 'leave-account' | 'login-account';
 export function isProjectToolbarState(value: unknown): value is ProjectToolbarState {
   if (!value || typeof value !== 'object') return false;
   const view = value as Partial<ProjectToolbarState>;
+  const account = view.account;
   return typeof view.statusText === 'string' && ['pending', 'dirty', 'saved', 'unsaved'].includes(view.statusKind ?? '') &&
-    typeof view.documentActionsDisabled === 'boolean' && (view.drawer === null || view.drawer === 'projects');
+    typeof view.documentActionsDisabled === 'boolean' && (view.drawer === null || view.drawer === 'projects') &&
+    (account === undefined || (!!account && typeof account.name === 'string' &&
+      ['active', 'expired', 'changed'].includes(account.session) && typeof account.busy === 'boolean' &&
+      typeof account.checking === 'boolean' && (account.guest === undefined || typeof account.guest === 'boolean')));
 }
 export function isProjectToolbarAction(value: unknown): value is { action: ProjectToolbarAction } {
   if (!value || typeof value !== 'object' || Object.keys(value).length !== 1) return false;
-  return ['projects', 'new', 'export', 'save'].includes((value as { action?: string }).action ?? '');
+  return ['projects', 'new', 'export', 'save', 'verify-session', 'leave-account', 'login-account'].includes((value as { action?: string }).action ?? '');
 }
 export function projectToolbarState(snapshot: EditorSnapshot | null, revision: number | null, busy: string,
   drawer: ProjectToolbarState['drawer']): ProjectToolbarState {

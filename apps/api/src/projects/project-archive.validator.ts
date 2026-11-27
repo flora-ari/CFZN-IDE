@@ -66,8 +66,11 @@ function checkAssets(project: unknown, files: ReadonlySet<string>): void {
 }
 
 /** Inspect ZIP entries in memory and preserve the uploaded archive unchanged. */
-export async function validateProjectArchive(archive: Buffer): Promise<void> {
-  if (archive.length > MAX_ARCHIVE_BYTES) throw tooLarge('The project archive exceeds 20 MiB.');
+export async function validateProjectArchive(archive: Buffer, maxBytes = MAX_ARCHIVE_BYTES): Promise<void> {
+  if (archive.length > maxBytes) {
+    const label = maxBytes % (1024 ** 2) === 0 ? (maxBytes / (1024 ** 2)) + ' MiB' : maxBytes + ' bytes';
+    throw tooLarge('The project archive exceeds ' + label + '.');
+  }
   let zip: ZipFile | undefined;
   try {
     const opened = await openZip(archive);

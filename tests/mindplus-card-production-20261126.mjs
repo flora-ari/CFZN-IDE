@@ -1,0 +1,20 @@
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+const sha=b=>createHash('sha256').update(b).digest('hex');
+const dir='.runtime/mindplus-resource-cache-20261126';
+const candidate=JSON.parse(fs.readFileSync(dir+'/candidate.json'));
+const production=JSON.parse(fs.readFileSync(dir+'/production-build.json'));
+assert.equal(production.ideAuth,true);
+for(const f of [...production.sourceFiles,...production.artifacts])assert.equal(sha(fs.readFileSync(f.path)),f.sha256,f.path);
+for(const f of candidate.files)assert.equal(production.sourceFiles.find(x=>x.path===f.path).sha256,f.sha256);
+const html=fs.readFileSync('apps/web/dist/openblock.html','utf8');
+for(const name of ['editor-DeEyQ3Tw.js','editor-CuBpnqbv.css'])assert.ok(html.includes('/assets/'+name));
+const refs=[...html.matchAll(/(?:src|href)="(\/[^"?#]+)"/g)].map(m=>m[1]);for(const ref of refs)assert.ok(fs.existsSync('apps/web/dist'+ref));
+for(const name of ['openblock-gui.js','openblock-gui.4535c7feb8eb7fb7.js'])assert.equal(sha(fs.readFileSync('apps/web/dist/openblock-vendor/'+name)),sha(fs.readFileSync('.runtime/board-card-independent-20261126/stage/openblock-vendor/'+name)));
+for(const name of ['ccraft-logo.png','ccraft-tab-icon.png'])assert.equal(sha(fs.readFileSync('apps/web/dist/branding/'+name)),sha(fs.readFileSync('.runtime/board-card-independent-20261126/stage/branding/'+name)));
+assert.equal(sha(fs.readFileSync('apps/web/src/extensions/library.ts')),'89a9ac35839e979d4b9a15016f95256db36ab6e9d94611884634d20fc768e77c');
+const current=fs.readFileSync('apps/web/dist/assets/editor-CuBpnqbv.css','utf8');
+assert.ok(current.includes('.cfzn-module-grid')); // Module structures remain in the combined stylesheet.
+fs.writeFileSync('tests/evidence/mindplus-card-cache-20261126/production.json',JSON.stringify({result:'PASS',sourceFiles:production.sourceFiles,artifacts:production.artifacts,entryReferences:refs,guiAndBrandingUnchanged:true,libraryComponentUnchanged:true,scope:'read-only hashes/references, no browser or build'},null,2));
+console.log('PASS final authenticated source/artifact hashes, entry, unchanged GUI/branding/library.');

@@ -1,0 +1,19 @@
+✔ health accepts only identified CCraft Link with the agreed protocol and real serial detection (1.269ms)
+✔ browser fetch receives the global receiver rather than the Link instance (23.309ms)
+✔ concurrent entry points share one no-store health GET and only an explicit hardware request shows the guide (0.9865ms)
+✔ synchronous checking subscribers also reuse the pending probe (0.4125ms)
+✔ a stalled JSON body is bounded by the same timeout, and late success cannot overwrite missing state (23.9641ms)
+✔ the production timeout expires at three seconds even if fetch ignores abort (2.5072ms)
+✔ original gestures request the top-level handler without a process, and only health confirms recovery (3.6789ms)
+✔ blur aborts a pending check, stale responses cannot overwrite a newer ready result, and dispose prevents later checks (0.8225ms)
+✔ active pages poll every 3 seconds through online and offline states without showing the guide (1.0531ms)
+✔ connection, direct native discover/upload and controller start reject missing Link before any device or job request (1.9ms)
+✔ identified Link with no ports and no toolchain stays ready without downloads; recovery never starts jobs (2.995ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 275.3107

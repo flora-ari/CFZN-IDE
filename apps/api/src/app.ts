@@ -12,42 +12,63 @@ import { CustomModulesController } from './custom-modules/custom-modules.control
 import { MAX_CUSTOM_MODULE_BYTES } from './custom-modules/definition';
 import { CUSTOM_MODULE_STORE, LocalModuleStore } from './custom-modules/local-module.store';
 import { CUSTOM_MODULE_ROUTE, CustomModuleAccess, type CustomModuleIdentityResolver } from './custom-modules/module-access';
+import { readIdeConfig } from './ide/config';
+import type { IdeIntegrationOptions } from './ide/integration';
 import { LocalProjectStore } from './projects/local-project.store';
 import { PROJECT_STORE } from './projects/project-store';
 import { HealthController, ProjectsController } from './projects/projects.controller';
 
-@Module({ controllers: [HealthController, ProjectsController, CustomModulesController, ArduinoLibrariesController] })
+@Module({})
 class ApiModule {}
 
 export interface ApiOptions {
   customModuleOrigins?: readonly string[];
   customModuleIdentity?: CustomModuleIdentityResolver;
   arduinoLibraryFetch?: typeof fetch;
+  ide?: IdeIntegrationOptions;
 }
 
 export async function createApp(dataDir = projectDataDir(), options: ApiOptions = {}): Promise<NestExpressApplication> {
-  const store = new LocalProjectStore(dataDir);
   const moduleStore = new LocalModuleStore(dataDir);
   const moduleAccess = new CustomModuleAccess(moduleStore, options.customModuleOrigins, options.customModuleIdentity);
-  await Promise.all([store.initialize(), moduleStore.initialize()]);
+  await moduleStore.initialize();
+  const ideConfig = options.ide?.config ?? readIdeConfig(dataDir);
+  const ide = ideConfig
+    ? await (await import('./ide/integration.js')).prepareIde(options.ide ?? { config: ideConfig })
+    : undefined;
+  const store = ide ? undefined : new LocalProjectStore(dataDir);
+  await store?.initialize();
   const app = await NestFactory.create<NestExpressApplication>(
-    { module: ApiModule, providers: [
-      { provide: PROJECT_STORE, useValue: store },
-      { provide: CUSTOM_MODULE_STORE, useValue: moduleStore },
-      { provide: ARDUINO_LIBRARY_INDEX, useValue: new ArduinoLibraryIndex(options.arduinoLibraryFetch) },
-    ] },
-    { bodyParser: false },
-  );
+    {
+      module: ApiModule,
+      controllers: [...(ide?.controllers ?? [HealthController, ProjectsController]), CustomModulesController, ArduinoLibrariesController],
+      providers: [
+        ...(ide?.providers ?? [{ provide: PROJECT_STORE, useValue: store }]),
+        { provide: CUSTOM_MODULE_STORE, useValue: moduleStore },
+        { provide: ARDUINO_LIBRARY_INDEX, useValue: new ArduinoLibraryIndex(options.arduinoLibraryFetch) },
+      ],
+    },
+    { bodyParser: false, abortOnError: false },
+  ).catch((error: unknown) => {
+    ide?.close();
+    throw error;
+  });
   app.setGlobalPrefix('api/v1');
   app.useGlobalFilters(new ApiExceptionFilter());
   const express = app.getHttpAdapter().getInstance();
   express.disable('etag');
   express.disable('x-powered-by');
 
-  const parseName = json({ limit: '8kb', inflate: false });
+  if (ide) {
+    express.set('trust proxy', 'loopback');
+    app.use(ide.authRoute, ide.authHeaders, ide.authParser);
+    app.use('/api/v1/projects', ide.authorizeProject);
+  }
+
+  const parseName = ide?.nameParser ?? json({ limit: '8kb', inflate: false });
   const parseArchive = raw({
     type: [BINARY_MEDIA_TYPE, OPENBLOCK_MEDIA_TYPE],
-    limit: MAX_ARCHIVE_BYTES,
+    limit: ide?.config.maxBytes ?? MAX_ARCHIVE_BYTES,
     inflate: false,
   });
   const parseBody: RequestHandler = (request, response, next) => {

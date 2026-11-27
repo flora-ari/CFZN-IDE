@@ -1,0 +1,137 @@
+{
+  "result": "PASS",
+  "realClasses": [
+    "HardwareController",
+    "HardwareSession",
+    "ToolchainPreparation"
+  ],
+  "renderer": "actual React SSR",
+  "rebuiltObservers": 2,
+  "preparePosts": 0,
+  "calls": [
+    {
+      "path": "/toolchains",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/ports",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/toolchains",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/ports",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/ports",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/toolchains",
+      "method": "GET",
+      "instance": "A"
+    },
+    {
+      "path": "/toolchains",
+      "method": "GET",
+      "instance": "B"
+    },
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "instance": "B"
+    },
+    {
+      "path": "/ports",
+      "method": "GET",
+      "instance": "B"
+    },
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "instance": "B"
+    },
+    {
+      "path": "/capabilities",
+      "method": "GET",
+      "instance": "B"
+    },
+    {
+      "path": "/ports",
+      "method": "GET",
+      "instance": "B"
+    },
+    {
+      "path": "/toolchains",
+      "method": "GET",
+      "instance": "B"
+    }
+  ],
+  "sourceHashes": [
+    {
+      "path": "apps/web/src/board-toolchain-card.ts",
+      "beforeSha256": "5be73ea48ff430e9ce32b73fc612d8223faa52b72a31d3a136ad4acfd1eac76e",
+      "sha256": "35ade34ea81fd374daa1017a077f3ed82363eb34166ab48defafbbd83b334d5f",
+      "bytes": 7087
+    },
+    {
+      "path": "apps/web/src/hardware-controller.ts",
+      "beforeSha256": "bbd512c7151dba9cabe91c51386fb3ad11bab17f3d72bac6ec81d0c0a6376ac9",
+      "sha256": "09444f98bd45b3a7402de83994935fc98a811205bd4d43a6f821abd7f62a5d92",
+      "bytes": 35031
+    },
+    {
+      "path": "apps/web/src/toolchain-preparation.ts",
+      "beforeSha256": "1b3b6a4742dab6eea20e57998e60c44ec9cb62729b788ab3f8b565d1a5925cd3",
+      "sha256": "7314ceefff4f84e59ba1e5cdb14bbe098e3fd143ff03f9a17575dec5bd10a3d6",
+      "bytes": 17890
+    },
+    {
+      "path": "apps/web/src/extensions/library.css",
+      "beforeSha256": "33846ce80504b5ef9e1d02a9a21063927d47e937b23b0a182efb1eaead0adfc6",
+      "sha256": "a9aa3305a26fd90d38a0dbc4212c08d416f991879f139bd47efa28c30e34a652",
+      "bytes": 10138
+    },
+    {
+      "path": "apps/web/test/toolchain-preparation.test.ts",
+      "beforeSha256": "455f54d4f5e8274c4a8c02442c2a657e90bc7f0cb9f268fbf300b64c80092f28",
+      "sha256": "185e88b4fb885d057b70994004645e4fea4f0c7ace42c5896c00b8987f1b0445",
+      "bytes": 40459
+    }
+  ],
+  "browserGeometry": false,
+  "network": "injected fake only"
+}

@@ -111,6 +111,9 @@ div:has(> div > .cfzn-extension-controls) { display: flex; flex-direction: colum
 div:has(> .cfzn-extension-controls) + div { flex: 1 1 auto; height: 0; min-height: 0; }
 [data-cfzn-library-card] { position: relative; height: auto !important; opacity: 1 !important; border: 2px solid #d1d1d1 !important; }
 [data-cfzn-library-card][data-cfzn-selected="true"] { border-color: #4c97ff !important; }
+/* Auto-height grid fractions use the largest intrinsic card; no fixed/empty download row. */
+.cfzn-controller-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 300px)); grid-auto-rows: 1fr; align-items: stretch; justify-content: start; gap: .9375rem; flex: 0 0 100%; width: 100%; height: max-content; padding: .46875rem; box-sizing: border-box; }
+.cfzn-controller-grid > [data-cfzn-library-card] { margin: 0; min-width: 0; }
 [data-cfzn-library-card] .cfzn-card-select { position: absolute; inset: 0; width: 100%; height: 100%; background: transparent; border: 0; border-radius: inherit; cursor: pointer; z-index: 2; }
 [data-cfzn-library-card]:has(.cfzn-card-select:focus-visible) { outline: 3px solid #243958; outline-offset: 2px; }
 [data-cfzn-library-card] .cfzn-card-select:focus-visible { outline: 0; }
@@ -123,6 +126,20 @@ div:has(> .cfzn-extension-controls) + div { flex: 1 1 auto; height: 0; min-heigh
 .cfzn-card-remove { appearance: none; border: 1px solid #b8cbe5; border-radius: 4px; background: white; color: #2467b7; padding: .3rem .65rem; font: inherit; cursor: pointer; }
 .cfzn-card-remove:disabled { color: #747b86; background: #f2f3f5; cursor: default; }
 .cfzn-card-info { display: block; font-size: 12px; line-height: 1.5; color: #575e75; overflow-wrap: anywhere; }
+.cfzn-card-download-layer { position: absolute; inset: 0; z-index: 6; border-radius: inherit; pointer-events: none; }
+.cfzn-card-download-veil { position: absolute; inset: 0; border-radius: inherit; background: hsla(0,0%,84.7%,.4); pointer-events: none; }
+.cfzn-card-download { position: absolute; top: 8px; right: 8px; z-index: 2; box-sizing: border-box; width: 36px; height: 36px; display: grid; place-items: center; margin: 0; padding: 5px; border: 1px solid #4c97ff; border-radius: 6px; background: #fff; color: #2679df; cursor: pointer; pointer-events: auto; }
+.cfzn-card-download svg { display: block; }
+.cfzn-card-download:disabled { color: #747b86; border-color: #c7cbd2; cursor: default; }
+.cfzn-card-download:focus-visible, .cfzn-card-preparation button:focus-visible { outline: 3px solid #243958; outline-offset: 2px; }
+.cfzn-card-preparation { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: .65rem; padding: 1rem; border-radius: inherit; background: #30343dbb; color: white; text-align: center; overflow-wrap: anywhere; pointer-events: auto; }
+.cfzn-card-download-note { position: absolute; bottom: 8px; left: 8px; right: 8px; max-height: 5rem; overflow: auto; box-sizing: border-box; padding: .4rem .5rem; border-radius: 4px; background: #ffffffed; color: #21354b; text-align: left; font-size: 12px; line-height: 1.4; overflow-wrap: anywhere; pointer-events: auto; }
+.cfzn-card-preparation progress { width: 100%; max-width: 12rem; accent-color: #8cc5ff; }
+.cfzn-card-preparation button { border: 1px solid #fff; background: #fff; color: #21354b; padding: .4rem .7rem; border-radius: 4px; font: inherit; cursor: pointer; }
+.cfzn-card-preparation button:disabled { opacity: .6; cursor: default; }
+.cfzn-card-preparation-spinner { width: 1.25rem; height: 1.25rem; border: 3px solid #ffffff55; border-top-color: #fff; border-radius: 50%; animation: cfzn-card-download-spin .9s linear infinite; }
+@keyframes cfzn-card-download-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .cfzn-card-preparation-spinner { animation: none; } }
 .cfzn-module-group { flex: 0 0 100%; min-width: 0; padding-bottom: .5rem; }
 .cfzn-module-group h2 { margin: .75rem .5rem .25rem; color: #575e75; font-size: 1rem; }
 .cfzn-module-grid { display: flex; flex-wrap: wrap; align-items: flex-start; }

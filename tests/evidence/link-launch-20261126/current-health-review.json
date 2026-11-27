@@ -1,0 +1,30 @@
+{
+  "observedAt": "2026-11-26T02:50:46.164Z",
+  "origin": "https://ide.xiaodaiyang.top",
+  "requests": 1,
+  "elapsedMs": 28,
+  "ready": false,
+  "state": {
+    "status": "missing",
+    "message": "暂未连接到本机 CCraft Link。"
+  },
+  "reason": "请安装并启动 CCraft Link 后使用硬件功能。",
+  "responses": [
+    {
+      "url": "http://127.0.0.1:3002/api/v1/hardware/link/health",
+      "error": "TypeError: fetch failed",
+      "cause": "ECONNREFUSED"
+    }
+  ],
+  "states": [
+    {
+      "status": "checking",
+      "message": "正在检测 CCraft Link…"
+    },
+    {
+      "status": "missing",
+      "message": "暂未连接到本机 CCraft Link。"
+    }
+  ],
+  "scope": "single read-only health probe using actual frontend state machine in Node with explicit Origin; not browser permission/UI evidence; no native launch, serial or logs"
+}

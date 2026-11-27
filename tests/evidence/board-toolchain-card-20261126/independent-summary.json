@@ -1,0 +1,25 @@
+{
+  "candidateSourceHashes": true,
+  "frozenAssets": true,
+  "vm": 178,
+  "blockly": 15,
+  "logo": "c927127553d58dcfdb4de6487da3a2c894266d6a78b9de05d3e9535da2d010c2",
+  "preparePosts": 1,
+  "physicalOperations": 0,
+  "browserObserved": {
+    "current": "Arduino Uno",
+    "target": "Aijite ESP32-S3",
+    "cardCount": 20,
+    "percent": 25,
+    "unknownTotal": {
+      "value": null,
+      "max": null,
+      "text": "下载中\n取消下载"
+    },
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  "browserRemaining": "IAB provider disappeared after saved screenshots; completion/manual selection/upload-modal visual scenes not executed"
+}

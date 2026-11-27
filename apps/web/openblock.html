@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      if (__CCRAFT_IDE_AUTH_REQUIRED__ && window.top === window.self) {
+        window.location.replace(new URLSearchParams(window.location.search).get('mode') === 'guest' ? '/?mode=guest' : '/');
+      }
+    </script>
     <script id="editor-startup-observer">
       (function () {
         var phase = 'loading', failure = '';
